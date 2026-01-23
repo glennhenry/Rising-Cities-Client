@@ -67,6 +67,7 @@ package net.bigpoint.cityrama.model.server
          this._request.url = this.requestURL;
          this.connectionCounter += param1;
          this._urlLoader.load(this._request);
+         trace("ServerConfigProxy: loadServer ",JSON.stringify(this._request));
       }
       
       private function onError(param1:Event) : void
