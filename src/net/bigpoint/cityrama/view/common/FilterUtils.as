@@ -9,13 +9,7 @@ package net.bigpoint.cityrama.view.common
       
       public function FilterUtils()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && Boolean(this)))
-         {
-            super();
-         }
+         super();
       }
       
       public static function createDesaturationFilter() : ColorMatrixFilter

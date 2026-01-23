@@ -12,26 +12,14 @@ package net.bigpoint.cityrama.controller.server.messages.cityWheel.client
       
       public function ClientMessageCityWheelSpinCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
          var _loc2_:ServerCommunicationProxy = ServerCommunicationProxy(facade.retrieveProxy(ServerCommunicationProxy.NAME));
          var _loc3_:MessageVo = _loc2_.createMessage(new Object(),ServerMessageConstants.CITY_WHEEL_SPIN);
-         if(!(_loc4_ && Boolean(param1)))
-         {
-            _loc2_.sendMessage(_loc3_);
-         }
+         _loc2_.sendMessage(_loc3_);
       }
    }
 }

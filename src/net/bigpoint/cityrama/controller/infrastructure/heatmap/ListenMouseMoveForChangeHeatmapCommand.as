@@ -17,122 +17,42 @@ package net.bigpoint.cityrama.controller.infrastructure.heatmap
       
       public function ListenMouseMoveForChangeHeatmapCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc10_:Boolean = false;
-         var _loc11_:Boolean = _temp_1;
          var _loc2_:IEmergencyInfrastructureVO = null;
          var _loc7_:FieldBuildProxy = null;
          var _loc8_:FieldMoveProxy = null;
          var _loc3_:ApplicationModeProxy = facade.retrieveProxy(ApplicationModeProxy.NAME) as ApplicationModeProxy;
-         var _loc9_:* = _loc3_.mode;
-         if(_loc11_ || Boolean(this))
+         switch(_loc3_.mode)
          {
-            §§push(ApplicationModeProxy.MODE_BUILD);
-            if(!_loc10_)
-            {
-               §§push(_loc9_);
-               if(!_loc10_)
+            case ApplicationModeProxy.MODE_BUILD:
+               _loc7_ = facade.retrieveProxy(FieldBuildProxy.NAME) as FieldBuildProxy;
+               if(_loc7_.billboardObjectToAdd is IEmergencyInfrastructure)
                {
-                  if(§§pop() === §§pop())
-                  {
-                     if(_loc11_)
-                     {
-                        addr010d:
-                        §§push(0);
-                        if(_loc11_)
-                        {
-                        }
-                     }
-                     else
-                     {
-                        addr0125:
-                        §§push(1);
-                        if(_loc11_ || Boolean(_loc2_))
-                        {
-                        }
-                     }
-                     §§goto(addr0145);
-                  }
-                  else
-                  {
-                     §§goto(addr0121);
-                  }
+                  _loc2_ = (_loc7_.billboardObjectToAdd as IEmergencyInfrastructure).emergencyFieldObjectVo;
                }
-               addr0121:
-               §§goto(addr011f);
-            }
-            addr011f:
-            if(ApplicationModeProxy.MODE_MOVE === _loc9_)
-            {
-               §§goto(addr0125);
-            }
-            else
-            {
-               §§push(2);
-            }
-            addr0145:
-            switch(§§pop())
-            {
-               case 0:
-                  _loc7_ = facade.retrieveProxy(FieldBuildProxy.NAME) as FieldBuildProxy;
-                  §§push(_loc7_.billboardObjectToAdd);
-                  if(!_loc10_)
-                  {
-                     if(!(§§pop() is IEmergencyInfrastructure))
-                     {
-                        break;
-                     }
-                     if(_loc11_ || Boolean(this))
-                     {
-                        addr0077:
-                        _loc2_ = (_loc7_.billboardObjectToAdd as IEmergencyInfrastructure).emergencyFieldObjectVo;
-                        break;
-                     }
-                     §§goto(addr0169);
-                  }
-                  §§goto(addr0077);
-               case 1:
-                  _loc8_ = facade.retrieveProxy(FieldMoveProxy.NAME) as FieldMoveProxy;
-                  §§push(_loc8_.objectToMove);
-                  if(!(_loc10_ && Boolean(param1)))
-                  {
-                     if(!(§§pop() is IEmergencyInfrastructure))
-                     {
-                        break;
-                     }
-                     §§push(_loc8_.objectToMove);
-                  }
-                  _loc2_ = (§§pop() as IEmergencyInfrastructure).emergencyFieldObjectVo;
-                  break;
-               default:
-                  return;
-            }
-            if(_loc2_ == null)
-            {
-               if(_loc11_ || Boolean(this))
+               break;
+            case ApplicationModeProxy.MODE_MOVE:
+               _loc8_ = facade.retrieveProxy(FieldMoveProxy.NAME) as FieldMoveProxy;
+               if(_loc8_.objectToMove is IEmergencyInfrastructure)
                {
-                  addr0169:
-                  return;
+                  _loc2_ = (_loc8_.objectToMove as IEmergencyInfrastructure).emergencyFieldObjectVo;
                }
-            }
-            var _loc4_:PlayfieldProxy = PlayfieldProxy(facade.retrieveProxy(PlayfieldProxy.NAME));
-            var _loc5_:Point = _loc4_.mouseMatrixPoint;
-            var _loc6_:SecurityGradeHeatMapMediator = facade.retrieveMediator(SecurityGradeHeatMapMediator.NAME) as SecurityGradeHeatMapMediator;
-            _loc6_.updateSingleGradeProviderVisual(_loc5_,_loc2_.objectSize,_loc2_.listOfModifiedGrades,true);
+               break;
+            default:
+               return;
+         }
+         if(_loc2_ == null)
+         {
             return;
          }
-         §§goto(addr010d);
+         var _loc4_:PlayfieldProxy = PlayfieldProxy(facade.retrieveProxy(PlayfieldProxy.NAME));
+         var _loc5_:Point = _loc4_.mouseMatrixPoint;
+         var _loc6_:SecurityGradeHeatMapMediator = facade.retrieveMediator(SecurityGradeHeatMapMediator.NAME) as SecurityGradeHeatMapMediator;
+         _loc6_.updateSingleGradeProviderVisual(_loc5_,_loc2_.objectSize,_loc2_.listOfModifiedGrades,true);
       }
    }
 }

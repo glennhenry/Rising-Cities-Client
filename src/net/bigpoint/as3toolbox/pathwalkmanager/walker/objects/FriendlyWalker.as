@@ -15,24 +15,9 @@ package net.bigpoint.as3toolbox.pathwalkmanager.walker.objects
       
       public function FriendlyWalker(param1:String, param2:String)
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!(_loc3_ && _loc3_))
-         {
-            super(param1,param2);
-            if(_loc4_ || _loc3_)
-            {
-               this._friends = new Vector.<Class>();
-               if(!(_loc3_ && Boolean(param2)))
-               {
-                  addr0065:
-                  this._friendsMet = new Vector.<IWalker>();
-               }
-               return;
-            }
-         }
-         §§goto(addr0065);
+         super(param1,param2);
+         this._friends = new Vector.<Class>();
+         this._friendsMet = new Vector.<IWalker>();
       }
       
       public function get friends() : Vector.<Class>
@@ -47,143 +32,42 @@ package net.bigpoint.as3toolbox.pathwalkmanager.walker.objects
       
       override public function cellChanged() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         do
+         while(this._friendsMet.length)
          {
-            if(!this._friendsMet.length)
-            {
-               if(_loc1_ || Boolean(this))
-               {
-                  super.cellChanged();
-               }
-               break;
-            }
             this._friendsMet.pop();
          }
-         while(_loc1_ || Boolean(this));
-         
+         super.cellChanged();
       }
       
       override public function cellUpdate() : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc1_:IWalker = null;
-         if(!(_loc5_ && Boolean(_loc1_)))
+         if(!this.friends.length)
          {
-            if(!this.friends.length)
-            {
-               if(_loc4_ || _loc3_)
-               {
-                  return;
-               }
-            }
+            return;
          }
-         var _loc2_:int = 0;
-         var _loc3_:* = PathWalkManager.instance.walkerContainer.walkers;
-         for each(_loc1_ in _loc3_)
+         for each(_loc1_ in PathWalkManager.instance.walkerContainer.walkers)
          {
-            if(!(_loc4_ || Boolean(_loc2_)))
+            if(!(_loc1_.currentCell.x != this.currentCell.x || _loc1_.currentCell.y != this.currentCell.y))
             {
-               continue;
-            }
-            §§push(_loc1_.currentCell);
-            if(_loc4_ || Boolean(_loc2_))
-            {
-               §§push(§§pop().x);
-               if(!(_loc5_ && Boolean(this)))
+               if(this.friends.indexOf(getDefinitionByName(getQualifiedClassName(_loc1_))) != -1)
                {
-                  §§push(§§pop() == this.currentCell.x);
-                  if(_loc4_ || Boolean(this))
+                  if(_loc1_ !== this)
                   {
-                     §§push(!§§pop());
-                     if(_loc4_ || Boolean(this))
+                     if(this._friendsMet.indexOf(_loc1_) == -1)
                      {
-                        var _temp_8:* = §§pop();
-                        §§push(_temp_8);
-                        if(!_temp_8)
-                        {
-                           if(_loc4_)
-                           {
-                              §§pop();
-                              if(!(_loc4_ || Boolean(this)))
-                              {
-                                 continue;
-                              }
-                              addr00de:
-                              addr00dc:
-                              §§push(_loc1_.currentCell.y == this.currentCell.y);
-                              if(_loc4_ || _loc3_)
-                              {
-                                 addr00f3:
-                                 §§push(!§§pop());
-                              }
-                           }
-                        }
-                     }
-                     if(§§pop())
-                     {
-                        if(_loc4_ || Boolean(_loc1_))
-                        {
-                           continue;
-                        }
-                        addr0172:
                         this._friendsMet.push(_loc1_);
-                        if(!_loc4_)
-                        {
-                           continue;
-                        }
+                        this.friendMet();
                      }
-                     else if(this.friends.indexOf(getDefinitionByName(getQualifiedClassName(_loc1_))) == -1)
-                     {
-                        if(_loc4_ || _loc3_)
-                        {
-                           continue;
-                        }
-                        §§goto(addr0172);
-                     }
-                     else if(_loc1_ === this)
-                     {
-                        if(_loc4_)
-                        {
-                           continue;
-                        }
-                        §§goto(addr0172);
-                     }
-                     else
-                     {
-                        if(this._friendsMet.indexOf(_loc1_) != -1)
-                        {
-                           continue;
-                        }
-                        if(_loc4_ || Boolean(this))
-                        {
-                           §§goto(addr0172);
-                        }
-                     }
-                     this.friendMet();
-                     continue;
                   }
-                  §§goto(addr00f3);
                }
-               §§goto(addr00de);
             }
-            §§goto(addr00dc);
          }
       }
       
       public function friendMet() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
-         {
-            dispatchEvent(new PathEvent(PathEvent.FRIEND_FOUND));
-         }
+         dispatchEvent(new PathEvent(PathEvent.FRIEND_FOUND));
       }
    }
 }

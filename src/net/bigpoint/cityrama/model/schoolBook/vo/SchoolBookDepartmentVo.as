@@ -14,17 +14,8 @@ package net.bigpoint.cityrama.model.schoolBook.vo
       
       public function SchoolBookDepartmentVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-            if(!(_loc2_ && Boolean(this)))
-            {
-               this.departmentGfxIds = new Vector.<String>();
-            }
-         }
+         super();
+         this.departmentGfxIds = new Vector.<String>();
       }
    }
 }

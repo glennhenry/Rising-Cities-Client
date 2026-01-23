@@ -15,20 +15,11 @@ package net.bigpoint.cityrama.controller.client
       
       public function ClientMessagePlayfieldProcessHarvestProduction()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc9_:Boolean = false;
-         var _loc10_:Boolean = _temp_1;
          var _loc5_:PhaseDTO = null;
          var _loc6_:MessageVo = null;
          var _loc2_:ProductionFieldObjectVo = ProductionFieldObjectVo(param1.getBody());
@@ -39,17 +30,11 @@ package net.bigpoint.cityrama.controller.client
          {
             if(_loc5_.config.phaseType == ServerPhaseTypes.PRODUCTION)
             {
-               if(_loc10_ || Boolean(param1))
-               {
-                  _loc4_.pid = _loc5_.config.phaseId;
-               }
+               _loc4_.pid = _loc5_.config.phaseId;
             }
          }
          _loc6_ = _loc3_.createMessage(_loc4_,ServerMessageConstants.PLAYFIELD_BUILDING_PROCESSPHASE);
-         if(!_loc9_)
-         {
-            _loc3_.sendMessage(_loc6_);
-         }
+         _loc3_.sendMessage(_loc6_);
       }
    }
 }

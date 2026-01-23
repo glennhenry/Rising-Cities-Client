@@ -13,140 +13,45 @@ package net.bigpoint.cityrama.view.userInterfaceInfoLayer.vo
       
       public function AssistantUiInfolayerContentVo(param1:uint, param2:Point, param3:ConfigAssistDTO)
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
-         if(_loc5_ || Boolean(param2))
-         {
-            this._data = param3;
-            if(!(_loc4_ && Boolean(this)))
-            {
-               super(param1,param2,"");
-            }
-         }
+         this._data = param3;
+         super(param1,param2,"");
       }
       
       override public function get headerString() : String
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
+         if(this._data)
          {
-            §§push(this._data);
-            if(!(_loc2_ && Boolean(this)))
+            if(this._data.type == ServerAssistTypeConstants.HARVEST_HELPER_RESIDENTIAL)
             {
-               if(§§pop())
-               {
-                  if(_loc1_ || _loc2_)
-                  {
-                     §§goto(addr004f);
-                  }
-               }
-               §§goto(addr007e);
+               return LocaUtils.getString("rcl.misc.rentCollector","rcl.misc.rentCollector.name.capital");
             }
-            addr004f:
-            §§push(this._data.type);
-            if(!(_loc2_ && _loc2_))
-            {
-               if(§§pop() == ServerAssistTypeConstants.HARVEST_HELPER_RESIDENTIAL)
-               {
-                  if(!_loc2_)
-                  {
-                     addr006d:
-                     §§push(LocaUtils.getString("rcl.misc.rentCollector","rcl.misc.rentCollector.name.capital"));
-                     if(_loc1_)
-                     {
-                        return §§pop();
-                     }
-                  }
-                  else
-                  {
-                     addr007e:
-                     §§push(super.headerString);
-                  }
-                  §§goto(addr0082);
-               }
-               §§goto(addr007e);
-            }
-            addr0082:
-            return §§pop();
          }
-         §§goto(addr006d);
+         return super.headerString;
       }
       
       public function get runtimeVo() : TimerBarComponentVo
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:TimerBarComponentVo = null;
-         if(!_loc2_)
+         if(this._data)
          {
-            if(this._data)
-            {
-               _loc1_ = new TimerBarComponentVo();
-               addr0031:
-               if(_loc3_)
-               {
-                  _loc1_.cycleLength = this._data.lifetime;
-                  if(_loc3_ || _loc2_)
-                  {
-                     addr0066:
-                     _loc1_.waitingForStart = true;
-                     if(!_loc2_)
-                     {
-                        return _loc1_;
-                     }
-                  }
-                  §§goto(addr0072);
-               }
-               §§goto(addr0066);
-            }
-            addr0072:
-            return null;
+            _loc1_ = new TimerBarComponentVo();
+            _loc1_.cycleLength = this._data.lifetime;
+            _loc1_.waitingForStart = true;
+            return _loc1_;
          }
-         §§goto(addr0031);
+         return null;
       }
       
       public function get infoText() : String
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc1_)
+         if(this._data)
          {
-            §§push(this._data);
-            if(!_loc2_)
+            if(this._data.type == ServerAssistTypeConstants.HARVEST_HELPER_RESIDENTIAL)
             {
-               if(§§pop())
-               {
-                  if(_loc1_)
-                  {
-                     addr0047:
-                     §§push(this._data.type);
-                     if(!(_loc2_ && _loc2_))
-                     {
-                        if(§§pop() == ServerAssistTypeConstants.HARVEST_HELPER_RESIDENTIAL)
-                        {
-                           if(_loc1_)
-                           {
-                              addr0072:
-                              return LocaUtils.getString("rcl.guiinfolayer.rentCollector","rcl.guiinfolayer.rentCollector.flavour");
-                              addr0065:
-                           }
-                        }
-                        §§goto(addr0073);
-                     }
-                     §§goto(addr0072);
-                  }
-               }
-               addr0073:
-               return "";
+               return LocaUtils.getString("rcl.guiinfolayer.rentCollector","rcl.guiinfolayer.rentCollector.flavour");
             }
-            §§goto(addr0047);
          }
-         §§goto(addr0065);
+         return "";
       }
    }
 }

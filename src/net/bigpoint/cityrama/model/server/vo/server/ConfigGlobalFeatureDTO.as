@@ -13,33 +13,11 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigGlobalFeatureDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            super();
-            if(!_loc2_)
-            {
-               this._marketIsInMaintenance = param1.market;
-               if(_loc3_ || Boolean(this))
-               {
-                  this._pmsEnabled = param1.pms;
-                  if(_loc3_)
-                  {
-                     this._cinemaIsInMaintenance = param1.cinema;
-                     if(_loc3_ || Boolean(this))
-                     {
-                        addr0073:
-                        this._upsellingEnabled = param1.upsell;
-                     }
-                  }
-                  §§goto(addr007c);
-               }
-               §§goto(addr0073);
-            }
-         }
-         addr007c:
+         super();
+         this._marketIsInMaintenance = param1.market;
+         this._pmsEnabled = param1.pms;
+         this._cinemaIsInMaintenance = param1.cinema;
+         this._upsellingEnabled = param1.upsell;
       }
       
       public function get marketIsInMaintenance() : Boolean

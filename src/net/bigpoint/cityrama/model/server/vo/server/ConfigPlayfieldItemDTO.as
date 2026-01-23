@@ -113,9 +113,6 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigPlayfieldItemDTO(param1:Object = null)
       {
-         §§push(false);
-         var _loc17_:Boolean = true;
-         var _loc18_:* = §§pop();
          var _loc2_:Object = null;
          var _loc3_:Number = NaN;
          var _loc4_:Object = null;
@@ -129,1057 +126,166 @@ package net.bigpoint.cityrama.model.server.vo.server
          var _loc12_:Object = null;
          var _loc13_:Object = null;
          var _loc14_:Object = null;
-         if(!(_loc18_ && Boolean(param1)))
+         super();
+         if(param1 == null)
          {
-            super();
-            if(_loc17_)
-            {
-               if(param1 == null)
-               {
-                  if(_loc17_)
-                  {
-                     return;
-                  }
-               }
-               else
-               {
-                  this._id = param1.id;
-                  if(_loc17_)
-                  {
-                     this._gfxId = param1.gf;
-                     if(!(_loc18_ && Boolean(this)))
-                     {
-                        this._buildMode = param1.bm;
-                        if(!(_loc18_ && Boolean(this)))
-                        {
-                           addr00c0:
-                           this._itemType = param1.it;
-                           if(!(_loc18_ && Boolean(param1)))
-                           {
-                              this._preload = param1.fp;
-                              if(!(_loc18_ && Boolean(param1)))
-                              {
-                                 addr00ef:
-                                 this._levelId = param1.l;
-                                 if(_loc17_ || Boolean(param1))
-                                 {
-                                    this._sellable = param1.s;
-                                    if(!_loc18_)
-                                    {
-                                       addr0115:
-                                       this._buyable = param1.b;
-                                       if(_loc17_)
-                                       {
-                                          this._giftable = param1.g;
-                                          if(!_loc18_)
-                                          {
-                                             this._moveable = param1.m;
-                                             if(_loc17_ || Boolean(_loc2_))
-                                             {
-                                                addr014a:
-                                                this._localeId = param1.fl;
-                                                if(_loc17_)
-                                                {
-                                                   addr0159:
-                                                   this._maxHarvestCount = param1.upc;
-                                                   if(_loc17_ || Boolean(_loc2_))
-                                                   {
-                                                      addr0171:
-                                                      this._nextConfigId = param1.uic;
-                                                      if(!(_loc18_ && Boolean(_loc2_)))
-                                                      {
-                                                         this._upgradeable = param1.up;
-                                                         if(!(_loc18_ && Boolean(_loc2_)))
-                                                         {
-                                                            addr019f:
-                                                            this._destroyable = param1.d;
-                                                            if(!_loc18_)
-                                                            {
-                                                               this._walkable = param1.w;
-                                                               if(!_loc18_)
-                                                               {
-                                                                  addr01bd:
-                                                                  this._driveable = param1.dr;
-                                                                  if(!(_loc18_ && Boolean(param1)))
-                                                                  {
-                                                                     addr01d4:
-                                                                     this._sizeX = param1.x;
-                                                                     if(!(_loc18_ && Boolean(this)))
-                                                                     {
-                                                                        addr01eb:
-                                                                        this._sizeY = param1.y;
-                                                                        if(!(_loc18_ && Boolean(_loc2_)))
-                                                                        {
-                                                                           addr0202:
-                                                                           this._permissionConfigId = param1.cpi;
-                                                                           if(_loc17_)
-                                                                           {
-                                                                              this._maxProfessionalAmount = param1.ps;
-                                                                              if(!_loc18_)
-                                                                              {
-                                                                                 addr0222:
-                                                                                 this._configSecurityGrades = new Vector.<ConfigSecurityGradeDTO>();
-                                                                              }
-                                                                              addr0230:
-                                                                              var _loc15_:* = 0;
-                                                                              var _loc16_:* = param1.csg;
-                                                                              loop0:
-                                                                              while(true)
-                                                                              {
-                                                                                 §§push(§§hasnext(_loc16_,_loc15_));
-                                                                                 if(!(_loc17_ || Boolean(param1)))
-                                                                                 {
-                                                                                    break;
-                                                                                 }
-                                                                                 if(§§pop())
-                                                                                 {
-                                                                                    _loc2_ = §§nextvalue(_loc15_,_loc16_);
-                                                                                    if(_loc17_)
-                                                                                    {
-                                                                                       this._configSecurityGrades.push(new ConfigSecurityGradeDTO(_loc2_));
-                                                                                    }
-                                                                                    continue;
-                                                                                 }
-                                                                                 if(_loc17_ || Boolean(param1))
-                                                                                 {
-                                                                                    if(_loc17_ || Boolean(_loc2_))
-                                                                                    {
-                                                                                       if(!_loc18_)
-                                                                                       {
-                                                                                          this._zLevels = new Vector.<Number>();
-                                                                                          if(!(_loc18_ && Boolean(this)))
-                                                                                          {
-                                                                                             §§push(0);
-                                                                                             if(_loc17_ || Boolean(_loc2_))
-                                                                                             {
-                                                                                                _loc15_ = §§pop();
-                                                                                                if(!_loc18_)
-                                                                                                {
-                                                                                                   _loc16_ = param1.z;
-                                                                                                   if(!(_loc18_ && Boolean(param1)))
-                                                                                                   {
-                                                                                                      loop1:
-                                                                                                      while(true)
-                                                                                                      {
-                                                                                                         §§push(§§hasnext(_loc16_,_loc15_));
-                                                                                                         if(_loc18_)
-                                                                                                         {
-                                                                                                            break;
-                                                                                                         }
-                                                                                                         if(!§§pop())
-                                                                                                         {
-                                                                                                            if(_loc17_)
-                                                                                                            {
-                                                                                                               if(_loc17_)
-                                                                                                               {
-                                                                                                                  if(!(_loc18_ && Boolean(_loc3_)))
-                                                                                                                  {
-                                                                                                                     this._constructionPhases = new Vector.<ConfigPhaseDTO>();
-                                                                                                                     if(!(_loc18_ && Boolean(_loc3_)))
-                                                                                                                     {
-                                                                                                                        if(param1.cph != null)
-                                                                                                                        {
-                                                                                                                           if(!(_loc18_ && Boolean(param1)))
-                                                                                                                           {
-                                                                                                                              §§push(0);
-                                                                                                                              if(_loc17_)
-                                                                                                                              {
-                                                                                                                                 _loc15_ = §§pop();
-                                                                                                                                 if(_loc17_)
-                                                                                                                                 {
-                                                                                                                                    addr0373:
-                                                                                                                                    _loc16_ = param1.cph;
-                                                                                                                                    loop18:
-                                                                                                                                    while(true)
-                                                                                                                                    {
-                                                                                                                                       §§push(§§hasnext(_loc16_,_loc15_));
-                                                                                                                                       if(!_loc17_)
-                                                                                                                                       {
-                                                                                                                                          break;
-                                                                                                                                       }
-                                                                                                                                       if(§§pop())
-                                                                                                                                       {
-                                                                                                                                          _loc4_ = §§nextvalue(_loc15_,_loc16_);
-                                                                                                                                          if(!_loc18_)
-                                                                                                                                          {
-                                                                                                                                             this._constructionPhases.push(new ConfigPhaseDTO(_loc4_));
-                                                                                                                                          }
-                                                                                                                                          continue;
-                                                                                                                                       }
-                                                                                                                                       if(_loc17_)
-                                                                                                                                       {
-                                                                                                                                          if(!_loc18_)
-                                                                                                                                          {
-                                                                                                                                             addr03ba:
-                                                                                                                                             if(_loc17_)
-                                                                                                                                             {
-                                                                                                                                                addr03c2:
-                                                                                                                                                this._activePhases = new Vector.<ConfigPhaseDTO>();
-                                                                                                                                                if(_loc17_)
-                                                                                                                                                {
-                                                                                                                                                   if(param1.aph != null)
-                                                                                                                                                   {
-                                                                                                                                                      if(!(_loc18_ && Boolean(_loc2_)))
-                                                                                                                                                      {
-                                                                                                                                                         §§push(0);
-                                                                                                                                                         if(!(_loc18_ && Boolean(_loc3_)))
-                                                                                                                                                         {
-                                                                                                                                                            _loc15_ = §§pop();
-                                                                                                                                                            if(_loc17_)
-                                                                                                                                                            {
-                                                                                                                                                               _loc16_ = param1.aph;
-                                                                                                                                                               while(true)
-                                                                                                                                                               {
-                                                                                                                                                                  §§push(§§hasnext(_loc16_,_loc15_));
-                                                                                                                                                                  if(!_loc18_)
-                                                                                                                                                                  {
-                                                                                                                                                                     if(§§pop())
-                                                                                                                                                                     {
-                                                                                                                                                                        _loc5_ = §§nextvalue(_loc15_,_loc16_);
-                                                                                                                                                                        if(_loc17_ || Boolean(_loc3_))
-                                                                                                                                                                        {
-                                                                                                                                                                           this._activePhases.push(new ConfigPhaseDTO(_loc5_));
-                                                                                                                                                                        }
-                                                                                                                                                                        continue;
-                                                                                                                                                                     }
-                                                                                                                                                                     if(_loc17_ || Boolean(_loc3_))
-                                                                                                                                                                     {
-                                                                                                                                                                        if(!(_loc18_ && Boolean(_loc2_)))
-                                                                                                                                                                        {
-                                                                                                                                                                           if(_loc17_ || Boolean(param1))
-                                                                                                                                                                           {
-                                                                                                                                                                              addr0475:
-                                                                                                                                                                              this._destructionPhases = new Vector.<ConfigPhaseDTO>();
-                                                                                                                                                                              if(_loc17_)
-                                                                                                                                                                              {
-                                                                                                                                                                                 addr0489:
-                                                                                                                                                                                 if(param1.dph != null)
-                                                                                                                                                                                 {
-                                                                                                                                                                                    if(_loc17_ || Boolean(_loc3_))
-                                                                                                                                                                                    {
-                                                                                                                                                                                       addr04a1:
-                                                                                                                                                                                       §§push(0);
-                                                                                                                                                                                       if(!(_loc18_ && Boolean(this)))
-                                                                                                                                                                                       {
-                                                                                                                                                                                          _loc15_ = §§pop();
-                                                                                                                                                                                          if(!(_loc18_ && Boolean(this)))
-                                                                                                                                                                                          {
-                                                                                                                                                                                             _loc16_ = param1.dph;
-                                                                                                                                                                                             while(true)
-                                                                                                                                                                                             {
-                                                                                                                                                                                                §§push(§§hasnext(_loc16_,_loc15_));
-                                                                                                                                                                                                if(!_loc18_)
-                                                                                                                                                                                                {
-                                                                                                                                                                                                   break loop0;
-                                                                                                                                                                                                }
-                                                                                                                                                                                                §§goto(addr0a83);
-                                                                                                                                                                                             }
-                                                                                                                                                                                             addr04ed:
-                                                                                                                                                                                          }
-                                                                                                                                                                                          addr0889:
-                                                                                                                                                                                          if(!_loc18_)
-                                                                                                                                                                                          {
-                                                                                                                                                                                             addr0891:
-                                                                                                                                                                                             this._educationBasicTime = param1.et;
-                                                                                                                                                                                             if(_loc17_)
-                                                                                                                                                                                             {
-                                                                                                                                                                                                addr08a1:
-                                                                                                                                                                                                this._configInventoryBagId = param1.cibi;
-                                                                                                                                                                                                if(_loc17_)
-                                                                                                                                                                                                {
-                                                                                                                                                                                                   addr08b1:
-                                                                                                                                                                                                   this._improvementSlots = new Vector.<ConfigPlayfieldItemImprovementSlotDTO>();
-                                                                                                                                                                                                   if(_loc17_)
-                                                                                                                                                                                                   {
-                                                                                                                                                                                                      if(param1.sl)
-                                                                                                                                                                                                      {
-                                                                                                                                                                                                         if(!_loc18_)
-                                                                                                                                                                                                         {
-                                                                                                                                                                                                            addr08d4:
-                                                                                                                                                                                                            §§push(0);
-                                                                                                                                                                                                            if(_loc17_)
-                                                                                                                                                                                                            {
-                                                                                                                                                                                                               _loc15_ = §§pop();
-                                                                                                                                                                                                               if(!_loc18_)
-                                                                                                                                                                                                               {
-                                                                                                                                                                                                                  addr08e4:
-                                                                                                                                                                                                                  _loc16_ = param1.sl;
-                                                                                                                                                                                                                  loop4:
-                                                                                                                                                                                                                  while(true)
-                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                     §§push(§§hasnext(_loc16_,_loc15_));
-                                                                                                                                                                                                                     if(!_loc18_)
-                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                        loop14:
-                                                                                                                                                                                                                        while(true)
-                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                           if(§§pop())
-                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                              _loc12_ = §§nextvalue(_loc15_,_loc16_);
-                                                                                                                                                                                                                              if(!_loc18_)
-                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                 this._improvementSlots.push(new ConfigPlayfieldItemImprovementSlotDTO(_loc12_));
-                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                              continue loop4;
-                                                                                                                                                                                                                           }
-                                                                                                                                                                                                                           if(_loc17_ || Boolean(_loc3_))
-                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                              addr092b:
-                                                                                                                                                                                                                              if(_loc17_)
-                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                 addr0933:
-                                                                                                                                                                                                                                 if(_loc17_ || Boolean(this))
-                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                    addr0943:
-                                                                                                                                                                                                                                    this._improvementSlots.sort(this.sortOrder);
-                                                                                                                                                                                                                                    if(_loc17_ || Boolean(_loc2_))
-                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                       addr095e:
-                                                                                                                                                                                                                                       this._playfieldRestrictions = new Vector.<ConfigPlayfieldItemPlayfieldRestrictionDTO>();
-                                                                                                                                                                                                                                       if(_loc17_ || Boolean(_loc3_))
-                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                          addr097a:
-                                                                                                                                                                                                                                          if(param1.cpr)
-                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                             if(!_loc18_)
-                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                addr0989:
-                                                                                                                                                                                                                                                §§push(0);
-                                                                                                                                                                                                                                                if(!_loc18_)
-                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                   addr0991:
-                                                                                                                                                                                                                                                   _loc15_ = §§pop();
-                                                                                                                                                                                                                                                   if(!(_loc18_ && Boolean(this)))
-                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                      addr09a1:
-                                                                                                                                                                                                                                                      _loc16_ = param1.cpr;
-                                                                                                                                                                                                                                                      while(true)
-                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                         §§push(§§hasnext(_loc16_,_loc15_));
-                                                                                                                                                                                                                                                         if(!_loc18_)
-                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                            break loop14;
-                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                         break;
-                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                      addr0a83:
-                                                                                                                                                                                                                                                      addr0a89:
-                                                                                                                                                                                                                                                      loop6:
-                                                                                                                                                                                                                                                      while(§§pop())
-                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                         _loc14_ = §§nextvalue(_loc15_,_loc16_);
-                                                                                                                                                                                                                                                         if(_loc17_)
-                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                            this._mysteryOutputPossiblities.push(new ConfigOutputDTO(_loc14_));
-                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                         while(true)
-                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                            §§push(§§hasnext(_loc16_,_loc15_));
-                                                                                                                                                                                                                                                            continue loop6;
-                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                         break;
-                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                      return;
-                                                                                                                                                                                                                                                      addr09cd:
-                                                                                                                                                                                                                                                   }
-                                                                                                                                                                                                                                                   addr0a56:
-                                                                                                                                                                                                                                                   _loc16_ = param1.myst;
-                                                                                                                                                                                                                                                   §§goto(addr0a80);
-                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                addr0a42:
-                                                                                                                                                                                                                                                _loc15_ = §§pop();
-                                                                                                                                                                                                                                                if(_loc17_)
-                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                   §§goto(addr0a56);
-                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                             }
-                                                                                                                                                                                                                                             §§goto(addr0a89);
-                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                       addr09f0:
-                                                                                                                                                                                                                                       if(param1.ma)
-                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                          if(!_loc18_)
-                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                             addr09ff:
-                                                                                                                                                                                                                                             this._configMasteryChallengeDTO = new ConfigMasteryChallengeDTO(param1.ma);
-                                                                                                                                                                                                                                             if(!_loc18_)
-                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                addr0a16:
-                                                                                                                                                                                                                                                this._mysteryOutputPossiblities = new Vector.<ConfigOutputDTO>();
-                                                                                                                                                                                                                                                if(!_loc18_)
-                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                   addr0a29:
-                                                                                                                                                                                                                                                   if(param1.myst)
-                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                      if(!(_loc18_ && Boolean(_loc3_)))
-                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                         addr0a40:
-                                                                                                                                                                                                                                                         §§goto(addr0a42);
-                                                                                                                                                                                                                                                         §§push(0);
-                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                   }
-                                                                                                                                                                                                                                                   §§goto(addr0a89);
-                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                             }
-                                                                                                                                                                                                                                             §§goto(addr0a40);
-                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                          §§goto(addr0a29);
-                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                       §§goto(addr0a16);
-                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                                 §§goto(addr0a40);
-                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                              §§goto(addr09a1);
-                                                                                                                                                                                                                           }
-                                                                                                                                                                                                                           §§goto(addr0a89);
-                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                        addr0919:
-                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                     break;
-                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                  break loop1;
-                                                                                                                                                                                                               }
-                                                                                                                                                                                                               §§goto(addr0a56);
-                                                                                                                                                                                                            }
-                                                                                                                                                                                                            §§goto(addr0991);
-                                                                                                                                                                                                         }
-                                                                                                                                                                                                         §§goto(addr0a29);
-                                                                                                                                                                                                      }
-                                                                                                                                                                                                      §§goto(addr095e);
-                                                                                                                                                                                                   }
-                                                                                                                                                                                                   §§goto(addr0a40);
-                                                                                                                                                                                                }
-                                                                                                                                                                                                §§goto(addr0a16);
-                                                                                                                                                                                             }
-                                                                                                                                                                                             §§goto(addr08d4);
-                                                                                                                                                                                          }
-                                                                                                                                                                                          §§goto(addr097a);
-                                                                                                                                                                                       }
-                                                                                                                                                                                       addr0771:
-                                                                                                                                                                                       _loc15_ = §§pop();
-                                                                                                                                                                                       if(!(_loc18_ && Boolean(param1)))
-                                                                                                                                                                                       {
-                                                                                                                                                                                          addr0781:
-                                                                                                                                                                                          _loc16_ = param1.tag;
-                                                                                                                                                                                          if(_loc17_ || Boolean(_loc2_))
-                                                                                                                                                                                          {
-                                                                                                                                                                                             while(true)
-                                                                                                                                                                                             {
-                                                                                                                                                                                                §§push(§§hasnext(_loc16_,_loc15_));
-                                                                                                                                                                                                if(_loc18_ && Boolean(_loc3_))
-                                                                                                                                                                                                {
-                                                                                                                                                                                                   break;
-                                                                                                                                                                                                }
-                                                                                                                                                                                                if(!§§pop())
-                                                                                                                                                                                                {
-                                                                                                                                                                                                   if(!_loc18_)
-                                                                                                                                                                                                   {
-                                                                                                                                                                                                      if(_loc17_)
-                                                                                                                                                                                                      {
-                                                                                                                                                                                                         addr07d6:
-                                                                                                                                                                                                         if(_loc17_)
-                                                                                                                                                                                                         {
-                                                                                                                                                                                                            addr07de:
-                                                                                                                                                                                                            this._maxResidents = this.getMaxResidents();
-                                                                                                                                                                                                            if(!(_loc18_ && Boolean(param1)))
-                                                                                                                                                                                                            {
-                                                                                                                                                                                                               if(param1.edc)
-                                                                                                                                                                                                               {
-                                                                                                                                                                                                                  if(_loc17_)
-                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                     this._educationSteps = new Vector.<ConfigEducationStepDTO>();
-                                                                                                                                                                                                                     if(!_loc18_)
-                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                        §§push(0);
-                                                                                                                                                                                                                        if(!(_loc18_ && Boolean(_loc3_)))
-                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                           addr082a:
-                                                                                                                                                                                                                           _loc15_ = §§pop();
-                                                                                                                                                                                                                           if(_loc17_)
-                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                              _loc16_ = param1.edc;
-                                                                                                                                                                                                                              loop9:
-                                                                                                                                                                                                                              while(true)
-                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                 §§push(§§hasnext(_loc16_,_loc15_));
-                                                                                                                                                                                                                                 if(_loc17_)
-                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                    while(true)
-                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                       if(§§pop())
-                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                          _loc11_ = §§nextvalue(_loc15_,_loc16_);
-                                                                                                                                                                                                                                          if(_loc17_ || Boolean(param1))
-                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                             this._educationSteps.push(new ConfigEducationStepDTO(_loc11_));
-                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                          continue loop9;
-                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                       if(!_loc18_)
-                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                          addr0879:
-                                                                                                                                                                                                                                          if(!(_loc18_ && Boolean(param1)))
-                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                             §§goto(addr0889);
-                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                          §§goto(addr0933);
-                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                       §§goto(addr0a89);
-                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                    addr086f:
-                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                                 §§goto(addr0a83);
-                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                           }
-                                                                                                                                                                                                                           §§goto(addr0889);
-                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                        §§goto(addr0991);
-                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                     §§goto(addr097a);
-                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                  §§goto(addr0989);
-                                                                                                                                                                                                               }
-                                                                                                                                                                                                               §§goto(addr0891);
-                                                                                                                                                                                                            }
-                                                                                                                                                                                                            §§goto(addr095e);
-                                                                                                                                                                                                         }
-                                                                                                                                                                                                         §§goto(addr08d4);
-                                                                                                                                                                                                      }
-                                                                                                                                                                                                      §§goto(addr0889);
-                                                                                                                                                                                                   }
-                                                                                                                                                                                                   §§goto(addr092b);
-                                                                                                                                                                                                }
-                                                                                                                                                                                                else
-                                                                                                                                                                                                {
-                                                                                                                                                                                                   _loc10_ = §§nextvalue(_loc15_,_loc16_);
-                                                                                                                                                                                                   if(_loc18_)
-                                                                                                                                                                                                   {
-                                                                                                                                                                                                      continue;
-                                                                                                                                                                                                   }
-                                                                                                                                                                                                }
-                                                                                                                                                                                             }
-                                                                                                                                                                                             §§goto(addr0919);
-                                                                                                                                                                                             addr07b3:
-                                                                                                                                                                                          }
-                                                                                                                                                                                          while(true)
-                                                                                                                                                                                          {
-                                                                                                                                                                                             this._tagIds.push(_loc10_);
-                                                                                                                                                                                             §§goto(addr07b3);
-                                                                                                                                                                                          }
-                                                                                                                                                                                       }
-                                                                                                                                                                                       §§goto(addr0a89);
-                                                                                                                                                                                    }
-                                                                                                                                                                                    addr0539:
-                                                                                                                                                                                    if(param1.gbu != null)
-                                                                                                                                                                                    {
-                                                                                                                                                                                       if(!_loc18_)
-                                                                                                                                                                                       {
-                                                                                                                                                                                          §§push(0);
-                                                                                                                                                                                          if(_loc17_ || Boolean(param1))
-                                                                                                                                                                                          {
-                                                                                                                                                                                             addr0559:
-                                                                                                                                                                                             _loc15_ = §§pop();
-                                                                                                                                                                                             if(_loc17_ || Boolean(param1))
-                                                                                                                                                                                             {
-                                                                                                                                                                                                _loc16_ = param1.gbu;
-                                                                                                                                                                                                while(true)
-                                                                                                                                                                                                {
-                                                                                                                                                                                                   §§push(§§hasnext(_loc16_,_loc15_));
-                                                                                                                                                                                                   if(_loc17_)
-                                                                                                                                                                                                   {
-                                                                                                                                                                                                      break loop18;
-                                                                                                                                                                                                   }
-                                                                                                                                                                                                   break;
-                                                                                                                                                                                                }
-                                                                                                                                                                                                §§goto(addr0a83);
-                                                                                                                                                                                                addr0594:
-                                                                                                                                                                                             }
-                                                                                                                                                                                             §§goto(addr0a89);
-                                                                                                                                                                                          }
-                                                                                                                                                                                          §§goto(addr0771);
-                                                                                                                                                                                       }
-                                                                                                                                                                                       §§goto(addr095e);
-                                                                                                                                                                                    }
-                                                                                                                                                                                    addr05bf:
-                                                                                                                                                                                    this._upgradeConfig = new ConfigUpgradeVo(param1.ug);
-                                                                                                                                                                                    if(!_loc18_)
-                                                                                                                                                                                    {
-                                                                                                                                                                                       addr05d5:
-                                                                                                                                                                                       this._needShopConfigs = new Vector.<ConfigNeedDTO>();
-                                                                                                                                                                                       if(!_loc18_)
-                                                                                                                                                                                       {
-                                                                                                                                                                                          if(param1.nd != null)
-                                                                                                                                                                                          {
-                                                                                                                                                                                             if(_loc17_ || Boolean(this))
-                                                                                                                                                                                             {
-                                                                                                                                                                                                addr0601:
-                                                                                                                                                                                                §§push(0);
-                                                                                                                                                                                                if(!(_loc18_ && Boolean(_loc2_)))
-                                                                                                                                                                                                {
-                                                                                                                                                                                                   _loc15_ = §§pop();
-                                                                                                                                                                                                   if(_loc17_)
-                                                                                                                                                                                                   {
-                                                                                                                                                                                                      addr0619:
-                                                                                                                                                                                                      _loc16_ = param1.nd;
-                                                                                                                                                                                                      while(true)
-                                                                                                                                                                                                      {
-                                                                                                                                                                                                         §§push(§§hasnext(_loc16_,_loc15_));
-                                                                                                                                                                                                         if(_loc18_ && Boolean(_loc2_))
-                                                                                                                                                                                                         {
-                                                                                                                                                                                                            break loop1;
-                                                                                                                                                                                                         }
-                                                                                                                                                                                                         if(§§pop())
-                                                                                                                                                                                                         {
-                                                                                                                                                                                                            _loc8_ = §§nextvalue(_loc15_,_loc16_);
-                                                                                                                                                                                                            if(!_loc18_)
-                                                                                                                                                                                                            {
-                                                                                                                                                                                                               this._needShopConfigs.push(new ConfigNeedDTO(_loc8_));
-                                                                                                                                                                                                            }
-                                                                                                                                                                                                            continue;
-                                                                                                                                                                                                         }
-                                                                                                                                                                                                         if(_loc17_)
-                                                                                                                                                                                                         {
-                                                                                                                                                                                                            if(_loc17_)
-                                                                                                                                                                                                            {
-                                                                                                                                                                                                               addr0668:
-                                                                                                                                                                                                               if(_loc17_)
-                                                                                                                                                                                                               {
-                                                                                                                                                                                                                  addr0670:
-                                                                                                                                                                                                                  this._needRequireConfigs = new Vector.<ConfigNeedRequireDTO>();
-                                                                                                                                                                                                                  if(!(_loc18_ && Boolean(this)))
-                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                     if(param1.nq != null)
-                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                        if(!(_loc18_ && Boolean(param1)))
-                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                           addr06a4:
-                                                                                                                                                                                                                           §§push(0);
-                                                                                                                                                                                                                           if(!_loc18_)
-                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                              addr06ac:
-                                                                                                                                                                                                                              _loc15_ = §§pop();
-                                                                                                                                                                                                                              if(_loc17_ || Boolean(param1))
-                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                 _loc16_ = param1.nq;
-                                                                                                                                                                                                                                 while(true)
-                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                    §§push(§§hasnext(_loc16_,_loc15_));
-                                                                                                                                                                                                                                    if(_loc18_ && Boolean(this))
-                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                       break loop1;
-                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                    if(§§pop())
-                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                       _loc9_ = §§nextvalue(_loc15_,_loc16_);
-                                                                                                                                                                                                                                       if(!_loc18_)
-                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                          this._needRequireConfigs.push(new ConfigNeedRequireDTO(_loc9_));
-                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                       continue;
-                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                    if(_loc17_)
-                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                       addr0703:
-                                                                                                                                                                                                                                       if(_loc17_ || Boolean(_loc2_))
-                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                          if(_loc17_ || Boolean(_loc2_))
-                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                             addr0723:
-                                                                                                                                                                                                                                             this._tags = new Vector.<String>();
-                                                                                                                                                                                                                                             if(!_loc18_)
-                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                this._tagIds = new Vector.<Number>();
-                                                                                                                                                                                                                                                if(!(_loc18_ && Boolean(_loc2_)))
-                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                   addr0751:
-                                                                                                                                                                                                                                                   if(param1.tag != null)
-                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                      if(!(_loc18_ && Boolean(this)))
-                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                         addr0769:
-                                                                                                                                                                                                                                                         §§push(0);
-                                                                                                                                                                                                                                                         if(!_loc18_)
-                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                            §§goto(addr0771);
-                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                         §§goto(addr0a42);
-                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                      §§goto(addr095e);
-                                                                                                                                                                                                                                                   }
-                                                                                                                                                                                                                                                   §§goto(addr07de);
-                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                §§goto(addr09f0);
-                                                                                                                                                                                                                                             }
-                                                                                                                                                                                                                                             §§goto(addr08a1);
-                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                          §§goto(addr08b1);
-                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                       §§goto(addr0a56);
-                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                    §§goto(addr0a89);
-                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                              §§goto(addr07d6);
-                                                                                                                                                                                                                           }
-                                                                                                                                                                                                                           §§goto(addr082a);
-                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                        §§goto(addr0a16);
-                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                     §§goto(addr0723);
-                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                  §§goto(addr06a4);
-                                                                                                                                                                                                               }
-                                                                                                                                                                                                               §§goto(addr08b1);
-                                                                                                                                                                                                            }
-                                                                                                                                                                                                            §§goto(addr0781);
-                                                                                                                                                                                                         }
-                                                                                                                                                                                                         §§goto(addr092b);
-                                                                                                                                                                                                      }
-                                                                                                                                                                                                   }
-                                                                                                                                                                                                   §§goto(addr0668);
-                                                                                                                                                                                                }
-                                                                                                                                                                                                §§goto(addr06ac);
-                                                                                                                                                                                             }
-                                                                                                                                                                                             §§goto(addr09f0);
-                                                                                                                                                                                          }
-                                                                                                                                                                                          §§goto(addr0670);
-                                                                                                                                                                                       }
-                                                                                                                                                                                       §§goto(addr095e);
-                                                                                                                                                                                    }
-                                                                                                                                                                                    §§goto(addr08d4);
-                                                                                                                                                                                 }
-                                                                                                                                                                                 addr0525:
-                                                                                                                                                                                 this._globalBuffs = new Vector.<ConfigOutputDTO>();
-                                                                                                                                                                                 if(!_loc18_)
-                                                                                                                                                                                 {
-                                                                                                                                                                                    §§goto(addr0539);
-                                                                                                                                                                                 }
-                                                                                                                                                                                 §§goto(addr06a4);
-                                                                                                                                                                              }
-                                                                                                                                                                              §§goto(addr0943);
-                                                                                                                                                                           }
-                                                                                                                                                                           §§goto(addr0601);
-                                                                                                                                                                        }
-                                                                                                                                                                        addr051d:
-                                                                                                                                                                        if(_loc17_)
-                                                                                                                                                                        {
-                                                                                                                                                                           §§goto(addr0525);
-                                                                                                                                                                        }
-                                                                                                                                                                        §§goto(addr05d5);
-                                                                                                                                                                     }
-                                                                                                                                                                     if(!(_loc18_ && Boolean(param1)))
-                                                                                                                                                                     {
-                                                                                                                                                                        §§goto(addr051d);
-                                                                                                                                                                     }
-                                                                                                                                                                     if(!_loc18_)
-                                                                                                                                                                     {
-                                                                                                                                                                        §§goto(addr05bf);
-                                                                                                                                                                     }
-                                                                                                                                                                     §§goto(addr095e);
-                                                                                                                                                                  }
-                                                                                                                                                                  §§goto(addr086f);
-                                                                                                                                                               }
-                                                                                                                                                            }
-                                                                                                                                                            §§goto(addr0619);
-                                                                                                                                                         }
-                                                                                                                                                         §§goto(addr0771);
-                                                                                                                                                      }
-                                                                                                                                                      §§goto(addr09ff);
-                                                                                                                                                   }
-                                                                                                                                                   §§goto(addr0475);
-                                                                                                                                                }
-                                                                                                                                                §§goto(addr08d4);
-                                                                                                                                             }
-                                                                                                                                             §§goto(addr0769);
-                                                                                                                                          }
-                                                                                                                                          §§goto(addr0933);
-                                                                                                                                       }
-                                                                                                                                       §§goto(addr0879);
-                                                                                                                                    }
-                                                                                                                                    while(true)
-                                                                                                                                    {
-                                                                                                                                       if(!§§pop())
-                                                                                                                                       {
-                                                                                                                                          if(!_loc18_)
-                                                                                                                                          {
-                                                                                                                                             if(!(_loc18_ && Boolean(this)))
-                                                                                                                                             {
-                                                                                                                                                §§goto(addr05b7);
-                                                                                                                                             }
-                                                                                                                                             §§goto(addr08e4);
-                                                                                                                                          }
-                                                                                                                                          §§goto(addr0703);
-                                                                                                                                       }
-                                                                                                                                       else
-                                                                                                                                       {
-                                                                                                                                          _loc7_ = §§nextvalue(_loc15_,_loc16_);
-                                                                                                                                          if(_loc17_)
-                                                                                                                                          {
-                                                                                                                                             this._globalBuffs.push(new ConfigOutputDTO(_loc7_));
-                                                                                                                                          }
-                                                                                                                                          §§goto(addr0594);
-                                                                                                                                       }
-                                                                                                                                    }
-                                                                                                                                 }
-                                                                                                                                 §§goto(addr0933);
-                                                                                                                              }
-                                                                                                                              §§goto(addr0559);
-                                                                                                                           }
-                                                                                                                           §§goto(addr05d5);
-                                                                                                                        }
-                                                                                                                        §§goto(addr03c2);
-                                                                                                                     }
-                                                                                                                     §§goto(addr04a1);
-                                                                                                                  }
-                                                                                                                  §§goto(addr0751);
-                                                                                                               }
-                                                                                                               §§goto(addr03ba);
-                                                                                                            }
-                                                                                                            §§goto(addr0879);
-                                                                                                         }
-                                                                                                         else
-                                                                                                         {
-                                                                                                            _loc3_ = §§nextvalue(_loc15_,_loc16_);
-                                                                                                            if(_loc18_ && Boolean(param1))
-                                                                                                            {
-                                                                                                               continue;
-                                                                                                            }
-                                                                                                         }
-                                                                                                      }
-                                                                                                      while(true)
-                                                                                                      {
-                                                                                                         if(!§§pop())
-                                                                                                         {
-                                                                                                            if(_loc17_)
-                                                                                                            {
-                                                                                                               if(_loc17_)
-                                                                                                               {
-                                                                                                                  if(!_loc18_)
-                                                                                                                  {
-                                                                                                                     §§goto(addr09f0);
-                                                                                                                  }
-                                                                                                                  §§goto(addr0a16);
-                                                                                                               }
-                                                                                                            }
-                                                                                                            §§goto(addr0a89);
-                                                                                                         }
-                                                                                                         else
-                                                                                                         {
-                                                                                                            _loc13_ = §§nextvalue(_loc15_,_loc16_);
-                                                                                                            if(_loc17_)
-                                                                                                            {
-                                                                                                               this._playfieldRestrictions.push(new ConfigPlayfieldItemPlayfieldRestrictionDTO(_loc13_));
-                                                                                                            }
-                                                                                                            §§goto(addr09cd);
-                                                                                                         }
-                                                                                                      }
-                                                                                                      §§goto(addr0a83);
-                                                                                                      addr0304:
-                                                                                                   }
-                                                                                                   while(true)
-                                                                                                   {
-                                                                                                      this._zLevels.push(_loc3_);
-                                                                                                      §§goto(addr0304);
-                                                                                                   }
-                                                                                                }
-                                                                                                §§goto(addr0373);
-                                                                                             }
-                                                                                             §§goto(addr0991);
-                                                                                          }
-                                                                                          §§goto(addr0489);
-                                                                                       }
-                                                                                       §§goto(addr0601);
-                                                                                    }
-                                                                                    §§goto(addr0889);
-                                                                                 }
-                                                                                 §§goto(addr0500);
-                                                                              }
-                                                                              while(true)
-                                                                              {
-                                                                                 if(!§§pop())
-                                                                                 {
-                                                                                    if(!_loc18_)
-                                                                                    {
-                                                                                       §§goto(addr0500);
-                                                                                    }
-                                                                                    §§goto(addr0879);
-                                                                                 }
-                                                                                 else
-                                                                                 {
-                                                                                    _loc6_ = §§nextvalue(_loc15_,_loc16_);
-                                                                                    if(!_loc18_)
-                                                                                    {
-                                                                                       this._destructionPhases.push(new ConfigPhaseDTO(_loc6_));
-                                                                                    }
-                                                                                    §§goto(addr04ed);
-                                                                                 }
-                                                                              }
-                                                                              §§goto(addr0a83);
-                                                                           }
-                                                                           §§goto(addr0222);
-                                                                        }
-                                                                        §§goto(addr0230);
-                                                                     }
-                                                                  }
-                                                                  §§goto(addr0222);
-                                                               }
-                                                               §§goto(addr01d4);
-                                                            }
-                                                            §§goto(addr01eb);
-                                                         }
-                                                         §§goto(addr0222);
-                                                      }
-                                                      §§goto(addr01bd);
-                                                   }
-                                                   §§goto(addr019f);
-                                                }
-                                                §§goto(addr01d4);
-                                             }
-                                             §§goto(addr0171);
-                                          }
-                                          §§goto(addr0222);
-                                       }
-                                       §§goto(addr0159);
-                                    }
-                                    §§goto(addr014a);
-                                 }
-                                 §§goto(addr0222);
-                              }
-                           }
-                           §§goto(addr0115);
-                        }
-                        §§goto(addr0230);
-                     }
-                     §§goto(addr00c0);
-                  }
-                  §§goto(addr0202);
-               }
-               §§goto(addr0222);
-            }
-            §§goto(addr00ef);
+            return;
          }
-         §§goto(addr0222);
+         this._id = param1.id;
+         this._gfxId = param1.gf;
+         this._buildMode = param1.bm;
+         this._itemType = param1.it;
+         this._preload = param1.fp;
+         this._levelId = param1.l;
+         this._sellable = param1.s;
+         this._buyable = param1.b;
+         this._giftable = param1.g;
+         this._moveable = param1.m;
+         this._localeId = param1.fl;
+         this._maxHarvestCount = param1.upc;
+         this._nextConfigId = param1.uic;
+         this._upgradeable = param1.up;
+         this._destroyable = param1.d;
+         this._walkable = param1.w;
+         this._driveable = param1.dr;
+         this._sizeX = param1.x;
+         this._sizeY = param1.y;
+         this._permissionConfigId = param1.cpi;
+         this._maxProfessionalAmount = param1.ps;
+         this._configSecurityGrades = new Vector.<ConfigSecurityGradeDTO>();
+         for each(_loc2_ in param1.csg)
+         {
+            this._configSecurityGrades.push(new ConfigSecurityGradeDTO(_loc2_));
+         }
+         this._zLevels = new Vector.<Number>();
+         for each(_loc3_ in param1.z)
+         {
+            this._zLevels.push(_loc3_);
+         }
+         this._constructionPhases = new Vector.<ConfigPhaseDTO>();
+         if(param1.cph != null)
+         {
+            for each(_loc4_ in param1.cph)
+            {
+               this._constructionPhases.push(new ConfigPhaseDTO(_loc4_));
+            }
+         }
+         this._activePhases = new Vector.<ConfigPhaseDTO>();
+         if(param1.aph != null)
+         {
+            for each(_loc5_ in param1.aph)
+            {
+               this._activePhases.push(new ConfigPhaseDTO(_loc5_));
+            }
+         }
+         this._destructionPhases = new Vector.<ConfigPhaseDTO>();
+         if(param1.dph != null)
+         {
+            for each(_loc6_ in param1.dph)
+            {
+               this._destructionPhases.push(new ConfigPhaseDTO(_loc6_));
+            }
+         }
+         this._globalBuffs = new Vector.<ConfigOutputDTO>();
+         if(param1.gbu != null)
+         {
+            for each(_loc7_ in param1.gbu)
+            {
+               this._globalBuffs.push(new ConfigOutputDTO(_loc7_));
+            }
+         }
+         this._upgradeConfig = new ConfigUpgradeVo(param1.ug);
+         this._needShopConfigs = new Vector.<ConfigNeedDTO>();
+         if(param1.nd != null)
+         {
+            for each(_loc8_ in param1.nd)
+            {
+               this._needShopConfigs.push(new ConfigNeedDTO(_loc8_));
+            }
+         }
+         this._needRequireConfigs = new Vector.<ConfigNeedRequireDTO>();
+         if(param1.nq != null)
+         {
+            for each(_loc9_ in param1.nq)
+            {
+               this._needRequireConfigs.push(new ConfigNeedRequireDTO(_loc9_));
+            }
+         }
+         this._tags = new Vector.<String>();
+         this._tagIds = new Vector.<Number>();
+         if(param1.tag != null)
+         {
+            for each(_loc10_ in param1.tag)
+            {
+               this._tagIds.push(_loc10_);
+            }
+         }
+         this._maxResidents = this.getMaxResidents();
+         if(param1.edc)
+         {
+            this._educationSteps = new Vector.<ConfigEducationStepDTO>();
+            for each(_loc11_ in param1.edc)
+            {
+               this._educationSteps.push(new ConfigEducationStepDTO(_loc11_));
+            }
+         }
+         this._educationBasicTime = param1.et;
+         this._configInventoryBagId = param1.cibi;
+         this._improvementSlots = new Vector.<ConfigPlayfieldItemImprovementSlotDTO>();
+         if(param1.sl)
+         {
+            for each(_loc12_ in param1.sl)
+            {
+               this._improvementSlots.push(new ConfigPlayfieldItemImprovementSlotDTO(_loc12_));
+            }
+            this._improvementSlots.sort(this.sortOrder);
+         }
+         this._playfieldRestrictions = new Vector.<ConfigPlayfieldItemPlayfieldRestrictionDTO>();
+         if(param1.cpr)
+         {
+            for each(_loc13_ in param1.cpr)
+            {
+               this._playfieldRestrictions.push(new ConfigPlayfieldItemPlayfieldRestrictionDTO(_loc13_));
+            }
+         }
+         if(param1.ma)
+         {
+            this._configMasteryChallengeDTO = new ConfigMasteryChallengeDTO(param1.ma);
+         }
+         this._mysteryOutputPossiblities = new Vector.<ConfigOutputDTO>();
+         if(param1.myst)
+         {
+            for each(_loc14_ in param1.myst)
+            {
+               this._mysteryOutputPossiblities.push(new ConfigOutputDTO(_loc14_));
+            }
+         }
       }
       
       private function getMaxResidents() : Number
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:Vector.<ConfigPhaseDTO> = this.getAllPhasesByType(ServerPhaseTypes.RESIDENT);
-         if(_loc2_ || _loc2_)
+         if(_loc1_ != null && _loc1_.length > 0)
          {
-            §§push(_loc1_ == null);
-            if(!(_loc3_ && Boolean(this)))
+            if(_loc1_[0].listEntryOutputs[0])
             {
-               §§push(!§§pop());
-               if(_loc2_)
-               {
-                  var _temp_3:* = §§pop();
-                  §§push(_temp_3);
-                  if(_temp_3)
-                  {
-                     if(!(_loc3_ && Boolean(this)))
-                     {
-                        addr0061:
-                        §§pop();
-                        if(_loc2_ || _loc3_)
-                        {
-                           §§goto(addr0075);
-                        }
-                        §§goto(addr00a9);
-                     }
-                  }
-                  §§goto(addr0075);
-               }
-               §§goto(addr0061);
+               return _loc1_[0].listEntryOutputs[0].outputAmount;
             }
-            addr0075:
-            if(_loc1_.length > 0)
-            {
-               if(!_loc3_)
-               {
-                  addr008a:
-                  if(_loc1_[0].listEntryOutputs[0])
-                  {
-                     if(_loc2_ || _loc3_)
-                     {
-                        addr00a9:
-                        return _loc1_[0].listEntryOutputs[0].outputAmount;
-                     }
-                  }
-               }
-            }
-            return 0;
          }
-         §§goto(addr008a);
+         return 0;
       }
       
       private function sortOrder(param1:ConfigPlayfieldItemImprovementSlotDTO, param2:ConfigPlayfieldItemImprovementSlotDTO) : int
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!_loc3_)
+         if(param1.orderId > param2.orderId)
          {
-            §§push(param1.orderId);
-            if(_loc4_)
-            {
-               §§push(param2.orderId);
-               if(_loc4_)
-               {
-                  if(§§pop() > §§pop())
-                  {
-                     if(_loc4_)
-                     {
-                        §§push(1);
-                        if(!(_loc3_ && _loc3_))
-                        {
-                           return §§pop();
-                        }
-                        addr0082:
-                        addr0086:
-                        if(§§pop() < param2.orderId)
-                        {
-                           if(!_loc3_)
-                           {
-                              addr008f:
-                              §§push(-1);
-                              if(!(_loc3_ && Boolean(param2)))
-                              {
-                                 return §§pop();
-                              }
-                           }
-                           else
-                           {
-                              addr009f:
-                              §§push(0);
-                           }
-                           §§goto(addr00a1);
-                        }
-                        §§goto(addr009f);
-                     }
-                     §§goto(addr008f);
-                  }
-                  else
-                  {
-                     addr0062:
-                     §§push(param1.orderId);
-                     if(_loc4_ || Boolean(param2))
-                     {
-                        §§goto(addr0082);
-                     }
-                  }
-                  §§goto(addr00a1);
-               }
-               §§goto(addr0086);
-            }
-            addr00a1:
-            return §§pop();
+            return 1;
          }
-         §§goto(addr0062);
+         if(param1.orderId < param2.orderId)
+         {
+            return -1;
+         }
+         return 0;
       }
       
       public function get id() : Number
@@ -1189,13 +295,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set id(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            this._id = param1;
-         }
+         this._id = param1;
       }
       
       public function get gfxId() : Number
@@ -1205,13 +305,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set gfxId(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._gfxId = param1;
-         }
+         this._gfxId = param1;
       }
       
       public function get itemType() : Number
@@ -1231,13 +325,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set preload(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._preload = param1;
-         }
+         this._preload = param1;
       }
       
       public function get buildMode() : Number
@@ -1247,13 +335,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set buildMode(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._buildMode = param1;
-         }
+         this._buildMode = param1;
       }
       
       public function get levelId() : Number
@@ -1263,13 +345,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set levelId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._levelId = param1;
-         }
+         this._levelId = param1;
       }
       
       public function get sellable() : Boolean
@@ -1279,13 +355,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set sellable(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._sellable = param1;
-         }
+         this._sellable = param1;
       }
       
       public function get buyable() : Boolean
@@ -1295,13 +365,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set buyable(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._buyable = param1;
-         }
+         this._buyable = param1;
       }
       
       public function get giftable() : Boolean
@@ -1311,13 +375,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set giftable(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._giftable = param1;
-         }
+         this._giftable = param1;
       }
       
       public function get moveable() : Boolean
@@ -1327,13 +385,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set moveable(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._moveable = param1;
-         }
+         this._moveable = param1;
       }
       
       public function get destroyable() : Boolean
@@ -1343,13 +395,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set destroyable(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._destroyable = param1;
-         }
+         this._destroyable = param1;
       }
       
       public function get walkable() : Boolean
@@ -1359,13 +405,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set walkable(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            this._walkable = param1;
-         }
+         this._walkable = param1;
       }
       
       public function get driveable() : Boolean
@@ -1375,13 +415,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set driveable(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._driveable = param1;
-         }
+         this._driveable = param1;
       }
       
       public function get sizeX() : Number
@@ -1391,13 +425,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set sizeX(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._sizeX = param1;
-         }
+         this._sizeX = param1;
       }
       
       public function get sizeY() : Number
@@ -1407,13 +435,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set sizeY(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._sizeY = param1;
-         }
+         this._sizeY = param1;
       }
       
       public function get zLevels() : Vector.<Number>
@@ -1423,13 +445,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set zLevels(param1:Vector.<Number>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._zLevels = param1;
-         }
+         this._zLevels = param1;
       }
       
       public function log(param1:int, param2:int) : void
@@ -1453,511 +469,81 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function get globalBuffs() : Vector.<ConfigOutputDTO>
       {
-         var _temp_1:* = true;
-         var _loc16_:Boolean = false;
-         var _loc17_:Boolean = _temp_1;
          var _loc2_:ConfigPhaseDTO = null;
          var _loc3_:ConfigPhaseDTO = null;
          var _loc4_:ConfigOutputDTO = null;
          var _loc5_:Boolean = false;
          var _loc6_:ConfigOutputDTO = null;
          var _loc7_:ConfigOutputDTO = null;
-         var _loc8_:* = false;
+         var _loc8_:Boolean = false;
          var _loc9_:ConfigOutputDTO = null;
          var _loc1_:Vector.<ConfigOutputDTO> = new Vector.<ConfigOutputDTO>();
-         var _loc10_:int = 0;
-         var _loc11_:* = this.constructionPhases;
-         while(true)
+         for each(_loc2_ in this.constructionPhases)
          {
-            §§push(§§hasnext(_loc11_,_loc10_));
-            if(_loc16_ && Boolean(_loc2_))
+            for each(_loc4_ in _loc2_.listEntryOutputs)
             {
-               break;
-            }
-            if(§§pop())
-            {
-               _loc2_ = §§nextvalue(_loc10_,_loc11_);
-               if(!_loc16_)
+               if(_loc4_.resourceConfig == null)
                {
-                  var _loc12_:int = 0;
-                  if(!(_loc16_ && Boolean(_loc2_)))
-                  {
-                     loop1:
-                     for each(_loc4_ in _loc2_.listEntryOutputs)
-                     {
-                        §§push(_loc4_.resourceConfig);
-                        if(!(_loc16_ && Boolean(_loc1_)))
-                        {
-                           if(§§pop() == null)
-                           {
-                              continue;
-                           }
-                           if(_loc17_)
-                           {
-                              addr0125:
-                              var _loc14_:* = _loc4_.resourceConfig.type;
-                              if(!_loc16_)
-                              {
-                                 §§push(ServerResConst.RESOURCE_ENERGY_NEGATIVE);
-                                 if(_loc17_)
-                                 {
-                                    §§push(_loc14_);
-                                    if(_loc17_)
-                                    {
-                                       if(§§pop() === §§pop())
-                                       {
-                                          if(_loc17_ || Boolean(_loc2_))
-                                          {
-                                             addr0154:
-                                             §§push(0);
-                                             if(_loc17_)
-                                             {
-                                             }
-                                          }
-                                          else
-                                          {
-                                             addr0206:
-                                             §§push(4);
-                                             if(_loc16_ && Boolean(_loc3_))
-                                             {
-                                             }
-                                          }
-                                          addr0226:
-                                          while(true)
-                                          {
-                                             loop9:
-                                             switch(§§pop())
-                                             {
-                                                case 0:
-                                                case 1:
-                                                case 2:
-                                                case 3:
-                                                case 4:
-                                                   _loc5_ = false;
-                                                   if(!_loc16_)
-                                                   {
-                                                      while(true)
-                                                      {
-                                                         §§push(0);
-                                                         if(!_loc16_)
-                                                         {
-                                                            break;
-                                                         }
-                                                         break loop9;
-                                                      }
-                                                      for each(_loc6_ in _loc1_)
-                                                      {
-                                                         if(_loc6_.configId == _loc4_.configId)
-                                                         {
-                                                            if(_loc17_)
-                                                            {
-                                                               _loc5_ = true;
-                                                            }
-                                                            break;
-                                                         }
-                                                      }
-                                                      if(_loc17_)
-                                                      {
-                                                         if(_loc5_)
-                                                         {
-                                                            if(_loc16_)
-                                                            {
-                                                            }
-                                                         }
-                                                         else
-                                                         {
-                                                            _loc1_.push(_loc4_);
-                                                         }
-                                                      }
-                                                      addr00ba:
-                                                   }
-                                                   continue loop1;
-                                                default:
-                                                   continue loop1;
-                                             }
-                                          }
-                                       }
-                                       else
-                                       {
-                                          §§push(ServerResConst.RESOURCE_ENERGY_POSITIVE);
-                                          if(!_loc16_)
-                                          {
-                                             §§push(_loc14_);
-                                             if(!(_loc16_ && Boolean(_loc2_)))
-                                             {
-                                                addr017b:
-                                                if(§§pop() === §§pop())
-                                                {
-                                                   if(_loc17_)
-                                                   {
-                                                      §§push(1);
-                                                      if(_loc17_ || Boolean(_loc1_))
-                                                      {
-                                                      }
-                                                   }
-                                                   else
-                                                   {
-                                                      addr01ef:
-                                                      §§push(3);
-                                                      if(_loc17_)
-                                                      {
-                                                      }
-                                                   }
-                                                }
-                                                else
-                                                {
-                                                   §§push(ServerResConst.RESOURCE_HAPPINESS_NEGATIVE);
-                                                   if(_loc17_)
-                                                   {
-                                                      §§push(_loc14_);
-                                                      if(_loc17_)
-                                                      {
-                                                         if(§§pop() === §§pop())
-                                                         {
-                                                            if(_loc17_ || Boolean(_loc1_))
-                                                            {
-                                                               §§push(2);
-                                                               if(_loc17_)
-                                                               {
-                                                               }
-                                                            }
-                                                            else
-                                                            {
-                                                               §§goto(addr01ef);
-                                                            }
-                                                         }
-                                                         else
-                                                         {
-                                                            §§push(ServerResConst.RESOURCE_HAPPINESS_POSITIVE);
-                                                            if(!(_loc16_ && Boolean(_loc1_)))
-                                                            {
-                                                               addr01dd:
-                                                               §§push(_loc14_);
-                                                               if(!_loc16_)
-                                                               {
-                                                                  addr01e5:
-                                                                  if(§§pop() === §§pop())
-                                                                  {
-                                                                     if(!_loc16_)
-                                                                     {
-                                                                        §§goto(addr01ef);
-                                                                     }
-                                                                     else
-                                                                     {
-                                                                        §§goto(addr0206);
-                                                                     }
-                                                                  }
-                                                                  else
-                                                                  {
-                                                                     addr0202:
-                                                                     addr0200:
-                                                                     if(ServerResConst.RESOURCE_POPULATION === _loc14_)
-                                                                     {
-                                                                        §§goto(addr0206);
-                                                                     }
-                                                                     else
-                                                                     {
-                                                                        §§push(5);
-                                                                     }
-                                                                     §§goto(addr0226);
-                                                                  }
-                                                                  §§goto(addr0206);
-                                                               }
-                                                               §§goto(addr0202);
-                                                            }
-                                                            §§goto(addr0200);
-                                                         }
-                                                         §§goto(addr0226);
-                                                      }
-                                                      §§goto(addr0202);
-                                                   }
-                                                   §§goto(addr01dd);
-                                                }
-                                                §§goto(addr0226);
-                                             }
-                                             §§goto(addr01e5);
-                                          }
-                                          §§goto(addr01dd);
-                                       }
-                                       §§goto(addr0206);
-                                    }
-                                    §§goto(addr017b);
-                                 }
-                                 §§goto(addr0200);
-                              }
-                              §§goto(addr0154);
-                           }
-                           §§goto(addr00ba);
-                        }
-                        §§goto(addr0125);
-                     }
-                  }
+                  continue;
                }
-               continue;
-            }
-            if(!(_loc16_ && Boolean(_loc1_)))
-            {
-               if(!_loc16_)
+               switch(_loc4_.resourceConfig.type)
                {
-                  if(_loc17_ || Boolean(_loc1_))
-                  {
-                     _loc10_ = 0;
-                     addr04ec:
-                     if(_loc17_)
+                  case ServerResConst.RESOURCE_ENERGY_NEGATIVE:
+                  case ServerResConst.RESOURCE_ENERGY_POSITIVE:
+                  case ServerResConst.RESOURCE_HAPPINESS_NEGATIVE:
+                  case ServerResConst.RESOURCE_HAPPINESS_POSITIVE:
+                  case ServerResConst.RESOURCE_POPULATION:
+                     _loc5_ = false;
+                     for each(_loc6_ in _loc1_)
                      {
-                        addr029b:
-                        _loc11_ = this.activePhases;
-                        §§push(§§hasnext(_loc11_,_loc10_));
-                        break;
-                     }
-                  }
-                  return _loc1_;
-               }
-               §§goto(addr029b);
-            }
-            §§goto(addr04ec);
-         }
-         while(§§pop())
-         {
-            _loc3_ = §§nextvalue(_loc10_,_loc11_);
-            if(_loc17_)
-            {
-               if(_loc3_.phaseType == ServerPhaseTypes.ACTIVATION)
-               {
-                  if(!_loc16_)
-                  {
-                     _loc12_ = 0;
-                     if(!_loc16_)
-                     {
-                        loop6:
-                        for each(_loc7_ in _loc3_.listEntryOutputs)
+                        if(_loc6_.configId == _loc4_.configId)
                         {
-                           §§push(_loc7_.resourceConfig);
-                           if(_loc17_)
-                           {
-                              if(§§pop() == null)
-                              {
-                                 continue;
-                              }
-                              if(_loc16_ && Boolean(this))
-                              {
-                                 continue;
-                              }
-                              §§push(_loc7_.resourceConfig);
-                           }
-                           _loc14_ = §§pop().type;
-                           if(_loc17_)
-                           {
-                              §§push(ServerResConst.RESOURCE_ENERGY_NEGATIVE);
-                              if(!(_loc16_ && Boolean(this)))
-                              {
-                                 §§push(_loc14_);
-                                 if(!_loc16_)
-                                 {
-                                    if(§§pop() === §§pop())
-                                    {
-                                       if(!_loc16_)
-                                       {
-                                          §§push(0);
-                                          if(_loc16_)
-                                          {
-                                          }
-                                       }
-                                       else
-                                       {
-                                          addr0479:
-                                          §§push(3);
-                                          if(_loc16_ && Boolean(_loc2_))
-                                          {
-                                          }
-                                       }
-                                    }
-                                    else
-                                    {
-                                       §§push(ServerResConst.RESOURCE_ENERGY_POSITIVE);
-                                       if(!(_loc16_ && Boolean(_loc2_)))
-                                       {
-                                          addr03ed:
-                                          §§push(_loc14_);
-                                          if(_loc17_ || Boolean(_loc2_))
-                                          {
-                                             if(§§pop() === §§pop())
-                                             {
-                                                if(_loc17_ || Boolean(_loc1_))
-                                                {
-                                                   §§push(1);
-                                                   if(_loc17_)
-                                                   {
-                                                   }
-                                                }
-                                                else
-                                                {
-                                                   addr04a7:
-                                                   §§push(4);
-                                                   if(_loc17_)
-                                                   {
-                                                   }
-                                                }
-                                                addr04bf:
-                                                while(true)
-                                                {
-                                                   switch(§§pop())
-                                                   {
-                                                      case 0:
-                                                      case 1:
-                                                      case 2:
-                                                      case 3:
-                                                      case 4:
-                                                         §§push(0);
-                                                         if(!_loc16_)
-                                                         {
-                                                            for each(_loc9_ in _loc1_)
-                                                            {
-                                                               if(!_loc17_)
-                                                               {
-                                                                  continue;
-                                                               }
-                                                               §§push(RandomUtilities.isEqual(_loc9_,_loc7_));
-                                                               if(_loc17_)
-                                                               {
-                                                                  if(§§pop())
-                                                                  {
-                                                                     if(_loc16_ && Boolean(this))
-                                                                     {
-                                                                        continue;
-                                                                     }
-                                                                     §§push(true);
-                                                                     if(!(_loc16_ && Boolean(_loc1_)))
-                                                                     {
-                                                                        addr035f:
-                                                                        _loc8_ = §§pop();
-                                                                        if(!_loc16_)
-                                                                        {
-                                                                           break;
-                                                                        }
-                                                                        continue;
-                                                                     }
-                                                                  }
-                                                                  else
-                                                                  {
-                                                                     §§push(false);
-                                                                  }
-                                                                  _loc8_ = §§pop();
-                                                                  continue;
-                                                               }
-                                                               §§goto(addr035f);
-                                                            }
-                                                            if(_loc17_)
-                                                            {
-                                                               if(_loc8_)
-                                                               {
-                                                                  break;
-                                                               }
-                                                               if(!_loc17_)
-                                                               {
-                                                                  break;
-                                                               }
-                                                            }
-                                                            _loc1_.push(_loc7_);
-                                                            break;
-                                                         }
-                                                         continue;
-                                                   }
-                                                   continue loop6;
-                                                }
-                                             }
-                                             else
-                                             {
-                                                §§push(ServerResConst.RESOURCE_HAPPINESS_NEGATIVE);
-                                                if(!_loc16_)
-                                                {
-                                                   §§push(_loc14_);
-                                                   if(!_loc16_)
-                                                   {
-                                                      addr042e:
-                                                      if(§§pop() === §§pop())
-                                                      {
-                                                         if(!_loc16_)
-                                                         {
-                                                            addr0438:
-                                                            §§push(2);
-                                                            if(_loc16_ && Boolean(this))
-                                                            {
-                                                            }
-                                                         }
-                                                         else
-                                                         {
-                                                            §§goto(addr04a7);
-                                                         }
-                                                         §§goto(addr04bf);
-                                                      }
-                                                      else
-                                                      {
-                                                         §§push(ServerResConst.RESOURCE_HAPPINESS_POSITIVE);
-                                                         if(_loc17_ || Boolean(_loc1_))
-                                                         {
-                                                            addr045f:
-                                                            §§push(_loc14_);
-                                                            if(!_loc16_)
-                                                            {
-                                                               addr0467:
-                                                               if(§§pop() === §§pop())
-                                                               {
-                                                                  if(_loc17_ || Boolean(_loc2_))
-                                                                  {
-                                                                     §§goto(addr0479);
-                                                                  }
-                                                                  else
-                                                                  {
-                                                                     §§goto(addr04a7);
-                                                                  }
-                                                               }
-                                                               else
-                                                               {
-                                                                  addr04a3:
-                                                                  addr04a1:
-                                                                  if(ServerResConst.RESOURCE_POPULATION === _loc14_)
-                                                                  {
-                                                                     §§goto(addr04a7);
-                                                                  }
-                                                                  else
-                                                                  {
-                                                                     §§push(5);
-                                                                  }
-                                                                  §§goto(addr04bf);
-                                                               }
-                                                               §§goto(addr04a7);
-                                                            }
-                                                            §§goto(addr04a3);
-                                                         }
-                                                         §§goto(addr04a1);
-                                                      }
-                                                   }
-                                                   §§goto(addr0467);
-                                                }
-                                                §§goto(addr04a1);
-                                             }
-                                             §§goto(addr04a7);
-                                          }
-                                          §§goto(addr04a3);
-                                       }
-                                       §§goto(addr045f);
-                                    }
-                                    §§goto(addr04bf);
-                                 }
-                                 §§goto(addr042e);
-                              }
-                              §§goto(addr03ed);
-                           }
-                           §§goto(addr0438);
+                           _loc5_ = true;
+                           break;
                         }
                      }
+                     if(!_loc5_)
+                     {
+                        _loc1_.push(_loc4_);
+                     }
+               }
+            }
+         }
+         for each(_loc3_ in this.activePhases)
+         {
+            if(_loc3_.phaseType == ServerPhaseTypes.ACTIVATION)
+            {
+               for each(_loc7_ in _loc3_.listEntryOutputs)
+               {
+                  if(_loc7_.resourceConfig == null)
+                  {
+                     continue;
+                  }
+                  switch(_loc7_.resourceConfig.type)
+                  {
+                     case ServerResConst.RESOURCE_ENERGY_NEGATIVE:
+                     case ServerResConst.RESOURCE_ENERGY_POSITIVE:
+                     case ServerResConst.RESOURCE_HAPPINESS_NEGATIVE:
+                     case ServerResConst.RESOURCE_HAPPINESS_POSITIVE:
+                     case ServerResConst.RESOURCE_POPULATION:
+                        for each(_loc9_ in _loc1_)
+                        {
+                           if(RandomUtilities.isEqual(_loc9_,_loc7_))
+                           {
+                              _loc8_ = true;
+                              break;
+                           }
+                           _loc8_ = false;
+                        }
+                        if(!_loc8_)
+                        {
+                           _loc1_.push(_loc7_);
+                        }
                   }
                }
             }
-            §§push(§§hasnext(_loc11_,_loc10_));
          }
-         §§goto(addr04ea);
+         return _loc1_;
       }
       
       public function get activePhases() : Vector.<ConfigPhaseDTO>
@@ -1967,31 +553,15 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function getActivePhaseByOrderId(param1:int) : ConfigPhaseDTO
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc2_:ConfigPhaseDTO = null;
-         var _loc3_:int = 0;
-         var _loc4_:* = this._activePhases;
-         while(true)
+         for each(_loc2_ in this._activePhases)
          {
-            for each(_loc2_ in _loc4_)
+            if(_loc2_.phaseOrderId == param1)
             {
-               if(_loc5_)
-               {
-                  break;
-               }
-               if(_loc2_.phaseOrderId == param1)
-               {
-                  if(!_loc5_)
-                  {
-                     break;
-                  }
-               }
+               return _loc2_;
             }
-            return null;
          }
-         return _loc2_;
+         return null;
       }
       
       public function get constructionPhases() : Vector.<ConfigPhaseDTO>
@@ -2001,22 +571,12 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function getConstructionPhaseByOrderId(param1:int) : ConfigPhaseDTO
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
          var _loc2_:ConfigPhaseDTO = null;
-         var _loc3_:int = 0;
          for each(_loc2_ in this._constructionPhases)
          {
-            if(_loc5_ || Boolean(_loc3_))
+            if(_loc2_.phaseOrderId == param1)
             {
-               if(_loc2_.phaseOrderId == param1)
-               {
-                  if(!(_loc6_ && Boolean(_loc2_)))
-                  {
-                     return _loc2_;
-                  }
-               }
+               return _loc2_;
             }
          }
          return null;
@@ -2024,13 +584,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set animatedSwfPath(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._animatedSwfPath = param1;
-         }
+         this._animatedSwfPath = param1;
       }
       
       public function get animatedSwfPath() : String
@@ -2045,24 +599,12 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set animatedSwfName(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._animatedSwfName = param1;
-         }
+         this._animatedSwfName = param1;
       }
       
       public function set unlockLevel(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            this._unlockLevel = param1;
-         }
+         this._unlockLevel = param1;
       }
       
       public function get unlockLevel() : Number
@@ -2072,255 +614,57 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function getFirstPhaseByType(param1:String) : ConfigPhaseDTO
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc2_:ConfigPhaseDTO = null;
-         var _loc3_:* = 0;
-         var _loc4_:* = this._activePhases;
-         loop0:
-         while(true)
+         for each(_loc2_ in this._activePhases)
          {
-            §§push(§§hasnext(_loc4_,_loc3_));
-            if(!_loc6_)
+            if(_loc2_.phaseType == param1)
             {
-               break;
+               return _loc2_;
             }
-            if(§§pop())
-            {
-               _loc2_ = §§nextvalue(_loc3_,_loc4_);
-               if(_loc6_ || Boolean(_loc2_))
-               {
-                  if(_loc2_.phaseType == param1)
-                  {
-                     if(!_loc5_)
-                     {
-                        return _loc2_;
-                     }
-                  }
-               }
-               continue;
-            }
-            if(_loc6_)
-            {
-               if(_loc6_)
-               {
-                  if(!(_loc5_ && Boolean(_loc3_)))
-                  {
-                     §§push(0);
-                     if(_loc6_)
-                     {
-                        _loc3_ = §§pop();
-                        if(_loc6_ || Boolean(_loc3_))
-                        {
-                           _loc4_ = this._constructionPhases;
-                           while(true)
-                           {
-                              §§push(§§hasnext(_loc4_,_loc3_));
-                              if(_loc5_)
-                              {
-                                 break loop0;
-                              }
-                              if(§§pop())
-                              {
-                                 _loc2_ = §§nextvalue(_loc3_,_loc4_);
-                                 if(!_loc5_)
-                                 {
-                                    if(_loc2_.phaseType == param1)
-                                    {
-                                       if(!_loc5_)
-                                       {
-                                          return _loc2_;
-                                       }
-                                    }
-                                 }
-                                 continue;
-                              }
-                              if(!(_loc5_ && Boolean(_loc3_)))
-                              {
-                                 if(!_loc5_)
-                                 {
-                                    §§goto(addr00eb);
-                                 }
-                                 §§goto(addr0104);
-                              }
-                              §§goto(addr0153);
-                           }
-                        }
-                        addr00eb:
-                        if(_loc6_)
-                        {
-                           addr00f5:
-                           _loc3_ = 0;
-                           addr00f3:
-                           if(!(_loc5_ && Boolean(param1)))
-                           {
-                              addr0104:
-                              _loc4_ = this._destructionPhases;
-                              while(true)
-                              {
-                                 §§push(§§hasnext(_loc4_,_loc3_));
-                                 break loop0;
-                              }
-                              addr0153:
-                              addr014c:
-                           }
-                           addr0155:
-                        }
-                        return null;
-                     }
-                     §§goto(addr00f5);
-                  }
-                  §§goto(addr00f3);
-               }
-               §§goto(addr0155);
-            }
-            §§goto(addr0153);
          }
-         while(§§pop())
+         for each(_loc2_ in this._constructionPhases)
          {
-            _loc2_ = §§nextvalue(_loc3_,_loc4_);
-            if(!(_loc5_ && Boolean(this)))
+            if(_loc2_.phaseType == param1)
             {
-               if(_loc2_.phaseType == param1)
-               {
-                  if(!(_loc5_ && Boolean(_loc2_)))
-                  {
-                     return _loc2_;
-                  }
-               }
+               return _loc2_;
             }
-            §§goto(addr014c);
          }
-         §§goto(addr0153);
+         for each(_loc2_ in this._destructionPhases)
+         {
+            if(_loc2_.phaseType == param1)
+            {
+               return _loc2_;
+            }
+         }
+         return null;
       }
       
       public function getAllPhasesByType(param1:String) : Vector.<ConfigPhaseDTO>
       {
-         var _temp_1:* = true;
-         var _loc6_:Boolean = false;
-         var _loc7_:Boolean = _temp_1;
          var _loc3_:ConfigPhaseDTO = null;
          var _loc2_:Vector.<ConfigPhaseDTO> = new Vector.<ConfigPhaseDTO>();
-         var _loc4_:* = 0;
-         var _loc5_:* = this._activePhases;
-         while(true)
+         for each(_loc3_ in this._activePhases)
          {
-            §§push(§§hasnext(_loc5_,_loc4_));
-            if(_loc6_ && Boolean(_loc3_))
+            if(_loc3_.phaseType == param1)
             {
-               break;
+               _loc2_.push(_loc3_);
             }
-            if(§§pop())
-            {
-               _loc3_ = §§nextvalue(_loc4_,_loc5_);
-               if(!(_loc6_ && Boolean(param1)))
-               {
-                  if(_loc3_.phaseType == param1)
-                  {
-                     if(_loc7_)
-                     {
-                        _loc2_.push(_loc3_);
-                     }
-                  }
-               }
-               continue;
-            }
-            if(!(_loc6_ && Boolean(this)))
-            {
-               if(_loc7_)
-               {
-                  if(!(_loc6_ && Boolean(_loc3_)))
-                  {
-                     §§push(0);
-                     if(!_loc6_)
-                     {
-                        _loc4_ = §§pop();
-                        if(!_loc6_)
-                        {
-                           addr00bb:
-                           _loc5_ = this._constructionPhases;
-                           while(true)
-                           {
-                              §§push(§§hasnext(_loc5_,_loc4_));
-                              if(!_loc7_)
-                              {
-                                 break;
-                              }
-                              if(§§pop())
-                              {
-                                 _loc3_ = §§nextvalue(_loc4_,_loc5_);
-                                 if(_loc7_ || Boolean(_loc3_))
-                                 {
-                                    if(_loc3_.phaseType == param1)
-                                    {
-                                       if(!_loc6_)
-                                       {
-                                          _loc2_.push(_loc3_);
-                                       }
-                                    }
-                                 }
-                                 continue;
-                              }
-                              if(_loc7_)
-                              {
-                                 if(!(_loc6_ && Boolean(_loc3_)))
-                                 {
-                                    §§goto(addr0115);
-                                 }
-                                 §§goto(addr0183);
-                              }
-                              §§goto(addr0181);
-                           }
-                           break;
-                        }
-                        addr0115:
-                        if(_loc7_ || Boolean(param1))
-                        {
-                           addr0127:
-                           _loc4_ = 0;
-                           if(_loc7_ || Boolean(this))
-                           {
-                              _loc5_ = this._destructionPhases;
-                              while(true)
-                              {
-                                 §§push(§§hasnext(_loc5_,_loc4_));
-                                 break loop2;
-                              }
-                              addr0181:
-                              addr017a:
-                           }
-                           addr0183:
-                        }
-                        §§goto(addr0185);
-                     }
-                     §§goto(addr0127);
-                  }
-                  addr0185:
-                  return _loc2_;
-               }
-               §§goto(addr00bb);
-            }
-            §§goto(addr0181);
          }
-         while(§§pop())
+         for each(_loc3_ in this._constructionPhases)
          {
-            _loc3_ = §§nextvalue(_loc4_,_loc5_);
-            if(!(_loc6_ && Boolean(param1)))
+            if(_loc3_.phaseType == param1)
             {
-               if(_loc3_.phaseType == param1)
-               {
-                  if(!_loc6_)
-                  {
-                     addr0175:
-                     _loc2_.push(_loc3_);
-                  }
-               }
-               §§goto(addr017a);
+               _loc2_.push(_loc3_);
             }
-            §§goto(addr0175);
          }
-         §§goto(addr0181);
+         for each(_loc3_ in this._destructionPhases)
+         {
+            if(_loc3_.phaseType == param1)
+            {
+               _loc2_.push(_loc3_);
+            }
+         }
+         return _loc2_;
       }
       
       public function get upgradeable() : Boolean
@@ -2345,13 +689,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set nextConfigId(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._nextConfigId = param1;
-         }
+         this._nextConfigId = param1;
       }
       
       public function get needRequireConfigs() : Vector.<ConfigNeedRequireDTO>
@@ -2361,13 +699,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set needRequireConfigs(param1:Vector.<ConfigNeedRequireDTO>) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._needRequireConfigs = param1;
-         }
+         this._needRequireConfigs = param1;
       }
       
       public function get tagIds() : Vector.<Number>
@@ -2382,13 +714,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set tags(param1:Vector.<String>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._tags = param1;
-         }
+         this._tags = param1;
       }
       
       public function get localeId() : String
@@ -2403,13 +729,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set permissionConfig(param1:ConfigPlayfieldItemPermissionDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._permissionConfig = param1;
-         }
+         this._permissionConfig = param1;
       }
       
       public function get specialHighlighting() : Boolean
@@ -2419,13 +739,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set specialHighlighting(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._specialHighlighting = param1;
-         }
+         this._specialHighlighting = param1;
       }
       
       public function get isPremium() : Boolean
@@ -2435,13 +749,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set isPremium(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this._isPremium = param1;
-         }
+         this._isPremium = param1;
       }
       
       public function get maxResidents() : Number
@@ -2456,13 +764,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set residents(param1:Vector.<ResidentVo>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._residents = param1;
-         }
+         this._residents = param1;
       }
       
       public function get isUpgrade() : Boolean
@@ -2472,13 +774,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set isUpgrade(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._isUpgrade = param1;
-         }
+         this._isUpgrade = param1;
       }
       
       public function get configSecurityGrades() : Vector.<ConfigSecurityGradeDTO>
@@ -2498,13 +794,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set virtualObjectOverride(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._virtualObjectOverride = param1;
-         }
+         this._virtualObjectOverride = param1;
       }
       
       public function get educationSteps() : Vector.<ConfigEducationStepDTO>
@@ -2549,73 +839,22 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set upgradeLevel(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._upgradeLevel = param1;
-         }
+         this._upgradeLevel = param1;
       }
       
       public function get baseValueForRCConstructionCost() : Number
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:ConfigOutputDTO = null;
          var _loc1_:Vector.<ConfigPhaseDTO> = this.getAllPhasesByType(ServerPhaseTypes.CREATE_PLACE_PERMISSION);
-         if(!_loc4_)
+         if(_loc1_ != null && _loc1_.length > 0)
          {
-            §§push(_loc1_ == null);
-            if(_loc3_)
-            {
-               §§push(!§§pop());
-               if(_loc3_ || _loc3_)
-               {
-                  addr004f:
-                  var _temp_2:* = §§pop();
-                  §§push(_temp_2);
-                  if(_temp_2)
-                  {
-                     if(!(_loc4_ && Boolean(_loc2_)))
-                     {
-                        §§goto(addr0062);
-                     }
-                  }
-                  §§goto(addr006e);
-               }
-               addr0062:
-               §§pop();
-               if(_loc3_)
-               {
-                  addr006e:
-                  if(_loc1_.length > 0)
-                  {
-                     _loc2_ = _loc1_[0].getListEntryOutputByType(ServerOutputConstants.RESOURCE,ServerResConst.RESOURCE_REALCURRENCY);
-                     §§goto(addr0072);
-                  }
-                  §§goto(addr00b3);
-               }
-               §§goto(addr0072);
-            }
-            §§goto(addr004f);
-         }
-         addr0072:
-         if(!_loc4_)
-         {
+            _loc2_ = _loc1_[0].getListEntryOutputByType(ServerOutputConstants.RESOURCE,ServerResConst.RESOURCE_REALCURRENCY);
             if(_loc2_ != null)
             {
-               if(_loc3_ || Boolean(_loc1_))
-               {
-                  §§goto(addr00ae);
-               }
+               return _loc2_.outputAmount;
             }
-            addr00b3:
-            return -1;
          }
-         addr00ae:
-         return _loc2_.outputAmount;
+         return -1;
       }
    }
 }

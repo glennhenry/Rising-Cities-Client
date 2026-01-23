@@ -13,13 +13,7 @@ package net.bigpoint.cityrama.view.schoolBook
       
       public function ProfessionalTraitUnlockMiniLayerVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || Boolean(this))
-         {
-            super();
-         }
+         super();
       }
       
       public function get traitLocaleId() : String
@@ -29,13 +23,7 @@ package net.bigpoint.cityrama.view.schoolBook
       
       public function set traitLocaleId(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(param1))
-         {
-            this._traitLocaleId = param1;
-         }
+         this._traitLocaleId = param1;
       }
       
       public function get traitGfxId() : Number
@@ -45,13 +33,7 @@ package net.bigpoint.cityrama.view.schoolBook
       
       public function set traitGfxId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._traitGfxId = param1;
-         }
+         this._traitGfxId = param1;
       }
       
       public function get amount() : Number
@@ -61,13 +43,7 @@ package net.bigpoint.cityrama.view.schoolBook
       
       public function set amount(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._amount = param1;
-         }
+         this._amount = param1;
       }
       
       public function get gender() : int

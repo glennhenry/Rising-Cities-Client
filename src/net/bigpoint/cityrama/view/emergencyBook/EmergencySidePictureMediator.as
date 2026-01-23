@@ -9,23 +9,9 @@ package net.bigpoint.cityrama.view.emergencyBook
       
       public static const NAME:String = "EmergencySidePictureMediator";
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(_loc1_)
-      {
-         NAME = "EmergencySidePictureMediator";
-      }
-      
       public function EmergencySidePictureMediator(param1:Object)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            super(NAME,param1);
-         }
+         super(NAME,param1);
       }
       
       override public function getMediatorName() : String

@@ -13,13 +13,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function EmergencyTimerProggressVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
    }
 }

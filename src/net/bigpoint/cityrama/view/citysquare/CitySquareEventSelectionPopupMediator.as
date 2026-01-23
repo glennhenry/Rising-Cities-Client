@@ -17,142 +17,45 @@ package net.bigpoint.cityrama.view.citysquare
       
       public static const NAME:String = "CitySquareEventSelectionPopupMediator";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(_loc2_ || _loc2_)
-      {
-         NAME = "CitySquareEventSelectionPopupMediator";
-      }
-      
       private var _data:CitySquareEventSelectionVo;
       
       public function CitySquareEventSelectionPopupMediator(param1:String = "CitySquareEventSelectionPopupMediator", param2:Object = null)
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!_loc3_)
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
       
       override public function onRegister() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
-         {
-            super.onRegister();
-            if(_loc2_ || Boolean(this))
-            {
-               §§push(this.component);
-               if(!_loc1_)
-               {
-                  §§pop().eventSelectionList.addEventListener(CitySquareEventSelectionItemRenderer.ITEM_CLICKED,this.onEventSelected);
-                  if(!_loc1_)
-                  {
-                     §§goto(addr0066);
-                  }
-                  §§goto(addr0080);
-               }
-               addr0066:
-               this.component.addEventListener(Event.CLOSE,this.onClose);
-               if(_loc2_ || _loc1_)
-               {
-                  addr0080:
-                  sendNotification(VirtualTaskNotificationInterest.CITYSQUARELAYER_SELECTION_OPENED);
-               }
-               §§goto(addr008b);
-            }
-            addr008b:
-            return;
-         }
-         §§goto(addr0080);
+         super.onRegister();
+         this.component.eventSelectionList.addEventListener(CitySquareEventSelectionItemRenderer.ITEM_CLICKED,this.onEventSelected);
+         this.component.addEventListener(Event.CLOSE,this.onClose);
+         sendNotification(VirtualTaskNotificationInterest.CITYSQUARELAYER_SELECTION_OPENED);
       }
       
       override public function onRemove() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && Boolean(this)))
-         {
-            §§push(this.component);
-            if(!(_loc1_ && _loc1_))
-            {
-               §§pop().removeEventListener(Event.CLOSE,this.onClose);
-               if(_loc2_)
-               {
-                  this.component.eventSelectionList.removeEventListener(CitySquareEventSelectionItemRenderer.ITEM_CLICKED,this.onEventSelected);
-                  addr004f:
-                  if(_loc2_ || _loc1_)
-                  {
-                     §§goto(addr0076);
-                  }
-                  §§goto(addr008e);
-               }
-               addr0076:
-               sendNotification(VirtualTaskNotificationInterest.CITYSQUARELAYER_SELECTION_CLOSED);
-               if(!(_loc1_ && Boolean(this)))
-               {
-                  addr008e:
-                  super.onRemove();
-               }
-               §§goto(addr0093);
-            }
-            §§goto(addr004f);
-         }
-         addr0093:
+         this.component.removeEventListener(Event.CLOSE,this.onClose);
+         this.component.eventSelectionList.removeEventListener(CitySquareEventSelectionItemRenderer.ITEM_CLICKED,this.onEventSelected);
+         sendNotification(VirtualTaskNotificationInterest.CITYSQUARELAYER_SELECTION_CLOSED);
+         super.onRemove();
       }
       
       private function onEventSelected(param1:Event) : void
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
          var _loc2_:CitySquareEventSelectionItemRenderer = param1.target as CitySquareEventSelectionItemRenderer;
-         §§push(_loc2_.eventQuestId);
-         if(_loc5_)
-         {
-            §§push(§§pop());
-         }
-         var _loc3_:* = §§pop();
-         if(_loc5_ || Boolean(param1))
-         {
-            sendNotification(ApplicationNotificationConstants.OPEN_CITYSQUARE_QUEST_BY_ID,_loc3_);
-         }
+         var _loc3_:Number = _loc2_.eventQuestId;
+         sendNotification(ApplicationNotificationConstants.OPEN_CITYSQUARE_QUEST_BY_ID,_loc3_);
       }
       
       private function onClose(param1:Event) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.getMediatorName());
-         }
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.getMediatorName());
       }
       
       public function setData(param1:Object) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._data = param1 as CitySquareEventSelectionVo;
-            if(!(_loc2_ && Boolean(this)))
-            {
-               addr0043:
-               this.component.data = this._data;
-            }
-            return;
-         }
-         §§goto(addr0043);
+         this._data = param1 as CitySquareEventSelectionVo;
+         this.component.data = this._data;
       }
       
       private function get component() : CitySquareEventSelectionPopup
@@ -167,37 +70,13 @@ package net.bigpoint.cityrama.view.citysquare
       
       override public function handleNotification(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
          var _loc2_:EventLayerProxy = null;
-         var _loc3_:* = param1.getName();
-         if(!(_loc4_ && Boolean(_loc2_)))
+         switch(param1.getName())
          {
-            if(ApplicationNotificationConstants.CONFIG_EVENTS_CHANGED === _loc3_)
-            {
-               addr0085:
-               §§push(0);
-               if(_loc4_)
-               {
-               }
-            }
-            else
-            {
-               §§push(1);
-            }
-            switch(§§pop())
-            {
-               case 0:
-                  _loc2_ = facade.retrieveProxy(EventLayerProxy.NAME) as EventLayerProxy;
-                  if(!_loc4_)
-                  {
-                     this.setData(_loc2_.getCitysquareEventSelectionVo());
-                  }
-            }
-            return;
+            case ApplicationNotificationConstants.CONFIG_EVENTS_CHANGED:
+               _loc2_ = facade.retrieveProxy(EventLayerProxy.NAME) as EventLayerProxy;
+               this.setData(_loc2_.getCitysquareEventSelectionVo());
          }
-         §§goto(addr0085);
       }
    }
 }

@@ -8,13 +8,7 @@ package net.bigpoint.cityrama.controller.applicationModes.improvement
       
       public function MouseMoveForImprovementCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && Boolean(this)))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void

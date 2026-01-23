@@ -12,32 +12,14 @@ package net.bigpoint.cityrama.controller.architectBook
       
       public function UIAttentionMarksViewedPlayfieldItemId()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || Boolean(this))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:ServerStorageProxy = facade.retrieveProxy(ServerStorageProxy.NAME) as ServerStorageProxy;
-         if(!_loc3_)
-         {
-            OptionsGlobalVariables.getInstance().viewedPlayfieldItemConfigIds = _loc2_.uiDataDTO.viewedPlayfieldItemConfigIds;
-            if(!(_loc3_ && Boolean(this)))
-            {
-               addr0056:
-               facade.sendNotification(ServerNotificationConstants.CLIENT_MESSAGE_UPDATE_CLIENT_UI_DATA);
-            }
-            return;
-         }
-         §§goto(addr0056);
+         OptionsGlobalVariables.getInstance().viewedPlayfieldItemConfigIds = _loc2_.uiDataDTO.viewedPlayfieldItemConfigIds;
+         facade.sendNotification(ServerNotificationConstants.CLIENT_MESSAGE_UPDATE_CLIENT_UI_DATA);
       }
    }
 }

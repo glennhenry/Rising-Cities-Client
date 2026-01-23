@@ -23,230 +23,78 @@ package net.bigpoint.cityrama.controller.featureScreens
       
       public function OpenBigFeatureOrCharacterScreenCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || Boolean(this))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc6_:Boolean = false;
-         var _loc7_:Boolean = _temp_1;
          var _loc2_:Object = param1.getBody();
          var _loc3_:Boolean = Boolean(_loc2_.quest);
          var _loc4_:int = int(_loc2_.screen);
          var _loc5_:int = int(_loc2_.feature);
-         if(!(_loc6_ && Boolean(_loc2_)))
+         if(_loc4_)
          {
-            §§push(_loc4_);
-            if(_loc7_)
-            {
-               if(§§pop())
-               {
-                  if(_loc7_)
-                  {
-                     this.openCharacterScreen(_loc4_,_loc3_);
-                     if(_loc7_ || _loc3_)
-                     {
-                        §§goto(addr0080);
-                     }
-                  }
-                  §§goto(addr0094);
-               }
-               addr0080:
-               §§goto(addr0082);
-            }
-            addr0082:
-            if(_loc5_)
-            {
-               if(!(_loc6_ && Boolean(param1)))
-               {
-                  addr0094:
-                  this.openBigFeatureScreen(_loc5_,_loc3_);
-               }
-            }
-            return;
+            this.openCharacterScreen(_loc4_,_loc3_);
          }
-         §§goto(addr0080);
+         if(_loc5_)
+         {
+            this.openBigFeatureScreen(_loc5_,_loc3_);
+         }
       }
       
       private function openBigFeatureScreen(param1:int, param2:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc3_:PopupSettingsVo = new PopupSettingsVo(PopupSettingsVo.FEATURE_POPUP);
-         if(_loc6_)
+         _loc3_.modal = true;
+         _loc3_.viewClass = BigFeatureScreenPopup;
+         _loc3_.mediatorClass = BigFeatureScreenMediator;
+         _loc3_.mediatorName = BigFeatureScreenMediator.NAME;
+         _loc3_.openedByUserAxn = !param2;
+         var _loc4_:BigFeatureScreenVO = this.featureScreenProxy.getBigFeatureScreenVo(param1);
+         if(_loc4_)
          {
-            _loc3_.modal = true;
-            if(!(_loc5_ && param2))
-            {
-               addr003c:
-               _loc3_.viewClass = BigFeatureScreenPopup;
-               if(_loc6_ || Boolean(_loc3_))
-               {
-                  _loc3_.mediatorClass = BigFeatureScreenMediator;
-                  if(_loc6_)
-                  {
-                     §§goto(addr006a);
-                  }
-               }
-               §§goto(addr0079);
-            }
-            addr006a:
-            _loc3_.mediatorName = BigFeatureScreenMediator.NAME;
-            if(_loc6_)
-            {
-               addr0079:
-               §§push(_loc3_);
-               §§push(param2);
-               if(_loc6_)
-               {
-                  §§push(!§§pop());
-               }
-               §§pop().openedByUserAxn = §§pop();
-            }
-            var _temp_4:* = this.featureScreenProxy.getBigFeatureScreenVo(param1);
-            var _loc4_:BigFeatureScreenVO = this.featureScreenProxy.getBigFeatureScreenVo(param1);
-            if(_loc4_)
-            {
-               if(_loc6_ || Boolean(param1))
-               {
-                  _loc3_.data = {
-                     "feature":_loc4_,
-                     "quest":param2
-                  };
-                  if(_loc6_)
-                  {
-                     addr00c5:
-                     facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
-                  }
-                  §§goto(addr00d0);
-               }
-               §§goto(addr00c5);
-            }
-            addr00d0:
-            return;
+            _loc3_.data = {
+               "feature":_loc4_,
+               "quest":param2
+            };
+            facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
          }
-         §§goto(addr003c);
       }
       
       private function openCharacterScreen(param1:int, param2:Boolean) : void
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
          var _loc4_:FeatureCharacterScreenVo = null;
          var _loc3_:PopupSettingsVo = new PopupSettingsVo(PopupSettingsVo.FEATURE_POPUP);
-         if(_loc5_ || param2)
+         _loc3_.modal = true;
+         _loc3_.openedByUserAxn = !param2;
+         if(param1 == QuestGFXIDLayerConstants.INFRASTRUCTURE_INTRODUCTION)
          {
-            _loc3_.modal = true;
-            if(!_loc6_)
-            {
-               §§push(_loc3_);
-               §§push(param2);
-               if(!(_loc6_ && Boolean(_loc3_)))
-               {
-                  §§push(!§§pop());
-               }
-               §§pop().openedByUserAxn = §§pop();
-               if(!(_loc6_ && Boolean(this)))
-               {
-                  if(param1 == QuestGFXIDLayerConstants.INFRASTRUCTURE_INTRODUCTION)
-                  {
-                     if(!_loc6_)
-                     {
-                        addr0075:
-                        _loc3_.viewClass = InfrastructureIntroScreen;
-                        if(!_loc6_)
-                        {
-                           _loc3_.mediatorClass = InfrastructureIntroductionScreenMediator;
-                           if(_loc5_)
-                           {
-                              addr009a:
-                              _loc3_.mediatorName = InfrastructureIntroductionScreenMediator.NAME;
-                              if(!_loc6_)
-                              {
-                                 _loc3_.data = {"quest":param2};
-                                 if(!_loc5_)
-                                 {
-                                    §§goto(addr00d1);
-                                 }
-                                 §§goto(addr012b);
-                              }
-                              §§goto(addr00d1);
-                           }
-                           §§goto(addr00e6);
-                        }
-                        §§goto(addr00d1);
-                     }
-                     §§goto(addr009a);
-                  }
-                  else
-                  {
-                     _loc3_.viewClass = FeatureCharacterScreen;
-                     if(!(_loc6_ && Boolean(_loc3_)))
-                     {
-                        addr00d1:
-                        _loc3_.mediatorClass = FeatureCharacterScreenMediator;
-                        if(!(_loc6_ && Boolean(_loc3_)))
-                        {
-                           addr00e6:
-                           _loc3_.mediatorName = FeatureCharacterScreenMediator.NAME;
-                           if(!_loc6_)
-                           {
-                              _loc4_ = this.featureScreenProxy.getFeatureCharacterScreenVo(param1);
-                              addr00f5:
-                              if(_loc5_ || param2)
-                              {
-                                 _loc3_.data = {
-                                    "quest":param2,
-                                    "vo":_loc4_
-                                 };
-                              }
-                              addr012b:
-                              facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
-                           }
-                        }
-                        return;
-                     }
-                  }
-                  §§goto(addr00f5);
-               }
-               §§goto(addr00e6);
-            }
-            §§goto(addr0075);
+            _loc3_.viewClass = InfrastructureIntroScreen;
+            _loc3_.mediatorClass = InfrastructureIntroductionScreenMediator;
+            _loc3_.mediatorName = InfrastructureIntroductionScreenMediator.NAME;
+            _loc3_.data = {"quest":param2};
          }
-         §§goto(addr009a);
+         else
+         {
+            _loc3_.viewClass = FeatureCharacterScreen;
+            _loc3_.mediatorClass = FeatureCharacterScreenMediator;
+            _loc3_.mediatorName = FeatureCharacterScreenMediator.NAME;
+            _loc4_ = this.featureScreenProxy.getFeatureCharacterScreenVo(param1);
+            _loc3_.data = {
+               "quest":param2,
+               "vo":_loc4_
+            };
+         }
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
       }
       
       private function get featureScreenProxy() : FeatureScreenProxy
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
+         if(this._featP == null)
          {
-            §§push(this._featP);
-            if(!_loc1_)
-            {
-               if(§§pop() == null)
-               {
-                  if(_loc2_ || Boolean(this))
-                  {
-                     this._featP = facade.retrieveProxy(FeatureScreenProxy.NAME) as FeatureScreenProxy;
-                  }
-               }
-               addr004d:
-               return this._featP;
-            }
+            this._featP = facade.retrieveProxy(FeatureScreenProxy.NAME) as FeatureScreenProxy;
          }
-         §§goto(addr004d);
+         return this._featP;
       }
    }
 }

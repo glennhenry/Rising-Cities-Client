@@ -13,17 +13,8 @@ package net.bigpoint.cityrama.model.schoolBook.vo
       
       public function EducationAttributeVo(param1:ProfessionalAttributeDTO)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            super();
-            if(!(_loc3_ && _loc2_))
-            {
-               this._professionalAttributeDTO = param1;
-            }
-         }
+         super();
+         this._professionalAttributeDTO = param1;
       }
       
       public function get attributeType() : String
@@ -63,13 +54,7 @@ package net.bigpoint.cityrama.model.schoolBook.vo
       
       public function set tempMod(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._tempMod = param1;
-         }
+         this._tempMod = param1;
       }
       
       public function get traitThresholds() : Vector.<ConfigProfessionalAttributeThresholdDTO>

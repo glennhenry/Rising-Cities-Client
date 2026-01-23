@@ -3,38 +3,34 @@ package com.greensock.loading.display
    import com.greensock.loading.core.LoaderItem;
    import flash.display.DisplayObject;
    import flash.display.DisplayObjectContainer;
+   import flash.display.Loader;
+   import flash.display.LoaderInfo;
    import flash.display.Sprite;
+   import flash.geom.Matrix;
+   import flash.geom.Rectangle;
    
    public class ContentDisplay extends Sprite
    {
       
-      protected static var _transformProps:Object;
-      
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(_loc2_ || ContentDisplay)
-      {
-         _transformProps = {
-            "x":1,
-            "y":1,
-            "z":1,
-            "rotationX":1,
-            "rotationY":1,
-            "rotationZ":1,
-            "scaleX":1,
-            "scaleY":1,
-            "rotation":1,
-            "alpha":1,
-            "visible":true,
-            "blendMode":"normal",
-            "centerRegistration":false,
-            "crop":false,
-            "scaleMode":"stretch",
-            "hAlign":"center",
-            "vAlign":"center"
-         };
-      }
+      protected static var _transformProps:Object = {
+         "x":1,
+         "y":1,
+         "z":1,
+         "rotationX":1,
+         "rotationY":1,
+         "rotationZ":1,
+         "scaleX":1,
+         "scaleY":1,
+         "rotation":1,
+         "alpha":1,
+         "visible":true,
+         "blendMode":"normal",
+         "centerRegistration":false,
+         "crop":false,
+         "scaleMode":"stretch",
+         "hAlign":"center",
+         "vAlign":"center"
+      };
       
       protected var _scaleMode:String = "stretch";
       
@@ -66,20 +62,8 @@ package com.greensock.loading.display
       
       public function ContentDisplay(param1:LoaderItem)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            super();
-            if(!(_loc3_ && _loc2_))
-            {
-               addr003d:
-               this.loader = param1;
-            }
-            return;
-         }
-         §§goto(addr003d);
+         super();
+         this.loader = param1;
       }
       
       public function get scaleMode() : String
@@ -109,443 +93,79 @@ package com.greensock.loading.display
       
       public function dispose(param1:Boolean = true, param2:Boolean = true) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(!(_loc4_ && param2))
+         this.rawContent = null;
+         if(this.parent != null)
          {
-            this.rawContent = null;
-            if(!(_loc4_ && _loc3_))
-            {
-               if(this.parent != null)
-               {
-                  if(_loc3_ || param2)
-                  {
-                     this.parent.removeChild(this);
-                     if(!(_loc4_ && param2))
-                     {
-                        addr006c:
-                        this.gcProtect = null;
-                        if(_loc3_)
-                        {
-                           §§push(_loader);
-                           if(_loc3_)
-                           {
-                              if(§§pop() != null)
-                              {
-                                 if(!_loc4_)
-                                 {
-                                    addr008a:
-                                    §§push(param1);
-                                    if(!_loc4_)
-                                    {
-                                       if(§§pop())
-                                       {
-                                          if(_loc3_)
-                                          {
-                                             addr009a:
-                                             §§push(_loader);
-                                             if(!(_loc4_ && _loc3_))
-                                             {
-                                                §§pop().unload();
-                                                if(_loc3_)
-                                                {
-                                                   §§goto(addr00bf);
-                                                }
-                                                §§goto(addr00ca);
-                                             }
-                                             §§goto(addr00cd);
-                                          }
-                                          §§goto(addr00ca);
-                                       }
-                                       addr00bf:
-                                       §§goto(addr00c0);
-                                    }
-                                    addr00c0:
-                                    if(param2)
-                                    {
-                                       if(!_loc4_)
-                                       {
-                                          addr00cd:
-                                          _loader.dispose(false);
-                                          addr00ca:
-                                          if(_loc3_ || _loc3_)
-                                          {
-                                             addr00df:
-                                             _loader = null;
-                                          }
-                                          §§goto(addr00e6);
-                                       }
-                                       §§goto(addr00df);
-                                    }
-                                    §§goto(addr00e6);
-                                 }
-                              }
-                              addr00e6:
-                              return;
-                           }
-                           §§goto(addr00cd);
-                        }
-                        §§goto(addr008a);
-                     }
-                     §§goto(addr00ca);
-                  }
-               }
-               §§goto(addr006c);
-            }
-            §§goto(addr009a);
+            this.parent.removeChild(this);
          }
-         §§goto(addr006c);
+         this.gcProtect = null;
+         if(_loader != null)
+         {
+            if(param1)
+            {
+               _loader.unload();
+            }
+            if(param2)
+            {
+               _loader.dispose(false);
+               _loader = null;
+            }
+         }
       }
       
       public function set scaleMode(param1:String) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(!_loc4_)
+         if(param1 == "none" && _rawContent != null)
          {
-            §§push(param1 == "none");
-            if(_loc3_)
-            {
-               var _temp_1:* = §§pop();
-               §§push(_temp_1);
-               if(_temp_1)
-               {
-                  if(_loc3_ || Boolean(this))
-                  {
-                     §§pop();
-                     if(_loc3_ || _loc2_)
-                     {
-                        addr005b:
-                        §§push(_rawContent == null);
-                        if(!_loc4_)
-                        {
-                           §§push(!§§pop());
-                        }
-                        if(§§pop())
-                        {
-                           if(!_loc4_)
-                           {
-                              _rawContent.scaleX = _rawContent.scaleY = 1;
-                              if(_loc3_)
-                              {
-                                 addr0088:
-                                 _scaleMode = param1;
-                                 if(_loc3_ || Boolean(this))
-                                 {
-                                    addr009c:
-                                    _update();
-                                 }
-                              }
-                              return;
-                           }
-                           §§goto(addr009c);
-                        }
-                     }
-                     §§goto(addr0088);
-                  }
-               }
-            }
-            §§goto(addr005b);
+            var _temp_2:* = _rawContent;
+            _rawContent.scaleY = 1;
+            _temp_2.scaleX = 1;
          }
-         §§goto(addr0088);
+         _scaleMode = param1;
+         _update();
       }
       
       public function set crop(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && param1))
-         {
-            _crop = param1;
-            if(_loc2_ || Boolean(this))
-            {
-               addr003f:
-               _update();
-            }
-            return;
-         }
-         §§goto(addr003f);
+         _crop = param1;
+         _update();
       }
       
       public function set loader(param1:LoaderItem) : void
       {
-         var _temp_1:* = true;
-         var _loc6_:Boolean = false;
-         var _loc7_:Boolean = _temp_1;
-         var _loc2_:* = null;
-         var _loc3_:* = null;
-         if(!(_loc6_ && Boolean(_loc3_)))
+         var _loc3_:String = null;
+         _loader = param1;
+         if(_loader == null)
          {
-            _loader = param1;
-            if(!_loc6_)
+            return;
+         }
+         if(!_loader.hasOwnProperty("setContentDisplay"))
+         {
+            throw new Error("Incompatible loader used for a ContentDisplay");
+         }
+         this.name = _loader.name;
+         for(_loc3_ in _transformProps)
+         {
+            if(_loc3_ in _loader.vars)
             {
-               §§push(_loader);
-               if(_loc7_)
-               {
-                  if(§§pop() == null)
-                  {
-                     if(!(_loc6_ && Boolean(this)))
-                     {
-                        return;
-                     }
-                  }
-                  else
-                  {
-                     addr0065:
-                     if(!_loader.hasOwnProperty("setContentDisplay"))
-                     {
-                        if(_loc7_ || Boolean(param1))
-                        {
-                           throw new Error("Incompatible loader used for a ContentDisplay");
-                        }
-                     }
-                     addr0098:
-                     this.name = _loader.name;
-                  }
-                  var _loc4_:* = 0;
-                  var _loc5_:* = _transformProps;
-                  for(_loc4_ in _loc5_)
-                  {
-                     §§push(_loc4_);
-                     if(!_loc6_)
-                     {
-                        _loc3_ = §§pop();
-                        if(!(_loc6_ && Boolean(this)))
-                        {
-                           addr00cd:
-                           if(!(_loc3_ in _loader.vars))
-                           {
-                              continue;
-                           }
-                           if(_loc6_ && Boolean(_loc2_))
-                           {
-                              continue;
-                           }
-                           _loc2_ = typeof _transformProps[_loc3_];
-                           if(_loc6_ && Boolean(this))
-                           {
-                              continue;
-                           }
-                        }
-                        §§push(this);
-                        §§push(_loc3_);
-                        if(!(_loc6_ && Boolean(_loc3_)))
-                        {
-                           §§push(_loc2_);
-                           if(_loc7_ || Boolean(this))
-                           {
-                              §§push("number");
-                              if(_loc7_)
-                              {
-                                 if(§§pop() == §§pop())
-                                 {
-                                    addr016f:
-                                    §§pop()[§§pop()] = _loc7_ ? Number(_loader.vars[_loc3_]) : String(_loader.vars[_loc3_]);
-                                    continue;
-                                 }
-                                 addr0147:
-                                 addr0144:
-                                 if(_loc2_ == "string")
-                                 {
-                                    §§goto(addr014b);
-                                 }
-                                 else
-                                 {
-                                    §§push(Boolean(_loader.vars[_loc3_]));
-                                 }
-                                 §§goto(addr016f);
-                                 §§goto(addr014b);
-                              }
-                              §§goto(addr0147);
-                           }
-                           §§goto(addr0144);
-                        }
-                        §§goto(addr014b);
-                     }
-                     §§goto(addr00cd);
-                  }
-                  if(_loc7_)
-                  {
-                     _bgColor = uint(_loader.vars.bgColor);
-                     if(_loc7_ || Boolean(param1))
-                     {
-                        §§push(§§findproperty(_bgAlpha));
-                        if(!(_loc6_ && Boolean(this)))
-                        {
-                           §§push("bgAlpha");
-                           if(!(_loc6_ && Boolean(param1)))
-                           {
-                              §§push(_loader);
-                              if(!(_loc6_ && Boolean(param1)))
-                              {
-                                 §§push(§§pop() in §§pop().vars);
-                                 if(!(_loc6_ && Boolean(_loc3_)))
-                                 {
-                                    if(§§pop())
-                                    {
-                                       if(!_loc6_)
-                                       {
-                                          §§push(Number(_loader.vars.bgAlpha));
-                                          if(_loc7_)
-                                          {
-                                          }
-                                       }
-                                       else
-                                       {
-                                          addr022a:
-                                          §§push(1);
-                                          if(!_loc6_)
-                                          {
-                                             §§push(§§pop());
-                                             if(_loc6_)
-                                             {
-                                             }
-                                          }
-                                          else
-                                          {
-                                             addr023f:
-                                             §§push(§§pop());
-                                          }
-                                       }
-                                       §§pop()._bgAlpha = §§pop();
-                                       if(!_loc6_)
-                                       {
-                                          addr0249:
-                                          §§push(§§findproperty(_fitWidth));
-                                          if(_loc7_ || Boolean(param1))
-                                          {
-                                             if("fitWidth" in _loader.vars)
-                                             {
-                                                addr0268:
-                                                §§push(Number(_loader.vars.fitWidth));
-                                                if(_loc7_ || Boolean(_loc2_))
-                                                {
-                                                }
-                                             }
-                                             else
-                                             {
-                                                §§push(Number(_loader.vars.width));
-                                             }
-                                             §§pop()._fitWidth = §§pop();
-                                             if(!_loc6_)
-                                             {
-                                                §§push(§§findproperty(_fitHeight));
-                                                if(_loc7_)
-                                                {
-                                                   if("fitHeight" in _loader.vars)
-                                                   {
-                                                      addr02ba:
-                                                      §§push(Number(_loader.vars.fitHeight));
-                                                      if(_loc6_)
-                                                      {
-                                                      }
-                                                   }
-                                                   else
-                                                   {
-                                                      §§push(Number(_loader.vars.height));
-                                                   }
-                                                   §§pop()._fitHeight = §§pop();
-                                                   if(_loc7_ || Boolean(this))
-                                                   {
-                                                      _update();
-                                                      if(_loc7_ || Boolean(this))
-                                                      {
-                                                         addr030a:
-                                                         §§push(_loader);
-                                                         if(_loc7_)
-                                                         {
-                                                            if(§§pop().vars.container is DisplayObjectContainer)
-                                                            {
-                                                               if(!(_loc6_ && Boolean(_loc2_)))
-                                                               {
-                                                                  §§push(_loader);
-                                                                  if(_loc7_ || Boolean(_loc2_))
-                                                                  {
-                                                                     addr0340:
-                                                                     (§§pop().vars.container as DisplayObjectContainer).addChild(this);
-                                                                     if(_loc7_)
-                                                                     {
-                                                                        addr0355:
-                                                                        §§push(_loader);
-                                                                        if(!_loc6_)
-                                                                        {
-                                                                           if(§§pop().content != this)
-                                                                           {
-                                                                              if(_loc7_ || Boolean(param1))
-                                                                              {
-                                                                                 addr0384:
-                                                                                 (_loader as Object).setContentDisplay(this);
-                                                                                 addr0381:
-                                                                                 if(!_loc6_)
-                                                                                 {
-                                                                                    addr0393:
-                                                                                    this.rawContent = (_loader as Object).rawContent;
-                                                                                 }
-                                                                              }
-                                                                              §§goto(addr03a1);
-                                                                           }
-                                                                           §§goto(addr0393);
-                                                                        }
-                                                                        §§goto(addr0384);
-                                                                     }
-                                                                     §§goto(addr0381);
-                                                                  }
-                                                                  §§goto(addr0384);
-                                                               }
-                                                               addr03a1:
-                                                               return;
-                                                            }
-                                                            §§goto(addr0355);
-                                                         }
-                                                         §§goto(addr0340);
-                                                      }
-                                                      §§goto(addr0393);
-                                                   }
-                                                   §§goto(addr0355);
-                                                }
-                                                §§goto(addr02ba);
-                                             }
-                                             §§goto(addr0381);
-                                          }
-                                          §§goto(addr0268);
-                                       }
-                                       §§goto(addr030a);
-                                    }
-                                    else
-                                    {
-                                       addr0226:
-                                       addr0222:
-                                       addr021f:
-                                       if("bgColor" in _loader.vars)
-                                       {
-                                          §§goto(addr022a);
-                                       }
-                                       else
-                                       {
-                                          §§push(0);
-                                       }
-                                       §§goto(addr023f);
-                                    }
-                                 }
-                                 §§goto(addr0226);
-                              }
-                              §§goto(addr0222);
-                           }
-                           §§goto(addr021f);
-                        }
-                        §§goto(addr022a);
-                     }
-                     §§goto(addr0249);
-                  }
-                  §§goto(addr0393);
-               }
-               §§goto(addr0065);
+               var _loc2_:* = typeof _transformProps[_loc3_];
+               this[_loc3_] = Boolean(_loader.vars[_loc3_]);
             }
          }
-         §§goto(addr0098);
+         _bgColor = uint(_loader.vars.bgColor);
+         _bgAlpha = "bgAlpha" in _loader.vars ? Number(_loader.vars.bgAlpha) : ("bgColor" in _loader.vars ? 1 : 0);
+         _fitWidth = "fitWidth" in _loader.vars ? Number(_loader.vars.fitWidth) : Number(_loader.vars.width);
+         _fitHeight = "fitHeight" in _loader.vars ? Number(_loader.vars.fitHeight) : Number(_loader.vars.height);
+         _update();
+         if(_loader.vars.container is DisplayObjectContainer)
+         {
+            (_loader.vars.container as DisplayObjectContainer).addChild(this);
+         }
+         if(_loader.content != this)
+         {
+            (_loader as Object).setContentDisplay(this);
+         }
+         this.rawContent = (_loader as Object).rawContent;
       }
       
       public function get centerRegistration() : Boolean
@@ -560,20 +180,8 @@ package com.greensock.loading.display
       
       public function set fitHeight(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            _fitHeight = param1;
-            if(_loc3_)
-            {
-               addr0025:
-               _update();
-            }
-            return;
-         }
-         §§goto(addr0025);
+         _fitHeight = param1;
+         _update();
       }
       
       public function get rawContent() : *
@@ -583,17 +191,8 @@ package com.greensock.loading.display
       
       public function set bgAlpha(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            _bgAlpha = param1;
-            if(_loc2_)
-            {
-               _update();
-            }
-         }
+         _bgAlpha = param1;
+         _update();
       }
       
       public function get fitWidth() : Number
@@ -608,336 +207,169 @@ package com.greensock.loading.display
       
       public function set bgColor(param1:uint) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(param1)))
-         {
-            _bgColor = param1;
-            if(!(_loc2_ && Boolean(param1)))
-            {
-               addr0041:
-               _update();
-            }
-            return;
-         }
-         §§goto(addr0041);
+         _bgColor = param1;
+         _update();
       }
       
       public function set centerRegistration(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            _centerRegistration = param1;
-            if(!(_loc2_ && Boolean(this)))
-            {
-               _update();
-            }
-         }
+         _centerRegistration = param1;
+         _update();
       }
       
       public function set rawContent(param1:*) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || param1)
+         if(_rawContent != null && _rawContent != param1)
          {
-            §§push(_rawContent == null);
-            if(!_loc2_)
+            if(_rawContent.parent == this)
             {
-               §§push(!§§pop());
-               if(_loc3_)
-               {
-                  var _temp_3:* = §§pop();
-                  §§push(_temp_3);
-                  §§push(_temp_3);
-                  if(!(_loc2_ && param1))
-                  {
-                     if(§§pop())
-                     {
-                        if(!(_loc2_ && _loc2_))
-                        {
-                           §§pop();
-                           if(!(_loc2_ && Boolean(this)))
-                           {
-                              addr005c:
-                              §§push(_rawContent == param1);
-                              if(!_loc2_)
-                              {
-                                 §§push(!§§pop());
-                                 if(!(_loc2_ && _loc3_))
-                                 {
-                                    addr0074:
-                                    if(§§pop())
-                                    {
-                                       if(!_loc2_)
-                                       {
-                                          if(_rawContent.parent == this)
-                                          {
-                                             if(_loc3_)
-                                             {
-                                                removeChild(_rawContent);
-                                                if(!_loc3_)
-                                                {
-                                                   addr0109:
-                                                   _cropContainer.removeChild(_rawContent);
-                                                   if(_loc3_ || _loc3_)
-                                                   {
-                                                      removeChild(_cropContainer);
-                                                      if(!(_loc2_ && Boolean(this)))
-                                                      {
-                                                         _cropContainer = null;
-                                                         if(!_loc2_)
-                                                         {
-                                                            addr0143:
-                                                            _rawContent = param1 as DisplayObject;
-                                                            if(!_loc2_)
-                                                            {
-                                                               addr0152:
-                                                               if(_rawContent == null)
-                                                               {
-                                                                  if(!_loc2_)
-                                                                  {
-                                                                     return;
-                                                                  }
-                                                               }
-                                                               else
-                                                               {
-                                                                  addr0165:
-                                                                  §§push(_rawContent.parent == null);
-                                                                  if(_loc3_)
-                                                                  {
-                                                                     var _temp_10:* = §§pop();
-                                                                     §§push(_temp_10);
-                                                                     §§push(_temp_10);
-                                                                     if(_loc3_ || _loc2_)
-                                                                     {
-                                                                        addr0180:
-                                                                        if(!§§pop())
-                                                                        {
-                                                                           if(_loc3_)
-                                                                           {
-                                                                              addr0189:
-                                                                              §§pop();
-                                                                              if(_loc3_)
-                                                                              {
-                                                                                 §§push(_rawContent.parent == this);
-                                                                                 if(_loc3_)
-                                                                                 {
-                                                                                    addr019c:
-                                                                                    §§push(!§§pop());
-                                                                                    if(!_loc2_)
-                                                                                    {
-                                                                                       addr01a2:
-                                                                                       var _temp_12:* = §§pop();
-                                                                                       addr01a3:
-                                                                                       §§push(_temp_12);
-                                                                                       if(_temp_12)
-                                                                                       {
-                                                                                          if(_loc3_ || Boolean(this))
-                                                                                          {
-                                                                                             addr01b4:
-                                                                                             §§pop();
-                                                                                             if(_loc3_ || _loc2_)
-                                                                                             {
-                                                                                                addr01e7:
-                                                                                                addr01c2:
-                                                                                                §§push(_rawContent.parent == _cropContainer);
-                                                                                                if(_loc3_ || param1)
-                                                                                                {
-                                                                                                   addr01e6:
-                                                                                                   §§push(!§§pop());
-                                                                                                }
-                                                                                                if(§§pop())
-                                                                                                {
-                                                                                                   if(_loc3_)
-                                                                                                   {
-                                                                                                      addr01f0:
-                                                                                                      addChildAt(_rawContent as DisplayObject,0);
-                                                                                                      if(_loc3_ || _loc2_)
-                                                                                                      {
-                                                                                                         addr020c:
-                                                                                                         _update();
-                                                                                                      }
-                                                                                                      §§goto(addr0213);
-                                                                                                   }
-                                                                                                }
-                                                                                                §§goto(addr020c);
-                                                                                             }
-                                                                                             §§goto(addr0213);
-                                                                                          }
-                                                                                       }
-                                                                                       §§goto(addr01e7);
-                                                                                    }
-                                                                                 }
-                                                                                 §§goto(addr01e6);
-                                                                              }
-                                                                              §§goto(addr020c);
-                                                                           }
-                                                                           §§goto(addr019c);
-                                                                        }
-                                                                        §§goto(addr01e7);
-                                                                     }
-                                                                     §§goto(addr01a3);
-                                                                  }
-                                                                  §§goto(addr019c);
-                                                               }
-                                                            }
-                                                            §§goto(addr0213);
-                                                         }
-                                                         §§goto(addr0165);
-                                                      }
-                                                      §§goto(addr0213);
-                                                   }
-                                                   §§goto(addr01f0);
-                                                }
-                                                §§goto(addr0143);
-                                             }
-                                             §§goto(addr020c);
-                                          }
-                                          else
-                                          {
-                                             §§push(_cropContainer == null);
-                                             if(_loc3_ || param1)
-                                             {
-                                                addr00b2:
-                                                §§push(!§§pop());
-                                                if(_loc3_)
-                                                {
-                                                   var _temp_18:* = §§pop();
-                                                   §§push(_temp_18);
-                                                   §§push(_temp_18);
-                                                   if(!(_loc2_ && param1))
-                                                   {
-                                                      addr00c6:
-                                                      if(§§pop())
-                                                      {
-                                                         if(_loc3_ || Boolean(this))
-                                                         {
-                                                            §§goto(addr00d7);
-                                                         }
-                                                         §§goto(addr01b4);
-                                                      }
-                                                      §§goto(addr0100);
-                                                   }
-                                                   §§goto(addr0180);
-                                                }
-                                                §§goto(addr01e7);
-                                             }
-                                          }
-                                          §§goto(addr0189);
-                                       }
-                                       §§goto(addr0152);
-                                    }
-                                    §§goto(addr0143);
-                                 }
-                                 §§goto(addr00b2);
-                              }
-                              §§goto(addr0100);
-                           }
-                           §§goto(addr00dd);
-                        }
-                        §§goto(addr01e7);
-                     }
-                     §§goto(addr0074);
-                  }
-                  §§goto(addr00c6);
-               }
-               §§goto(addr00b2);
+               removeChild(_rawContent);
             }
-            addr00d7:
-            §§pop();
-            if(_loc3_)
+            else if(_cropContainer != null && _rawContent.parent == _cropContainer)
             {
-               addr00dd:
-               §§push(_rawContent.parent == _cropContainer);
-               if(_loc3_ || param1)
-               {
-                  addr0100:
-                  if(§§pop())
-                  {
-                     if(!_loc2_)
-                     {
-                        §§goto(addr0109);
-                     }
-                     §§goto(addr01c2);
-                  }
-                  §§goto(addr0143);
-               }
-               §§goto(addr01a2);
+               _cropContainer.removeChild(_rawContent);
+               removeChild(_cropContainer);
+               _cropContainer = null;
             }
-            addr0213:
+         }
+         _rawContent = param1 as DisplayObject;
+         if(_rawContent == null)
+         {
             return;
          }
-         §§goto(addr005c);
+         if(_rawContent.parent == null || _rawContent.parent != this && _rawContent.parent != _cropContainer)
+         {
+            addChildAt(_rawContent as DisplayObject,0);
+         }
+         _update();
       }
       
       public function set vAlign(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            _vAlign = param1;
-            if(!(_loc3_ && Boolean(this)))
-            {
-               addr003d:
-               _update();
-            }
-            return;
-         }
-         §§goto(addr003d);
+         _vAlign = param1;
+         _update();
       }
       
       protected function _update() : void
       {
-         /*
-          * Decompilation error
-          * Timeout (1 minute) was reached
-          * Instruction count: 1325
-          */
-         throw new flash.errors.IllegalOperationError("Not decompiled due to timeout");
+         var _loc6_:Matrix = null;
+         var _loc7_:LoaderInfo = null;
+         var _loc8_:Number = NaN;
+         var _loc9_:Number = NaN;
+         var _loc10_:Number = NaN;
+         var _loc11_:Number = NaN;
+         var _loc12_:Number = NaN;
+         var _loc13_:Number = NaN;
+         var _loc1_:Number = _centerRegistration && _fitWidth > 0 ? _fitWidth / -2 : 0;
+         var _loc2_:Number = _centerRegistration && _fitHeight > 0 ? _fitHeight / -2 : 0;
+         graphics.clear();
+         if(_fitWidth > 0 && _fitHeight > 0)
+         {
+            graphics.beginFill(_bgColor,_bgAlpha);
+            graphics.drawRect(_loc1_,_loc2_,_fitWidth,_fitHeight);
+            graphics.endFill();
+         }
+         if(_rawContent == null)
+         {
+            return;
+         }
+         var _loc3_:DisplayObject = _rawContent;
+         var _loc4_:Number = _loc3_.width;
+         var _loc5_:Number = _loc3_.height;
+         if(_loader != null && Boolean(_loader.hasOwnProperty("getClass")))
+         {
+            _loc6_ = _loc3_.transform.matrix;
+            _loc7_ = _loc3_ is Loader ? Object(_loc3_).contentLoaderInfo : _loc3_.loaderInfo;
+            _loc4_ = _loc7_.width * Math.abs(_loc6_.a) + _loc7_.height * Math.abs(_loc6_.b);
+            _loc5_ = _loc7_.width * Math.abs(_loc6_.c) + _loc7_.height * Math.abs(_loc6_.d);
+         }
+         if(_fitWidth > 0 && _fitHeight > 0)
+         {
+            _loc8_ = _fitWidth;
+            _loc9_ = _fitHeight;
+            _loc10_ = _loc8_ - _loc4_;
+            _loc11_ = _loc9_ - _loc5_;
+            if(_scaleMode != "none")
+            {
+               _loc12_ = _loc8_ / _loc9_;
+               _loc13_ = _loc4_ / _loc5_;
+               if(_loc13_ < _loc12_ && _scaleMode == "proportionalInside" || _loc13_ > _loc12_ && _scaleMode == "proportionalOutside")
+               {
+                  _loc8_ = _loc9_ * _loc13_;
+               }
+               if(_loc13_ > _loc12_ && _scaleMode == "proportionalInside" || _loc13_ < _loc12_ && _scaleMode == "proportionalOutside")
+               {
+                  _loc9_ = _loc8_ / _loc13_;
+               }
+               if(_scaleMode != "heightOnly")
+               {
+                  _loc3_.width *= _loc8_ / _loc4_;
+                  _loc10_ = _fitWidth - _loc8_;
+               }
+               if(_scaleMode != "widthOnly")
+               {
+                  _loc3_.height *= _loc9_ / _loc5_;
+                  _loc11_ = _fitHeight - _loc9_;
+               }
+            }
+            if(_hAlign == "left")
+            {
+               _loc10_ = 0;
+            }
+            else if(_hAlign != "right")
+            {
+               _loc10_ /= 2;
+            }
+            if(_vAlign == "top")
+            {
+               _loc11_ = 0;
+            }
+            else if(_vAlign != "bottom")
+            {
+               _loc11_ /= 2;
+            }
+            if(_crop)
+            {
+               if(_cropContainer == null || _loc3_.parent != _cropContainer)
+               {
+                  _cropContainer = new Sprite();
+                  this.addChildAt(_cropContainer,this.getChildIndex(_loc3_));
+                  _cropContainer.addChild(_loc3_);
+               }
+               _cropContainer.x = _loc1_;
+               _cropContainer.y = _loc2_;
+               _cropContainer.scrollRect = new Rectangle(0,0,_fitWidth,_fitHeight);
+               _loc3_.x = _loc10_;
+               _loc3_.y = _loc11_;
+            }
+            else
+            {
+               if(_cropContainer != null)
+               {
+                  this.addChildAt(_loc3_,this.getChildIndex(_cropContainer));
+                  _cropContainer = null;
+               }
+               _loc3_.x = _loc1_ + _loc10_;
+               _loc3_.y = _loc2_ + _loc11_;
+            }
+         }
+         else
+         {
+            _loc3_.x = _centerRegistration ? _loc4_ / -2 : 0;
+            _loc3_.y = _centerRegistration ? _loc5_ / -2 : 0;
+         }
       }
       
       public function set fitWidth(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            _fitWidth = param1;
-            if(_loc2_)
-            {
-               addr002b:
-               _update();
-            }
-            return;
-         }
-         §§goto(addr002b);
+         _fitWidth = param1;
+         _update();
       }
       
       public function set hAlign(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            _hAlign = param1;
-            if(!_loc2_)
-            {
-               addr002c:
-               _update();
-            }
-            return;
-         }
-         §§goto(addr002c);
+         _hAlign = param1;
+         _update();
       }
       
       public function get hAlign() : String

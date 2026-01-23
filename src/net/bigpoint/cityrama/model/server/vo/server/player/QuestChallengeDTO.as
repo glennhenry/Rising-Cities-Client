@@ -8,42 +8,16 @@ package net.bigpoint.cityrama.model.server.vo.server.player
       
       private var _challengeConfig:QuestChallengeConfigDTO;
       
-      private var _tasks:Vector.<QuestTaskDTO>;
+      private var _tasks:Vector.<QuestTaskDTO> = new Vector.<QuestTaskDTO>(0);
       
       public function QuestChallengeDTO(param1:Object, param2:QuestChallengeConfigDTO = null)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(!(_loc4_ && Boolean(this)))
+         super(param1);
+         this._tasks = Vector.<QuestTaskDTO>(_downstreamQuestElement);
+         if(param2)
          {
-            this._tasks = new Vector.<QuestTaskDTO>(0);
-            if(_loc3_)
-            {
-               super(param1);
-               if(!_loc4_)
-               {
-                  §§goto(addr005c);
-               }
-               §§goto(addr007c);
-            }
-            addr005c:
-            this._tasks = Vector.<QuestTaskDTO>(_downstreamQuestElement);
-            if(_loc3_ || Boolean(this))
-            {
-               addr007c:
-               if(param2)
-               {
-                  if(_loc3_)
-                  {
-                     addr0086:
-                     this._challengeConfig = param2;
-                  }
-               }
-            }
-            return;
+            this._challengeConfig = param2;
          }
-         §§goto(addr0086);
       }
       
       public function get rewards() : Vector.<QuestRewardDTO>
@@ -63,13 +37,7 @@ package net.bigpoint.cityrama.model.server.vo.server.player
       
       public function set tasks(param1:Vector.<QuestTaskDTO>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._tasks = param1;
-         }
+         this._tasks = param1;
       }
    }
 }

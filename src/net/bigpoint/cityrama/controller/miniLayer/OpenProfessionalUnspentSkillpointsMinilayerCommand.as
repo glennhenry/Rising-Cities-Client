@@ -13,45 +13,17 @@ package net.bigpoint.cityrama.controller.miniLayer
       
       public function OpenProfessionalUnspentSkillpointsMinilayerCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:PopupSettingsVo = new PopupSettingsVo(PopupSettingsVo.MINI_POPUP);
-         if(_loc3_ || Boolean(this))
-         {
-            _loc2_.modal = true;
-            if(!_loc4_)
-            {
-               _loc2_.viewClass = ProfessionalUnspentSkillpointsMiniLayer;
-               if(!(_loc4_ && _loc3_))
-               {
-                  _loc2_.mediatorClass = ProfessionalUnspentSkillpointsMiniLayerMediator;
-                  if(!_loc4_)
-                  {
-                     addr0072:
-                     _loc2_.mediatorName = ProfessionalUnspentSkillpointsMiniLayerMediator.NAME;
-                     if(!(_loc4_ && Boolean(this)))
-                     {
-                        facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc2_);
-                     }
-                  }
-               }
-               §§goto(addr0094);
-            }
-            §§goto(addr0072);
-         }
-         addr0094:
+         _loc2_.modal = true;
+         _loc2_.viewClass = ProfessionalUnspentSkillpointsMiniLayer;
+         _loc2_.mediatorClass = ProfessionalUnspentSkillpointsMiniLayerMediator;
+         _loc2_.mediatorName = ProfessionalUnspentSkillpointsMiniLayerMediator.NAME;
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc2_);
       }
    }
 }

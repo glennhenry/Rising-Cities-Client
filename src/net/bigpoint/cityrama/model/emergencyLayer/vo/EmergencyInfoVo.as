@@ -69,31 +69,10 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function EmergencyInfoVo(param1:BillboardObjectVo)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            super();
-            if(_loc3_)
-            {
-               this._billboardObjVo = param1;
-               if(_loc3_ || _loc3_)
-               {
-                  this._emergencyDTO = this._billboardObjVo.buildingDTO.emergencyDTO;
-                  if(_loc3_)
-                  {
-                     addr0051:
-                     this._slotVector = new Vector.<SlotProfessionalVo>();
-                  }
-                  §§goto(addr0060);
-               }
-               §§goto(addr0051);
-            }
-            addr0060:
-            return;
-         }
-         §§goto(addr0051);
+         super();
+         this._billboardObjVo = param1;
+         this._emergencyDTO = this._billboardObjVo.buildingDTO.emergencyDTO;
+         this._slotVector = new Vector.<SlotProfessionalVo>();
       }
       
       public function get maxSuccessPercent() : Number
@@ -103,13 +82,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set maxSuccessPercent(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._maxSuccessPercent = param1;
-         }
+         this._maxSuccessPercent = param1;
       }
       
       public function get currentSuccessPercent() : Number
@@ -119,13 +92,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set currentSuccessPercent(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._currentSuccessPercent = param1;
-         }
+         this._currentSuccessPercent = param1;
       }
       
       public function get efficiencyPercent() : Number
@@ -135,13 +102,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set efficiencyPercent(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._efficiencyPercent = param1;
-         }
+         this._efficiencyPercent = param1;
       }
       
       public function get luckPercent() : Number
@@ -151,13 +112,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set luckPercent(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            this._luckPercent = param1;
-         }
+         this._luckPercent = param1;
       }
       
       public function get goofyPercent() : Number
@@ -167,13 +122,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set goofyPercent(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._goofyPercent = param1;
-         }
+         this._goofyPercent = param1;
       }
       
       public function get possibleProfessionals() : Vector.<ProfessionalDTO>
@@ -183,13 +132,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set possibleProfessionals(param1:Vector.<ProfessionalDTO>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._possibleProfessionals = param1;
-         }
+         this._possibleProfessionals = param1;
       }
       
       public function get slotVector() : Vector.<SlotProfessionalVo>
@@ -199,13 +142,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set slotVector(param1:Vector.<SlotProfessionalVo>) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._slotVector = param1;
-         }
+         this._slotVector = param1;
       }
       
       public function get requiredFireGrade() : int
@@ -215,13 +152,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set requiredFireGrade(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._requiredFireGrade = param1;
-         }
+         this._requiredFireGrade = param1;
       }
       
       public function get requiredPoliceGrade() : int
@@ -231,13 +162,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set requiredPoliceGrade(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._requiredPoliceGrade = param1;
-         }
+         this._requiredPoliceGrade = param1;
       }
       
       public function get requiredHospitalGrade() : int
@@ -247,13 +172,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set requiredHospitalGrade(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._requiredHospitalGrade = param1;
-         }
+         this._requiredHospitalGrade = param1;
       }
       
       public function get currentFireGrade() : int
@@ -263,13 +182,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set currentFireGrade(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._currentFireGrade = param1;
-         }
+         this._currentFireGrade = param1;
       }
       
       public function get currentPoliceGrade() : int
@@ -279,13 +192,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set currentPoliceGrade(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._currentPoliceGrade = param1;
-         }
+         this._currentPoliceGrade = param1;
       }
       
       public function get currentHospitalGrade() : int
@@ -295,13 +202,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set currentHospitalGrade(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(param1))
-         {
-            this._currentHospitalGrade = param1;
-         }
+         this._currentHospitalGrade = param1;
       }
       
       public function get showZoneLayer() : Boolean
@@ -311,13 +212,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set showZoneLayer(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._showZoneLayer = param1;
-         }
+         this._showZoneLayer = param1;
       }
       
       public function get billboardObjVo() : BillboardObjectVo
@@ -327,13 +222,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set billboardObjVo(param1:BillboardObjectVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._billboardObjVo = param1;
-         }
+         this._billboardObjVo = param1;
       }
       
       public function get emergencyDTO() : EmergencyDTO
@@ -348,13 +237,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set currentRewardAmount(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._currentRewardAmount = param1;
-         }
+         this._currentRewardAmount = param1;
       }
       
       public function get efficiencyPoints() : Number
@@ -364,13 +247,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set efficiencyPoints(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._efficiencyPoints = param1;
-         }
+         this._efficiencyPoints = param1;
       }
       
       public function get efficiencyMaxPoints() : Number
@@ -380,13 +257,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set efficiencyMaxPoints(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
-         {
-            this._efficiencyMaxPoints = param1;
-         }
+         this._efficiencyMaxPoints = param1;
       }
       
       public function get luckPoints() : Number
@@ -396,13 +267,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set luckPoints(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._luckPoints = param1;
-         }
+         this._luckPoints = param1;
       }
       
       public function get luckMaxPoints() : Number
@@ -412,13 +277,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set luckMaxPoints(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._luckMaxPoints = param1;
-         }
+         this._luckMaxPoints = param1;
       }
       
       public function get goofyPoints() : Number
@@ -428,13 +287,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set goofyPoints(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._goofyPoints = param1;
-         }
+         this._goofyPoints = param1;
       }
       
       public function get goofyMaxPoints() : Number
@@ -444,13 +297,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set goofyMaxPoints(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._goofyMaxPoints = param1;
-         }
+         this._goofyMaxPoints = param1;
       }
       
       public function get maxSuccessPoints() : int
@@ -460,13 +307,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set maxSuccessPoints(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            this._maxSuccessPoints = param1;
-         }
+         this._maxSuccessPoints = param1;
       }
       
       public function get currentSuccessPoints() : int
@@ -476,13 +317,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set currentSuccessPoints(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._currentSuccessPoints = param1;
-         }
+         this._currentSuccessPoints = param1;
       }
       
       public function get maxPossibleSuccessPoints() : int
@@ -492,13 +327,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set maxPossibleSuccessPoints(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._maxPossibleSuccessPoints = param1;
-         }
+         this._maxPossibleSuccessPoints = param1;
       }
       
       public function get currentReward() : ConfigGoodDTO
@@ -508,13 +337,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set currentReward(param1:ConfigGoodDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._currentReward = param1;
-         }
+         this._currentReward = param1;
       }
       
       public function get rewardTypeThresholds() : Vector.<ConfigProfessionalAttributeThresholdDTO>
@@ -524,13 +347,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set rewardTypeThresholds(param1:Vector.<ConfigProfessionalAttributeThresholdDTO>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._rewardTypeThresholds = param1;
-         }
+         this._rewardTypeThresholds = param1;
       }
       
       public function get rewardAmountThresholds() : Vector.<ConfigProfessionalAttributeThresholdDTO>
@@ -540,13 +357,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set rewardAmountThresholds(param1:Vector.<ConfigProfessionalAttributeThresholdDTO>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._rewardAmountThresholds = param1;
-         }
+         this._rewardAmountThresholds = param1;
       }
    }
 }

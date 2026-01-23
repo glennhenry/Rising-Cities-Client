@@ -7,49 +7,20 @@ package com.greensock.loading.data
       
       public static const version:Number = 1.22;
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(_loc1_ || XMLLoaderVars)
-      {
-         version = 1.22;
-      }
-      
       protected var _vars:Object;
       
       public function XMLLoaderVars(param1:Object = null)
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc2_:String = null;
-         if(!_loc5_)
+         super();
+         _vars = {};
+         if(param1 != null)
          {
-            super();
-            if(_loc6_ || Boolean(param1))
+            for(_loc2_ in param1)
             {
-               _vars = {};
-               if(!_loc5_)
-               {
-                  §§goto(addr004a);
-               }
-               §§goto(addr0050);
+               _vars[_loc2_] = param1[_loc2_];
             }
-            addr004a:
-            if(param1 != null)
-            {
-               addr0050:
-               for(_loc2_ in param1)
-               {
-                  if(_loc6_ || Boolean(this))
-                  {
-                     _vars[_loc2_] = param1[_loc2_];
-                  }
-               }
-            }
-            return;
          }
-         §§goto(addr0050);
       }
       
       public function onCancel(param1:Function) : XMLLoaderVars
@@ -149,25 +120,13 @@ package com.greensock.loading.data
       
       protected function _set(param1:String, param2:*) : XMLLoaderVars
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!_loc3_)
+         if(param2 == null)
          {
-            if(param2 == null)
-            {
-               if(!(_loc3_ && _loc3_))
-               {
-                  delete _vars[param1];
-                  if(_loc3_)
-                  {
-                  }
-               }
-            }
-            else
-            {
-               _vars[param1] = param2;
-            }
+            delete _vars[param1];
+         }
+         else
+         {
+            _vars[param1] = param2;
          }
          return this;
       }

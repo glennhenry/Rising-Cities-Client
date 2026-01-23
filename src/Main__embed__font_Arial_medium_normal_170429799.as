@@ -14,13 +14,7 @@ package
       
       public function Main__embed__font_Arial_medium_normal_170429799()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
    }
 }

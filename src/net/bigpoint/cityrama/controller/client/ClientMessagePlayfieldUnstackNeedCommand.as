@@ -18,20 +18,11 @@ package net.bigpoint.cityrama.controller.client
       
       public function ClientMessagePlayfieldUnstackNeedCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc15_:Boolean = true;
-         var _loc16_:* = §§pop();
          var _loc8_:ConfigNeedDTO = null;
          var _loc9_:MessageVo = null;
          var _loc10_:ConfigNeedStackDTO = null;
@@ -43,48 +34,21 @@ package net.bigpoint.cityrama.controller.client
          var _loc7_:Object = new Object();
          for each(_loc8_ in _loc6_.shopFieldObjectVo.configPlayfieldItemVo.needShopConfigs)
          {
-            if(!_loc16_)
+            for each(_loc10_ in _loc8_.requiredGoods)
             {
-               var _loc13_:int = 0;
-               if(!(_loc16_ && Boolean(this)))
+               if(_loc10_.configOutout.goodConfig != null)
                {
-                  for each(_loc10_ in _loc8_.requiredGoods)
+                  if(GoodObjectVo(_loc4_.good).config.id == _loc10_.configOutout.goodConfig.id)
                   {
-                     if(_loc10_.configOutout.goodConfig != null)
-                     {
-                        if(!_loc16_)
-                        {
-                           if(GoodObjectVo(_loc4_.good).config.id != _loc10_.configOutout.goodConfig.id)
-                           {
-                              continue;
-                           }
-                           if(!_loc15_)
-                           {
-                              continue;
-                           }
-                        }
-                        _loc7_.s = _loc10_.id;
-                     }
+                     _loc7_.s = _loc10_.id;
                   }
                }
             }
          }
-         if(!(_loc16_ && Boolean(_loc2_)))
-         {
-            _loc7_.bid = _loc5_.buildingID;
-            if(!(_loc16_ && Boolean(_loc2_)))
-            {
-               addr0166:
-               _loc7_.a = _loc4_.amount;
-            }
-            _loc9_ = _loc3_.createMessage(_loc7_,ServerMessageConstants.PLAYFIELD_UNSTACK_NEED);
-            if(_loc15_ || Boolean(_loc3_))
-            {
-               _loc3_.sendMessage(_loc9_);
-            }
-            return;
-         }
-         §§goto(addr0166);
+         _loc7_.bid = _loc5_.buildingID;
+         _loc7_.a = _loc4_.amount;
+         _loc9_ = _loc3_.createMessage(_loc7_,ServerMessageConstants.PLAYFIELD_UNSTACK_NEED);
+         _loc3_.sendMessage(_loc9_);
       }
    }
 }

@@ -15,13 +15,7 @@ package net.bigpoint.cityrama.model.friends.vo
       
       public function CenterItemFriendDataVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get friendVO() : FriendVo
@@ -31,13 +25,7 @@ package net.bigpoint.cityrama.model.friends.vo
       
       public function set friendVO(param1:FriendVo) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._friendVO = param1;
-         }
+         this._friendVO = param1;
       }
       
       public function get showPlus() : Boolean
@@ -47,13 +35,7 @@ package net.bigpoint.cityrama.model.friends.vo
       
       public function set showPlus(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._showPlus = param1;
-         }
+         this._showPlus = param1;
       }
       
       public function get buyEnabled() : Boolean
@@ -63,13 +45,7 @@ package net.bigpoint.cityrama.model.friends.vo
       
       public function set buyEnabled(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._buyEnabled = param1;
-         }
+         this._buyEnabled = param1;
       }
       
       public function get showButton() : Boolean
@@ -79,13 +55,7 @@ package net.bigpoint.cityrama.model.friends.vo
       
       public function set showButton(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && param1))
-         {
-            this._showButton = param1;
-         }
+         this._showButton = param1;
       }
       
       public function get buttonEventString() : String
@@ -95,13 +65,7 @@ package net.bigpoint.cityrama.model.friends.vo
       
       public function set buttonEventString(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._buttonEventString = param1;
-         }
+         this._buttonEventString = param1;
       }
    }
 }

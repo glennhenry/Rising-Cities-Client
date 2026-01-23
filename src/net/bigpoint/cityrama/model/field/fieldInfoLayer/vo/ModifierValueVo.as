@@ -9,24 +9,9 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function ModifierValueVo(param1:Number, param2:Number)
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(_loc4_)
-         {
-            super();
-            if(!_loc3_)
-            {
-               this._energyValue = param1;
-               if(_loc4_)
-               {
-                  addr002f:
-                  this._happyValue = param2;
-               }
-               return;
-            }
-         }
-         §§goto(addr002f);
+         super();
+         this._energyValue = param1;
+         this._happyValue = param2;
       }
       
       public function get energyValue() : Number

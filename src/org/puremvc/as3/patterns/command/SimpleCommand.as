@@ -10,13 +10,7 @@ package org.puremvc.as3.patterns.command
       
       public function SimpleCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function execute(param1:INotification) : void

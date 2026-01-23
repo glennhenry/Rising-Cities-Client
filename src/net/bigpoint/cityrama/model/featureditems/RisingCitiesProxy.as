@@ -20,135 +20,51 @@ package net.bigpoint.cityrama.model.featureditems
       
       public function RisingCitiesProxy(param1:String, param2:Object = null)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(!_loc4_)
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
       
       protected function reset() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            this._playerProxy = null;
-            if(_loc2_)
-            {
-               this._gameConfigProxy = null;
-               if(!(_loc1_ && _loc2_))
-               {
-                  this._cvTagProxy = null;
-                  if(_loc2_ || _loc1_)
-                  {
-                     addr004e:
-                     this._playfieldProxy = null;
-                  }
-                  return;
-               }
-            }
-         }
-         §§goto(addr004e);
+         this._playerProxy = null;
+         this._gameConfigProxy = null;
+         this._cvTagProxy = null;
+         this._playfieldProxy = null;
       }
       
       protected function get playerProxy() : PlayerProxy
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
+         if(this._playerProxy == null)
          {
-            §§push(this._playerProxy);
-            if(!_loc1_)
-            {
-               if(§§pop() == null)
-               {
-                  if(!(_loc1_ && _loc1_))
-                  {
-                     addr003b:
-                     this._playerProxy = facade.retrieveProxy(PlayerProxy.NAME) as PlayerProxy;
-                  }
-               }
-               return this._playerProxy;
-            }
+            this._playerProxy = facade.retrieveProxy(PlayerProxy.NAME) as PlayerProxy;
          }
-         §§goto(addr003b);
+         return this._playerProxy;
       }
       
       protected function get gameConfigProxy() : GameConfigProxy
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
+         if(this._gameConfigProxy == null)
          {
-            §§push(this._gameConfigProxy);
-            if(!(_loc2_ && _loc1_))
-            {
-               if(§§pop() == null)
-               {
-                  if(!_loc2_)
-                  {
-                     this._gameConfigProxy = facade.retrieveProxy(GameConfigProxy.NAME) as GameConfigProxy;
-                  }
-               }
-               addr004a:
-               return this._gameConfigProxy;
-            }
+            this._gameConfigProxy = facade.retrieveProxy(GameConfigProxy.NAME) as GameConfigProxy;
          }
-         §§goto(addr004a);
+         return this._gameConfigProxy;
       }
       
       protected function get cvTagProxy() : CvTagProxy
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
+         if(this._cvTagProxy == null)
          {
-            §§push(this._cvTagProxy);
-            if(!(_loc2_ && _loc2_))
-            {
-               if(§§pop() == null)
-               {
-                  if(_loc1_)
-                  {
-                     addr003a:
-                     this._cvTagProxy = facade.retrieveProxy(CvTagProxy.NAME) as CvTagProxy;
-                  }
-               }
-               return this._cvTagProxy;
-            }
+            this._cvTagProxy = facade.retrieveProxy(CvTagProxy.NAME) as CvTagProxy;
          }
-         §§goto(addr003a);
+         return this._cvTagProxy;
       }
       
       protected function get playfieldProxy() : PlayfieldProxy
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc2_)
+         if(this._playfieldProxy == null)
          {
-            §§push(this._playfieldProxy);
-            if(_loc2_ || _loc2_)
-            {
-               if(§§pop() == null)
-               {
-                  if(_loc2_ || _loc1_)
-                  {
-                     this._playfieldProxy = facade.retrieveProxy(PlayfieldProxy.NAME) as PlayfieldProxy;
-                  }
-               }
-               addr0067:
-               return this._playfieldProxy;
-            }
+            this._playfieldProxy = facade.retrieveProxy(PlayfieldProxy.NAME) as PlayfieldProxy;
          }
-         §§goto(addr0067);
+         return this._playfieldProxy;
       }
    }
 }

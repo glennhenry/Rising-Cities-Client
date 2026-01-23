@@ -22,23 +22,11 @@ package net.bigpoint.cityrama.controller.server.messages
       
       public function ServerMessagePlayfieldCreateGroundSuccess()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc15_:Boolean = false;
-         var _loc16_:Boolean = _temp_1;
-         var _loc12_:ConfigPlayfieldItemDTO = null;
-         var _loc13_:Cuboid = null;
-         var _loc14_:PlaneObjectVo = null;
          var _loc2_:MessageVo = MessageVo(param1.getBody());
          var _loc3_:PlayfieldProxy = PlayfieldProxy(facade.retrieveProxy(PlayfieldProxy.NAME));
          var _loc4_:TimerProxy = TimerProxy(facade.retrieveProxy(TimerProxy.NAME));
@@ -49,42 +37,19 @@ package net.bigpoint.cityrama.controller.server.messages
          var _loc9_:Cuboid = new Cuboid(_loc8_.posX,_loc8_.posY,0,_loc8_.config.sizeX,_loc8_.config.sizeY,_loc8_.config.zLevels.length);
          var _loc10_:IGameObjectVo = _loc6_.getGameObjectByCuboid(_loc9_);
          var _loc11_:* = _loc10_ is PlaneObjectVo;
-         §§push(_loc11_);
-         if(_loc16_ || Boolean(param1))
+         if(_loc11_ == false)
          {
-            if(§§pop() == false)
-            {
-               if(_loc16_)
-               {
-                  _loc12_ = _loc7_.getConfigPlayfieldItemById(_loc8_.configId);
-                  _loc13_ = new Cuboid(_loc8_.posX,_loc8_.posY,VectorUtilities.getMinValue(_loc12_.zLevels),_loc12_.sizeX,_loc12_.sizeY,1);
-                  _loc14_ = PlaneObjectVo(ServerTagToClassSelector.getFieldObjectVoClassByTags(_loc12_,_loc13_,_loc4_,_loc7_,_loc3_));
-                  _loc14_.groundDTO = _loc8_;
-                  if(_loc16_ || Boolean(param1))
-                  {
-                     _loc6_.addGameObjectByData(_loc14_);
-                     if(_loc15_ && Boolean(_loc3_))
-                     {
-                        addr01b9:
-                        addr01bf:
-                        if(_loc10_ is PlaneObjectVo)
-                        {
-                           if(_loc16_ || Boolean(this))
-                           {
-                              (_loc10_ as PlaneObjectVo).groundDTO = _loc8_;
-                           }
-                        }
-                        §§goto(addr01dc);
-                     }
-                  }
-                  return;
-               }
-               addr01dc:
-               return;
-            }
-            §§goto(addr01b9);
+            var _loc12_:ConfigPlayfieldItemDTO = _loc7_.getConfigPlayfieldItemById(_loc8_.configId);
+            var _loc13_:Cuboid = new Cuboid(_loc8_.posX,_loc8_.posY,VectorUtilities.getMinValue(null.zLevels),null.sizeX,null.sizeY,1);
+            var _loc14_:PlaneObjectVo = PlaneObjectVo(ServerTagToClassSelector.getFieldObjectVoClassByTags(null,null,_loc4_,_loc7_,_loc3_));
+            _loc14_.groundDTO = _loc8_;
+            _loc6_.addGameObjectByData(null);
+            return;
          }
-         §§goto(addr01bf);
+         if(_loc10_ is PlaneObjectVo)
+         {
+            (_loc10_ as PlaneObjectVo).groundDTO = _loc8_;
+         }
       }
    }
 }

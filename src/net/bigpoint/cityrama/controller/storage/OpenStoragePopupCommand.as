@@ -12,45 +12,17 @@ package net.bigpoint.cityrama.controller.storage
       
       public function OpenStoragePopupCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:PopupSettingsVo = new PopupSettingsVo(PopupSettingsVo.PAPER_POPUP);
-         if(!_loc4_)
-         {
-            _loc2_.modal = true;
-            if(_loc3_ || _loc3_)
-            {
-               _loc2_.viewClass = StoragePopup;
-               if(_loc3_ || Boolean(_loc2_))
-               {
-                  _loc2_.mediatorClass = StoragePopupMediator;
-                  if(_loc3_)
-                  {
-                     _loc2_.mediatorName = StoragePopupMediator.NAME;
-                     if(!(_loc4_ && Boolean(this)))
-                     {
-                        addr0085:
-                        facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc2_);
-                     }
-                     §§goto(addr0090);
-                  }
-               }
-               §§goto(addr0085);
-            }
-         }
-         addr0090:
+         _loc2_.modal = true;
+         _loc2_.viewClass = StoragePopup;
+         _loc2_.mediatorClass = StoragePopupMediator;
+         _loc2_.mediatorName = StoragePopupMediator.NAME;
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc2_);
       }
    }
 }

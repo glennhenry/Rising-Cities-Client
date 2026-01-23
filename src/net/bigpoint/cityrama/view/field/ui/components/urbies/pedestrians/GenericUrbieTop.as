@@ -9,13 +9,7 @@ package net.bigpoint.cityrama.view.field.ui.components.urbies.pedestrians
       
       public function GenericUrbieTop(param1:PreloadableImage, param2:UrbieLifeVo)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_ || Boolean(param2))
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
    }
 }

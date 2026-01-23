@@ -9,25 +9,13 @@ package net.bigpoint.cityrama.controller.field
       
       public function GroundGenerateTexturesCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:PlaneObject = PlaneObject(param1.getBody());
-         if(!_loc4_)
-         {
-            _loc2_.redraw();
-         }
+         _loc2_.redraw();
       }
    }
 }

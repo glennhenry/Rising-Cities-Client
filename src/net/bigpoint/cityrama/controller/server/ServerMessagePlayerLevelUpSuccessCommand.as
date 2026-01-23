@@ -15,83 +15,36 @@ package net.bigpoint.cityrama.controller.server
       
       public function ServerMessagePlayerLevelUpSuccessCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc8_:Boolean = false;
-         var _loc9_:Boolean = _temp_1;
          var _loc2_:PlayerResourceProxy = facade.retrieveProxy(PlayerResourceProxy.NAME) as PlayerResourceProxy;
          var _loc3_:UserLevelProxy = facade.retrieveProxy(UserLevelProxy.NAME) as UserLevelProxy;
          var _loc4_:MessageVo = MessageVo(param1.getBody());
          var _loc5_:Number = _loc4_.json.l as Number;
          var _loc6_:ConfigUserLevelDTO = _loc3_.getConfigByLevelId(_loc5_);
-         if(!_loc8_)
-         {
-            _loc2_.userLevel = _loc6_.level;
-            if(_loc9_ || Boolean(param1))
-            {
-               §§goto(addr007e);
-            }
-            §§goto(addr00d9);
-         }
-         addr007e:
+         _loc2_.userLevel = _loc6_.level;
          if(_loc3_.getNextFullLevel(_loc6_.id) != null)
          {
-            if(_loc9_ || Boolean(this))
-            {
-               _loc2_.maxExperience = _loc3_.getNextFullLevel(_loc6_.id).requiredXP;
-               if(_loc8_)
-               {
-               }
-               addr00d9:
-               _loc3_.currentLevelId = _loc5_;
-               if(_loc9_)
-               {
-                  §§goto(addr00e5);
-               }
-            }
-            §§goto(addr00f2);
+            _loc2_.maxExperience = _loc3_.getNextFullLevel(_loc6_.id).requiredXP;
          }
          else
          {
             _loc2_.maxExperience = _loc6_.requiredXP;
-            if(!(_loc8_ && Boolean(_loc2_)))
-            {
-               §§goto(addr00d9);
-            }
          }
-         addr00e5:
+         _loc3_.currentLevelId = _loc5_;
          if(!_loc3_.isSubLevel(_loc6_.id))
          {
             try
             {
-               addr00f2:
                ExternalInterface.call("trackLevelUp",_loc6_.level);
-               if(!(_loc8_ && Boolean(param1)))
-               {
-                  addr012f:
-                  facade.sendNotification(ApplicationNotificationConstants.OPEN_LEVEL_UP_SCREEN,_loc5_);
-                  if(_loc8_ && Boolean(this))
-                  {
-                  }
-               }
             }
             catch(e:Error)
             {
-               §§push(e);
-               var _temp_7:* = e;
-               e = §§pop();
-               §§goto(addr012f);
             }
+            facade.sendNotification(ApplicationNotificationConstants.OPEN_LEVEL_UP_SCREEN,_loc5_);
          }
          else
          {

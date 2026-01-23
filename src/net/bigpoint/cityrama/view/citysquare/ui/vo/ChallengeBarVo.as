@@ -29,13 +29,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function ChallengeBarVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get goodLocaleId() : String
@@ -45,13 +39,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set goodLocaleId(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._goodLocaleId = param1;
-         }
+         this._goodLocaleId = param1;
       }
       
       public function get eventLocalId() : String
@@ -61,13 +49,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set eventLocalId(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._eventLocalId = param1;
-         }
+         this._eventLocalId = param1;
       }
       
       public function get goodGFXId() : int
@@ -77,13 +59,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set goodGFXId(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._goodGFXId = param1;
-         }
+         this._goodGFXId = param1;
       }
       
       public function get eventGFXId() : int
@@ -93,13 +69,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set eventGFXId(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._eventGFXId = param1;
-         }
+         this._eventGFXId = param1;
       }
       
       public function get maxValue() : int
@@ -109,13 +79,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set maxValue(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._maxValue = param1;
-         }
+         this._maxValue = param1;
       }
       
       public function get currentValue() : int
@@ -125,13 +89,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set currentValue(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._currentValue = param1;
-         }
+         this._currentValue = param1;
       }
       
       public function get isEventGood() : Boolean
@@ -141,13 +99,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set isEventGood(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._isEventGood = param1;
-         }
+         this._isEventGood = param1;
       }
       
       public function get upsellingPrice() : Number
@@ -157,13 +109,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set upsellingPrice(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
-         {
-            this._upsellingPrice = param1;
-         }
+         this._upsellingPrice = param1;
       }
       
       public function get upsellingAffordable() : Boolean
@@ -173,13 +119,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set upsellingAffordable(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._upsellingAffordable = param1;
-         }
+         this._upsellingAffordable = param1;
       }
       
       public function get elementId() : Number
@@ -189,13 +129,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set elementId(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._elementId = param1;
-         }
+         this._elementId = param1;
       }
       
       public function get questId() : Number
@@ -205,13 +139,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set questId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            this._questId = param1;
-         }
+         this._questId = param1;
       }
       
       public function get questType() : String
@@ -221,13 +149,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set questType(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._questType = param1;
-         }
+         this._questType = param1;
       }
    }
 }

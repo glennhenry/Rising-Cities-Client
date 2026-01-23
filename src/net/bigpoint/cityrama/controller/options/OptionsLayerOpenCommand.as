@@ -12,48 +12,17 @@ package net.bigpoint.cityrama.controller.options
       
       public function OptionsLayerOpenCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && Boolean(this)))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:PopupSettingsVo = new PopupSettingsVo(PopupSettingsVo.MINI_POPUP);
-         if(!_loc4_)
-         {
-            _loc2_.modal = true;
-            if(_loc3_ || Boolean(this))
-            {
-               _loc2_.viewClass = OptionsMenuPopup;
-               if(!(_loc4_ && Boolean(param1)))
-               {
-                  _loc2_.mediatorClass = OptionsMenuPopupMediator;
-                  if(!(_loc4_ && Boolean(this)))
-                  {
-                     §§goto(addr007c);
-                  }
-                  §§goto(addr008a);
-               }
-               addr007c:
-               _loc2_.mediatorName = OptionsMenuPopupMediator.NAME;
-               if(_loc3_)
-               {
-                  addr008a:
-                  sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc2_);
-               }
-               §§goto(addr0095);
-            }
-            §§goto(addr008a);
-         }
-         addr0095:
+         _loc2_.modal = true;
+         _loc2_.viewClass = OptionsMenuPopup;
+         _loc2_.mediatorClass = OptionsMenuPopupMediator;
+         _loc2_.mediatorName = OptionsMenuPopupMediator.NAME;
+         sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc2_);
       }
    }
 }

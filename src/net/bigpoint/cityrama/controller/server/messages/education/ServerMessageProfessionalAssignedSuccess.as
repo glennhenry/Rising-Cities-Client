@@ -14,20 +14,11 @@ package net.bigpoint.cityrama.controller.server.messages.education
       
       public function ServerMessageProfessionalAssignedSuccess()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc15_:Boolean = false;
-         var _loc16_:Boolean = _temp_1;
          var _loc6_:ProfessionalDTO = null;
          var _loc7_:AcademyFieldObject = null;
          var _loc8_:Vector.<ProfessionalDTO> = null;
@@ -42,45 +33,23 @@ package net.bigpoint.cityrama.controller.server.messages.education
             if(_loc7_.billboardObjectVo.buildingDTO.professionals.length)
             {
                _loc8_ = _loc7_.billboardObjectVo.buildingDTO.professionals;
-               if(!_loc15_)
+               for each(_loc9_ in _loc8_)
                {
-                  var _loc13_:int = 0;
-                  if(!(_loc15_ && Boolean(param1)))
+                  if(_loc9_.id == _loc4_)
                   {
-                     for each(_loc9_ in _loc8_)
-                     {
-                        if(_loc9_.id == _loc4_)
-                        {
-                           _loc6_ = _loc9_;
-                           if(_loc16_ || Boolean(_loc2_))
-                           {
-                              _loc8_.splice(_loc8_.indexOf(_loc9_),1);
-                              if(!(_loc15_ && Boolean(param1)))
-                              {
-                                 _loc6_.buildingId = _loc5_;
-                                 if(!_loc15_)
-                                 {
-                                    _loc3_.getBillboardById(_loc5_).billboardObjectVo.buildingDTO.professionals.push(_loc6_);
-                                 }
-                              }
-                           }
-                        }
-                     }
+                     _loc6_ = _loc9_;
+                     _loc8_.splice(_loc8_.indexOf(_loc9_),1);
+                     _loc6_.buildingId = _loc5_;
+                     _loc3_.getBillboardById(_loc5_).billboardObjectVo.buildingDTO.professionals.push(_loc6_);
                   }
                }
             }
          }
-         if(!(_loc15_ && Boolean(_loc2_)))
+         if(_loc3_.getBillboardById(_loc5_).billboardObjectVo is IEmergencyInfrastructureVO)
          {
-            if(_loc3_.getBillboardById(_loc5_).billboardObjectVo is IEmergencyInfrastructureVO)
-            {
-               addr0179:
-               _loc10_ = facade.retrieveProxy(SecurityMatrixProxy.NAME) as SecurityMatrixProxy;
-               _loc10_.updateObject(_loc3_.getBillboardById(_loc5_).billboardObjectVo as IEmergencyInfrastructureVO);
-            }
-            return;
+            _loc10_ = facade.retrieveProxy(SecurityMatrixProxy.NAME) as SecurityMatrixProxy;
+            _loc10_.updateObject(_loc3_.getBillboardById(_loc5_).billboardObjectVo as IEmergencyInfrastructureVO);
          }
-         §§goto(addr0179);
       }
    }
 }

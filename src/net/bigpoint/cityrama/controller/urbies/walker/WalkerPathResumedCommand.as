@@ -11,29 +11,17 @@ package net.bigpoint.cityrama.controller.urbies.walker
       
       public function WalkerPathResumedCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc2_))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc2_:SimpleWalker = param1.getBody() as SimpleWalker;
          var _loc3_:UrbiesLifeProxy = facade.retrieveProxy(UrbiesLifeProxy.NAME) as UrbiesLifeProxy;
          var _loc4_:UrbieObject = _loc3_.urbieObjectDictionary[_loc2_.id];
          if(_loc4_)
          {
-            if(!(_loc5_ && Boolean(_loc2_)))
-            {
-               _loc4_.framesetStrategy.resumeCurrentFrameset();
-            }
+            _loc4_.framesetStrategy.resumeCurrentFrameset();
          }
       }
    }

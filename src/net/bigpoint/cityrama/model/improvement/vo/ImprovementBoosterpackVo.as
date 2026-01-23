@@ -11,13 +11,7 @@ package net.bigpoint.cityrama.model.improvement.vo
       
       public function ImprovementBoosterpackVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || Boolean(this))
-         {
-            super();
-         }
+         super();
       }
       
       public function get currencyType() : String
@@ -27,13 +21,7 @@ package net.bigpoint.cityrama.model.improvement.vo
       
       public function set currencyType(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._currencyType = param1;
-         }
+         this._currencyType = param1;
       }
       
       public function get orderID() : Number
@@ -43,13 +31,7 @@ package net.bigpoint.cityrama.model.improvement.vo
       
       public function set orderID(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._orderID = param1;
-         }
+         this._orderID = param1;
       }
    }
 }

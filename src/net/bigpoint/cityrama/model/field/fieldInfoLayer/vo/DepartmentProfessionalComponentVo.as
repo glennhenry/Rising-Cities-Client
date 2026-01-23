@@ -13,35 +13,11 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function DepartmentProfessionalComponentVo(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            super();
-            if(!(_loc2_ && _loc2_))
-            {
-               this._professionalLibName = param1.lib;
-               if(_loc3_ || Boolean(param1))
-               {
-                  this._professionalBmpName = param1.bmp;
-                  if(_loc3_)
-                  {
-                     this._professionalSWFName = param1.swf;
-                     if(_loc3_)
-                     {
-                        addr0074:
-                        this._positionOccupied = param1.occ;
-                     }
-                     §§goto(addr007e);
-                  }
-                  §§goto(addr0074);
-               }
-               addr007e:
-               return;
-            }
-         }
-         §§goto(addr0074);
+         super();
+         this._professionalLibName = param1.lib;
+         this._professionalBmpName = param1.bmp;
+         this._professionalSWFName = param1.swf;
+         this._positionOccupied = param1.occ;
       }
       
       public function get professionalLibName() : String

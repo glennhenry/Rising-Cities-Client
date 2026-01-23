@@ -25,24 +25,9 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function FieldInfoLayerProductionVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-            if(_loc1_)
-            {
-               this._harvestProgressVo = new TimerBarComponentVo();
-               if(!_loc2_)
-               {
-                  addr002d:
-                  this._sumVo = new ImageTextValueVO();
-               }
-            }
-            return;
-         }
-         §§goto(addr002d);
+         super();
+         this._harvestProgressVo = new TimerBarComponentVo();
+         this._sumVo = new ImageTextValueVO();
       }
       
       public function get harvestProgressVo() : TimerBarComponentVo
@@ -52,13 +37,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function set harvestProgressVo(param1:TimerBarComponentVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._harvestProgressVo = param1;
-         }
+         this._harvestProgressVo = param1;
       }
       
       public function get sumVo() : ImageTextValueVO
@@ -68,13 +47,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function set sumVo(param1:ImageTextValueVO) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._sumVo = param1;
-         }
+         this._sumVo = param1;
       }
       
       public function get imageTextValueVoArrayList() : ArrayList
@@ -84,13 +57,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function set imageTextValueVoArrayList(param1:ArrayList) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this._imageTextValueVoArrayList = param1;
-         }
+         this._imageTextValueVoArrayList = param1;
       }
       
       public function get layerMode() : uint
@@ -100,13 +67,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function set layerMode(param1:uint) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._layerMode = param1;
-         }
+         this._layerMode = param1;
       }
       
       public function get constructionMode() : Boolean
@@ -116,13 +77,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function set constructionMode(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._constructionMode = param1;
-         }
+         this._constructionMode = param1;
       }
       
       public function get enableProgressSumBar() : Boolean
@@ -132,13 +87,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function set enableProgressSumBar(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._enableProgressSumBar = param1;
-         }
+         this._enableProgressSumBar = param1;
       }
       
       public function get moveInMode() : Boolean
@@ -148,13 +97,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function set moveInMode(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && param1))
-         {
-            this._moveInMode = param1;
-         }
+         this._moveInMode = param1;
       }
       
       public function get hideSumComponent() : Boolean
@@ -164,13 +107,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function set hideSumComponent(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || param1)
-         {
-            this._hideSumComponent = param1;
-         }
+         this._hideSumComponent = param1;
       }
    }
 }

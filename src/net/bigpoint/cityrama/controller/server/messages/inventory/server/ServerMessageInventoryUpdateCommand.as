@@ -12,37 +12,18 @@ package net.bigpoint.cityrama.controller.server.messages.inventory.server
       
       public function ServerMessageInventoryUpdateCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
-         var _loc4_:InventoryItemDTO = null;
          var _loc2_:InventoryProxy = facade.retrieveProxy(InventoryProxy.NAME) as InventoryProxy;
          var _loc3_:MessageVo = MessageVo(param1.getBody());
-         if(_loc6_)
+         if(_loc3_.json.i)
          {
-            if(_loc3_.json.i)
-            {
-               addr0064:
-               _loc4_ = ConfigFactory.buildInventoryItemDTO(_loc3_.json.i);
-               if(_loc6_ || Boolean(this))
-               {
-                  _loc2_.updateInventoryItem(_loc4_);
-               }
-            }
-            return;
+            var _loc4_:InventoryItemDTO = ConfigFactory.buildInventoryItemDTO(_loc3_.json.i);
+            _loc2_.updateInventoryItem(null);
          }
-         §§goto(addr0064);
       }
    }
 }

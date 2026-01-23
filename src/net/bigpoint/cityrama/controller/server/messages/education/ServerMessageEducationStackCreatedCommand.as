@@ -16,20 +16,11 @@ package net.bigpoint.cityrama.controller.server.messages.education
       
       public function ServerMessageEducationStackCreatedCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc16_:Boolean = true;
-         var _loc17_:* = §§pop();
          var _loc6_:AcademyFieldObject = null;
          var _loc7_:SchoolBookMediator = null;
          var _loc8_:ConfigPhaseDTO = null;
@@ -42,72 +33,32 @@ package net.bigpoint.cityrama.controller.server.messages.education
          var _loc5_:Vector.<AcademyFieldObject> = _loc4_.getAcademyList();
          for each(_loc6_ in _loc5_)
          {
-            if(_loc6_.academyFieldObjectVo.buildingDTO.id != _loc3_)
+            if(_loc6_.academyFieldObjectVo.buildingDTO.id == _loc3_)
             {
-               continue;
-            }
-            if(_loc16_ || Boolean(this))
-            {
-               var _loc14_:int = 0;
-               if(_loc16_)
+               for each(_loc9_ in _loc6_.academyFieldObjectVo.configPlayfieldItemVo.activePhases)
                {
-                  for each(_loc9_ in _loc6_.academyFieldObjectVo.configPlayfieldItemVo.activePhases)
+                  if(_loc2_.json.edu.pid == _loc9_.phaseId)
                   {
-                     if(_loc16_ || Boolean(_loc3_))
-                     {
-                        if(_loc2_.json.edu.pid != _loc9_.phaseId)
-                        {
-                           continue;
-                        }
-                     }
                      _loc8_ = _loc9_;
                   }
                }
-            }
-            _loc10_ = new Vector.<PhaseDTO>(0);
-            if(_loc16_)
-            {
-               _loc14_ = 0;
-               if(_loc16_ || Boolean(_loc2_))
+               _loc10_ = new Vector.<PhaseDTO>(0);
+               for each(_loc11_ in _loc6_.academyFieldObjectVo.buildingDTO.activePhases)
                {
-                  for each(_loc11_ in _loc6_.academyFieldObjectVo.buildingDTO.activePhases)
+                  if(_loc11_.config.phaseType != ServerPhaseTypes.EDUCATION)
                   {
-                     if(_loc11_.config.phaseType != ServerPhaseTypes.EDUCATION)
-                     {
-                        if(!_loc17_)
-                        {
-                           _loc10_.push(_loc11_);
-                        }
-                     }
+                     _loc10_.push(_loc11_);
                   }
                }
-               if(_loc16_)
-               {
-                  _loc10_.push(new EducationPhaseDTO(_loc2_.json.edu,_loc8_));
-                  if(_loc16_)
-                  {
-                     addr0199:
-                     _loc6_.academyFieldObjectVo.buildingDTO.activePhases = _loc10_;
-                     if(!(_loc16_ || Boolean(_loc3_)))
-                     {
-                        continue;
-                     }
-                  }
-                  addr01c0:
-                  _loc6_.invalidateIconStateManager();
-                  continue;
-               }
-               §§goto(addr0199);
+               _loc10_.push(new EducationPhaseDTO(_loc2_.json.edu,_loc8_));
+               _loc6_.academyFieldObjectVo.buildingDTO.activePhases = _loc10_;
+               _loc6_.invalidateIconStateManager();
             }
-            §§goto(addr01c0);
          }
          _loc7_ = facade.retrieveMediator(SchoolBookMediator.NAME) as SchoolBookMediator;
          if(_loc7_)
          {
-            if(_loc16_)
-            {
-               _loc7_.setData(_loc6_);
-            }
+            _loc7_.setData(_loc6_);
          }
       }
    }

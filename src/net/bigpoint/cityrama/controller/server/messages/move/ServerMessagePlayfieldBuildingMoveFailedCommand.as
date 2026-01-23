@@ -18,102 +18,34 @@ package net.bigpoint.cityrama.controller.server.messages.move
       
       public function ServerMessagePlayfieldBuildingMoveFailedCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc7_:Boolean = false;
-         var _loc8_:Boolean = _temp_1;
          var _loc2_:MessageVo = MessageVo(param1.getBody());
          var _loc3_:PlayfieldObjectsProxy = PlayfieldObjectsProxy(facade.retrieveProxy(PlayfieldObjectsProxy.NAME));
          var _loc4_:NeedMatrixProxy = NeedMatrixProxy(facade.retrieveProxy(NeedMatrixProxy.NAME));
          var _loc5_:BillboardObject = _loc3_.getBillboardById(_loc2_.json.bid);
          var _loc6_:SecurityMatrixProxy = facade.retrieveProxy(SecurityMatrixProxy.NAME) as SecurityMatrixProxy;
-         if(_loc8_ || Boolean(_loc2_))
+         if(_loc5_ != null)
          {
-            if(_loc5_ == null)
+            _loc5_.billboardObjectVo.matrix3dCoordinates = new Cuboid(_loc2_.json.x,_loc2_.json.y,0,_loc5_.billboardObjectVo.configPlayfieldItemVo.sizeX,_loc5_.billboardObjectVo.configPlayfieldItemVo.sizeY,_loc5_.billboardObjectVo.configPlayfieldItemVo.zLevels.length);
+            sendNotification(ApplicationNotificationConstants.PLAYFIELD_MOVE_ITEM,_loc5_);
+            _loc3_.reAddGameObjVoToMatrix(_loc5_.billboardObjectVo);
+            if(_loc5_ is ShopFieldObject)
             {
-               throw new RamaCityError("ServerMessagePlayfieldBuildingMoveFailedCommand: moved Building NULL!");
+               _loc4_.addShop(_loc5_ as ShopFieldObject);
+               (_loc5_ as ShopFieldObject).shopFieldObjectVo.formerPosition = null;
             }
-            if(!(_loc7_ && Boolean(param1)))
+            if(_loc5_ is IEmergencyInfrastructure)
             {
-               §§push(_loc5_.billboardObjectVo);
-               if(!_loc7_)
-               {
-                  §§pop().matrix3dCoordinates = new Cuboid(_loc2_.json.x,_loc2_.json.y,0,_loc5_.billboardObjectVo.configPlayfieldItemVo.sizeX,_loc5_.billboardObjectVo.configPlayfieldItemVo.sizeY,_loc5_.billboardObjectVo.configPlayfieldItemVo.zLevels.length);
-                  if(_loc8_)
-                  {
-                     sendNotification(ApplicationNotificationConstants.PLAYFIELD_MOVE_ITEM,_loc5_);
-                     if(!_loc7_)
-                     {
-                        _loc3_.reAddGameObjVoToMatrix(_loc5_.billboardObjectVo);
-                        if(_loc8_ || Boolean(this))
-                        {
-                           addr0112:
-                           §§push(_loc5_ is ShopFieldObject);
-                           if(_loc8_)
-                           {
-                              if(§§pop())
-                              {
-                                 if(!_loc7_)
-                                 {
-                                    _loc4_.addShop(_loc5_ as ShopFieldObject);
-                                    if(!(_loc7_ && Boolean(this)))
-                                    {
-                                       addr0142:
-                                       (_loc5_ as ShopFieldObject).shopFieldObjectVo.formerPosition = null;
-                                       if(!_loc7_)
-                                       {
-                                          addr0155:
-                                          addr015b:
-                                          if(_loc5_ is IEmergencyInfrastructure)
-                                          {
-                                             if(!(_loc7_ && Boolean(_loc3_)))
-                                             {
-                                                _loc6_.addObject((_loc5_ as IEmergencyInfrastructure).emergencyFieldObjectVo);
-                                                addr016d:
-                                                if(!(_loc7_ && Boolean(_loc2_)))
-                                                {
-                                                   addr019b:
-                                                   _loc5_.billboardObjectVo.userInteractionLocked = false;
-                                                   addr0197:
-                                                   if(_loc7_)
-                                                   {
-                                                   }
-                                                }
-                                             }
-                                             §§goto(addr01b5);
-                                          }
-                                          §§goto(addr0197);
-                                       }
-                                    }
-                                    addr01b5:
-                                    return;
-                                 }
-                                 §§goto(addr0142);
-                              }
-                              §§goto(addr0155);
-                           }
-                           §§goto(addr015b);
-                        }
-                        §§goto(addr0155);
-                     }
-                     §§goto(addr016d);
-                  }
-                  §§goto(addr0112);
-               }
-               §§goto(addr019b);
+               _loc6_.addObject((_loc5_ as IEmergencyInfrastructure).emergencyFieldObjectVo);
             }
+            _loc5_.billboardObjectVo.userInteractionLocked = false;
+            return;
          }
-         §§goto(addr0142);
+         throw new RamaCityError("ServerMessagePlayfieldBuildingMoveFailedCommand: moved Building NULL!");
       }
    }
 }

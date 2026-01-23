@@ -9,20 +9,8 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function FieldInfoLayerConfigPlayfieldItemVo(param1:ConfigPlayfieldItemDTO)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            super();
-            if(!(_loc3_ && _loc3_))
-            {
-               addr0028:
-               this._config = param1;
-            }
-            return;
-         }
-         §§goto(addr0028);
+         super();
+         this._config = param1;
       }
       
       public function get config() : ConfigPlayfieldItemDTO

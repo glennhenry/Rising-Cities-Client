@@ -11,29 +11,14 @@ package net.bigpoint.cityrama.controller.server
       
       public function ServerMarketOfferSoldCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:ExternalInterfaceProxy = facade.retrieveProxy(ExternalInterfaceProxy.NAME) as ExternalInterfaceProxy;
-         if(!(_loc3_ && Boolean(this)))
-         {
-            _loc2_.updateMarket();
-            if(!_loc3_)
-            {
-               sendNotification(ApplicationNotificationConstants.MARKET_OFFER_SOLD);
-            }
-         }
+         _loc2_.updateMarket();
+         sendNotification(ApplicationNotificationConstants.MARKET_OFFER_SOLD);
       }
    }
 }

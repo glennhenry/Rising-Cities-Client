@@ -13,13 +13,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function CitySquareRewardPreviewVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get rewardCollection() : ArrayCollection
@@ -29,13 +23,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set rewardCollection(param1:ArrayCollection) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._rewardCollection = param1;
-         }
+         this._rewardCollection = param1;
       }
       
       public function get challengeNumber() : Number
@@ -45,13 +33,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set challengeNumber(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._challengeNumber = param1;
-         }
+         this._challengeNumber = param1;
       }
       
       public function get totalChallenges() : Number
@@ -61,13 +43,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set totalChallenges(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._totalChallenges = param1;
-         }
+         this._totalChallenges = param1;
       }
    }
 }

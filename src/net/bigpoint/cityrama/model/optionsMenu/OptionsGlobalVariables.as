@@ -3,17 +3,9 @@ package net.bigpoint.cityrama.model.optionsMenu
    public class OptionsGlobalVariables
    {
       
-      public static const NAME:String = "OptionsGlobalVariables";
-      
       private static var instance:OptionsGlobalVariables;
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(!(_loc1_ && _loc1_))
-      {
-         NAME = "OptionsGlobalVariables";
-      }
+      public static const NAME:String = "OptionsGlobalVariables";
       
       private var _highQuality:Boolean = true;
       
@@ -37,37 +29,16 @@ package net.bigpoint.cityrama.model.optionsMenu
       
       public function OptionsGlobalVariables()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public static function getInstance() : OptionsGlobalVariables
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc1_)
+         if(instance == null)
          {
-            §§push(instance);
-            if(_loc1_)
-            {
-               if(§§pop() == null)
-               {
-                  if(!_loc2_)
-                  {
-                     addr0039:
-                     instance = new OptionsGlobalVariables();
-                  }
-               }
-               return instance;
-            }
+            instance = new OptionsGlobalVariables();
          }
-         §§goto(addr0039);
+         return instance;
       }
       
       public function get highQuality() : Boolean
@@ -77,13 +48,7 @@ package net.bigpoint.cityrama.model.optionsMenu
       
       public function set highQuality(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._highQuality = param1;
-         }
+         this._highQuality = param1;
       }
       
       public function get showDropIcons() : Boolean
@@ -93,13 +58,7 @@ package net.bigpoint.cityrama.model.optionsMenu
       
       public function set showDropIcons(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._showDropIcons = param1;
-         }
+         this._showDropIcons = param1;
       }
       
       public function get showFloater() : Boolean
@@ -109,13 +68,7 @@ package net.bigpoint.cityrama.model.optionsMenu
       
       public function set showFloater(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this._showFloater = param1;
-         }
+         this._showFloater = param1;
       }
       
       public function get normalCitizenAmount() : Boolean
@@ -125,13 +78,7 @@ package net.bigpoint.cityrama.model.optionsMenu
       
       public function set normalCitizenAmount(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._normalCitizenAmount = param1;
-         }
+         this._normalCitizenAmount = param1;
       }
       
       public function get showRCVerification() : Boolean
@@ -141,13 +88,7 @@ package net.bigpoint.cityrama.model.optionsMenu
       
       public function set showRCVerification(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._showRCVerification = param1;
-         }
+         this._showRCVerification = param1;
       }
       
       public function get fasterNotification() : Boolean
@@ -157,13 +98,7 @@ package net.bigpoint.cityrama.model.optionsMenu
       
       public function set fasterNotification(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._fasterNotification = param1;
-         }
+         this._fasterNotification = param1;
       }
       
       public function get fullscreenActive() : Boolean
@@ -173,13 +108,7 @@ package net.bigpoint.cityrama.model.optionsMenu
       
       public function set fullscreenActive(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._fullscreenActive = param1;
-         }
+         this._fullscreenActive = param1;
       }
       
       public function get soundActive() : Boolean
@@ -189,13 +118,7 @@ package net.bigpoint.cityrama.model.optionsMenu
       
       public function set soundActive(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._soundActive = param1;
-         }
+         this._soundActive = param1;
       }
       
       public function get viewedPlayfieldItemConfigIds() : Vector.<Number>
@@ -205,13 +128,7 @@ package net.bigpoint.cityrama.model.optionsMenu
       
       public function set viewedPlayfieldItemConfigIds(param1:Vector.<Number>) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._viewedPlayfieldItemConfigIds = param1;
-         }
+         this._viewedPlayfieldItemConfigIds = param1;
       }
       
       public function get viewedQuests() : Vector.<Number>
@@ -221,13 +138,7 @@ package net.bigpoint.cityrama.model.optionsMenu
       
       public function set viewedQuests(param1:Vector.<Number>) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
-         {
-            this._viewedQuest = param1;
-         }
+         this._viewedQuest = param1;
       }
    }
 }

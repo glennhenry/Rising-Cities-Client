@@ -16,47 +16,27 @@ package net.bigpoint.cityrama.controller.server.messages.professionals.server
       
       public function ServerMessageProfessionalCreateSuccess()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc7_:Boolean = true;
-         var _loc8_:* = §§pop();
-         var _loc5_:BillboardObject = null;
          var _loc6_:SecurityMatrixProxy = null;
          var _loc2_:MessageVo = MessageVo(param1.getBody());
          var _loc3_:PlayfieldObjectsProxy = facade.retrieveProxy(PlayfieldObjectsProxy.NAME) as PlayfieldObjectsProxy;
          var _loc4_:ProfessionalDTO = ConfigFactory.buildProfessionalDTO(_loc2_.json.prof);
          if(_loc4_)
          {
-            if(!_loc8_)
+            var _loc5_:BillboardObject = _loc3_.getBillboardById(_loc4_.buildingId);
+            if(_loc5_)
             {
-               _loc5_ = _loc3_.getBillboardById(_loc4_.buildingId);
-               if(_loc5_)
-               {
-                  if(_loc7_ || Boolean(param1))
-                  {
-                     _loc5_.billboardObjectVo.buildingDTO.professionals.push(_loc4_);
-                  }
-               }
-               §§goto(addr00a8);
+               null.billboardObjectVo.buildingDTO.professionals.push(_loc4_);
             }
-            §§goto(addr00b4);
          }
-         addr00a8:
-         if(_loc5_.billboardObjectVo is IEmergencyInfrastructureVO)
+         if(null.billboardObjectVo is IEmergencyInfrastructureVO)
          {
-            addr00b4:
             _loc6_ = facade.retrieveProxy(SecurityMatrixProxy.NAME) as SecurityMatrixProxy;
-            _loc6_.updateObject(_loc5_.billboardObjectVo as IEmergencyInfrastructureVO);
+            _loc6_.updateObject(null.billboardObjectVo as IEmergencyInfrastructureVO);
          }
       }
    }

@@ -13,46 +13,22 @@ package net.bigpoint.cityrama.controller.server.messages
       
       public function ClientMessageBuildingInaugurate()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc6_:Boolean = true;
-         var _loc7_:* = §§pop();
          var _loc2_:BillboardObjectVo = param1.getBody().vo as BillboardObjectVo;
          var _loc3_:ServerCommunicationProxy = ServerCommunicationProxy(facade.retrieveProxy(ServerCommunicationProxy.NAME));
          var _loc4_:Object = new Object();
          _loc4_.bid = _loc2_.buildingDTO.id;
-         if(!(_loc7_ && Boolean(_loc3_)))
+         _loc4_.pid = _loc2_.inaugurationPhase.phaseId;
+         if(param1.getBody().pop)
          {
-            _loc4_.pid = _loc2_.inaugurationPhase.phaseId;
-            if(_loc6_ || Boolean(param1))
-            {
-               if(param1.getBody().pop)
-               {
-                  if(!(_loc7_ && Boolean(_loc3_)))
-                  {
-                     addr00ac:
-                     _loc4_.pop = param1.getBody().pop;
-                  }
-               }
-            }
-            var _loc5_:MessageVo = _loc3_.createMessage(_loc4_,ServerMessageConstants.PLAYFIELD_BUILDING_INAUGURATE);
-            if(!_loc7_)
-            {
-               _loc3_.sendMessage(_loc5_);
-            }
-            return;
+            _loc4_.pop = param1.getBody().pop;
          }
-         §§goto(addr00ac);
+         var _loc5_:MessageVo = _loc3_.createMessage(_loc4_,ServerMessageConstants.PLAYFIELD_BUILDING_INAUGURATE);
+         _loc3_.sendMessage(_loc5_);
       }
    }
 }

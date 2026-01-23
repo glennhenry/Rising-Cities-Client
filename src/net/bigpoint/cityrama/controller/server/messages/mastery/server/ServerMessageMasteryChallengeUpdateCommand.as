@@ -14,42 +14,20 @@ package net.bigpoint.cityrama.controller.server.messages.mastery.server
       
       public function ServerMessageMasteryChallengeUpdateCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
          var _loc2_:MessageVo = MessageVo(param1.getBody());
          var _loc3_:PlayfieldObjectsProxy = super.facade.retrieveProxy(PlayfieldObjectsProxy.NAME) as PlayfieldObjectsProxy;
          var _loc4_:ResidentialFieldObject = _loc3_.getBillboardById(_loc2_.json.bid) as ResidentialFieldObject;
          if(_loc4_ != null)
          {
-            if(_loc5_ || Boolean(param1))
-            {
-               _loc4_.residentialFieldObjectVo.buildingDTO.currentMasteryChallenge = new MasteryChallengeDTO(_loc2_.json.m);
-               if(!(_loc6_ && Boolean(this)))
-               {
-                  facade.sendNotification(ApplicationNotificationConstants.MASTERY_CHALLENGE_UPDATE);
-                  if(_loc5_)
-                  {
-                     addr00aa:
-                     _loc4_.invalidateIconStateManager();
-                  }
-               }
-               §§goto(addr00b0);
-            }
-            §§goto(addr00aa);
+            _loc4_.residentialFieldObjectVo.buildingDTO.currentMasteryChallenge = new MasteryChallengeDTO(_loc2_.json.m);
+            facade.sendNotification(ApplicationNotificationConstants.MASTERY_CHALLENGE_UPDATE);
+            _loc4_.invalidateIconStateManager();
          }
-         addr00b0:
       }
    }
 }

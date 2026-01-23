@@ -10,29 +10,14 @@ package net.bigpoint.cityrama.controller.server.messages
       
       public function ServerMessageIllegalParamFailCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:ServerCommunicationProxy = super.facade.retrieveProxy(ServerCommunicationProxy.NAME) as ServerCommunicationProxy;
-         if(!_loc3_)
-         {
-            _loc2_.disconnect();
-            if(!(_loc3_ && _loc3_))
-            {
-               facade.sendNotification(MiniLayerConstants.OPEN_MINI_CONNECTIONLOST,null);
-            }
-         }
+         _loc2_.disconnect();
+         facade.sendNotification(MiniLayerConstants.OPEN_MINI_CONNECTIONLOST,null);
       }
    }
 }

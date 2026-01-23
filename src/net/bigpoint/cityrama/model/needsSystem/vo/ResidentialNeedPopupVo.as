@@ -29,78 +29,19 @@ package net.bigpoint.cityrama.model.needsSystem.vo
       
       public function ResidentialNeedPopupVo(param1:String, param2:Boolean, param3:Number, param4:String, param5:Boolean, param6:String, param7:String = "gui_resources_icons", param8:Boolean = false, param9:int = 1, param10:Number = 0, param11:Number = 0, param12:Number = 0)
       {
-         §§push(false);
-         var _loc13_:Boolean = true;
-         var _loc14_:* = §§pop();
-         if(!(_loc14_ && Boolean(this)))
-         {
-            super();
-            if(_loc13_)
-            {
-               this._type = param1;
-               if(_loc13_)
-               {
-                  this._user = param2;
-                  if(!_loc14_)
-                  {
-                     this._parentBuildingGfxId = param3;
-                     if(_loc13_)
-                     {
-                        this._parentLocaleId = param4;
-                        if(!_loc14_)
-                        {
-                           this._fulfilled = param5;
-                           if(_loc13_ || Boolean(param1))
-                           {
-                              addr007c:
-                              this._imageId = param6;
-                              if(!_loc14_)
-                              {
-                                 addr0088:
-                                 this._dynaLibName = param7;
-                                 if(!(_loc14_ && Boolean(param3)))
-                                 {
-                                    this._locked = param8;
-                                    if(_loc13_ || Boolean(param3))
-                                    {
-                                       addr00c0:
-                                       this._buildingLevelRequired = param9;
-                                       if(!_loc14_)
-                                       {
-                                          this._vcBonus = param10;
-                                          if(_loc13_ || Boolean(this))
-                                          {
-                                             addr00e1:
-                                             this._ppBonus = param11;
-                                             if(_loc13_)
-                                             {
-                                                addr00ee:
-                                                this._epBonus = param12;
-                                             }
-                                          }
-                                          §§goto(addr00f5);
-                                       }
-                                       §§goto(addr00e1);
-                                    }
-                                    §§goto(addr00ee);
-                                 }
-                                 §§goto(addr00e1);
-                              }
-                              §§goto(addr00f5);
-                           }
-                           §§goto(addr00c0);
-                        }
-                        §§goto(addr0088);
-                     }
-                  }
-                  §§goto(addr00e1);
-               }
-               §§goto(addr0088);
-            }
-            addr00f5:
-            return;
-         }
-         §§goto(addr007c);
+         super();
+         this._type = param1;
+         this._user = param2;
+         this._parentBuildingGfxId = param3;
+         this._parentLocaleId = param4;
+         this._fulfilled = param5;
+         this._imageId = param6;
+         this._dynaLibName = param7;
+         this._locked = param8;
+         this._buildingLevelRequired = param9;
+         this._vcBonus = param10;
+         this._ppBonus = param11;
+         this._epBonus = param12;
       }
       
       public function get type() : String
@@ -155,13 +96,7 @@ package net.bigpoint.cityrama.model.needsSystem.vo
       
       public function set fulfilled(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._fulfilled = param1;
-         }
+         this._fulfilled = param1;
       }
       
       public function get ppBonus() : Number

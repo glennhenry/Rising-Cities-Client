@@ -17,14 +17,6 @@ package net.bigpoint.cityrama.view.emergencyBook
       
       public static const NAME:String = "SpecialistDetailGridMediator";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(!(_loc1_ && SpecialistDetailGridMediator))
-      {
-         NAME = "SpecialistDetailGridMediator";
-      }
-      
       public var slotNumber:Number;
       
       private var _eLP:EmergencyLayerProxy;
@@ -33,44 +25,20 @@ package net.bigpoint.cityrama.view.emergencyBook
       
       public function SpecialistDetailGridMediator(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            super(NAME,param1);
-            if(!(_loc2_ && Boolean(this)))
-            {
-               addr0036:
-               this.component.addEventListener(EmergencyDataGridComponent.ITEM_SELECTED,this.handleItemSelected);
-            }
-            return;
-         }
-         §§goto(addr0036);
+         super(NAME,param1);
+         this.component.addEventListener(EmergencyDataGridComponent.ITEM_SELECTED,this.handleItemSelected);
       }
       
       private function handleItemSelected(param1:Event) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:ProfessionalListInfoVo = param1.target.selectedItem as ProfessionalListInfoVo;
-         if(_loc3_)
+         if(_loc2_.operationsLeft > 0)
          {
-            if(_loc2_.operationsLeft > 0)
-            {
-               if(_loc3_ || Boolean(this))
-               {
-                  facade.sendNotification(ApplicationNotificationConstants.DATA_GRID_PROFESSIONAL_SELECT_TEMPORARY,_loc2_);
-                  if(_loc3_ || Boolean(_loc2_))
-                  {
-                  }
-               }
-            }
-            else
-            {
-               facade.sendNotification(MiniLayerConstants.OPEN_MINI_EMERGENCY_REHIRE_PROFESSIONAL,_loc2_.profId);
-            }
+            facade.sendNotification(ApplicationNotificationConstants.DATA_GRID_PROFESSIONAL_SELECT_TEMPORARY,_loc2_);
+         }
+         else
+         {
+            facade.sendNotification(MiniLayerConstants.OPEN_MINI_EMERGENCY_REHIRE_PROFESSIONAL,_loc2_.profId);
          }
       }
       
@@ -86,129 +54,48 @@ package net.bigpoint.cityrama.view.emergencyBook
       
       override public function onRegister() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super.onRegister();
-            if(!(_loc1_ && _loc2_))
-            {
-               addr0028:
-               this.setupListeners();
-            }
-            return;
-         }
-         §§goto(addr0028);
+         super.onRegister();
+         this.setupListeners();
       }
       
       private function setupListeners() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || Boolean(this))
-         {
-            this.component.addEventListener(Event.REMOVED_FROM_STAGE,this.handleRemoved);
-         }
+         this.component.addEventListener(Event.REMOVED_FROM_STAGE,this.handleRemoved);
       }
       
       private function handleRemoved(param1:Event) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this.component.removeEventListener(Event.REMOVED_FROM_STAGE,this.handleRemoved);
-            if(!_loc3_)
-            {
-               facade.removeMediator(NAME);
-            }
-         }
+         this.component.removeEventListener(Event.REMOVED_FROM_STAGE,this.handleRemoved);
+         facade.removeMediator(NAME);
       }
       
       override public function handleNotification(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
          var _loc2_:EmergencyAssignListVo = null;
-         var _loc3_:* = param1.getName();
-         if(!_loc4_)
+         switch(param1.getName())
          {
-            if(ApplicationNotificationConstants.PROFESSIONALS_CHANGED === _loc3_)
-            {
-               addr008d:
-               §§push(0);
-               if(_loc4_)
-               {
-               }
-            }
-            else
-            {
-               §§push(1);
-            }
-            switch(§§pop())
-            {
-               case 0:
-                  _loc2_ = this.emergencyLayerProxy.getEmergencyAssignListVo(this.emergencyBookMediator.billboardObjectVo,this.component.data.slotIndex);
-                  if(_loc5_ || Boolean(param1))
-                  {
-                     this.component.data = _loc2_;
-                  }
-            }
-            return;
+            case ApplicationNotificationConstants.PROFESSIONALS_CHANGED:
+               _loc2_ = this.emergencyLayerProxy.getEmergencyAssignListVo(this.emergencyBookMediator.billboardObjectVo,this.component.data.slotIndex);
+               this.component.data = _loc2_;
          }
-         §§goto(addr008d);
       }
       
       private function get emergencyLayerProxy() : EmergencyLayerProxy
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
+         if(this._eLP == null)
          {
-            §§push(this._eLP);
-            if(_loc1_)
-            {
-               if(§§pop() == null)
-               {
-                  if(!(_loc2_ && _loc1_))
-                  {
-                     this._eLP = facade.retrieveProxy(EmergencyLayerProxy.NAME) as EmergencyLayerProxy;
-                  }
-               }
-               addr004c:
-               return this._eLP;
-            }
+            this._eLP = facade.retrieveProxy(EmergencyLayerProxy.NAME) as EmergencyLayerProxy;
          }
-         §§goto(addr004c);
+         return this._eLP;
       }
       
       private function get emergencyBookMediator() : EmergencyBookMediator
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
+         if(this._eBM == null)
          {
-            §§push(this._eBM);
-            if(_loc1_ || _loc2_)
-            {
-               if(§§pop() == null)
-               {
-                  if(!(_loc2_ && Boolean(this)))
-                  {
-                     this._eBM = facade.retrieveMediator(EmergencyBookMediator.NAME) as EmergencyBookMediator;
-                  }
-               }
-               addr0067:
-               return this._eBM;
-            }
+            this._eBM = facade.retrieveMediator(EmergencyBookMediator.NAME) as EmergencyBookMediator;
          }
-         §§goto(addr0067);
+         return this._eBM;
       }
       
       public function get component() : SpecialistDetailsListComponent

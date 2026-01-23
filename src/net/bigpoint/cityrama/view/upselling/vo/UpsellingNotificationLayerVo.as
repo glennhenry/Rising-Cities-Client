@@ -13,13 +13,7 @@ package net.bigpoint.cityrama.view.upselling.vo
       
       public function UpsellingNotificationLayerVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && Boolean(this)))
-         {
-            super();
-         }
+         super();
       }
       
       public function get price() : Number
@@ -29,13 +23,7 @@ package net.bigpoint.cityrama.view.upselling.vo
       
       public function set price(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
-         {
-            this._price = param1;
-         }
+         this._price = param1;
       }
       
       public function get currency() : String
@@ -45,13 +33,7 @@ package net.bigpoint.cityrama.view.upselling.vo
       
       public function set currency(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._currency = param1;
-         }
+         this._currency = param1;
       }
       
       public function get oldPaymentCall() : Object
@@ -61,13 +43,7 @@ package net.bigpoint.cityrama.view.upselling.vo
       
       public function set oldPaymentCall(param1:Object) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._oldPaymentCall = param1;
-         }
+         this._oldPaymentCall = param1;
       }
       
       public function get amount() : Number
@@ -77,13 +53,7 @@ package net.bigpoint.cityrama.view.upselling.vo
       
       public function set amount(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._amount = param1;
-         }
+         this._amount = param1;
       }
    }
 }

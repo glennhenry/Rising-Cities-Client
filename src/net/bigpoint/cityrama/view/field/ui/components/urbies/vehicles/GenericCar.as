@@ -9,13 +9,7 @@ package net.bigpoint.cityrama.view.field.ui.components.urbies.vehicles
       
       public function GenericCar(param1:PreloadableUVObject, param2:UrbieLifeVo)
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(_loc4_)
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
    }
 }

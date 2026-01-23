@@ -10,24 +10,12 @@ package net.bigpoint.cityrama.controller
       
       public function KaTestCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || Boolean(this))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            sendNotification(ApplicationNotificationConstants.RENEW_EXPANSION_SALE_MARKER);
-         }
+         sendNotification(ApplicationNotificationConstants.RENEW_EXPANSION_SALE_MARKER);
       }
    }
 }

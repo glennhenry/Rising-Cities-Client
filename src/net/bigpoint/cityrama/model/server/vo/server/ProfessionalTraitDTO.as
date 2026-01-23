@@ -15,30 +15,10 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ProfessionalTraitDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            super();
-            if(!(_loc2_ && _loc2_))
-            {
-               this._stacks = param1.s;
-               addr0036:
-               if(_loc3_ || Boolean(this))
-               {
-                  this._configId = param1.cpt;
-                  if(!(_loc2_ && Boolean(this)))
-                  {
-                     addr0070:
-                     this._professionalId = param1.prof;
-                  }
-                  return;
-               }
-            }
-            §§goto(addr0070);
-         }
-         §§goto(addr0036);
+         super();
+         this._stacks = param1.s;
+         this._configId = param1.cpt;
+         this._professionalId = param1.prof;
       }
       
       public function get professionalId() : Number
@@ -58,13 +38,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set config(param1:ConfigProfessionalTraitDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._config = param1;
-         }
+         this._config = param1;
       }
       
       public function get config() : ConfigProfessionalTraitDTO

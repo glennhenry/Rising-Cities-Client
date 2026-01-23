@@ -20,120 +20,46 @@ package net.bigpoint.cityrama.controller.server.messages
       
       public function ClientMessageDeleteGround()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc9_:Boolean = true;
-         var _loc10_:* = §§pop();
-         var _loc4_:ConfigOutputDTO = null;
          var _loc2_:IPlaneObject = IPlaneObject(param1.getBody());
-         if(_loc9_)
+         var _temp_1:* = _loc2_.container;
+         _loc2_.container.mouseEnabled = false;
+         _temp_1.mouseChildren = false;
+         var _loc3_:Number = 0;
+         for each(var _loc4_ in (_loc2_.objectVo as IFloaterObjectVo).informationFloaterPhase.listEntryOutputs)
          {
-            _loc2_.container.mouseChildren = _loc2_.container.mouseEnabled = false;
+            _loc3_ += 1;
          }
-         var _loc3_:* = 0;
-         for each(_loc4_ in (_loc2_.objectVo as IFloaterObjectVo).informationFloaterPhase.listEntryOutputs)
+         if(_loc3_ == 1)
          {
-            if(_loc10_)
-            {
-               continue;
-            }
-            §§push(_loc3_);
-            if(!(_loc10_ && Boolean(param1)))
-            {
-               §§push(§§pop() + 1);
-               if(!(_loc10_ && Boolean(_loc3_)))
-               {
-                  addr0091:
-                  §§push(§§pop());
-               }
-               _loc3_ = §§pop();
-               continue;
-            }
-            §§goto(addr0091);
+            _loc3_ -= 0.5;
          }
-         if(_loc9_)
+         var _loc5_:ConfigPhaseDTO = (_loc2_.objectVo as IFloaterObjectVo).informationFloaterPhase;
+         (_loc2_ as IInformationFloat).invalidateInformationFloaterManager(true);
+         if(OptionsGlobalVariables.getInstance().showDropIcons)
          {
-            §§push(_loc3_);
-            if(_loc9_)
+            if(_loc5_ != null)
             {
-               if(§§pop() == 1)
-               {
-                  if(!(_loc10_ && Boolean(this)))
-                  {
-                     addr00ec:
-                     §§push(_loc3_);
-                     if(!(_loc10_ && Boolean(this)))
-                     {
-                        §§push(§§pop() - 0.5);
-                        if(!(_loc10_ && Boolean(param1)))
-                        {
-                           §§push(§§pop());
-                        }
-                     }
-                     _loc3_ = §§pop();
-                  }
-               }
-               addr00ed:
-               var _loc5_:ConfigPhaseDTO = (_loc2_.objectVo as IFloaterObjectVo).informationFloaterPhase;
-               if(!_loc10_)
-               {
-                  (_loc2_ as IInformationFloat).invalidateInformationFloaterManager(true);
-                  if(!_loc10_)
-                  {
-                     if(OptionsGlobalVariables.getInstance().showDropIcons)
-                     {
-                        if(!(_loc10_ && Boolean(this)))
-                        {
-                           if(_loc5_ != null)
-                           {
-                              if(_loc9_)
-                              {
-                                 facade.sendNotification(ApplicationNotificationConstants.EVALUATE_DROPS,{
-                                    "tO":_loc2_,
-                                    "cP":_loc5_
-                                 });
-                                 addr013c:
-                              }
-                           }
-                        }
-                     }
-                  }
-                  var _loc6_:Object = new Object();
-                  _loc6_.gid = _loc2_.objectVo.groundDTO.id;
-                  if(!_loc10_)
-                  {
-                     TweenMax.delayedCall(_loc3_,this.sendToServer,[_loc6_]);
-                  }
-                  return;
-               }
-               §§goto(addr013c);
+               facade.sendNotification(ApplicationNotificationConstants.EVALUATE_DROPS,{
+                  "tO":_loc2_,
+                  "cP":_loc5_
+               });
             }
-            §§goto(addr00ec);
          }
-         §§goto(addr00ed);
+         var _loc6_:Object = new Object();
+         _loc6_.gid = _loc2_.objectVo.groundDTO.id;
+         TweenMax.delayedCall(_loc3_,this.sendToServer,[_loc6_]);
       }
       
       private function sendToServer(param1:Object) : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc2_:ServerCommunicationProxy = ServerCommunicationProxy(facade.retrieveProxy(ServerCommunicationProxy.NAME));
          var _loc3_:MessageVo = _loc2_.createMessage(param1,ServerMessageConstants.PLAYFIELD_DESTROY_GROUND);
-         if(_loc4_)
-         {
-            _loc2_.sendMessage(_loc3_);
-         }
+         _loc2_.sendMessage(_loc3_);
       }
    }
 }

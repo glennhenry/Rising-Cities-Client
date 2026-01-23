@@ -33,64 +33,16 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function EventChallengeStepDetailViewVo(param1:Number, param2:int, param3:String, param4:int, param5:int, param6:int, param7:Boolean, param8:String, param9:Number)
       {
-         var _temp_1:* = true;
-         var _loc10_:Boolean = false;
-         var _loc11_:Boolean = _temp_1;
-         if(_loc11_ || Boolean(param2))
-         {
-            super();
-            if(_loc11_)
-            {
-               this._targetGoodCid = param1;
-               if(_loc11_)
-               {
-                  this._targetGoodIsEventGood = param7;
-                  if(!_loc10_)
-                  {
-                     addr0046:
-                     this._targetGoodGfxId = param2;
-                     if(_loc11_)
-                     {
-                        this._targetGoodLocaleId = param3;
-                        if(_loc11_)
-                        {
-                           addr0069:
-                           this._targetGoodPlayerStock = param4;
-                           if(_loc11_ || Boolean(param3))
-                           {
-                              this._targetGoodEventStock = param5;
-                              if(_loc11_ || Boolean(param3))
-                              {
-                                 addr009e:
-                                 this._targetGoodEventStockTarget = param6;
-                                 if(!(_loc10_ && Boolean(param2)))
-                                 {
-                                    addr00b2:
-                                    this._currentEventGfxId = param9;
-                                    if(_loc11_)
-                                    {
-                                       addr00be:
-                                       this._currentEventLocaleId = param8;
-                                    }
-                                    §§goto(addr00c4);
-                                 }
-                                 §§goto(addr00be);
-                              }
-                              addr00c4:
-                              return;
-                           }
-                           §§goto(addr00b2);
-                        }
-                        §§goto(addr009e);
-                     }
-                  }
-                  §§goto(addr00b2);
-               }
-               §§goto(addr0069);
-            }
-            §§goto(addr0046);
-         }
-         §§goto(addr00be);
+         super();
+         this._targetGoodCid = param1;
+         this._targetGoodIsEventGood = param7;
+         this._targetGoodGfxId = param2;
+         this._targetGoodLocaleId = param3;
+         this._targetGoodPlayerStock = param4;
+         this._targetGoodEventStock = param5;
+         this._targetGoodEventStockTarget = param6;
+         this._currentEventGfxId = param9;
+         this._currentEventLocaleId = param8;
       }
       
       public function get gfxId() : int
@@ -145,13 +97,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set questId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._questId = param1;
-         }
+         this._questId = param1;
       }
       
       public function get questElementId() : Number
@@ -161,13 +107,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set questElementId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._questElementId = param1;
-         }
+         this._questElementId = param1;
       }
       
       public function get questType() : String
@@ -177,13 +117,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set questType(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._questType = param1;
-         }
+         this._questType = param1;
       }
       
       public function get instantFinishPrice() : Number
@@ -193,13 +127,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set instantFinishPrice(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._instantFinishPrice = param1;
-         }
+         this._instantFinishPrice = param1;
       }
       
       public function get upsellingAffordable() : Boolean
@@ -209,13 +137,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set upsellingAffordable(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
-         {
-            this._upsellingAffordable = param1;
-         }
+         this._upsellingAffordable = param1;
       }
       
       public function get challengeStepCompletedPercentage() : Number

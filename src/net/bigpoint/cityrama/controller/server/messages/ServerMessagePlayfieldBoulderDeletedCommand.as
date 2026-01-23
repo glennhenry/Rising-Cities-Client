@@ -14,29 +14,17 @@ package net.bigpoint.cityrama.controller.server.messages
       
       public function ServerMessagePlayfieldBoulderDeletedCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc2_))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc2_:PlayfieldObjectsProxy = facade.retrieveProxy(PlayfieldObjectsProxy.NAME) as PlayfieldObjectsProxy;
          var _loc3_:Object = MessageVo(param1.getBody());
          var _loc4_:BillboardObject = _loc2_.getBillboardById(_loc3_.json.bid);
          if(_loc4_ is BoulderFieldObject)
          {
-            if(_loc6_)
-            {
-               sendNotification(ApplicationNotificationConstants.SHOW_BOULDER_FLOATER_AND_REMOVE,_loc4_ as BoulderFieldObject);
-            }
+            sendNotification(ApplicationNotificationConstants.SHOW_BOULDER_FLOATER_AND_REMOVE,_loc4_ as BoulderFieldObject);
          }
       }
    }

@@ -17,21 +17,12 @@ package net.bigpoint.cityrama.controller.client
       
       public function ClientMessagePlayfieldRequestProduction()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc18_:Boolean = false;
-         var _loc19_:Boolean = _temp_1;
-         var _loc6_:* = NaN;
+         var _loc6_:Number = NaN;
          var _loc7_:ConfigPhaseDTO = null;
          var _loc10_:ConfigOutputDTO = null;
          var _loc11_:ConfigPhaseDTO = null;
@@ -41,109 +32,34 @@ package net.bigpoint.cityrama.controller.client
          var _loc5_:ProductionGoodObjectVo = _loc3_.good;
          for each(_loc7_ in _loc4_.configPlayfieldItemVo.activePhases)
          {
-            if(!(_loc18_ && Boolean(_loc2_)))
+            for each(_loc10_ in _loc7_.listEntryOutputs)
             {
-               var _loc14_:int = 0;
-               if(!(_loc18_ && Boolean(param1)))
+               if(Boolean(_loc10_.goodConfig) && _loc10_.goodConfig.id == _loc5_.config.id)
                {
-                  for each(_loc10_ in _loc7_.listEntryOutputs)
+                  for each(_loc11_ in _loc4_.configPlayfieldItemVo.activePhases)
                   {
-                     §§push(_loc10_.goodConfig);
-                     if(!_loc18_)
+                     if(_loc11_.phaseOrderId == _loc7_.phaseOrderId - 1)
                      {
-                        §§push(§§pop());
-                        if(!(_loc18_ && Boolean(_loc3_)))
-                        {
-                           var _temp_6:* = §§pop();
-                           §§push(_temp_6);
-                           if(_temp_6)
-                           {
-                              if(!(_loc18_ && Boolean(param1)))
-                              {
-                                 §§pop();
-                                 if(!_loc19_)
-                                 {
-                                    continue;
-                                 }
-                                 addr00ee:
-                                 §§push(_loc10_.goodConfig.id == _loc5_.config.id);
-                              }
-                           }
-                        }
-                        if(§§pop())
-                        {
-                           if(_loc19_)
-                           {
-                              var _loc16_:int = 0;
-                              if(!_loc18_)
-                              {
-                                 for each(_loc11_ in _loc4_.configPlayfieldItemVo.activePhases)
-                                 {
-                                    if(_loc11_.phaseOrderId == _loc7_.phaseOrderId - 1)
-                                    {
-                                       if(!_loc18_)
-                                       {
-                                          §§push(_loc11_.phaseId);
-                                          if(_loc19_ || Boolean(_loc3_))
-                                          {
-                                             §§push(§§pop());
-                                          }
-                                          _loc6_ = §§pop();
-                                       }
-                                    }
-                                 }
-                              }
-                           }
-                        }
-                        continue;
+                        _loc6_ = _loc11_.phaseId;
                      }
-                     §§goto(addr00ee);
                   }
                }
             }
          }
-         if(!(_loc18_ && Boolean(param1)))
+         if(isNaN(_loc6_))
          {
-            if(isNaN(_loc6_))
-            {
-               if(!(_loc18_ && Boolean(this)))
-               {
-                  §§goto(addr01a7);
-               }
-            }
-            var _loc8_:Object = new Object();
-            _loc8_.bid = _loc4_.buildingDTO.id;
-            if(_loc19_ || Boolean(this))
-            {
-               _loc8_.cpi = _loc6_;
-               if(_loc19_)
-               {
-                  _loc8_.bst = false;
-                  if(_loc19_ || Boolean(param1))
-                  {
-                     if(_loc3_.boost)
-                     {
-                        if(_loc19_)
-                        {
-                           addr0215:
-                           _loc8_.bst = _loc3_.boost;
-                        }
-                     }
-                     §§goto(addr0220);
-                  }
-                  §§goto(addr0215);
-               }
-            }
-            addr0220:
-            var _loc9_:MessageVo = _loc2_.createMessage(_loc8_,ServerMessageConstants.PLAYFIELD_REQUEST_PRODUCTION);
-            if(_loc19_)
-            {
-               _loc2_.sendMessage(_loc9_);
-            }
-            return;
+            throw new RamaCityError("Invalid Production Phase!!!");
          }
-         addr01a7:
-         throw new RamaCityError("Invalid Production Phase!!!");
+         var _loc8_:Object = new Object();
+         _loc8_.bid = _loc4_.buildingDTO.id;
+         _loc8_.cpi = _loc6_;
+         _loc8_.bst = false;
+         if(_loc3_.boost)
+         {
+            _loc8_.bst = _loc3_.boost;
+         }
+         var _loc9_:MessageVo = _loc2_.createMessage(_loc8_,ServerMessageConstants.PLAYFIELD_REQUEST_PRODUCTION);
+         _loc2_.sendMessage(_loc9_);
       }
    }
 }

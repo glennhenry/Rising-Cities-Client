@@ -15,13 +15,7 @@ package net.bigpoint.cityrama.view.friendBook.ui.components
       
       public function GroupList()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get data() : *
@@ -31,13 +25,7 @@ package net.bigpoint.cityrama.view.friendBook.ui.components
       
       public function set data(param1:*) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._data = param1;
-         }
+         this._data = param1;
       }
    }
 }

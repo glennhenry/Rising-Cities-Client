@@ -17,43 +17,13 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigSecurityGradeDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            super();
-            if(_loc3_ || Boolean(param1))
-            {
-               this._rangeX = int(param1.rx);
-               if(_loc3_)
-               {
-                  this._rangeY = int(param1.ry);
-                  if(_loc3_ || _loc2_)
-                  {
-                     this._value = int(param1.v);
-                     if(_loc3_)
-                     {
-                        this._type = String(param1.dt);
-                        if(_loc3_)
-                        {
-                           this._id = Number(param1.cid);
-                           if(!(_loc2_ && _loc2_))
-                           {
-                              addr00b1:
-                              this._orderId = Number(param1.o);
-                           }
-                        }
-                        §§goto(addr00bf);
-                     }
-                     §§goto(addr00b1);
-                  }
-                  addr00bf:
-                  return;
-               }
-            }
-         }
-         §§goto(addr00b1);
+         super();
+         this._rangeX = int(param1.rx);
+         this._rangeY = int(param1.ry);
+         this._value = int(param1.v);
+         this._type = String(param1.dt);
+         this._id = Number(param1.cid);
+         this._orderId = Number(param1.o);
       }
       
       public function get rangeX() : int
@@ -88,13 +58,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set orderId(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._orderId = param1;
-         }
+         this._orderId = param1;
       }
    }
 }

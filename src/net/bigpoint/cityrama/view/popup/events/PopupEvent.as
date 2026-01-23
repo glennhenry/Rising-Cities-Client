@@ -9,27 +9,9 @@ package net.bigpoint.cityrama.view.popup.events
       
       public static const POPUP_DESTROYED:String = "POPUP_DESTROYED";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(!_loc1_)
-      {
-         POPUP_CREATED = "POPUP_CREATED";
-         if(_loc2_)
-         {
-            POPUP_DESTROYED = "POPUP_DESTROYED";
-         }
-      }
-      
       public function PopupEvent(param1:String, param2:Boolean = false, param3:Boolean = false)
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
-         if(_loc5_ || Boolean(param1))
-         {
-            super(param1,param2,param3);
-         }
+         super(param1,param2,param3);
       }
       
       override public function clone() : Event

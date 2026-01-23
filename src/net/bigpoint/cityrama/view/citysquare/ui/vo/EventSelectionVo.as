@@ -13,38 +13,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public static const EMPTY_SLOT:String = "EMPTY_SLOT";
       
-      private static const stateValidation:Vector.<String>;
-      
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(_loc2_ || _loc2_)
-      {
-         STATE_RUNNING = "STATE_RUNNING";
-         if(_loc2_ || _loc2_)
-         {
-            STATE_AVAILABLE = "STATE_AVAILABLE";
-            if(!_loc1_)
-            {
-               addr004c:
-               STATE_UPCOMING = "STATE_UPCOMING";
-               if(_loc2_)
-               {
-                  EMPTY_SLOT = "EMPTY_SLOT";
-                  if(!(_loc1_ && _loc1_))
-                  {
-                     stateValidation = new <String>[STATE_RUNNING,STATE_AVAILABLE,STATE_UPCOMING,EMPTY_SLOT];
-                     addr0070:
-                  }
-                  §§goto(addr00b3);
-               }
-               §§goto(addr0070);
-            }
-            addr00b3:
-            return;
-         }
-      }
-      §§goto(addr004c);
+      private static const stateValidation:Vector.<String> = new <String>[STATE_RUNNING,STATE_AVAILABLE,STATE_UPCOMING,EMPTY_SLOT];
       
       private var _state:String;
       
@@ -62,72 +31,18 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function EventSelectionVo(param1:String, param2:Number, param3:int, param4:String, param5:Number, param6:Number, param7:Number)
       {
-         var _temp_1:* = true;
-         var _loc8_:Boolean = false;
-         var _loc9_:Boolean = _temp_1;
-         if(_loc9_)
+         super();
+         this._state = param1;
+         this._configId = param2;
+         this._gfxPackId = param3;
+         this._localePackId = param4;
+         this._remainingTime = param6;
+         this._originalTime = param5;
+         this._currentProgress = param7;
+         if(stateValidation.indexOf(this._state) == -1)
          {
-            super();
-            if(!_loc8_)
-            {
-               this._state = param1;
-               if(_loc9_)
-               {
-                  this._configId = param2;
-                  if(!(_loc8_ && Boolean(param2)))
-                  {
-                     this._gfxPackId = param3;
-                     if(!_loc8_)
-                     {
-                        this._localePackId = param4;
-                        if(!_loc8_)
-                        {
-                           addr0069:
-                           this._remainingTime = param6;
-                           if(_loc9_)
-                           {
-                              §§goto(addr0075);
-                           }
-                           §§goto(addr009c);
-                        }
-                        §§goto(addr0075);
-                     }
-                     §§goto(addr009c);
-                  }
-                  §§goto(addr0069);
-               }
-               §§goto(addr009c);
-            }
-            addr0075:
-            this._originalTime = param5;
-            if(_loc9_)
-            {
-               this._currentProgress = param7;
-               if(!_loc8_)
-               {
-                  addr009c:
-                  if(stateValidation.indexOf(this._state) == -1)
-                  {
-                     if(_loc9_)
-                     {
-                        §§goto(addr00b3);
-                     }
-                  }
-                  §§goto(addr00cc);
-               }
-               addr00b3:
-               §§push(§§findproperty(RamaCityError));
-               §§push(this + "illegal state: ");
-               if(_loc9_)
-               {
-                  §§push(§§pop() + this._state);
-               }
-               throw new §§pop().RamaCityError(§§pop());
-            }
-            addr00cc:
-            return;
+            throw new RamaCityError(this + "illegal state: " + this._state);
          }
-         §§goto(addr009c);
       }
       
       public function get currentProgress() : Number
@@ -167,13 +82,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set remainingTime(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._remainingTime = param1;
-         }
+         this._remainingTime = param1;
       }
    }
 }

@@ -53,20 +53,8 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function UrbieLifeConfigVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc1_)
-         {
-            super();
-            if(_loc1_)
-            {
-               addr0025:
-               this._frameset = new Dictionary(true);
-            }
-            return;
-         }
-         §§goto(addr0025);
+         super();
+         this._frameset = new Dictionary(true);
       }
       
       public function get infinitePath() : Boolean
@@ -76,13 +64,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set infinitePath(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._infinitePath = param1;
-         }
+         this._infinitePath = param1;
       }
       
       public function get offset() : Point
@@ -92,13 +74,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set offset(param1:Point) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._offset = param1;
-         }
+         this._offset = param1;
       }
       
       public function get spriteSheetID() : String
@@ -108,13 +84,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set spriteSheetID(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._spriteSheetID = param1;
-         }
+         this._spriteSheetID = param1;
       }
       
       public function get animationClass() : String
@@ -124,13 +94,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set animationClass(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._animationClass = param1;
-         }
+         this._animationClass = param1;
       }
       
       public function get citizenID() : String
@@ -140,13 +104,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set citizenID(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._citizenID = param1;
-         }
+         this._citizenID = param1;
       }
       
       public function get requiredBuilding() : String
@@ -156,24 +114,12 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set requiredBuilding(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(param1))
-         {
-            this._requiredBuilding = param1;
-         }
+         this._requiredBuilding = param1;
       }
       
       public function set fps(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._fps = param1;
-         }
+         this._fps = param1;
       }
       
       public function get fps() : int
@@ -183,24 +129,12 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set rows(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(param1)))
-         {
-            this._rows = param1;
-         }
+         this._rows = param1;
       }
       
       public function set columns(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._columns = param1;
-         }
+         this._columns = param1;
       }
       
       public function get rows() : int
@@ -220,13 +154,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set id(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._id = param1;
-         }
+         this._id = param1;
       }
       
       public function get iteration() : int
@@ -236,13 +164,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set iteration(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._iteration = param1;
-         }
+         this._iteration = param1;
       }
       
       public function get sheetPath() : String
@@ -252,13 +174,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set sheetPath(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._sheetPath = param1;
-         }
+         this._sheetPath = param1;
       }
       
       public function get texturePath() : String
@@ -268,13 +184,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set texturePath(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._texturePath = param1;
-         }
+         this._texturePath = param1;
       }
       
       public function get lightingPath() : String
@@ -284,13 +194,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set lightingPath(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._lightingPath = param1;
-         }
+         this._lightingPath = param1;
       }
       
       public function get sheetData() : Object
@@ -300,13 +204,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set sheetData(param1:Object) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            this._sheetData = param1;
-         }
+         this._sheetData = param1;
       }
       
       public function get lightingData() : Object
@@ -316,13 +214,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set lightingData(param1:Object) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._lightingData = param1;
-         }
+         this._lightingData = param1;
       }
       
       public function get frameset() : Dictionary
@@ -337,13 +229,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set unique(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && param1))
-         {
-            this._unique = param1;
-         }
+         this._unique = param1;
       }
       
       public function get spawnEnabled() : Boolean
@@ -353,13 +239,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set spawnEnabled(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._spawnEnabled = param1;
-         }
+         this._spawnEnabled = param1;
       }
       
       public function get terrain() : String
@@ -369,13 +249,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set terrain(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._terrain = param1;
-         }
+         this._terrain = param1;
       }
       
       public function get eventID() : int
@@ -385,13 +259,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set eventID(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(param1))
-         {
-            this._eventID = param1;
-         }
+         this._eventID = param1;
       }
       
       public function get pfoTagID() : int
@@ -401,13 +269,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set pfoTagID(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._pfoTagID = param1;
-         }
+         this._pfoTagID = param1;
       }
    }
 }

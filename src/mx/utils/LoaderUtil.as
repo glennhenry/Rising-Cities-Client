@@ -35,7 +35,6 @@ package mx.utils
       {
          var _loc3_:int = 0;
          var _loc4_:String = null;
-         var _loc5_:Function = null;
          var _loc2_:String = param1.url;
          var _loc6_:uint = LoaderUtil.mx_internal::urlFilters.length;
          var _loc7_:uint = 0;
@@ -45,7 +44,7 @@ package mx.utils
             _loc3_ = int(_loc2_.indexOf(_loc4_));
             if(_loc3_ != -1)
             {
-               _loc5_ = LoaderUtil.mx_internal::urlFilters[_loc7_].filterFunction;
+               var _loc5_:Function = LoaderUtil.mx_internal::urlFilters[_loc7_].filterFunction;
                _loc2_ = _loc5_(_loc2_,_loc3_);
             }
             _loc7_++;
@@ -100,16 +99,13 @@ package mx.utils
          var _loc12_:int = 0;
          var _loc13_:int = 0;
          var _loc14_:Array = null;
-         var _loc15_:int = 0;
          var _loc3_:Array = [];
          var _loc4_:IFlexModuleFactory;
          var _loc5_:IFlexModuleFactory = _loc4_ = SystemManagerGlobals.topLevelSystemManagers[0];
          var _loc6_:IFlexModuleFactory = null;
          var _loc7_:Dictionary = new Dictionary();
-         var _loc8_:int = 0;
          var _loc9_:Dictionary = new Dictionary();
          var _loc10_:int = 0;
-         var _loc11_:Array = null;
          while(_loc5_ != param1)
          {
             _loc12_ = int(param2.length);
@@ -125,10 +121,10 @@ package mx.utils
                      _loc8_++;
                      if(_loc5_ != _loc4_)
                      {
-                        _loc15_ = int(_loc3_.indexOf(_loc14_));
+                        var _loc15_:int = int(_loc3_.indexOf(_loc14_));
                         if(_loc15_ != -1)
                         {
-                           _loc3_.splice(_loc15_,1);
+                           _loc3_.splice(0,1);
                         }
                      }
                   }
@@ -151,32 +147,29 @@ package mx.utils
                }
                _loc13_++;
             }
-            if(_loc8_ + _loc10_ >= param2.length)
+            if(0 + _loc10_ >= param2.length)
             {
                break;
             }
-            if(!_loc11_)
+            var _loc11_:Array = [param1];
+            _loc5_ = param1;
+            while(_loc5_ != _loc4_)
             {
-               _loc11_ = [param1];
-               _loc5_ = param1;
-               while(_loc5_ != _loc4_)
+               _loc5_ = getParentModuleFactory(_loc5_);
+               if(!_loc5_)
                {
-                  _loc5_ = getParentModuleFactory(_loc5_);
-                  if(!_loc5_)
-                  {
-                     break;
-                  }
-                  if(_loc5_ != _loc4_)
-                  {
-                     _loc11_.push(_loc5_);
-                  }
-                  if(!_loc6_)
-                  {
-                     _loc6_ = _loc5_;
-                  }
+                  break;
+               }
+               if(_loc5_ != _loc4_)
+               {
+                  null.push(_loc5_);
+               }
+               if(!_loc6_)
+               {
+                  _loc6_ = _loc5_;
                }
             }
-            _loc5_ = _loc11_.pop();
+            _loc5_ = null.pop();
          }
          return _loc3_;
       }
@@ -342,13 +335,11 @@ package mx.utils
       
       private static function isLoadedIntoTopLevelApplicationDomain(param1:IFlexModuleFactory) : Boolean
       {
-         var _loc2_:DisplayObject = null;
-         var _loc3_:LoaderInfo = null;
          if(param1 is DisplayObject)
          {
-            _loc2_ = DisplayObject(param1);
-            _loc3_ = _loc2_.loaderInfo;
-            if(_loc3_ && _loc3_.applicationDomain && _loc3_.applicationDomain.parentDomain == null)
+            var _loc2_:DisplayObject = DisplayObject(param1);
+            var _loc3_:LoaderInfo = null.loaderInfo;
+            if(null)
             {
                return true;
             }

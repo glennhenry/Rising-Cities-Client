@@ -10,27 +10,13 @@ package net.bigpoint.cityrama.model
       
       public static const NAME:String = "FlashVarsProxy";
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(!(_loc2_ && _loc2_))
-      {
-         NAME = "FlashVarsProxy";
-      }
-      
       private var _developerSettingsProxy:DeveloperSettingsProxy;
       
       private var _configProxy:GameConfigProxy;
       
       public function FlashVarsProxy(param1:String = null, param2:Object = null)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_ || Boolean(param2))
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
       
       public function get policyPort() : int
@@ -155,50 +141,20 @@ package net.bigpoint.cityrama.model
       
       private function get developerSettingsProxy() : DeveloperSettingsProxy
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
+         if(this._developerSettingsProxy == null)
          {
-            §§push(this._developerSettingsProxy);
-            if(_loc2_ || _loc2_)
-            {
-               if(§§pop() == null)
-               {
-                  if(_loc2_)
-                  {
-                     addr003b:
-                     this._developerSettingsProxy = DeveloperSettingsProxy(facade.retrieveProxy(DeveloperSettingsProxy.NAME));
-                  }
-               }
-               return this._developerSettingsProxy;
-            }
+            this._developerSettingsProxy = DeveloperSettingsProxy(facade.retrieveProxy(DeveloperSettingsProxy.NAME));
          }
-         §§goto(addr003b);
+         return this._developerSettingsProxy;
       }
       
       private function get configProxy() : GameConfigProxy
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
+         if(this._configProxy == null)
          {
-            §§push(this._configProxy);
-            if(!(_loc2_ && _loc1_))
-            {
-               if(§§pop() == null)
-               {
-                  if(!(_loc2_ && _loc2_))
-                  {
-                     addr0042:
-                     this._configProxy = facade.retrieveProxy(GameConfigProxy.NAME) as GameConfigProxy;
-                  }
-               }
-               return this._configProxy;
-            }
+            this._configProxy = facade.retrieveProxy(GameConfigProxy.NAME) as GameConfigProxy;
          }
-         §§goto(addr0042);
+         return this._configProxy;
       }
       
       public function get evoucherUrl() : String

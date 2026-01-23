@@ -37,198 +37,37 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigPlayfieldExpansionDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc7_:Boolean = false;
-         var _loc8_:Boolean = _temp_1;
          var _loc2_:Number = NaN;
          var _loc3_:Object = null;
          var _loc4_:Number = NaN;
-         if(_loc8_)
+         super();
+         this._id = param1.id;
+         this._playfieldId = param1.pf;
+         this._px = param1.px;
+         this._py = param1.py;
+         this._sx = param1.sx;
+         this._sy = param1.sy;
+         this._gfx = param1.gf;
+         this._itemType = param1.it;
+         this._preload = param1.fp;
+         this._localid = param1.fl;
+         this._normalPrice = param1.np;
+         this._premiumPrice = param1.pp;
+         this._neighbourIDList = new Vector.<Number>();
+         for each(_loc2_ in param1.nx)
          {
-            super();
-            if(_loc8_)
-            {
-               this._id = param1.id;
-               if(_loc8_ || Boolean(this))
-               {
-                  this._playfieldId = param1.pf;
-                  if(_loc8_ || Boolean(this))
-                  {
-                     this._px = param1.px;
-                     if(_loc8_)
-                     {
-                        this._py = param1.py;
-                        if(!(_loc7_ && Boolean(_loc2_)))
-                        {
-                           this._sx = param1.sx;
-                           if(!(_loc7_ && Boolean(param1)))
-                           {
-                              this._sy = param1.sy;
-                              if(_loc8_ || Boolean(param1))
-                              {
-                                 addr00b0:
-                                 this._gfx = param1.gf;
-                                 if(_loc8_ || Boolean(_loc2_))
-                                 {
-                                    this._itemType = param1.it;
-                                    if(!(_loc7_ && Boolean(_loc3_)))
-                                    {
-                                       this._preload = param1.fp;
-                                       if(_loc8_)
-                                       {
-                                          addr00ed:
-                                          this._localid = param1.fl;
-                                          if(!_loc7_)
-                                          {
-                                             addr00fc:
-                                             this._normalPrice = param1.np;
-                                             if(!(_loc7_ && Boolean(_loc3_)))
-                                             {
-                                                addr0114:
-                                                this._premiumPrice = param1.pp;
-                                                if(_loc8_ || Boolean(_loc3_))
-                                                {
-                                                   addr0137:
-                                                   this._neighbourIDList = new Vector.<Number>();
-                                                }
-                                                addr0145:
-                                                var _loc5_:* = 0;
-                                                var _loc6_:* = param1.nx;
-                                                while(true)
-                                                {
-                                                   §§push(§§hasnext(_loc6_,_loc5_));
-                                                   if(_loc7_)
-                                                   {
-                                                      break;
-                                                   }
-                                                   if(§§pop())
-                                                   {
-                                                      _loc2_ = §§nextvalue(_loc5_,_loc6_);
-                                                      if(!(_loc7_ && Boolean(_loc2_)))
-                                                      {
-                                                         this._neighbourIDList.push(_loc2_);
-                                                      }
-                                                      continue;
-                                                   }
-                                                   if(!(_loc7_ && Boolean(this)))
-                                                   {
-                                                      if(_loc8_)
-                                                      {
-                                                         if(_loc8_)
-                                                         {
-                                                            this._initialPlayfieldItems = new Vector.<ConfigInitialPlayfieldItemDTO>();
-                                                            if(!_loc7_)
-                                                            {
-                                                               §§push(0);
-                                                               if(!(_loc7_ && Boolean(_loc3_)))
-                                                               {
-                                                                  _loc5_ = §§pop();
-                                                                  if(!_loc7_)
-                                                                  {
-                                                                     _loc6_ = param1.icpi;
-                                                                     loop1:
-                                                                     while(true)
-                                                                     {
-                                                                        §§push(§§hasnext(_loc6_,_loc5_));
-                                                                        if(!_loc8_)
-                                                                        {
-                                                                           break;
-                                                                        }
-                                                                        if(§§pop())
-                                                                        {
-                                                                           _loc3_ = §§nextvalue(_loc5_,_loc6_);
-                                                                           if(!(_loc7_ && Boolean(_loc3_)))
-                                                                           {
-                                                                              this._initialPlayfieldItems.push(new ConfigInitialPlayfieldItemDTO(_loc3_));
-                                                                           }
-                                                                           continue;
-                                                                        }
-                                                                        if(!(_loc7_ && Boolean(this)))
-                                                                        {
-                                                                           addr0218:
-                                                                           if(!_loc7_)
-                                                                           {
-                                                                              if(_loc8_ || Boolean(this))
-                                                                              {
-                                                                                 this._listOfEventIds = new Vector.<Number>();
-                                                                                 if(!_loc7_)
-                                                                                 {
-                                                                                    addr0246:
-                                                                                    _loc5_ = 0;
-                                                                                    if(!_loc7_)
-                                                                                    {
-                                                                                       _loc6_ = param1.e;
-                                                                                       if(_loc8_)
-                                                                                       {
-                                                                                          while(true)
-                                                                                          {
-                                                                                             §§push(§§hasnext(_loc6_,_loc5_));
-                                                                                             break loop1;
-                                                                                          }
-                                                                                          addr0285:
-                                                                                       }
-                                                                                       while(true)
-                                                                                       {
-                                                                                          this._listOfEventIds.push(_loc4_);
-                                                                                          §§goto(addr0285);
-                                                                                       }
-                                                                                       addr027c:
-                                                                                    }
-                                                                                    addr028e:
-                                                                                 }
-                                                                              }
-                                                                              §§goto(addr0290);
-                                                                           }
-                                                                           §§goto(addr028e);
-                                                                        }
-                                                                     }
-                                                                     break;
-                                                                  }
-                                                                  §§goto(addr028e);
-                                                               }
-                                                               §§goto(addr0246);
-                                                            }
-                                                         }
-                                                         addr0290:
-                                                         return;
-                                                      }
-                                                      §§goto(addr028e);
-                                                   }
-                                                   §§goto(addr0218);
-                                                }
-                                                for(; §§pop(); §§push(§§hasnext(_loc6_,_loc5_)))
-                                                {
-                                                   _loc4_ = §§nextvalue(_loc5_,_loc6_);
-                                                   if(_loc7_)
-                                                   {
-                                                      continue;
-                                                   }
-                                                   §§goto(addr027c);
-                                                }
-                                                §§goto(addr028c);
-                                             }
-                                          }
-                                          §§goto(addr0137);
-                                       }
-                                       §§goto(addr0114);
-                                    }
-                                    §§goto(addr00fc);
-                                 }
-                                 §§goto(addr0114);
-                              }
-                              §§goto(addr0137);
-                           }
-                           §§goto(addr00fc);
-                        }
-                        §§goto(addr0145);
-                     }
-                  }
-                  §§goto(addr0137);
-               }
-            }
-            §§goto(addr00ed);
+            this._neighbourIDList.push(_loc2_);
          }
-         §§goto(addr00b0);
+         this._initialPlayfieldItems = new Vector.<ConfigInitialPlayfieldItemDTO>();
+         for each(_loc3_ in param1.icpi)
+         {
+            this._initialPlayfieldItems.push(new ConfigInitialPlayfieldItemDTO(_loc3_));
+         }
+         this._listOfEventIds = new Vector.<Number>();
+         for each(_loc4_ in param1.e)
+         {
+            this._listOfEventIds.push(_loc4_);
+         }
       }
       
       public function get id() : Number
@@ -238,13 +77,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set id(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._id = param1;
-         }
+         this._id = param1;
       }
       
       public function log(param1:int, param2:int) : void
@@ -258,13 +91,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set px(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._px = param1;
-         }
+         this._px = param1;
       }
       
       public function get py() : Number
@@ -274,13 +101,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set py(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._py = param1;
-         }
+         this._py = param1;
       }
       
       public function get sx() : Number
@@ -290,13 +111,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set sx(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._sx = param1;
-         }
+         this._sx = param1;
       }
       
       public function get sy() : Number
@@ -306,13 +121,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set sy(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._sy = param1;
-         }
+         this._sy = param1;
       }
       
       public function get neighbourIDList() : Vector.<Number>
@@ -322,13 +131,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set neighbourIDList(param1:Vector.<Number>) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._neighbourIDList = param1;
-         }
+         this._neighbourIDList = param1;
       }
       
       public function get playfieldId() : Number
@@ -338,13 +141,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set playfieldId(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._playfieldId = param1;
-         }
+         this._playfieldId = param1;
       }
       
       public function get gfx() : int
@@ -354,13 +151,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set gfx(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            this._gfx = param1;
-         }
+         this._gfx = param1;
       }
       
       public function get localid() : int
@@ -370,13 +161,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set localid(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._localid = param1;
-         }
+         this._localid = param1;
       }
       
       public function get itemType() : int
@@ -386,13 +171,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set itemType(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._itemType = param1;
-         }
+         this._itemType = param1;
       }
       
       public function get normalPrice() : int
@@ -407,13 +186,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set premiumPrice(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this._premiumPrice = param1;
-         }
+         this._premiumPrice = param1;
       }
       
       public function get preload() : Boolean
@@ -423,13 +196,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set preload(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            this._preload = param1;
-         }
+         this._preload = param1;
       }
       
       public function get initialPlayfieldItems() : Vector.<ConfigInitialPlayfieldItemDTO>

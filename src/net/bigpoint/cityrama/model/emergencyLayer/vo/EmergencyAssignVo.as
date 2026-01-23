@@ -35,87 +35,21 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function EmergencyAssignVo(param1:Object)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            super();
-            if(!(_loc3_ && Boolean(this)))
-            {
-               this._flavourText = param1.flavour;
-               if(!_loc3_)
-               {
-                  this._maxSuccessChance = param1.max;
-                  if(_loc2_ || Boolean(param1))
-                  {
-                     this._currentSuccessChance = param1.poss;
-                     if(_loc2_ || _loc3_)
-                     {
-                        this._renderLib = param1.renderLib;
-                        if(!_loc3_)
-                        {
-                           addr0072:
-                           this._renderImg = param1.renderImg;
-                           if(_loc2_)
-                           {
-                              this._renderSwf = param1.renderSwf;
-                              if(!(_loc3_ && _loc2_))
-                              {
-                                 this._rewardGfxId = param1.rewardGfx;
-                                 if(!_loc3_)
-                                 {
-                                    this._rewardLocaId = param1.rewardLoca;
-                                    if(!(_loc3_ && Boolean(this)))
-                                    {
-                                       §§goto(addr00c8);
-                                    }
-                                    §§goto(addr00df);
-                                 }
-                                 §§goto(addr00c8);
-                              }
-                              §§goto(addr0131);
-                           }
-                           §§goto(addr0105);
-                        }
-                     }
-                     §§goto(addr0131);
-                  }
-                  §§goto(addr0122);
-               }
-               §§goto(addr0072);
-            }
-            §§goto(addr0131);
-         }
-         addr00c8:
+         super();
+         this._flavourText = param1.flavour;
+         this._maxSuccessChance = param1.max;
+         this._currentSuccessChance = param1.poss;
+         this._renderLib = param1.renderLib;
+         this._renderImg = param1.renderImg;
+         this._renderSwf = param1.renderSwf;
+         this._rewardGfxId = param1.rewardGfx;
+         this._rewardLocaId = param1.rewardLoca;
          this._rewardAmount = param1.rewardAmount;
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            addr00df:
-            this._efficiencyProgressVo = param1.effVo;
-            if(!(_loc3_ && Boolean(param1)))
-            {
-               addr0105:
-               this._luckProgressVo = param1.luckVo;
-               if(_loc2_)
-               {
-                  §§goto(addr0114);
-               }
-            }
-            §§goto(addr0131);
-         }
-         addr0114:
+         this._efficiencyProgressVo = param1.effVo;
+         this._luckProgressVo = param1.luckVo;
          this._goofinessProgressVo = param1.goofVo;
-         if(!_loc3_)
-         {
-            addr0122:
-            this._timer = param1.timer;
-            if(_loc2_)
-            {
-               addr0131:
-               this._professionalSlots = param1.slots;
-            }
-         }
+         this._timer = param1.timer;
+         this._professionalSlots = param1.slots;
       }
       
       public function get flavourText() : String

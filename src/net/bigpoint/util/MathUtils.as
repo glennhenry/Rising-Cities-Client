@@ -5,13 +5,7 @@ package net.bigpoint.util
       
       public function MathUtils()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       public static function randomInt(param1:int, param2:int) : int
@@ -21,76 +15,22 @@ package net.bigpoint.util
       
       public static function roundTo5(param1:Number) : Number
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         var _loc2_:* = NaN;
-         if(_loc4_)
+         var _loc2_:Number = NaN;
+         _loc2_ = Math.floor(param1 * 100000) - Math.floor(param1) * 100000;
+         if(_loc2_ >= 50000)
          {
-            §§push(Math.floor(param1 * 100000) - Math.floor(param1) * 100000);
-            if(_loc4_)
-            {
-               §§push(§§pop());
-               if(_loc4_)
-               {
-                  _loc2_ = §§pop();
-                  if(_loc4_ || Boolean(param1))
-                  {
-                     §§push(_loc2_);
-                     if(_loc4_ || Boolean(_loc2_))
-                     {
-                        addr0069:
-                        if(§§pop() >= 50000)
-                        {
-                           if(_loc4_)
-                           {
-                              addr0077:
-                              §§push(Math.floor(param1) + 0.5);
-                              if(!(_loc3_ && MathUtils))
-                              {
-                                 _loc2_ = §§pop();
-                                 if(_loc3_)
-                                 {
-                                 }
-                              }
-                              else
-                              {
-                                 addr00b1:
-                                 _loc2_ = §§pop();
-                              }
-                           }
-                           addr00b2:
-                           return _loc2_;
-                        }
-                        else
-                        {
-                           §§push(Math.floor(param1));
-                           if(_loc4_)
-                           {
-                              §§goto(addr00b1);
-                           }
-                        }
-                     }
-                     return §§pop();
-                  }
-                  §§goto(addr0077);
-               }
-            }
-            §§goto(addr0069);
+            _loc2_ = Math.floor(param1) + 0.5;
          }
-         §§goto(addr00b2);
+         else
+         {
+            _loc2_ = Math.floor(param1);
+         }
+         return _loc2_;
       }
       
       public static function roundTo(param1:Number, param2:int) : Number
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
-         §§push(Math.round(param1 * Math.pow(10,param2)) / Math.pow(10,param2));
-         if(_loc5_ || MathUtils)
-         {
-            return §§pop();
-         }
+         return Math.round(param1 * Math.pow(10,param2)) / Math.pow(10,param2);
       }
       
       public static function randomSort(param1:Object, param2:Object) : int

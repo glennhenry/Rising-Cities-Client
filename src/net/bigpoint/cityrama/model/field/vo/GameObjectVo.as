@@ -12,20 +12,8 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function GameObjectVo(param1:ConfigPlayfieldItemDTO)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            super();
-            if(!_loc3_)
-            {
-               addr001f:
-               this._configPlayfieldItemVo = param1;
-            }
-            return;
-         }
-         §§goto(addr001f);
+         super();
+         this._configPlayfieldItemVo = param1;
       }
       
       public function get configPlayfieldItemVo() : ConfigPlayfieldItemDTO
@@ -35,13 +23,7 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function set configPlayfieldItemVo(param1:ConfigPlayfieldItemDTO) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
-         {
-            this._configPlayfieldItemVo = param1;
-         }
+         this._configPlayfieldItemVo = param1;
       }
       
       public function get matrix3dCoordinates() : Cuboid
@@ -51,13 +33,7 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function set matrix3dCoordinates(param1:Cuboid) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            matrixCoordinates = param1;
-         }
+         matrixCoordinates = param1;
       }
    }
 }

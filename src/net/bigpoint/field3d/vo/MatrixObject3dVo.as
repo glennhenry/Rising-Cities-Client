@@ -13,13 +13,7 @@ package net.bigpoint.field3d.vo
       
       public function MatrixObject3dVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || Boolean(this))
-         {
-            super();
-         }
+         super();
       }
       
       public function get matrixCoordinates() : Rectangle
@@ -29,13 +23,7 @@ package net.bigpoint.field3d.vo
       
       public function set matrixCoordinates(param1:Rectangle) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._matrixCoordinates = param1;
-         }
+         this._matrixCoordinates = param1;
       }
       
       public function get lastPositonHistoryPoint() : Cuboid
@@ -45,13 +33,7 @@ package net.bigpoint.field3d.vo
       
       public function set lastPositonHistoryPoint(param1:Cuboid) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._lastPositonHistoryPoint = param1;
-         }
+         this._lastPositonHistoryPoint = param1;
       }
    }
 }

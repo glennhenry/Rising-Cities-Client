@@ -13,32 +13,11 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function PlayfieldItemPermissionDTO(param1:Object, param2:ConfigPlayfieldItemPermissionDTO)
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            super();
-            if(!(_loc3_ && Boolean(param1)))
-            {
-               this._permissionConfigId = param1.cid;
-               if(!(_loc3_ && Boolean(param1)))
-               {
-                  this._permissionsLeft = param1.l;
-                  if(_loc4_)
-                  {
-                     this._permissionsBought = param1.b;
-                     if(_loc4_)
-                     {
-                        addr007e:
-                        this._config = param2;
-                     }
-                  }
-                  return;
-               }
-            }
-         }
-         §§goto(addr007e);
+         super();
+         this._permissionConfigId = param1.cid;
+         this._permissionsLeft = param1.l;
+         this._permissionsBought = param1.b;
+         this._config = param2;
       }
       
       public function get permissionConfigId() : Number
@@ -63,13 +42,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set permissionsLeft(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(param1)))
-         {
-            this._permissionsLeft = param1;
-         }
+         this._permissionsLeft = param1;
       }
    }
 }

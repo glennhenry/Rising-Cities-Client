@@ -88,1866 +88,545 @@ package net.bigpoint.cityrama.view.fieldInfoLayer.ui.components
       
       public function ExpansionComponent()
       {
-         var bindings:Array;
          var watchers:Array;
-         var target:Object;
          var i:uint;
-         var watcherSetupUtilClass:Object;
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         §§push(§§newactivation());
-         if(_loc3_ || _loc1_)
+         var bindings:Array = null;
+         var target:Object = null;
+         var watcherSetupUtilClass:Object = null;
+         this.mx_internal::_bindings = [];
+         this.mx_internal::_watchers = [];
+         this.mx_internal::_bindingsByDestination = {};
+         this.mx_internal::_bindingsBeginWithWord = {};
+         super();
+         mx_internal::_document = this;
+         bindings = this._ExpansionComponent_bindingsSetup();
+         watchers = [];
+         target = this;
+         if(_watcherSetupUtil == null)
          {
-            §§push(null);
-            if(_loc3_ || Boolean(this))
-            {
-               §§pop().§§slot[1] = §§pop();
-               if(!_loc4_)
-               {
-                  §§push(§§newactivation());
-                  if(!(_loc4_ && _loc1_))
-                  {
-                     §§push(null);
-                     if(!_loc4_)
-                     {
-                        addr0055:
-                        §§pop().§§slot[3] = §§pop();
-                        if(_loc3_ || Boolean(this))
-                        {
-                           §§push(§§newactivation());
-                           if(_loc3_)
-                           {
-                              §§goto(addr006e);
-                           }
-                           §§goto(addr0119);
-                        }
-                        §§goto(addr00bd);
-                     }
-                     addr006e:
-                     §§pop().§§slot[5] = null;
-                     if(_loc3_ || _loc1_)
-                     {
-                        this.mx_internal::_bindings = [];
-                        if(!_loc4_)
-                        {
-                           this.mx_internal::_watchers = [];
-                           if(_loc3_)
-                           {
-                              this.mx_internal::_bindingsByDestination = {};
-                              if(_loc3_)
-                              {
-                                 this.mx_internal::_bindingsBeginWithWord = {};
-                                 if(_loc3_)
-                                 {
-                                    addr00ac:
-                                    super();
-                                    if(!(_loc4_ && _loc1_))
-                                    {
-                                       addr00bd:
-                                       mx_internal::_document = this;
-                                       if(_loc3_)
-                                       {
-                                          §§push(§§newactivation());
-                                          if(_loc3_ || _loc3_)
-                                          {
-                                             addr00de:
-                                             §§pop().§§slot[1] = this._ExpansionComponent_bindingsSetup();
-                                             if(!(_loc4_ && _loc3_))
-                                             {
-                                                §§push(§§newactivation());
-                                                if(!_loc4_)
-                                                {
-                                                   addr00fe:
-                                                   §§pop().§§slot[2] = [];
-                                                   if(_loc3_)
-                                                   {
-                                                      addr0109:
-                                                      §§push(§§newactivation());
-                                                      if(!(_loc4_ && _loc1_))
-                                                      {
-                                                         addr0119:
-                                                         §§pop().§§slot[3] = this;
-                                                         if(!_loc4_)
-                                                         {
-                                                            if(_watcherSetupUtil == null)
-                                                            {
-                                                               if(!_loc4_)
-                                                               {
-                                                                  addr0132:
-                                                                  §§push(§§newactivation());
-                                                                  if(_loc3_)
-                                                                  {
-                                                                     addr0139:
-                                                                     §§pop().§§slot[5] = getDefinitionByName("_net_bigpoint_cityrama_view_fieldInfoLayer_ui_components_ExpansionComponentWatcherSetupUtil");
-                                                                     if(_loc3_ || Boolean(this))
-                                                                     {
-                                                                        addr0154:
-                                                                        §§push(§§newactivation());
-                                                                        if(_loc3_)
-                                                                        {
-                                                                           §§pop().§§slot[5]["init"](null);
-                                                                           if(_loc3_)
-                                                                           {
-                                                                              addr0171:
-                                                                              _watcherSetupUtil.setup(this,function(param1:String):*
-                                                                              {
-                                                                                 return target[param1];
-                                                                              },function(param1:String):*
-                                                                              {
-                                                                                 return ExpansionComponent[param1];
-                                                                              },bindings,watchers);
-                                                                              if(!_loc4_)
-                                                                              {
-                                                                                 mx_internal::_bindings = mx_internal::_bindings.concat(bindings);
-                                                                                 §§goto(addr018d);
-                                                                              }
-                                                                              §§goto(addr0214);
-                                                                           }
-                                                                           §§goto(addr0320);
-                                                                        }
-                                                                        §§goto(addr0322);
-                                                                     }
-                                                                     §§goto(addr0171);
-                                                                  }
-                                                                  §§goto(addr0322);
-                                                               }
-                                                               §§goto(addr0214);
-                                                            }
-                                                            §§goto(addr0171);
-                                                         }
-                                                         §§goto(addr0154);
-                                                      }
-                                                      §§goto(addr0139);
-                                                   }
-                                                   §§goto(addr0320);
-                                                }
-                                                §§goto(addr0139);
-                                             }
-                                             §§goto(addr0132);
-                                          }
-                                          §§goto(addr0139);
-                                       }
-                                       §§goto(addr0132);
-                                    }
-                                    §§goto(addr0320);
-                                 }
-                                 §§goto(addr0109);
-                              }
-                              §§goto(addr018d);
-                           }
-                           §§goto(addr00ac);
-                        }
-                        §§goto(addr00bd);
-                     }
-                     addr018d:
-                     if(!(_loc4_ && _loc2_))
-                     {
-                        mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
-                        if(_loc3_ || _loc2_)
-                        {
-                           this.mxmlContent = [this._ExpansionComponent_VGroup1_i(),this._ExpansionComponent_VGroup3_i()];
-                           if(!(_loc4_ && _loc3_))
-                           {
-                              addr0214:
-                              this.currentState = "normal";
-                              if(!_loc4_)
-                              {
-                                 §§goto(addr0221);
-                              }
-                              §§goto(addr0320);
-                           }
-                        }
-                     }
-                     addr0221:
-                     states = [new State({
-                        "name":"normal",
-                        "overrides":[new SetProperty().initializeFromObject({
-                           "target":"_ExpansionComponent_VGroup1",
-                           "name":"visible",
-                           "value":true
-                        }),new SetProperty().initializeFromObject({
-                           "target":"_ExpansionComponent_VGroup1",
-                           "name":"includeInLayout",
-                           "value":true
-                        }),new SetProperty().initializeFromObject({
-                           "target":"_ExpansionComponent_VGroup3",
-                           "name":"visible",
-                           "value":false
-                        }),new SetProperty().initializeFromObject({
-                           "target":"_ExpansionComponent_VGroup3",
-                           "name":"includeInLayout",
-                           "value":false
-                        })]
-                     }),new State({
-                        "name":"disabled",
-                        "overrides":[]
-                     }),new State({
-                        "name":"locked",
-                        "overrides":[new SetProperty().initializeFromObject({
-                           "target":"_ExpansionComponent_VGroup1",
-                           "name":"visible",
-                           "value":false
-                        }),new SetProperty().initializeFromObject({
-                           "target":"_ExpansionComponent_VGroup1",
-                           "name":"includeInLayout",
-                           "value":false
-                        }),new SetProperty().initializeFromObject({
-                           "target":"_ExpansionComponent_VGroup3",
-                           "name":"visible",
-                           "value":true
-                        }),new SetProperty().initializeFromObject({
-                           "target":"_ExpansionComponent_VGroup3",
-                           "name":"includeInLayout",
-                           "value":true
-                        })]
-                     })];
-                     if(!(_loc4_ && Boolean(this)))
-                     {
-                        addr0322:
-                        i = 0;
-                        addr0320:
-                     }
-                     var _temp_16:*;
-                     loop0:
-                     do
-                     {
-                        §§push(§§newactivation());
-                        loop1:
-                        while(true)
-                        {
-                           §§push(§§pop().§§slot[4]);
-                           loop2:
-                           while(true)
-                           {
-                              §§push(§§newactivation());
-                              while(§§pop() < §§pop().§§slot[1].length)
-                              {
-                                 Binding(bindings[i]).execute();
-                                 if(_loc4_ && _loc2_)
-                                 {
-                                    break;
-                                 }
-                                 §§push(§§newactivation());
-                                 if(_loc3_ || _loc2_)
-                                 {
-                                    §§push(§§pop().§§slot[4]);
-                                    if(_loc3_)
-                                    {
-                                       §§push(uint(§§pop() + 1));
-                                       if(_loc3_)
-                                       {
-                                          §§push(§§newactivation());
-                                          if(_loc3_)
-                                          {
-                                             continue loop0;
-                                          }
-                                          continue;
-                                       }
-                                    }
-                                    continue loop2;
-                                 }
-                                 continue loop1;
-                              }
-                              break;
-                           }
-                           break;
-                        }
-                        break;
-                     }
-                     while(var _temp_16:* = §§pop(), §§pop().§§slot[4] = _temp_16, !_loc4_);
-                     
-                     return;
-                  }
-                  §§goto(addr00de);
-               }
-               §§goto(addr0214);
-            }
-            §§goto(addr0055);
+            watcherSetupUtilClass = getDefinitionByName("_net_bigpoint_cityrama_view_fieldInfoLayer_ui_components_ExpansionComponentWatcherSetupUtil");
+            watcherSetupUtilClass["init"](null);
          }
-         §§goto(addr00fe);
+         _watcherSetupUtil.setup(this,function(param1:String):*
+         {
+            return target[param1];
+         },function(param1:String):*
+         {
+            return ExpansionComponent[param1];
+         },bindings,watchers);
+         mx_internal::_bindings = mx_internal::_bindings.concat(bindings);
+         mx_internal::_watchers = mx_internal::_watchers.concat(watchers);
+         this.mxmlContent = [this._ExpansionComponent_VGroup1_i(),this._ExpansionComponent_VGroup3_i()];
+         this.currentState = "normal";
+         states = [new State({
+            "name":"normal",
+            "overrides":[new SetProperty().initializeFromObject({
+               "target":"_ExpansionComponent_VGroup1",
+               "name":"visible",
+               "value":true
+            }),new SetProperty().initializeFromObject({
+               "target":"_ExpansionComponent_VGroup1",
+               "name":"includeInLayout",
+               "value":true
+            }),new SetProperty().initializeFromObject({
+               "target":"_ExpansionComponent_VGroup3",
+               "name":"visible",
+               "value":false
+            }),new SetProperty().initializeFromObject({
+               "target":"_ExpansionComponent_VGroup3",
+               "name":"includeInLayout",
+               "value":false
+            })]
+         }),new State({
+            "name":"disabled",
+            "overrides":[]
+         }),new State({
+            "name":"locked",
+            "overrides":[new SetProperty().initializeFromObject({
+               "target":"_ExpansionComponent_VGroup1",
+               "name":"visible",
+               "value":false
+            }),new SetProperty().initializeFromObject({
+               "target":"_ExpansionComponent_VGroup1",
+               "name":"includeInLayout",
+               "value":false
+            }),new SetProperty().initializeFromObject({
+               "target":"_ExpansionComponent_VGroup3",
+               "name":"visible",
+               "value":true
+            }),new SetProperty().initializeFromObject({
+               "target":"_ExpansionComponent_VGroup3",
+               "name":"includeInLayout",
+               "value":true
+            })]
+         })];
+         i = 0;
+         while(i < bindings.length)
+         {
+            Binding(bindings[i]).execute();
+            i++;
+         }
       }
       
       public static function set watcherSetupUtil(param1:IWatcherSetupUtil2) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            ExpansionComponent._watcherSetupUtil = param1;
-         }
+         ExpansionComponent._watcherSetupUtil = param1;
       }
       
       override public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
+         super.moduleFactory = param1;
+         if(this.__moduleFactoryInitialized)
          {
-            super.moduleFactory = param1;
-            if(!_loc3_)
-            {
-               if(this.__moduleFactoryInitialized)
-               {
-                  if(!_loc3_)
-                  {
-                     §§goto(addr0042);
-                  }
-               }
-               else
-               {
-                  this.__moduleFactoryInitialized = true;
-               }
-               return;
-            }
+            return;
          }
-         addr0042:
+         this.__moduleFactoryInitialized = true;
       }
       
       override public function initialize() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super.initialize();
-         }
+         super.initialize();
       }
       
       public function set data(param1:FieldInfoLayerExpansionVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
+         if(!RandomUtilities.isEqual(param1,this._data))
          {
-            §§push(RandomUtilities.isEqual(param1,this._data));
-            if(!_loc3_)
+            this._dataIsDirty = true;
+            this._data = param1;
+            if(this._data != null && this._data.isLocked)
             {
-               if(!§§pop())
-               {
-                  if(!_loc3_)
-                  {
-                     this._dataIsDirty = true;
-                     if(_loc2_)
-                     {
-                        this._data = param1;
-                        if(_loc2_)
-                        {
-                           §§push(this._data);
-                           if(!(_loc3_ && _loc3_))
-                           {
-                              §§push(§§pop() == null);
-                              if(!(_loc3_ && _loc2_))
-                              {
-                                 addr0077:
-                                 §§push(!§§pop());
-                                 if(_loc2_)
-                                 {
-                                    addr007d:
-                                    var _temp_4:* = §§pop();
-                                    §§push(_temp_4);
-                                    if(_temp_4)
-                                    {
-                                       if(_loc2_ || _loc3_)
-                                       {
-                                          §§pop();
-                                          if(_loc2_ || _loc2_)
-                                          {
-                                             §§goto(addr00b8);
-                                          }
-                                          §§goto(addr00c1);
-                                       }
-                                       §§goto(addr00b7);
-                                    }
-                                 }
-                                 addr00b8:
-                                 §§goto(addr00af);
-                              }
-                              §§goto(addr007d);
-                           }
-                           addr00af:
-                           §§push(this._data.isLocked);
-                           if(!_loc3_)
-                           {
-                              addr00b7:
-                              §§push(§§pop());
-                           }
-                           if(§§pop())
-                           {
-                              if(_loc2_)
-                              {
-                                 addr00c1:
-                                 this.currentState = "locked";
-                                 if(_loc2_)
-                                 {
-                                    addr00dd:
-                                    invalidateProperties();
-                                 }
-                                 §§goto(addr00e2);
-                              }
-                              §§goto(addr00dd);
-                           }
-                           else
-                           {
-                              this.currentState = "normal";
-                              if(!_loc3_)
-                              {
-                                 §§goto(addr00dd);
-                              }
-                           }
-                           §§goto(addr00e2);
-                        }
-                     }
-                  }
-                  §§goto(addr00dd);
-               }
-               §§goto(addr00e2);
+               this.currentState = "locked";
             }
-            §§goto(addr0077);
+            else
+            {
+               this.currentState = "normal";
+            }
+            invalidateProperties();
          }
-         addr00e2:
       }
       
       override protected function commitProperties() : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         var _loc1_:TimerBarComponentVo = null;
-         if(_loc3_ || Boolean(_loc1_))
+         super.commitProperties();
+         if(this._dataIsDirty)
          {
-            super.commitProperties();
-            if(_loc3_ || _loc2_)
+            this._dataIsDirty = false;
+            this.ccPriceLabel.text = this._data.virtualCurrencyCost;
+            this.ddPriceLabel.text = this._data.realCurrencyCost;
+            this.saleGroup.visible = this.saleGroup.includeInLayout = this._data.onSale;
+            this.saleStrikeThroughGroup.visible = this.saleStrikeThroughGroup.includeInLayout = this._data.onSale;
+            if(this._data.onSale)
             {
-               §§push(this._dataIsDirty);
-               if(_loc3_)
-               {
-                  if(§§pop())
-                  {
-                     if(_loc3_ || Boolean(this))
-                     {
-                        this._dataIsDirty = false;
-                        if(_loc3_ || Boolean(this))
-                        {
-                           this.ccPriceLabel.text = this._data.virtualCurrencyCost;
-                           if(_loc3_ || Boolean(_loc1_))
-                           {
-                              this.ddPriceLabel.text = this._data.realCurrencyCost;
-                              if(_loc3_ || _loc2_)
-                              {
-                                 var _temp_8:* = this.saleGroup;
-                                 var _loc2_:*;
-                                 this.saleGroup.includeInLayout = _loc2_ = this._data.onSale;
-                                 _temp_8.visible = _loc2_;
-                                 if(_loc3_ || _loc3_)
-                                 {
-                                    addr00ba:
-                                    var _temp_11:* = this.saleStrikeThroughGroup;
-                                    this.saleStrikeThroughGroup.includeInLayout = _loc2_ = this._data.onSale;
-                                    _temp_11.visible = _loc2_;
-                                    if(!(_loc4_ && _loc2_))
-                                    {
-                                       addr00ed:
-                                       addr00f4:
-                                       if(this._data.onSale)
-                                       {
-                                          if(!_loc4_)
-                                          {
-                                             addr00fe:
-                                             _loc1_ = new TimerBarComponentVo();
-                                             if(_loc3_)
-                                             {
-                                                _loc1_.startTime = 0;
-                                                if(!_loc4_)
-                                                {
-                                                   §§push(_loc1_);
-                                                   §§push(this._data.saleTimeTotal);
-                                                   if(_loc3_ || _loc2_)
-                                                   {
-                                                      §§push(§§pop() - this._data.saleTimeLeft);
-                                                   }
-                                                   §§pop().currentTime = §§pop();
-                                                   if(!_loc4_)
-                                                   {
-                                                      _loc1_.cycleLength = this._data.saleTimeTotal;
-                                                      if(!_loc4_)
-                                                      {
-                                                         _loc1_.targetTime = this._data.saleTimeTotal;
-                                                         if(_loc3_)
-                                                         {
-                                                            addr0162:
-                                                            _loc1_.waitingForStart = false;
-                                                            if(!_loc4_)
-                                                            {
-                                                               addr016d:
-                                                               §§push(this.ddPriceLabel);
-                                                               §§push(" ");
-                                                               if(_loc3_ || Boolean(_loc1_))
-                                                               {
-                                                                  §§push(§§pop() + this.ddPriceLabel.text);
-                                                                  if(!(_loc4_ && Boolean(_loc1_)))
-                                                                  {
-                                                                     addr0196:
-                                                                     §§push(§§pop() + " ");
-                                                                  }
-                                                                  §§pop().text = §§pop();
-                                                                  if(_loc3_)
-                                                                  {
-                                                                     addr01a1:
-                                                                     this.saleTimerComponent.data = _loc1_;
-                                                                  }
-                                                                  addr01a8:
-                                                                  this.ddPriceLabelDiscounted.text = this._data.discountedRealCurrencyCost;
-                                                                  if(_loc3_)
-                                                                  {
-                                                                     this.orLabel.text = LocaUtils.getString("rcl.fieldinfo.layer","rcl.fieldinfo.layer.expansion.or");
-                                                                     if(!_loc4_)
-                                                                     {
-                                                                        this.saleLabel.text = LocaUtils.getString("rcl.fieldinfo.layer","rcl.fieldinfo.layer.expansion.sale");
-                                                                        if(!(_loc4_ && _loc2_))
-                                                                        {
-                                                                           addr01ff:
-                                                                           this.lockedFlavour.text = LocaUtils.getString("rcl.fieldinfo.layer","rcl.fieldinfo.layer.expansion.levelLock",[this._data.unlockLevel]);
-                                                                        }
-                                                                     }
-                                                                     §§goto(addr021a);
-                                                                  }
-                                                                  §§goto(addr01ff);
-                                                               }
-                                                               §§goto(addr0196);
-                                                            }
-                                                            §§goto(addr01a8);
-                                                         }
-                                                         §§goto(addr01a1);
-                                                      }
-                                                      §§goto(addr0162);
-                                                   }
-                                                }
-                                                §§goto(addr01a1);
-                                             }
-                                             §§goto(addr016d);
-                                          }
-                                          §§goto(addr021a);
-                                       }
-                                       §§goto(addr01a8);
-                                    }
-                                    §§goto(addr021a);
-                                 }
-                                 §§goto(addr00ed);
-                              }
-                              §§goto(addr00fe);
-                           }
-                        }
-                        §§goto(addr021a);
-                     }
-                     §§goto(addr00ba);
-                  }
-                  addr021a:
-                  return;
-               }
-               §§goto(addr00f4);
+               var _loc1_:TimerBarComponentVo = new TimerBarComponentVo();
+               null.startTime = 0;
+               null.currentTime = this._data.saleTimeTotal - this._data.saleTimeLeft;
+               null.cycleLength = this._data.saleTimeTotal;
+               null.targetTime = this._data.saleTimeTotal;
+               null.waitingForStart = false;
+               this.ddPriceLabel.text = " " + this.ddPriceLabel.text + " ";
+               this.saleTimerComponent.data = null;
             }
-            §§goto(addr00ed);
+            this.ddPriceLabelDiscounted.text = this._data.discountedRealCurrencyCost;
+            this.orLabel.text = LocaUtils.getString("rcl.fieldinfo.layer","rcl.fieldinfo.layer.expansion.or");
+            this.saleLabel.text = LocaUtils.getString("rcl.fieldinfo.layer","rcl.fieldinfo.layer.expansion.sale");
+            this.lockedFlavour.text = LocaUtils.getString("rcl.fieldinfo.layer","rcl.fieldinfo.layer.expansion.levelLock",[this._data.unlockLevel]);
          }
-         §§goto(addr00fe);
       }
       
       private function _ExpansionComponent_VGroup1_i() : VGroup
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:VGroup = new VGroup();
-         if(!_loc2_)
+         _loc1_.verticalAlign = "top";
+         _loc1_.horizontalAlign = "center";
+         _loc1_.percentWidth = 100;
+         _loc1_.gap = 10;
+         _loc1_.paddingTop = 10;
+         _loc1_.mxmlContent = [this._ExpansionComponent_VGroup2_i(),this._ExpansionComponent_HGroup3_c(),this._ExpansionComponent_HGroup4_c(),this._ExpansionComponent_HGroup5_c()];
+         _loc1_.id = "_ExpansionComponent_VGroup1";
+         if(!_loc1_.document)
          {
-            _loc1_.verticalAlign = "top";
-            if(_loc3_ || Boolean(_loc1_))
-            {
-               _loc1_.horizontalAlign = "center";
-               if(!_loc2_)
-               {
-                  _loc1_.percentWidth = 100;
-                  if(!(_loc2_ && _loc2_))
-                  {
-                     _loc1_.gap = 10;
-                     if(!(_loc2_ && Boolean(this)))
-                     {
-                        _loc1_.paddingTop = 10;
-                        if(!(_loc2_ && Boolean(_loc1_)))
-                        {
-                           _loc1_.mxmlContent = [this._ExpansionComponent_VGroup2_i(),this._ExpansionComponent_HGroup3_c(),this._ExpansionComponent_HGroup4_c(),this._ExpansionComponent_HGroup5_c()];
-                           if(_loc3_)
-                           {
-                              §§goto(addr009f);
-                           }
-                           §§goto(addr00b2);
-                        }
-                        §§goto(addr00ee);
-                     }
-                     §§goto(addr00dc);
-                  }
-                  addr009f:
-                  _loc1_.id = "_ExpansionComponent_VGroup1";
-                  if(_loc3_ || Boolean(_loc1_))
-                  {
-                     addr00b2:
-                     if(!_loc1_.document)
-                     {
-                        if(_loc3_)
-                        {
-                           addr00be:
-                           _loc1_.document = this;
-                           if(!(_loc2_ && Boolean(this)))
-                           {
-                              addr00dc:
-                              this._ExpansionComponent_VGroup1 = _loc1_;
-                              if(_loc3_ || Boolean(this))
-                              {
-                                 addr00ee:
-                                 BindingManager.executeBindings(this,"_ExpansionComponent_VGroup1",this._ExpansionComponent_VGroup1);
-                              }
-                           }
-                        }
-                        §§goto(addr00fb);
-                     }
-                     §§goto(addr00dc);
-                  }
-                  §§goto(addr00fb);
-               }
-               addr00fb:
-               return _loc1_;
-            }
-            §§goto(addr00be);
+            _loc1_.document = this;
          }
-         §§goto(addr009f);
+         this._ExpansionComponent_VGroup1 = _loc1_;
+         BindingManager.executeBindings(this,"_ExpansionComponent_VGroup1",this._ExpansionComponent_VGroup1);
+         return _loc1_;
       }
       
       private function _ExpansionComponent_VGroup2_i() : VGroup
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:VGroup = new VGroup();
-         if(_loc3_ || _loc3_)
+         _loc1_.mxmlContent = [this._ExpansionComponent_HGroup1_c(),this._ExpansionComponent_TimerBarComponent1_i(),this._ExpansionComponent_HGroup2_c()];
+         _loc1_.id = "saleGroup";
+         if(!_loc1_.document)
          {
-            _loc1_.mxmlContent = [this._ExpansionComponent_HGroup1_c(),this._ExpansionComponent_TimerBarComponent1_i(),this._ExpansionComponent_HGroup2_c()];
-            if(!(_loc2_ && _loc3_))
-            {
-               _loc1_.id = "saleGroup";
-               if(_loc3_ || _loc3_)
-               {
-                  if(!_loc1_.document)
-                  {
-                     if(_loc3_)
-                     {
-                        addr0080:
-                        _loc1_.document = this;
-                        if(_loc3_ || _loc2_)
-                        {
-                           addr0091:
-                           this.saleGroup = _loc1_;
-                           if(!_loc2_)
-                           {
-                              BindingManager.executeBindings(this,"saleGroup",this.saleGroup);
-                           }
-                        }
-                     }
-                     §§goto(addr00a8);
-                  }
-                  §§goto(addr0091);
-               }
-               addr00a8:
-               return _loc1_;
-            }
-            §§goto(addr0080);
+            _loc1_.document = this;
          }
-         §§goto(addr0091);
+         this.saleGroup = _loc1_;
+         BindingManager.executeBindings(this,"saleGroup",this.saleGroup);
+         return _loc1_;
       }
       
       private function _ExpansionComponent_HGroup1_c() : HGroup
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:HGroup = new HGroup();
-         if(!_loc3_)
+         _loc1_.gap = 0;
+         _loc1_.verticalAlign = "middle";
+         _loc1_.horizontalAlign = "center";
+         _loc1_.width = 157;
+         _loc1_.mxmlContent = [this._ExpansionComponent_LocaLabel1_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.gap = 0;
-            if(!(_loc3_ && Boolean(_loc1_)))
-            {
-               _loc1_.verticalAlign = "middle";
-               if(_loc2_)
-               {
-                  _loc1_.horizontalAlign = "center";
-                  if(!_loc3_)
-                  {
-                     _loc1_.width = 157;
-                     if(_loc2_)
-                     {
-                        addr0068:
-                        _loc1_.mxmlContent = [this._ExpansionComponent_LocaLabel1_i()];
-                        if(_loc2_)
-                        {
-                           addr0078:
-                           if(!_loc1_.document)
-                           {
-                              if(_loc2_ || Boolean(this))
-                              {
-                                 addr008c:
-                                 _loc1_.document = this;
-                              }
-                           }
-                        }
-                        §§goto(addr0090);
-                     }
-                     §§goto(addr008c);
-                  }
-                  §§goto(addr0078);
-               }
-            }
-            addr0090:
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr0068);
+         return _loc1_;
       }
       
       private function _ExpansionComponent_LocaLabel1_i() : LocaLabel
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:LocaLabel = new LocaLabel();
-         if(!(_loc2_ && _loc2_))
+         _loc1_.percentWidth = 100;
+         _loc1_.maxDisplayedLines = 2;
+         _loc1_.styleName = "expansionBlue";
+         _loc1_.id = "saleLabel";
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 100;
-            if(_loc3_ || Boolean(this))
-            {
-               _loc1_.maxDisplayedLines = 2;
-               if(_loc3_ || Boolean(_loc1_))
-               {
-                  _loc1_.styleName = "expansionBlue";
-                  if(!(_loc2_ && Boolean(_loc1_)))
-                  {
-                     _loc1_.id = "saleLabel";
-                     if(_loc3_)
-                     {
-                        addr0080:
-                        if(!_loc1_.document)
-                        {
-                           if(_loc3_)
-                           {
-                              §§goto(addr008c);
-                           }
-                        }
-                     }
-                  }
-                  §§goto(addr0095);
-               }
-            }
-            §§goto(addr0080);
+            _loc1_.document = this;
          }
-         addr008c:
-         _loc1_.document = this;
-         if(!_loc2_)
-         {
-            addr0095:
-            this.saleLabel = _loc1_;
-            if(!_loc2_)
-            {
-               BindingManager.executeBindings(this,"saleLabel",this.saleLabel);
-            }
-         }
+         this.saleLabel = _loc1_;
+         BindingManager.executeBindings(this,"saleLabel",this.saleLabel);
          return _loc1_;
       }
       
       private function _ExpansionComponent_TimerBarComponent1_i() : TimerBarComponent
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:TimerBarComponent = new TimerBarComponent();
-         if(_loc3_ || Boolean(_loc1_))
+         _loc1_.showBoostButton = false;
+         _loc1_.width = 181;
+         _loc1_.id = "saleTimerComponent";
+         if(!_loc1_.document)
          {
-            _loc1_.showBoostButton = false;
-            if(_loc3_)
-            {
-               _loc1_.width = 181;
-               if(!_loc2_)
-               {
-                  _loc1_.id = "saleTimerComponent";
-                  if(_loc3_ || Boolean(_loc1_))
-                  {
-                     addr005e:
-                     if(!_loc1_.document)
-                     {
-                        if(_loc3_)
-                        {
-                           _loc1_.document = this;
-                           if(!(_loc2_ && Boolean(this)))
-                           {
-                              addr0089:
-                              this.saleTimerComponent = _loc1_;
-                              if(!_loc2_)
-                              {
-                                 addr0093:
-                                 BindingManager.executeBindings(this,"saleTimerComponent",this.saleTimerComponent);
-                              }
-                              §§goto(addr00a0);
-                           }
-                           §§goto(addr0093);
-                        }
-                        §§goto(addr00a0);
-                     }
-                     §§goto(addr0089);
-                  }
-                  §§goto(addr00a0);
-               }
-               §§goto(addr0093);
-            }
-            §§goto(addr005e);
+            _loc1_.document = this;
          }
-         addr00a0:
+         this.saleTimerComponent = _loc1_;
+         BindingManager.executeBindings(this,"saleTimerComponent",this.saleTimerComponent);
          return _loc1_;
       }
       
       private function _ExpansionComponent_HGroup2_c() : HGroup
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:HGroup = new HGroup();
-         if(!_loc2_)
+         _loc1_.percentWidth = 100;
+         _loc1_.verticalAlign = "middle";
+         _loc1_.horizontalAlign = "center";
+         _loc1_.height = 4;
+         _loc1_.mxmlContent = [this._ExpansionComponent_BriskImageDynaLib1_c()];
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 100;
-            if(_loc3_)
-            {
-               _loc1_.verticalAlign = "middle";
-               if(_loc3_)
-               {
-                  _loc1_.horizontalAlign = "center";
-                  if(_loc3_)
-                  {
-                     §§goto(addr004e);
-                  }
-                  §§goto(addr006b);
-               }
-               addr004e:
-               _loc1_.height = 4;
-               if(_loc3_ || _loc3_)
-               {
-                  addr006b:
-                  _loc1_.mxmlContent = [this._ExpansionComponent_BriskImageDynaLib1_c()];
-                  if(_loc3_)
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(!_loc2_)
-                        {
-                           addr0087:
-                           _loc1_.document = this;
-                        }
-                     }
-                     §§goto(addr008b);
-                  }
-                  §§goto(addr0087);
-               }
-               addr008b:
-               return _loc1_;
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr0087);
+         return _loc1_;
       }
       
       private function _ExpansionComponent_BriskImageDynaLib1_c() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!_loc3_)
+         _loc1_.dynaLibName = "gui_infield_gui_infolayer";
+         _loc1_.dynaBmpSourceName = "infolayer_divider_new";
+         _loc1_.width = 157;
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_infield_gui_infolayer";
-            if(!(_loc3_ && _loc3_))
-            {
-               _loc1_.dynaBmpSourceName = "infolayer_divider_new";
-               if(_loc2_)
-               {
-                  _loc1_.width = 157;
-                  if(_loc2_ || _loc3_)
-                  {
-                     §§goto(addr0066);
-                  }
-               }
-               §§goto(addr007a);
-            }
-            addr0066:
-            if(!_loc1_.document)
-            {
-               if(_loc2_ || _loc2_)
-               {
-                  addr007a:
-                  _loc1_.document = this;
-               }
-            }
-            §§goto(addr007e);
+            _loc1_.document = this;
          }
-         addr007e:
          return _loc1_;
       }
       
       private function _ExpansionComponent_HGroup3_c() : HGroup
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:HGroup = new HGroup();
-         if(_loc3_ || Boolean(_loc1_))
+         _loc1_.gap = 10;
+         _loc1_.verticalAlign = "middle";
+         _loc1_.horizontalAlign = "center";
+         _loc1_.width = 157;
+         _loc1_.mxmlContent = [this._ExpansionComponent_BriskImageDynaLib2_c(),this._ExpansionComponent_LocaLabel2_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.gap = 10;
-            if(_loc3_)
-            {
-               _loc1_.verticalAlign = "middle";
-               if(!_loc2_)
-               {
-                  _loc1_.horizontalAlign = "center";
-                  if(!_loc2_)
-                  {
-                     addr0052:
-                     _loc1_.width = 157;
-                     if(!_loc2_)
-                     {
-                        _loc1_.mxmlContent = [this._ExpansionComponent_BriskImageDynaLib2_c(),this._ExpansionComponent_LocaLabel2_i()];
-                        if(_loc3_ || Boolean(_loc1_))
-                        {
-                           addr0088:
-                           if(!_loc1_.document)
-                           {
-                              if(!_loc2_)
-                              {
-                                 addr0094:
-                                 _loc1_.document = this;
-                              }
-                           }
-                        }
-                        §§goto(addr0098);
-                     }
-                     §§goto(addr0088);
-                  }
-                  §§goto(addr0094);
-               }
-               §§goto(addr0088);
-            }
-            §§goto(addr0052);
+            _loc1_.document = this;
          }
-         addr0098:
          return _loc1_;
       }
       
       private function _ExpansionComponent_BriskImageDynaLib2_c() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!_loc2_)
-         {
-            _loc1_.dynaLibName = "gui_resources_icons";
-            if(!_loc2_)
-            {
-               §§goto(addr0036);
-            }
-            §§goto(addr004d);
-         }
-         addr0036:
+         _loc1_.dynaLibName = "gui_resources_icons";
          _loc1_.dynaBmpSourceName = "layer_cc_icon";
-         if(_loc3_)
+         if(!_loc1_.document)
          {
-            if(!_loc1_.document)
-            {
-               if(_loc3_)
-               {
-                  addr004d:
-                  _loc1_.document = this;
-               }
-            }
+            _loc1_.document = this;
          }
          return _loc1_;
       }
       
       private function _ExpansionComponent_LocaLabel2_i() : LocaLabel
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:LocaLabel = new LocaLabel();
-         if(_loc2_)
+         _loc1_.maxDisplayedLines = 1;
+         _loc1_.styleName = "expansionGrey";
+         _loc1_.id = "ccPriceLabel";
+         if(!_loc1_.document)
          {
-            _loc1_.maxDisplayedLines = 1;
-            if(!(_loc3_ && Boolean(this)))
-            {
-               addr0031:
-               _loc1_.styleName = "expansionGrey";
-               if(_loc2_ || _loc2_)
-               {
-                  _loc1_.id = "ccPriceLabel";
-                  if(_loc2_ || Boolean(_loc1_))
-                  {
-                     addr0063:
-                     if(!_loc1_.document)
-                     {
-                        if(_loc2_)
-                        {
-                           addr007a:
-                           _loc1_.document = this;
-                           if(!_loc3_)
-                           {
-                              addr0083:
-                              this.ccPriceLabel = _loc1_;
-                              if(_loc2_ || _loc2_)
-                              {
-                                 BindingManager.executeBindings(this,"ccPriceLabel",this.ccPriceLabel);
-                              }
-                           }
-                        }
-                        return _loc1_;
-                     }
-                     §§goto(addr0083);
-                  }
-                  §§goto(addr007a);
-               }
-               §§goto(addr0063);
-            }
-            §§goto(addr007a);
+            _loc1_.document = this;
          }
-         §§goto(addr0031);
+         this.ccPriceLabel = _loc1_;
+         BindingManager.executeBindings(this,"ccPriceLabel",this.ccPriceLabel);
+         return _loc1_;
       }
       
       private function _ExpansionComponent_HGroup4_c() : HGroup
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:HGroup = new HGroup();
-         if(_loc3_ || _loc3_)
+         _loc1_.gap = 0;
+         _loc1_.verticalAlign = "middle";
+         _loc1_.horizontalAlign = "center";
+         _loc1_.width = 157;
+         _loc1_.mxmlContent = [this._ExpansionComponent_LocaLabel3_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.gap = 0;
-            if(_loc3_ || _loc2_)
-            {
-               _loc1_.verticalAlign = "middle";
-               if(!(_loc2_ && _loc2_))
-               {
-                  _loc1_.horizontalAlign = "center";
-                  if(_loc3_)
-                  {
-                     addr0062:
-                     _loc1_.width = 157;
-                     if(!_loc2_)
-                     {
-                        addr0079:
-                        _loc1_.mxmlContent = [this._ExpansionComponent_LocaLabel3_i()];
-                        if(_loc3_)
-                        {
-                           if(!_loc1_.document)
-                           {
-                              if(!(_loc2_ && _loc3_))
-                              {
-                                 addr009d:
-                                 _loc1_.document = this;
-                              }
-                           }
-                           §§goto(addr00a1);
-                        }
-                        §§goto(addr009d);
-                     }
-                  }
-               }
-               addr00a1:
-               return _loc1_;
-            }
-            §§goto(addr0079);
+            _loc1_.document = this;
          }
-         §§goto(addr0062);
+         return _loc1_;
       }
       
       private function _ExpansionComponent_LocaLabel3_i() : LocaLabel
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:LocaLabel = new LocaLabel();
-         if(_loc3_)
+         _loc1_.maxDisplayedLines = 1;
+         _loc1_.styleName = "expansionBlue";
+         _loc1_.id = "orLabel";
+         if(!_loc1_.document)
          {
-            _loc1_.maxDisplayedLines = 1;
-            if(_loc3_)
-            {
-               _loc1_.styleName = "expansionBlue";
-               if(!_loc2_)
-               {
-                  _loc1_.id = "orLabel";
-                  if(!_loc2_)
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(_loc3_)
-                        {
-                           addr0066:
-                           _loc1_.document = this;
-                           if(_loc3_)
-                           {
-                              addr006f:
-                              this.orLabel = _loc1_;
-                              if(_loc3_)
-                              {
-                                 addr0079:
-                                 BindingManager.executeBindings(this,"orLabel",this.orLabel);
-                              }
-                           }
-                           §§goto(addr0086);
-                        }
-                        §§goto(addr0079);
-                     }
-                  }
-                  §§goto(addr006f);
-               }
-               addr0086:
-               return _loc1_;
-            }
-            §§goto(addr0066);
+            _loc1_.document = this;
          }
-         §§goto(addr0079);
+         this.orLabel = _loc1_;
+         BindingManager.executeBindings(this,"orLabel",this.orLabel);
+         return _loc1_;
       }
       
       private function _ExpansionComponent_HGroup5_c() : HGroup
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:HGroup = new HGroup();
-         if(_loc2_ || Boolean(this))
+         _loc1_.gap = 10;
+         _loc1_.verticalAlign = "middle";
+         _loc1_.horizontalAlign = "center";
+         _loc1_.width = 157;
+         _loc1_.mxmlContent = [this._ExpansionComponent_Group2_c(),this._ExpansionComponent_BriskImageDynaLib3_c(),this._ExpansionComponent_Group3_c(),this._ExpansionComponent_LocaLabel5_i(),this._ExpansionComponent_Group4_c()];
+         if(!_loc1_.document)
          {
-            _loc1_.gap = 10;
-            if(!(_loc3_ && Boolean(_loc1_)))
-            {
-               _loc1_.verticalAlign = "middle";
-               if(!(_loc3_ && _loc2_))
-               {
-                  _loc1_.horizontalAlign = "center";
-                  if(_loc2_ || _loc3_)
-                  {
-                     addr0069:
-                     _loc1_.width = 157;
-                     if(_loc2_)
-                     {
-                        _loc1_.mxmlContent = [this._ExpansionComponent_Group2_c(),this._ExpansionComponent_BriskImageDynaLib3_c(),this._ExpansionComponent_Group3_c(),this._ExpansionComponent_LocaLabel5_i(),this._ExpansionComponent_Group4_c()];
-                        addr0074:
-                        if(!_loc3_)
-                        {
-                           if(!_loc1_.document)
-                           {
-                              if(!(_loc3_ && Boolean(this)))
-                              {
-                                 addr00bd:
-                                 _loc1_.document = this;
-                              }
-                           }
-                        }
-                     }
-                     §§goto(addr00c1);
-                  }
-                  §§goto(addr0074);
-               }
-               addr00c1:
-               return _loc1_;
-            }
-            §§goto(addr00bd);
+            _loc1_.document = this;
          }
-         §§goto(addr0069);
+         return _loc1_;
       }
       
       private function _ExpansionComponent_Group2_c() : Group
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:Group = new Group();
-         if(!_loc2_)
+         _loc1_.percentWidth = 50;
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 50;
-            if(_loc3_ || _loc2_)
-            {
-               if(!_loc1_.document)
-               {
-                  if(_loc3_ || Boolean(this))
-                  {
-                     _loc1_.document = this;
-                  }
-               }
-            }
+            _loc1_.document = this;
          }
          return _loc1_;
       }
       
       private function _ExpansionComponent_BriskImageDynaLib3_c() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!_loc3_)
+         _loc1_.dynaLibName = "gui_infield_gui_infolayer";
+         _loc1_.dynaBmpSourceName = "infolayer_mm";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_infield_gui_infolayer";
-            if(!_loc3_)
-            {
-               _loc1_.dynaBmpSourceName = "infolayer_mm";
-               addr0034:
-               if(_loc2_ || _loc2_)
-               {
-                  if(!_loc1_.document)
-                  {
-                     if(_loc2_ || _loc2_)
-                     {
-                        addr0068:
-                        _loc1_.document = this;
-                     }
-                  }
-                  return _loc1_;
-               }
-            }
-            §§goto(addr0068);
+            _loc1_.document = this;
          }
-         §§goto(addr0034);
+         return _loc1_;
       }
       
       private function _ExpansionComponent_Group3_c() : Group
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:Group = new Group();
-         if(!(_loc2_ && _loc3_))
+         _loc1_.percentWidth = 100;
+         _loc1_.mxmlContent = [this._ExpansionComponent_LocaLabel4_i(),this._ExpansionComponent_HGroup6_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 100;
-            if(_loc3_ || _loc2_)
-            {
-               _loc1_.mxmlContent = [this._ExpansionComponent_LocaLabel4_i(),this._ExpansionComponent_HGroup6_i()];
-               if(_loc3_ || _loc2_)
-               {
-                  §§goto(addr0070);
-               }
-               §§goto(addr0084);
-            }
-            addr0070:
-            if(!_loc1_.document)
-            {
-               if(_loc3_ || _loc3_)
-               {
-                  addr0084:
-                  _loc1_.document = this;
-               }
-            }
-            §§goto(addr0088);
+            _loc1_.document = this;
          }
-         addr0088:
          return _loc1_;
       }
       
       private function _ExpansionComponent_LocaLabel4_i() : LocaLabel
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:LocaLabel = new LocaLabel();
-         if(_loc2_ || _loc3_)
+         _loc1_.maxDisplayedLines = 1;
+         _loc1_.styleName = "expansionGrey";
+         _loc1_.id = "ddPriceLabel";
+         if(!_loc1_.document)
          {
-            _loc1_.maxDisplayedLines = 1;
-            if(!_loc3_)
-            {
-               _loc1_.styleName = "expansionGrey";
-               addr0033:
-               if(_loc2_)
-               {
-                  _loc1_.id = "ddPriceLabel";
-                  if(!(_loc3_ && Boolean(this)))
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(_loc2_)
-                        {
-                           addr0077:
-                           _loc1_.document = this;
-                           if(!_loc3_)
-                           {
-                              addr0080:
-                              this.ddPriceLabel = _loc1_;
-                              if(!_loc3_)
-                              {
-                                 addr008a:
-                                 BindingManager.executeBindings(this,"ddPriceLabel",this.ddPriceLabel);
-                              }
-                              §§goto(addr0097);
-                           }
-                           §§goto(addr008a);
-                        }
-                        §§goto(addr0097);
-                     }
-                     §§goto(addr0080);
-                  }
-               }
-               §§goto(addr0077);
-            }
-            addr0097:
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr0033);
+         this.ddPriceLabel = _loc1_;
+         BindingManager.executeBindings(this,"ddPriceLabel",this.ddPriceLabel);
+         return _loc1_;
       }
       
       private function _ExpansionComponent_HGroup6_i() : HGroup
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:HGroup = new HGroup();
-         if(_loc2_ || _loc2_)
+         _loc1_.percentWidth = 80;
+         _loc1_.paddingTop = 2;
+         _loc1_.percentHeight = 100;
+         _loc1_.gap = 0;
+         _loc1_.mxmlContent = [this._ExpansionComponent_BriskImageDynaLib4_i(),this._ExpansionComponent_BriskImageDynaLib5_i(),this._ExpansionComponent_BriskImageDynaLib6_i()];
+         _loc1_.id = "saleStrikeThroughGroup";
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 80;
-            if(_loc2_)
-            {
-               _loc1_.paddingTop = 2;
-               if(!_loc3_)
-               {
-                  _loc1_.percentHeight = 100;
-                  if(!(_loc3_ && Boolean(this)))
-                  {
-                     _loc1_.gap = 0;
-                     if(!_loc3_)
-                     {
-                        _loc1_.mxmlContent = [this._ExpansionComponent_BriskImageDynaLib4_i(),this._ExpansionComponent_BriskImageDynaLib5_i(),this._ExpansionComponent_BriskImageDynaLib6_i()];
-                        if(!(_loc3_ && _loc3_))
-                        {
-                           addr0086:
-                           _loc1_.id = "saleStrikeThroughGroup";
-                           if(_loc2_ || Boolean(this))
-                           {
-                              addr0099:
-                              if(!_loc1_.document)
-                              {
-                                 if(!(_loc3_ && _loc2_))
-                                 {
-                                    §§goto(addr00b7);
-                                 }
-                                 §§goto(addr00d2);
-                              }
-                              §§goto(addr00c0);
-                           }
-                        }
-                        §§goto(addr00d2);
-                     }
-                     §§goto(addr0086);
-                  }
-                  §§goto(addr0099);
-               }
-               §§goto(addr00c0);
-            }
-            addr00b7:
             _loc1_.document = this;
-            if(!_loc3_)
-            {
-               addr00c0:
-               this.saleStrikeThroughGroup = _loc1_;
-               if(_loc2_ || Boolean(this))
-               {
-                  addr00d2:
-                  BindingManager.executeBindings(this,"saleStrikeThroughGroup",this.saleStrikeThroughGroup);
-               }
-            }
-            §§goto(addr00df);
          }
-         addr00df:
+         this.saleStrikeThroughGroup = _loc1_;
+         BindingManager.executeBindings(this,"saleStrikeThroughGroup",this.saleStrikeThroughGroup);
          return _loc1_;
       }
       
       private function _ExpansionComponent_BriskImageDynaLib4_i() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!(_loc3_ && Boolean(this)))
+         _loc1_.height = 5;
+         _loc1_.width = 5;
+         _loc1_.id = "_ExpansionComponent_BriskImageDynaLib4";
+         if(!_loc1_.document)
          {
-            _loc1_.height = 5;
-            if(!_loc3_)
-            {
-               _loc1_.width = 5;
-               if(!(_loc3_ && Boolean(_loc1_)))
-               {
-                  _loc1_.id = "_ExpansionComponent_BriskImageDynaLib4";
-                  if(!_loc3_)
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(!(_loc3_ && _loc2_))
-                        {
-                           §§goto(addr006d);
-                        }
-                     }
-                  }
-                  §§goto(addr0089);
-               }
-               addr006d:
-               _loc1_.document = this;
-               if(!(_loc3_ && Boolean(this)))
-               {
-                  addr0089:
-                  this._ExpansionComponent_BriskImageDynaLib4 = _loc1_;
-                  if(!(_loc3_ && Boolean(_loc1_)))
-                  {
-                     addr009b:
-                     BindingManager.executeBindings(this,"_ExpansionComponent_BriskImageDynaLib4",this._ExpansionComponent_BriskImageDynaLib4);
-                  }
-               }
-               return _loc1_;
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr009b);
+         this._ExpansionComponent_BriskImageDynaLib4 = _loc1_;
+         BindingManager.executeBindings(this,"_ExpansionComponent_BriskImageDynaLib4",this._ExpansionComponent_BriskImageDynaLib4);
+         return _loc1_;
       }
       
       private function _ExpansionComponent_BriskImageDynaLib5_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!_loc2_)
+         _loc1_.height = 5;
+         _loc1_.percentWidth = 100;
+         _loc1_.id = "_ExpansionComponent_BriskImageDynaLib5";
+         if(!_loc1_.document)
          {
-            _loc1_.height = 5;
-            if(_loc3_)
-            {
-               addr002d:
-               _loc1_.percentWidth = 100;
-               if(!(_loc2_ && _loc2_))
-               {
-                  _loc1_.id = "_ExpansionComponent_BriskImageDynaLib5";
-                  if(!(_loc2_ && _loc2_))
-                  {
-                     addr005e:
-                     if(!_loc1_.document)
-                     {
-                        if(!(_loc2_ && _loc3_))
-                        {
-                           addr007d:
-                           _loc1_.document = this;
-                           if(_loc3_)
-                           {
-                              addr0086:
-                              this._ExpansionComponent_BriskImageDynaLib5 = _loc1_;
-                              if(!_loc2_)
-                              {
-                                 BindingManager.executeBindings(this,"_ExpansionComponent_BriskImageDynaLib5",this._ExpansionComponent_BriskImageDynaLib5);
-                              }
-                           }
-                        }
-                        return _loc1_;
-                     }
-                     §§goto(addr0086);
-                  }
-                  §§goto(addr007d);
-               }
-               §§goto(addr005e);
-            }
-            §§goto(addr0086);
+            _loc1_.document = this;
          }
-         §§goto(addr002d);
+         this._ExpansionComponent_BriskImageDynaLib5 = _loc1_;
+         BindingManager.executeBindings(this,"_ExpansionComponent_BriskImageDynaLib5",this._ExpansionComponent_BriskImageDynaLib5);
+         return _loc1_;
       }
       
       private function _ExpansionComponent_BriskImageDynaLib6_i() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!_loc3_)
+         _loc1_.height = 5;
+         _loc1_.width = 5;
+         _loc1_.id = "_ExpansionComponent_BriskImageDynaLib6";
+         if(!_loc1_.document)
          {
-            _loc1_.height = 5;
-            if(!(_loc3_ && _loc2_))
-            {
-               _loc1_.width = 5;
-               if(_loc2_)
-               {
-                  _loc1_.id = "_ExpansionComponent_BriskImageDynaLib6";
-                  if(_loc2_ || _loc2_)
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(_loc2_ || Boolean(_loc1_))
-                        {
-                           _loc1_.document = this;
-                           if(!(_loc3_ && Boolean(this)))
-                           {
-                              §§goto(addr008b);
-                           }
-                           §§goto(addr009e);
-                        }
-                     }
-                     §§goto(addr008b);
-                  }
-                  §§goto(addr009e);
-               }
-            }
-            addr008b:
-            this._ExpansionComponent_BriskImageDynaLib6 = _loc1_;
-            if(!(_loc3_ && Boolean(_loc1_)))
-            {
-               addr009e:
-               BindingManager.executeBindings(this,"_ExpansionComponent_BriskImageDynaLib6",this._ExpansionComponent_BriskImageDynaLib6);
-            }
-            §§goto(addr00ac);
+            _loc1_.document = this;
          }
-         addr00ac:
+         this._ExpansionComponent_BriskImageDynaLib6 = _loc1_;
+         BindingManager.executeBindings(this,"_ExpansionComponent_BriskImageDynaLib6",this._ExpansionComponent_BriskImageDynaLib6);
          return _loc1_;
       }
       
       private function _ExpansionComponent_LocaLabel5_i() : LocaLabel
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:LocaLabel = new LocaLabel();
-         if(_loc2_ || _loc2_)
-         {
-            _loc1_.percentWidth = 100;
-            if(!_loc3_)
-            {
-               _loc1_.maxDisplayedLines = 1;
-               if(_loc2_ || Boolean(_loc1_))
-               {
-                  _loc1_.styleName = "expansionGrey";
-                  if(!(_loc3_ && Boolean(_loc1_)))
-                  {
-                     §§goto(addr0063);
-                  }
-                  §§goto(addr008e);
-               }
-               §§goto(addr0097);
-            }
-            §§goto(addr008e);
-         }
-         addr0063:
+         _loc1_.percentWidth = 100;
+         _loc1_.maxDisplayedLines = 1;
+         _loc1_.styleName = "expansionGrey";
          _loc1_.id = "ddPriceLabelDiscounted";
-         if(!_loc3_)
+         if(!_loc1_.document)
          {
-            if(!_loc1_.document)
-            {
-               if(_loc2_ || Boolean(this))
-               {
-                  addr008e:
-                  _loc1_.document = this;
-                  if(!_loc3_)
-                  {
-                     §§goto(addr0097);
-                  }
-               }
-               §§goto(addr00a1);
-            }
-            addr0097:
-            this.ddPriceLabelDiscounted = _loc1_;
-            if(!_loc3_)
-            {
-               addr00a1:
-               BindingManager.executeBindings(this,"ddPriceLabelDiscounted",this.ddPriceLabelDiscounted);
-            }
-            §§goto(addr00ae);
+            _loc1_.document = this;
          }
-         addr00ae:
+         this.ddPriceLabelDiscounted = _loc1_;
+         BindingManager.executeBindings(this,"ddPriceLabelDiscounted",this.ddPriceLabelDiscounted);
          return _loc1_;
       }
       
       private function _ExpansionComponent_Group4_c() : Group
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:Group = new Group();
-         if(!(_loc2_ && _loc3_))
-         {
-            _loc1_.percentWidth = 50;
-            if(_loc3_ || Boolean(_loc1_))
-            {
-               §§goto(addr0045);
-            }
-            §§goto(addr0051);
-         }
-         addr0045:
+         _loc1_.percentWidth = 50;
          if(!_loc1_.document)
          {
-            if(!_loc2_)
-            {
-               addr0051:
-               _loc1_.document = this;
-            }
+            _loc1_.document = this;
          }
          return _loc1_;
       }
       
       private function _ExpansionComponent_VGroup3_i() : VGroup
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:VGroup = new VGroup();
-         if(_loc2_)
+         _loc1_.verticalAlign = "middle";
+         _loc1_.horizontalAlign = "center";
+         _loc1_.percentWidth = 100;
+         _loc1_.gap = 10;
+         _loc1_.paddingTop = 10;
+         _loc1_.mxmlContent = [this._ExpansionComponent_LocaLabel6_i()];
+         _loc1_.id = "_ExpansionComponent_VGroup3";
+         if(!_loc1_.document)
          {
-            _loc1_.verticalAlign = "middle";
-            if(_loc2_ || Boolean(this))
-            {
-               _loc1_.horizontalAlign = "center";
-               if(!(_loc3_ && Boolean(_loc1_)))
-               {
-                  _loc1_.percentWidth = 100;
-                  if(!(_loc3_ && Boolean(_loc1_)))
-                  {
-                     _loc1_.gap = 10;
-                     if(!_loc3_)
-                     {
-                        _loc1_.paddingTop = 10;
-                        if(_loc2_)
-                        {
-                           _loc1_.mxmlContent = [this._ExpansionComponent_LocaLabel6_i()];
-                           if(!_loc3_)
-                           {
-                              addr0088:
-                              _loc1_.id = "_ExpansionComponent_VGroup3";
-                              if(_loc2_)
-                              {
-                                 if(!_loc1_.document)
-                                 {
-                                    if(!_loc3_)
-                                    {
-                                       §§goto(addr00ad);
-                                    }
-                                    §§goto(addr00c0);
-                                 }
-                                 §§goto(addr00b6);
-                              }
-                              §§goto(addr00c0);
-                           }
-                           §§goto(addr00b6);
-                        }
-                     }
-                     §§goto(addr0088);
-                  }
-               }
-               §§goto(addr00c0);
-            }
-            addr00ad:
             _loc1_.document = this;
-            if(_loc2_)
-            {
-               addr00b6:
-               this._ExpansionComponent_VGroup3 = _loc1_;
-               if(_loc2_)
-               {
-                  addr00c0:
-                  BindingManager.executeBindings(this,"_ExpansionComponent_VGroup3",this._ExpansionComponent_VGroup3);
-               }
-            }
-            §§goto(addr00cd);
          }
-         addr00cd:
+         this._ExpansionComponent_VGroup3 = _loc1_;
+         BindingManager.executeBindings(this,"_ExpansionComponent_VGroup3",this._ExpansionComponent_VGroup3);
          return _loc1_;
       }
       
       private function _ExpansionComponent_LocaLabel6_i() : LocaLabel
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:LocaLabel = new LocaLabel();
-         if(!_loc2_)
+         _loc1_.maxDisplayedLines = 3;
+         _loc1_.maxWidth = 200;
+         _loc1_.styleName = "infoLabel";
+         _loc1_.id = "lockedFlavour";
+         if(!_loc1_.document)
          {
-            _loc1_.maxDisplayedLines = 3;
-            if(!(_loc2_ && _loc2_))
-            {
-               _loc1_.maxWidth = 200;
-               if(!(_loc2_ && _loc2_))
-               {
-                  _loc1_.styleName = "infoLabel";
-                  if(!(_loc2_ && _loc2_))
-                  {
-                     addr0065:
-                     _loc1_.id = "lockedFlavour";
-                     if(_loc3_)
-                     {
-                        if(!_loc1_.document)
-                        {
-                           if(_loc3_)
-                           {
-                              _loc1_.document = this;
-                              if(_loc3_ || _loc3_)
-                              {
-                                 addr0099:
-                                 this.lockedFlavour = _loc1_;
-                                 if(!(_loc2_ && Boolean(_loc1_)))
-                                 {
-                                    addr00ab:
-                                    BindingManager.executeBindings(this,"lockedFlavour",this.lockedFlavour);
-                                 }
-                              }
-                           }
-                           §§goto(addr00b8);
-                        }
-                        §§goto(addr0099);
-                     }
-                  }
-                  addr00b8:
-                  return _loc1_;
-               }
-            }
-            §§goto(addr00ab);
+            _loc1_.document = this;
          }
-         §§goto(addr0065);
+         this.lockedFlavour = _loc1_;
+         BindingManager.executeBindings(this,"lockedFlavour",this.lockedFlavour);
+         return _loc1_;
       }
       
       private function _ExpansionComponent_bindingsSetup() : Array
       {
-         var result:Array;
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         §§push(§§newactivation());
-         if(_loc2_)
+         var result:Array = [];
+         result[0] = new Binding(this,function():BriskDynaVo
          {
-            §§pop().§§slot[1] = [];
-            if(_loc2_)
-            {
-               §§push(§§newactivation());
-               if(_loc2_ || _loc3_)
-               {
-                  addr0036:
-                  §§push(§§pop().§§slot[1]);
-                  if(!_loc3_)
-                  {
-                     §§push(0);
-                     if(!_loc3_)
-                     {
-                        §§pop()[§§pop()] = new Binding(this,function():BriskDynaVo
-                        {
-                           return new BriskDynaVo("gui_infield_gui_infolayer","infolayer_sale_fontline_left");
-                        },null,"_ExpansionComponent_BriskImageDynaLib4.briskDynaVo");
-                        if(!(_loc3_ && _loc1_))
-                        {
-                           §§push(§§newactivation());
-                           if(_loc2_)
-                           {
-                              §§push(§§pop().§§slot[1]);
-                              if(!_loc3_)
-                              {
-                                 addr0070:
-                                 §§push(1);
-                                 if(_loc2_ || _loc2_)
-                                 {
-                                    §§pop()[§§pop()] = new Binding(this,function():BriskDynaVo
-                                    {
-                                       return new BriskDynaVo("gui_infield_gui_infolayer","infolayer_sale_fontline_middle");
-                                    },null,"_ExpansionComponent_BriskImageDynaLib5.briskDynaVo");
-                                    if(!(_loc3_ && _loc3_))
-                                    {
-                                       §§goto(addr00a9);
-                                    }
-                                    §§goto(addr00e4);
-                                 }
-                                 §§goto(addr0101);
-                              }
-                              §§goto(addr0138);
-                           }
-                           §§goto(addr014d);
-                        }
-                        §§goto(addr014b);
-                     }
-                     §§goto(addr00ce);
-                  }
-                  §§goto(addr0070);
-               }
-               §§goto(addr00b8);
-            }
-            addr00a9:
-            §§push(§§newactivation());
-            if(_loc2_ || _loc1_)
-            {
-               addr00b8:
-               §§push(§§pop().§§slot[1]);
-               if(!(_loc3_ && _loc1_))
-               {
-                  §§push(2);
-                  if(!_loc3_)
-                  {
-                     addr00ce:
-                     §§pop()[§§pop()] = new Binding(this,function():BriskDynaVo
-                     {
-                        return new BriskDynaVo("gui_infield_gui_infolayer","infolayer_sale_fontline_right");
-                     },null,"_ExpansionComponent_BriskImageDynaLib6.briskDynaVo");
-                     if(!_loc3_)
-                     {
-                        addr00e4:
-                        §§push(§§newactivation());
-                        if(_loc2_)
-                        {
-                           §§push(§§pop().§§slot[1]);
-                           if(!(_loc3_ && _loc1_))
-                           {
-                              addr00fa:
-                              §§push(3);
-                              if(!_loc3_)
-                              {
-                                 addr0101:
-                                 §§pop()[§§pop()] = new Binding(this,function():Boolean
-                                 {
-                                    return saleGroup.visible;
-                                 },null,"ddPriceLabelDiscounted.visible");
-                                 if(!_loc3_)
-                                 {
-                                    addr0122:
-                                    §§push(§§newactivation());
-                                    if(!(_loc3_ && Boolean(this)))
-                                    {
-                                       §§goto(addr0131);
-                                    }
-                                    §§goto(addr014d);
-                                 }
-                                 §§goto(addr014b);
-                              }
-                              §§goto(addr013a);
-                           }
-                           §§goto(addr0138);
-                        }
-                        §§goto(addr014d);
-                     }
-                     §§goto(addr0122);
-                  }
-                  §§goto(addr0101);
-               }
-               §§goto(addr00fa);
-            }
-            addr0131:
-            §§push(§§pop().§§slot[1]);
-            if(_loc2_)
-            {
-               addr013a:
-               §§pop()[4] = new Binding(this,function():Boolean
-               {
-                  return saleGroup.includeInLayout;
-               },null,"ddPriceLabelDiscounted.includeInLayout");
-               addr014d:
-               addr014b:
-               §§push(result);
-               addr0138:
-            }
-            return §§pop();
-         }
-         §§goto(addr0036);
+            return new BriskDynaVo("gui_infield_gui_infolayer","infolayer_sale_fontline_left");
+         },null,"_ExpansionComponent_BriskImageDynaLib4.briskDynaVo");
+         result[1] = new Binding(this,function():BriskDynaVo
+         {
+            return new BriskDynaVo("gui_infield_gui_infolayer","infolayer_sale_fontline_middle");
+         },null,"_ExpansionComponent_BriskImageDynaLib5.briskDynaVo");
+         result[2] = new Binding(this,function():BriskDynaVo
+         {
+            return new BriskDynaVo("gui_infield_gui_infolayer","infolayer_sale_fontline_right");
+         },null,"_ExpansionComponent_BriskImageDynaLib6.briskDynaVo");
+         result[3] = new Binding(this,function():Boolean
+         {
+            return saleGroup.visible;
+         },null,"ddPriceLabelDiscounted.visible");
+         result[4] = new Binding(this,function():Boolean
+         {
+            return saleGroup.includeInLayout;
+         },null,"ddPriceLabelDiscounted.includeInLayout");
+         return result;
       }
       
       [Bindable(event="propertyChange")]
@@ -1958,37 +637,15 @@ package net.bigpoint.cityrama.view.fieldInfoLayer.ui.components
       
       public function set _ExpansionComponent_VGroup1(param1:VGroup) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1585012474_ExpansionComponent_VGroup1;
-         if(_loc4_ || _loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1585012474_ExpansionComponent_VGroup1 = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc3_)
-               {
-                  this._1585012474_ExpansionComponent_VGroup1 = param1;
-                  addr003f:
-                  if(!(_loc3_ && _loc3_))
-                  {
-                     addr005d:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc4_)
-                        {
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"_ExpansionComponent_VGroup1",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr007c);
-               }
-               §§goto(addr005d);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"_ExpansionComponent_VGroup1",_loc2_,param1));
             }
-            addr007c:
-            return;
          }
-         §§goto(addr003f);
       }
       
       [Bindable(event="propertyChange")]
@@ -1999,38 +656,15 @@ package net.bigpoint.cityrama.view.fieldInfoLayer.ui.components
       
       public function set _ExpansionComponent_VGroup3(param1:VGroup) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._1585012472_ExpansionComponent_VGroup3;
-         if(!(_loc4_ && Boolean(this)))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1585012472_ExpansionComponent_VGroup3 = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_ || Boolean(param1))
-               {
-                  this._1585012472_ExpansionComponent_VGroup3 = param1;
-                  if(!_loc4_)
-                  {
-                     §§goto(addr005f);
-                  }
-                  §§goto(addr006f);
-               }
-               addr005f:
-               if(this.hasEventListener("propertyChange"))
-               {
-                  if(!_loc4_)
-                  {
-                     addr006f:
-                     this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"_ExpansionComponent_VGroup3",_loc2_,param1));
-                  }
-               }
-               §§goto(addr007e);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"_ExpansionComponent_VGroup3",_loc2_,param1));
             }
-            addr007e:
-            return;
          }
-         §§goto(addr006f);
       }
       
       [Bindable(event="propertyChange")]
@@ -2041,36 +675,15 @@ package net.bigpoint.cityrama.view.fieldInfoLayer.ui.components
       
       public function set ccPriceLabel(param1:LocaLabel) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1398066261ccPriceLabel;
-         if(!_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1398066261ccPriceLabel = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc3_)
-               {
-                  this._1398066261ccPriceLabel = param1;
-                  if(_loc4_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!_loc3_)
-                        {
-                           addr0052:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"ccPriceLabel",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0061);
-               }
-               §§goto(addr0052);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"ccPriceLabel",_loc2_,param1));
             }
-            addr0061:
-            return;
          }
-         §§goto(addr0052);
       }
       
       [Bindable(event="propertyChange")]
@@ -2081,39 +694,15 @@ package net.bigpoint.cityrama.view.fieldInfoLayer.ui.components
       
       public function set ddPriceLabel(param1:LocaLabel) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1229032395ddPriceLabel;
-         if(!_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1229032395ddPriceLabel = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc3_)
-               {
-                  addr0036:
-                  this._1229032395ddPriceLabel = param1;
-                  if(!(_loc3_ && Boolean(_loc2_)))
-                  {
-                     §§goto(addr0056);
-                  }
-                  §§goto(addr006d);
-               }
-               addr0056:
-               if(this.hasEventListener("propertyChange"))
-               {
-                  if(!(_loc3_ && _loc3_))
-                  {
-                     addr006d:
-                     this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"ddPriceLabel",_loc2_,param1));
-                  }
-               }
-               §§goto(addr007c);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"ddPriceLabel",_loc2_,param1));
             }
-            addr007c:
-            return;
          }
-         §§goto(addr0036);
       }
       
       [Bindable(event="propertyChange")]
@@ -2124,38 +713,15 @@ package net.bigpoint.cityrama.view.fieldInfoLayer.ui.components
       
       public function set ddPriceLabelDiscounted(param1:LocaLabel) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._1094425547ddPriceLabelDiscounted;
-         if(_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1094425547ddPriceLabelDiscounted = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc4_)
-               {
-                  this._1094425547ddPriceLabelDiscounted = param1;
-                  if(_loc3_)
-                  {
-                     §§goto(addr0043);
-                  }
-                  §§goto(addr0053);
-               }
-               addr0043:
-               if(this.hasEventListener("propertyChange"))
-               {
-                  if(!_loc4_)
-                  {
-                     addr0053:
-                     this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"ddPriceLabelDiscounted",_loc2_,param1));
-                  }
-               }
-               §§goto(addr0062);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"ddPriceLabelDiscounted",_loc2_,param1));
             }
-            addr0062:
-            return;
          }
-         §§goto(addr0053);
       }
       
       [Bindable(event="propertyChange")]
@@ -2166,37 +732,15 @@ package net.bigpoint.cityrama.view.fieldInfoLayer.ui.components
       
       public function set lockedFlavour(param1:LocaLabel) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._332136569lockedFlavour;
-         if(!(_loc3_ && Boolean(_loc2_)))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._332136569lockedFlavour = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc3_)
-               {
-                  this._332136569lockedFlavour = param1;
-                  if(!(_loc3_ && Boolean(param1)))
-                  {
-                     addr0060:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc4_)
-                        {
-                           addr0070:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"lockedFlavour",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr007f);
-               }
-               §§goto(addr0060);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"lockedFlavour",_loc2_,param1));
             }
-            addr007f:
-            return;
          }
-         §§goto(addr0070);
       }
       
       [Bindable(event="propertyChange")]
@@ -2207,38 +751,15 @@ package net.bigpoint.cityrama.view.fieldInfoLayer.ui.components
       
       public function set orLabel(param1:LocaLabel) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1229408559orLabel;
-         if(!_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1229408559orLabel = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc4_ || Boolean(this))
-               {
-                  this._1229408559orLabel = param1;
-                  if(!_loc3_)
-                  {
-                     §§goto(addr0056);
-                  }
-                  §§goto(addr006d);
-               }
-               addr0056:
-               if(this.hasEventListener("propertyChange"))
-               {
-                  if(!(_loc3_ && Boolean(this)))
-                  {
-                     addr006d:
-                     this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"orLabel",_loc2_,param1));
-                  }
-               }
-               §§goto(addr007c);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"orLabel",_loc2_,param1));
             }
-            addr007c:
-            return;
          }
-         §§goto(addr006d);
       }
       
       [Bindable(event="propertyChange")]
@@ -2249,37 +770,15 @@ package net.bigpoint.cityrama.view.fieldInfoLayer.ui.components
       
       public function set saleGroup(param1:VGroup) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._123184520saleGroup;
-         if(!_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._123184520saleGroup = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc3_)
-               {
-                  this._123184520saleGroup = param1;
-                  if(_loc4_ || _loc3_)
-                  {
-                     addr005a:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!(_loc3_ && Boolean(this)))
-                        {
-                           addr0071:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"saleGroup",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0080);
-                  }
-                  §§goto(addr0071);
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"saleGroup",_loc2_,param1));
             }
-            addr0080:
-            return;
          }
-         §§goto(addr005a);
       }
       
       [Bindable(event="propertyChange")]
@@ -2290,37 +789,15 @@ package net.bigpoint.cityrama.view.fieldInfoLayer.ui.components
       
       public function set saleLabel(param1:LocaLabel) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._119086355saleLabel;
-         if(_loc4_ || Boolean(_loc2_))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._119086355saleLabel = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc3_ && _loc3_))
-               {
-                  this._119086355saleLabel = param1;
-                  if(_loc4_)
-                  {
-                     addr005c:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc4_ || Boolean(this))
-                        {
-                           addr0074:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"saleLabel",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0083);
-                  }
-               }
-               §§goto(addr0074);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"saleLabel",_loc2_,param1));
             }
-            addr0083:
-            return;
          }
-         §§goto(addr005c);
       }
       
       [Bindable(event="propertyChange")]
@@ -2331,34 +808,15 @@ package net.bigpoint.cityrama.view.fieldInfoLayer.ui.components
       
       public function set saleStrikeThroughGroup(param1:HGroup) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1244086221saleStrikeThroughGroup;
-         if(!(_loc3_ && _loc3_))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1244086221saleStrikeThroughGroup = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc3_)
-               {
-                  this._1244086221saleStrikeThroughGroup = param1;
-                  if(_loc4_ || _loc3_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc4_ || Boolean(_loc2_))
-                        {
-                           addr0076:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"saleStrikeThroughGroup",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0085);
-                  }
-               }
-               §§goto(addr0076);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"saleStrikeThroughGroup",_loc2_,param1));
             }
          }
-         addr0085:
       }
       
       [Bindable(event="propertyChange")]
@@ -2369,36 +827,15 @@ package net.bigpoint.cityrama.view.fieldInfoLayer.ui.components
       
       public function set saleTimerComponent(param1:TimerBarComponent) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._1561827167saleTimerComponent;
-         if(_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1561827167saleTimerComponent = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc4_)
-               {
-                  this._1561827167saleTimerComponent = param1;
-                  if(_loc3_ || Boolean(this))
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_)
-                        {
-                           addr0063:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"saleTimerComponent",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0072);
-                  }
-               }
-               §§goto(addr0063);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"saleTimerComponent",_loc2_,param1));
             }
-            addr0072:
-            return;
          }
-         §§goto(addr0063);
       }
    }
 }

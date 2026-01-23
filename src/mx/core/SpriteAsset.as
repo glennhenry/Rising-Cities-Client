@@ -116,16 +116,15 @@ package mx.core
       
       override public function get width() : Number
       {
-         var _loc1_:Point = null;
          if(this.layoutFeatures == null)
          {
             return super.width;
          }
          if(MatrixUtilClass != null)
          {
-            _loc1_ = MatrixUtilClass["transformSize"](this.layoutFeatures.layoutWidth,this._height,transform.matrix);
+            var _loc1_:Point = MatrixUtilClass["transformSize"](this.layoutFeatures.layoutWidth,this._height,transform.matrix);
          }
-         return _loc1_ ? _loc1_.x : super.width;
+         return super.width;
       }
       
       override public function set width(param1:Number) : void
@@ -148,16 +147,15 @@ package mx.core
       
       override public function get height() : Number
       {
-         var _loc1_:Point = null;
          if(this.layoutFeatures == null)
          {
             return super.height;
          }
          if(MatrixUtilClass != null)
          {
-            _loc1_ = MatrixUtilClass["transformSize"](this.layoutFeatures.layoutWidth,this._height,transform.matrix);
+            var _loc1_:Point = MatrixUtilClass["transformSize"](this.layoutFeatures.layoutWidth,this._height,transform.matrix);
          }
-         return _loc1_ ? _loc1_.y : super.height;
+         return super.height;
       }
       
       override public function set height(param1:Number) : void

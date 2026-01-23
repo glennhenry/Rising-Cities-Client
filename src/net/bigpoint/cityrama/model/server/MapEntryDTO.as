@@ -9,24 +9,9 @@ package net.bigpoint.cityrama.model.server
       
       public function MapEntryDTO(param1:Object)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            super();
-            if(_loc2_)
-            {
-               addr0032:
-               this._key = param1.k;
-               if(_loc2_ || _loc2_)
-               {
-                  this._value = param1.v;
-               }
-            }
-            return;
-         }
-         §§goto(addr0032);
+         super();
+         this._key = param1.k;
+         this._value = param1.v;
       }
       
       public function get key() : String

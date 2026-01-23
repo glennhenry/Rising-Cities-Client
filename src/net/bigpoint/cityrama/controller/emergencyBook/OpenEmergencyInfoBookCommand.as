@@ -14,52 +14,20 @@ package net.bigpoint.cityrama.controller.emergencyBook
       
       public function OpenEmergencyInfoBookCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc2_:BillboardObjectVo = param1.getBody() as BillboardObjectVo;
          var _loc3_:PopupSettingsVo = new PopupSettingsVo(PopupSettingsVo.PAPER_POPUP);
-         if(_loc6_ || Boolean(this))
-         {
-            _loc3_.modal = true;
-            if(!_loc5_)
-            {
-               _loc3_.mediatorName = EmergencyBookMediator.NAME;
-               if(!(_loc5_ && Boolean(_loc2_)))
-               {
-                  addr006b:
-                  _loc3_.mediatorClass = EmergencyBookMediator;
-                  if(!_loc5_)
-                  {
-                     addr0078:
-                     _loc3_.viewClass = EmergencyBook;
-                  }
-               }
-               var _loc4_:EmergencyLayerProxy = facade.retrieveProxy(EmergencyLayerProxy.NAME) as EmergencyLayerProxy;
-               if(!_loc5_)
-               {
-                  _loc3_.data = _loc2_;
-                  if(!(_loc5_ && Boolean(this)))
-                  {
-                     facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
-                  }
-               }
-               return;
-            }
-            §§goto(addr006b);
-         }
-         §§goto(addr0078);
+         _loc3_.modal = true;
+         _loc3_.mediatorName = EmergencyBookMediator.NAME;
+         _loc3_.mediatorClass = EmergencyBookMediator;
+         _loc3_.viewClass = EmergencyBook;
+         var _loc4_:EmergencyLayerProxy = facade.retrieveProxy(EmergencyLayerProxy.NAME) as EmergencyLayerProxy;
+         _loc3_.data = _loc2_;
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
       }
    }
 }

@@ -46,434 +46,139 @@ package net.bigpoint.cityrama.view.homeImprovement.improvementStore.ui.component
       
       public function ImprovementStoreItemRenderer()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc2_))
-         {
-            super();
-            if(!_loc2_)
-            {
-               mx_internal::_document = this;
-               if(!_loc2_)
-               {
-                  this.minWidth = 78;
-                  if(_loc1_)
-                  {
-                     this.minHeight = 72;
-                     if(_loc1_)
-                     {
-                        this.autoDrawBackground = false;
-                        if(_loc1_)
-                        {
-                           this.mxmlContent = [this._ImprovementStoreItemRenderer_BriskImageDynaLib1_i(),this._ImprovementStoreItemRenderer_BriskImageDynaLib2_i(),this._ImprovementStoreItemRenderer_BriskImageDynaLib3_i(),this._ImprovementStoreItemRenderer_BriskImageDynaLib4_i(),this._ImprovementStoreItemRenderer_BriskImageDynaLib5_i(),this._ImprovementStoreItemRenderer_VGroup1_c()];
-                           if(!_loc2_)
-                           {
-                              addr0085:
-                              this.currentState = "normal";
-                              if(_loc1_ || _loc2_)
-                              {
-                                 this.addEventListener("creationComplete",this.___ImprovementStoreItemRenderer_ItemRenderer1_creationComplete);
-                                 §§goto(addr0099);
-                              }
-                              §§goto(addr00c5);
-                           }
-                           §§goto(addr00b4);
-                        }
-                        addr0099:
-                        if(!_loc2_)
-                        {
-                           addr00b4:
-                           this.addEventListener("rollOver",this.___ImprovementStoreItemRenderer_ItemRenderer1_rollOver);
-                           if(!_loc2_)
-                           {
-                              addr00c5:
-                              this.addEventListener("rollOut",this.___ImprovementStoreItemRenderer_ItemRenderer1_rollOut);
-                              if(_loc1_ || Boolean(this))
-                              {
-                                 states = [new State({
-                                    "name":"normal",
-                                    "overrides":[]
-                                 }),new State({
-                                    "name":"selected",
-                                    "overrides":[new SetProperty().initializeFromObject({
-                                       "target":"masterBG",
-                                       "name":"dynaBmpSourceName",
-                                       "value":"item_master_bg_green"
-                                    })]
-                                 }),new State({
-                                    "name":"overAndSelected",
-                                    "overrides":[new SetProperty().initializeFromObject({
-                                       "target":"masterBG",
-                                       "name":"dynaBmpSourceName",
-                                       "value":"item_master_bg_green"
-                                    })]
-                                 }),new State({
-                                    "name":"over",
-                                    "overrides":[new SetProperty().initializeFromObject({
-                                       "target":"masterBG",
-                                       "name":"dynaBmpSourceName",
-                                       "value":"item_master_bg_green"
-                                    })]
-                                 })];
-                                 addr00de:
-                              }
-                              §§goto(addr017d);
-                           }
-                           §§goto(addr00de);
-                        }
-                        §§goto(addr017d);
-                     }
-                     §§goto(addr00b4);
-                  }
-               }
-            }
-            §§goto(addr0085);
-         }
-         addr017d:
+         super();
+         mx_internal::_document = this;
+         this.minWidth = 78;
+         this.minHeight = 72;
+         this.autoDrawBackground = false;
+         this.mxmlContent = [this._ImprovementStoreItemRenderer_BriskImageDynaLib1_i(),this._ImprovementStoreItemRenderer_BriskImageDynaLib2_i(),this._ImprovementStoreItemRenderer_BriskImageDynaLib3_i(),this._ImprovementStoreItemRenderer_BriskImageDynaLib4_i(),this._ImprovementStoreItemRenderer_BriskImageDynaLib5_i(),this._ImprovementStoreItemRenderer_VGroup1_c()];
+         this.currentState = "normal";
+         this.addEventListener("creationComplete",this.___ImprovementStoreItemRenderer_ItemRenderer1_creationComplete);
+         this.addEventListener("rollOver",this.___ImprovementStoreItemRenderer_ItemRenderer1_rollOver);
+         this.addEventListener("rollOut",this.___ImprovementStoreItemRenderer_ItemRenderer1_rollOut);
+         states = [new State({
+            "name":"normal",
+            "overrides":[]
+         }),new State({
+            "name":"selected",
+            "overrides":[new SetProperty().initializeFromObject({
+               "target":"masterBG",
+               "name":"dynaBmpSourceName",
+               "value":"item_master_bg_green"
+            })]
+         }),new State({
+            "name":"overAndSelected",
+            "overrides":[new SetProperty().initializeFromObject({
+               "target":"masterBG",
+               "name":"dynaBmpSourceName",
+               "value":"item_master_bg_green"
+            })]
+         }),new State({
+            "name":"over",
+            "overrides":[new SetProperty().initializeFromObject({
+               "target":"masterBG",
+               "name":"dynaBmpSourceName",
+               "value":"item_master_bg_green"
+            })]
+         })];
       }
       
       override public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
+         super.moduleFactory = param1;
+         if(this.__moduleFactoryInitialized)
          {
-            super.moduleFactory = param1;
-            if(!_loc3_)
-            {
-               if(this.__moduleFactoryInitialized)
-               {
-                  if(!(_loc3_ && Boolean(this)))
-                  {
-                     return;
-                  }
-               }
-            }
-            this.__moduleFactoryInitialized = true;
+            return;
          }
+         this.__moduleFactoryInitialized = true;
       }
       
       override public function initialize() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc1_)
-         {
-            super.initialize();
-         }
+         super.initialize();
       }
       
       private function creationCompleteHandler(param1:FlexEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this.autoDrawBackground = false;
-         }
+         this.autoDrawBackground = false;
       }
       
       override public function set selected(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
+         if(param1)
          {
-            if(param1)
+            if(this.getCurrentRendererState() == "over")
             {
-               if(_loc2_)
-               {
-                  §§push(this.getCurrentRendererState());
-                  if(_loc2_)
-                  {
-                     §§push("over");
-                     if(_loc2_)
-                     {
-                        if(§§pop() == §§pop())
-                        {
-                           if(_loc2_ || Boolean(this))
-                           {
-                              this._currentState = "overAndSelected";
-                              if(_loc2_)
-                              {
-                              }
-                              addr00f3:
-                              super.selected = param1;
-                           }
-                        }
-                        else
-                        {
-                           §§push(this.getCurrentRendererState());
-                           if(_loc2_)
-                           {
-                              §§push("normal");
-                              if(!(_loc3_ && param1))
-                              {
-                                 addr0081:
-                                 if(§§pop() == §§pop())
-                                 {
-                                    if(!(_loc3_ && Boolean(this)))
-                                    {
-                                       addr0092:
-                                       this._currentState = "selected";
-                                       if(_loc3_ && _loc2_)
-                                       {
-                                       }
-                                    }
-                                 }
-                                 §§goto(addr00f3);
-                              }
-                              else
-                              {
-                                 addr00b2:
-                                 if(§§pop() == §§pop())
-                                 {
-                                    if(!(_loc3_ && param1))
-                                    {
-                                       this._currentState = "over";
-                                       if(_loc2_ || _loc2_)
-                                       {
-                                       }
-                                       §§goto(addr00f3);
-                                    }
-                                 }
-                                 else
-                                 {
-                                    this._currentState = "normal";
-                                    if(!_loc3_)
-                                    {
-                                       §§goto(addr00f3);
-                                    }
-                                 }
-                              }
-                              §§goto(addr00f8);
-                           }
-                           else
-                           {
-                              addr00af:
-                              §§push("overAndSelected");
-                           }
-                           §§goto(addr00b2);
-                        }
-                        addr00f8:
-                        return;
-                     }
-                     §§goto(addr0081);
-                  }
-                  §§goto(addr00af);
-               }
-               §§goto(addr0092);
+               this._currentState = "overAndSelected";
             }
-            else
+            else if(this.getCurrentRendererState() == "normal")
             {
-               §§push(this.getCurrentRendererState());
+               this._currentState = "selected";
             }
-            §§goto(addr00af);
          }
-         §§goto(addr00f3);
+         else if(this.getCurrentRendererState() == "overAndSelected")
+         {
+            this._currentState = "over";
+         }
+         else
+         {
+            this._currentState = "normal";
+         }
+         super.selected = param1;
       }
       
       override public function set data(param1:Object) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
+         super.data = param1;
+         if(!RandomUtilities.isEqual(this._data,param1))
          {
-            super.data = param1;
-            if(_loc3_ || Boolean(param1))
-            {
-               if(!RandomUtilities.isEqual(this._data,param1))
-               {
-                  if(!_loc2_)
-                  {
-                     this._dirty = true;
-                     if(!(_loc2_ && Boolean(param1)))
-                     {
-                        this._data = ImprovementStoreListVo(param1);
-                        if(!_loc2_)
-                        {
-                           addr007b:
-                           invalidateProperties();
-                        }
-                        §§goto(addr0080);
-                     }
-                     §§goto(addr007b);
-                  }
-               }
-               §§goto(addr0080);
-            }
-            §§goto(addr007b);
+            this._dirty = true;
+            this._data = ImprovementStoreListVo(param1);
+            invalidateProperties();
          }
-         addr0080:
       }
       
       override protected function commitProperties() : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
+         if(Boolean(this._data) && this._dirty)
          {
-            §§push(Boolean(this._data));
-            if(!(_loc3_ && Boolean(this)))
-            {
-               var _temp_2:* = §§pop();
-               §§push(_temp_2);
-               if(_temp_2)
-               {
-                  if(!_loc3_)
-                  {
-                     addr0032:
-                     §§pop();
-                     if(_loc2_ || _loc2_)
-                     {
-                        addr004a:
-                        §§push(this._dirty);
-                        if(!_loc3_)
-                        {
-                           addr0049:
-                           §§push(§§pop());
-                        }
-                        if(§§pop())
-                        {
-                           if(_loc2_)
-                           {
-                              addr0053:
-                              this._dirty = false;
-                              if(_loc2_)
-                              {
-                                 this.iconSparkle.visible = this.iconSparkle.includeInLayout = this._data.showSparkle;
-                                 if(!_loc3_)
-                                 {
-                                    addr0087:
-                                    this.iconBG.briskDynaVo = this._data.backgroundGfx;
-                                    if(_loc2_)
-                                    {
-                                       this.priceIcon.briskDynaVo = this._data.miniIconGfx;
-                                       if(!_loc3_)
-                                       {
-                                          this.itemIcon.briskDynaVo = this._data.itemGfx;
-                                          §§goto(addr00ae);
-                                       }
-                                    }
-                                    §§goto(addr00d4);
-                                 }
-                                 addr00ae:
-                                 if(!(_loc3_ && _loc3_))
-                                 {
-                                    addr00d4:
-                                    this.priceLabel.text = this._data.priceText;
-                                    if(_loc2_ || Boolean(this))
-                                    {
-                                       addr00ef:
-                                       super.commitProperties();
-                                    }
-                                 }
-                                 return;
-                              }
-                              §§goto(addr0087);
-                           }
-                        }
-                        §§goto(addr00ef);
-                     }
-                     §§goto(addr0053);
-                  }
-                  §§goto(addr0049);
-               }
-               §§goto(addr004a);
-            }
-            §§goto(addr0032);
+            this._dirty = false;
+            this.iconSparkle.visible = this.iconSparkle.includeInLayout = this._data.showSparkle;
+            this.iconBG.briskDynaVo = this._data.backgroundGfx;
+            this.priceIcon.briskDynaVo = this._data.miniIconGfx;
+            this.itemIcon.briskDynaVo = this._data.itemGfx;
+            this.priceLabel.text = this._data.priceText;
          }
-         §§goto(addr00d4);
+         super.commitProperties();
       }
       
       private function rollOverHandler(param1:MouseEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            dispatchEvent(new UIInfolayerDispatcherEvent(UIInfolayerDispatcherEvent.SHOW_UI_INFOLAYER,UIInfolayerDispatcherEvent.CALLER_TYPE_IMPROVEMENT_BOOSTER,this._data.configId));
-            if(_loc2_)
-            {
-               this.setCurrentState("over",false);
-            }
-         }
+         dispatchEvent(new UIInfolayerDispatcherEvent(UIInfolayerDispatcherEvent.SHOW_UI_INFOLAYER,UIInfolayerDispatcherEvent.CALLER_TYPE_IMPROVEMENT_BOOSTER,this._data.configId));
+         this.setCurrentState("over",false);
       }
       
       private function rollOutHandler(param1:MouseEvent) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
+         if(!selected)
          {
-            if(!selected)
-            {
-               if(_loc3_)
-               {
-                  this.setCurrentState("normal",false);
-                  if(!(_loc2_ && Boolean(this)))
-                  {
-                     addr0050:
-                     dispatchEvent(new UIInfolayerDispatcherEvent(UIInfolayerDispatcherEvent.HIDE_UI_INFOLAYER));
-                  }
-                  §§goto(addr0062);
-               }
-            }
-            §§goto(addr0050);
+            this.setCurrentState("normal",false);
          }
-         addr0062:
+         dispatchEvent(new UIInfolayerDispatcherEvent(UIInfolayerDispatcherEvent.HIDE_UI_INFOLAYER));
       }
       
       override public function setCurrentState(param1:String, param2:Boolean = true) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(_loc4_ || Boolean(this))
-         {
-            this._currentState = param1;
-            if(_loc4_ || param2)
-            {
-               addr0040:
-               super.setCurrentState(param1,param2);
-            }
-            return;
-         }
-         §§goto(addr0040);
+         this._currentState = param1;
+         super.setCurrentState(param1,param2);
       }
       
       override protected function getCurrentRendererState() : String
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
+         if(this._currentState != "")
          {
-            §§push(this._currentState);
-            if(!_loc1_)
-            {
-               if(§§pop() != "")
-               {
-                  if(_loc2_)
-                  {
-                     §§goto(addr0040);
-                  }
-               }
-               §§goto(addr0041);
-            }
-            addr0040:
             return this._currentState;
          }
-         addr0041:
          return super.getCurrentRendererState();
       }
       
@@ -489,634 +194,196 @@ package net.bigpoint.cityrama.view.homeImprovement.improvementStore.ui.component
       
       private function _ImprovementStoreItemRenderer_BriskImageDynaLib1_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc3_ || _loc2_)
+         _loc1_.dynaLibName = "gui_ui_inventory";
+         _loc1_.dynaBmpSourceName = "item_master_bg_normal";
+         _loc1_.horizontalCenter = 0;
+         _loc1_.top = 3;
+         _loc1_.id = "masterBG";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_ui_inventory";
-            if(!_loc2_)
-            {
-               _loc1_.dynaBmpSourceName = "item_master_bg_normal";
-               if(!(_loc2_ && _loc3_))
-               {
-                  _loc1_.horizontalCenter = 0;
-                  if(_loc3_ || _loc2_)
-                  {
-                     _loc1_.top = 3;
-                     if(!_loc2_)
-                     {
-                        addr0070:
-                        _loc1_.id = "masterBG";
-                        if(_loc3_)
-                        {
-                           if(!_loc1_.document)
-                           {
-                              if(!_loc2_)
-                              {
-                                 addr0093:
-                                 _loc1_.document = this;
-                                 if(!(_loc2_ && Boolean(_loc1_)))
-                                 {
-                                    §§goto(addr00a4);
-                                 }
-                              }
-                              §§goto(addr00ae);
-                           }
-                           addr00a4:
-                           this.masterBG = _loc1_;
-                           if(!_loc2_)
-                           {
-                              addr00ae:
-                              BindingManager.executeBindings(this,"masterBG",this.masterBG);
-                           }
-                           §§goto(addr00bb);
-                        }
-                        §§goto(addr00ae);
-                     }
-                     addr00bb:
-                     return _loc1_;
-                  }
-                  §§goto(addr0093);
-               }
-               §§goto(addr0070);
-            }
-            §§goto(addr00a4);
+            _loc1_.document = this;
          }
-         §§goto(addr0070);
+         this.masterBG = _loc1_;
+         BindingManager.executeBindings(this,"masterBG",this.masterBG);
+         return _loc1_;
       }
       
       private function _ImprovementStoreItemRenderer_BriskImageDynaLib2_i() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc2_)
-         {
-            _loc1_.dynaLibName = "gui_ui_inventory";
-            if(!_loc3_)
-            {
-               _loc1_.dynaBmpSourceName = "item_amount_bg";
-               if(_loc2_)
-               {
-                  _loc1_.top = 66;
-                  if(_loc2_)
-                  {
-                     §§goto(addr0040);
-                  }
-                  §§goto(addr00a6);
-               }
-               §§goto(addr0055);
-            }
-            §§goto(addr0068);
-         }
-         addr0040:
+         _loc1_.dynaLibName = "gui_ui_inventory";
+         _loc1_.dynaBmpSourceName = "item_amount_bg";
+         _loc1_.top = 66;
          _loc1_.horizontalCenter = 0;
-         if(_loc2_)
+         _loc1_.id = "priceBG";
+         if(!_loc1_.document)
          {
-            addr0055:
-            _loc1_.id = "priceBG";
-            if(!(_loc3_ && _loc3_))
-            {
-               addr0068:
-               if(!_loc1_.document)
-               {
-                  if(!(_loc3_ && Boolean(_loc1_)))
-                  {
-                     _loc1_.document = this;
-                     if(_loc2_)
-                     {
-                        addr0094:
-                        this.priceBG = _loc1_;
-                        if(!(_loc3_ && _loc2_))
-                        {
-                           addr00a6:
-                           BindingManager.executeBindings(this,"priceBG",this.priceBG);
-                        }
-                     }
-                  }
-                  §§goto(addr00b3);
-               }
-               §§goto(addr0094);
-            }
-            §§goto(addr00a6);
+            _loc1_.document = this;
          }
-         addr00b3:
+         this.priceBG = _loc1_;
+         BindingManager.executeBindings(this,"priceBG",this.priceBG);
          return _loc1_;
       }
       
       private function _ImprovementStoreItemRenderer_BriskImageDynaLib3_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!_loc2_)
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.top = 6;
+         _loc1_.horizontalCenter = 0;
+         _loc1_.id = "iconBG";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_paperPopup";
-            if(!_loc2_)
-            {
-               _loc1_.top = 6;
-               if(_loc3_)
-               {
-                  _loc1_.horizontalCenter = 0;
-                  if(!(_loc2_ && _loc2_))
-                  {
-                     addr0053:
-                     _loc1_.id = "iconBG";
-                     if(!(_loc2_ && Boolean(_loc1_)))
-                     {
-                        if(!_loc1_.document)
-                        {
-                           if(!(_loc2_ && _loc2_))
-                           {
-                              addr0087:
-                              _loc1_.document = this;
-                              if(!_loc2_)
-                              {
-                                 §§goto(addr0090);
-                              }
-                           }
-                           §§goto(addr009a);
-                        }
-                        addr0090:
-                        this.iconBG = _loc1_;
-                        if(!_loc2_)
-                        {
-                           addr009a:
-                           BindingManager.executeBindings(this,"iconBG",this.iconBG);
-                        }
-                        §§goto(addr00a7);
-                     }
-                  }
-                  addr00a7:
-                  return _loc1_;
-               }
-               §§goto(addr0053);
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr0087);
+         this.iconBG = _loc1_;
+         BindingManager.executeBindings(this,"iconBG",this.iconBG);
+         return _loc1_;
       }
       
       private function _ImprovementStoreItemRenderer_BriskImageDynaLib4_i() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc2_ || _loc3_)
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.dynaBmpSourceName = "improvement_shop_sparkle";
+         _loc1_.top = 0;
+         _loc1_.left = 5;
+         _loc1_.id = "iconSparkle";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_paperPopup";
-            if(_loc2_)
-            {
-               _loc1_.dynaBmpSourceName = "improvement_shop_sparkle";
-               if(!_loc3_)
-               {
-                  _loc1_.top = 0;
-                  §§goto(addr003e);
-               }
-               §§goto(addr007f);
-            }
-            §§goto(addr0067);
+            _loc1_.document = this;
          }
-         addr003e:
-         if(!_loc3_)
-         {
-            _loc1_.left = 5;
-            if(!_loc3_)
-            {
-               _loc1_.id = "iconSparkle";
-               if(_loc2_)
-               {
-                  addr0067:
-                  if(!_loc1_.document)
-                  {
-                     if(!_loc3_)
-                     {
-                        §§goto(addr007f);
-                     }
-                  }
-                  §§goto(addr0090);
-               }
-               addr007f:
-               _loc1_.document = this;
-               if(!(_loc3_ && Boolean(this)))
-               {
-                  addr0090:
-                  this.iconSparkle = _loc1_;
-                  if(!_loc3_)
-                  {
-                     BindingManager.executeBindings(this,"iconSparkle",this.iconSparkle);
-                  }
-               }
-               §§goto(addr00a7);
-            }
-            §§goto(addr0067);
-         }
-         addr00a7:
+         this.iconSparkle = _loc1_;
+         BindingManager.executeBindings(this,"iconSparkle",this.iconSparkle);
          return _loc1_;
       }
       
       private function _ImprovementStoreItemRenderer_BriskImageDynaLib5_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc3_)
-         {
-            _loc1_.dynaLibName = "gui_popups_paperPopup";
-            if(!(_loc2_ && _loc2_))
-            {
-               _loc1_.dynaBmpSourceName = "new_icon";
-               if(!_loc2_)
-               {
-                  _loc1_.width = 24;
-                  if(_loc3_)
-                  {
-                     §§goto(addr0047);
-                  }
-               }
-               §§goto(addr0068);
-            }
-            §§goto(addr009f);
-         }
-         addr0047:
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.dynaBmpSourceName = "new_icon";
+         _loc1_.width = 24;
          _loc1_.height = 24;
-         if(!(_loc2_ && Boolean(_loc1_)))
-         {
-            addr0068:
-            _loc1_.left = 5;
-            if(!(_loc2_ && _loc3_))
-            {
-               §§goto(addr007a);
-            }
-            §§goto(addr009f);
-         }
-         addr007a:
+         _loc1_.left = 5;
          _loc1_.visible = false;
-         if(_loc3_ || Boolean(this))
+         _loc1_.includeInLayout = false;
+         _loc1_.id = "iconNew";
+         if(!_loc1_.document)
          {
-            _loc1_.includeInLayout = false;
-            if(_loc3_)
-            {
-               _loc1_.id = "iconNew";
-               if(_loc3_)
-               {
-                  addr009f:
-                  if(!_loc1_.document)
-                  {
-                     if(_loc3_ || _loc3_)
-                     {
-                        addr00be:
-                        _loc1_.document = this;
-                        if(_loc3_)
-                        {
-                           §§goto(addr00c7);
-                        }
-                        §§goto(addr00d1);
-                     }
-                  }
-                  §§goto(addr00c7);
-               }
-               §§goto(addr00d1);
-            }
-            §§goto(addr00be);
+            _loc1_.document = this;
          }
-         addr00c7:
          this.iconNew = _loc1_;
-         if(_loc3_)
-         {
-            addr00d1:
-            BindingManager.executeBindings(this,"iconNew",this.iconNew);
-         }
+         BindingManager.executeBindings(this,"iconNew",this.iconNew);
          return _loc1_;
       }
       
       private function _ImprovementStoreItemRenderer_VGroup1_c() : VGroup
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:VGroup = new VGroup();
-         if(!(_loc2_ && Boolean(_loc1_)))
+         _loc1_.gap = 1;
+         _loc1_.top = 8;
+         _loc1_.horizontalAlign = "center";
+         _loc1_.percentWidth = 100;
+         _loc1_.mxmlContent = [this._ImprovementStoreItemRenderer_VGroup2_c(),this._ImprovementStoreItemRenderer_HGroup1_c()];
+         if(!_loc1_.document)
          {
-            _loc1_.gap = 1;
-            if(!_loc2_)
-            {
-               addr0032:
-               _loc1_.top = 8;
-               if(!_loc2_)
-               {
-                  _loc1_.horizontalAlign = "center";
-                  if(!(_loc2_ && _loc2_))
-                  {
-                     addr0058:
-                     _loc1_.percentWidth = 100;
-                     if(!(_loc2_ && _loc3_))
-                     {
-                        _loc1_.mxmlContent = [this._ImprovementStoreItemRenderer_VGroup2_c(),this._ImprovementStoreItemRenderer_HGroup1_c()];
-                        if(_loc3_ || Boolean(_loc1_))
-                        {
-                           if(!_loc1_.document)
-                           {
-                              if(!_loc2_)
-                              {
-                                 addr00a1:
-                                 _loc1_.document = this;
-                              }
-                           }
-                        }
-                        §§goto(addr00a5);
-                     }
-                     §§goto(addr00a1);
-                  }
-                  §§goto(addr00a5);
-               }
-               §§goto(addr0058);
-            }
-            addr00a5:
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr0032);
+         return _loc1_;
       }
       
       private function _ImprovementStoreItemRenderer_VGroup2_c() : VGroup
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:VGroup = new VGroup();
-         if(_loc2_ || Boolean(this))
+         _loc1_.height = 60;
+         _loc1_.width = 64;
+         _loc1_.horizontalAlign = "center";
+         _loc1_.verticalAlign = "middle";
+         _loc1_.mxmlContent = [this._ImprovementStoreItemRenderer_BriskImageDynaLib6_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.height = 60;
-            if(!_loc3_)
-            {
-               addr0031:
-               _loc1_.width = 64;
-               if(!_loc3_)
-               {
-                  _loc1_.horizontalAlign = "center";
-                  if(_loc2_ || Boolean(_loc1_))
-                  {
-                     _loc1_.verticalAlign = "middle";
-                     if(_loc2_ || Boolean(this))
-                     {
-                        _loc1_.mxmlContent = [this._ImprovementStoreItemRenderer_BriskImageDynaLib6_i()];
-                        if(!_loc3_)
-                        {
-                           if(!_loc1_.document)
-                           {
-                              if(_loc2_)
-                              {
-                                 addr0091:
-                                 _loc1_.document = this;
-                              }
-                           }
-                           §§goto(addr0095);
-                        }
-                     }
-                     §§goto(addr0091);
-                  }
-               }
-            }
-            addr0095:
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr0031);
+         return _loc1_;
       }
       
       private function _ImprovementStoreItemRenderer_BriskImageDynaLib6_i() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!_loc3_)
+         _loc1_.dynaLibName = "gui_popups_improvementStore";
+         _loc1_.horizontalCenter = 0;
+         _loc1_.verticalCenter = 0;
+         _loc1_.id = "itemIcon";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_improvementStore";
-            if(_loc2_ || _loc3_)
-            {
-               _loc1_.horizontalCenter = 0;
-               if(_loc2_ || Boolean(_loc1_))
-               {
-                  _loc1_.verticalCenter = 0;
-                  if(!(_loc3_ && Boolean(this)))
-                  {
-                     _loc1_.id = "itemIcon";
-                     if(!_loc3_)
-                     {
-                        if(!_loc1_.document)
-                        {
-                           if(_loc2_)
-                           {
-                              addr0078:
-                              _loc1_.document = this;
-                              if(_loc2_ || _loc3_)
-                              {
-                                 addr0094:
-                                 this.itemIcon = _loc1_;
-                                 if(!(_loc3_ && Boolean(_loc1_)))
-                                 {
-                                    addr00a6:
-                                    BindingManager.executeBindings(this,"itemIcon",this.itemIcon);
-                                 }
-                              }
-                              §§goto(addr00b3);
-                           }
-                        }
-                        §§goto(addr0094);
-                     }
-                     addr00b3:
-                     return _loc1_;
-                  }
-                  §§goto(addr00a6);
-               }
-               §§goto(addr0094);
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr0078);
+         this.itemIcon = _loc1_;
+         BindingManager.executeBindings(this,"itemIcon",this.itemIcon);
+         return _loc1_;
       }
       
       private function _ImprovementStoreItemRenderer_HGroup1_c() : HGroup
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:HGroup = new HGroup();
-         if(_loc3_ || _loc3_)
+         _loc1_.percentWidth = 100;
+         _loc1_.horizontalAlign = "center";
+         _loc1_.gap = 0;
+         _loc1_.mxmlContent = [this._ImprovementStoreItemRenderer_LocaLabel1_i(),this._ImprovementStoreItemRenderer_BriskImageDynaLib7_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 100;
-            if(_loc3_)
-            {
-               _loc1_.horizontalAlign = "center";
-               if(!(_loc2_ && _loc3_))
-               {
-                  _loc1_.gap = 0;
-                  if(_loc3_)
-                  {
-                     _loc1_.mxmlContent = [this._ImprovementStoreItemRenderer_LocaLabel1_i(),this._ImprovementStoreItemRenderer_BriskImageDynaLib7_i()];
-                     if(!_loc2_)
-                     {
-                        §§goto(addr007c);
-                     }
-                  }
-               }
-               §§goto(addr0090);
-            }
-            addr007c:
-            if(!_loc1_.document)
-            {
-               if(_loc3_ || Boolean(_loc1_))
-               {
-                  addr0090:
-                  _loc1_.document = this;
-               }
-            }
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr0090);
+         return _loc1_;
       }
       
       private function _ImprovementStoreItemRenderer_LocaLabel1_i() : LocaLabel
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:LocaLabel = new LocaLabel();
-         if(!(_loc2_ && _loc2_))
+         _loc1_.maxWidth = 52;
+         _loc1_.maxDisplayedLines = 1;
+         _loc1_.styleName = "improvementStorePrice";
+         _loc1_.setStyle("paddingTop",5);
+         _loc1_.id = "priceLabel";
+         if(!_loc1_.document)
          {
-            _loc1_.maxWidth = 52;
-            if(!_loc2_)
-            {
-               _loc1_.maxDisplayedLines = 1;
-               if(_loc3_)
-               {
-                  addr003e:
-                  _loc1_.styleName = "improvementStorePrice";
-                  if(_loc3_ || _loc2_)
-                  {
-                     _loc1_.setStyle("paddingTop",5);
-                     if(_loc3_ || Boolean(this))
-                     {
-                        _loc1_.id = "priceLabel";
-                        if(_loc3_ || _loc3_)
-                        {
-                           if(!_loc1_.document)
-                           {
-                              if(!_loc2_)
-                              {
-                                 addr009e:
-                                 _loc1_.document = this;
-                                 if(!_loc2_)
-                                 {
-                                    §§goto(addr00a7);
-                                 }
-                                 §§goto(addr00b9);
-                              }
-                           }
-                           addr00a7:
-                           this.priceLabel = _loc1_;
-                           if(!(_loc2_ && Boolean(_loc1_)))
-                           {
-                              addr00b9:
-                              BindingManager.executeBindings(this,"priceLabel",this.priceLabel);
-                           }
-                           §§goto(addr00c6);
-                        }
-                        §§goto(addr00b9);
-                     }
-                     §§goto(addr009e);
-                  }
-               }
-               addr00c6:
-               return _loc1_;
-            }
-            §§goto(addr00a7);
+            _loc1_.document = this;
          }
-         §§goto(addr003e);
+         this.priceLabel = _loc1_;
+         BindingManager.executeBindings(this,"priceLabel",this.priceLabel);
+         return _loc1_;
       }
       
       private function _ImprovementStoreItemRenderer_BriskImageDynaLib7_i() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!(_loc3_ && _loc3_))
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.dynaBmpSourceName = "improvement_shop_mm";
+         _loc1_.id = "priceIcon";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_paperPopup";
-            if(_loc2_)
-            {
-               _loc1_.dynaBmpSourceName = "improvement_shop_mm";
-               if(!(_loc3_ && Boolean(_loc1_)))
-               {
-                  _loc1_.id = "priceIcon";
-                  if(!_loc3_)
-                  {
-                     addr0060:
-                     if(!_loc1_.document)
-                     {
-                        if(_loc2_ || _loc3_)
-                        {
-                           addr0074:
-                           _loc1_.document = this;
-                           if(_loc2_ || Boolean(this))
-                           {
-                              addr0091:
-                              this.priceIcon = _loc1_;
-                              if(!(_loc3_ && _loc3_))
-                              {
-                                 BindingManager.executeBindings(this,"priceIcon",this.priceIcon);
-                              }
-                           }
-                        }
-                        return _loc1_;
-                     }
-                     §§goto(addr0091);
-                  }
-                  §§goto(addr0074);
-               }
-               §§goto(addr0091);
-            }
-            §§goto(addr0060);
+            _loc1_.document = this;
          }
-         §§goto(addr0091);
+         this.priceIcon = _loc1_;
+         BindingManager.executeBindings(this,"priceIcon",this.priceIcon);
+         return _loc1_;
       }
       
       public function ___ImprovementStoreItemRenderer_ItemRenderer1_creationComplete(param1:FlexEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this.creationCompleteHandler(param1);
-         }
+         this.creationCompleteHandler(param1);
       }
       
       public function ___ImprovementStoreItemRenderer_ItemRenderer1_rollOver(param1:MouseEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            this.rollOverHandler(param1);
-         }
+         this.rollOverHandler(param1);
       }
       
       public function ___ImprovementStoreItemRenderer_ItemRenderer1_rollOut(param1:MouseEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this.rollOutHandler(param1);
-         }
+         this.rollOutHandler(param1);
       }
       
       [Bindable(event="propertyChange")]
@@ -1127,36 +394,15 @@ package net.bigpoint.cityrama.view.homeImprovement.improvementStore.ui.component
       
       public function set iconBG(param1:BriskImageDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._1194063234iconBG;
-         if(!(_loc4_ && Boolean(_loc2_)))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1194063234iconBG = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc4_)
-               {
-                  this._1194063234iconBG = param1;
-                  if(_loc3_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_)
-                        {
-                           addr0066:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"iconBG",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0075);
-               }
-               §§goto(addr0066);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"iconBG",_loc2_,param1));
             }
-            addr0075:
-            return;
          }
-         §§goto(addr0066);
       }
       
       [Bindable(event="propertyChange")]
@@ -1167,37 +413,15 @@ package net.bigpoint.cityrama.view.homeImprovement.improvementStore.ui.component
       
       public function set iconNew(param1:BriskImageDynaLib) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1638757991iconNew;
-         if(_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1638757991iconNew = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc3_ && Boolean(param1)))
-               {
-                  this._1638757991iconNew = param1;
-                  addr0040:
-                  if(!(_loc3_ && _loc3_))
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc4_)
-                        {
-                           addr006d:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"iconNew",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr007c);
-                  }
-                  §§goto(addr006d);
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"iconNew",_loc2_,param1));
             }
-            addr007c:
-            return;
          }
-         §§goto(addr0040);
       }
       
       [Bindable(event="propertyChange")]
@@ -1208,38 +432,15 @@ package net.bigpoint.cityrama.view.homeImprovement.improvementStore.ui.component
       
       public function set iconSparkle(param1:BriskImageDynaLib) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1643236957iconSparkle;
-         if(!(_loc3_ && Boolean(param1)))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1643236957iconSparkle = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc4_)
-               {
-                  this._1643236957iconSparkle = param1;
-                  if(!_loc3_)
-                  {
-                     §§goto(addr0055);
-                  }
-                  §§goto(addr0065);
-               }
-               addr0055:
-               if(this.hasEventListener("propertyChange"))
-               {
-                  if(_loc4_)
-                  {
-                     addr0065:
-                     this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"iconSparkle",_loc2_,param1));
-                  }
-               }
-               §§goto(addr0074);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"iconSparkle",_loc2_,param1));
             }
-            addr0074:
-            return;
          }
-         §§goto(addr0065);
       }
       
       [Bindable(event="propertyChange")]
@@ -1250,37 +451,15 @@ package net.bigpoint.cityrama.view.homeImprovement.improvementStore.ui.component
       
       public function set itemIcon(param1:BriskImageDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._1177184812itemIcon;
-         if(_loc3_ || Boolean(this))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1177184812itemIcon = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc4_)
-               {
-                  this._1177184812itemIcon = param1;
-                  if(!_loc4_)
-                  {
-                     addr0058:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_ || Boolean(_loc2_))
-                        {
-                           addr006f:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"itemIcon",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr007e);
-                  }
-                  §§goto(addr006f);
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"itemIcon",_loc2_,param1));
             }
-            addr007e:
-            return;
          }
-         §§goto(addr0058);
       }
       
       [Bindable(event="propertyChange")]
@@ -1291,37 +470,15 @@ package net.bigpoint.cityrama.view.homeImprovement.improvementStore.ui.component
       
       public function set masterBG(param1:BriskImageDynaLib) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._283910695masterBG;
-         if(!_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._283910695masterBG = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc3_)
-               {
-                  this._283910695masterBG = param1;
-                  if(_loc4_)
-                  {
-                     addr004d:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc4_ || Boolean(_loc2_))
-                        {
-                           addr0065:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"masterBG",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0074);
-               }
-               §§goto(addr004d);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"masterBG",_loc2_,param1));
             }
-            addr0074:
-            return;
          }
-         §§goto(addr0065);
       }
       
       [Bindable(event="propertyChange")]
@@ -1332,33 +489,15 @@ package net.bigpoint.cityrama.view.homeImprovement.improvementStore.ui.component
       
       public function set priceBG(param1:BriskImageDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._315061426priceBG;
-         if(!_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._315061426priceBG = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_)
-               {
-                  this._315061426priceBG = param1;
-                  if(_loc3_)
-                  {
-                     addr004b:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_ || Boolean(_loc2_))
-                        {
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"priceBG",_loc2_,param1));
-                        }
-                     }
-                  }
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"priceBG",_loc2_,param1));
             }
-            return;
          }
-         §§goto(addr004b);
       }
       
       [Bindable(event="propertyChange")]
@@ -1369,34 +508,15 @@ package net.bigpoint.cityrama.view.homeImprovement.improvementStore.ui.component
       
       public function set priceIcon(param1:BriskImageDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._2126080670priceIcon;
-         if(!(_loc4_ && Boolean(_loc2_)))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._2126080670priceIcon = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc4_ && Boolean(_loc2_)))
-               {
-                  this._2126080670priceIcon = param1;
-                  if(_loc3_ || Boolean(this))
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!(_loc4_ && Boolean(param1)))
-                        {
-                           addr007e:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"priceIcon",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr008d);
-               }
-               §§goto(addr007e);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"priceIcon",_loc2_,param1));
             }
          }
-         addr008d:
       }
       
       [Bindable(event="propertyChange")]
@@ -1407,37 +527,15 @@ package net.bigpoint.cityrama.view.homeImprovement.improvementStore.ui.component
       
       public function set priceLabel(param1:LocaLabel) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._1481293013priceLabel;
-         if(!_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1481293013priceLabel = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc4_)
-               {
-                  this._1481293013priceLabel = param1;
-                  if(_loc3_)
-                  {
-                     addr0044:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!_loc4_)
-                        {
-                           addr0054:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"priceLabel",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0063);
-                  }
-               }
-               §§goto(addr0054);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"priceLabel",_loc2_,param1));
             }
-            addr0063:
-            return;
          }
-         §§goto(addr0044);
       }
    }
 }

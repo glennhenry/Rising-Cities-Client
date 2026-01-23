@@ -27,130 +27,52 @@ package org.puremvc.as3.patterns.facade
       
       public function Facade()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
+         super();
+         if(instance != null)
          {
-            super();
-            if(!(_loc1_ && Boolean(this)))
-            {
-               addr0030:
-               if(instance != null)
-               {
-                  if(!(_loc1_ && _loc1_))
-                  {
-                     throw Error(SINGLETON_MSG);
-                  }
-               }
-               instance = this;
-               if(!(_loc1_ && _loc2_))
-               {
-                  initializeFacade();
-               }
-            }
-            return;
+            throw Error(SINGLETON_MSG);
          }
-         §§goto(addr0030);
+         instance = this;
+         initializeFacade();
       }
       
       public static function getInstance() : IFacade
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
+         if(instance == null)
          {
-            §§push(instance);
-            if(!_loc2_)
-            {
-               if(§§pop() == null)
-               {
-                  if(_loc1_)
-                  {
-                     instance = new Facade();
-                  }
-               }
-               addr0030:
-               return instance;
-            }
+            instance = new Facade();
          }
-         §§goto(addr0030);
+         return instance;
       }
       
       public function removeProxy(param1:String) : IProxy
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         var _loc2_:IProxy = null;
-         if(_loc3_ || Boolean(this))
+         if(model != null)
          {
-            §§push(model);
-            if(_loc3_ || Boolean(_loc2_))
-            {
-               if(§§pop() != null)
-               {
-                  addr004b:
-                  _loc2_ = model.removeProxy(param1);
-                  addr0048:
-               }
-               return _loc2_;
-            }
-            §§goto(addr004b);
+            var _loc2_:IProxy = model.removeProxy(param1);
          }
-         §§goto(addr0048);
+         return null;
       }
       
       public function registerProxy(param1:IProxy) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            model.registerProxy(param1);
-         }
+         model.registerProxy(param1);
       }
       
       protected function initializeController() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && Boolean(this)))
+         if(controller != null)
          {
-            if(controller != null)
-            {
-               if(_loc2_ || Boolean(this))
-               {
-                  return;
-               }
-            }
-            controller = Controller.getInstance();
+            return;
          }
+         controller = Controller.getInstance();
       }
       
       protected function initializeFacade() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            initializeModel();
-            if(_loc2_)
-            {
-               initializeController();
-               if(!(_loc1_ && Boolean(this)))
-               {
-                  addr0036:
-                  initializeView();
-               }
-            }
-            return;
-         }
-         §§goto(addr0036);
+         initializeModel();
+         initializeController();
+         initializeView();
       }
       
       public function retrieveProxy(param1:String) : IProxy
@@ -160,54 +82,22 @@ package org.puremvc.as3.patterns.facade
       
       public function sendNotification(param1:String, param2:Object = null, param3:String = null) : void
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
-         if(!(_loc4_ && Boolean(param2)))
-         {
-            notifyObservers(new Notification(param1,param2,param3));
-         }
+         notifyObservers(new Notification(param1,param2,param3));
       }
       
       public function notifyObservers(param1:INotification) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
+         if(view != null)
          {
-            §§push(view);
-            if(_loc2_ || _loc3_)
-            {
-               if(§§pop() != null)
-               {
-                  if(_loc2_ || Boolean(this))
-                  {
-                     addr0050:
-                     view.notifyObservers(param1);
-                  }
-               }
-               §§goto(addr0056);
-            }
-            §§goto(addr0050);
+            view.notifyObservers(param1);
          }
-         addr0056:
       }
       
       protected function initializeView() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
+         if(view != null)
          {
-            if(view != null)
-            {
-               if(_loc1_)
-               {
-                  return;
-               }
-            }
+            return;
          }
          view = View.getInstance();
       }
@@ -219,26 +109,11 @@ package org.puremvc.as3.patterns.facade
       
       public function removeMediator(param1:String) : IMediator
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         var _loc2_:IMediator = null;
-         if(_loc3_)
+         if(view != null)
          {
-            §§push(view);
-            if(!_loc4_)
-            {
-               if(§§pop() != null)
-               {
-                  addr002d:
-                  _loc2_ = view.removeMediator(param1);
-                  addr002a:
-               }
-               return _loc2_;
-            }
-            §§goto(addr002d);
+            var _loc2_:IMediator = view.removeMediator(param1);
          }
-         §§goto(addr002a);
+         return null;
       }
       
       public function hasCommand(param1:String) : Boolean
@@ -248,24 +123,12 @@ package org.puremvc.as3.patterns.facade
       
       public function removeCommand(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            controller.removeCommand(param1);
-         }
+         controller.removeCommand(param1);
       }
       
       public function registerCommand(param1:String, param2:Class) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(_loc4_ || Boolean(param2))
-         {
-            controller.registerCommand(param1,param2);
-         }
+         controller.registerCommand(param1,param2);
       }
       
       public function hasMediator(param1:String) : Boolean
@@ -275,52 +138,19 @@ package org.puremvc.as3.patterns.facade
       
       public function registerMediator(param1:IMediator) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
+         if(view != null)
          {
-            §§push(view);
-            if(!(_loc2_ && Boolean(this)))
-            {
-               if(§§pop() != null)
-               {
-                  if(_loc3_ || Boolean(param1))
-                  {
-                     addr0048:
-                     view.registerMediator(param1);
-                     addr0045:
-                  }
-               }
-               return;
-            }
-            §§goto(addr0048);
+            view.registerMediator(param1);
          }
-         §§goto(addr0045);
       }
       
       protected function initializeModel() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
+         if(model != null)
          {
-            if(model != null)
-            {
-               if(_loc1_ || _loc2_)
-               {
-                  return;
-               }
-            }
-            else
-            {
-               addr0042:
-               model = Model.getInstance();
-            }
             return;
          }
-         §§goto(addr0042);
+         model = Model.getInstance();
       }
       
       public function hasProxy(param1:String) : Boolean

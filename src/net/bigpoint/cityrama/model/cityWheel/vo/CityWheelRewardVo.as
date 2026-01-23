@@ -13,24 +13,12 @@ package net.bigpoint.cityrama.model.cityWheel.vo
       
       public function CityWheelRewardVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function set rewardDTO(param1:CityWheelRewardDTO) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._rewardDTO = param1;
-         }
+         this._rewardDTO = param1;
       }
       
       public function get iconName() : String
@@ -40,13 +28,7 @@ package net.bigpoint.cityrama.model.cityWheel.vo
       
       public function set iconName(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._iconName = param1;
-         }
+         this._iconName = param1;
       }
       
       public function get libName() : String
@@ -56,13 +38,7 @@ package net.bigpoint.cityrama.model.cityWheel.vo
       
       public function set libName(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._libName = param1;
-         }
+         this._libName = param1;
       }
       
       public function get outputType() : String

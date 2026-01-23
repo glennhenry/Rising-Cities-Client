@@ -43,13 +43,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function EmergencyRehireProfessionalMiniLayerVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get profId() : Number
@@ -59,13 +53,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set profId(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._profId = param1;
-         }
+         this._profId = param1;
       }
       
       public function get efficencyProgress() : Number
@@ -75,13 +63,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set efficencyProgress(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._efficencyProgress = param1;
-         }
+         this._efficencyProgress = param1;
       }
       
       public function get perceptionProgress() : Number
@@ -91,13 +73,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set perceptionProgress(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
-         {
-            this._perceptionProgress = param1;
-         }
+         this._perceptionProgress = param1;
       }
       
       public function get luckProgress() : Number
@@ -107,13 +83,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set luckProgress(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._luckProgress = param1;
-         }
+         this._luckProgress = param1;
       }
       
       public function get instantFinishToolTipBad() : String
@@ -123,13 +93,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set instantFinishToolTipBad(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._instantFinishToolTipBad = param1;
-         }
+         this._instantFinishToolTipBad = param1;
       }
       
       public function get hasEnoughDextro() : Boolean
@@ -139,13 +103,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set hasEnoughDextro(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._hasEnoughDextro = param1;
-         }
+         this._hasEnoughDextro = param1;
       }
       
       public function get instantDextroCosts() : Number
@@ -155,13 +113,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set instantDextroCosts(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._instantDextroCosts = param1;
-         }
+         this._instantDextroCosts = param1;
       }
       
       public function get hasEnoughEp() : Boolean
@@ -171,13 +123,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set hasEnoughEp(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._hasEnoughEp = param1;
-         }
+         this._hasEnoughEp = param1;
       }
       
       public function get epCosts() : Number
@@ -187,13 +133,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set epCosts(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._epCosts = param1;
-         }
+         this._epCosts = param1;
       }
       
       public function get professionalSlotVo() : ProfessionalSlotVo
@@ -203,13 +143,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set professionalSlotVo(param1:ProfessionalSlotVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._professionalSlotVo = param1;
-         }
+         this._professionalSlotVo = param1;
       }
       
       public function get libName() : String
@@ -219,13 +153,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set libName(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._libName = param1;
-         }
+         this._libName = param1;
       }
       
       public function get bmpName() : String
@@ -235,13 +163,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set bmpName(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._bmpName = param1;
-         }
+         this._bmpName = param1;
       }
       
       public function get title() : String
@@ -251,13 +173,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set title(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._title = param1;
-         }
+         this._title = param1;
       }
       
       public function get flavourText() : String
@@ -267,13 +183,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set flavourText(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._flavourText = param1;
-         }
+         this._flavourText = param1;
       }
       
       public function get header() : String
@@ -283,13 +193,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set header(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            this._header = param1;
-         }
+         this._header = param1;
       }
       
       public function get buttonText() : String
@@ -299,13 +203,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set buttonText(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
-         {
-            this._buttonText = param1;
-         }
+         this._buttonText = param1;
       }
       
       public function get instantFinishText() : String
@@ -315,13 +213,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set instantFinishText(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._instantFinishText = param1;
-         }
+         this._instantFinishText = param1;
       }
       
       public function get swfName() : String
@@ -331,13 +223,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set swfName(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._swfName = param1;
-         }
+         this._swfName = param1;
       }
    }
 }

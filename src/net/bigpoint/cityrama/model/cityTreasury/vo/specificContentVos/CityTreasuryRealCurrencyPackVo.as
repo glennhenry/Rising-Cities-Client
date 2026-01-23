@@ -13,24 +13,12 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function CityTreasuryRealCurrencyPackVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       public function set packs(param1:Vector.<CityTreasuryRealCurrencyPackItemVo>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._packs = param1;
-         }
+         this._packs = param1;
       }
       
       public function get packs() : Vector.<CityTreasuryRealCurrencyPackItemVo>
@@ -40,30 +28,16 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function get packsAsListCollection() : ArrayCollection
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
          var _loc1_:CityTreasuryInternalPackItemVo = null;
-         if(!(_loc4_ && Boolean(_loc1_)))
+         if(!this._packsAsArrayCollection)
          {
-            if(!this._packsAsArrayCollection)
+            this._packsAsArrayCollection = new ArrayCollection();
+            for each(_loc1_ in this._packs)
             {
-               if(_loc5_)
-               {
-                  this._packsAsArrayCollection = new ArrayCollection();
-               }
-               for each(_loc1_ in this._packs)
-               {
-                  if(!_loc4_)
-                  {
-                     this._packsAsArrayCollection.addItem(_loc1_);
-                  }
-               }
-               addr004b:
+               this._packsAsArrayCollection.addItem(_loc1_);
             }
-            return this._packsAsArrayCollection;
          }
-         §§goto(addr004b);
+         return this._packsAsArrayCollection;
       }
       
       public function get buttonLabel() : String

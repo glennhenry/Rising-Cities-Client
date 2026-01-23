@@ -23,64 +23,20 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigResourceDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc2_:Number = NaN;
-         if(!_loc5_)
+         super();
+         this._id = param1.id;
+         this._type = param1.t;
+         this._levelId = param1.l;
+         this._sellable = param1.s;
+         this._buyable = param1.b;
+         this._giftable = param1.g;
+         this._cap = param1.c;
+         this._resourceEffectIds = new Vector.<Number>();
+         for each(_loc2_ in param1.es)
          {
-            super();
-            if(_loc6_)
-            {
-               this._id = param1.id;
-               if(_loc6_ || _loc3_)
-               {
-                  this._type = param1.t;
-                  if(_loc6_)
-                  {
-                     §§goto(addr004f);
-                  }
-                  §§goto(addr0090);
-               }
-               §§goto(addr00bf);
-            }
-            addr004f:
-            this._levelId = param1.l;
-            if(!(_loc5_ && Boolean(this)))
-            {
-               this._sellable = param1.s;
-               if(!_loc5_)
-               {
-                  this._buyable = param1.b;
-                  if(_loc6_)
-                  {
-                     addr0090:
-                     this._giftable = param1.g;
-                     if(_loc6_ || Boolean(_loc2_))
-                     {
-                        this._cap = param1.c;
-                        if(!(_loc5_ && _loc3_))
-                        {
-                           addr00bf:
-                           this._resourceEffectIds = new Vector.<Number>();
-                        }
-                        §§goto(addr00d8);
-                     }
-                  }
-                  §§goto(addr00bf);
-               }
-            }
-            addr00d8:
-            for each(_loc2_ in param1.es)
-            {
-               if(!_loc5_)
-               {
-                  this._resourceEffectIds.push(_loc2_);
-               }
-            }
-            return;
+            this._resourceEffectIds.push(_loc2_);
          }
-         §§goto(addr0090);
       }
       
       public function get id() : Number
@@ -90,13 +46,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set id(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._id = param1;
-         }
+         this._id = param1;
       }
       
       public function get type() : String
@@ -106,13 +56,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set type(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._type = param1;
-         }
+         this._type = param1;
       }
       
       public function get levelId() : Number
@@ -122,13 +66,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set levelId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(param1))
-         {
-            this._levelId = param1;
-         }
+         this._levelId = param1;
       }
       
       public function get sellable() : Boolean
@@ -138,13 +76,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set sellable(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._sellable = param1;
-         }
+         this._sellable = param1;
       }
       
       public function get buyable() : Boolean
@@ -154,13 +86,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set buyable(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._buyable = param1;
-         }
+         this._buyable = param1;
       }
       
       public function get giftable() : Boolean
@@ -170,13 +96,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set giftable(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._giftable = param1;
-         }
+         this._giftable = param1;
       }
       
       public function log(param1:int, param2:int) : void

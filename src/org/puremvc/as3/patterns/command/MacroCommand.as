@@ -12,64 +12,26 @@ package org.puremvc.as3.patterns.command
       
       public function MacroCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-            if(_loc1_ || _loc1_)
-            {
-               subCommands = new Array();
-               if(_loc1_ || _loc1_)
-               {
-                  addr0047:
-                  initializeMacroCommand();
-               }
-               return;
-            }
-         }
-         §§goto(addr0047);
+         super();
+         subCommands = new Array();
+         initializeMacroCommand();
       }
       
       final public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc2_:Class = null;
          var _loc3_:ICommand = null;
-         loop0:
-         while(true)
+         while(subCommands.length > 0)
          {
-            §§push(subCommands);
-            while(§§pop().length > 0)
-            {
-               §§push(subCommands);
-               if(_loc4_ || Boolean(this))
-               {
-                  _loc2_ = §§pop().shift();
-                  _loc3_ = new _loc2_();
-                  if(!(_loc5_ && Boolean(param1)))
-                  {
-                     _loc3_.execute(param1);
-                  }
-                  continue loop0;
-               }
-            }
-            break;
+            _loc2_ = subCommands.shift();
+            _loc3_ = new _loc2_();
+            _loc3_.execute(param1);
          }
       }
       
       protected function addSubCommand(param1:Class) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            subCommands.push(param1);
-         }
+         subCommands.push(param1);
       }
       
       protected function initializeMacroCommand() : void

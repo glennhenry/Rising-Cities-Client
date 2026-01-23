@@ -23,25 +23,9 @@ package net.bigpoint.cityrama.model.good.vo
       
       public function ProductionGoodObjectVo(param1:ConfigGoodDTO)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            super();
-            if(!_loc2_)
-            {
-               §§goto(addr002d);
-            }
-            §§goto(addr003f);
-         }
-         addr002d:
+         super();
          this._configGood = param1;
-         if(_loc3_ || _loc2_)
-         {
-            addr003f:
-            this._requiredGoods = new Vector.<GoodRequireVo>();
-         }
+         this._requiredGoods = new Vector.<GoodRequireVo>();
       }
       
       public function get config() : ConfigGoodDTO
@@ -61,24 +45,12 @@ package net.bigpoint.cityrama.model.good.vo
       
       public function set productionTime(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._productionTime = param1;
-         }
+         this._productionTime = param1;
       }
       
       public function set productionCostProductionPoints(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._productionCostPP = param1;
-         }
+         this._productionCostPP = param1;
       }
       
       public function get productionYeld() : int
@@ -88,13 +60,7 @@ package net.bigpoint.cityrama.model.good.vo
       
       public function set productionYeld(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._productionYeld = param1;
-         }
+         this._productionYeld = param1;
       }
       
       public function get requiredGoods() : Vector.<GoodRequireVo>
@@ -109,82 +75,20 @@ package net.bigpoint.cityrama.model.good.vo
       
       public function set productionIncome(param1:SimpleItemVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._productionIncome = param1;
-         }
+         this._productionIncome = param1;
       }
       
       public function get groupType() : String
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc1_:ConfigTagDTO = null;
-         var _loc2_:int = 0;
-         var _loc3_:* = this._configGood.tagConfigs;
-         while(true)
+         for each(_loc1_ in this._configGood.tagConfigs)
          {
-            for each(_loc1_ in _loc3_)
+            if(_loc1_.tagName == ServerTagConstants.GOOD_CONSTRUCTION || _loc1_.tagName == ServerTagConstants.GOOD_NORMAL)
             {
-               if(!_loc4_)
-               {
-                  continue;
-               }
-               §§push(_loc1_.tagName);
-               if(!_loc5_)
-               {
-                  §§push(ServerTagConstants.GOOD_CONSTRUCTION);
-                  if(!_loc5_)
-                  {
-                     §§push(§§pop() == §§pop());
-                     if(_loc4_ || Boolean(_loc2_))
-                     {
-                        var _temp_2:* = §§pop();
-                        §§push(_temp_2);
-                        if(!_temp_2)
-                        {
-                           if(_loc4_ || Boolean(_loc2_))
-                           {
-                              addr007a:
-                              §§pop();
-                              if(_loc5_)
-                              {
-                                 break;
-                              }
-                              §§push(_loc1_.tagName);
-                              if(!(_loc4_ || Boolean(_loc1_)))
-                              {
-                                 return §§pop();
-                              }
-                              addr00a4:
-                              addr00a3:
-                              addr009e:
-                              if(§§pop() == ServerTagConstants.GOOD_NORMAL)
-                              {
-                                 if(_loc4_ || Boolean(this))
-                                 {
-                                    break;
-                                 }
-                              }
-                              continue;
-                           }
-                        }
-                        §§goto(addr00a4);
-                     }
-                     §§goto(addr007a);
-                  }
-                  §§goto(addr00a3);
-               }
-               §§goto(addr009e);
+               return _loc1_.tagName;
             }
-            return null;
          }
-         §§goto(addr00ba);
-         §§push(_loc1_.tagName);
+         return null;
       }
       
       public function get gfxId() : int

@@ -11,20 +11,8 @@ package net.bigpoint.cityrama.model.server.vo.server.quest
       
       public function QuestTaskConfigDTO(param1:Object)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            super(param1);
-            if(_loc2_ || _loc2_)
-            {
-               addr003c:
-               this._questTaskTarget = new QuestTaskTargetDTO(param1.tt);
-            }
-            return;
-         }
-         §§goto(addr003c);
+         super(param1);
+         this._questTaskTarget = new QuestTaskTargetDTO(param1.tt);
       }
       
       public function get questTaskTarget() : IQuestTaskTargetDTO

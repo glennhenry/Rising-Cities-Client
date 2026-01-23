@@ -17,54 +17,9 @@ package net.bigpoint.cityrama.model.architecturalBook
       
       public static const BLUEPRINT_GROUNDS:String = "BLUEPRINT_GROUNDS";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(!(_loc1_ && BlueprintGroupConstants))
-      {
-         BLUEPRINT_RESIDENTIAL = "BLUEPRINT_RESIDENTIAL";
-         if(_loc2_)
-         {
-            addr002c:
-            BLUEPRINT_SHOP = "BLUEPRINT_SHOP";
-            if(!_loc1_)
-            {
-               BLUEPRINT_POWERPLANT = "BLUEPRINT_POWERPLANT";
-               if(_loc2_ || BlueprintGroupConstants)
-               {
-                  BLUEPRINT_DECORATION = "BLUEPRINT_DECORATION";
-                  if(!(_loc1_ && _loc1_))
-                  {
-                     addr007a:
-                     BLUEPRINT_PRODUCTION = "BLUEPRINT_PRODUCTION";
-                     if(!_loc1_)
-                     {
-                        BLUEPRINT_SPECIAL = "BLUEPRINT_SPECIAL";
-                        if(!(_loc1_ && BlueprintGroupConstants))
-                        {
-                           BLUEPRINT_GROUNDS = "BLUEPRINT_GROUNDS";
-                        }
-                     }
-                  }
-                  §§goto(addr00a7);
-               }
-               §§goto(addr007a);
-            }
-         }
-         addr00a7:
-         return;
-      }
-      §§goto(addr002c);
-      
       public function BlueprintGroupConstants()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc2_))
-         {
-            super();
-         }
+         super();
       }
    }
 }

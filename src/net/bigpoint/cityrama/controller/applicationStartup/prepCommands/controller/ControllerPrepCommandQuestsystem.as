@@ -16,54 +16,18 @@ package net.bigpoint.cityrama.controller.applicationStartup.prepCommands.control
       
       public function ControllerPrepCommandQuestsystem()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            facade.registerCommand(ApplicationNotificationConstants.INIT_QUEST_SYSTEM,InitializeQuestSystemCommand);
-            if(!_loc2_)
-            {
-               facade.registerCommand(ApplicationNotificationConstants.QUEST_COLLECTREWARD,QuestCollectRewardCommand);
-               if(!(_loc2_ && Boolean(this)))
-               {
-                  facade.registerCommand(ApplicationNotificationConstants.QUEST_CHALLENGE_COLLECTREWARD,QuestChallengeCollectRewardCommand);
-                  if(_loc3_ || Boolean(param1))
-                  {
-                     §§goto(addr006b);
-                  }
-                  §§goto(addr007d);
-               }
-            }
-            §§goto(addr00b5);
-         }
-         addr006b:
+         facade.registerCommand(ApplicationNotificationConstants.INIT_QUEST_SYSTEM,InitializeQuestSystemCommand);
+         facade.registerCommand(ApplicationNotificationConstants.QUEST_COLLECTREWARD,QuestCollectRewardCommand);
+         facade.registerCommand(ApplicationNotificationConstants.QUEST_CHALLENGE_COLLECTREWARD,QuestChallengeCollectRewardCommand);
          facade.registerCommand(ApplicationNotificationConstants.QUEST_VIEWED,QuestViewedCommand);
-         if(_loc3_)
-         {
-            facade.registerCommand(ApplicationNotificationConstants.QUEST_CHANGE_STATE,ClientMessageQuestChangeStateCommand);
-            addr007d:
-            if(!(_loc2_ && _loc3_))
-            {
-               facade.registerCommand(ApplicationNotificationConstants.QUEST_UPSELL,ClientMessageQuestUpsellCommand);
-               if(_loc3_)
-               {
-                  addr00b5:
-                  facade.registerCommand(ApplicationNotificationConstants.QUEST_DEPOSIT_TASK,ClientMessageQuestDepositTaskCommand);
-               }
-            }
-         }
+         facade.registerCommand(ApplicationNotificationConstants.QUEST_CHANGE_STATE,ClientMessageQuestChangeStateCommand);
+         facade.registerCommand(ApplicationNotificationConstants.QUEST_UPSELL,ClientMessageQuestUpsellCommand);
+         facade.registerCommand(ApplicationNotificationConstants.QUEST_DEPOSIT_TASK,ClientMessageQuestDepositTaskCommand);
       }
    }
 }

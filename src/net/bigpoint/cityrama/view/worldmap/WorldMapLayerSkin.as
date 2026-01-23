@@ -27,282 +27,109 @@ package net.bigpoint.cityrama.view.worldmap
       
       public function WorldMapLayerSkin()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            super();
-            if(!_loc1_)
-            {
-               mx_internal::_document = this;
-               if(_loc2_)
-               {
-                  this.mxmlContent = [this._WorldMapLayerSkin_Group1_c()];
-                  if(_loc2_ || _loc2_)
-                  {
-                     §§goto(addr005a);
-                  }
-                  §§goto(addr0066);
-               }
-            }
-            addr005a:
-            this.currentState = "normal";
-            if(!_loc1_)
-            {
-               states = [new State({
-                  "name":"normal",
-                  "overrides":[]
-               }),new State({
-                  "name":"disabled",
-                  "overrides":[]
-               }),new State({
-                  "name":"inactive",
-                  "overrides":[]
-               }),new State({
-                  "name":"disabledWithControlBar",
-                  "overrides":[]
-               }),new State({
-                  "name":"normalWithControlBar",
-                  "overrides":[]
-               }),new State({
-                  "name":"inactiveWithControlBar",
-                  "overrides":[]
-               })];
-               addr0066:
-            }
-            §§goto(addr00dc);
-         }
-         addr00dc:
+         super();
+         mx_internal::_document = this;
+         this.mxmlContent = [this._WorldMapLayerSkin_Group1_c()];
+         this.currentState = "normal";
+         states = [new State({
+            "name":"normal",
+            "overrides":[]
+         }),new State({
+            "name":"disabled",
+            "overrides":[]
+         }),new State({
+            "name":"inactive",
+            "overrides":[]
+         }),new State({
+            "name":"disabledWithControlBar",
+            "overrides":[]
+         }),new State({
+            "name":"normalWithControlBar",
+            "overrides":[]
+         }),new State({
+            "name":"inactiveWithControlBar",
+            "overrides":[]
+         })];
       }
       
       override public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
+         super.moduleFactory = param1;
+         if(this.__moduleFactoryInitialized)
          {
-            super.moduleFactory = param1;
-            if(!_loc2_)
-            {
-               if(this.__moduleFactoryInitialized)
-               {
-                  if(_loc3_)
-                  {
-                     §§goto(addr0039);
-                  }
-               }
-               this.__moduleFactoryInitialized = true;
-               return;
-            }
+            return;
          }
-         addr0039:
+         this.__moduleFactoryInitialized = true;
       }
       
       override public function initialize() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc2_)
-         {
-            super.initialize();
-         }
+         super.initialize();
       }
       
       private function _WorldMapLayerSkin_Group1_c() : Group
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:Group = new Group();
-         if(!(_loc2_ && Boolean(_loc1_)))
+         _loc1_.percentWidth = 100;
+         _loc1_.percentHeight = 100;
+         _loc1_.mxmlContent = [this._WorldMapLayerSkin_Rect1_i(),this._WorldMapLayerSkin_Group2_i(),this._WorldMapLayerSkin_DynamicImageButton1_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 100;
-            if(!(_loc2_ && _loc3_))
-            {
-               _loc1_.percentHeight = 100;
-               if(!(_loc2_ && _loc3_))
-               {
-                  _loc1_.mxmlContent = [this._WorldMapLayerSkin_Rect1_i(),this._WorldMapLayerSkin_Group2_i(),this._WorldMapLayerSkin_DynamicImageButton1_i()];
-                  if(!(_loc2_ && Boolean(_loc1_)))
-                  {
-                     addr0088:
-                     if(!_loc1_.document)
-                     {
-                        if(_loc3_ || Boolean(_loc1_))
-                        {
-                           addr009c:
-                           _loc1_.document = this;
-                        }
-                     }
-                  }
-                  return _loc1_;
-               }
-               §§goto(addr0088);
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr009c);
+         return _loc1_;
       }
       
       private function _WorldMapLayerSkin_Rect1_i() : Rect
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:Rect = new Rect();
-         if(!_loc2_)
-         {
-            _loc1_.percentWidth = 100;
-            if(!(_loc2_ && Boolean(_loc1_)))
-            {
-               _loc1_.percentHeight = 100;
-               if(_loc3_)
-               {
-                  _loc1_.fill = this._WorldMapLayerSkin_SolidColor1_c();
-                  if(!(_loc2_ && _loc2_))
-                  {
-                     addr006e:
-                     _loc1_.initialized(this,"backgroundRect");
-                     if(_loc3_ || Boolean(this))
-                     {
-                        this.backgroundRect = _loc1_;
-                        if(!_loc2_)
-                        {
-                           addr008e:
-                           BindingManager.executeBindings(this,"backgroundRect",this.backgroundRect);
-                        }
-                        return _loc1_;
-                     }
-                  }
-                  §§goto(addr008e);
-               }
-               §§goto(addr006e);
-            }
-         }
-         §§goto(addr008e);
+         _loc1_.percentWidth = 100;
+         _loc1_.percentHeight = 100;
+         _loc1_.fill = this._WorldMapLayerSkin_SolidColor1_c();
+         _loc1_.initialized(this,"backgroundRect");
+         this.backgroundRect = _loc1_;
+         BindingManager.executeBindings(this,"backgroundRect",this.backgroundRect);
+         return _loc1_;
       }
       
       private function _WorldMapLayerSkin_SolidColor1_c() : SolidColor
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:SolidColor = new SolidColor();
-         if(!_loc3_)
-         {
-            _loc1_.color = 16513263;
-         }
+         _loc1_.color = 16513263;
          return _loc1_;
       }
       
       private function _WorldMapLayerSkin_Group2_i() : Group
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:Group = new Group();
-         if(!_loc3_)
+         _loc1_.left = 0;
+         _loc1_.right = 0;
+         _loc1_.top = 0;
+         _loc1_.bottom = 0;
+         _loc1_.id = "contentGroup";
+         if(!_loc1_.document)
          {
-            _loc1_.left = 0;
-            if(!_loc3_)
-            {
-               _loc1_.right = 0;
-               if(!_loc3_)
-               {
-                  _loc1_.top = 0;
-                  if(_loc2_ || _loc2_)
-                  {
-                     _loc1_.bottom = 0;
-                     if(_loc2_)
-                     {
-                        _loc1_.id = "contentGroup";
-                        if(!_loc3_)
-                        {
-                           if(!_loc1_.document)
-                           {
-                              if(!(_loc3_ && _loc3_))
-                              {
-                                 §§goto(addr0087);
-                              }
-                           }
-                        }
-                        §§goto(addr0098);
-                     }
-                     addr0087:
-                     _loc1_.document = this;
-                     if(!(_loc3_ && _loc3_))
-                     {
-                        addr0098:
-                        this.contentGroup = _loc1_;
-                        if(!_loc3_)
-                        {
-                           BindingManager.executeBindings(this,"contentGroup",this.contentGroup);
-                        }
-                     }
-                     §§goto(addr00af);
-                  }
-               }
-            }
-            §§goto(addr0098);
+            _loc1_.document = this;
          }
-         addr00af:
+         this.contentGroup = _loc1_;
+         BindingManager.executeBindings(this,"contentGroup",this.contentGroup);
          return _loc1_;
       }
       
       private function _WorldMapLayerSkin_DynamicImageButton1_i() : DynamicImageButton
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:DynamicImageButton = new DynamicImageButton();
-         if(_loc3_)
+         _loc1_.styleName = "close";
+         _loc1_.top = 20;
+         _loc1_.right = 30;
+         _loc1_.id = "closeButton";
+         if(!_loc1_.document)
          {
-            _loc1_.styleName = "close";
-            if(!_loc2_)
-            {
-               _loc1_.top = 20;
-               if(!_loc2_)
-               {
-                  _loc1_.right = 30;
-                  if(!_loc2_)
-                  {
-                     §§goto(addr0049);
-                  }
-                  §§goto(addr0087);
-               }
-               addr0049:
-               _loc1_.id = "closeButton";
-               if(!_loc2_)
-               {
-                  if(!_loc1_.document)
-                  {
-                     if(_loc3_)
-                     {
-                        addr006c:
-                        _loc1_.document = this;
-                        if(_loc3_)
-                        {
-                           §§goto(addr0075);
-                        }
-                        §§goto(addr0087);
-                     }
-                  }
-               }
-               addr0075:
-               this.closeButton = _loc1_;
-               if(_loc3_ || Boolean(this))
-               {
-                  addr0087:
-                  BindingManager.executeBindings(this,"closeButton",this.closeButton);
-               }
-               §§goto(addr0094);
-            }
-            addr0094:
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr006c);
+         this.closeButton = _loc1_;
+         BindingManager.executeBindings(this,"closeButton",this.closeButton);
+         return _loc1_;
       }
       
       [Bindable(event="propertyChange")]
@@ -313,36 +140,15 @@ package net.bigpoint.cityrama.view.worldmap
       
       public function set backgroundRect(param1:Rect) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1427430450backgroundRect;
-         if(!_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1427430450backgroundRect = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc4_)
-               {
-                  this._1427430450backgroundRect = param1;
-                  if(!_loc3_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc4_)
-                        {
-                           addr0051:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"backgroundRect",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0060);
-               }
-               §§goto(addr0051);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"backgroundRect",_loc2_,param1));
             }
-            addr0060:
-            return;
          }
-         §§goto(addr0051);
       }
       
       [Bindable(event="propertyChange")]
@@ -353,28 +159,13 @@ package net.bigpoint.cityrama.view.worldmap
       
       public function set closeButton(param1:DynamicImageButton) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._312699062closeButton;
-         if(!(_loc4_ && Boolean(this)))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._312699062closeButton = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_)
-               {
-                  this._312699062closeButton = param1;
-                  if(_loc3_ || Boolean(param1))
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!_loc4_)
-                        {
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"closeButton",_loc2_,param1));
-                        }
-                     }
-                  }
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"closeButton",_loc2_,param1));
             }
          }
       }
@@ -387,34 +178,15 @@ package net.bigpoint.cityrama.view.worldmap
       
       public function set contentGroup(param1:Group) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._809612678contentGroup;
-         if(!_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._809612678contentGroup = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc4_ || Boolean(this))
-               {
-                  this._809612678contentGroup = param1;
-                  if(_loc4_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc4_ || Boolean(param1))
-                        {
-                           addr0074:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"contentGroup",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0083);
-                  }
-                  §§goto(addr0074);
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"contentGroup",_loc2_,param1));
             }
          }
-         addr0083:
       }
       
       [Bindable(event="propertyChange")]
@@ -425,36 +197,15 @@ package net.bigpoint.cityrama.view.worldmap
       
       public function set hostComponent(param1:PaperPopupWindow) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._213507019hostComponent;
-         if(_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._213507019hostComponent = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc3_ && _loc3_))
-               {
-                  this._213507019hostComponent = param1;
-                  if(_loc4_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!_loc3_)
-                        {
-                           addr0067:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"hostComponent",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0076);
-                  }
-               }
-               §§goto(addr0067);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"hostComponent",_loc2_,param1));
             }
-            addr0076:
-            return;
          }
-         §§goto(addr0067);
       }
    }
 }

@@ -557,7 +557,9 @@ package
          effects = style.mx_internal::effects;
          if(!effects)
          {
-            effects = style.mx_internal::effects = [];
+            var _temp_30:* = §§newactivation();
+            style.mx_internal::effects = [];
+            effects = _loc3_;
          }
          effects.push("resizeEndEffect");
          effects.push("resizeStartEffect");

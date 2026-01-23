@@ -13,17 +13,8 @@ package net.bigpoint.cityrama.model.server.vo.server.player
       
       public function QuestRewardInfoVo(param1:IQuestRewardDTO)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            super();
-            if(_loc3_)
-            {
-               this._questRewardVo = param1;
-            }
-         }
+         super();
+         this._questRewardVo = param1;
       }
       
       public function get name() : String
@@ -43,13 +34,7 @@ package net.bigpoint.cityrama.model.server.vo.server.player
       
       public function set type(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
-         {
-            this._type = param1;
-         }
+         this._type = param1;
       }
    }
 }

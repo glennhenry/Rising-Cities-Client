@@ -15,13 +15,7 @@ package net.bigpoint.cityrama.view.cityWheel.ui.components
       
       public function CityWheelAnimationSettingsVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get idleAnimationDuration() : Number
@@ -31,13 +25,7 @@ package net.bigpoint.cityrama.view.cityWheel.ui.components
       
       public function set idleAnimationDuration(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._idleAnimationDuration = param1;
-         }
+         this._idleAnimationDuration = param1;
       }
       
       public function get spinAnimationCycleDuration() : Number
@@ -47,13 +35,7 @@ package net.bigpoint.cityrama.view.cityWheel.ui.components
       
       public function set spinAnimationCycleDuration(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._spinAnimationCycleDuration = param1;
-         }
+         this._spinAnimationCycleDuration = param1;
       }
       
       public function get spinDecelerationDuration() : Number
@@ -63,13 +45,7 @@ package net.bigpoint.cityrama.view.cityWheel.ui.components
       
       public function set spinDecelerationDuration(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._spinDecelerationDuration = param1;
-         }
+         this._spinDecelerationDuration = param1;
       }
       
       public function get itemsInPhase() : Vector.<Number>
@@ -79,13 +55,7 @@ package net.bigpoint.cityrama.view.cityWheel.ui.components
       
       public function set itemsInPhase(param1:Vector.<Number>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._itemsInPhase = param1;
-         }
+         this._itemsInPhase = param1;
       }
       
       public function get durationOfPhase() : Vector.<Number>
@@ -95,13 +65,7 @@ package net.bigpoint.cityrama.view.cityWheel.ui.components
       
       public function set durationOfPhase(param1:Vector.<Number>) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._durationOfPhase = param1;
-         }
+         this._durationOfPhase = param1;
       }
    }
 }

@@ -13,14 +13,6 @@ package net.bigpoint.cityrama.model.field.vo
       
       public static const EVENT_CONSTRUCTION_TERM_CHANGED:String = "EVENT_CONSTRUCTION_TERM_CHANGED";
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(!(_loc2_ && _loc1_))
-      {
-         EVENT_CONSTRUCTION_TERM_CHANGED = "EVENT_CONSTRUCTION_TERM_CHANGED";
-      }
-      
       private var _constructionTerm:uint = 1;
       
       private var _constructionTimer:Timer;
@@ -33,151 +25,52 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function MysteryBuildingObjectVo(param1:ConfigPlayfieldItemDTO)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            super(param1);
-            if(!_loc3_)
-            {
-               this._constructionTimer = new Timer(1000);
-            }
-         }
+         super(param1);
+         this._constructionTimer = new Timer(1000);
       }
       
       public function get currentMysteryConstructionPhase() : PhaseDTO
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc1_:PhaseDTO = null;
-         if(!_loc5_)
+         if(_buildingDTO)
          {
-            if(_buildingDTO)
+            for each(_loc1_ in _buildingDTO.activePhases)
             {
-               addr0026:
-               for each(_loc1_ in _buildingDTO.activePhases)
+               if(_loc1_.config.phaseType == ServerPhaseTypes.MYSTERY_CONSTRUCTION)
                {
-                  if(!_loc5_)
-                  {
-                     if(_loc1_.config.phaseType == ServerPhaseTypes.MYSTERY_CONSTRUCTION)
-                     {
-                        if(!(_loc5_ && Boolean(this)))
-                        {
-                           return _loc1_;
-                        }
-                     }
-                  }
+                  return _loc1_;
                }
             }
-            return null;
          }
-         §§goto(addr0026);
+         return null;
       }
       
       public function startConstructionTime() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
+         if(this.currentMysteryConstructionPhase != null)
          {
-            if(this.currentMysteryConstructionPhase != null)
-            {
-               if(!(_loc1_ && _loc2_))
-               {
-                  this.clearTimer();
-                  if(!(_loc1_ && _loc2_))
-                  {
-                     this._constructionTerm = 0;
-                     if(_loc2_)
-                     {
-                        this._totalConstructionTime = Math.floor(this.currentMysteryConstructionPhase.config.durationConfig.duration / 1000);
-                        if(!_loc1_)
-                        {
-                           this._constructionTimeLeft = this.currentMysteryConstructionPhase.timeLeft;
-                           if(_loc2_)
-                           {
-                              addr0083:
-                              this._constructionTimeLeft = Math.floor(this._constructionTimeLeft / 1000);
-                              if(!_loc1_)
-                              {
-                                 addr009a:
-                                 this.checkConstructionTerm();
-                                 if(_loc2_ || _loc2_)
-                                 {
-                                    addr00b6:
-                                    this._constructionTimer.start();
-                                    if(!(_loc1_ && _loc2_))
-                                    {
-                                       addr00cb:
-                                       this._constructionTimer.addEventListener(TimerEvent.TIMER,this.handleConstructionInterval);
-                                    }
-                                 }
-                                 §§goto(addr00dd);
-                              }
-                              §§goto(addr00cb);
-                           }
-                           §§goto(addr00dd);
-                        }
-                        §§goto(addr0083);
-                     }
-                     §§goto(addr00b6);
-                  }
-               }
-               §§goto(addr009a);
-            }
-            addr00dd:
-            return;
+            this.clearTimer();
+            this._constructionTerm = 0;
+            this._totalConstructionTime = Math.floor(this.currentMysteryConstructionPhase.config.durationConfig.duration / 1000);
+            this._constructionTimeLeft = this.currentMysteryConstructionPhase.timeLeft;
+            this._constructionTimeLeft = Math.floor(this._constructionTimeLeft / 1000);
+            this.checkConstructionTerm();
+            this._constructionTimer.start();
+            this._constructionTimer.addEventListener(TimerEvent.TIMER,this.handleConstructionInterval);
          }
-         §§goto(addr009a);
       }
       
       private function clearTimer() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc1_)
-         {
-            this._constructionTimer.stop();
-            if(!(_loc1_ && Boolean(this)))
-            {
-               this._constructionTimer.reset();
-               if(!(_loc1_ && _loc1_))
-               {
-                  addr005c:
-                  this._constructionTimer.removeEventListener(TimerEvent.TIMER,this.handleConstructionInterval);
-               }
-            }
-            return;
-         }
-         §§goto(addr005c);
+         this._constructionTimer.stop();
+         this._constructionTimer.reset();
+         this._constructionTimer.removeEventListener(TimerEvent.TIMER,this.handleConstructionInterval);
       }
       
       private function handleConstructionInterval(param1:TimerEvent) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            §§push(this);
-            §§push(this._constructionTimeLeft);
-            if(!_loc2_)
-            {
-               §§push(§§pop() - 1);
-            }
-            §§pop()._constructionTimeLeft = §§pop();
-            if(_loc3_)
-            {
-               addr002d:
-               this.checkConstructionTerm();
-            }
-            return;
-         }
-         §§goto(addr002d);
+         --this._constructionTimeLeft;
+         this.checkConstructionTerm();
       }
       
       public function get constructionTerm() : uint
@@ -187,354 +80,69 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function get mysteryResultFieldItemSize() : Number
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:MysteryBuildingPhaseDTO = this.currentMysteryConstructionPhase as MysteryBuildingPhaseDTO;
-         if(_loc2_)
+         if(_loc1_ == null)
          {
-            if(_loc1_ == null)
-            {
-               if(!_loc3_)
-               {
-                  §§goto(addr0030);
-               }
-            }
-            return _loc1_.mysteryResultFieldItemSize;
+            return 3;
          }
-         addr0030:
-         return 3;
+         return _loc1_.mysteryResultFieldItemSize;
       }
       
       private function checkConstructionTerm() : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
-         §§push(this.constructionTerm);
-         if(!_loc5_)
+         var _loc1_:uint = this.constructionTerm;
+         var _loc2_:Number = this.mysteryResultFieldItemSize;
+         if(this._constructionTimeLeft <= 1 || this.isHarvestReady)
          {
-            §§push(§§pop());
+            this._constructionTerm = _loc2_;
+            this.stopConstructionTime();
          }
-         var _loc1_:* = §§pop();
-         §§push(this.mysteryResultFieldItemSize);
-         if(!(_loc5_ && _loc1_))
+         else if(this._constructionTimeLeft <= this._totalConstructionTime / 2 || this.halfDone)
          {
-            §§push(§§pop());
-         }
-         var _loc2_:* = §§pop();
-         if(_loc4_)
-         {
-            §§push(this._constructionTimeLeft);
-            if(!_loc5_)
+            switch(_loc2_)
             {
-               §§push(§§pop() <= 1);
-               if(_loc4_ || _loc2_)
-               {
-                  var _temp_3:* = §§pop();
-                  §§push(_temp_3);
-                  §§push(_temp_3);
-                  if(_loc4_ || _loc3_)
-                  {
-                     if(!§§pop())
-                     {
-                        if(_loc4_ || _loc2_)
-                        {
-                           §§pop();
-                           if(!_loc5_)
-                           {
-                              §§push(this.isHarvestReady);
-                              if(!_loc5_)
-                              {
-                                 §§push(§§pop());
-                                 if(!_loc5_)
-                                 {
-                                    addr0090:
-                                    if(§§pop())
-                                    {
-                                       if(_loc4_)
-                                       {
-                                          this._constructionTerm = _loc2_;
-                                          if(_loc4_)
-                                          {
-                                             this.stopConstructionTime();
-                                             if(_loc5_ && _loc1_)
-                                             {
-                                                addr00fd:
-                                                addr0109:
-                                                §§push(this.halfDone);
-                                                if(_loc4_)
-                                                {
-                                                   addr0108:
-                                                   §§push(§§pop());
-                                                }
-                                                if(§§pop())
-                                                {
-                                                   addr0138:
-                                                   var _loc3_:* = _loc2_;
-                                                   if(_loc4_)
-                                                   {
-                                                      §§push(1);
-                                                      if(_loc4_)
-                                                      {
-                                                         §§push(_loc3_);
-                                                         if(!_loc5_)
-                                                         {
-                                                            if(§§pop() === §§pop())
-                                                            {
-                                                               if(!(_loc5_ && _loc3_))
-                                                               {
-                                                                  §§push(0);
-                                                                  if(_loc5_ && _loc1_)
-                                                                  {
-                                                                  }
-                                                               }
-                                                               else
-                                                               {
-                                                                  addr01bf:
-                                                                  §§push(2);
-                                                                  if(_loc4_)
-                                                                  {
-                                                                  }
-                                                               }
-                                                            }
-                                                            else
-                                                            {
-                                                               §§push(2);
-                                                               if(_loc4_)
-                                                               {
-                                                                  §§push(_loc3_);
-                                                                  if(_loc4_ || Boolean(this))
-                                                                  {
-                                                                     if(§§pop() === §§pop())
-                                                                     {
-                                                                        if(!_loc5_)
-                                                                        {
-                                                                           §§push(1);
-                                                                           if(_loc5_ && Boolean(this))
-                                                                           {
-                                                                           }
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                           §§goto(addr01bf);
-                                                                        }
-                                                                     }
-                                                                     else
-                                                                     {
-                                                                        §§push(3);
-                                                                        if(_loc4_ || Boolean(this))
-                                                                        {
-                                                                           addr01bb:
-                                                                           if(§§pop() === _loc3_)
-                                                                           {
-                                                                              §§goto(addr01bf);
-                                                                           }
-                                                                           else
-                                                                           {
-                                                                              §§push(3);
-                                                                           }
-                                                                        }
-                                                                     }
-                                                                     §§goto(addr01d7);
-                                                                  }
-                                                                  §§goto(addr01bb);
-                                                               }
-                                                            }
-                                                            §§goto(addr01d7);
-                                                         }
-                                                         §§goto(addr01bb);
-                                                      }
-                                                      addr01d7:
-                                                      switch(§§pop())
-                                                      {
-                                                         case 0:
-                                                         case 1:
-                                                            this._constructionTerm = 1;
-                                                            if(_loc5_)
-                                                            {
-                                                            }
-                                                            break;
-                                                         case 2:
-                                                            this._constructionTerm = 2;
-                                                            if(_loc5_)
-                                                            {
-                                                            }
-                                                      }
-                                                      §§goto(addr020b);
-                                                   }
-                                                   §§goto(addr01bf);
-                                                }
-                                                else
-                                                {
-                                                   this._constructionTerm = 1;
-                                                   if(!_loc5_)
-                                                   {
-                                                      §§goto(addr020b);
-                                                   }
-                                                }
-                                                §§goto(addr0222);
-                                             }
-                                          }
-                                          §§goto(addr020b);
-                                       }
-                                    }
-                                    else
-                                    {
-                                       addr00c1:
-                                       §§push(this._constructionTimeLeft);
-                                       §§push(this._totalConstructionTime);
-                                       if(_loc4_ || _loc3_)
-                                       {
-                                          §§push(§§pop() / 2);
-                                       }
-                                       §§push(§§pop() <= §§pop());
-                                       if(!_loc5_)
-                                       {
-                                          var _temp_14:* = §§pop();
-                                          addr00de:
-                                          §§push(_temp_14);
-                                          if(!_temp_14)
-                                          {
-                                             if(_loc4_)
-                                             {
-                                                addr00e8:
-                                                §§pop();
-                                                if(!_loc5_)
-                                                {
-                                                   §§goto(addr00fd);
-                                                }
-                                                §§goto(addr0138);
-                                             }
-                                          }
-                                          §§goto(addr0109);
-                                       }
-                                       §§goto(addr00e8);
-                                    }
-                                    §§goto(addr0138);
-                                 }
-                                 §§goto(addr0108);
-                              }
-                              §§goto(addr0090);
-                           }
-                           addr020b:
-                           if(_loc1_ != this.constructionTerm)
-                           {
-                              if(!(_loc5_ && Boolean(this)))
-                              {
-                                 addr0222:
-                                 dispatchEvent(new Event(EVENT_CONSTRUCTION_TERM_CHANGED,true,true));
-                              }
-                           }
-                           return;
-                        }
-                        §§goto(addr0108);
-                     }
-                     §§goto(addr0090);
-                  }
-                  §§goto(addr00de);
-               }
-               §§goto(addr00e8);
+               case 1:
+               case 2:
+                  this._constructionTerm = 1;
+                  break;
+               case 3:
+                  this._constructionTerm = 2;
             }
-            §§goto(addr00c1);
          }
-         §§goto(addr0138);
+         else
+         {
+            this._constructionTerm = 1;
+         }
+         if(_loc1_ != this.constructionTerm)
+         {
+            dispatchEvent(new Event(EVENT_CONSTRUCTION_TERM_CHANGED,true,true));
+         }
       }
       
       private function get halfDone() : Boolean
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
+         if(this.currentMysteryConstructionPhase)
          {
-            §§push(this.currentMysteryConstructionPhase);
-            if(!_loc1_)
+            if(this.currentMysteryConstructionPhase.expirationTime - this.currentMysteryConstructionPhase.config.durationConfig.duration / 2 <= currentTimeStamp)
             {
-               if(§§pop())
-               {
-                  if(_loc2_)
-                  {
-                     addr0036:
-                     §§push(this.currentMysteryConstructionPhase.expirationTime);
-                     if(!(_loc1_ && Boolean(this)))
-                     {
-                        §§push(this.currentMysteryConstructionPhase.config.durationConfig.duration);
-                        if(!(_loc1_ && _loc1_))
-                        {
-                           §§push(§§pop() / 2);
-                        }
-                        §§push(§§pop() - §§pop());
-                     }
-                     if(§§pop() <= currentTimeStamp)
-                     {
-                        if(_loc2_)
-                        {
-                           addr0079:
-                           §§push(true);
-                           if(_loc2_)
-                           {
-                              return §§pop();
-                           }
-                        }
-                        else
-                        {
-                           addr0080:
-                           return false;
-                        }
-                        return §§pop();
-                     }
-                  }
-               }
-               §§goto(addr0080);
+               return true;
             }
-            §§goto(addr0036);
          }
-         §§goto(addr0079);
+         return false;
       }
       
       public function stopConstructionTime() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this.clearTimer();
-            if(_loc1_)
-            {
-               this._totalConstructionTime = 0;
-               if(!_loc2_)
-               {
-                  addr003d:
-                  this._constructionTimeLeft = 0;
-               }
-            }
-            return;
-         }
-         §§goto(addr003d);
+         this.clearTimer();
+         this._totalConstructionTime = 0;
+         this._constructionTimeLeft = 0;
       }
       
       public function updateConstructionTime() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            this._constructionTimeLeft = this.currentMysteryConstructionPhase.timeLeft;
-            if(_loc1_ || Boolean(this))
-            {
-               this._constructionTimeLeft = Math.floor(this._constructionTimeLeft / 1000);
-               if(_loc1_ || Boolean(this))
-               {
-                  addr0056:
-                  this.checkConstructionTerm();
-               }
-            }
-            return;
-         }
-         §§goto(addr0056);
+         this._constructionTimeLeft = this.currentMysteryConstructionPhase.timeLeft;
+         this._constructionTimeLeft = Math.floor(this._constructionTimeLeft / 1000);
+         this.checkConstructionTerm();
       }
       
       public function get unwrapProgressIsRunning() : Boolean
@@ -544,114 +152,23 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function set unwrapProgressIsRunning(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._unwrapProgressIsRunning = param1;
-         }
+         this._unwrapProgressIsRunning = param1;
       }
       
       override public function get isHarvestReady() : Boolean
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc1_:PhaseDTO = null;
-         if(_loc4_)
+         if(_buildingDTO)
          {
-            if(_buildingDTO)
+            for each(_loc1_ in _buildingDTO.activePhases)
             {
-               §§goto(addr0029);
-            }
-            return false;
-         }
-         addr0029:
-         var _loc2_:int = 0;
-         var _loc3_:* = _buildingDTO.activePhases;
-         while(true)
-         {
-            for each(_loc1_ in _loc3_)
-            {
-               if(_loc5_ && Boolean(this))
+               if(Boolean(_loc1_) && _loc1_.config.phaseType == ServerPhaseTypes.MYSTERY_CONSTRUCTION)
                {
-                  continue;
+                  return _loc1_.timeLeft == 0 || _loc1_.expirationTime <= currentTimeStamp;
                }
-               §§push(Boolean(_loc1_));
-               if(_loc5_ && Boolean(_loc1_))
-               {
-                  break;
-               }
-               var _temp_3:* = §§pop();
-               §§push(_temp_3);
-               §§push(_temp_3);
-               if(_loc4_ || Boolean(_loc1_))
-               {
-                  if(§§pop())
-                  {
-                     if(!(_loc5_ && Boolean(_loc2_)))
-                     {
-                        §§pop();
-                        if(_loc4_)
-                        {
-                           §§push(_loc1_.config.phaseType == ServerPhaseTypes.MYSTERY_CONSTRUCTION);
-                           if(_loc4_)
-                           {
-                              addr00a4:
-                              if(!§§pop())
-                              {
-                                 continue;
-                              }
-                              if(_loc4_)
-                              {
-                                 addr00ae:
-                                 §§push(_loc1_.timeLeft);
-                                 if(_loc4_)
-                                 {
-                                    §§push(§§pop() == 0);
-                                    if(!_loc4_)
-                                    {
-                                       break;
-                                    }
-                                    addr00cd:
-                                    var _temp_6:* = §§pop();
-                                    addr00ce:
-                                    §§push(_temp_6);
-                                    if(_temp_6)
-                                    {
-                                       break;
-                                    }
-                                    if(!_loc4_)
-                                    {
-                                       break;
-                                    }
-                                    addr00d8:
-                                    §§pop();
-                                    if(!_loc4_)
-                                    {
-                                       continue;
-                                    }
-                                    addr00df:
-                                    §§push(_loc1_.expirationTime);
-                                 }
-                                 §§push(§§pop() <= currentTimeStamp);
-                                 break;
-                              }
-                              §§goto(addr00df);
-                           }
-                           §§goto(addr00d8);
-                        }
-                        §§goto(addr00ae);
-                     }
-                     §§goto(addr00cd);
-                  }
-                  §§goto(addr00a4);
-               }
-               §§goto(addr00ce);
             }
          }
-         return §§pop();
+         return false;
       }
    }
 }

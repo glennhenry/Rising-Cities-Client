@@ -11,13 +11,7 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function CityTreasuryBonusCodeVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get headerLabel() : String
@@ -47,13 +41,7 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function set errorLabel(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._errorLabel = param1;
-         }
+         this._errorLabel = param1;
       }
       
       public function get buttonTooltip() : String

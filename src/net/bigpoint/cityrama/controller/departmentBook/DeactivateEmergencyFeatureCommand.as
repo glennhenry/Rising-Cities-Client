@@ -15,20 +15,11 @@ package net.bigpoint.cityrama.controller.departmentBook
       
       public function DeactivateEmergencyFeatureCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc10_:Boolean = true;
-         var _loc11_:* = §§pop();
          var _loc5_:Object = null;
          var _loc6_:MessageVo = null;
          var _loc7_:InfrastructureBuildingFieldObject = null;
@@ -37,17 +28,11 @@ package net.bigpoint.cityrama.controller.departmentBook
          var _loc4_:SecurityMatrixProxy = facade.retrieveProxy(SecurityMatrixProxy.NAME) as SecurityMatrixProxy;
          for each(_loc7_ in _loc2_.infrastructureBuildingList)
          {
-            if(_loc10_)
-            {
-               _loc4_.removeObject(_loc7_.emergencyFieldObjectVo);
-            }
+            _loc4_.removeObject(_loc7_.emergencyFieldObjectVo);
             _loc5_ = new Object();
             _loc5_.pid = _loc7_.billboardObjectVo.buildingDTO.id;
             _loc6_ = _loc3_.createMessage(_loc5_,ServerMessageConstants.MOVE_PLAYFIELDITEM_TO_INVENTORY);
-            if(!(_loc11_ && Boolean(param1)))
-            {
-               _loc3_.sendMessage(_loc6_);
-            }
+            _loc3_.sendMessage(_loc6_);
          }
       }
    }

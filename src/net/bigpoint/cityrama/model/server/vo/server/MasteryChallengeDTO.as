@@ -11,25 +11,9 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function MasteryChallengeDTO(param1:Object)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            super();
-            if(_loc2_ || Boolean(this))
-            {
-               this._id = param1.id;
-               if(_loc2_ || _loc3_)
-               {
-                  addr0047:
-                  this._currentProgress = param1.v;
-               }
-               §§goto(addr0050);
-            }
-            §§goto(addr0047);
-         }
-         addr0050:
+         super();
+         this._id = param1.id;
+         this._currentProgress = param1.v;
       }
       
       public function get id() : Number
@@ -49,13 +33,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set config(param1:ConfigMasteryChallengeDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._config = param1;
-         }
+         this._config = param1;
       }
    }
 }

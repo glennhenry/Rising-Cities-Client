@@ -33,13 +33,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function ConstructionMiniLayerVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       public function get hasStarted() : Boolean
@@ -49,13 +43,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set hasStarted(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._hasStarted = param1;
-         }
+         this._hasStarted = param1;
       }
       
       public function get constructionStepLength() : Number
@@ -65,13 +53,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set constructionStepLength(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._constructionStepLength = param1;
-         }
+         this._constructionStepLength = param1;
       }
       
       public function get constructionCurrentTime() : Number
@@ -81,13 +63,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set constructionCurrentTime(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._constructionCurrentTime = param1;
-         }
+         this._constructionCurrentTime = param1;
       }
       
       public function get constructionStepEndTime() : Number
@@ -97,13 +73,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set constructionStepEndTime(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._constructionStepEndTime = param1;
-         }
+         this._constructionStepEndTime = param1;
       }
       
       public function get assetLibName() : String
@@ -113,13 +83,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set assetLibName(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._assetLibName = param1;
-         }
+         this._assetLibName = param1;
       }
       
       public function get assetImageName() : String
@@ -129,13 +93,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set assetImageName(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(param1))
-         {
-            this._assetImageName = param1;
-         }
+         this._assetImageName = param1;
       }
       
       public function get materialAvailable() : Boolean
@@ -145,13 +103,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set materialAvailable(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || param1)
-         {
-            this._materialAvailable = param1;
-         }
+         this._materialAvailable = param1;
       }
       
       public function get amountNeeded() : int
@@ -161,13 +113,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set amountNeeded(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._amountNeeded = param1;
-         }
+         this._amountNeeded = param1;
       }
       
       public function get realCurrencyCosts() : Number
@@ -177,13 +123,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set realCurrencyCosts(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._realCurrencyCosts = param1;
-         }
+         this._realCurrencyCosts = param1;
       }
       
       public function get assetGfxId() : int
@@ -193,24 +133,12 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set assetGfxId(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._assetGfxId = param1;
-         }
+         this._assetGfxId = param1;
       }
       
       public function set hasEnoughRC(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._hasEnoughRC = param1;
-         }
+         this._hasEnoughRC = param1;
       }
       
       public function get hasEnoughRC() : Boolean
@@ -225,13 +153,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set amountOwned(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
-         {
-            this._amountOwned = param1;
-         }
+         this._amountOwned = param1;
       }
       
       public function get assetLocaleName() : String
@@ -241,13 +163,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set assetLocaleName(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._assetLocaleName = param1;
-         }
+         this._assetLocaleName = param1;
       }
       
       public function get showStartButton() : Boolean
@@ -257,13 +173,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set showStartButton(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._showStartButton = param1;
-         }
+         this._showStartButton = param1;
       }
    }
 }

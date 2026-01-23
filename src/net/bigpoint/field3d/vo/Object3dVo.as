@@ -11,27 +11,13 @@ package net.bigpoint.field3d.vo
       
       private var _zsortLayer:uint;
       
-      private var _originalPosition:Point;
+      private var _originalPosition:Point = new Point();
       
-      private var _offset:Point;
+      private var _offset:Point = new Point();
       
       public function Object3dVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            this._originalPosition = new Point();
-            if(_loc1_ || _loc1_)
-            {
-               this._offset = new Point();
-               if(_loc1_)
-               {
-                  super();
-               }
-            }
-         }
+         super();
       }
       
       public function get zsort() : Boolean
@@ -41,13 +27,7 @@ package net.bigpoint.field3d.vo
       
       public function set zsort(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._zsort = param1;
-         }
+         this._zsort = param1;
       }
       
       public function get originalPosition() : Point
@@ -57,13 +37,7 @@ package net.bigpoint.field3d.vo
       
       public function set originalPosition(param1:Point) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._originalPosition = param1;
-         }
+         this._originalPosition = param1;
       }
       
       public function get offset() : Point
@@ -73,13 +47,7 @@ package net.bigpoint.field3d.vo
       
       public function set offset(param1:Point) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._offset = param1;
-         }
+         this._offset = param1;
       }
       
       public function get zsortLayer() : uint
@@ -89,13 +57,7 @@ package net.bigpoint.field3d.vo
       
       public function set zsortLayer(param1:uint) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._zsortLayer = param1;
-         }
+         this._zsortLayer = param1;
       }
    }
 }

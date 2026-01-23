@@ -176,7 +176,6 @@ package mx.preloaders
       
       protected function createChildren() : void
       {
-         var _loc8_:ColorTransform = null;
          var _loc1_:Graphics = graphics;
          if(this.backgroundColor != 4294967295)
          {
@@ -188,9 +187,8 @@ package mx.preloaders
             this.loadBackgroundImage(this.backgroundImage);
          }
          var _loc2_:Number = Math.min(this.stageWidth - 10,207);
-         var _loc3_:Number = 19;
          var _loc4_:Number = Math.round((this.stageWidth - _loc2_) / 2);
-         var _loc5_:Number = Math.round((this.stageHeight - _loc3_) / 2);
+         var _loc5_:Number = Math.round((this.stageHeight - 19) / 2);
          this._barWidth = _loc2_ - 10;
          this._bgSprite = new Sprite();
          this._barFrameSprite = new Sprite();
@@ -203,7 +201,7 @@ package mx.preloaders
          _loc1_ = this._bgSprite.graphics;
          _loc1_.lineStyle(1,6513507);
          _loc1_.beginFill(15263976);
-         _loc1_.drawRect(_loc4_,_loc5_,_loc2_,_loc3_);
+         _loc1_.drawRect(_loc4_,_loc5_,_loc2_,19);
          _loc1_.endFill();
          _loc1_.lineStyle();
          _loc1_ = graphics;
@@ -212,17 +210,17 @@ package mx.preloaders
          _loc6_.angle = 90;
          _loc6_.alpha = 0.6;
          _loc6_.distance = 2;
-         _loc6_.drawShadow(_loc1_,_loc4_,_loc5_,_loc2_,_loc3_);
+         _loc6_.drawShadow(_loc1_,_loc4_,_loc5_,_loc2_,19);
          var _loc7_:uint = this.getPreloaderChromeColor();
          if(_loc7_ != DEFAULT_COLOR)
          {
-            _loc8_ = new ColorTransform();
+            var _loc8_:ColorTransform = new ColorTransform();
             _loc8_.redOffset = ((_loc7_ & 255 << 16) >> 16) - DEFAULT_COLOR_VALUE;
-            _loc8_.greenOffset = ((_loc7_ & 255 << 8) >> 8) - DEFAULT_COLOR_VALUE;
-            _loc8_.blueOffset = (_loc7_ & 0xFF) - DEFAULT_COLOR_VALUE;
-            this._bgSprite.transform.colorTransform = _loc8_;
-            this._barFrameSprite.transform.colorTransform = _loc8_;
-            this._barSprite.transform.colorTransform = _loc8_;
+            null.greenOffset = ((_loc7_ & 255 << 8) >> 8) - DEFAULT_COLOR_VALUE;
+            null.blueOffset = (_loc7_ & 0xFF) - DEFAULT_COLOR_VALUE;
+            this._bgSprite.transform.colorTransform = null;
+            this._barFrameSprite.transform.colorTransform = null;
+            this._barSprite.transform.colorTransform = null;
          }
       }
       
@@ -251,25 +249,24 @@ package mx.preloaders
          var _loc6_:Array = [1,1];
          var _loc7_:Array = [0,255];
          var _loc8_:Number = Math.round(this._barWidth * Math.min(param1 / param2,1));
-         var _loc9_:Number = 9;
          var _loc10_:Graphics = this._barFrameSprite.graphics;
          var _loc11_:Matrix = new Matrix();
          _loc8_ = Math.max(_loc8_,this.lastBarWidth);
          this.lastBarWidth = _loc8_;
-         _loc11_.createGradientBox(_loc8_,_loc9_,90);
+         _loc11_.createGradientBox(_loc8_,9,90);
          _loc10_.clear();
          _loc10_.lineStyle(1);
          _loc10_.lineGradientStyle("linear",_loc3_,_loc4_,_loc7_,_loc11_);
-         _loc10_.drawRect(0,0,_loc8_,_loc9_);
+         _loc10_.drawRect(0,0,_loc8_,9);
          _loc10_.lineStyle(1,6513507);
          _loc10_.beginGradientFill("linear",_loc5_,_loc6_,_loc7_,_loc11_);
-         _loc10_.drawRect(1,1,_loc8_ - 2,_loc9_ - 2);
+         _loc10_.drawRect(1,1,_loc8_ - 2,9 - 2);
          _loc10_.endFill();
          _loc10_.lineStyle(1,0,0.12);
-         _loc10_.moveTo(2,_loc9_ - 1);
+         _loc10_.moveTo(2,9 - 1);
          _loc10_.lineTo(2,2);
          _loc10_.lineTo(_loc8_ - 2,2);
-         _loc10_.lineTo(_loc8_ - 2,_loc9_ - 1);
+         _loc10_.lineTo(_loc8_ - 2,9 - 1);
          if(param1 == param2)
          {
             this._downloadComplete = true;
@@ -283,19 +280,18 @@ package mx.preloaders
          var _loc5_:Array = [1,1];
          var _loc6_:Array = [0,255];
          var _loc7_:Number = Math.round(this._barWidth * Math.min(param1 / param2,1));
-         var _loc8_:Number = 9;
          var _loc9_:Graphics = this._barSprite.graphics;
          var _loc10_:Matrix = new Matrix();
-         _loc10_.createGradientBox(_loc7_ - 6,_loc8_ - 2,90,2,2);
+         _loc10_.createGradientBox(_loc7_ - 6,9 - 2,90,2,2);
          _loc9_.clear();
          _loc9_.lineStyle(1);
          _loc9_.lineGradientStyle("linear",_loc3_,_loc5_,_loc6_,_loc10_);
          _loc9_.beginGradientFill("linear",_loc4_,_loc5_,_loc6_,_loc10_);
-         _loc9_.drawRect(2,2,_loc7_ - 4,_loc8_ - 4);
+         _loc9_.drawRect(2,2,_loc7_ - 4,9 - 4);
          _loc9_.endFill();
          _loc9_.lineStyle(1,0,0.55);
          _loc9_.moveTo(_loc7_ - 1,2);
-         _loc9_.lineTo(_loc7_ - 1,_loc8_ - 1);
+         _loc9_.lineTo(_loc7_ - 1,9 - 1);
       }
       
       private function show() : void

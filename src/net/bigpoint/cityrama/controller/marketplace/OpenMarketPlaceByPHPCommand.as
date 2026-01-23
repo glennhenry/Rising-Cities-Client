@@ -11,32 +11,19 @@ package net.bigpoint.cityrama.controller.marketplace
       
       public function OpenMarketPlaceByPHPCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var note:INotification;
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
-         note = param1;
+         var note:INotification = param1;
          try
          {
             ExternalInterface.call("showMarketPlace()");
          }
          catch(e:Error)
          {
-            if(!_loc5_)
-            {
-               Alert.show("PHP CALL","only live");
-            }
+            Alert.show("PHP CALL","only live");
          }
       }
    }

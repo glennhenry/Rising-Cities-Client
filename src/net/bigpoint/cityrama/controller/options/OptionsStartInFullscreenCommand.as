@@ -14,39 +14,18 @@ package net.bigpoint.cityrama.controller.options
       
       public function OptionsStartInFullscreenCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc2_:LayoutProxy = facade.retrieveProxy(LayoutProxy.NAME) as LayoutProxy;
          var _loc3_:OptionsMenuProxy = facade.retrieveProxy(OptionsMenuProxy.NAME) as OptionsMenuProxy;
-         if(!_loc5_)
+         if(OptionsGlobalVariables.getInstance().fullscreenActive)
          {
-            if(OptionsGlobalVariables.getInstance().fullscreenActive)
-            {
-               if(_loc4_)
-               {
-                  addr0069:
-                  _loc2_.changeDisplayState();
-                  if(!_loc5_)
-                  {
-                     _loc3_.buttonChanged(OptionsMenuNavigationConstants.TOGGLE_FULLSCREEN,_loc2_.displayState == StageDisplayState.FULL_SCREEN);
-                  }
-               }
-            }
-            return;
+            _loc2_.changeDisplayState();
+            _loc3_.buttonChanged(OptionsMenuNavigationConstants.TOGGLE_FULLSCREEN,_loc2_.displayState == StageDisplayState.FULL_SCREEN);
          }
-         §§goto(addr0069);
       }
    }
 }

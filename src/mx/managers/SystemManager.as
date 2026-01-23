@@ -873,7 +873,6 @@ package mx.managers
       override public function getObjectsUnderPoint(param1:Point) : Array
       {
          var _loc5_:DisplayObject = null;
-         var _loc6_:Array = null;
          var _loc2_:Array = [];
          var _loc3_:int = this.mx_internal::topMostIndex;
          var _loc4_:int = 0;
@@ -882,10 +881,10 @@ package mx.managers
             _loc5_ = super.getChildAt(_loc4_);
             if(_loc5_ is DisplayObjectContainer)
             {
-               _loc6_ = DisplayObjectContainer(_loc5_).getObjectsUnderPoint(param1);
+               var _loc6_:Array = DisplayObjectContainer(_loc5_).getObjectsUnderPoint(param1);
                if(_loc6_)
                {
-                  _loc2_ = _loc2_.concat(_loc6_);
+                  _loc2_ = _loc2_.concat(null);
                }
             }
             _loc4_++;
@@ -1514,7 +1513,6 @@ package mx.managers
          var _loc2_:Number = NaN;
          var _loc3_:Number = NaN;
          var _loc4_:DisplayObjectContainer = null;
-         var _loc5_:ISystemManager = null;
          var _loc6_:DisplayObject = null;
          if(this.getSandboxRoot() == this)
          {
@@ -1547,12 +1545,12 @@ package mx.managers
             {
                if(_loc4_ is IUIComponent)
                {
-                  _loc5_ = IUIComponent(_loc4_).systemManager;
-                  if((Boolean(_loc5_)) && !_loc5_.isTopLevel())
+                  var _loc5_:ISystemManager = IUIComponent(_loc4_).systemManager;
+                  if((Boolean(_loc5_)) && !null.isTopLevel())
                   {
-                     _loc5_ = _loc5_.topLevelSystemManager;
+                     _loc5_ = null.topLevelSystemManager;
                   }
-                  this._topLevelSystemManager = _loc5_;
+                  this._topLevelSystemManager = null;
                   break;
                }
                _loc4_ = _loc4_.parent;
@@ -1834,8 +1832,6 @@ package mx.managers
       {
          var _loc2_:DisplayObject = null;
          var _loc3_:DisplayObject = null;
-         var _loc4_:Loader = null;
-         var _loc5_:LoaderInfo = null;
          var _loc1_:ISystemManager = this;
          try
          {
@@ -1865,11 +1861,11 @@ package mx.managers
                }
                if(_loc2_ is Loader)
                {
-                  _loc4_ = Loader(_loc2_);
-                  _loc5_ = _loc4_.contentLoaderInfo;
+                  var _loc4_:Loader = Loader(_loc2_);
+                  var _loc5_:LoaderInfo = _loc4_.contentLoaderInfo;
                   if(!_loc5_.childAllowsParent)
                   {
-                     return _loc5_.content;
+                     return null.content;
                   }
                }
                if(_loc2_.hasEventListener("systemManagerRequest"))
@@ -1907,7 +1903,6 @@ package mx.managers
          var _loc6_:Point = null;
          var _loc7_:Rectangle = null;
          var _loc8_:DisplayObjectContainer = null;
-         var _loc9_:Rectangle = null;
          if(hasEventListener("getVisibleApplicationRect"))
          {
             _loc3_ = new Request("getVisibleApplicationRect",false,true);
@@ -1945,8 +1940,8 @@ package mx.managers
             _loc8_ = this.parent.parent;
             if("getVisibleApplicationRect" in _loc8_)
             {
-               _loc9_ = _loc8_["getVisibleApplicationRect"](true);
-               param1 = param1.intersection(_loc9_);
+               var _loc9_:Rectangle = _loc8_["getVisibleApplicationRect"](true);
+               param1 = param1.intersection(null);
             }
          }
          return param1;

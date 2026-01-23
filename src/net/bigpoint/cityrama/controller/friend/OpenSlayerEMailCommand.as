@@ -11,32 +11,19 @@ package net.bigpoint.cityrama.controller.friend
       
       public function OpenSlayerEMailCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc2_))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var note:INotification;
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
-         note = param1;
+         var note:INotification = param1;
          try
          {
             ExternalInterface.call("SLAYER.renderInviteDialog()");
          }
          catch(e:Error)
          {
-            if(!(_loc4_ && _loc2_))
-            {
-               Alert.show("Js CALL slayer Invite","only live");
-            }
+            Alert.show("Js CALL slayer Invite","only live");
          }
       }
    }

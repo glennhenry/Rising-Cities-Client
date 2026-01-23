@@ -13,28 +13,16 @@ package net.bigpoint.cityrama.controller.server.messages.quest
       
       public function ServerQuestChallengeUpdateCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc6_:Boolean = false;
-         var _loc7_:Boolean = _temp_1;
          var _loc2_:MessageVo = MessageVo(param1.getBody());
          var _loc3_:QuestProxy = facade.retrieveProxy(QuestProxy.NAME) as QuestProxy;
          var _loc4_:QuestChallengeConfigDTO = _loc3_.getChallengeConfigByConfigId(_loc2_.json.q.cid);
          var _loc5_:QuestChallengeDTO = new QuestChallengeDTO(_loc2_.json.q,_loc4_);
-         if(_loc7_ || Boolean(param1))
-         {
-            _loc3_.updateChallenge(_loc5_);
-         }
+         _loc3_.updateChallenge(_loc5_);
       }
    }
 }

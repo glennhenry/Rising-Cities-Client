@@ -33,82 +33,20 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function EventChallengeDetailViewVo(param1:Number, param2:int, param3:String, param4:String, param5:Number, param6:Number, param7:Vector.<EventChallengeStepDetailViewVo>, param8:ArrayCollection, param9:String, param10:String, param11:int, param12:int, param13:Vector.<DropInfoVo>)
       {
-         §§push(false);
-         var _loc14_:Boolean = true;
-         var _loc15_:* = §§pop();
-         if(!_loc15_)
-         {
-            super();
-            if(!(_loc15_ && Boolean(param2)))
-            {
-               this._id = param1;
-               if(_loc14_ || Boolean(this))
-               {
-                  this._listOfSteps = param7;
-                  if(_loc14_ || Boolean(this))
-                  {
-                     addr0055:
-                     this._timeLeft = param6;
-                     if(!(_loc15_ && Boolean(param2)))
-                     {
-                        this._fullRuntime = param5;
-                        if(_loc14_ || Boolean(param3))
-                        {
-                           this._challengeGfxId = param2;
-                           if(!_loc15_)
-                           {
-                              addr0096:
-                              this._challengelocaleId = param4;
-                              if(!_loc15_)
-                              {
-                                 addr00a2:
-                                 this._eventLocaleId = param3;
-                                 if(_loc14_ || Boolean(param3))
-                                 {
-                                    this._rewards = param8;
-                                    if(!(_loc15_ && Boolean(param1)))
-                                    {
-                                       this._state = param9;
-                                       if(!_loc15_)
-                                       {
-                                          this._challengeType = param10;
-                                          if(_loc14_ || Boolean(param1))
-                                          {
-                                             this._nbrOfChallengesOverall = param11;
-                                             if(_loc14_ || Boolean(param1))
-                                             {
-                                                §§goto(addr010d);
-                                             }
-                                          }
-                                       }
-                                       §§goto(addr0122);
-                                    }
-                                    §§goto(addr010d);
-                                 }
-                                 §§goto(addr0122);
-                              }
-                              §§goto(addr010d);
-                           }
-                           §§goto(addr00a2);
-                        }
-                        §§goto(addr0122);
-                     }
-                     §§goto(addr00a2);
-                  }
-                  addr010d:
-                  this._nbrOfThisChallenge = param12;
-                  if(_loc14_ || Boolean(param1))
-                  {
-                     addr0122:
-                     this._drops = param13;
-                  }
-                  return;
-               }
-               §§goto(addr0055);
-            }
-            §§goto(addr00a2);
-         }
-         §§goto(addr0096);
+         super();
+         this._id = param1;
+         this._listOfSteps = param7;
+         this._timeLeft = param6;
+         this._fullRuntime = param5;
+         this._challengeGfxId = param2;
+         this._challengelocaleId = param4;
+         this._eventLocaleId = param3;
+         this._rewards = param8;
+         this._state = param9;
+         this._challengeType = param10;
+         this._nbrOfChallengesOverall = param11;
+         this._nbrOfThisChallenge = param12;
+         this._drops = param13;
       }
       
       public function get listOfSteps() : Vector.<EventChallengeStepDetailViewVo>

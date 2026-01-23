@@ -16,20 +16,11 @@ package net.bigpoint.cityrama.controller.miniLayer
       
       public function OpenInfraUpgradeMiniLayerCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc6_:Boolean = false;
-         var _loc7_:Boolean = _temp_1;
          var _loc5_:PopupSettingsVo = null;
          var _loc2_:MiniLayerProxy = facade.retrieveProxy(MiniLayerProxy.NAME) as MiniLayerProxy;
          var _loc3_:PlayfieldObjectsProxy = facade.retrieveProxy(PlayfieldObjectsProxy.NAME) as PlayfieldObjectsProxy;
@@ -38,33 +29,12 @@ package net.bigpoint.cityrama.controller.miniLayer
          {
             _loc5_ = new PopupSettingsVo(PopupSettingsVo.MINI_POPUP);
             _loc5_.modal = true;
-            if(_loc7_ || Boolean(_loc3_))
-            {
-               _loc5_.viewClass = InfrastructureUpgradeMiniLayer;
-               if(_loc7_)
-               {
-                  _loc5_.mediatorClass = InfrastructureUpgradeMiniLayerMediator;
-                  if(!_loc6_)
-                  {
-                     _loc5_.mediatorName = InfrastructureUpgradeMiniLayerMediator.NAME;
-                     if(!(_loc6_ && Boolean(this)))
-                     {
-                        §§goto(addr00bf);
-                     }
-                  }
-                  §§goto(addr00db);
-               }
-            }
-            addr00bf:
+            _loc5_.viewClass = InfrastructureUpgradeMiniLayer;
+            _loc5_.mediatorClass = InfrastructureUpgradeMiniLayerMediator;
+            _loc5_.mediatorName = InfrastructureUpgradeMiniLayerMediator.NAME;
             _loc5_.data = _loc2_.getInfraUpgradeVo(_loc4_.billboardObjectVo);
-            if(_loc7_ || Boolean(_loc2_))
-            {
-               addr00db:
-               facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc5_);
-            }
-            §§goto(addr00e7);
+            facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc5_);
          }
-         addr00e7:
       }
    }
 }

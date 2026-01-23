@@ -6,34 +6,13 @@ package net.bigpoint.util
    public class CityramaLogger
    {
       
-      private static var _logger:ILogger;
+      private static var _logger:ILogger = Log.getLogger("Main");
       
       private static var init:Boolean = false;
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(_loc2_ || _loc1_)
-      {
-         _logger = Log.getLogger("Main");
-         if(_loc2_)
-         {
-            addr0033:
-            init = false;
-         }
-         return;
-      }
-      §§goto(addr0033);
-      
       public function CityramaLogger()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc2_))
-         {
-            super();
-         }
+         super();
       }
       
       public static function get logger() : ILogger

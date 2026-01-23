@@ -5,13 +5,7 @@ package com.adobe.serialization.json
       
       public function JSON()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public static function decode(param1:String, param2:Boolean = true) : *

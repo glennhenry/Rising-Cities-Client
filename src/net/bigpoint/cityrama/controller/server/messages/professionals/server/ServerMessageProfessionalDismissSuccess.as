@@ -17,22 +17,11 @@ package net.bigpoint.cityrama.controller.server.messages.professionals.server
       
       public function ServerMessageProfessionalDismissSuccess()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc13_:Boolean = true;
-         var _loc14_:* = §§pop();
-         var _loc7_:BillboardObject = null;
-         var _loc9_:ProfessionalDTO = null;
          var _loc10_:SecurityMatrixProxy = null;
          var _loc2_:MessageVo = MessageVo(param1.getBody());
          var _loc3_:PlayfieldObjectsProxy = facade.retrieveProxy(PlayfieldObjectsProxy.NAME) as PlayfieldObjectsProxy;
@@ -41,54 +30,17 @@ package net.bigpoint.cityrama.controller.server.messages.professionals.server
          var _loc6_:ProfessionalDTO = _loc4_.getProfessionalById(_loc5_);
          if(_loc6_)
          {
-            if(!_loc14_)
-            {
-               _loc7_ = _loc3_.getBillboardById(_loc6_.buildingId);
-               §§goto(addr008a);
-            }
-            §§goto(addr009e);
+            var _loc7_:BillboardObject = _loc3_.getBillboardById(_loc6_.buildingId);
          }
-         addr008a:
-         if(_loc7_)
-         {
-            if(_loc13_ || Boolean(param1))
-            {
-               addr009e:
-               if(_loc7_.billboardObjectVo.buildingDTO.professionals.length)
-               {
-                  addr00bc:
-                  for each(_loc9_ in _loc7_.billboardObjectVo.buildingDTO.professionals)
-                  {
-                     if(_loc9_.id == _loc5_)
-                     {
-                        if(!_loc14_)
-                        {
-                           _loc7_.billboardObjectVo.buildingDTO.professionals.splice(_loc7_.billboardObjectVo.buildingDTO.professionals.indexOf(_loc9_),1);
-                        }
-                        break;
-                     }
-                  }
-               }
-               §§goto(addr011c);
-            }
-            §§goto(addr00bc);
-         }
-         addr011c:
-         if(_loc7_.billboardObjectVo is IEmergencyInfrastructureVO)
+         if(null.billboardObjectVo is IEmergencyInfrastructureVO)
          {
             _loc10_ = facade.retrieveProxy(SecurityMatrixProxy.NAME) as SecurityMatrixProxy;
-            _loc10_.updateObject(_loc7_.billboardObjectVo as IEmergencyInfrastructureVO);
-            if(!_loc14_)
-            {
-               _loc7_.invalidateIconStateManager();
-            }
+            _loc10_.updateObject(null.billboardObjectVo as IEmergencyInfrastructureVO);
+            null.invalidateIconStateManager();
          }
          var _loc8_:SecurityMatrixProxy = facade.retrieveProxy(SecurityMatrixProxy.NAME) as SecurityMatrixProxy;
          _loc8_.invalidateAll();
-         if(_loc13_)
-         {
-            sendNotification(ApplicationNotificationConstants.PROFESSIONALS_DISMISS);
-         }
+         sendNotification(ApplicationNotificationConstants.PROFESSIONALS_DISMISS);
       }
    }
 }

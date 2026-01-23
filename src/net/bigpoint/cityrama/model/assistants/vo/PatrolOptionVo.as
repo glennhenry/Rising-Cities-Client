@@ -27,13 +27,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function PatrolOptionVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && Boolean(this)))
-         {
-            super();
-         }
+         super();
       }
       
       public function get rateText() : String
@@ -43,13 +37,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set rateText(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this._rateText = param1;
-         }
+         this._rateText = param1;
       }
       
       public function get rate() : Number
@@ -59,13 +47,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set rate(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._rate = param1;
-         }
+         this._rate = param1;
       }
       
       public function get runtimeHours() : Number
@@ -75,13 +57,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set runtimeHours(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._runtimeHours = param1;
-         }
+         this._runtimeHours = param1;
       }
       
       public function get gfxId() : Number
@@ -91,13 +67,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set gfxId(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._gfxId = param1;
-         }
+         this._gfxId = param1;
       }
       
       public function get name() : String
@@ -107,13 +77,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set name(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._name = param1;
-         }
+         this._name = param1;
       }
       
       public function get price() : Number
@@ -123,13 +87,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set price(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._price = param1;
-         }
+         this._price = param1;
       }
       
       public function get btnText() : String
@@ -139,13 +97,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set btnText(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
-         {
-            this._btnText = param1;
-         }
+         this._btnText = param1;
       }
       
       public function get btnTooltip() : String
@@ -155,13 +107,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set btnTooltip(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._btnTooltip = param1;
-         }
+         this._btnTooltip = param1;
       }
       
       public function get currency() : String
@@ -171,13 +117,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set currency(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._currency = param1;
-         }
+         this._currency = param1;
       }
       
       public function get affordable() : Boolean
@@ -187,13 +127,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set affordable(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._affordable = param1;
-         }
+         this._affordable = param1;
       }
       
       public function get configId() : Number
@@ -203,13 +137,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set configId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._configId = param1;
-         }
+         this._configId = param1;
       }
    }
 }

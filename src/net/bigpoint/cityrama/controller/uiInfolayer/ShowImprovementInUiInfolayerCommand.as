@@ -14,20 +14,11 @@ package net.bigpoint.cityrama.controller.uiInfolayer
       
       public function ShowImprovementInUiInfolayerCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc9_:Boolean = true;
-         var _loc10_:* = §§pop();
          var _loc8_:ImprovementProxy = null;
          var _loc2_:Number = Number(param1.getBody().cid);
          var _loc3_:Point = Point(param1.getBody().pt);
@@ -40,10 +31,7 @@ package net.bigpoint.cityrama.controller.uiInfolayer
          }
          var _loc6_:TimerProxy = facade.retrieveProxy(TimerProxy.NAME) as TimerProxy;
          var _loc7_:ImprovementUiInfolayerContentVo = new ImprovementUiInfolayerContentVo(_loc4_,_loc3_,_loc5_,"",_loc6_.currentTimeStamp);
-         if(!(_loc10_ && Boolean(this)))
-         {
-            sendNotification(ApplicationNotificationConstants.SHOW_UI_INFOLAYER,_loc7_,param1.getType());
-         }
+         sendNotification(ApplicationNotificationConstants.SHOW_UI_INFOLAYER,_loc7_,param1.getType());
       }
    }
 }

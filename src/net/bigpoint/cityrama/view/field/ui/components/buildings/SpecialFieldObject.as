@@ -10,13 +10,7 @@ package net.bigpoint.cityrama.view.field.ui.components.buildings
       
       public function SpecialFieldObject(param1:BillboardAssetsReferenceHolder, param2:SpecialFieldObjectVo)
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(_loc4_)
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
       
       public function get specialFieldObjectVo() : SpecialFieldObjectVo
@@ -26,13 +20,7 @@ package net.bigpoint.cityrama.view.field.ui.components.buildings
       
       public function tick(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            this.billboardObjectVo.currentTimeStamp = param1;
-         }
+         this.billboardObjectVo.currentTimeStamp = param1;
       }
    }
 }

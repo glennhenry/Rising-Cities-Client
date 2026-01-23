@@ -25,75 +25,9 @@ package net.bigpoint.cityrama.model.menu
       
       public static const SUB_CURSOR_DESTROY:String = "SUB_CURSOR_DESTROY";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(!_loc1_)
-      {
-         MAIN_NEW_ARCHITECT = "gui_mainmenue_architect";
-         if(!_loc1_)
-         {
-            MAIN_NEW_FRIENDS = "gui_mainmenue_friends";
-            if(!(_loc1_ && _loc1_))
-            {
-               MAIN_NEW_MARKET = "gui_mainmenue_market";
-               if(!(_loc1_ && _loc2_))
-               {
-                  MAIN_NEW_INVENTORY = "gui_mainmenue_inventory";
-                  if(_loc2_ || MenuNavigationConstants)
-                  {
-                     MAIN_NEW_MAJOR = "gui_mainmenue_majorvilla";
-                     if(!(_loc1_ && _loc2_))
-                     {
-                        addr0091:
-                        MAIN_NEW_PLACEMODE = "gui_mainmenue_cursor";
-                        if(!_loc1_)
-                        {
-                           MAIN_NEW_OPTIONS = "gui_mainmenue_options";
-                           if(_loc2_)
-                           {
-                              MAIN_CURSOR = "MAIN_CURSOR";
-                              if(_loc2_)
-                              {
-                                 SUB_CURSOR_NORMAL = "SUB_CURSOR_NORMAL";
-                                 if(!(_loc1_ && _loc2_))
-                                 {
-                                    addr00e1:
-                                    SUB_CURSOR_MOVE = "SUB_CURSOR_MOVE";
-                                    if(!_loc1_)
-                                    {
-                                       addr00ef:
-                                       SUB_CURSOR_DESTROY = "SUB_CURSOR_DESTROY";
-                                    }
-                                 }
-                              }
-                              §§goto(addr00f8);
-                           }
-                        }
-                        §§goto(addr00ef);
-                     }
-                     §§goto(addr00e1);
-                  }
-                  §§goto(addr00ef);
-               }
-               §§goto(addr0091);
-            }
-            §§goto(addr00ef);
-         }
-         addr00f8:
-         return;
-      }
-      §§goto(addr00e1);
-      
       public function MenuNavigationConstants()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
    }
 }

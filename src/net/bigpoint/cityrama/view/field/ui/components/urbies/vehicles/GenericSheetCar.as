@@ -9,29 +9,10 @@ package net.bigpoint.cityrama.view.field.ui.components.urbies.vehicles
       
       public function GenericSheetCar(param1:PreloadableImage, param2:UrbieLifeVo)
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!_loc3_)
-         {
-            super(param1,param2);
-            if(!_loc3_)
-            {
-               §§goto(addr0031);
-            }
-            §§goto(addr0052);
-         }
-         addr0031:
+         super(param1,param2);
          if(!param1.loadComplete)
          {
-            if(_loc4_ || Boolean(param2))
-            {
-               addr0052:
-               param1.addEventListener(PreloadableImage.PRELOADING_COMPLETE,this.updateOffsets);
-               if(_loc3_ && _loc3_)
-               {
-               }
-            }
+            param1.addEventListener(PreloadableImage.PRELOADING_COMPLETE,this.updateOffsets);
          }
          else
          {

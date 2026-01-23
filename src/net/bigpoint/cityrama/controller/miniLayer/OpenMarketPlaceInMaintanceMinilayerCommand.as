@@ -13,50 +13,17 @@ package net.bigpoint.cityrama.controller.miniLayer
       
       public function OpenMarketPlaceInMaintanceMinilayerCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:PopupSettingsVo = new PopupSettingsVo(PopupSettingsVo.MINI_POPUP);
-         if(_loc4_)
-         {
-            _loc2_.modal = true;
-            if(_loc4_)
-            {
-               _loc2_.viewClass = MarketMaintanceMiniLayer;
-               if(_loc4_)
-               {
-                  addr0057:
-                  _loc2_.mediatorClass = MarketMaintanceMiniLayerMediator;
-                  if(_loc4_)
-                  {
-                     §§goto(addr0064);
-                  }
-                  §§goto(addr0073);
-               }
-               addr0064:
-               _loc2_.mediatorName = MarketMaintanceMiniLayerMediator.NAME;
-               if(_loc4_)
-               {
-                  addr0073:
-                  facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc2_);
-               }
-               §§goto(addr007e);
-            }
-            addr007e:
-            return;
-         }
-         §§goto(addr0057);
+         _loc2_.modal = true;
+         _loc2_.viewClass = MarketMaintanceMiniLayer;
+         _loc2_.mediatorClass = MarketMaintanceMiniLayerMediator;
+         _loc2_.mediatorName = MarketMaintanceMiniLayerMediator.NAME;
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc2_);
       }
    }
 }

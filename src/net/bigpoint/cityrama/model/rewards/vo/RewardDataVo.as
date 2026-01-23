@@ -12,22 +12,6 @@ package net.bigpoint.cityrama.model.rewards.vo
       
       public static const EVOUCHER:String = "EVOUCHER";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(_loc2_)
-      {
-         LEVELUP = "LEVELUP";
-         if(_loc2_ || _loc2_)
-         {
-            PAYMENTPACK = "PAYMENTPACK";
-            if(!(_loc1_ && RewardDataVo))
-            {
-               EVOUCHER = "EVOUCHER";
-            }
-         }
-      }
-      
       private var _styleName:String;
       
       private var _title:String;
@@ -46,13 +30,7 @@ package net.bigpoint.cityrama.model.rewards.vo
       
       public function RewardDataVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
-         {
-            super();
-         }
+         super();
       }
       
       public function get title() : String
@@ -82,57 +60,27 @@ package net.bigpoint.cityrama.model.rewards.vo
       
       public function set styleName(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._styleName = param1;
-         }
+         this._styleName = param1;
       }
       
       public function set title(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._title = param1;
-         }
+         this._title = param1;
       }
       
       public function set flavourText(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._flavourText = param1;
-         }
+         this._flavourText = param1;
       }
       
       public function set buttonText(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._buttonText = param1;
-         }
+         this._buttonText = param1;
       }
       
       public function set receivedItems(param1:ArrayCollection) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._receivedItems = param1;
-         }
+         this._receivedItems = param1;
       }
       
       public function get buttonTooltip() : String
@@ -142,13 +90,7 @@ package net.bigpoint.cityrama.model.rewards.vo
       
       public function set buttonTooltip(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._buttonTooltip = param1;
-         }
+         this._buttonTooltip = param1;
       }
       
       public function get rewardType() : String
@@ -158,13 +100,7 @@ package net.bigpoint.cityrama.model.rewards.vo
       
       public function set rewardType(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._rewardType = param1;
-         }
+         this._rewardType = param1;
       }
       
       public function get drops() : Vector.<DropInfoVo>
@@ -174,13 +110,7 @@ package net.bigpoint.cityrama.model.rewards.vo
       
       public function set drops(param1:Vector.<DropInfoVo>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._drops = param1;
-         }
+         this._drops = param1;
       }
    }
 }

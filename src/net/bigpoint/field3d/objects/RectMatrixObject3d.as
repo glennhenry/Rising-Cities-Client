@@ -9,43 +9,14 @@ package net.bigpoint.field3d.objects
       
       public function RectMatrixObject3d(param1:DisplayObject, param2:MatrixObject3dVo)
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!(_loc3_ && Boolean(param2)))
-         {
-            super(param1,param2);
-            if(!_loc3_)
-            {
-               addr0038:
-               this.setSize(param2.matrixCoordinates.width,param2.matrixCoordinates.height,1);
-            }
-            return;
-         }
-         §§goto(addr0038);
+         super(param1,param2);
+         this.setSize(param2.matrixCoordinates.width,param2.matrixCoordinates.height,1);
       }
       
       public function updateIndex(param1:int, param2:int) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!(_loc3_ && _loc3_))
-         {
-            §§push(this.fieldMatrixObject3dVo);
-            if(!_loc3_)
-            {
-               §§pop().matrixCoordinates.x = param1;
-               if(_loc4_)
-               {
-                  addr0045:
-                  this.fieldMatrixObject3dVo.matrixCoordinates.y = param2;
-               }
-               §§goto(addr004b);
-            }
-            §§goto(addr0045);
-         }
-         addr004b:
+         this.fieldMatrixObject3dVo.matrixCoordinates.x = param1;
+         this.fieldMatrixObject3dVo.matrixCoordinates.y = param2;
       }
       
       public function get xIndex() : int

@@ -10,62 +10,20 @@ package net.bigpoint.cityrama.controller.server.messages.friend
       
       public function ServerMessageSlayerInviteFriendFailedCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:MessageVo = MessageVo(param1.getBody());
-         if(!_loc4_)
+         if(Boolean(_loc2_.json.em) && _loc2_.json.em == "userIsAlreadyAFriend")
          {
-            §§push(Boolean(_loc2_.json.em));
-            if(_loc3_)
-            {
-               var _temp_1:* = §§pop();
-               §§push(_temp_1);
-               if(_temp_1)
-               {
-                  if(!_loc4_)
-                  {
-                     addr0049:
-                     §§pop();
-                     if(!_loc4_)
-                     {
-                        §§goto(addr0068);
-                     }
-                     §§goto(addr0079);
-                  }
-               }
-               addr0068:
-               if(_loc2_.json.em == "userIsAlreadyAFriend")
-               {
-                  if(_loc3_ || Boolean(param1))
-                  {
-                     addr0079:
-                     sendNotification(ApplicationNotificationConstants.FRIEND_INVITE_FAIL,true);
-                     if(_loc3_)
-                     {
-                     }
-                  }
-               }
-               else
-               {
-                  sendNotification(ApplicationNotificationConstants.FRIEND_INVITE_FAIL,false);
-               }
-               §§goto(addr0098);
-            }
-            §§goto(addr0049);
+            sendNotification(ApplicationNotificationConstants.FRIEND_INVITE_FAIL,true);
          }
-         addr0098:
+         else
+         {
+            sendNotification(ApplicationNotificationConstants.FRIEND_INVITE_FAIL,false);
+         }
       }
    }
 }

@@ -11,24 +11,9 @@ package net.bigpoint.cityrama.model.server.vo.server.player
       
       public function QuestHistoryVo(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            super();
-            if(_loc3_)
-            {
-               addr0021:
-               this._category = param1.c;
-               if(_loc3_)
-               {
-                  this._finishCount = param1.s;
-               }
-            }
-            return;
-         }
-         §§goto(addr0021);
+         super();
+         this._category = param1.c;
+         this._finishCount = param1.s;
       }
       
       public function get category() : String

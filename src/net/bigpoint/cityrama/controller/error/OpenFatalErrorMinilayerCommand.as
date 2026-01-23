@@ -13,41 +13,17 @@ package net.bigpoint.cityrama.controller.error
       
       public function OpenFatalErrorMinilayerCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:PopupSettingsVo = new PopupSettingsVo(PopupSettingsVo.MINI_POPUP);
-         if(_loc3_)
-         {
-            _loc2_.modal = true;
-            if(_loc3_ || Boolean(_loc2_))
-            {
-               _loc2_.viewClass = FatalErrorMiniLayer;
-               if(_loc3_ || Boolean(this))
-               {
-                  _loc2_.mediatorClass = FatalErrorMiniLayerMediator;
-                  if(!_loc4_)
-                  {
-                     _loc2_.mediatorName = FatalErrorMiniLayerMediator.NAME;
-                     if(_loc3_)
-                     {
-                        facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc2_);
-                     }
-                  }
-               }
-            }
-         }
+         _loc2_.modal = true;
+         _loc2_.viewClass = FatalErrorMiniLayer;
+         _loc2_.mediatorClass = FatalErrorMiniLayerMediator;
+         _loc2_.mediatorName = FatalErrorMiniLayerMediator.NAME;
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc2_);
       }
    }
 }

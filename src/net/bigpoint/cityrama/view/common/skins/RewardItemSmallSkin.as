@@ -40,765 +40,245 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function RewardItemSmallSkin()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && Boolean(this)))
-         {
-            super();
-            if(!_loc2_)
-            {
-               mx_internal::_document = this;
-               addr0025:
-               if(!(_loc2_ && _loc1_))
-               {
-                  addr0049:
-                  this.mxmlContent = [this._RewardItemSmallSkin_Group1_c()];
-                  if(!_loc2_)
-                  {
-                     this.currentState = "normal";
-                     if(_loc1_)
-                     {
-                        addr006f:
-                        states = [new State({
-                           "name":"normal",
-                           "overrides":[]
-                        }),new State({
-                           "name":"disabled",
-                           "overrides":[]
-                        })];
-                     }
-                     return;
-                  }
-               }
-               §§goto(addr006f);
-            }
-            §§goto(addr0049);
-         }
-         §§goto(addr0025);
+         super();
+         mx_internal::_document = this;
+         this.mxmlContent = [this._RewardItemSmallSkin_Group1_c()];
+         this.currentState = "normal";
+         states = [new State({
+            "name":"normal",
+            "overrides":[]
+         }),new State({
+            "name":"disabled",
+            "overrides":[]
+         })];
       }
       
       override public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
+         super.moduleFactory = param1;
+         if(this.__moduleFactoryInitialized)
          {
-            super.moduleFactory = param1;
-            if(_loc3_ || Boolean(this))
-            {
-               addr0048:
-               if(this.__moduleFactoryInitialized)
-               {
-                  if(_loc3_ || _loc2_)
-                  {
-                     return;
-                  }
-               }
-               this.__moduleFactoryInitialized = true;
-            }
             return;
          }
-         §§goto(addr0048);
+         this.__moduleFactoryInitialized = true;
       }
       
       override public function initialize() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super.initialize();
-         }
+         super.initialize();
       }
       
       private function _RewardItemSmallSkin_Group1_c() : Group
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:Group = new Group();
-         if(!_loc3_)
+         _loc1_.height = 160;
+         _loc1_.width = 115;
+         _loc1_.mxmlContent = [this._RewardItemSmallSkin_Group2_c(),this._RewardItemSmallSkin_BriskImageDynaLib3_i(),this._RewardItemSmallSkin_BriskMCDynaLib1_i(),this._RewardItemSmallSkin_BriskImageDynaLib4_i(),this._RewardItemSmallSkin_Group4_c(),this._RewardItemSmallSkin_BriskImageDynaLib6_i(),this._RewardItemSmallSkin_BriskImageDynaLib7_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.height = 160;
-            if(!(_loc3_ && _loc3_))
-            {
-               _loc1_.width = 115;
-               if(!_loc3_)
-               {
-                  _loc1_.mxmlContent = [this._RewardItemSmallSkin_Group2_c(),this._RewardItemSmallSkin_BriskImageDynaLib3_i(),this._RewardItemSmallSkin_BriskMCDynaLib1_i(),this._RewardItemSmallSkin_BriskImageDynaLib4_i(),this._RewardItemSmallSkin_Group4_c(),this._RewardItemSmallSkin_BriskImageDynaLib6_i(),this._RewardItemSmallSkin_BriskImageDynaLib7_i()];
-                  §§goto(addr0048);
-               }
-            }
-            §§goto(addr0096);
-         }
-         addr0048:
-         if(!_loc3_)
-         {
-            if(!_loc1_.document)
-            {
-               if(!_loc3_)
-               {
-                  addr0096:
-                  _loc1_.document = this;
-               }
-            }
+            _loc1_.document = this;
          }
          return _loc1_;
       }
       
       private function _RewardItemSmallSkin_Group2_c() : Group
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:Group = new Group();
-         if(!_loc2_)
+         _loc1_.bottom = 0;
+         _loc1_.height = 65;
+         _loc1_.percentWidth = 100;
+         _loc1_.mxmlContent = [this._RewardItemSmallSkin_Group3_c(),this._RewardItemSmallSkin_HGroup1_c()];
+         if(!_loc1_.document)
          {
-            _loc1_.bottom = 0;
-            if(_loc3_)
-            {
-               _loc1_.height = 65;
-               if(!(_loc2_ && Boolean(_loc1_)))
-               {
-                  _loc1_.percentWidth = 100;
-                  if(_loc3_ || _loc3_)
-                  {
-                     _loc1_.mxmlContent = [this._RewardItemSmallSkin_Group3_c(),this._RewardItemSmallSkin_HGroup1_c()];
-                     if(_loc3_)
-                     {
-                        if(!_loc1_.document)
-                        {
-                           if(_loc3_)
-                           {
-                              addr0085:
-                              _loc1_.document = this;
-                           }
-                        }
-                     }
-                  }
-               }
-            }
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr0085);
+         return _loc1_;
       }
       
       private function _RewardItemSmallSkin_Group3_c() : Group
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:Group = new Group();
-         if(!(_loc3_ && Boolean(_loc1_)))
+         _loc1_.left = 3;
+         _loc1_.bottom = 15;
+         _loc1_.mxmlContent = [this._RewardItemSmallSkin_BriskImageDynaLib1_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.left = 3;
-            if(!_loc3_)
-            {
-               _loc1_.bottom = 15;
-               if(_loc2_)
-               {
-                  addr0054:
-                  _loc1_.mxmlContent = [this._RewardItemSmallSkin_BriskImageDynaLib1_i()];
-                  if(!(_loc3_ && Boolean(_loc1_)))
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(_loc2_)
-                        {
-                           addr0078:
-                           _loc1_.document = this;
-                        }
-                     }
-                     return _loc1_;
-                  }
-               }
-            }
-            §§goto(addr0078);
+            _loc1_.document = this;
          }
-         §§goto(addr0054);
+         return _loc1_;
       }
       
       private function _RewardItemSmallSkin_BriskImageDynaLib1_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc3_)
+         _loc1_.left = 2;
+         _loc1_.verticalCenter = 0;
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.dynaBmpSourceName = "rewardcomponentPriceBg_small";
+         _loc1_.id = "pricingBg";
+         if(!_loc1_.document)
          {
-            _loc1_.left = 2;
-            if(!(_loc2_ && Boolean(_loc1_)))
-            {
-               _loc1_.verticalCenter = 0;
-               if(!_loc2_)
-               {
-                  addr003e:
-                  _loc1_.dynaLibName = "gui_popups_paperPopup";
-                  if(_loc3_ || Boolean(this))
-                  {
-                     _loc1_.dynaBmpSourceName = "rewardcomponentPriceBg_small";
-                     if(!(_loc2_ && Boolean(this)))
-                     {
-                        _loc1_.id = "pricingBg";
-                        if(_loc3_ || Boolean(this))
-                        {
-                           addr0083:
-                           if(!_loc1_.document)
-                           {
-                              if(_loc3_ || _loc2_)
-                              {
-                                 addr00a4:
-                                 _loc1_.document = this;
-                                 if(_loc3_ || _loc3_)
-                                 {
-                                    addr00b5:
-                                    this.pricingBg = _loc1_;
-                                    if(_loc3_)
-                                    {
-                                       BindingManager.executeBindings(this,"pricingBg",this.pricingBg);
-                                    }
-                                 }
-                              }
-                              §§goto(addr00cc);
-                           }
-                           §§goto(addr00b5);
-                        }
-                        §§goto(addr00cc);
-                     }
-                     §§goto(addr00a4);
-                  }
-                  §§goto(addr0083);
-               }
-               addr00cc:
-               return _loc1_;
-            }
-            §§goto(addr003e);
+            _loc1_.document = this;
          }
-         §§goto(addr00b5);
+         this.pricingBg = _loc1_;
+         BindingManager.executeBindings(this,"pricingBg",this.pricingBg);
+         return _loc1_;
       }
       
       private function _RewardItemSmallSkin_HGroup1_c() : HGroup
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:HGroup = new HGroup();
-         if(!(_loc2_ && Boolean(this)))
+         _loc1_.percentWidth = 100;
+         _loc1_.height = 25;
+         _loc1_.bottom = 17;
+         _loc1_.horizontalAlign = "center";
+         _loc1_.verticalAlign = "middle";
+         _loc1_.mxmlContent = [this._RewardItemSmallSkin_LocaLabel1_i(),this._RewardItemSmallSkin_BriskImageDynaLib2_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 100;
-            if(!(_loc2_ && Boolean(this)))
-            {
-               _loc1_.height = 25;
-               if(_loc3_ || Boolean(_loc1_))
-               {
-                  _loc1_.bottom = 17;
-                  addr004b:
-                  if(_loc3_ || Boolean(_loc1_))
-                  {
-                     _loc1_.horizontalAlign = "center";
-                     if(_loc3_ || _loc3_)
-                     {
-                        addr007b:
-                        _loc1_.verticalAlign = "middle";
-                        if(!(_loc2_ && Boolean(this)))
-                        {
-                           _loc1_.mxmlContent = [this._RewardItemSmallSkin_LocaLabel1_i(),this._RewardItemSmallSkin_BriskImageDynaLib2_i()];
-                           if(_loc3_)
-                           {
-                              addr00b1:
-                              if(!_loc1_.document)
-                              {
-                                 if(!(_loc2_ && _loc2_))
-                                 {
-                                    _loc1_.document = this;
-                                 }
-                              }
-                           }
-                           §§goto(addr00c9);
-                        }
-                     }
-                     §§goto(addr00b1);
-                  }
-                  §§goto(addr007b);
-               }
-               addr00c9:
-               return _loc1_;
-            }
-            §§goto(addr004b);
+            _loc1_.document = this;
          }
-         §§goto(addr007b);
+         return _loc1_;
       }
       
       private function _RewardItemSmallSkin_LocaLabel1_i() : LocaLabel
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:LocaLabel = new LocaLabel();
-         if(!_loc2_)
+         _loc1_.verticalCenter = 3;
+         _loc1_.id = "labelDisplay";
+         if(!_loc1_.document)
          {
-            _loc1_.verticalCenter = 3;
-            if(_loc3_)
-            {
-               _loc1_.id = "labelDisplay";
-               if(_loc3_ || Boolean(this))
-               {
-                  if(!_loc1_.document)
-                  {
-                     if(!(_loc2_ && Boolean(_loc1_)))
-                     {
-                        addr0068:
-                        _loc1_.document = this;
-                        if(!_loc2_)
-                        {
-                           addr0071:
-                           this.labelDisplay = _loc1_;
-                           if(!_loc2_)
-                           {
-                              addr007b:
-                              BindingManager.executeBindings(this,"labelDisplay",this.labelDisplay);
-                           }
-                        }
-                        §§goto(addr0088);
-                     }
-                  }
-                  §§goto(addr0071);
-               }
-               addr0088:
-               return _loc1_;
-            }
-            §§goto(addr007b);
+            _loc1_.document = this;
          }
-         §§goto(addr0068);
+         this.labelDisplay = _loc1_;
+         BindingManager.executeBindings(this,"labelDisplay",this.labelDisplay);
+         return _loc1_;
       }
       
       private function _RewardItemSmallSkin_BriskImageDynaLib2_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc3_ || _loc3_)
+         _loc1_.verticalCenter = 0;
+         _loc1_.id = "pricingIcon";
+         if(!_loc1_.document)
          {
-            _loc1_.verticalCenter = 0;
-            if(_loc3_)
-            {
-               _loc1_.id = "pricingIcon";
-               if(_loc3_ || _loc2_)
-               {
-                  if(!_loc1_.document)
-                  {
-                     if(!(_loc2_ && Boolean(this)))
-                     {
-                        _loc1_.document = this;
-                        if(_loc3_ || Boolean(_loc1_))
-                        {
-                           addr0084:
-                           this.pricingIcon = _loc1_;
-                           if(!_loc2_)
-                           {
-                              addr008e:
-                              BindingManager.executeBindings(this,"pricingIcon",this.pricingIcon);
-                           }
-                        }
-                        §§goto(addr009b);
-                     }
-                  }
-                  §§goto(addr0084);
-               }
-               addr009b:
-               return _loc1_;
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr008e);
+         this.pricingIcon = _loc1_;
+         BindingManager.executeBindings(this,"pricingIcon",this.pricingIcon);
+         return _loc1_;
       }
       
       private function _RewardItemSmallSkin_BriskImageDynaLib3_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc3_)
-         {
-            _loc1_.top = 6;
-            if(_loc3_)
-            {
-               §§goto(addr0029);
-            }
-            §§goto(addr007c);
-         }
-         addr0029:
+         _loc1_.top = 6;
          _loc1_.id = "cardBoardGfx";
-         if(!(_loc2_ && _loc3_))
+         if(!_loc1_.document)
          {
-            if(!_loc1_.document)
-            {
-               if(!(_loc2_ && Boolean(_loc1_)))
-               {
-                  _loc1_.document = this;
-                  if(!_loc2_)
-                  {
-                     addr0072:
-                     this.cardBoardGfx = _loc1_;
-                     if(_loc3_)
-                     {
-                        addr007c:
-                        BindingManager.executeBindings(this,"cardBoardGfx",this.cardBoardGfx);
-                     }
-                  }
-                  §§goto(addr0089);
-               }
-               §§goto(addr007c);
-            }
-            §§goto(addr0072);
+            _loc1_.document = this;
          }
-         addr0089:
+         this.cardBoardGfx = _loc1_;
+         BindingManager.executeBindings(this,"cardBoardGfx",this.cardBoardGfx);
          return _loc1_;
       }
       
       private function _RewardItemSmallSkin_BriskMCDynaLib1_i() : BriskMCDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskMCDynaLib = new BriskMCDynaLib();
-         if(!(_loc2_ && Boolean(_loc1_)))
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.dynaMCSourceName = "stickytape_top";
+         _loc1_.percentWidth = 80;
+         _loc1_.horizontalCenter = 0;
+         _loc1_.top = 0;
+         _loc1_.id = "stickyTape";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_paperPopup";
-            if(!(_loc2_ && _loc2_))
-            {
-               addr003a:
-               _loc1_.dynaMCSourceName = "stickytape_top";
-               if(_loc3_ || _loc2_)
-               {
-                  _loc1_.percentWidth = 80;
-                  if(_loc3_ || Boolean(this))
-                  {
-                     addr006c:
-                     _loc1_.horizontalCenter = 0;
-                     if(_loc3_)
-                     {
-                        addr0076:
-                        _loc1_.top = 0;
-                        if(_loc3_ || Boolean(this))
-                        {
-                           addr0088:
-                           _loc1_.id = "stickyTape";
-                           if(!_loc2_)
-                           {
-                              if(!_loc1_.document)
-                              {
-                                 if(!(_loc2_ && Boolean(this)))
-                                 {
-                                    addr00b4:
-                                    _loc1_.document = this;
-                                    if(_loc3_ || Boolean(_loc1_))
-                                    {
-                                       addr00c5:
-                                       this.stickyTape = _loc1_;
-                                       if(_loc3_)
-                                       {
-                                          addr00cf:
-                                          BindingManager.executeBindings(this,"stickyTape",this.stickyTape);
-                                       }
-                                       §§goto(addr00dc);
-                                    }
-                                    §§goto(addr00cf);
-                                 }
-                                 addr00dc:
-                                 return _loc1_;
-                              }
-                              §§goto(addr00c5);
-                           }
-                        }
-                        §§goto(addr00b4);
-                     }
-                     §§goto(addr0088);
-                  }
-                  §§goto(addr00c5);
-               }
-               §§goto(addr006c);
-            }
-            §§goto(addr0076);
+            _loc1_.document = this;
          }
-         §§goto(addr003a);
+         this.stickyTape = _loc1_;
+         BindingManager.executeBindings(this,"stickyTape",this.stickyTape);
+         return _loc1_;
       }
       
       private function _RewardItemSmallSkin_BriskImageDynaLib4_i() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc2_)
-         {
-            _loc1_.dynaLibName = "gui_popups_paperPopup";
-            if(!(_loc3_ && Boolean(_loc1_)))
-            {
-               _loc1_.dynaBmpSourceName = "hip_badge_common_small";
-               if(!_loc3_)
-               {
-                  §§goto(addr003c);
-               }
-               §§goto(addr00ac);
-            }
-            §§goto(addr00c8);
-         }
-         addr003c:
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.dynaBmpSourceName = "hip_badge_common_small";
          _loc1_.top = 6;
-         if(!(_loc3_ && Boolean(this)))
+         _loc1_.left = 2;
+         _loc1_.includeInLayout = false;
+         _loc1_.visible = false;
+         _loc1_.id = "qualityBadge";
+         if(!_loc1_.document)
          {
-            _loc1_.left = 2;
-            if(_loc2_ || Boolean(this))
-            {
-               _loc1_.includeInLayout = false;
-               if(!(_loc3_ && Boolean(this)))
-               {
-                  addr007c:
-                  _loc1_.visible = false;
-                  if(!(_loc3_ && Boolean(_loc1_)))
-                  {
-                     _loc1_.id = "qualityBadge";
-                     if(_loc2_)
-                     {
-                        addr0098:
-                        if(!_loc1_.document)
-                        {
-                           if(_loc2_ || Boolean(_loc1_))
-                           {
-                              addr00ac:
-                              _loc1_.document = this;
-                              if(_loc2_ || Boolean(_loc1_))
-                              {
-                                 addr00c8:
-                                 this.qualityBadge = _loc1_;
-                                 if(!(_loc3_ && Boolean(_loc1_)))
-                                 {
-                                    addr00da:
-                                    BindingManager.executeBindings(this,"qualityBadge",this.qualityBadge);
-                                 }
-                              }
-                              §§goto(addr00e7);
-                           }
-                           §§goto(addr00da);
-                        }
-                        §§goto(addr00c8);
-                     }
-                     §§goto(addr00e7);
-                  }
-                  §§goto(addr0098);
-               }
-               §§goto(addr00c8);
-            }
-            §§goto(addr007c);
+            _loc1_.document = this;
          }
-         addr00e7:
+         this.qualityBadge = _loc1_;
+         BindingManager.executeBindings(this,"qualityBadge",this.qualityBadge);
          return _loc1_;
       }
       
       private function _RewardItemSmallSkin_Group4_c() : Group
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:Group = new Group();
-         if(_loc3_)
+         _loc1_.percentHeight = 100;
+         _loc1_.percentWidth = 100;
+         _loc1_.mxmlContent = [this._RewardItemSmallSkin_BriskImageDynaLib5_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.percentHeight = 100;
-            if(!_loc2_)
-            {
-               _loc1_.percentWidth = 100;
-               if(!_loc2_)
-               {
-                  _loc1_.mxmlContent = [this._RewardItemSmallSkin_BriskImageDynaLib5_i()];
-                  if(!(_loc2_ && _loc3_))
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(!(_loc2_ && Boolean(_loc1_)))
-                        {
-                           addr0077:
-                           _loc1_.document = this;
-                        }
-                     }
-                     §§goto(addr007b);
-                  }
-               }
-               §§goto(addr0077);
-            }
+            _loc1_.document = this;
          }
-         addr007b:
          return _loc1_;
       }
       
       private function _RewardItemSmallSkin_BriskImageDynaLib5_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc3_)
+         _loc1_.horizontalCenter = 0;
+         _loc1_.verticalCenter = -20;
+         _loc1_.id = "item";
+         if(!_loc1_.document)
          {
-            _loc1_.horizontalCenter = 0;
-            if(!_loc2_)
-            {
-               addr002b:
-               _loc1_.verticalCenter = -20;
-               if(!(_loc2_ && Boolean(_loc1_)))
-               {
-                  addr0049:
-                  _loc1_.id = "item";
-                  if(_loc3_)
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(!(_loc2_ && _loc2_))
-                        {
-                           addr0068:
-                           _loc1_.document = this;
-                           if(!(_loc2_ && Boolean(_loc1_)))
-                           {
-                              addr0086:
-                              this.item = _loc1_;
-                              if(!(_loc2_ && Boolean(_loc1_)))
-                              {
-                                 addr0098:
-                                 BindingManager.executeBindings(this,"item",this.item);
-                              }
-                           }
-                        }
-                        return _loc1_;
-                     }
-                     §§goto(addr0086);
-                  }
-                  §§goto(addr0098);
-               }
-               §§goto(addr0068);
-            }
-            §§goto(addr0049);
+            _loc1_.document = this;
          }
-         §§goto(addr002b);
+         this.item = _loc1_;
+         BindingManager.executeBindings(this,"item",this.item);
+         return _loc1_;
       }
       
       private function _RewardItemSmallSkin_BriskImageDynaLib6_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc3_ || _loc2_)
+         _loc1_.top = 0;
+         _loc1_.right = 0;
+         _loc1_.dynaBmpSourceName = "new_icon";
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.id = "newIcon";
+         if(!_loc1_.document)
          {
-            _loc1_.top = 0;
-            if(!_loc2_)
-            {
-               _loc1_.right = 0;
-               if(!(_loc2_ && _loc3_))
-               {
-                  addr0044:
-                  _loc1_.dynaBmpSourceName = "new_icon";
-                  if(!(_loc2_ && _loc2_))
-                  {
-                     _loc1_.dynaLibName = "gui_popups_paperPopup";
-                     if(_loc3_)
-                     {
-                        addr006e:
-                        _loc1_.id = "newIcon";
-                        if(!(_loc2_ && Boolean(_loc1_)))
-                        {
-                           if(!_loc1_.document)
-                           {
-                              if(_loc3_ || _loc3_)
-                              {
-                                 addr009f:
-                                 _loc1_.document = this;
-                                 if(_loc3_)
-                                 {
-                                    §§goto(addr00a8);
-                                 }
-                                 §§goto(addr00b2);
-                              }
-                           }
-                           addr00a8:
-                           this.newIcon = _loc1_;
-                           if(!_loc2_)
-                           {
-                              addr00b2:
-                              BindingManager.executeBindings(this,"newIcon",this.newIcon);
-                           }
-                           §§goto(addr00bf);
-                        }
-                     }
-                     addr00bf:
-                     return _loc1_;
-                  }
-                  §§goto(addr009f);
-               }
-               §§goto(addr00a8);
-            }
-            §§goto(addr0044);
+            _loc1_.document = this;
          }
-         §§goto(addr006e);
+         this.newIcon = _loc1_;
+         BindingManager.executeBindings(this,"newIcon",this.newIcon);
+         return _loc1_;
       }
       
       private function _RewardItemSmallSkin_BriskImageDynaLib7_i() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!_loc3_)
+         _loc1_.top = -1;
+         _loc1_.right = 0;
+         _loc1_.dynaBmpSourceName = "buff_16_small";
+         _loc1_.dynaLibName = "gui_popups_citywheel";
+         _loc1_.id = "buffMultiplier";
+         if(!_loc1_.document)
          {
-            _loc1_.top = -1;
-            if(_loc2_)
-            {
-               _loc1_.right = 0;
-               if(_loc2_)
-               {
-                  _loc1_.dynaBmpSourceName = "buff_16_small";
-                  if(!_loc3_)
-                  {
-                     _loc1_.dynaLibName = "gui_popups_citywheel";
-                     if(!_loc3_)
-                     {
-                        addr0054:
-                        _loc1_.id = "buffMultiplier";
-                        if(_loc2_ || _loc3_)
-                        {
-                           if(!_loc1_.document)
-                           {
-                              if(_loc2_ || _loc3_)
-                              {
-                                 addr0088:
-                                 _loc1_.document = this;
-                                 if(_loc2_)
-                                 {
-                                    §§goto(addr0091);
-                                 }
-                              }
-                              §§goto(addr009b);
-                           }
-                           §§goto(addr0091);
-                        }
-                     }
-                     §§goto(addr0088);
-                  }
-                  addr0091:
-                  this.buffMultiplier = _loc1_;
-                  if(!_loc3_)
-                  {
-                     addr009b:
-                     BindingManager.executeBindings(this,"buffMultiplier",this.buffMultiplier);
-                  }
-                  §§goto(addr00a8);
-               }
-            }
-            §§goto(addr0054);
+            _loc1_.document = this;
          }
-         addr00a8:
+         this.buffMultiplier = _loc1_;
+         BindingManager.executeBindings(this,"buffMultiplier",this.buffMultiplier);
          return _loc1_;
       }
       
@@ -810,34 +290,15 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function set buffMultiplier(param1:BriskImageDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._1628856716buffMultiplier;
-         if(!_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1628856716buffMultiplier = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc4_ && Boolean(this)))
-               {
-                  this._1628856716buffMultiplier = param1;
-                  if(!_loc4_)
-                  {
-                     addr0055:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!(_loc4_ && Boolean(this)))
-                        {
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"buffMultiplier",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr007c);
-               }
-               §§goto(addr0055);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"buffMultiplier",_loc2_,param1));
             }
          }
-         addr007c:
       }
       
       [Bindable(event="propertyChange")]
@@ -848,34 +309,15 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function set cardBoardGfx(param1:BriskImageDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._2074527203cardBoardGfx;
-         if(!_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._2074527203cardBoardGfx = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_ || Boolean(this))
-               {
-                  this._2074527203cardBoardGfx = param1;
-                  if(_loc3_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!_loc4_)
-                        {
-                           addr0067:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"cardBoardGfx",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0076);
-                  }
-                  §§goto(addr0067);
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"cardBoardGfx",_loc2_,param1));
             }
          }
-         addr0076:
       }
       
       [Bindable(event="propertyChange")]
@@ -886,38 +328,15 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function set item(param1:BriskImageDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._3242771item;
-         if(_loc3_ || Boolean(_loc2_))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._3242771item = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc4_ && _loc3_))
-               {
-                  this._3242771item = param1;
-                  if(_loc3_)
-                  {
-                     §§goto(addr005d);
-                  }
-                  §§goto(addr0074);
-               }
-               addr005d:
-               if(this.hasEventListener("propertyChange"))
-               {
-                  if(_loc3_ || Boolean(param1))
-                  {
-                     addr0074:
-                     this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"item",_loc2_,param1));
-                  }
-               }
-               §§goto(addr0083);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"item",_loc2_,param1));
             }
-            addr0083:
-            return;
          }
-         §§goto(addr0074);
       }
       
       [Bindable(event="propertyChange")]
@@ -928,37 +347,15 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function set labelDisplay(param1:LocaLabel) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1184053038labelDisplay;
-         if(_loc4_ || Boolean(this))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1184053038labelDisplay = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc4_)
-               {
-                  this._1184053038labelDisplay = param1;
-                  if(_loc4_ || Boolean(param1))
-                  {
-                     addr0066:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!_loc3_)
-                        {
-                           addr0075:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"labelDisplay",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0084);
-               }
-               §§goto(addr0075);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"labelDisplay",_loc2_,param1));
             }
-            addr0084:
-            return;
          }
-         §§goto(addr0066);
       }
       
       [Bindable(event="propertyChange")]
@@ -969,33 +366,15 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function set newIcon(param1:BriskImageDynaLib) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1844873785newIcon;
-         if(!(_loc3_ && _loc3_))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1844873785newIcon = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc4_ || _loc3_)
-               {
-                  this._1844873785newIcon = param1;
-                  addr0046:
-                  if(_loc4_ || _loc3_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!_loc3_)
-                        {
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"newIcon",_loc2_,param1));
-                        }
-                     }
-                  }
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"newIcon",_loc2_,param1));
             }
-            return;
          }
-         §§goto(addr0046);
       }
       
       [Bindable(event="propertyChange")]
@@ -1006,37 +385,15 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function set pricingBg(param1:BriskImageDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._2121281877pricingBg;
-         if(_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._2121281877pricingBg = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc4_ && _loc3_))
-               {
-                  this._2121281877pricingBg = param1;
-                  addr0040:
-                  if(!(_loc4_ && Boolean(this)))
-                  {
-                     addr005d:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!_loc4_)
-                        {
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"pricingBg",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr007c);
-               }
-               §§goto(addr005d);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"pricingBg",_loc2_,param1));
             }
-            addr007c:
-            return;
          }
-         §§goto(addr0040);
       }
       
       [Bindable(event="propertyChange")]
@@ -1047,34 +404,15 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function set pricingIcon(param1:BriskImageDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._1557790047pricingIcon;
-         if(_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1557790047pricingIcon = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_)
-               {
-                  this._1557790047pricingIcon = param1;
-                  if(!(_loc4_ && Boolean(_loc2_)))
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_)
-                        {
-                           addr0063:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"pricingIcon",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0072);
-               }
-               §§goto(addr0063);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"pricingIcon",_loc2_,param1));
             }
          }
-         addr0072:
       }
       
       [Bindable(event="propertyChange")]
@@ -1085,37 +423,15 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function set qualityBadge(param1:BriskImageDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._191188508qualityBadge;
-         if(_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._191188508qualityBadge = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc4_ && Boolean(param1)))
-               {
-                  addr003e:
-                  this._191188508qualityBadge = param1;
-                  if(_loc3_ || Boolean(this))
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_ || Boolean(this))
-                        {
-                           addr0073:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"qualityBadge",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0082);
-                  }
-                  §§goto(addr0073);
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"qualityBadge",_loc2_,param1));
             }
-            addr0082:
-            return;
          }
-         §§goto(addr003e);
       }
       
       [Bindable(event="propertyChange")]
@@ -1126,36 +442,15 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function set stickyTape(param1:BriskMCDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._1177829717stickyTape;
-         if(!(_loc4_ && Boolean(this)))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1177829717stickyTape = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_ || _loc3_)
-               {
-                  this._1177829717stickyTape = param1;
-                  if(_loc3_)
-                  {
-                     addr005d:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_)
-                        {
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"stickyTape",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr007b);
-               }
-               §§goto(addr005d);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"stickyTape",_loc2_,param1));
             }
-            addr007b:
-            return;
          }
-         §§goto(addr005d);
       }
       
       [Bindable(event="propertyChange")]
@@ -1166,34 +461,15 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function set hostComponent(param1:RewardItemComponent) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._213507019hostComponent;
-         if(_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._213507019hostComponent = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_)
-               {
-                  this._213507019hostComponent = param1;
-                  if(!_loc4_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!_loc4_)
-                        {
-                           addr0051:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"hostComponent",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0060);
-               }
-               §§goto(addr0051);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"hostComponent",_loc2_,param1));
             }
          }
-         addr0060:
       }
    }
 }

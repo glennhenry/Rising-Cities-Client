@@ -9,13 +9,7 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function CityTreasuryCashForActionVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get buttonLabel() : String

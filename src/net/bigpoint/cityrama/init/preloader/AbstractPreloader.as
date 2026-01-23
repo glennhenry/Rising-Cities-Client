@@ -13,28 +13,13 @@ package net.bigpoint.cityrama.init.preloader
       
       public function AbstractPreloader()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       override public function set preloader(param1:Sprite) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            super.preloader = param1;
-            if(!_loc3_)
-            {
-               param1.addEventListener(SystemManagerEvent.FRAME_SUSPENDED,this.handleFrameSuspension);
-            }
-         }
+         super.preloader = param1;
+         param1.addEventListener(SystemManagerEvent.FRAME_SUSPENDED,this.handleFrameSuspension);
       }
       
       protected function onFrameSuspension() : void
@@ -43,35 +28,14 @@ package net.bigpoint.cityrama.init.preloader
       
       protected function resumeInitialization() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            this._customSystemManager.resumeNextFrame();
-         }
+         this._customSystemManager.resumeNextFrame();
       }
       
       protected function handleFrameSuspension(param1:SystemManagerEvent) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            (param1.target as IEventDispatcher).removeEventListener(SystemManagerEvent.FRAME_SUSPENDED,this.handleFrameSuspension);
-            if(!_loc2_)
-            {
-               this._customSystemManager = param1.manager;
-               if(!(_loc2_ && _loc3_))
-               {
-                  addr005d:
-                  this.onFrameSuspension();
-               }
-               return;
-            }
-         }
-         §§goto(addr005d);
+         (param1.target as IEventDispatcher).removeEventListener(SystemManagerEvent.FRAME_SUSPENDED,this.handleFrameSuspension);
+         this._customSystemManager = param1.manager;
+         this.onFrameSuspension();
       }
    }
 }

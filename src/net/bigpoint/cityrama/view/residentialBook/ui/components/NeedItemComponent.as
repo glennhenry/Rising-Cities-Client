@@ -6,16 +6,10 @@ package net.bigpoint.cityrama.view.residentialBook.ui.components
    public class NeedItemComponent extends SkinnableContainer
    {
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(!_loc1_)
-      {
-         _skinParts = {
-            "icon":false,
-            "contentGroup":false
-         };
-      }
+      private static var _skinParts:Object = {
+         "icon":false,
+         "contentGroup":false
+      };
       
       private var _data:*;
       
@@ -23,36 +17,14 @@ package net.bigpoint.cityrama.view.residentialBook.ui.components
       
       public function NeedItemComponent()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || Boolean(this))
-         {
-            super();
-         }
+         super();
       }
       
       public function set data(param1:*) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || param1)
-         {
-            this._data = param1;
-            if(_loc2_ || _loc2_)
-            {
-               this.skin.invalidateProperties();
-               if(!(_loc3_ && _loc3_))
-               {
-                  addr0050:
-                  invalidateProperties();
-               }
-               §§goto(addr0055);
-            }
-            §§goto(addr0050);
-         }
-         addr0055:
+         this._data = param1;
+         this.skin.invalidateProperties();
+         invalidateProperties();
       }
       
       public function get data() : *
@@ -62,27 +34,11 @@ package net.bigpoint.cityrama.view.residentialBook.ui.components
       
       override protected function commitProperties() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
+         super.commitProperties();
+         if(this.icon)
          {
-            super.commitProperties();
-            if(_loc2_)
-            {
-               if(this.icon)
-               {
-                  if(_loc2_)
-                  {
-                     addr003f:
-                     invalidateSize();
-                  }
-               }
-               §§goto(addr0046);
-            }
-            §§goto(addr003f);
+            invalidateSize();
          }
-         addr0046:
       }
    }
 }

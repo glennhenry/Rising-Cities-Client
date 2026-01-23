@@ -19,145 +19,42 @@ package net.bigpoint.cityrama.controller.applicationModes.move
       
       public function ApplicationModeMoveInitialize()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:GridProxy = GridProxy(facade.retrieveProxy(GridProxy.NAME));
-         if(_loc4_ || Boolean(param1))
-         {
-            _loc2_.tileGridVisiblity = false;
-            if(!(_loc3_ && Boolean(this)))
-            {
-               _loc2_.itemGridVisiblity = false;
-               if(_loc4_)
-               {
-                  _loc2_.mode = GridProxy.MODE_SINGLE_SELECTION;
-                  if(!(_loc3_ && Boolean(this)))
-                  {
-                     (facade.retrieveMediator(HUDMediator.NAME) as HUDMediator).visible(false);
-                     if(!_loc3_)
-                     {
-                        addr0081:
-                        facade.registerProxy(new FieldMoveProxy(FieldMoveProxy.NAME));
-                        if(_loc4_ || Boolean(_loc2_))
-                        {
-                           facade.registerCommand(ApplicationNotificationConstants.PLAYFIELD_INTERACTIVE_CLICK,FieldClickToSelectFieldMoveItemCommand);
-                           if(_loc4_ || _loc3_)
-                           {
-                              facade.registerCommand(ApplicationNotificationConstants.FIELD_MOUSE_MOVE,FieldMoveMouseForMoveCommand);
-                              if(!_loc3_)
-                              {
-                                 facade.registerCommand(ApplicationNotificationConstants.PLAYFIELD_INTERACTIVE_ROLL_OVER,PlayfieldInteractiveRollOverForMoveCommand);
-                                 if(!_loc3_)
-                                 {
-                                    addr00ec:
-                                    facade.registerCommand(ApplicationNotificationConstants.PLAYFIELD_INTERACTIVE_ROLL_OUT,PlayfieldInteractiveRollOutForMoveCommand);
-                                    if(!(_loc3_ && Boolean(this)))
-                                    {
-                                       facade.registerCommand(ApplicationNotificationConstants.INVENTORY_ITEM_SELECTED_FOR_MOVE,GenerateSelectedInventoryMoveItemCommand);
-                                       if(!_loc3_)
-                                       {
-                                          addr0119:
-                                          facade.registerCommand(ApplicationNotificationConstants.INVENTORY_ITEM_DESELECTED_FOR_MOVE,RemoveSelectedInventoryMoveItemCommand);
-                                          if(_loc4_ || Boolean(param1))
-                                          {
-                                             addr0134:
-                                             facade.registerCommand(ApplicationNotificationConstants.FIELD_ITEM_DESELECTED_FOR_MOVE,ResetSelectedFieldItemForMoveCommand);
-                                             if(_loc4_)
-                                             {
-                                                addr0148:
-                                                this.setupInventory();
-                                                if(_loc4_ || Boolean(_loc2_))
-                                                {
-                                                   facade.sendNotification(ApplicationNotificationConstants.REMOVE_ALL_URBIES);
-                                                   if(!(_loc3_ && Boolean(this)))
-                                                   {
-                                                      facade.sendNotification(ApplicationNotificationConstants.HIDE_ALL_ICONS);
-                                                      if(_loc4_)
-                                                      {
-                                                         addr0190:
-                                                         sendNotification(VirtualTaskNotificationInterest.APPLICATIONMODES_MOVE_INIT);
-                                                         if(!_loc3_)
-                                                         {
-                                                            addr01a0:
-                                                            sendNotification(ApplicationNotificationConstants.FIELD_INFOLAYER_SHOW_PLAYFIELD_RESOURCES);
-                                                            if(_loc4_ || Boolean(param1))
-                                                            {
-                                                               addr01b8:
-                                                               sendNotification(ApplicationNotificationConstants.POPUP_REMOVE_ALL);
-                                                            }
-                                                            §§goto(addr01c2);
-                                                         }
-                                                      }
-                                                      §§goto(addr01b8);
-                                                   }
-                                                   §§goto(addr01c2);
-                                                }
-                                                §§goto(addr0190);
-                                             }
-                                             §§goto(addr01b8);
-                                          }
-                                          §§goto(addr0190);
-                                       }
-                                       §§goto(addr01a0);
-                                    }
-                                    §§goto(addr0119);
-                                 }
-                                 §§goto(addr0134);
-                              }
-                              addr01c2:
-                              return;
-                           }
-                        }
-                     }
-                  }
-                  §§goto(addr0148);
-               }
-               §§goto(addr01a0);
-            }
-            §§goto(addr00ec);
-         }
-         §§goto(addr0081);
+         _loc2_.tileGridVisiblity = false;
+         _loc2_.itemGridVisiblity = false;
+         _loc2_.mode = GridProxy.MODE_SINGLE_SELECTION;
+         (facade.retrieveMediator(HUDMediator.NAME) as HUDMediator).visible(false);
+         facade.registerProxy(new FieldMoveProxy(FieldMoveProxy.NAME));
+         facade.registerCommand(ApplicationNotificationConstants.PLAYFIELD_INTERACTIVE_CLICK,FieldClickToSelectFieldMoveItemCommand);
+         facade.registerCommand(ApplicationNotificationConstants.FIELD_MOUSE_MOVE,FieldMoveMouseForMoveCommand);
+         facade.registerCommand(ApplicationNotificationConstants.PLAYFIELD_INTERACTIVE_ROLL_OVER,PlayfieldInteractiveRollOverForMoveCommand);
+         facade.registerCommand(ApplicationNotificationConstants.PLAYFIELD_INTERACTIVE_ROLL_OUT,PlayfieldInteractiveRollOutForMoveCommand);
+         facade.registerCommand(ApplicationNotificationConstants.INVENTORY_ITEM_SELECTED_FOR_MOVE,GenerateSelectedInventoryMoveItemCommand);
+         facade.registerCommand(ApplicationNotificationConstants.INVENTORY_ITEM_DESELECTED_FOR_MOVE,RemoveSelectedInventoryMoveItemCommand);
+         facade.registerCommand(ApplicationNotificationConstants.FIELD_ITEM_DESELECTED_FOR_MOVE,ResetSelectedFieldItemForMoveCommand);
+         this.setupInventory();
+         facade.sendNotification(ApplicationNotificationConstants.REMOVE_ALL_URBIES);
+         facade.sendNotification(ApplicationNotificationConstants.HIDE_ALL_ICONS);
+         sendNotification(VirtualTaskNotificationInterest.APPLICATIONMODES_MOVE_INIT);
+         sendNotification(ApplicationNotificationConstants.FIELD_INFOLAYER_SHOW_PLAYFIELD_RESOURCES);
+         sendNotification(ApplicationNotificationConstants.POPUP_REMOVE_ALL);
       }
       
       private function setupInventory() : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc1_:ApplicationMediator = facade.retrieveMediator(ApplicationMediator.NAME) as ApplicationMediator;
          var _loc2_:PlayfieldItemInventoryMediator = facade.retrieveMediator(PlayfieldItemInventoryMediator.NAME) as PlayfieldItemInventoryMediator;
-         if(_loc4_ || Boolean(this))
+         if(!_loc2_)
          {
-            if(!_loc2_)
-            {
-               if(!_loc3_)
-               {
-                  addr0068:
-                  _loc2_ = new PlayfieldItemInventoryMediator(new PlayfieldItemInventoryView());
-                  if(_loc4_ || Boolean(_loc2_))
-                  {
-                     facade.registerMediator(_loc2_);
-                  }
-                  addr008f:
-                  _loc1_.component.mainView.inventoryTopBarView.addElement(_loc2_.component);
-               }
-               return;
-            }
-            §§goto(addr008f);
+            _loc2_ = new PlayfieldItemInventoryMediator(new PlayfieldItemInventoryView());
+            facade.registerMediator(_loc2_);
          }
-         §§goto(addr0068);
+         _loc1_.component.mainView.inventoryTopBarView.addElement(_loc2_.component);
       }
    }
 }

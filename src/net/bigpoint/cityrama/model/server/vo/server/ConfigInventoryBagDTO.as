@@ -13,35 +13,11 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigInventoryBagDTO(param1:Object)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            super();
-            if(!(_loc3_ && _loc3_))
-            {
-               this._id = param1.id;
-               if(_loc2_ || Boolean(param1))
-               {
-                  this._initialSlots = Number(param1["is"]);
-                  addr004c:
-                  if(_loc2_)
-                  {
-                     this._maxSlots = param1.ms;
-                     if(_loc2_ || _loc2_)
-                     {
-                        addr0088:
-                        this._priceModifier = param1.pm;
-                     }
-                     return;
-                  }
-               }
-               §§goto(addr0088);
-            }
-            §§goto(addr004c);
-         }
-         §§goto(addr0088);
+         super();
+         this._id = param1.id;
+         this._initialSlots = Number(param1["is"]);
+         this._maxSlots = param1.ms;
+         this._priceModifier = param1.pm;
       }
       
       public function get id() : Number

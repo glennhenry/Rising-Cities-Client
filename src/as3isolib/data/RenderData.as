@@ -13,13 +13,7 @@ package as3isolib.data
       
       public function RenderData()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && Boolean(this)))
-         {
-            super();
-         }
+         super();
       }
    }
 }

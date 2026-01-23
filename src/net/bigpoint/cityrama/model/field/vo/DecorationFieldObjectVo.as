@@ -15,20 +15,8 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function DecorationFieldObjectVo(param1:ConfigPlayfieldItemDTO)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            super(param1);
-            if(_loc2_ || Boolean(param1))
-            {
-               addr003f:
-               useIcons = false;
-            }
-            return;
-         }
-         §§goto(addr003f);
+         super(param1);
+         useIcons = false;
       }
       
       public function get residentialNeeds() : Vector.<NeedVo>
@@ -38,13 +26,7 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function set residentialNeeds(param1:Vector.<NeedVo>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._residentialNeeds = param1;
-         }
+         this._residentialNeeds = param1;
       }
       
       public function get decorationVo() : DecorationVo
@@ -54,24 +36,9 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function set decorationVo(param1:DecorationVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._decorationVo = param1;
-            if(_loc2_ || _loc3_)
-            {
-               CityramaLogger.logger.debug("set decorationVo fired");
-               if(_loc2_)
-               {
-                  addr0049:
-                  dispatchEvent(new DecorationObjectVoEvent(DecorationObjectVoEvent.DATA_CHANGED));
-               }
-               return;
-            }
-         }
-         §§goto(addr0049);
+         this._decorationVo = param1;
+         CityramaLogger.logger.debug("set decorationVo fired");
+         dispatchEvent(new DecorationObjectVoEvent(DecorationObjectVoEvent.DATA_CHANGED));
       }
    }
 }

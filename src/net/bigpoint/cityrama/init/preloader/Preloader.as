@@ -7,101 +7,34 @@ package net.bigpoint.cityrama.init.preloader
       
       public function Preloader()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       override protected function onFrameSuspension() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
+         if(!preloaderDisplay)
          {
-            if(!preloaderDisplay)
-            {
-               if(!_loc2_)
-               {
-                  addr002a:
-                  this.createChildren();
-                  if(_loc1_ || _loc1_)
-                  {
-                     addr003c:
-                     setInitProgress(75,100);
-                     if(!(_loc2_ && _loc1_))
-                     {
-                        addr0054:
-                        this.initiaizeFramework();
-                     }
-                     §§goto(addr0059);
-                  }
-                  §§goto(addr0054);
-               }
-               addr0059:
-               return;
-            }
-            §§goto(addr003c);
+            this.createChildren();
          }
-         §§goto(addr002a);
+         setInitProgress(75,100);
+         this.initiaizeFramework();
       }
       
       protected function initiaizeFramework() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            StatInfoLayer.instance.executeStep(StatInfoLayer.STEN_GAMECLIENTLOADS);
-            if(!(_loc2_ && Boolean(this)))
-            {
-               addr0032:
-               _customSystemManager.resumeNextFrame();
-            }
-            return;
-         }
-         §§goto(addr0032);
+         StatInfoLayer.instance.executeStep(StatInfoLayer.STEN_GAMECLIENTLOADS);
+         _customSystemManager.resumeNextFrame();
       }
       
       override protected function createChildren() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
+         if(!preloaderDisplay)
          {
-            if(!preloaderDisplay)
-            {
-               if(_loc1_ || _loc1_)
-               {
-                  preloaderDisplay = new PreloaderView();
-                  if(_loc1_)
-                  {
-                     preloaderDisplay.x = 0;
-                     if(!(_loc2_ && Boolean(this)))
-                     {
-                        addr005f:
-                        preloaderDisplay.y = 0;
-                        if(!_loc2_)
-                        {
-                           addr006a:
-                           addChild(preloaderDisplay);
-                        }
-                     }
-                  }
-                  §§goto(addr0071);
-               }
-               §§goto(addr006a);
-            }
-            addr0071:
-            return;
+            preloaderDisplay = new PreloaderView();
+            preloaderDisplay.x = 0;
+            preloaderDisplay.y = 0;
+            addChild(preloaderDisplay);
          }
-         §§goto(addr005f);
       }
    }
 }

@@ -17,43 +17,13 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function PhaseDTO(param1:Object, param2:ConfigPhaseDTO)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_ || Boolean(param2))
-         {
-            super();
-            if(!_loc4_)
-            {
-               this._phaseId = param1.pid as Number;
-               if(!(_loc4_ && Boolean(param1)))
-               {
-                  this._expirationTime = param1.et as Number;
-                  if(_loc3_)
-                  {
-                     addr005f:
-                     this._timeLeft = param1.tl as Number;
-                     if(_loc3_ || Boolean(param1))
-                     {
-                        this._initTime = param1.it as Number;
-                        if(!_loc4_)
-                        {
-                           addr0099:
-                           this._mystId = param1.myst;
-                           if(_loc3_)
-                           {
-                              this._config = param2;
-                           }
-                        }
-                        §§goto(addr00ac);
-                     }
-                  }
-               }
-               §§goto(addr0099);
-            }
-            §§goto(addr005f);
-         }
-         addr00ac:
+         super();
+         this._phaseId = param1.pid as Number;
+         this._expirationTime = param1.et as Number;
+         this._timeLeft = param1.tl as Number;
+         this._initTime = param1.it as Number;
+         this._mystId = param1.myst;
+         this._config = param2;
       }
       
       public function get expirationTime() : Number
@@ -73,24 +43,12 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set config(param1:ConfigPhaseDTO) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._config = param1;
-         }
+         this._config = param1;
       }
       
       public function set expirationTime(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._expirationTime = param1;
-         }
+         this._expirationTime = param1;
       }
       
       public function get timeLeft() : Number
@@ -100,13 +58,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set timeLeft(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._timeLeft = param1;
-         }
+         this._timeLeft = param1;
       }
       
       public function get initTime() : Number

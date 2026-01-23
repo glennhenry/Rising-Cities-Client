@@ -25,76 +25,9 @@ package net.bigpoint.cityrama.constants
       
       public static const EXPANSION:String = "EXPANSION";
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(!(_loc2_ && _loc1_))
-      {
-         FEATURE_REQUIRED_TYPE_LEVEL = "USER_LEVEL";
-         if(_loc1_)
-         {
-            FEATURE_REQUIRED_TYPE_QUEST = "QUEST";
-            if(_loc1_ || ServerFeatureConstants)
-            {
-               BIRTHDAY_EVENT_2013 = "BIRTHDAY_EVENT_2013";
-               if(_loc1_)
-               {
-                  CITYWHEEL = "CITY_WHEEL";
-                  if(_loc1_ || _loc2_)
-                  {
-                     COASTAL_PLAYFIELD_SWITCH = "SECOND_PLAYFIELD";
-                     if(!(_loc2_ && ServerFeatureConstants))
-                     {
-                        SUBURBAN_PLAYFIELD_SWITCH = "THIRD_PLAYFIELD";
-                        if(!_loc2_)
-                        {
-                           MOUNTAIN_PLAYFIELD_SWITCH = "FOURTH_PLAYFIELD";
-                           if(!(_loc2_ && ServerFeatureConstants))
-                           {
-                              addr00af:
-                              BUILDING_MASTERY = "MASTERY";
-                              if(_loc1_)
-                              {
-                                 §§goto(addr00c8);
-                              }
-                              §§goto(addr00de);
-                           }
-                           §§goto(addr00f4);
-                        }
-                        addr00c8:
-                        EMERGENCY = "EMERGENCY";
-                        if(!(_loc2_ && ServerFeatureConstants))
-                        {
-                           addr00de:
-                           EVENTSQUARE = "EVENTSQUARE";
-                           if(!(_loc2_ && _loc1_))
-                           {
-                              addr00f4:
-                              EXPANSION = "EXPANSION";
-                           }
-                        }
-                        §§goto(addr00fd);
-                     }
-                  }
-                  §§goto(addr00fd);
-               }
-               §§goto(addr00af);
-            }
-            addr00fd:
-            return;
-         }
-      }
-      §§goto(addr00de);
-      
       public function ServerFeatureConstants()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && Boolean(this)))
-         {
-            super();
-         }
+         super();
       }
    }
 }

@@ -15,20 +15,11 @@ package net.bigpoint.cityrama.controller.server.messages.education
       
       public function ServerMessageProfessionalLevelUpSuccessCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc2_))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc11_:Boolean = false;
-         var _loc12_:Boolean = _temp_1;
          var _loc2_:MessageVo = param1.getBody() as MessageVo;
          var _loc3_:Number = Number(_loc2_.json.prof);
          var _loc4_:Number = Number(_loc2_.json.spec);
@@ -38,20 +29,11 @@ package net.bigpoint.cityrama.controller.server.messages.education
          var _loc8_:PlayfieldObjectsProxy = facade.retrieveProxy(PlayfieldObjectsProxy.NAME) as PlayfieldObjectsProxy;
          var _loc9_:ProfessionalDTO = _loc7_.getProfessionalById(_loc3_);
          _loc9_.updateSpecialisation(_loc6_.config.professionalSpecializations[_loc4_]);
-         if(_loc12_ || Boolean(param1))
-         {
-            _loc9_.unspentSkillPoints = _loc5_;
-            if(_loc12_ || Boolean(this))
-            {
-               _loc9_.canLevelUp = false;
-            }
-         }
+         _loc9_.unspentSkillPoints = _loc5_;
+         _loc9_.canLevelUp = false;
          var _loc10_:BillboardObject = _loc8_.getBillboardById(_loc9_.buildingId);
          _loc10_.invalidateIconStateManager();
-         if(_loc12_)
-         {
-            facade.sendNotification(ApplicationNotificationConstants.PROFESSIONALS_CHANGED);
-         }
+         facade.sendNotification(ApplicationNotificationConstants.PROFESSIONALS_CHANGED);
       }
    }
 }

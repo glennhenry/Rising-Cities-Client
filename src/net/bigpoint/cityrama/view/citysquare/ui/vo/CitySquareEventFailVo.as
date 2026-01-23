@@ -12,18 +12,6 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public static const STATE_NOSALE:String = "STATE_NOSALE";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(!_loc1_)
-      {
-         STATE_SALE = "STATE_SALE";
-         if(!(_loc1_ && _loc2_))
-         {
-            STATE_NOSALE = "STATE_NOSALE";
-         }
-      }
-      
       private var _polaroidData:BriskDynaVo;
       
       private var _rewardData:RewardItemComponentVo;
@@ -38,43 +26,16 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function CitySquareEventFailVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get state() : String
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc2_)
+         if(this.price != -1)
          {
-            if(this.price != -1)
-            {
-               if(_loc2_)
-               {
-                  addr0037:
-                  §§push(STATE_SALE);
-                  if(_loc2_)
-                  {
-                     return §§pop();
-                  }
-               }
-               else
-               {
-                  addr0040:
-                  return STATE_NOSALE;
-               }
-               return §§pop();
-            }
-            §§goto(addr0040);
+            return STATE_SALE;
          }
-         §§goto(addr0037);
+         return STATE_NOSALE;
       }
       
       public function get rewardData() : RewardItemComponentVo
@@ -84,13 +45,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set rewardData(param1:RewardItemComponentVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            this._rewardData = param1;
-         }
+         this._rewardData = param1;
       }
       
       public function get eventProgress() : StepMarkerVo
@@ -100,13 +55,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set eventProgress(param1:StepMarkerVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._eventProgress = param1;
-         }
+         this._eventProgress = param1;
       }
       
       public function get price() : Number
@@ -116,13 +65,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set price(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._price = param1;
-         }
+         this._price = param1;
       }
       
       public function get affordable() : Boolean
@@ -132,13 +75,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set affordable(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._affordable = param1;
-         }
+         this._affordable = param1;
       }
       
       public function get polaroidData() : BriskDynaVo
@@ -148,13 +85,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set polaroidData(param1:BriskDynaVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._polaroidData = param1;
-         }
+         this._polaroidData = param1;
       }
       
       public function get timerData() : TimerBarComponentVo
@@ -164,13 +95,7 @@ package net.bigpoint.cityrama.view.citysquare.ui.vo
       
       public function set timerData(param1:TimerBarComponentVo) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._timerData = param1;
-         }
+         this._timerData = param1;
       }
    }
 }

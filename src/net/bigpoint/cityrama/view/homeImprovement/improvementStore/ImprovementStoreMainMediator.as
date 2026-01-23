@@ -17,115 +17,39 @@ package net.bigpoint.cityrama.view.homeImprovement.improvementStore
       
       public static const NAME:String = "ImprovementStoreMainMediator";
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(_loc1_ || _loc2_)
-      {
-         NAME = "ImprovementStoreMainMediator";
-      }
-      
       public function ImprovementStoreMainMediator(param1:String = null, param2:Object = null)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(!(_loc4_ && Boolean(param1)))
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
       
       public function init() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc2_)
-         {
-            this.setImprovementBoosterData();
-            if(!(_loc1_ && _loc1_))
-            {
-               this.setupListener();
-            }
-         }
+         this.setImprovementBoosterData();
+         this.setupListener();
       }
       
       public function removeRelevantListener() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
-         {
-            this.removeListener();
-         }
+         this.removeListener();
       }
       
       override public function onRemove() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            this.removeListener();
-            if(_loc2_ || Boolean(this))
-            {
-               sendNotification(VirtualTaskNotificationInterest.IMPROVEMENT_SHOP_CLOSED);
-               if(_loc2_ || _loc2_)
-               {
-                  super.onRemove();
-               }
-            }
-         }
+         this.removeListener();
+         sendNotification(VirtualTaskNotificationInterest.IMPROVEMENT_SHOP_CLOSED);
+         super.onRemove();
       }
       
       private function setupListener() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            §§push(this.component);
-            if(!_loc2_)
-            {
-               §§pop().addEventListener(ItemClickEvent.ITEM_CLICK,this.handleSlotClick);
-               if(!_loc2_)
-               {
-                  addr0047:
-                  this.component.addEventListener(PaperPopupWindow.BACK,this.handleBackClick);
-                  addr0043:
-               }
-               return;
-            }
-            §§goto(addr0047);
-         }
-         §§goto(addr0043);
+         this.component.addEventListener(ItemClickEvent.ITEM_CLICK,this.handleSlotClick);
+         this.component.addEventListener(PaperPopupWindow.BACK,this.handleBackClick);
       }
       
       private function removeListener() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            §§push(this.component);
-            if(!(_loc2_ && Boolean(this)))
-            {
-               §§pop().removeEventListener(ItemClickEvent.ITEM_CLICK,this.handleSlotClick);
-               if(_loc1_)
-               {
-                  addr0047:
-                  this.component.removeEventListener(PaperPopupWindow.BACK,this.handleBackClick);
-               }
-               §§goto(addr0054);
-            }
-            §§goto(addr0047);
-         }
-         addr0054:
+         this.component.removeEventListener(ItemClickEvent.ITEM_CLICK,this.handleSlotClick);
+         this.component.removeEventListener(PaperPopupWindow.BACK,this.handleBackClick);
       }
       
       override public function listNotificationInterests() : Array
@@ -135,144 +59,42 @@ package net.bigpoint.cityrama.view.homeImprovement.improvementStore
       
       override public function handleNotification(param1:INotification) : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
-         §§push(param1.getName());
-         if(!(_loc5_ && _loc3_))
+         var _loc2_:String = param1.getName() as String;
+         switch(_loc2_)
          {
-            §§push(§§pop() as String);
+            case ApplicationNotificationConstants.IMPROVEMENT_STORE_CLEAN_CONTENT:
+               this.cleanContainers();
+               break;
+            case ApplicationNotificationConstants.IMPROVEMENT_STORE_UPDATE_REWARDS:
+               this.showRewardAnimation();
          }
-         var _loc2_:* = §§pop();
-         var _loc3_:* = _loc2_;
-         if(!_loc5_)
-         {
-            §§push(ApplicationNotificationConstants.IMPROVEMENT_STORE_CLEAN_CONTENT);
-            if(!_loc5_)
-            {
-               §§push(_loc3_);
-               if(_loc4_)
-               {
-                  if(§§pop() === §§pop())
-                  {
-                     if(_loc4_ || _loc3_)
-                     {
-                        §§push(0);
-                        if(_loc4_)
-                        {
-                        }
-                     }
-                     else
-                     {
-                        addr00be:
-                        §§push(1);
-                        if(_loc5_)
-                        {
-                        }
-                     }
-                     §§goto(addr00d6);
-                  }
-                  else
-                  {
-                     §§goto(addr00ba);
-                  }
-               }
-               addr00ba:
-               §§goto(addr00b9);
-            }
-            addr00b9:
-            if(ApplicationNotificationConstants.IMPROVEMENT_STORE_UPDATE_REWARDS === _loc3_)
-            {
-               §§goto(addr00be);
-            }
-            else
-            {
-               §§push(2);
-            }
-            addr00d6:
-            switch(§§pop())
-            {
-               case 0:
-                  this.cleanContainers();
-                  if(_loc4_ || Boolean(param1))
-                  {
-                  }
-                  break;
-               case 1:
-                  this.showRewardAnimation();
-                  if(_loc5_ && Boolean(this))
-                  {
-                  }
-            }
-            return;
-         }
-         §§goto(addr00be);
       }
       
       private function showRewardAnimation() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && Boolean(this)))
-         {
-            facade.sendNotification(ApplicationNotificationConstants.IMPROVEMENT_STORE_ANIMATION,{"container":this.component});
-            if(!(_loc2_ && Boolean(this)))
-            {
-               this.component.showBackButton = true;
-            }
-         }
+         facade.sendNotification(ApplicationNotificationConstants.IMPROVEMENT_STORE_ANIMATION,{"container":this.component});
+         this.component.showBackButton = true;
       }
       
       private function handleSlotClick(param1:ItemClickEvent) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:BoosterpackVo = param1.item as BoosterpackVo;
-         if(_loc4_ || Boolean(_loc2_))
-         {
-            StaticSoundDelegate.playSound(StaticSoundDelegate.BUTTON_CLICK);
-            if(!_loc3_)
-            {
-               facade.sendNotification(ApplicationNotificationConstants.IMPROVEMENT_STORE_CONTENT_CHANGED,{
-                  "container":this.component,
-                  "content":_loc2_.slotId
-               });
-               if(!(_loc3_ && _loc3_))
-               {
-                  addr007c:
-                  this.component.showBackButton = true;
-               }
-            }
-            return;
-         }
-         §§goto(addr007c);
+         StaticSoundDelegate.playSound(StaticSoundDelegate.BUTTON_CLICK);
+         facade.sendNotification(ApplicationNotificationConstants.IMPROVEMENT_STORE_CONTENT_CHANGED,{
+            "container":this.component,
+            "content":_loc2_.slotId
+         });
+         this.component.showBackButton = true;
       }
       
       private function handleBackClick(param1:Event) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
-         {
-            facade.sendNotification(ApplicationNotificationConstants.IMPROVEMENT_STORE_CONTENT_CHANGED,{
-               "container":this.component,
-               "content":null
-            });
-            if(_loc3_)
-            {
-               StaticSoundDelegate.playSound(StaticSoundDelegate.BUTTON_CLICK);
-               if(_loc3_ || Boolean(this))
-               {
-                  addr0070:
-                  this.component.showBackButton = false;
-               }
-            }
-            return;
-         }
-         §§goto(addr0070);
+         facade.sendNotification(ApplicationNotificationConstants.IMPROVEMENT_STORE_CONTENT_CHANGED,{
+            "container":this.component,
+            "content":null
+         });
+         StaticSoundDelegate.playSound(StaticSoundDelegate.BUTTON_CLICK);
+         this.component.showBackButton = false;
       }
       
       private function get component() : IngameStoreBook
@@ -282,45 +104,19 @@ package net.bigpoint.cityrama.view.homeImprovement.improvementStore
       
       private function setImprovementBoosterData() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            facade.sendNotification(ApplicationNotificationConstants.IMPROVEMENT_STORE_CONTENT_CHANGED,{
-               "container":this.component,
-               "content":null
-            });
-            if(!_loc1_)
-            {
-               this.component.showBackButton = false;
-            }
-         }
+         facade.sendNotification(ApplicationNotificationConstants.IMPROVEMENT_STORE_CONTENT_CHANGED,{
+            "container":this.component,
+            "content":null
+         });
+         this.component.showBackButton = false;
       }
       
       private function cleanContainers() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
+         if(this.component.contentGroup)
          {
-            §§push(this.component);
-            if(!_loc1_)
-            {
-               if(§§pop().contentGroup)
-               {
-                  if(!(_loc1_ && _loc2_))
-                  {
-                     addr0041:
-                     this.component.contentGroup.removeAllElements();
-                  }
-               }
-               §§goto(addr0048);
-            }
-            §§goto(addr0041);
+            this.component.contentGroup.removeAllElements();
          }
-         addr0048:
       }
    }
 }

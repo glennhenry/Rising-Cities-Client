@@ -70,7 +70,6 @@ class ModuleManagerImpl extends EventDispatcher
       var _loc3_:Object = null;
       var _loc4_:ModuleInfo = null;
       var _loc5_:ApplicationDomain = null;
-      var _loc6_:Class = null;
       var _loc2_:String = getQualifiedClassName(param1);
       for(_loc3_ in this.moduleDictionary)
       {
@@ -80,8 +79,8 @@ class ModuleManagerImpl extends EventDispatcher
             _loc5_ = _loc4_.applicationDomain;
             if(_loc5_.hasDefinition(_loc2_))
             {
-               _loc6_ = Class(_loc5_.getDefinition(_loc2_));
-               if((Boolean(_loc6_)) && param1 is _loc6_)
+               var _loc6_:Class = Class(_loc5_.getDefinition(_loc2_));
+               if((Boolean(_loc6_)) && param1 is null)
                {
                   return _loc4_.factory;
                }

@@ -13,13 +13,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function SlotProfessionalVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get professional() : ProfessionalDTO
@@ -34,24 +28,12 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set slotNo(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this._slotNo = param1;
-         }
+         this._slotNo = param1;
       }
       
       public function set professional(param1:ProfessionalDTO) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._professional = param1;
-         }
+         this._professional = param1;
       }
       
       public function get isTemporary() : Boolean
@@ -61,13 +43,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set isTemporary(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._isTemporary = param1;
-         }
+         this._isTemporary = param1;
       }
    }
 }

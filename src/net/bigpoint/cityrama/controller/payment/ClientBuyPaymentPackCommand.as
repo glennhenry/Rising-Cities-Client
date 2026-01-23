@@ -12,41 +12,23 @@ package net.bigpoint.cityrama.controller.payment
       
       public function ClientBuyPaymentPackCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && Boolean(this)))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc6_:Boolean = true;
-         var _loc7_:* = §§pop();
          var _loc3_:ServerCommunicationProxy = null;
          var _loc4_:Object = null;
          var _loc5_:MessageVo = null;
          var _loc2_:ConfigPaymentPackDTO = param1.getBody() as ConfigPaymentPackDTO;
-         if(!_loc7_)
+         if(_loc2_)
          {
-            if(_loc2_)
-            {
-               _loc3_ = ServerCommunicationProxy(facade.retrieveProxy(ServerCommunicationProxy.NAME));
-               _loc4_ = new Object();
-               _loc4_.cppi = _loc2_.id;
-               _loc5_ = _loc3_.createMessage(_loc4_,ServerMessageConstants.PAYMENT_BUY_PACK);
-               addr0046:
-               if(_loc6_)
-               {
-                  _loc3_.sendMessage(_loc5_);
-               }
-            }
-            return;
+            _loc3_ = ServerCommunicationProxy(facade.retrieveProxy(ServerCommunicationProxy.NAME));
+            _loc4_ = new Object();
+            _loc4_.cppi = _loc2_.id;
+            _loc5_ = _loc3_.createMessage(_loc4_,ServerMessageConstants.PAYMENT_BUY_PACK);
+            _loc3_.sendMessage(_loc5_);
          }
-         §§goto(addr0046);
       }
    }
 }

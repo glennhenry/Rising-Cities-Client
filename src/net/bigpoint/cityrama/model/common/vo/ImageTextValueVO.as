@@ -21,113 +21,34 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function ImageTextValueVO()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
-         {
-            super();
-            if(!(_loc1_ && _loc2_))
-            {
-               addr0038:
-               this.cleanAll();
-            }
-            return;
-         }
-         §§goto(addr0038);
+         super();
+         this.cleanAll();
       }
       
       public function cleanAll() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || Boolean(this))
-         {
-            this._visualName = "";
-            if(_loc2_ || Boolean(this))
-            {
-               this._visualLibName = "";
-               if(!_loc1_)
-               {
-                  addr0046:
-                  this._valueFontSize = 0;
-                  if(!_loc1_)
-                  {
-                     §§goto(addr0051);
-                  }
-               }
-               §§goto(addr008c);
-            }
-            addr0051:
-            this._valueTextLabel = "";
-            if(!(_loc1_ && _loc1_))
-            {
-               this._valueColor = 0;
-               if(_loc2_)
-               {
-                  this._nameText = "";
-                  if(!(_loc1_ && _loc1_))
-                  {
-                     addr008c:
-                     this._nameFontSize = 0;
-                     if(_loc2_ || Boolean(this))
-                     {
-                        this._nameColor = 0;
-                     }
-                  }
-               }
-            }
-            return;
-         }
-         §§goto(addr0046);
+         this._visualName = "";
+         this._visualLibName = "";
+         this._valueFontSize = 0;
+         this._valueTextLabel = "";
+         this._valueColor = 0;
+         this._nameText = "";
+         this._nameFontSize = 0;
+         this._nameColor = 0;
       }
       
       public function clone() : ImageTextValueVO
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:ImageTextValueVO = new ImageTextValueVO();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            _loc1_.visualName = this.visualName;
-            if(_loc2_ || _loc3_)
-            {
-               _loc1_.visualLibName = this.visualLibName;
-               addr003e:
-               if(!_loc3_)
-               {
-                  _loc1_.valueFontSize = this.valueFontSize;
-                  if(_loc2_ || _loc2_)
-                  {
-                     addr006e:
-                     _loc1_.valueTextLabel = this.valueTextLabel;
-                     if(!_loc3_)
-                     {
-                        _loc1_.valueColor = this.valueColor;
-                        if(_loc2_)
-                        {
-                           _loc1_.nameText = this.nameText;
-                           if(!_loc3_)
-                           {
-                              addr00a0:
-                              _loc1_.nameFontSize = this.nameFontSize;
-                              if(!_loc3_)
-                              {
-                                 _loc1_.nameColor = this.nameColor;
-                              }
-                           }
-                           return _loc1_;
-                        }
-                     }
-                  }
-                  §§goto(addr00a0);
-               }
-            }
-            §§goto(addr006e);
-         }
-         §§goto(addr003e);
+         _loc1_.visualName = this.visualName;
+         _loc1_.visualLibName = this.visualLibName;
+         _loc1_.valueFontSize = this.valueFontSize;
+         _loc1_.valueTextLabel = this.valueTextLabel;
+         _loc1_.valueColor = this.valueColor;
+         _loc1_.nameText = this.nameText;
+         _loc1_.nameFontSize = this.nameFontSize;
+         _loc1_.nameColor = this.nameColor;
+         return _loc1_;
       }
       
       public function get visualName() : String
@@ -137,13 +58,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set visualName(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._visualName = param1;
-         }
+         this._visualName = param1;
       }
       
       public function get visualLibName() : String
@@ -153,13 +68,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set visualLibName(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._visualLibName = param1;
-         }
+         this._visualLibName = param1;
       }
       
       public function get valueFontSize() : uint
@@ -169,13 +78,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set valueFontSize(param1:uint) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._valueFontSize = param1;
-         }
+         this._valueFontSize = param1;
       }
       
       public function get valueTextLabel() : String
@@ -185,13 +88,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set valueTextLabel(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(param1)))
-         {
-            this._valueTextLabel = param1;
-         }
+         this._valueTextLabel = param1;
       }
       
       public function get valueColor() : uint
@@ -201,13 +98,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set valueColor(param1:uint) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._valueColor = param1;
-         }
+         this._valueColor = param1;
       }
       
       public function get nameText() : String
@@ -217,13 +108,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set nameText(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._nameText = param1;
-         }
+         this._nameText = param1;
       }
       
       public function get nameFontSize() : uint
@@ -233,13 +118,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set nameFontSize(param1:uint) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._nameFontSize = param1;
-         }
+         this._nameFontSize = param1;
       }
       
       public function get nameColor() : uint
@@ -249,13 +128,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set nameColor(param1:uint) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._nameColor = param1;
-         }
+         this._nameColor = param1;
       }
    }
 }

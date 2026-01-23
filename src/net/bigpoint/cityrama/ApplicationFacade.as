@@ -14,75 +14,31 @@ package net.bigpoint.cityrama
       
       public function ApplicationFacade(param1:SingletonEnforcer)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            super();
-         }
+         super();
       }
       
       public static function getInstance() : ApplicationFacade
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || ApplicationFacade)
+         if(instance == null)
          {
-            if(instance == null)
-            {
-               if(!(_loc1_ && ApplicationFacade))
-               {
-                  addr003d:
-                  instance = new ApplicationFacade(new SingletonEnforcer());
-               }
-            }
-            return ApplicationFacade(instance);
+            instance = new ApplicationFacade(new SingletonEnforcer());
          }
-         §§goto(addr003d);
+         return ApplicationFacade(instance);
       }
       
       override protected function initializeController() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super.initializeController();
-            if(!(_loc1_ && _loc2_))
-            {
-               addr0032:
-               registerCommand(ApplicationNotificationConstants.STARTUP,PreloaderStartupCommand);
-               if(_loc2_ || _loc2_)
-               {
-                  registerCommand(ApplicationNotificationConstants.APPLICATION_INITIALIZED,StartUpCommand);
-               }
-            }
-            return;
-         }
-         §§goto(addr0032);
+         super.initializeController();
+         registerCommand(ApplicationNotificationConstants.STARTUP,PreloaderStartupCommand);
+         registerCommand(ApplicationNotificationConstants.APPLICATION_INITIALIZED,StartUpCommand);
       }
       
       public function startup(param1:MainApplication) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!_loc3_)
-         {
-            this._mainView = param1.mainView;
-            if(!(_loc3_ && _loc2_))
-            {
-               registerProxy(new DeveloperSettingsProxy(DeveloperSettingsProxy.NAME));
-            }
-         }
+         this._mainView = param1.mainView;
+         registerProxy(new DeveloperSettingsProxy(DeveloperSettingsProxy.NAME));
          var _loc2_:DeveloperSettingsProxy = retrieveProxy(DeveloperSettingsProxy.NAME) as DeveloperSettingsProxy;
-         if(_loc4_)
-         {
-            _loc2_.application = param1;
-         }
+         _loc2_.application = param1;
       }
       
       public function get mainView() : MainView

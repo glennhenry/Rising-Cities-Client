@@ -8,21 +8,15 @@ package net.bigpoint.cityrama.view.hud.ui.components
    public class DropDownListComponent extends DropDownList
    {
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(_loc1_)
-      {
-         _skinParts = {
-            "dropDown":false,
-            "dataGroup":false,
-            "dropIndicator":false,
-            "icon":true,
-            "labelDisplay":false,
-            "scroller":false,
-            "openButton":true
-         };
-      }
+      private static var _skinParts:Object = {
+         "dropDown":false,
+         "dataGroup":false,
+         "dropIndicator":false,
+         "icon":true,
+         "labelDisplay":false,
+         "scroller":false,
+         "openButton":true
+      };
       
       private var _iconAdded:Boolean;
       
@@ -32,165 +26,48 @@ package net.bigpoint.cityrama.view.hud.ui.components
       
       public function DropDownListComponent()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc1_)
-         {
-            this.addEventListener(IndexChangeEvent.CHANGE,this.handleIndexChange);
-            if(_loc1_)
-            {
-               super();
-            }
-         }
+         this.addEventListener(IndexChangeEvent.CHANGE,this.handleIndexChange);
+         super();
       }
       
       override protected function commitProperties() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc1_)
+         if(Boolean(this.icon) && Boolean(dataProvider))
          {
-            §§push(Boolean(this.icon));
-            if(!(_loc1_ && _loc1_))
+            if(selectedIndex == -1)
             {
-               var _temp_4:* = §§pop();
-               §§push(_temp_4);
-               if(_temp_4)
-               {
-                  if(!_loc1_)
-                  {
-                     §§goto(addr0044);
-                  }
-               }
-               §§goto(addr004e);
+               selectedIndex = this._userselectedIndex;
+               this.handleIndexChange(null);
             }
-            addr0044:
-            §§pop();
-            if(!_loc1_)
-            {
-               addr004e:
-               if(Boolean(dataProvider))
-               {
-                  if(_loc2_)
-                  {
-                     if(selectedIndex == -1)
-                     {
-                        if(!(_loc1_ && _loc1_))
-                        {
-                           selectedIndex = this._userselectedIndex;
-                           if(!_loc1_)
-                           {
-                              addr0086:
-                              this.handleIndexChange(null);
-                              if(_loc2_)
-                              {
-                                 addr0091:
-                                 super.commitProperties();
-                              }
-                              §§goto(addr0097);
-                           }
-                        }
-                     }
-                     §§goto(addr0091);
-                  }
-                  §§goto(addr0097);
-               }
-               §§goto(addr0091);
-            }
-            addr0097:
-            return;
          }
-         §§goto(addr0086);
+         super.commitProperties();
       }
       
       private function handleIndexChange(param1:IndexChangeEvent) : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc2_:DropDownList = this;
          var _loc3_:IDropDownListItemVo = _loc2_.dataProvider.getItemAt(_loc2_.selectedIndex) as IDropDownListItemVo;
-         if(_loc4_ || Boolean(_loc3_))
-         {
-            §§push(this.icon);
-            if(!(_loc5_ && Boolean(_loc2_)))
-            {
-               §§push(_loc3_.dynaLibName);
-               if(!(_loc5_ && Boolean(this)))
-               {
-                  §§pop().dynaLibName = §§pop();
-                  if(!_loc5_)
-                  {
-                     this._userselectedIndex = selectedIndex;
-                     if(!(_loc5_ && Boolean(_loc3_)))
-                     {
-                        addr00a2:
-                        this.icon.dynaBmpSourceName = _loc3_.dynaImageName + "_big";
-                        addr0099:
-                        addr009d:
-                     }
-                     return;
-                  }
-                  §§goto(addr0099);
-               }
-               §§goto(addr00a2);
-            }
-            §§goto(addr009d);
-         }
-         §§goto(addr0099);
+         this.icon.dynaLibName = _loc3_.dynaLibName;
+         this._userselectedIndex = selectedIndex;
+         this.icon.dynaBmpSourceName = _loc3_.dynaImageName + "_big";
       }
       
       public function set externelSelectedIndex(param1:Object) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:DropDownList = this;
-         if(_loc4_ || _loc3_)
-         {
-            this._userselectedIndex = _loc2_.dataProvider.getItemIndex(param1);
-            if(!_loc3_)
-            {
-               selectedIndex = -1;
-               if(_loc4_ || Boolean(param1))
-               {
-                  invalidateProperties();
-               }
-            }
-         }
+         this._userselectedIndex = _loc2_.dataProvider.getItemIndex(param1);
+         selectedIndex = -1;
+         invalidateProperties();
       }
       
       override protected function partAdded(param1:String, param2:Object) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_ || Boolean(this))
+         super.partAdded(param1,param2);
+         if(param2 == this.icon)
          {
-            super.partAdded(param1,param2);
-            if(!_loc4_)
-            {
-               if(param2 == this.icon)
-               {
-                  if(!_loc4_)
-                  {
-                     this._iconAdded = true;
-                     if(_loc3_)
-                     {
-                        addr0053:
-                        invalidateProperties();
-                     }
-                     §§goto(addr0058);
-                  }
-                  §§goto(addr0053);
-               }
-               addr0058:
-               return;
-            }
+            this._iconAdded = true;
+            invalidateProperties();
          }
-         §§goto(addr0053);
       }
       
       public function get userselectedIndex() : int

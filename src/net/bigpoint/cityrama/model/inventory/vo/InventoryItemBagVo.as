@@ -13,24 +13,9 @@ package net.bigpoint.cityrama.model.inventory.vo
       
       public function InventoryItemBagVo(param1:InventoryItemBagDTO, param2:ConfigInventoryBagDTO)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_ || Boolean(param2))
-         {
-            super();
-            if(!_loc4_)
-            {
-               addr0038:
-               this._dto = param1;
-               if(!(_loc4_ && Boolean(param1)))
-               {
-                  this._config = param2;
-               }
-            }
-            return;
-         }
-         §§goto(addr0038);
+         super();
+         this._dto = param1;
+         this._config = param2;
       }
       
       public function get bagType() : String

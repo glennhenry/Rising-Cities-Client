@@ -14,20 +14,11 @@ package net.bigpoint.cityrama.controller.applicationStartup.prepCommands.control
       
       public function ShowBoosterPackInUiInfolayerCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc11_:Boolean = true;
-         var _loc12_:* = §§pop();
          var _loc2_:GameConfigProxy = facade.retrieveProxy(GameConfigProxy.NAME) as GameConfigProxy;
          var _loc3_:Number = Number(param1.getBody().cid);
          var _loc4_:Point = Point(param1.getBody().pt);
@@ -38,48 +29,10 @@ package net.bigpoint.cityrama.controller.applicationStartup.prepCommands.control
             _loc6_ = _loc2_.config.improvementBoosterPacks[_loc3_];
          }
          var _loc7_:String = param1.getBody().type;
-         §§push(LocaUtils);
-         §§push("rcl.guiinfolayer.boosterpacks");
-         §§push("rcl.guiinfolayer.boosterpacks.");
-         if(!_loc12_)
-         {
-            §§push(§§pop() + _loc6_.locaId);
-            if(!(_loc12_ && Boolean(this)))
-            {
-               §§push(§§pop() + ".name.capital");
-            }
-         }
-         §§push(§§pop().getString(§§pop(),§§pop()));
-         if(_loc11_)
-         {
-            §§push(§§pop());
-         }
-         var _loc8_:* = §§pop();
-         §§push(LocaUtils);
-         §§push("rcl.guiinfolayer.boosterpacks");
-         §§push("rcl.guiinfolayer.boosterpacks.");
-         if(_loc11_)
-         {
-            §§push(§§pop() + _loc6_.locaId);
-            if(_loc11_)
-            {
-               addr00e4:
-               §§push(§§pop() + ".flavor");
-            }
-            §§push(§§pop().getString(§§pop(),§§pop()));
-            if(!(_loc12_ && Boolean(param1)))
-            {
-               §§push(§§pop());
-            }
-            var _loc9_:* = §§pop();
-            var _loc10_:SimpleTextUiInfolayerContentVo = new SimpleTextUiInfolayerContentVo(_loc5_,_loc4_,_loc9_,_loc8_);
-            if(!(_loc12_ && Boolean(this)))
-            {
-               sendNotification(ApplicationNotificationConstants.SHOW_UI_INFOLAYER,_loc10_,param1.getType());
-            }
-            return;
-         }
-         §§goto(addr00e4);
+         var _loc8_:String = LocaUtils.getString("rcl.guiinfolayer.boosterpacks","rcl.guiinfolayer.boosterpacks." + _loc6_.locaId + ".name.capital");
+         var _loc9_:String = LocaUtils.getString("rcl.guiinfolayer.boosterpacks","rcl.guiinfolayer.boosterpacks." + _loc6_.locaId + ".flavor");
+         var _loc10_:SimpleTextUiInfolayerContentVo = new SimpleTextUiInfolayerContentVo(_loc5_,_loc4_,_loc9_,_loc8_);
+         sendNotification(ApplicationNotificationConstants.SHOW_UI_INFOLAYER,_loc10_,param1.getType());
       }
    }
 }

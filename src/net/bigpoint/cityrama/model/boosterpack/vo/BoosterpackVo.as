@@ -28,13 +28,7 @@ package net.bigpoint.cityrama.model.boosterpack.vo
       
       public function BoosterpackVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       public function get locaId() : Number
@@ -44,13 +38,7 @@ package net.bigpoint.cityrama.model.boosterpack.vo
       
       public function set locaId(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._locaId = param1;
-         }
+         this._locaId = param1;
       }
       
       public function get gfxId() : Number
@@ -60,13 +48,7 @@ package net.bigpoint.cityrama.model.boosterpack.vo
       
       public function set gfxId(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._gfxId = param1;
-         }
+         this._gfxId = param1;
       }
       
       public function get config() : ConfigBoosterDTO
@@ -76,13 +58,7 @@ package net.bigpoint.cityrama.model.boosterpack.vo
       
       public function set config(param1:ConfigBoosterDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._config = param1;
-         }
+         this._config = param1;
       }
       
       public function get id() : Number
@@ -92,13 +68,7 @@ package net.bigpoint.cityrama.model.boosterpack.vo
       
       public function set id(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._id = param1;
-         }
+         this._id = param1;
       }
       
       public function get defaultCostAmount() : Number
@@ -113,24 +83,12 @@ package net.bigpoint.cityrama.model.boosterpack.vo
       
       public function set slotId(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this._slotId = param1;
-         }
+         this._slotId = param1;
       }
       
       public function set defaultCostUserStock(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._defaultCostUserStock = param1;
-         }
+         this._defaultCostUserStock = param1;
       }
       
       public function get defaultCostUserStock() : Number
@@ -145,13 +103,7 @@ package net.bigpoint.cityrama.model.boosterpack.vo
       
       public function set realCurrencyUserStock(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._realCurrencyUserStock = param1;
-         }
+         this._realCurrencyUserStock = param1;
       }
       
       public function get userCanAffordGoodPrice() : Boolean
@@ -166,14 +118,7 @@ package net.bigpoint.cityrama.model.boosterpack.vo
       
       public function hasRealCurrencyPrice() : Boolean
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         §§push(this._realCurrencyCostConfig == null);
-         if(_loc1_ || Boolean(this))
-         {
-            return !§§pop();
-         }
+         return this._realCurrencyCostConfig != null;
       }
       
       public function get realCurrencyUserStock() : Number
@@ -188,13 +133,7 @@ package net.bigpoint.cityrama.model.boosterpack.vo
       
       public function set defaultCostConfig(param1:ConfigOutputDTO) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._defaultCostConfig = param1;
-         }
+         this._defaultCostConfig = param1;
       }
       
       public function get realCurrencyCostConfig() : ConfigOutputDTO
@@ -204,13 +143,7 @@ package net.bigpoint.cityrama.model.boosterpack.vo
       
       public function set realCurrencyCostConfig(param1:ConfigOutputDTO) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._realCurrencyCostConfig = param1;
-         }
+         this._realCurrencyCostConfig = param1;
       }
       
       public function get type() : String
@@ -220,13 +153,7 @@ package net.bigpoint.cityrama.model.boosterpack.vo
       
       public function set type(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._type = param1;
-         }
+         this._type = param1;
       }
    }
 }

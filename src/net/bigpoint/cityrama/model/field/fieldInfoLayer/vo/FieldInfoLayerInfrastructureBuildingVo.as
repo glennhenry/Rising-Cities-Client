@@ -11,13 +11,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function FieldInfoLayerInfrastructureBuildingVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super();
-         }
+         super();
       }
    }
 }

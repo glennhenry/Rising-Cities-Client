@@ -15,40 +15,12 @@ package net.bigpoint.cityrama.model.cityTreasury.vo
       
       public function TreasuryIconOverrideVo(param1:int, param2:int, param3:int, param4:String, param5:uint)
       {
-         var _temp_1:* = true;
-         var _loc6_:Boolean = false;
-         var _loc7_:Boolean = _temp_1;
-         if(_loc7_ || Boolean(param2))
-         {
-            super();
-            if(!_loc6_)
-            {
-               this._tab = param1;
-               if(_loc7_)
-               {
-                  this._cat = param2;
-                  if(_loc7_ || Boolean(param2))
-                  {
-                     addr0064:
-                     this._index = param3;
-                     if(!(_loc6_ && Boolean(param2)))
-                     {
-                        this._icon = param4;
-                        if(_loc7_ || Boolean(this))
-                        {
-                           addr008d:
-                           this._prio = param5;
-                        }
-                        §§goto(addr0094);
-                     }
-                     §§goto(addr008d);
-                  }
-                  addr0094:
-                  return;
-               }
-            }
-         }
-         §§goto(addr0064);
+         super();
+         this._tab = param1;
+         this._cat = param2;
+         this._index = param3;
+         this._icon = param4;
+         this._prio = param5;
       }
       
       public function get tab() : int

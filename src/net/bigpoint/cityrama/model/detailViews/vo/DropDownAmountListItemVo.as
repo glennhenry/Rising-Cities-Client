@@ -11,13 +11,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function DropDownAmountListItemVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get categoryLabel() : String
@@ -27,13 +21,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set categoryLabel(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._categoryLabel = param1;
-         }
+         this._categoryLabel = param1;
       }
       
       public function get categoryAmount() : Number
@@ -43,13 +31,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set categoryAmount(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._categoryAmount = param1;
-         }
+         this._categoryAmount = param1;
       }
       
       public function get sortType() : String
@@ -59,13 +41,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set sortType(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._sortType = param1;
-         }
+         this._sortType = param1;
       }
    }
 }

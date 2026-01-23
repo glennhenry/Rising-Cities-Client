@@ -13,28 +13,10 @@ package net.bigpoint.cityrama.model.server.vo.server.quest
       
       public function QuestRequirementDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            super();
-            if(!(_loc2_ && Boolean(this)))
-            {
-               this._type = param1.t;
-               if(_loc3_)
-               {
-                  this._amount = param1.a;
-                  if(_loc3_ || Boolean(param1))
-                  {
-                     addr006e:
-                     this._configID = param1.id;
-                  }
-                  return;
-               }
-            }
-         }
-         §§goto(addr006e);
+         super();
+         this._type = param1.t;
+         this._amount = param1.a;
+         this._configID = param1.id;
       }
       
       public function get type() : String

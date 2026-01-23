@@ -8,13 +8,7 @@ package net.bigpoint.as3toolbox.uvmapper
       
       public function UVMapperInstance__sourceUVMapper()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
    }
 }

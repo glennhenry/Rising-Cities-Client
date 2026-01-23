@@ -51,32 +51,29 @@ package mx.core
       
       private static function createEmbeddedFont(param1:String) : EmbeddedFont
       {
-         var _loc2_:String = null;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = false;
          var _loc5_:int = endsWith(param1,FontStyle.REGULAR);
          if(_loc5_ > 0)
          {
-            _loc2_ = param1.substring(0,_loc5_);
-            return new EmbeddedFont(_loc2_,false,false);
+            var _loc2_:String = param1.substring(0,_loc5_);
+            return new EmbeddedFont(null,false,false);
          }
          _loc5_ = endsWith(param1,FontStyle.BOLD);
          if(_loc5_ > 0)
          {
             _loc2_ = param1.substring(0,_loc5_);
-            return new EmbeddedFont(_loc2_,true,false);
+            return new EmbeddedFont(null,true,false);
          }
          _loc5_ = endsWith(param1,FontStyle.BOLD_ITALIC);
          if(_loc5_ > 0)
          {
             _loc2_ = param1.substring(0,_loc5_);
-            return new EmbeddedFont(_loc2_,true,true);
+            return new EmbeddedFont(null,true,true);
          }
          _loc5_ = endsWith(param1,FontStyle.ITALIC);
          if(_loc5_ > 0)
          {
             _loc2_ = param1.substring(0,_loc5_);
-            return new EmbeddedFont(_loc2_,false,true);
+            return new EmbeddedFont(null,false,true);
          }
          return new EmbeddedFont("",false,false);
       }
@@ -184,22 +181,17 @@ package mx.core
       
       public function deregisterFont(param1:EmbeddedFont, param2:IFlexModuleFactory) : void
       {
-         var _loc5_:int = 0;
-         var _loc6_:Object = null;
          var _loc3_:String = createFontKey(param1);
          var _loc4_:Dictionary = fonts[_loc3_];
          if(_loc4_ != null)
          {
             delete _loc4_[param2];
-            _loc5_ = 0;
-            for(_loc6_ in _loc4_)
+            var _loc5_:int = 0;
+            for(var _loc6_ in _loc4_)
             {
                _loc5_++;
             }
-            if(_loc5_ == 0)
-            {
-               delete fonts[_loc3_];
-            }
+            delete fonts[_loc3_];
          }
       }
       

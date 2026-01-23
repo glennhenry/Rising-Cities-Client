@@ -35,425 +35,75 @@ package net.bigpoint.cityrama.model.quest.strategy
       
       public function QuestManagerParentStrategy()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || Boolean(this))
-         {
-            super();
-         }
+         super();
       }
       
       public function updateTask(param1:Number, param2:String, param3:Number, param4:Number, param5:QuestCompleteCostVo) : void
       {
-         var _temp_1:* = true;
-         var _loc13_:Boolean = false;
-         var _loc14_:Boolean = _temp_1;
          var _loc7_:QuestPlayerVo = null;
          var _loc8_:QuestTaskDTO = null;
-         var _loc6_:* = false;
-         var _loc9_:int = 0;
-         var _loc10_:* = this._questBook.quests;
-         do
+         var _loc6_:Boolean = false;
+         for each(_loc7_ in this._questBook.quests)
          {
-            for each(_loc7_ in _loc10_)
+            if(_loc7_.id == param4 || param4 == 0)
             {
-               §§push(_loc7_.id);
-               if(!_loc13_)
+               for each(_loc8_ in _loc7_.tasks)
                {
-                  §§push(§§pop() == param4);
-                  if(!_loc13_)
+                  if(_loc8_.taskConfig.id == param1)
                   {
-                     var _temp_3:* = §§pop();
-                     §§push(_temp_3);
-                     if(!_temp_3)
+                     if(_loc8_.currentValue != param3)
                      {
-                        if(_loc14_)
-                        {
-                           addr005e:
-                           §§pop();
-                           if(_loc13_)
-                           {
-                              break;
-                           }
-                           §§push(param4 == 0);
-                           if(!_loc14_)
-                           {
-                              continue;
-                           }
-                        }
+                        _loc8_.currentValue = param3;
+                        _loc6_ = true;
                      }
-                     if(§§pop())
+                     if(param5 != null && _loc8_.questCompleteCostVo != param5)
                      {
-                        if(_loc13_)
-                        {
-                           break;
-                        }
-                        addr007c:
-                        for each(_loc8_ in _loc7_.tasks)
-                        {
-                           if(_loc8_.taskConfig.id != param1)
-                           {
-                              continue;
-                           }
-                           if(!_loc13_)
-                           {
-                              if(_loc8_.currentValue != param3)
-                              {
-                                 if(!(_loc13_ && Boolean(param2)))
-                                 {
-                                    _loc8_.currentValue = param3;
-                                    if(_loc14_ || Boolean(param3))
-                                    {
-                                       §§push(true);
-                                       if(_loc14_)
-                                       {
-                                          _loc6_ = §§pop();
-                                          if(_loc14_)
-                                          {
-                                             addr00e1:
-                                             §§push(param5 == null);
-                                             if(!(_loc13_ && Boolean(param2)))
-                                             {
-                                                §§push(!§§pop());
-                                                if(_loc14_ || Boolean(param3))
-                                                {
-                                                   addr010d:
-                                                   var _temp_9:* = §§pop();
-                                                   §§push(_temp_9);
-                                                   if(_temp_9)
-                                                   {
-                                                      if(_loc14_ || Boolean(param3))
-                                                      {
-                                                         §§pop();
-                                                         if(_loc14_)
-                                                         {
-                                                            §§push(_loc8_.questCompleteCostVo == param5);
-                                                            if(_loc14_ || Boolean(param2))
-                                                            {
-                                                               addr013d:
-                                                               §§push(!§§pop());
-                                                               if(_loc14_ || Boolean(param1))
-                                                               {
-                                                                  addr014c:
-                                                                  if(§§pop())
-                                                                  {
-                                                                     if(_loc14_)
-                                                                     {
-                                                                        _loc8_.questCompleteCostVo = param5;
-                                                                        if(!(_loc13_ && Boolean(param3)))
-                                                                        {
-                                                                           addr016b:
-                                                                           if(_loc8_.elementState != param2)
-                                                                           {
-                                                                              if(!(_loc13_ && Boolean(param2)))
-                                                                              {
-                                                                                 addr0183:
-                                                                                 _loc8_.elementState = param2;
-                                                                                 if(_loc14_)
-                                                                                 {
-                                                                                    addr018f:
-                                                                                    §§push(true);
-                                                                                    if(!_loc13_)
-                                                                                    {
-                                                                                       addr0196:
-                                                                                       _loc6_ = §§pop();
-                                                                                       if(!(_loc13_ && Boolean(param2)))
-                                                                                       {
-                                                                                          addr01a8:
-                                                                                          addr01a6:
-                                                                                          if(!_loc6_)
-                                                                                          {
-                                                                                             continue;
-                                                                                          }
-                                                                                          if(_loc13_ && Boolean(this))
-                                                                                          {
-                                                                                             break;
-                                                                                          }
-                                                                                       }
-                                                                                       addr01c8:
-                                                                                       this._facade.sendNotification(ApplicationNotificationConstants.QUEST_STATE_CHANGED);
-                                                                                       break;
-                                                                                    }
-                                                                                    §§goto(addr01a8);
-                                                                                 }
-                                                                                 §§goto(addr01c8);
-                                                                              }
-                                                                              §§goto(addr018f);
-                                                                           }
-                                                                        }
-                                                                     }
-                                                                     §§goto(addr01a6);
-                                                                  }
-                                                                  §§goto(addr016b);
-                                                               }
-                                                            }
-                                                            §§goto(addr01a8);
-                                                         }
-                                                         §§goto(addr01a6);
-                                                      }
-                                                      §§goto(addr013d);
-                                                   }
-                                                   §§goto(addr014c);
-                                                }
-                                                §§goto(addr01a8);
-                                             }
-                                             §§goto(addr0196);
-                                          }
-                                          §§goto(addr018f);
-                                       }
-                                       §§goto(addr010d);
-                                    }
-                                    §§goto(addr018f);
-                                 }
-                                 §§goto(addr016b);
-                              }
-                              §§goto(addr00e1);
-                           }
-                           §§goto(addr0183);
-                        }
+                        _loc8_.questCompleteCostVo = param5;
                      }
-                     §§push(_loc6_);
-                     continue;
+                     if(_loc8_.elementState != param2)
+                     {
+                        _loc8_.elementState = param2;
+                        _loc6_ = true;
+                     }
+                     if(_loc6_)
+                     {
+                        this._facade.sendNotification(ApplicationNotificationConstants.QUEST_STATE_CHANGED);
+                        break;
+                     }
                   }
-                  §§goto(addr005e);
                }
-               §§goto(addr007c);
             }
-            break;
+            if(_loc6_)
+            {
+               break;
+            }
          }
-         while(!§§pop());
-         
       }
       
       public function updateQuestState(param1:Number, param2:String, param3:Number, param4:Boolean = false) : void
       {
-         §§push(false);
-         var _loc6_:Boolean = true;
-         var _loc7_:* = §§pop();
-         if(_loc6_)
+         if(param2 == QuestSystemStateConst.DELETED || param2 == QuestSystemStateConst.CANCELLED)
          {
-            §§push(param2);
-            if(_loc6_)
-            {
-               §§push(QuestSystemStateConst.DELETED);
-               if(!(_loc7_ && Boolean(param3)))
-               {
-                  §§push(§§pop() == §§pop());
-                  if(!(_loc7_ && Boolean(param1)))
-                  {
-                     var _temp_3:* = §§pop();
-                     §§push(_temp_3);
-                     if(!_temp_3)
-                     {
-                        if(!(_loc7_ && Boolean(param2)))
-                        {
-                           §§pop();
-                           if(!_loc7_)
-                           {
-                              addr0067:
-                              addr0066:
-                              addr0060:
-                              if(param2 == QuestSystemStateConst.CANCELLED)
-                              {
-                                 if(!_loc7_)
-                                 {
-                                    §§push(this._questBook);
-                                    if(!_loc7_)
-                                    {
-                                       §§push(param1);
-                                       if(!(_loc7_ && Boolean(param2)))
-                                       {
-                                          §§pop().deleteQuestById(§§pop());
-                                          if(!_loc7_)
-                                          {
-                                             this._facade.sendNotification(ApplicationNotificationConstants.QUEST_DELETED);
-                                             if(_loc7_)
-                                             {
-                                             }
-                                          }
-                                       }
-                                       else
-                                       {
-                                          addr00c5:
-                                          §§pop().updateQuestStateById(§§pop(),param2,param3);
-                                       }
-                                       addr00cc:
-                                       addr00d0:
-                                       §§push(this._questBook);
-                                       §§push(param1);
-                                    }
-                                    else
-                                    {
-                                       addr00be:
-                                       §§push(param1);
-                                       if(!_loc7_)
-                                       {
-                                          §§goto(addr00c5);
-                                       }
-                                    }
-                                    var _loc5_:QuestPlayerVo = §§pop().getQuestsById(§§pop());
-                                    if(_loc6_)
-                                    {
-                                       §§push(param4);
-                                       if(_loc6_)
-                                       {
-                                          §§push(!§§pop());
-                                          if(!(_loc7_ && Boolean(param1)))
-                                          {
-                                             var _temp_7:* = §§pop();
-                                             §§push(_temp_7);
-                                             §§push(_temp_7);
-                                             if(!(_loc7_ && Boolean(param1)))
-                                             {
-                                                if(§§pop())
-                                                {
-                                                   if(!_loc7_)
-                                                   {
-                                                      §§pop();
-                                                      if(_loc6_ || Boolean(this))
-                                                      {
-                                                         addr012b:
-                                                         §§push(_loc5_ == null);
-                                                         if(_loc6_ || Boolean(this))
-                                                         {
-                                                            §§push(!§§pop());
-                                                            if(!_loc7_)
-                                                            {
-                                                               addr0144:
-                                                               var _temp_11:* = §§pop();
-                                                               §§push(_temp_11);
-                                                               §§push(_temp_11);
-                                                               if(_loc6_)
-                                                               {
-                                                                  addr014b:
-                                                                  if(§§pop())
-                                                                  {
-                                                                     if(_loc6_)
-                                                                     {
-                                                                        §§pop();
-                                                                        if(!_loc7_)
-                                                                        {
-                                                                           §§push(param2);
-                                                                           if(_loc6_ || Boolean(param2))
-                                                                           {
-                                                                              §§push(QuestSystemStateConst.DONE);
-                                                                              if(!_loc7_)
-                                                                              {
-                                                                                 §§push(§§pop() == §§pop());
-                                                                                 if(!_loc7_)
-                                                                                 {
-                                                                                    addr017e:
-                                                                                    var _temp_13:* = §§pop();
-                                                                                    addr017f:
-                                                                                    §§push(_temp_13);
-                                                                                    if(_temp_13)
-                                                                                    {
-                                                                                       if(!_loc7_)
-                                                                                       {
-                                                                                          §§goto(addr0189);
-                                                                                       }
-                                                                                       §§goto(addr01b8);
-                                                                                    }
-                                                                                    §§goto(addr01b9);
-                                                                                 }
-                                                                                 §§goto(addr01b8);
-                                                                              }
-                                                                              §§goto(addr01e3);
-                                                                           }
-                                                                           §§goto(addr01dd);
-                                                                        }
-                                                                        §§goto(addr0190);
-                                                                     }
-                                                                     §§goto(addr01b9);
-                                                                  }
-                                                                  §§goto(addr017e);
-                                                               }
-                                                               §§goto(addr017f);
-                                                            }
-                                                         }
-                                                         addr0189:
-                                                         §§pop();
-                                                         if(_loc6_)
-                                                         {
-                                                            addr01b9:
-                                                            addr0190:
-                                                            §§push(_loc5_.questDto.rewardList.length == 0);
-                                                            if(_loc6_ || Boolean(param1))
-                                                            {
-                                                               addr01b8:
-                                                               §§push(!§§pop());
-                                                            }
-                                                            if(§§pop())
-                                                            {
-                                                               if(_loc6_)
-                                                               {
-                                                                  this._facade.sendNotification(ApplicationNotificationConstants.QUEST_REWARD_OPEN,_loc5_);
-                                                                  if(_loc7_)
-                                                                  {
-                                                                  }
-                                                               }
-                                                            }
-                                                            else
-                                                            {
-                                                               addr01e3:
-                                                               addr01dd:
-                                                               if(param2 == QuestSystemStateConst.DONE)
-                                                               {
-                                                               }
-                                                            }
-                                                         }
-                                                         §§goto(addr01e7);
-                                                      }
-                                                      addr01e7:
-                                                      return;
-                                                   }
-                                                   §§goto(addr01b8);
-                                                }
-                                                §§goto(addr0144);
-                                             }
-                                             §§goto(addr014b);
-                                          }
-                                          §§goto(addr0144);
-                                       }
-                                       §§goto(addr017e);
-                                    }
-                                    §§goto(addr012b);
-                                 }
-                                 §§goto(addr00cc);
-                              }
-                              else
-                              {
-                                 §§push(this._questBook);
-                                 if(_loc6_ || Boolean(param2))
-                                 {
-                                    §§goto(addr00be);
-                                 }
-                              }
-                              §§goto(addr00d0);
-                           }
-                           §§goto(addr00cc);
-                        }
-                     }
-                  }
-                  §§goto(addr0067);
-               }
-               §§goto(addr0066);
-            }
-            §§goto(addr0060);
+            this._questBook.deleteQuestById(param1);
+            this._facade.sendNotification(ApplicationNotificationConstants.QUEST_DELETED);
          }
-         §§goto(addr00cc);
+         else
+         {
+            this._questBook.updateQuestStateById(param1,param2,param3);
+         }
+         var _loc5_:QuestPlayerVo = this._questBook.getQuestsById(param1);
+         if(!param4 && _loc5_ != null && param2 == QuestSystemStateConst.DONE && _loc5_.questDto.rewardList.length != 0)
+         {
+            this._facade.sendNotification(ApplicationNotificationConstants.QUEST_REWARD_OPEN,_loc5_);
+         }
+         else if(param2 == QuestSystemStateConst.DONE)
+         {
+         }
       }
       
       public function set questBook(param1:QuestBookVo) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(param1)))
-         {
-            this._questBook = param1;
-         }
+         this._questBook = param1;
       }
       
       public function get questBook() : QuestBookVo
@@ -463,107 +113,42 @@ package net.bigpoint.cityrama.model.quest.strategy
       
       public function addQuest(param1:QuestDTO) : IQuestPlayerVo
       {
-         §§push(false);
-         var _loc6_:Boolean = true;
-         var _loc7_:* = §§pop();
          var _loc3_:AbstractQuestSystemConfigDTO = null;
          var _loc2_:QuestPlayerVo = new QuestPlayerVo(param1,this.gameConfigProxy,this.cvTagProxy,this.playerProxy,this.playfieldProxy);
-         if(!(_loc7_ && Boolean(param1)))
+         if(_loc2_.tasks.length < _loc2_.config.downstreamQuestElements.length)
          {
-            if(_loc2_.tasks.length < _loc2_.config.downstreamQuestElements.length)
+            this._tempTasks = new Vector.<QuestTaskDTO>();
+            for each(_loc3_ in _loc2_.config.downstreamQuestElements)
             {
-               if(_loc6_ || Boolean(_loc3_))
-               {
-                  addr0073:
-                  this._tempTasks = new Vector.<QuestTaskDTO>();
-               }
-               for each(_loc3_ in _loc2_.config.downstreamQuestElements)
-               {
-                  if(!_loc7_)
-                  {
-                     this.gatherDownStreamElementsRecursive(_loc3_);
-                  }
-               }
-               if(_loc6_)
-               {
-                  _loc2_.tasks = this._tempTasks;
-                  if(_loc6_)
-                  {
-                     addr00d9:
-                     this._questBook.add(_loc2_);
-                     if(!_loc7_)
-                     {
-                        addr00e8:
-                        this._facade.sendNotification(ApplicationNotificationConstants.QUEST_NEW_ADDED,_loc2_);
-                     }
-                  }
-                  return _loc2_;
-               }
-               §§goto(addr00e8);
+               this.gatherDownStreamElementsRecursive(_loc3_);
             }
-            §§goto(addr00d9);
+            _loc2_.tasks = this._tempTasks;
          }
-         §§goto(addr0073);
+         this._questBook.add(_loc2_);
+         this._facade.sendNotification(ApplicationNotificationConstants.QUEST_NEW_ADDED,_loc2_);
+         return _loc2_;
       }
       
       private function gatherDownStreamElementsRecursive(param1:AbstractQuestSystemConfigDTO) : void
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc2_:AbstractQuestSystemConfigDTO = null;
-         if(_loc6_)
+         this._tempTasks.push(new QuestTaskDTO(null,param1 as QuestTaskConfigDTO));
+         if(param1.downstreamQuestElements.length != 0)
          {
-            this._tempTasks.push(new QuestTaskDTO(null,param1 as QuestTaskConfigDTO));
-            if(_loc6_)
+            for each(_loc2_ in param1.downstreamQuestElements)
             {
-               if(param1.downstreamQuestElements.length != 0)
-               {
-                  addr0053:
-                  var _loc3_:int = 0;
-                  for each(_loc2_ in param1.downstreamQuestElements)
-                  {
-                     if(!(_loc5_ && Boolean(_loc3_)))
-                     {
-                        this.gatherDownStreamElementsRecursive(_loc2_);
-                     }
-                  }
-               }
-               return;
+               this.gatherDownStreamElementsRecursive(_loc2_);
             }
          }
-         §§goto(addr0053);
       }
       
       public function prepare(param1:IFacade, param2:GameConfigProxy, param3:CvTagProxy, param4:PlayerProxy, param5:PlayfieldProxy) : void
       {
-         §§push(false);
-         var _loc6_:Boolean = true;
-         var _loc7_:* = §§pop();
-         if(!_loc7_)
-         {
-            this._facade = param1;
-            if(!(_loc7_ && Boolean(param1)))
-            {
-               this._gameConfigProxy = param2;
-               if(!_loc7_)
-               {
-                  §§goto(addr0054);
-               }
-            }
-            §§goto(addr0073);
-         }
-         addr0054:
+         this._facade = param1;
+         this._gameConfigProxy = param2;
          this._cvTagProxy = param3;
-         if(_loc6_ || Boolean(this))
-         {
-            this._playerProxy = param4;
-            if(!_loc7_)
-            {
-               addr0073:
-               this._playfieldProxy = param5;
-            }
-         }
+         this._playerProxy = param4;
+         this._playfieldProxy = param5;
       }
       
       protected function get facade() : IFacade
@@ -573,98 +158,38 @@ package net.bigpoint.cityrama.model.quest.strategy
       
       protected function get cvTagProxy() : CvTagProxy
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
+         if(this._cvTagProxy == null)
          {
-            §§push(this._cvTagProxy);
-            if(!_loc1_)
-            {
-               if(§§pop() == null)
-               {
-                  if(!(_loc1_ && _loc1_))
-                  {
-                     this._cvTagProxy = this.facade.retrieveProxy(CvTagProxy.NAME) as CvTagProxy;
-                  }
-               }
-               addr0058:
-               return this._cvTagProxy;
-            }
+            this._cvTagProxy = this.facade.retrieveProxy(CvTagProxy.NAME) as CvTagProxy;
          }
-         §§goto(addr0058);
+         return this._cvTagProxy;
       }
       
       protected function get gameConfigProxy() : GameConfigProxy
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || Boolean(this))
+         if(this._gameConfigProxy == null)
          {
-            §§push(this._gameConfigProxy);
-            if(!_loc1_)
-            {
-               if(§§pop() == null)
-               {
-                  if(!(_loc1_ && Boolean(this)))
-                  {
-                     this._gameConfigProxy = this._facade.retrieveProxy(GameConfigProxy.NAME) as GameConfigProxy;
-                  }
-               }
-               addr0055:
-               return this._gameConfigProxy;
-            }
+            this._gameConfigProxy = this._facade.retrieveProxy(GameConfigProxy.NAME) as GameConfigProxy;
          }
-         §§goto(addr0055);
+         return this._gameConfigProxy;
       }
       
       protected function get playerProxy() : PlayerProxy
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
+         if(this._playerProxy == null)
          {
-            §§push(this._playerProxy);
-            if(_loc1_)
-            {
-               if(§§pop() == null)
-               {
-                  if(!(_loc2_ && _loc2_))
-                  {
-                     addr0042:
-                     this._playerProxy = this._facade.retrieveProxy(PlayerProxy.NAME) as PlayerProxy;
-                  }
-               }
-               return this._playerProxy;
-            }
+            this._playerProxy = this._facade.retrieveProxy(PlayerProxy.NAME) as PlayerProxy;
          }
-         §§goto(addr0042);
+         return this._playerProxy;
       }
       
       protected function get playfieldProxy() : PlayfieldProxy
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
+         if(this._playfieldProxy == null)
          {
-            §§push(this._playfieldProxy);
-            if(!_loc1_)
-            {
-               if(§§pop() == null)
-               {
-                  if(_loc2_)
-                  {
-                     addr0033:
-                     this._playfieldProxy = this._facade.retrieveProxy(PlayfieldProxy.NAME) as PlayfieldProxy;
-                  }
-               }
-               return this._playfieldProxy;
-            }
+            this._playfieldProxy = this._facade.retrieveProxy(PlayfieldProxy.NAME) as PlayfieldProxy;
          }
-         §§goto(addr0033);
+         return this._playfieldProxy;
       }
    }
 }

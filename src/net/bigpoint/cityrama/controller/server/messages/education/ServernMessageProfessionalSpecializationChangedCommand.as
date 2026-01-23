@@ -15,20 +15,11 @@ package net.bigpoint.cityrama.controller.server.messages.education
       
       public function ServernMessageProfessionalSpecializationChangedCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc9_:Boolean = true;
-         var _loc10_:* = §§pop();
          var _loc2_:MessageVo = MessageVo(param1.getBody());
          var _loc3_:ProfessionalProxy = facade.retrieveProxy(ProfessionalProxy.NAME) as ProfessionalProxy;
          var _loc4_:GameConfigProxy = facade.retrieveProxy(GameConfigProxy.NAME) as GameConfigProxy;
@@ -36,14 +27,8 @@ package net.bigpoint.cityrama.controller.server.messages.education
          var _loc6_:Number = Number(_loc2_.json.csi);
          var _loc7_:ProfessionalDTO = _loc3_.getProfessionalById(_loc5_);
          var _loc8_:ConfigProfessionalSpecializationDTO = _loc4_.config.professionalSpecializations[_loc6_];
-         if(_loc9_ || Boolean(param1))
-         {
-            _loc7_.updateSpecialisation(_loc8_);
-            if(!(_loc10_ && Boolean(param1)))
-            {
-               sendNotification(ApplicationNotificationConstants.PROFESSIONALS_CHANGED);
-            }
-         }
+         _loc7_.updateSpecialisation(_loc8_);
+         sendNotification(ApplicationNotificationConstants.PROFESSIONALS_CHANGED);
       }
    }
 }

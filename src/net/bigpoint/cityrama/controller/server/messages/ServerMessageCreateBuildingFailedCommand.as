@@ -16,46 +16,24 @@ package net.bigpoint.cityrama.controller.server.messages
       
       public function ServerMessageCreateBuildingFailedCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc6_:Boolean = false;
-         var _loc7_:Boolean = _temp_1;
-         var _loc5_:BillboardObject = null;
          var _loc2_:MessageVo = MessageVo(param1.getBody());
          var _loc3_:PlayfieldObjectsProxy = facade.retrieveProxy(PlayfieldObjectsProxy.NAME) as PlayfieldObjectsProxy;
          var _loc4_:BillboardObjectVo = _loc3_.getGameObjectByCuboid(new Cuboid(_loc2_.json.x,_loc2_.json.y,0,1,1,0)) as BillboardObjectVo;
          if(_loc4_ != null)
          {
-            if(!_loc6_)
+            var _loc5_:BillboardObject = _loc3_.getObjectByVo(_loc4_) as BillboardObject;
+            if(_loc5_ != null)
             {
-               _loc5_ = _loc3_.getObjectByVo(_loc4_) as BillboardObject;
-               if(_loc5_ == null)
-               {
-                  throw new RamaCityError("ServerMessageCreateBuildingFailedCommand: Billboard NULL!!");
-               }
-               if(_loc7_)
-               {
-                  _loc3_.removeGameObjectVofromMatrix(_loc4_);
-                  if(_loc7_)
-                  {
-                     sendNotification(ApplicationNotificationConstants.PLAYFIELD_REMOVE_ITEM,_loc5_);
-                     if(_loc7_)
-                     {
-                     }
-                  }
-               }
+               _loc3_.removeGameObjectVofromMatrix(_loc4_);
+               sendNotification(ApplicationNotificationConstants.PLAYFIELD_REMOVE_ITEM,null);
+               return;
             }
-            return;
+            throw new RamaCityError("ServerMessageCreateBuildingFailedCommand: Billboard NULL!!");
          }
          throw new RamaCityError("ServerMessageCreateBuildingFailedCommand: BillboardObjectVo NULL!!");
       }

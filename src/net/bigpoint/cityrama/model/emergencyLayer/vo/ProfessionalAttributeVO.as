@@ -12,25 +12,12 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function ProfessionalAttributeVO()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get progressScalar() : Number
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         §§push(this._dto.attributePoints + this._tempMod);
-         if(_loc1_)
-         {
-            return §§pop() / this._dto.config.maxCap;
-         }
+         return (this._dto.attributePoints + this._tempMod) / this._dto.config.maxCap;
       }
       
       public function get configId() : Number
@@ -45,13 +32,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set dto(param1:ProfessionalAttributeDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._dto = param1;
-         }
+         this._dto = param1;
       }
       
       public function get attributeType() : String
@@ -61,13 +42,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set tempMod(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._tempMod = param1;
-         }
+         this._tempMod = param1;
       }
       
       public function get tempMod() : int

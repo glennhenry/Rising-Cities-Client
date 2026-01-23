@@ -19,13 +19,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function CategoryMenuListVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get categoryName() : String
@@ -35,13 +29,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set categoryName(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._categoryName = param1;
-         }
+         this._categoryName = param1;
       }
       
       public function get categoryIcon() : BriskDynaVo
@@ -51,13 +39,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set categoryIcon(param1:BriskDynaVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._categoryIcon = param1;
-         }
+         this._categoryIcon = param1;
       }
       
       public function get categoryIndex() : int
@@ -67,13 +49,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set categoryIndex(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._categoryIndex = param1;
-         }
+         this._categoryIndex = param1;
       }
       
       public function get disabled() : Boolean
@@ -83,13 +59,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set disabled(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._disabled = param1;
-         }
+         this._disabled = param1;
       }
       
       public function get discount() : Boolean
@@ -99,13 +69,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set discount(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this._discount = param1;
-         }
+         this._discount = param1;
       }
       
       public function get categoryId() : String
@@ -115,13 +79,7 @@ package net.bigpoint.cityrama.model.common.vo
       
       public function set categoryId(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._categoryId = param1;
-         }
+         this._categoryId = param1;
       }
    }
 }

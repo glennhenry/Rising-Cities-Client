@@ -17,55 +17,18 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigPlayfieldItemPermissionDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc2_:Number = NaN;
-         if(_loc6_ || Boolean(param1))
+         super();
+         this._id = param1.id;
+         this._initialPermissions = param1.p;
+         this._buyCap = param1.bc;
+         this._realCurrencyCost = param1.c;
+         this._modifier = param1.m;
+         this._eventIdList = new Vector.<Number>(0);
+         for each(_loc2_ in param1.e)
          {
-            super();
-            if(!_loc5_)
-            {
-               addr002c:
-               this._id = param1.id;
-               if(_loc6_ || Boolean(param1))
-               {
-                  this._initialPermissions = param1.p;
-                  if(!_loc5_)
-                  {
-                     this._buyCap = param1.bc;
-                     if(!_loc5_)
-                     {
-                        addr006f:
-                        this._realCurrencyCost = param1.c;
-                        if(_loc6_ || Boolean(this))
-                        {
-                           §§goto(addr0087);
-                        }
-                        §§goto(addr009e);
-                     }
-                  }
-                  §§goto(addr0087);
-               }
-               §§goto(addr006f);
-            }
-            addr0087:
-            this._modifier = param1.m;
-            if(!(_loc5_ && Boolean(_loc2_)))
-            {
-               addr009e:
-               this._eventIdList = new Vector.<Number>(0);
-            }
-            for each(_loc2_ in param1.e)
-            {
-               if(!_loc5_)
-               {
-                  this._eventIdList.push(_loc2_);
-               }
-            }
-            return;
+            this._eventIdList.push(_loc2_);
          }
-         §§goto(addr002c);
       }
       
       public function get id() : Number

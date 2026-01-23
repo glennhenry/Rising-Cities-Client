@@ -21,179 +21,62 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function CategoryMenuListSkin()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc2_)
-         {
-            super();
-            if(_loc2_)
-            {
-               mx_internal::_document = this;
-               if(_loc2_ || _loc2_)
-               {
-                  this.percentHeight = 100;
-                  if(!_loc1_)
-                  {
-                     this.percentWidth = 100;
-                     if(!(_loc1_ && _loc1_))
-                     {
-                        this.blendMode = "normal";
-                        if(!_loc1_)
-                        {
-                           this.mxmlContent = [this._CategoryMenuListSkin_DataGroup1_i()];
-                           if(_loc2_)
-                           {
-                              addr008c:
-                              this.currentState = "normal";
-                              if(_loc2_)
-                              {
-                                 addr0098:
-                                 states = [new State({
-                                    "name":"normal",
-                                    "overrides":[]
-                                 }),new State({
-                                    "name":"disabled",
-                                    "overrides":[]
-                                 })];
-                              }
-                           }
-                        }
-                        §§goto(addr00c0);
-                     }
-                     §§goto(addr0098);
-                  }
-                  §§goto(addr008c);
-               }
-            }
-            addr00c0:
-            return;
-         }
-         §§goto(addr008c);
+         super();
+         mx_internal::_document = this;
+         this.percentHeight = 100;
+         this.percentWidth = 100;
+         this.blendMode = "normal";
+         this.mxmlContent = [this._CategoryMenuListSkin_DataGroup1_i()];
+         this.currentState = "normal";
+         states = [new State({
+            "name":"normal",
+            "overrides":[]
+         }),new State({
+            "name":"disabled",
+            "overrides":[]
+         })];
       }
       
       override public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
+         super.moduleFactory = param1;
+         if(this.__moduleFactoryInitialized)
          {
-            super.moduleFactory = param1;
-            if(_loc3_ || _loc2_)
-            {
-               addr004a:
-               if(this.__moduleFactoryInitialized)
-               {
-                  if(_loc3_)
-                  {
-                     return;
-                  }
-               }
-            }
-            this.__moduleFactoryInitialized = true;
             return;
          }
-         §§goto(addr004a);
+         this.__moduleFactoryInitialized = true;
       }
       
       override public function initialize() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super.initialize();
-         }
+         super.initialize();
       }
       
       private function _CategoryMenuListSkin_DataGroup1_i() : DataGroup
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:DataGroup = new DataGroup();
-         if(!(_loc2_ && Boolean(this)))
+         _loc1_.percentHeight = 100;
+         _loc1_.percentWidth = 100;
+         _loc1_.focusEnabled = false;
+         _loc1_.layout = this._CategoryMenuListSkin_VerticalLayout1_c();
+         _loc1_.id = "dataGroup";
+         if(!_loc1_.document)
          {
-            _loc1_.percentHeight = 100;
-            if(_loc3_)
-            {
-               _loc1_.percentWidth = 100;
-               if(_loc3_)
-               {
-                  addr003f:
-                  _loc1_.focusEnabled = false;
-                  if(_loc3_ || _loc3_)
-                  {
-                     _loc1_.layout = this._CategoryMenuListSkin_VerticalLayout1_c();
-                     if(!(_loc2_ && _loc2_))
-                     {
-                        _loc1_.id = "dataGroup";
-                        if(!_loc2_)
-                        {
-                           if(!_loc1_.document)
-                           {
-                              if(!_loc2_)
-                              {
-                                 addr0096:
-                                 _loc1_.document = this;
-                                 if(_loc3_)
-                                 {
-                                    addr009f:
-                                    this.dataGroup = _loc1_;
-                                    if(!_loc2_)
-                                    {
-                                       addr00a9:
-                                       BindingManager.executeBindings(this,"dataGroup",this.dataGroup);
-                                    }
-                                    §§goto(addr00b6);
-                                 }
-                                 §§goto(addr00a9);
-                              }
-                              §§goto(addr00b6);
-                           }
-                           §§goto(addr009f);
-                        }
-                        addr00b6:
-                        return _loc1_;
-                     }
-                     §§goto(addr0096);
-                  }
-                  §§goto(addr00a9);
-               }
-               §§goto(addr009f);
-            }
-            §§goto(addr003f);
+            _loc1_.document = this;
          }
-         §§goto(addr0096);
+         this.dataGroup = _loc1_;
+         BindingManager.executeBindings(this,"dataGroup",this.dataGroup);
+         return _loc1_;
       }
       
       private function _CategoryMenuListSkin_VerticalLayout1_c() : VerticalLayout
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:VerticalLayout = new VerticalLayout();
-         if(!_loc2_)
-         {
-            _loc1_.useVirtualLayout = true;
-            if(_loc3_ || Boolean(this))
-            {
-               _loc1_.variableRowHeight = true;
-               if(_loc3_ || _loc2_)
-               {
-                  addr0060:
-                  _loc1_.gap = 2;
-                  if(!(_loc2_ && Boolean(_loc1_)))
-                  {
-                     _loc1_.clipAndEnableScrolling = false;
-                  }
-               }
-            }
-            return _loc1_;
-         }
-         §§goto(addr0060);
+         _loc1_.useVirtualLayout = true;
+         _loc1_.variableRowHeight = true;
+         _loc1_.gap = 2;
+         _loc1_.clipAndEnableScrolling = false;
+         return _loc1_;
       }
       
       [Bindable(event="propertyChange")]
@@ -204,34 +87,15 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function set dataGroup(param1:DataGroup) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._385593099dataGroup;
-         if(_loc4_ || Boolean(param1))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._385593099dataGroup = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc4_ || Boolean(_loc2_))
-               {
-                  this._385593099dataGroup = param1;
-                  if(!(_loc3_ && Boolean(this)))
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc4_)
-                        {
-                           addr0075:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"dataGroup",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0084);
-                  }
-               }
-               §§goto(addr0075);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"dataGroup",_loc2_,param1));
             }
          }
-         addr0084:
       }
       
       [Bindable(event="propertyChange")]
@@ -242,37 +106,15 @@ package net.bigpoint.cityrama.view.common.skins
       
       public function set hostComponent(param1:List) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._213507019hostComponent;
-         if(!(_loc4_ && Boolean(_loc2_)))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._213507019hostComponent = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc4_ && Boolean(param1)))
-               {
-                  this._213507019hostComponent = param1;
-                  if(_loc3_)
-                  {
-                     addr005d:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_ || _loc3_)
-                        {
-                           addr0074:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"hostComponent",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0083);
-               }
-               §§goto(addr005d);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"hostComponent",_loc2_,param1));
             }
-            addr0083:
-            return;
          }
-         §§goto(addr0074);
       }
    }
 }

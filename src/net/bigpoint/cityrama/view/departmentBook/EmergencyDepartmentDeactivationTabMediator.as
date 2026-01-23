@@ -14,14 +14,6 @@ package net.bigpoint.cityrama.view.departmentBook
       
       public static const NAME:String = "EmergencyDepartmentDeactivationTabMediator";
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(!(_loc2_ && EmergencyDepartmentDeactivationTabMediator))
-      {
-         NAME = "EmergencyDepartmentDeactivationTabMediator";
-      }
-      
       private var _pfOP:PlayfieldObjectsProxy;
       
       private var _eP:EmergencyProxy;
@@ -32,201 +24,66 @@ package net.bigpoint.cityrama.view.departmentBook
       
       public function EmergencyDepartmentDeactivationTabMediator(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
-         {
-            super(NAME,param1);
-         }
+         super(NAME,param1);
       }
       
       public function init() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
+         if(!this._component)
          {
-            if(!this._component)
-            {
-               if(!(_loc1_ && _loc1_))
-               {
-                  this._component = new EmergencyDepartmentDeactivationTab();
-                  if(_loc2_ || Boolean(this))
-                  {
-                     addr0057:
-                     this.setLayerData();
-                     if(_loc2_)
-                     {
-                        addr0062:
-                        this.container.contentGroup.addElement(this._component);
-                        if(_loc2_)
-                        {
-                           addr0076:
-                           this.setupListener();
-                        }
-                     }
-                     §§goto(addr007c);
-                  }
-                  §§goto(addr0076);
-               }
-               addr007c:
-               return;
-            }
-            §§goto(addr0057);
+            this._component = new EmergencyDepartmentDeactivationTab();
          }
-         §§goto(addr0062);
+         this.setLayerData();
+         this.container.contentGroup.addElement(this._component);
+         this.setupListener();
       }
       
       private function setLayerData() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
+         this._currentLayerState = this.currentLayerState;
+         if(this._currentLayerState != "")
          {
-            this._currentLayerState = this.currentLayerState;
-            if(!(_loc1_ && _loc1_))
-            {
-               if(this._currentLayerState != "")
-               {
-                  if(!_loc1_)
-                  {
-                     addr0045:
-                     this.component.data = this._currentLayerState;
-                  }
-               }
-               return;
-            }
+            this.component.data = this._currentLayerState;
          }
-         §§goto(addr0045);
       }
       
       private function get currentLayerState() : String
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc1_)
+         if(this.playfieldObjectsProxy.infrastructureBuildingList.length == 0)
          {
-            if(this.playfieldObjectsProxy.infrastructureBuildingList.length == 0)
-            {
-               if(_loc2_)
-               {
-                  §§push(EmergencyDepartmentDeactivationTab.STATE_DEACTIVATED);
-                  if(_loc2_)
-                  {
-                     return §§pop();
-                  }
-               }
-               else
-               {
-                  addr0060:
-                  if(this.emergencyProxy.emergencyActivelyRunning)
-                  {
-                     if(_loc2_ || _loc1_)
-                     {
-                        addr0079:
-                        §§push(EmergencyDepartmentDeactivationTab.STATE_ACTIVE_EMERGENCY_RUNNING);
-                        if(_loc2_)
-                        {
-                           §§goto(addr0084);
-                        }
-                     }
-                     else
-                     {
-                        addr0085:
-                        return EmergencyDepartmentDeactivationTab.STATE_ACTIVE;
-                     }
-                     return §§pop();
-                  }
-                  §§goto(addr0085);
-               }
-               addr0084:
-               return §§pop();
-            }
-            §§goto(addr0060);
+            return EmergencyDepartmentDeactivationTab.STATE_DEACTIVATED;
          }
-         §§goto(addr0079);
+         if(this.emergencyProxy.emergencyActivelyRunning)
+         {
+            return EmergencyDepartmentDeactivationTab.STATE_ACTIVE_EMERGENCY_RUNNING;
+         }
+         return EmergencyDepartmentDeactivationTab.STATE_ACTIVE;
       }
       
       private function setupListener() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            this.component.addEventListener(EmergencyDepartmentDeactivationTab.EVENT_DEACTIVATE_EMERGENCIES,this.handleDeactivate);
-         }
+         this.component.addEventListener(EmergencyDepartmentDeactivationTab.EVENT_DEACTIVATE_EMERGENCIES,this.handleDeactivate);
       }
       
       private function handleDeactivate(param1:Event) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            param1.stopPropagation();
-            if(!(_loc3_ && _loc3_))
-            {
-               §§goto(addr003e);
-            }
-            §§goto(addr004d);
-         }
-         addr003e:
+         param1.stopPropagation();
          sendNotification(ApplicationNotificationConstants.DEACTIVATE_EMERGENCY_FEATURE);
-         if(!_loc3_)
-         {
-            addr004d:
-            this.component.data = EmergencyDepartmentDeactivationTab.STATE_DEACTIVATED;
-         }
+         this.component.data = EmergencyDepartmentDeactivationTab.STATE_DEACTIVATED;
       }
       
       override public function onRemove() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this.removeListener();
-            if(!_loc2_)
-            {
-               addr0028:
-               super.onRemove();
-            }
-            return;
-         }
-         §§goto(addr0028);
+         this.removeListener();
+         super.onRemove();
       }
       
       private function removeListener() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
+         if(this.component)
          {
-            §§push(this.component);
-            if(!(_loc1_ && _loc1_))
-            {
-               if(§§pop())
-               {
-                  if(!(_loc1_ && Boolean(this)))
-                  {
-                     addr0044:
-                     this.component.removeEventListener(EmergencyDepartmentDeactivationTab.EVENT_DEACTIVATE_EMERGENCIES,this.handleDeactivate);
-                     addr0041:
-                  }
-               }
-               return;
-            }
-            §§goto(addr0044);
+            this.component.removeEventListener(EmergencyDepartmentDeactivationTab.EVENT_DEACTIVATE_EMERGENCIES,this.handleDeactivate);
          }
-         §§goto(addr0041);
       }
       
       public function get container() : EmergencyDepartmentBook
@@ -241,50 +98,20 @@ package net.bigpoint.cityrama.view.departmentBook
       
       private function get emergencyProxy() : EmergencyProxy
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc2_))
+         if(!this._eP)
          {
-            §§push(this._eP);
-            if(_loc1_)
-            {
-               if(!§§pop())
-               {
-                  if(!_loc2_)
-                  {
-                     addr0039:
-                     this._eP = facade.retrieveProxy(EmergencyProxy.NAME) as EmergencyProxy;
-                  }
-               }
-               return this._eP;
-            }
+            this._eP = facade.retrieveProxy(EmergencyProxy.NAME) as EmergencyProxy;
          }
-         §§goto(addr0039);
+         return this._eP;
       }
       
       private function get playfieldObjectsProxy() : PlayfieldObjectsProxy
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
+         if(!this._pfOP)
          {
-            §§push(this._pfOP);
-            if(_loc1_ || Boolean(this))
-            {
-               if(!§§pop())
-               {
-                  if(_loc1_ || _loc2_)
-                  {
-                     addr0041:
-                     this._pfOP = facade.retrieveProxy(PlayfieldObjectsProxy.NAME) as PlayfieldObjectsProxy;
-                  }
-               }
-               return this._pfOP;
-            }
+            this._pfOP = facade.retrieveProxy(PlayfieldObjectsProxy.NAME) as PlayfieldObjectsProxy;
          }
-         §§goto(addr0041);
+         return this._pfOP;
       }
    }
 }

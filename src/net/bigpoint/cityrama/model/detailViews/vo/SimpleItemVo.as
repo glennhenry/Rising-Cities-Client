@@ -21,60 +21,15 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function SimpleItemVo(param1:String, param2:Number, param3:Number, param4:String, param5:String, param6:String = null, param7:String = null, param8:int = 0)
       {
-         var _temp_1:* = true;
-         var _loc9_:Boolean = false;
-         var _loc10_:Boolean = _temp_1;
-         if(_loc10_)
-         {
-            super();
-            if(!_loc9_)
-            {
-               this._text = param1;
-               if(_loc10_ || Boolean(param2))
-               {
-                  this._amount = param2;
-                  if(_loc10_ || Boolean(this))
-                  {
-                     addr005a:
-                     this._maxAmount = param3;
-                     if(_loc10_ || Boolean(param1))
-                     {
-                        addr006e:
-                        this._imageId = param4;
-                        if(!_loc9_)
-                        {
-                           this._dynaLibName = param5;
-                           if(!(_loc9_ && Boolean(param3)))
-                           {
-                              addr009d:
-                              this._imageTooltip = param6;
-                              if(_loc10_ || Boolean(param1))
-                              {
-                                 addr00b2:
-                                 this._textTooltip = param7;
-                                 if(!_loc9_)
-                                 {
-                                    addr00bf:
-                                    this._colorModifier = param8;
-                                 }
-                                 §§goto(addr00c5);
-                              }
-                              §§goto(addr00bf);
-                           }
-                           §§goto(addr00c5);
-                        }
-                        §§goto(addr00b2);
-                     }
-                     §§goto(addr009d);
-                  }
-                  §§goto(addr006e);
-               }
-               §§goto(addr00b2);
-            }
-            addr00c5:
-            return;
-         }
-         §§goto(addr005a);
+         super();
+         this._text = param1;
+         this._amount = param2;
+         this._maxAmount = param3;
+         this._imageId = param4;
+         this._dynaLibName = param5;
+         this._imageTooltip = param6;
+         this._textTooltip = param7;
+         this._colorModifier = param8;
       }
       
       public function get amount() : Number
@@ -99,13 +54,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set colorModifier(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._colorModifier = param1;
-         }
+         this._colorModifier = param1;
       }
       
       public function get imageTooltip() : String

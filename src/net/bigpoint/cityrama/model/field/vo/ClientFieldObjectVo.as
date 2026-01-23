@@ -9,13 +9,7 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function ClientFieldObjectVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get assetFrame() : String
@@ -25,13 +19,7 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function set assetFrame(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._assetFrame = param1;
-         }
+         this._assetFrame = param1;
       }
    }
 }

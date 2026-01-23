@@ -16,13 +16,7 @@ package net.bigpoint.cityrama.model.sound.vo
       
       public function SoundVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
    }
 }

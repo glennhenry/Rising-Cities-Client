@@ -13,31 +13,18 @@ package net.bigpoint.cityrama.controller.field
       
       public function FieldPanToEmergencyCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc6_:Boolean = false;
-         var _loc7_:Boolean = _temp_1;
-         var _loc5_:Point = null;
          var _loc2_:Number = Number(param1.getBody());
          var _loc3_:PlayfieldObjectsProxy = facade.retrieveProxy(PlayfieldObjectsProxy.NAME) as PlayfieldObjectsProxy;
          var _loc4_:BillboardObject = _loc3_.getBillboardById(_loc2_);
          if(_loc4_)
          {
-            _loc5_ = new Point(_loc4_.billboardObjectVo.matrix3dCoordinates.x,_loc4_.billboardObjectVo.matrix3dCoordinates.y);
-            if(_loc7_ || Boolean(_loc3_))
-            {
-               sendNotification(ApplicationNotificationConstants.FIELD_PANTO,_loc5_);
-            }
+            var _loc5_:Point = new Point(_loc4_.billboardObjectVo.matrix3dCoordinates.x,_loc4_.billboardObjectVo.matrix3dCoordinates.y);
+            sendNotification(ApplicationNotificationConstants.FIELD_PANTO,null);
          }
       }
    }

@@ -9,13 +9,7 @@ package net.bigpoint.cityrama.controller.server.messages.friend
       
       public function ServerMessageSlayerRequestFriendFailedCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void

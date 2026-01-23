@@ -20,7 +20,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       private var _icon:DisplayObject;
       
-      private var _iconOffset:Point;
+      private var _iconOffset:Point = new Point(0,-30);
       
       private var _walker:IWalker;
       
@@ -28,34 +28,10 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function UrbieLifeVo(param1:UrbieLifeConfigVo)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._iconOffset = new Point(0,-30);
-            if(_loc2_)
-            {
-               super(null);
-               if(!_loc3_)
-               {
-                  this.configPlayfieldItemVo = new ConfigPlayfieldItemDTO({"moveable":true});
-                  if(_loc2_ || _loc2_)
-                  {
-                     addr006b:
-                     this.matrix3dCoordinates = new Cuboid();
-                     if(_loc2_)
-                     {
-                        addr007b:
-                        this._config = param1;
-                     }
-                  }
-                  return;
-               }
-            }
-            §§goto(addr006b);
-         }
-         §§goto(addr007b);
+         super(null);
+         this.configPlayfieldItemVo = new ConfigPlayfieldItemDTO({"moveable":true});
+         this.matrix3dCoordinates = new Cuboid();
+         this._config = param1;
       }
       
       public function get id() : String
@@ -65,13 +41,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set id(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._id = param1;
-         }
+         this._id = param1;
       }
       
       public function get config() : UrbieLifeConfigVo
@@ -86,13 +56,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set icon(param1:DisplayObject) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(param1)))
-         {
-            this._icon = param1;
-         }
+         this._icon = param1;
       }
       
       public function get walker() : IWalker
@@ -102,13 +66,7 @@ package net.bigpoint.cityrama.model.urbies.vo
       
       public function set walker(param1:IWalker) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            this._walker = param1;
-         }
+         this._walker = param1;
       }
    }
 }

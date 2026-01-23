@@ -16,14 +16,6 @@ package net.bigpoint.cityrama.model.field.ground.vo
       
       public static const DATA_CHANGED:String = "DATA_CHANGED";
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(_loc1_)
-      {
-         DATA_CHANGED = "DATA_CHANGED";
-      }
-      
       private var _groundDTO:GroundDTO;
       
       private var _tilesize:Number;
@@ -38,17 +30,8 @@ package net.bigpoint.cityrama.model.field.ground.vo
       
       public function PlaneObjectVo(param1:ConfigPlayfieldItemDTO, param2:Number)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_ || Boolean(param1))
-         {
-            this.tilesize = param2;
-            if(_loc3_ || _loc3_)
-            {
-               super(param1);
-            }
-         }
+         this.tilesize = param2;
+         super(param1);
       }
       
       public function get groundDTO() : GroundDTO
@@ -58,24 +41,9 @@ package net.bigpoint.cityrama.model.field.ground.vo
       
       public function set groundDTO(param1:GroundDTO) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._groundDTO = param1;
-            if(_loc3_)
-            {
-               this._isConnectedToStreet = param1.active;
-               if(!_loc2_)
-               {
-                  addr003b:
-                  dispatchEvent(new Event(DATA_CHANGED));
-               }
-            }
-            return;
-         }
-         §§goto(addr003b);
+         this._groundDTO = param1;
+         this._isConnectedToStreet = param1.active;
+         dispatchEvent(new Event(DATA_CHANGED));
       }
       
       public function get tilesize() : Number
@@ -85,99 +53,33 @@ package net.bigpoint.cityrama.model.field.ground.vo
       
       public function set tilesize(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._tilesize = param1;
-         }
+         this._tilesize = param1;
       }
       
       public function userCanAffordPlacement(param1:ConfigPlayfieldItemDTO, param2:Number, param3:Number) : Boolean
       {
-         §§push(false);
-         var _loc7_:Boolean = true;
-         var _loc8_:* = §§pop();
          var _loc4_:ConfigOutputDTO = null;
-         var _loc5_:int = 0;
-         var _loc6_:* = param1.constructionPhases[0].listEntryOutputs;
-         while(true)
+         for each(_loc4_ in param1.constructionPhases[0].listEntryOutputs)
          {
-            for each(_loc4_ in _loc6_)
+            if(_loc4_.resourceConfig)
             {
-               §§push(_loc4_.resourceConfig);
-               if(_loc7_)
+               if(_loc4_.resourceConfig.type == ServerResConst.RESOURCE_VIRTUALCURRENCY)
                {
-                  if(!§§pop())
+                  if(Math.abs(_loc4_.outputAmount) > param2)
                   {
-                     continue;
-                  }
-                  if(!_loc7_)
-                  {
-                     continue;
-                  }
-                  §§push(_loc4_.resourceConfig);
-                  if(_loc7_ || Boolean(param3))
-                  {
-                     §§push(§§pop().type);
-                     if(!_loc8_)
-                     {
-                        §§push(ServerResConst.RESOURCE_VIRTUALCURRENCY);
-                        if(_loc7_)
-                        {
-                           if(§§pop() == §§pop())
-                           {
-                              if(!(_loc7_ || Boolean(param2)))
-                              {
-                                 break;
-                              }
-                              if(Math.abs(_loc4_.outputAmount) > param2)
-                              {
-                                 if(!(_loc8_ && Boolean(param2)))
-                                 {
-                                    §§push(false);
-                                    if(!_loc8_)
-                                    {
-                                       return §§pop();
-                                    }
-                                    addr0118:
-                                    return §§pop();
-                                 }
-                                 break;
-                              }
-                              continue;
-                           }
-                           addr00d5:
-                           addr00d3:
-                           §§push(_loc4_.resourceConfig.type);
-                           §§push(ServerResConst.RESOURCE_REALCURRENCY);
-                        }
-                        if(§§pop() == §§pop())
-                        {
-                           if(!(_loc7_ || Boolean(param3)))
-                           {
-                              break;
-                           }
-                           if(Math.abs(_loc4_.outputAmount) > param3)
-                           {
-                              if(_loc7_ || Boolean(param2))
-                              {
-                                 break;
-                              }
-                           }
-                        }
-                        continue;
-                     }
-                     §§goto(addr00d5);
+                     return false;
                   }
                }
-               §§goto(addr00d3);
+               else if(_loc4_.resourceConfig.type == ServerResConst.RESOURCE_REALCURRENCY)
+               {
+                  if(Math.abs(_loc4_.outputAmount) > param3)
+                  {
+                     return false;
+                  }
+               }
             }
-            return true;
          }
-         §§goto(addr0118);
-         §§push(false);
+         return true;
       }
       
       public function get isConnectedToStreet() : Boolean
@@ -187,20 +89,8 @@ package net.bigpoint.cityrama.model.field.ground.vo
       
       public function set isConnectedToStreet(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._isConnectedToStreet = param1;
-            if(!(_loc2_ && _loc2_))
-            {
-               addr003e:
-               dispatchEvent(new Event(DATA_CHANGED));
-            }
-            return;
-         }
-         §§goto(addr003e);
+         this._isConnectedToStreet = param1;
+         dispatchEvent(new Event(DATA_CHANGED));
       }
       
       public function get informationFloaterPhase() : ConfigPhaseDTO
@@ -210,82 +100,37 @@ package net.bigpoint.cityrama.model.field.ground.vo
       
       public function set informationFloaterPhase(param1:ConfigPhaseDTO) : void
       {
-         §§push(false);
-         var _loc9_:Boolean = true;
-         var _loc10_:* = §§pop();
          var _loc2_:ConfigPhaseDTO = null;
          var _loc3_:ConfigPhaseDTO = null;
          var _loc4_:ConfigOutputDTO = null;
-         if(_loc9_)
+         if(param1 != null)
          {
-            if(param1 != null)
+            if(param1.phaseType == ServerPhaseTypes.CREATE_ACTIVATE)
             {
-               if(!(_loc10_ && Boolean(param1)))
+               for each(_loc2_ in configPlayfieldItemVo.activePhases)
                {
-                  if(param1.phaseType == ServerPhaseTypes.CREATE_ACTIVATE)
+                  if(_loc2_.phaseType == ServerPhaseTypes.ACTIVATION)
                   {
-                     addr004c:
-                     for each(_loc2_ in configPlayfieldItemVo.activePhases)
+                     _loc3_ = param1.clone();
+                     for each(_loc4_ in _loc2_.listEntryOutputs)
                      {
-                        if(_loc9_ || Boolean(_loc2_))
-                        {
-                           if(_loc2_.phaseType != ServerPhaseTypes.ACTIVATION)
-                           {
-                              continue;
-                           }
-                        }
-                        _loc3_ = param1.clone();
-                        if(!_loc10_)
-                        {
-                           var _loc7_:int = 0;
-                           if(!(_loc10_ && Boolean(this)))
-                           {
-                              for each(_loc4_ in _loc2_.listEntryOutputs)
-                              {
-                                 if(_loc9_ || Boolean(_loc3_))
-                                 {
-                                    _loc3_.listEntryOutputs.push(_loc4_);
-                                 }
-                              }
-                           }
-                           if(!(_loc9_ || Boolean(param1)))
-                           {
-                              continue;
-                           }
-                        }
-                        this._informationFloaterPhase = _loc3_;
-                        if(_loc9_ || Boolean(_loc2_))
-                        {
-                           return;
-                        }
+                        _loc3_.listEntryOutputs.push(_loc4_);
                      }
-                     if(_loc9_ || Boolean(param1))
-                     {
-                        this._informationFloaterPhase = param1;
-                        if(_loc10_ && Boolean(param1))
-                        {
-                        }
-                     }
+                     this._informationFloaterPhase = _loc3_;
+                     return;
                   }
-                  else
-                  {
-                     this._informationFloaterPhase = param1;
-                     if(_loc9_ || Boolean(_loc3_))
-                     {
-                     }
-                  }
-                  §§goto(addr0162);
                }
-               §§goto(addr004c);
+               this._informationFloaterPhase = param1;
             }
             else
             {
-               this._informationFloaterPhase = null;
+               this._informationFloaterPhase = param1;
             }
-            addr0162:
-            return;
          }
-         §§goto(addr004c);
+         else
+         {
+            this._informationFloaterPhase = null;
+         }
       }
       
       public function get informationFloaterCustomText() : String
@@ -295,32 +140,17 @@ package net.bigpoint.cityrama.model.field.ground.vo
       
       public function set informationFloaterCustomText(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._informationFloaterCustomText = param1;
-         }
+         this._informationFloaterCustomText = param1;
       }
       
       public function getSpecificConstructionPhase(param1:String) : ConfigPhaseDTO
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
          var _loc2_:ConfigPhaseDTO = null;
          for each(_loc2_ in configPlayfieldItemVo.constructionPhases)
          {
-            if(_loc5_)
+            if(_loc2_.phaseType == param1)
             {
-               if(_loc2_.phaseType == param1)
-               {
-                  if(!(_loc6_ && Boolean(_loc2_)))
-                  {
-                     return _loc2_;
-                  }
-               }
+               return _loc2_;
             }
          }
          return null;
@@ -328,31 +158,15 @@ package net.bigpoint.cityrama.model.field.ground.vo
       
       public function getDestructionPhase() : ConfigPhaseDTO
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc1_:ConfigPhaseDTO = null;
-         var _loc2_:int = 0;
-         var _loc3_:* = configPlayfieldItemVo.destructionPhases;
-         while(true)
+         for each(_loc1_ in configPlayfieldItemVo.destructionPhases)
          {
-            for each(_loc1_ in _loc3_)
+            if(_loc1_.phaseType == ServerPhaseTypes.DESTRUCTIONPHASE_REMOVE_BUILDING)
             {
-               if(!(_loc4_ || Boolean(_loc2_)))
-               {
-                  break;
-               }
-               if(_loc1_.phaseType == ServerPhaseTypes.DESTRUCTIONPHASE_REMOVE_BUILDING)
-               {
-                  if(!(_loc5_ && Boolean(this)))
-                  {
-                     break;
-                  }
-               }
+               return _loc1_;
             }
-            return null;
          }
-         return _loc1_;
+         return null;
       }
       
       public function get userInteractionLocked() : Boolean
@@ -362,13 +176,7 @@ package net.bigpoint.cityrama.model.field.ground.vo
       
       public function set userInteractionLocked(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._userInteractionLocked = param1;
-         }
+         this._userInteractionLocked = param1;
       }
    }
 }

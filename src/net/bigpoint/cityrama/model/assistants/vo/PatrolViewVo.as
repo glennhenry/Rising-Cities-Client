@@ -15,57 +15,19 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function PatrolViewVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get isActive() : Boolean
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
+         if(this._timerVo)
          {
-            §§push(this._timerVo);
-            if(!_loc2_)
+            if(this._timerVo.targetTime != 0)
             {
-               if(§§pop())
-               {
-                  if(_loc1_)
-                  {
-                     addr0035:
-                     if(this._timerVo.targetTime != 0)
-                     {
-                        if(_loc1_ || _loc2_)
-                        {
-                           addr004b:
-                           §§push(true);
-                           if(_loc1_ || Boolean(this))
-                           {
-                              return §§pop();
-                           }
-                        }
-                        else
-                        {
-                           addr005a:
-                           return false;
-                        }
-                        return §§pop();
-                     }
-                     §§goto(addr005a);
-                  }
-                  §§goto(addr004b);
-               }
-               §§goto(addr005a);
+               return true;
             }
-            §§goto(addr0035);
          }
-         §§goto(addr005a);
+         return false;
       }
       
       public function get timerVo() : TimerBarComponentVo
@@ -75,13 +37,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set timerVo(param1:TimerBarComponentVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._timerVo = param1;
-         }
+         this._timerVo = param1;
       }
       
       public function get name() : String
@@ -91,13 +47,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set name(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._name = param1;
-         }
+         this._name = param1;
       }
       
       public function get emergencyRate() : Number
@@ -107,13 +57,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set emergencyRate(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._emergencyRate = param1;
-         }
+         this._emergencyRate = param1;
       }
       
       public function get gfxId() : Number
@@ -123,13 +67,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set gfxId(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._gfxId = param1;
-         }
+         this._gfxId = param1;
       }
    }
 }

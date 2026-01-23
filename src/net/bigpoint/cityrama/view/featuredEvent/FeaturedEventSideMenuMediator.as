@@ -19,14 +19,6 @@ package net.bigpoint.cityrama.view.featuredEvent
       
       public static const NAME:String = "FeaturedEventSideMenuMediator";
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(_loc1_)
-      {
-         NAME = "FeaturedEventSideMenuMediator";
-      }
-      
       private var _data:FeaturedEventSideMenuVo;
       
       private var _fEP:FeaturedEventProxy;
@@ -37,110 +29,32 @@ package net.bigpoint.cityrama.view.featuredEvent
       
       public function FeaturedEventSideMenuMediator(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            super(NAME,param1);
-         }
+         super(NAME,param1);
       }
       
       override public function onRegister() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super.onRegister();
-            if(!(_loc1_ && _loc1_))
-            {
-               this.setupListener();
-               if(_loc2_ || Boolean(this))
-               {
-                  addr0045:
-                  this.updateComponent();
-               }
-               §§goto(addr004b);
-            }
-            §§goto(addr0045);
-         }
-         addr004b:
+         super.onRegister();
+         this.setupListener();
+         this.updateComponent();
       }
       
       private function updateComponent() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            this.getData();
-            if(_loc1_)
-            {
-               addr0020:
-               this.setVisibility();
-            }
-            return;
-         }
-         §§goto(addr0020);
+         this.getData();
+         this.setVisibility();
       }
       
       private function getData() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            this._data = this.featuredEventProxy.featuredEventSideMenuVo;
-         }
+         this._data = this.featuredEventProxy.featuredEventSideMenuVo;
       }
       
       private function setupListener() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            §§push(this.component);
-            if(!(_loc2_ && _loc1_))
-            {
-               §§push(FeaturedEventSideMenu.CLICK_INFO);
-               if(_loc1_ || _loc2_)
-               {
-                  §§pop().addEventListener(§§pop(),this.handleClick);
-                  if(!_loc2_)
-                  {
-                     §§push(this.component);
-                     if(_loc1_ || _loc2_)
-                     {
-                        addr0069:
-                        §§push(FeaturedEventSideMenu.SHOW_INFO);
-                        if(_loc1_)
-                        {
-                           §§pop().addEventListener(§§pop(),this.handleShow);
-                           if(_loc1_)
-                           {
-                              addr008a:
-                              this.component.addEventListener(FeaturedEventSideMenu.HIDE_INFO,this.handleHide);
-                              addr0084:
-                           }
-                           §§goto(addr0091);
-                        }
-                        §§goto(addr008a);
-                     }
-                     §§goto(addr0084);
-                  }
-                  §§goto(addr0091);
-               }
-               §§goto(addr008a);
-            }
-            §§goto(addr0069);
-         }
-         addr0091:
+         this.component.addEventListener(FeaturedEventSideMenu.CLICK_INFO,this.handleClick);
+         this.component.addEventListener(FeaturedEventSideMenu.SHOW_INFO,this.handleShow);
+         this.component.addEventListener(FeaturedEventSideMenu.HIDE_INFO,this.handleHide);
       }
       
       override public function listNotificationInterests() : Array
@@ -150,488 +64,83 @@ package net.bigpoint.cityrama.view.featuredEvent
       
       override public function handleNotification(param1:INotification) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         var _loc2_:* = param1.getName();
-         if(!(_loc4_ && Boolean(this)))
+         switch(param1.getName())
          {
-            §§push(ApplicationNotificationConstants.TIMESTAMP_SET);
-            if(_loc3_)
-            {
-               §§push(_loc2_);
-               if(!_loc4_)
+            case ApplicationNotificationConstants.TIMESTAMP_SET:
+            case ApplicationNotificationConstants.CONFIG_EVENTS_CHANGED:
+            case ApplicationNotificationConstants.USERLEVEL_CHANGED:
+            case ApplicationNotificationConstants.CITY_WHEEL_DATA_CHANGED:
+            case ApplicationNotificationConstants.PLAYER_UNLOCKED_FEATURES_CHANGED:
+               this.updateComponent();
+               break;
+            case ApplicationNotificationConstants.SHOW_GUI:
+               if(param1.getBody() == true)
                {
-                  if(§§pop() === §§pop())
-                  {
-                     if(_loc3_)
-                     {
-                        §§push(0);
-                        if(_loc3_)
-                        {
-                        }
-                     }
-                     else
-                     {
-                        addr00e9:
-                        §§push(1);
-                        if(_loc4_)
-                        {
-                        }
-                     }
-                  }
-                  else
-                  {
-                     §§push(ApplicationNotificationConstants.CONFIG_EVENTS_CHANGED);
-                     if(_loc3_ || Boolean(param1))
-                     {
-                        §§push(_loc2_);
-                        if(_loc3_)
-                        {
-                           if(§§pop() === §§pop())
-                           {
-                              if(!(_loc4_ && _loc3_))
-                              {
-                                 §§goto(addr00e9);
-                              }
-                              else
-                              {
-                                 addr01ae:
-                                 §§push(5);
-                                 if(_loc4_ && Boolean(this))
-                                 {
-                                 }
-                              }
-                              §§goto(addr01ce);
-                           }
-                           else
-                           {
-                              §§push(ApplicationNotificationConstants.USERLEVEL_CHANGED);
-                              if(_loc3_ || Boolean(this))
-                              {
-                                 §§push(_loc2_);
-                                 if(!_loc4_)
-                                 {
-                                    if(§§pop() === §§pop())
-                                    {
-                                       if(_loc3_)
-                                       {
-                                          addr0117:
-                                          §§push(2);
-                                          if(_loc4_ && _loc2_)
-                                          {
-                                          }
-                                       }
-                                       else
-                                       {
-                                          §§goto(addr01ae);
-                                       }
-                                       §§goto(addr01ce);
-                                    }
-                                    else
-                                    {
-                                       §§push(ApplicationNotificationConstants.CITY_WHEEL_DATA_CHANGED);
-                                       if(_loc3_ || _loc2_)
-                                       {
-                                          addr013d:
-                                          §§push(_loc2_);
-                                          if(!_loc4_)
-                                          {
-                                             addr0144:
-                                             if(§§pop() === §§pop())
-                                             {
-                                                if(!(_loc4_ && _loc2_))
-                                                {
-                                                   §§push(3);
-                                                   if(_loc3_ || _loc3_)
-                                                   {
-                                                   }
-                                                }
-                                                else
-                                                {
-                                                   §§goto(addr01ae);
-                                                }
-                                             }
-                                             else
-                                             {
-                                                §§push(ApplicationNotificationConstants.PLAYER_UNLOCKED_FEATURES_CHANGED);
-                                                if(!(_loc4_ && _loc3_))
-                                                {
-                                                   addr017c:
-                                                   §§push(_loc2_);
-                                                   if(!_loc4_)
-                                                   {
-                                                      if(§§pop() === §§pop())
-                                                      {
-                                                         if(!_loc4_)
-                                                         {
-                                                            §§push(4);
-                                                            if(_loc3_)
-                                                            {
-                                                            }
-                                                         }
-                                                         else
-                                                         {
-                                                            §§goto(addr01ae);
-                                                         }
-                                                         §§goto(addr01ce);
-                                                      }
-                                                      else
-                                                      {
-                                                         §§goto(addr01aa);
-                                                      }
-                                                   }
-                                                   addr01aa:
-                                                   §§goto(addr01a9);
-                                                }
-                                                addr01a9:
-                                                if(ApplicationNotificationConstants.SHOW_GUI === _loc2_)
-                                                {
-                                                   §§goto(addr01ae);
-                                                }
-                                                else
-                                                {
-                                                   §§push(6);
-                                                }
-                                             }
-                                             §§goto(addr01ce);
-                                          }
-                                          §§goto(addr01aa);
-                                       }
-                                       §§goto(addr017c);
-                                    }
-                                 }
-                                 §§goto(addr01aa);
-                              }
-                              §§goto(addr017c);
-                           }
-                        }
-                        §§goto(addr0144);
-                     }
-                     §§goto(addr017c);
-                  }
-                  addr01ce:
-                  switch(§§pop())
-                  {
-                     case 0:
-                     case 1:
-                     case 2:
-                     case 3:
-                     case 4:
-                        this.updateComponent();
-                        if(!_loc4_)
-                        {
-                           break;
-                        }
-                        addr0040:
-                        this.setVisibility();
-                        if(_loc4_)
-                        {
-                        }
-                        break;
-                     case 5:
-                        if(param1.getBody() != true)
-                        {
-                           var _temp_6:* = this.component;
-                           this.component.includeInLayout = _loc2_ = false;
-                           _temp_6.visible = _loc2_;
-                           if(_loc3_ || _loc2_)
-                           {
-                           }
-                           break;
-                        }
-                        if(_loc4_ && _loc3_)
-                        {
-                           break;
-                        }
-                        §§goto(addr0040);
-                  }
-                  return;
+                  this.setVisibility();
+                  break;
                }
-               §§goto(addr0144);
-            }
-            §§goto(addr013d);
+               this.component.visible = this.component.includeInLayout = false;
          }
-         §§goto(addr0117);
       }
       
       private function setVisibility() : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            §§push(this.component);
-            if(!(_loc2_ && _loc1_))
-            {
-               §§push(this.component.visible = this._data.showSideMenu());
-               if(_loc3_)
-               {
-                  §§pop().includeInLayout = §§pop();
-                  if(_loc3_)
-                  {
-                     addr005b:
-                     this.component.showNewIcon = this._data.showNew;
-                     addr0054:
-                     addr0051:
-                  }
-                  return;
-               }
-               §§goto(addr005b);
-            }
-            §§goto(addr0054);
-         }
-         §§goto(addr0051);
+         this.component.includeInLayout = this.component.visible = this._data.showSideMenu();
+         this.component.showNewIcon = this._data.showNew;
       }
       
       private function handleHide(param1:Event = null) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
+         if(param1)
          {
-            if(param1)
-            {
-               if(_loc3_ || _loc2_)
-               {
-                  param1.stopPropagation();
-                  if(_loc3_)
-                  {
-                     addr0041:
-                     this.component.menuContainer.removeAllElements();
-                  }
-               }
-               §§goto(addr004b);
-            }
-            §§goto(addr0041);
+            param1.stopPropagation();
          }
-         addr004b:
+         this.component.menuContainer.removeAllElements();
       }
       
       private function handleShow(param1:Event) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_ || _loc3_)
-         {
-            param1.stopPropagation();
-         }
+         param1.stopPropagation();
          var _loc2_:FeaturedEventTooltip = new FeaturedEventTooltip();
-         if(_loc3_)
-         {
-            this._data.currentTimeStamp = this.timerProxy.currentTimeStamp;
-            if(_loc3_ || Boolean(param1))
-            {
-               _loc2_.data = this._data;
-               if(_loc3_)
-               {
-                  addr0077:
-                  this.component.menuContainer.addElement(_loc2_);
-               }
-               §§goto(addr0082);
-            }
-            §§goto(addr0077);
-         }
-         addr0082:
+         this._data.currentTimeStamp = this.timerProxy.currentTimeStamp;
+         _loc2_.data = this._data;
+         this.component.menuContainer.addElement(_loc2_);
       }
       
       private function handleClick(param1:Event) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(_loc4_)
+         this.handleHide();
+         if(this._data.showNew)
          {
-            this.handleHide();
-            if(!_loc3_)
-            {
-               §§push(this._data);
-               if(!_loc3_)
-               {
-                  if(§§pop().showNew)
-                  {
-                     if(!(_loc3_ && _loc3_))
-                     {
-                        §§push(this._data);
-                        if(!(_loc3_ && Boolean(this)))
-                        {
-                           §§pop().showNew = false;
-                           if(!(_loc3_ && Boolean(this)))
-                           {
-                              addr0065:
-                              this.component.showNewIcon = this._data.showNew;
-                              if(!_loc3_)
-                              {
-                                 addr0077:
-                                 §§push(this.localStorageProxy);
-                                 if(!(_loc3_ && Boolean(_loc2_)))
-                                 {
-                                    §§pop().userdata.seenFeaturedEvents.push(this._data.currentRunningEventType + this._data.timerVo.startTime);
-                                    if(_loc4_)
-                                    {
-                                       addr00bd:
-                                       this.localStorageProxy.flush();
-                                       addr00b8:
-                                       if(_loc4_)
-                                       {
-                                          §§goto(addr00cb);
-                                       }
-                                    }
-                                    §§goto(addr010d);
-                                 }
-                                 §§goto(addr00bd);
-                              }
-                              §§goto(addr00b8);
-                           }
-                           §§goto(addr0077);
-                        }
-                        addr00cb:
-                        §§goto(addr00c7);
-                     }
-                     §§goto(addr00b8);
-                  }
-                  addr00c7:
-                  if(this._data)
-                  {
-                     addr010d:
-                     var _loc2_:* = this._data.currentRunningEventType;
-                     if(!_loc3_)
-                     {
-                        §§push(FeaturedRunningEventVo.FEATURED_WHEEL);
-                        if(_loc4_)
-                        {
-                           §§push(_loc2_);
-                           if(!(_loc3_ && Boolean(_loc2_)))
-                           {
-                              if(§§pop() === §§pop())
-                              {
-                                 if(!_loc3_)
-                                 {
-                                    addr013d:
-                                    §§push(0);
-                                    if(_loc4_ || Boolean(param1))
-                                    {
-                                    }
-                                 }
-                                 else
-                                 {
-                                    addr0169:
-                                    §§push(1);
-                                    if(_loc4_ || Boolean(this))
-                                    {
-                                    }
-                                 }
-                                 §§goto(addr0189);
-                              }
-                              else
-                              {
-                                 §§goto(addr0165);
-                              }
-                           }
-                           addr0165:
-                           §§goto(addr0164);
-                        }
-                        addr0164:
-                        if(FeaturedRunningEventVo.FEATURED_MYSTERY === _loc2_)
-                        {
-                           §§goto(addr0169);
-                        }
-                        else
-                        {
-                           §§push(2);
-                        }
-                        addr0189:
-                        switch(§§pop())
-                        {
-                           case 0:
-                              sendNotification(ApplicationNotificationConstants.OPEN_FEATURED_LAYER,FeaturedLayerTabProxy.CITYWHEEL_TAB_INDEX);
-                              if(_loc4_)
-                              {
-                              }
-                              break;
-                           case 1:
-                              sendNotification(ApplicationNotificationConstants.OPEN_FEATURED_LAYER,FeaturedLayerTabProxy.MYSTERY_TAB_INDEX);
-                              if(_loc3_)
-                              {
-                              }
-                        }
-                        §§goto(addr0199);
-                     }
-                     §§goto(addr013d);
-                  }
-                  addr0199:
-                  return;
-               }
-               §§goto(addr00cb);
-            }
-            §§goto(addr010d);
+            this._data.showNew = false;
+            this.component.showNewIcon = this._data.showNew;
+            this.localStorageProxy.userdata.seenFeaturedEvents.push(this._data.currentRunningEventType + this._data.timerVo.startTime);
+            this.localStorageProxy.flush();
          }
-         §§goto(addr0065);
+         if(this._data)
+         {
+            switch(this._data.currentRunningEventType)
+            {
+               case FeaturedRunningEventVo.FEATURED_WHEEL:
+                  sendNotification(ApplicationNotificationConstants.OPEN_FEATURED_LAYER,FeaturedLayerTabProxy.CITYWHEEL_TAB_INDEX);
+                  break;
+               case FeaturedRunningEventVo.FEATURED_MYSTERY:
+                  sendNotification(ApplicationNotificationConstants.OPEN_FEATURED_LAYER,FeaturedLayerTabProxy.MYSTERY_TAB_INDEX);
+            }
+         }
       }
       
       override public function onRemove() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
-         {
-            this.removeListener();
-            if(_loc2_ || _loc1_)
-            {
-               super.onRemove();
-            }
-         }
+         this.removeListener();
+         super.onRemove();
       }
       
       private function removeListener() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && Boolean(this)))
-         {
-            §§push(this.component);
-            if(!(_loc1_ && _loc1_))
-            {
-               §§push(FeaturedEventSideMenu.CLICK_INFO);
-               if(!_loc1_)
-               {
-                  §§pop().removeEventListener(§§pop(),this.handleClick);
-                  if(!(_loc1_ && Boolean(this)))
-                  {
-                     §§push(this.component);
-                     if(_loc2_ || _loc1_)
-                     {
-                        addr0072:
-                        §§push(FeaturedEventSideMenu.HIDE_INFO);
-                        if(_loc2_)
-                        {
-                           §§goto(addr007d);
-                        }
-                        §§goto(addr009a);
-                     }
-                     §§goto(addr0094);
-                  }
-                  §§goto(addr0091);
-               }
-               addr007d:
-               §§pop().removeEventListener(§§pop(),this.handleHide);
-               if(!(_loc1_ && _loc2_))
-               {
-                  addr009a:
-                  this.component.removeEventListener(FeaturedEventSideMenu.SHOW_INFO,this.handleShow);
-                  addr0094:
-                  addr0091:
-               }
-               return;
-            }
-            §§goto(addr0072);
-         }
-         §§goto(addr0091);
+         this.component.removeEventListener(FeaturedEventSideMenu.CLICK_INFO,this.handleClick);
+         this.component.removeEventListener(FeaturedEventSideMenu.HIDE_INFO,this.handleHide);
+         this.component.removeEventListener(FeaturedEventSideMenu.SHOW_INFO,this.handleShow);
       }
       
       public function get component() : FeaturedEventSideMenu
@@ -641,74 +150,29 @@ package net.bigpoint.cityrama.view.featuredEvent
       
       private function get featuredEventProxy() : FeaturedEventProxy
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
+         if(!this._fEP)
          {
-            §§push(this._fEP);
-            if(!(_loc1_ && _loc1_))
-            {
-               if(!§§pop())
-               {
-                  if(_loc2_)
-                  {
-                     addr003a:
-                     this._fEP = facade.retrieveProxy(FeaturedEventProxy.NAME) as FeaturedEventProxy;
-                  }
-               }
-               return this._fEP;
-            }
+            this._fEP = facade.retrieveProxy(FeaturedEventProxy.NAME) as FeaturedEventProxy;
          }
-         §§goto(addr003a);
+         return this._fEP;
       }
       
       private function get timerProxy() : TimerProxy
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
+         if(!this._tiP)
          {
-            §§push(this._tiP);
-            if(_loc1_ || Boolean(this))
-            {
-               if(!§§pop())
-               {
-                  if(_loc1_)
-                  {
-                     addr0039:
-                     this._tiP = facade.retrieveProxy(TimerProxy.NAME) as TimerProxy;
-                  }
-               }
-               return this._tiP;
-            }
+            this._tiP = facade.retrieveProxy(TimerProxy.NAME) as TimerProxy;
          }
-         §§goto(addr0039);
+         return this._tiP;
       }
       
       private function get localStorageProxy() : LocalStorageProxy
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
+         if(!this._lSP)
          {
-            §§push(this._lSP);
-            if(_loc2_ || _loc1_)
-            {
-               if(!§§pop())
-               {
-                  if(!(_loc1_ && _loc2_))
-                  {
-                     this._lSP = facade.retrieveProxy(LocalStorageProxy.NAME) as LocalStorageProxy;
-                  }
-               }
-               addr0054:
-               return this._lSP;
-            }
+            this._lSP = facade.retrieveProxy(LocalStorageProxy.NAME) as LocalStorageProxy;
          }
-         §§goto(addr0054);
+         return this._lSP;
       }
    }
 }

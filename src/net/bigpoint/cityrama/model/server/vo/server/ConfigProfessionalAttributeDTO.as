@@ -13,44 +13,16 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigProfessionalAttributeDTO(param1:Object)
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
          var _loc2_:Object = null;
-         if(_loc5_)
+         super();
+         this._id = param1.cpai;
+         this._attributeType = param1.cat;
+         this._maxCap = param1.max;
+         this._attributeThresholds = new Vector.<ConfigProfessionalAttributeThresholdDTO>();
+         for each(_loc2_ in param1.ats)
          {
-            super();
-            if(_loc5_)
-            {
-               this._id = param1.cpai;
-               if(!_loc6_)
-               {
-                  this._attributeType = param1.cat;
-                  if(_loc5_)
-                  {
-                     this._maxCap = param1.max;
-                     addr004a:
-                     if(!(_loc6_ && Boolean(param1)))
-                     {
-                        addr006f:
-                        this._attributeThresholds = new Vector.<ConfigProfessionalAttributeThresholdDTO>();
-                     }
-                     §§goto(addr007e);
-                  }
-                  §§goto(addr006f);
-               }
-               addr007e:
-               for each(_loc2_ in param1.ats)
-               {
-                  if(!(_loc6_ && Boolean(_loc2_)))
-                  {
-                     this._attributeThresholds.push(new ConfigProfessionalAttributeThresholdDTO(_loc2_));
-                  }
-               }
-               return;
-            }
+            this._attributeThresholds.push(new ConfigProfessionalAttributeThresholdDTO(_loc2_));
          }
-         §§goto(addr004a);
       }
       
       public function get id() : Number

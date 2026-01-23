@@ -23,65 +23,20 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigUserLevelDTO(param1:Object)
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
          var _loc2_:Object = null;
-         if(!(_loc6_ && _loc3_))
+         super();
+         this._id = param1.id;
+         this._level = param1.l;
+         this._nextLevelId = param1.nid;
+         this._previousLevelId = param1.pid;
+         this._xp = param1.xp;
+         this._requiredXP = param1.axp;
+         this._availableQuestSlots = param1.qs;
+         this._levelOutputs = new Vector.<ConfigOutputDTO>();
+         for each(_loc2_ in param1.o)
          {
-            super();
-            if(!_loc6_)
-            {
-               this._id = param1.id;
-               if(_loc5_ || Boolean(_loc2_))
-               {
-                  this._level = param1.l;
-                  if(!(_loc6_ && Boolean(param1)))
-                  {
-                     this._nextLevelId = param1.nid;
-                     if(!_loc6_)
-                     {
-                        addr006e:
-                        this._previousLevelId = param1.pid;
-                        if(_loc5_ || Boolean(this))
-                        {
-                           addr0094:
-                           this._xp = param1.xp;
-                           if(!(_loc6_ && Boolean(this)))
-                           {
-                              addr00ab:
-                              this._requiredXP = param1.axp;
-                              if(_loc5_ || Boolean(this))
-                              {
-                                 this._availableQuestSlots = param1.qs;
-                                 if(!(_loc6_ && Boolean(_loc2_)))
-                                 {
-                                    addr00db:
-                                    this._levelOutputs = new Vector.<ConfigOutputDTO>();
-                                 }
-                              }
-                              for each(_loc2_ in param1.o)
-                              {
-                                 if(!_loc6_)
-                                 {
-                                    this._levelOutputs.push(new ConfigOutputDTO(_loc2_));
-                                 }
-                              }
-                              return;
-                              addr00e9:
-                           }
-                        }
-                        §§goto(addr00db);
-                     }
-                     §§goto(addr0094);
-                  }
-                  §§goto(addr006e);
-               }
-               §§goto(addr00e9);
-            }
-            §§goto(addr00db);
+            this._levelOutputs.push(new ConfigOutputDTO(_loc2_));
          }
-         §§goto(addr00ab);
       }
       
       public function get id() : Number
@@ -91,13 +46,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set id(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._id = param1;
-         }
+         this._id = param1;
       }
       
       public function get level() : Number
@@ -107,13 +56,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set level(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._level = param1;
-         }
+         this._level = param1;
       }
       
       public function get nextLevelId() : Number
@@ -128,13 +71,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set xp(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._xp = param1;
-         }
+         this._xp = param1;
       }
       
       public function get previousLevelId() : Number
@@ -163,13 +100,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set levelOutputs(param1:Vector.<ConfigOutputDTO>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._levelOutputs = param1;
-         }
+         this._levelOutputs = param1;
       }
    }
 }

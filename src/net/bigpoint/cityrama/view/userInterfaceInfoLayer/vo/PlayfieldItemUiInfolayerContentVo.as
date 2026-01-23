@@ -30,78 +30,25 @@ package net.bigpoint.cityrama.view.userInterfaceInfoLayer.vo
       
       public function PlayfieldItemUiInfolayerContentVo(param1:uint, param2:Point, param3:ConfigPlayfieldItemDTO, param4:MasteryChallengeDTO = null, param5:String = "", param6:Number = 0)
       {
-         var _temp_1:* = true;
-         var _loc7_:Boolean = false;
-         var _loc8_:Boolean = _temp_1;
-         if(!(_loc7_ && Boolean(param1)))
-         {
-            super(param1,param2,param5);
-            if(!(_loc7_ && Boolean(param2)))
-            {
-               this._data = param3;
-               if(_loc8_ || Boolean(this))
-               {
-                  addr0066:
-                  this._currentTimeStamp = param6;
-                  if(!(_loc7_ && Boolean(param2)))
-                  {
-                     addr007b:
-                     this._masteryChallenge = param4;
-                     if(!_loc7_)
-                     {
-                        this._infoLayerConfigPlayfieldItemVo = new InfoLayerConfigPlayfieldItemVo(param3);
-                     }
-                  }
-               }
-               return;
-            }
-            §§goto(addr007b);
-         }
-         §§goto(addr0066);
+         super(param1,param2,param5);
+         this._data = param3;
+         this._currentTimeStamp = param6;
+         this._masteryChallenge = param4;
+         this._infoLayerConfigPlayfieldItemVo = new InfoLayerConfigPlayfieldItemVo(param3);
       }
       
       override public function get headerString() : String
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         §§push(LocaUtils);
-         §§push("rcl.playfielditems.name");
-         §§push("rcl.playfielditems.name.");
-         if(!_loc2_)
-         {
-            §§push(§§pop() + this._data.localeId);
-            if(!(_loc2_ && _loc1_))
-            {
-               §§push(§§pop() + ".capital");
-            }
-         }
-         return §§pop().getString(§§pop(),§§pop());
+         return LocaUtils.getString("rcl.playfielditems.name","rcl.playfielditems.name." + this._data.localeId + ".capital");
       }
       
       public function get userPermissionStock() : int
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
+         if(!this._permission)
          {
-            §§push(this._permission);
-            if(_loc2_ || _loc1_)
-            {
-               if(!§§pop())
-               {
-                  if(!_loc1_)
-                  {
-                     §§goto(addr003a);
-                  }
-               }
-               §§push(this._permission);
-            }
-            return §§pop().permissionsLeft;
+            throw new RamaCityError("set the permission !");
          }
-         addr003a:
-         throw new RamaCityError("set the permission !");
+         return this._permission.permissionsLeft;
       }
       
       public function get needsPermissions() : Boolean
@@ -111,176 +58,46 @@ package net.bigpoint.cityrama.view.userInterfaceInfoLayer.vo
       
       public function get buyablePermissionStock() : int
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
+         if(!this._permission)
          {
-            §§push(this._permission);
-            if(_loc1_)
-            {
-               if(!§§pop())
-               {
-                  if(_loc1_)
-                  {
-                     throw new RamaCityError("set the permission !");
-                  }
-                  addr00ba:
-                  §§push(1);
-               }
-               else
-               {
-                  §§push(this._permission);
-                  if(!(_loc2_ && _loc1_))
-                  {
-                     addr005a:
-                     §§push(§§pop().config);
-                     if(_loc1_ || _loc1_)
-                     {
-                        §§push(§§pop().buyCap);
-                        if(_loc1_)
-                        {
-                           §§push(-1);
-                           if(!(_loc2_ && _loc1_))
-                           {
-                              if(§§pop() != §§pop())
-                              {
-                                 if(_loc1_ || _loc2_)
-                                 {
-                                    addr00a1:
-                                    addr009f:
-                                    §§push(this._permission.config.buyCap);
-                                    if(_loc1_ || _loc1_)
-                                    {
-                                       addr00b8:
-                                       return §§pop() - this._permission.permissionsBought;
-                                       addr00b1:
-                                    }
-                                 }
-                                 else
-                                 {
-                                    §§goto(addr00ba);
-                                 }
-                                 §§goto(addr00bc);
-                              }
-                              §§goto(addr00ba);
-                           }
-                           §§goto(addr00b8);
-                        }
-                        §§goto(addr00b1);
-                     }
-                     §§goto(addr00a1);
-                  }
-                  §§goto(addr009f);
-               }
-               addr00bc:
-               return §§pop();
-            }
-            §§goto(addr005a);
+            throw new RamaCityError("set the permission !");
          }
-         §§goto(addr00ba);
+         if(this._permission.config.buyCap != -1)
+         {
+            return this._permission.config.buyCap - this._permission.permissionsBought;
+         }
+         return 1;
       }
       
       public function get buyCap() : int
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc2_))
+         if(!this._permission)
          {
-            §§push(this._permission);
-            if(!_loc2_)
-            {
-               if(!§§pop())
-               {
-                  if(!(_loc2_ && Boolean(this)))
-                  {
-                     §§goto(addr0041);
-                  }
-               }
-               §§push(this._permission);
-            }
-            return §§pop().config.buyCap;
+            throw new RamaCityError("set the permission !");
          }
-         addr0041:
-         throw new RamaCityError("set the permission !");
+         return this._permission.config.buyCap;
       }
       
       public function set permission(param1:PlayfieldItemPermissionDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._permission = param1;
-         }
+         this._permission = param1;
       }
       
       public function get specialText() : String
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
+         if(this._data.tags.indexOf(ServerTagConstants.MYSTERY) != -1)
          {
-            §§push(this._data);
-            if(!_loc1_)
-            {
-               if(§§pop().tags.indexOf(ServerTagConstants.MYSTERY) != -1)
-               {
-                  if(!_loc1_)
-                  {
-                     §§push(LocaUtils.getString("rcl.guiinfolayer.playfielditems","rcl.guiinfolayer.playfielditems.specials.mysterybuilding"));
-                     if(!(_loc1_ && _loc1_))
-                     {
-                        return §§pop();
-                     }
-                     §§goto(addr00a0);
-                  }
-               }
-               else
-               {
-                  §§push(this._data);
-                  if(!(_loc1_ && Boolean(this)))
-                  {
-                     if(§§pop().tags.indexOf(ServerTagConstants.BUILDING_EVENTSQUARE) != -1)
-                     {
-                        if(!_loc1_)
-                        {
-                           addr008f:
-                           §§push(LocaUtils.getString("rcl.guiinfolayer.playfielditems","rcl.guiinfolayer.playfielditems.specials.eventsquare"));
-                           if(!_loc1_)
-                           {
-                              addr00a0:
-                              return §§pop();
-                           }
-                        }
-                        else
-                        {
-                           addr00db:
-                           return LocaUtils.getString("rcl.fieldinfo.layer","rcl.fieldinfo.layer.cinema.text.available");
-                        }
-                        return §§pop();
-                     }
-                     §§goto(addr00bc);
-                     §§goto(addr00db);
-                  }
-                  §§goto(addr00bc);
-               }
-               §§goto(addr00db);
-            }
-            addr00bc:
-            if(this._data.tags.indexOf(ServerTagConstants.CINEMA) != -1)
-            {
-               if(!(_loc1_ && Boolean(this)))
-               {
-                  §§goto(addr00db);
-               }
-            }
-            return null;
+            return LocaUtils.getString("rcl.guiinfolayer.playfielditems","rcl.guiinfolayer.playfielditems.specials.mysterybuilding");
          }
-         §§goto(addr008f);
+         if(this._data.tags.indexOf(ServerTagConstants.BUILDING_EVENTSQUARE) != -1)
+         {
+            return LocaUtils.getString("rcl.guiinfolayer.playfielditems","rcl.guiinfolayer.playfielditems.specials.eventsquare");
+         }
+         if(this._data.tags.indexOf(ServerTagConstants.CINEMA) != -1)
+         {
+            return LocaUtils.getString("rcl.fieldinfo.layer","rcl.fieldinfo.layer.cinema.text.available");
+         }
+         return null;
       }
       
       public function get configSecurityGrades() : Vector.<ConfigSecurityGradeDTO>
@@ -295,49 +112,21 @@ package net.bigpoint.cityrama.view.userInterfaceInfoLayer.vo
       
       public function set userLevel(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(param1))
-         {
-            this._userLevel = param1;
-         }
+         this._userLevel = param1;
       }
       
       public function get isUnlocked() : Boolean
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
+         if(!this._userLevel)
          {
-            §§push(this._userLevel);
-            if(!(_loc1_ && Boolean(this)))
-            {
-               if(!§§pop())
-               {
-                  if(_loc2_)
-                  {
-                     throw new RamaCityError("set the userlevel !");
-                  }
-               }
-               addr0046:
-               §§push(this._userLevel);
-            }
-            return §§pop() >= this._data.unlockLevel;
+            throw new RamaCityError("set the userlevel !");
          }
-         §§goto(addr0046);
+         return this._userLevel >= this._data.unlockLevel;
       }
       
       public function set isReward(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._isReward = param1;
-         }
+         this._isReward = param1;
       }
       
       public function get isReward() : Boolean

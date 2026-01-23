@@ -12,75 +12,30 @@ package net.bigpoint.cityrama.controller.residentialBook
       
       public function OpenResidentialBookCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
          var _loc3_:Object = null;
          var _loc4_:PopupSettingsVo = null;
          var _loc2_:Object = param1.getBody();
-         if(!(_loc6_ && Boolean(_loc3_)))
+         if(_loc2_.residential)
          {
-            if(_loc2_.residential)
+            _loc3_ = new Object();
+            _loc3_.residential = _loc2_.residential;
+            if(_loc2_.index)
             {
-               addr003b:
-               _loc3_ = new Object();
-               if(!_loc6_)
-               {
-                  _loc3_.residential = _loc2_.residential;
-                  if(_loc5_)
-                  {
-                     if(_loc2_.index)
-                     {
-                        if(!(_loc6_ && Boolean(_loc2_)))
-                        {
-                           _loc3_.index = _loc2_.index;
-                        }
-                     }
-                  }
-               }
-               _loc4_ = new PopupSettingsVo(PopupSettingsVo.PAPER_POPUP);
-               _loc4_.modal = true;
-               if(!(_loc6_ && Boolean(_loc3_)))
-               {
-                  _loc4_.viewClass = ResidentialPopup;
-                  if(_loc5_ || Boolean(this))
-                  {
-                     _loc4_.mediatorClass = ResidentialTabbedBookMediator;
-                     if(_loc5_ || Boolean(param1))
-                     {
-                        addr00e3:
-                        _loc4_.mediatorName = ResidentialTabbedBookMediator.NAME;
-                        if(!(_loc6_ && Boolean(param1)))
-                        {
-                           _loc4_.data = _loc3_;
-                           if(_loc5_)
-                           {
-                              addr0106:
-                              facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc4_);
-                           }
-                        }
-                     }
-                     §§goto(addr0112);
-                  }
-                  §§goto(addr0106);
-               }
-               §§goto(addr00e3);
+               _loc3_.index = _loc2_.index;
             }
-            addr0112:
-            return;
+            _loc4_ = new PopupSettingsVo(PopupSettingsVo.PAPER_POPUP);
+            _loc4_.modal = true;
+            _loc4_.viewClass = ResidentialPopup;
+            _loc4_.mediatorClass = ResidentialTabbedBookMediator;
+            _loc4_.mediatorName = ResidentialTabbedBookMediator.NAME;
+            _loc4_.data = _loc3_;
+            facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc4_);
          }
-         §§goto(addr003b);
       }
    }
 }

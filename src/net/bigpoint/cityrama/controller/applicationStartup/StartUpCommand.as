@@ -9,35 +9,14 @@ package net.bigpoint.cityrama.controller.applicationStartup
       
       public function StartUpCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
-         {
-            super();
-         }
+         super();
       }
       
       override protected function initializeMacroCommand() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            addSubCommand(ControllerPrepMacroCommand);
-            if(_loc2_ || _loc2_)
-            {
-               addSubCommand(ModelPrepCommand);
-               if(_loc2_ || _loc1_)
-               {
-                  addr004e:
-                  addSubCommand(ViewPrepCommand);
-               }
-            }
-            return;
-         }
-         §§goto(addr004e);
+         addSubCommand(ControllerPrepMacroCommand);
+         addSubCommand(ModelPrepCommand);
+         addSubCommand(ViewPrepCommand);
       }
    }
 }

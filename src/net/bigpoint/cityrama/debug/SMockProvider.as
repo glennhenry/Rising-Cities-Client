@@ -10,13 +10,7 @@ package net.bigpoint.cityrama.debug
       
       public function SMockProvider()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            super();
-         }
+         super();
          throw new RamaCityError("Mock Provider used!!!!");
       }
       
@@ -27,11 +21,6 @@ package net.bigpoint.cityrama.debug
       
       public static function getDummyText(param1:int) : String
       {
-         var _temp_1:* = true;
-         var _loc8_:Boolean = false;
-         var _loc9_:Boolean = _temp_1;
-         var _loc6_:int = 0;
-         var _loc7_:String = null;
          throw new RamaCityError("Mock Provider used!!!! getDummyText");
       }
       
@@ -62,18 +51,9 @@ package net.bigpoint.cityrama.debug
       
       public static function get instance() : SMockProvider
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
+         if(_instance == null)
          {
-            if(_instance == null)
-            {
-               if(_loc2_ || SMockProvider)
-               {
-                  _instance = new SMockProvider();
-               }
-            }
+            _instance = new SMockProvider();
          }
          throw new RamaCityError("Mock Provider used!!!!");
       }

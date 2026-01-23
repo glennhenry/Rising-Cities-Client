@@ -8,13 +8,7 @@ package
       
       public function playfield_loading_animation_102()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
    }
 }

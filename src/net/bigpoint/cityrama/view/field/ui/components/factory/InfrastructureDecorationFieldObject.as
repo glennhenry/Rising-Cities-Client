@@ -12,37 +12,16 @@ package net.bigpoint.cityrama.view.field.ui.components.factory
       
       public function InfrastructureDecorationFieldObject(param1:BillboardAssetsReferenceHolder, param2:InfrastructureDecorationFieldObjectVo)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(!_loc4_)
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
       
       override public function prepareBasementViewManager() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && Boolean(this)))
+         if(_basementViewManager == null)
          {
-            if(_basementViewManager == null)
-            {
-               if(!(_loc2_ && _loc1_))
-               {
-                  _basementViewManager = new InfrastructureBasementViewManager();
-                  if(!(_loc2_ && _loc2_))
-                  {
-                     addr0056:
-                     _basementViewManager.prepareBasementViewManager(billboardObjectVo,_billbordObjectContainer,_assetCollection);
-                  }
-                  return;
-               }
-            }
+            _basementViewManager = new InfrastructureBasementViewManager();
          }
-         §§goto(addr0056);
+         _basementViewManager.prepareBasementViewManager(billboardObjectVo,_billbordObjectContainer,_assetCollection);
       }
       
       public function get emergencyFieldObjectVo() : IEmergencyInfrastructureVO

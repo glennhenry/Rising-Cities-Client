@@ -14,54 +14,19 @@ package net.bigpoint.cityrama.controller.miniLayer
       
       public function OpenCinemaRewardMiniLayerCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc2_:CinemaProxy = facade.retrieveProxy(CinemaProxy.NAME) as CinemaProxy;
          var _loc3_:PopupSettingsVo = new PopupSettingsVo(PopupSettingsVo.MINI_POPUP);
-         if(_loc4_)
-         {
-            _loc3_.modal = true;
-            if(!(_loc5_ && Boolean(_loc3_)))
-            {
-               _loc3_.viewClass = CinemaRewardMiniLayer;
-               if(!_loc5_)
-               {
-                  _loc3_.mediatorClass = CinemaRewardMiniLayerMediator;
-                  if(!_loc5_)
-                  {
-                     §§goto(addr0080);
-                  }
-                  §§goto(addr008f);
-               }
-               §§goto(addr009d);
-            }
-            addr0080:
-            _loc3_.mediatorName = CinemaRewardMiniLayerMediator.NAME;
-            if(!_loc5_)
-            {
-               addr008f:
-               _loc3_.data = _loc2_.cinemaRewardMiniLayerVo;
-               if(_loc4_)
-               {
-                  addr009d:
-                  facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
-               }
-            }
-            return;
-         }
-         §§goto(addr008f);
+         _loc3_.modal = true;
+         _loc3_.viewClass = CinemaRewardMiniLayer;
+         _loc3_.mediatorClass = CinemaRewardMiniLayerMediator;
+         _loc3_.mediatorName = CinemaRewardMiniLayerMediator.NAME;
+         _loc3_.data = _loc2_.cinemaRewardMiniLayerVo;
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
       }
    }
 }

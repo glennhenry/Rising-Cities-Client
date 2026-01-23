@@ -22,144 +22,54 @@ package net.bigpoint.cityrama.view.citysquare.ui.components
       
       public function ChallangeItemRenderer()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc2_))
-         {
-            super();
-            if(!(_loc2_ && _loc2_))
-            {
-               mx_internal::_document = this;
-               if(_loc1_ || _loc1_)
-               {
-                  this.autoDrawBackground = false;
-                  if(!(_loc2_ && Boolean(this)))
-                  {
-                     §§goto(addr0063);
-                  }
-                  §§goto(addr007b);
-               }
-            }
-            §§goto(addr0098);
-         }
-         addr0063:
+         super();
+         mx_internal::_document = this;
+         this.autoDrawBackground = false;
          this.mxmlContent = [this._ChallangeItemRenderer_ChallengeItemComponent1_i()];
-         if(_loc1_ || _loc2_)
-         {
-            addr007b:
-            this.currentState = "normal";
-            if(!_loc2_)
-            {
-               this.addEventListener("creationComplete",this.___ChallangeItemRenderer_ItemRenderer1_creationComplete);
-               if(_loc1_)
-               {
-                  states = [new State({
-                     "name":"normal",
-                     "overrides":[]
-                  }),new State({
-                     "name":"hovered",
-                     "overrides":[]
-                  }),new State({
-                     "name":"selected",
-                     "overrides":[]
-                  })];
-                  addr0098:
-               }
-               §§goto(addr00db);
-            }
-            §§goto(addr0098);
-         }
-         addr00db:
+         this.currentState = "normal";
+         this.addEventListener("creationComplete",this.___ChallangeItemRenderer_ItemRenderer1_creationComplete);
+         states = [new State({
+            "name":"normal",
+            "overrides":[]
+         }),new State({
+            "name":"hovered",
+            "overrides":[]
+         }),new State({
+            "name":"selected",
+            "overrides":[]
+         })];
       }
       
       override public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
+         super.moduleFactory = param1;
+         if(this.__moduleFactoryInitialized)
          {
-            super.moduleFactory = param1;
-            if(!(_loc2_ && _loc3_))
-            {
-               if(this.__moduleFactoryInitialized)
-               {
-                  if(_loc3_)
-                  {
-                     §§goto(addr0041);
-                  }
-               }
-               this.__moduleFactoryInitialized = true;
-               §§goto(addr0055);
-            }
-            addr0041:
             return;
          }
-         addr0055:
+         this.__moduleFactoryInitialized = true;
       }
       
       override public function initialize() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super.initialize();
-         }
+         super.initialize();
       }
       
       override public function set data(param1:Object) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            super.data = param1;
-            if(_loc2_)
-            {
-               addr0033:
-               this._dataDirty = true;
-               if(!_loc3_)
-               {
-                  invalidateProperties();
-               }
-            }
-            return;
-         }
-         §§goto(addr0033);
+         super.data = param1;
+         this._dataDirty = true;
+         invalidateProperties();
       }
       
       override protected function commitProperties() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
+         super.commitProperties();
+         if(this._dataDirty)
          {
-            super.commitProperties();
-            if(_loc2_)
-            {
-               if(this._dataDirty)
-               {
-                  if(!_loc1_)
-                  {
-                     addr0037:
-                     this._dataDirty = false;
-                     if(_loc2_ || _loc2_)
-                     {
-                        addr0049:
-                        this.comp.data = super.data as EventChallengeDetailViewVo;
-                     }
-                  }
-               }
-               return;
-            }
-            §§goto(addr0037);
+            this._dataDirty = false;
+            this.comp.data = super.data as EventChallengeDetailViewVo;
          }
-         §§goto(addr0049);
       }
       
       private function handleCreationComplete(param1:FlexEvent) : void
@@ -168,52 +78,20 @@ package net.bigpoint.cityrama.view.citysquare.ui.components
       
       private function _ChallangeItemRenderer_ChallengeItemComponent1_i() : ChallengeItemComponent
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:ChallengeItemComponent = new ChallengeItemComponent();
-         if(!(_loc3_ && _loc2_))
+         _loc1_.id = "comp";
+         if(!_loc1_.document)
          {
-            _loc1_.id = "comp";
-            if(!_loc3_)
-            {
-               if(!_loc1_.document)
-               {
-                  if(!_loc3_)
-                  {
-                     addr0059:
-                     _loc1_.document = this;
-                     if(!(_loc3_ && Boolean(this)))
-                     {
-                        addr006a:
-                        this.comp = _loc1_;
-                        if(!_loc3_)
-                        {
-                           addr0074:
-                           BindingManager.executeBindings(this,"comp",this.comp);
-                        }
-                        §§goto(addr0081);
-                     }
-                     §§goto(addr0074);
-                  }
-                  addr0081:
-                  return _loc1_;
-               }
-               §§goto(addr006a);
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr0059);
+         this.comp = _loc1_;
+         BindingManager.executeBindings(this,"comp",this.comp);
+         return _loc1_;
       }
       
       public function ___ChallangeItemRenderer_ItemRenderer1_creationComplete(param1:FlexEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            this.handleCreationComplete(param1);
-         }
+         this.handleCreationComplete(param1);
       }
       
       [Bindable(event="propertyChange")]
@@ -224,37 +102,15 @@ package net.bigpoint.cityrama.view.citysquare.ui.components
       
       public function set comp(param1:ChallengeItemComponent) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._3059471comp;
-         if(_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._3059471comp = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc3_ && _loc3_))
-               {
-                  this._3059471comp = param1;
-                  if(_loc4_ || Boolean(param1))
-                  {
-                     addr005d:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!(_loc3_ && _loc3_))
-                        {
-                           addr0074:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"comp",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0083);
-               }
-               §§goto(addr005d);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"comp",_loc2_,param1));
             }
-            addr0083:
-            return;
          }
-         §§goto(addr0074);
       }
    }
 }

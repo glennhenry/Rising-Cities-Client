@@ -17,9 +17,9 @@ package net.bigpoint.cityrama.constants
       
       public static const SERVER_CONNECTION_CLOSED:String = "SERVER_CONNECTION_CLOSED";
       
-      public static const SERVER_CONNECTION_IDLE_CLOSE:String;
+      public static const SERVER_CONNECTION_IDLE_CLOSE:String = SERVER_MESSAGE_ + "CONNECTION_IDLE_CLOSE";
       
-      public static const SERVER_ILLEGAL_PARAM_FAIL:String;
+      public static const SERVER_ILLEGAL_PARAM_FAIL:String = SERVER_MESSAGE_ + "ILLEGAL_PARAM_FAIL";
       
       public static const SERVER_PUSH_MAINTENANCE:String = "SERVER_PUSH_MAINTENANCE";
       
@@ -29,1352 +29,347 @@ package net.bigpoint.cityrama.constants
       
       public static const SERVER_MESSAGE_PROGRESS:String = "SERVER_MESSAGE_PROGRESS";
       
-      public static const SERVER_MESSAGE_SPOOL:String;
+      public static const SERVER_MESSAGE_SPOOL:String = SERVER_MESSAGE_ + "SPOOL";
       
-      public static const SERVER_MESSAGE_HARVESTHELPER_RESIDENTIAL_SUCCESS_SPOOL:String;
+      public static const SERVER_MESSAGE_HARVESTHELPER_RESIDENTIAL_SUCCESS_SPOOL:String = SERVER_MESSAGE_ + "HARVESTHELPER_RESIDENTIAL_SUCCESS_SPOOL";
       
-      public static const CLIENT_MESSAGE_LOGIN:String;
+      public static const CLIENT_MESSAGE_LOGIN:String = CLIENT_MESSAGE_ + "LOGIN";
       
-      public static const SERVER_MESSAGE_INITIAL_LOGIN_SUCCESS:String;
+      public static const SERVER_MESSAGE_INITIAL_LOGIN_SUCCESS:String = SERVER_MESSAGE_ + "LOGIN_SUCCESS";
       
-      public static const SERVER_MESSAGE_LOGIN_FAILED:String;
+      public static const SERVER_MESSAGE_LOGIN_FAILED:String = SERVER_MESSAGE_ + "LOGIN_FAILED";
       
-      public static const CLIENT_MESSAGE_LOGOUT:String;
+      public static const CLIENT_MESSAGE_LOGOUT:String = CLIENT_MESSAGE_ + "LOGOUT";
       
-      public static const CLIENT_MESSAGE_TIMESTAMP_REQUEST:String;
+      public static const CLIENT_MESSAGE_TIMESTAMP_REQUEST:String = CLIENT_MESSAGE_ + "TIMESTAMP_REQUEST";
       
-      public static const SERVER_MESSAGE_TIMESTAMP_RESPONSE:String;
+      public static const SERVER_MESSAGE_TIMESTAMP_RESPONSE:String = SERVER_MESSAGE_ + "TIMESTAMP_RESPONSE";
       
-      public static const SERVER_MESSAGE_MIDSESSION_LOGIN_SUCCESS:String;
+      public static const SERVER_MESSAGE_MIDSESSION_LOGIN_SUCCESS:String = SERVER_MESSAGE_ + "LOGIN_SUCCESS";
       
-      public static const CLIENT_MESSAGE_SWITCH_PLAYFIELD:String;
+      public static const CLIENT_MESSAGE_SWITCH_PLAYFIELD:String = CLIENT_MESSAGE_ + "SWITCH_PLAYFIELD";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_LOAD:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_LOAD:String = CLIENT_MESSAGE_ + "PLAYFIELD_LOAD";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_PLAYFIELDITEM_DELETE_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_PLAYFIELDITEM_DELETE_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELDITEM_DELETE_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_PLAYFIELDITEM_DELETE_FAILED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_PLAYFIELDITEM_DELETE_FAILED:String = SERVER_MESSAGE_ + "PLAYFIELDITEM_DELETE_FAILED";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_DELETE:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_DELETE:String = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_DELETE";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_ITEM_CREATE:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_ITEM_CREATE:String = CLIENT_MESSAGE_ + "PLAYFIELD_ITEM_CREATE";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_DECORATION_CREATE:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_DECORATION_CREATE:String = CLIENT_MESSAGE_ + "PLAYFIELD_DECORATION_CREATE";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_DECORATION_MOVE:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_DECORATION_MOVE:String = CLIENT_MESSAGE_ + "PLAYFIELD_DECORATION_MOVE";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_DECORATION_DELETE:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_DECORATION_DELETE:String = CLIENT_MESSAGE_ + "PLAYFIELD_DECORATION_DELETE";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_CREATE_DECORATION_FAILED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_CREATE_DECORATION_FAILED:String = SERVER_MESSAGE_ + "PLAYFIELD_CREATE_DECORATION_FAILED";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_CREATE_DECORATION_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_CREATE_DECORATION_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_CREATE_DECORATION_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_MOVE_DECORATION_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_MOVE_DECORATION_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_MOVE_DECORATION_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_MOVE_DECORATION_FAILED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_MOVE_DECORATION_FAILED:String = SERVER_MESSAGE_ + "PLAYFIELD_MOVE_DECORATION_FAILED";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_DELETE_DECORATION_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_DELETE_DECORATION_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_DELETE_DECORATION_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_DELETE_DECORATION_FAILED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_DELETE_DECORATION_FAILED:String = SERVER_MESSAGE_ + "PLAYFIELD_DELETE_DECORATION_FAILED";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_CREATE:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_CREATE:String = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_CREATE";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_NEW:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_NEW:String = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_NEW";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_CREATE_FAILED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_CREATE_FAILED:String = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_CREATE_FAILED";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_CONSTRUCTIONPHASE_PROCESS:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_CONSTRUCTIONPHASE_PROCESS:String = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_PROCESSPHASE";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_CONSTRUCTIONPHASE_UPDATE:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_CONSTRUCTIONPHASE_UPDATE:String = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_CONSTRUCTIONPHASE_UPDATE";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_HARVESTPHASE_UPDATE:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_HARVESTPHASE_UPDATE:String = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_HARVESTPHASE_UPDATE";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_CREATE_GROUND:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_CREATE_GROUND:String = CLIENT_MESSAGE_ + "PLAYFIELD_CREATE_GROUND";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_CREATE_GROUND_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_CREATE_GROUND_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_CREATE_GROUND_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_CREATE_GROUND_FAILED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_CREATE_GROUND_FAILED:String = SERVER_MESSAGE_ + "PLAYFIELD_CREATE_GROUND_FAILED";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_UPDATE_GROUND_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_UPDATE_GROUND_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_UPDATE_GROUND_SUCCESS";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_DESTROY_GROUND:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_DESTROY_GROUND:String = CLIENT_MESSAGE_ + "PLAYFIELD_DESTROY_GROUND";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_DESTROY_GROUND_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_DESTROY_GROUND_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_DESTROY_GROUND_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_DESTROY_GROUND_FAILED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_DESTROY_GROUND_FAILED:String = SERVER_MESSAGE_ + "PLAYFIELD_DESTROY_GROUND_FAILED";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_MOVE_GROUND:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_MOVE_GROUND:String = CLIENT_MESSAGE_ + "PLAYFIELD_MOVE_GROUND";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_MOVE_GROUND_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_MOVE_GROUND_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_MOVE_GROUND_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_MOVE_GROUND_FAILED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_MOVE_GROUND_FAILED:String = SERVER_MESSAGE_ + "PLAYFIELD_MOVE_GROUND_FAILED";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_INAUGURATE:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_INAUGURATE:String = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_INAUGURATE ";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_SWAP_RESIDENT:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_SWAP_RESIDENT:String = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_SWAP_RESIDENT";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_SWITCH_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_SWITCH_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_SWITCH_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BOULDER_CREATED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BOULDER_CREATED:String = SERVER_MESSAGE_ + "PLAYFIELD_BOULDER_CREATED";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_BOULDER_PROCESSPHASE:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_BOULDER_PROCESSPHASE:String = CLIENT_MESSAGE_ + "PLAYFIELD_BOULDER_PROCESSPHASE";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BOULDER_PHASE_STARTED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BOULDER_PHASE_STARTED:String = SERVER_MESSAGE_ + "PLAYFIELD_BOULDER_PHASE_STARTED";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BOULDER_DESTRUCTIONPHASE_UPDATE:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BOULDER_DESTRUCTIONPHASE_UPDATE:String = SERVER_MESSAGE_ + "PLAYFIELD_BOULDER_DESTRUCTIONPHASE_UPDATE";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BOULDER_DELETED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BOULDER_DELETED:String = SERVER_MESSAGE_ + "PLAYFIELD_BOULDER_DELETED";
       
-      public static const CLIENT_MESSAGE_PLAYFIELDITEM_BUY_PERMISSION:String;
+      public static const CLIENT_MESSAGE_PLAYFIELDITEM_BUY_PERMISSION:String = CLIENT_MESSAGE_ + "PLAYFIELDITEM_BUY_PERMISSION";
       
-      public static const SERVER_MESSAGE_PLAYFIELDITEM_BUY_PERMISSION_FAIL:String;
+      public static const SERVER_MESSAGE_PLAYFIELDITEM_BUY_PERMISSION_FAIL:String = SERVER_MESSAGE_ + "PLAYFIELDITEM_BUY_PERMISSION_FAIL";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_BOOSTPHASE:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_BOOSTPHASE:String = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_BOOSTPHASE";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_ITEM_BOOSTPHASE_UPDATE:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_ITEM_BOOSTPHASE_UPDATE:String = SERVER_MESSAGE_ + "PLAYFIELD_ITEM_BOOSTPHASE_UPDATE";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_REQUEST_INSTANTFINISH:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_REQUEST_INSTANTFINISH:String = CLIENT_MESSAGE_ + "PLAYFIELD_REQUEST_INSTANTFINISH";
       
-      public static const SERVER_MESSAGE_RESOURCES:String;
+      public static const SERVER_MESSAGE_RESOURCES:String = SERVER_MESSAGE_ + "RESOURCES";
       
-      public static const SERVER_MESSAGE_QUEST_NEW:String;
+      public static const SERVER_MESSAGE_QUEST_NEW:String = SERVER_MESSAGE_ + "QUEST_NEW";
       
-      public static const SERVER_MESSAGE_QUEST_TASK_UPDATE:String;
+      public static const SERVER_MESSAGE_QUEST_TASK_UPDATE:String = SERVER_MESSAGE_ + "QUEST_TASK_UPDATE";
       
-      public static const SERVER_MESSAGE_QUEST_UPDATE:String;
+      public static const SERVER_MESSAGE_QUEST_UPDATE:String = SERVER_MESSAGE_ + "QUEST_UPDATE";
       
-      public static const SERVER_MESSAGE_PLAYER_LEVEL_UP_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYER_LEVEL_UP_SUCCESS:String = SERVER_MESSAGE_ + "PLAYER_LEVEL_UP_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_UPDATE:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_UPDATE:String = SERVER_MESSAGE_ + "PLAYFIELD_UPDATE";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_EXPAND_FAILED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_EXPAND_FAILED:String = SERVER_MESSAGE_ + "PLAYFIELD_EXPAND_FAILED";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_EXPAND_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_EXPAND_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_EXPAND_SUCCESS";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_EXPAND:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_EXPAND:String = CLIENT_MESSAGE_ + "PLAYFIELD_EXPAND";
       
-      public static const CLIENT_PAYMENT_SWAP_CURRENCY:String;
+      public static const CLIENT_PAYMENT_SWAP_CURRENCY:String = CLIENT_MESSAGE_ + "PAYMENT_SWAP_CURRENCY";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_HARVESTPHASE_PROCESS:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_BUILDING_HARVESTPHASE_PROCESS:String = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_HARVESTPHASE_PROCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_CONSTRUCTION_FINISHED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_CONSTRUCTION_FINISHED:String = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_CONSTRUCTION_FINISHED";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_UPGRADEPHASE_UPDATE:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_UPGRADEPHASE_UPDATE:String = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_UPGRADEPHASE_UPDATE";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_PHASE_NEW:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_PHASE_NEW:String = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_PHASE_NEW";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_MOVE_FAILED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_MOVE_FAILED:String = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_MOVE_FAILED";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_MOVE_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_MOVE_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_MOVE_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELDITEM_ACTIVE_STATE_CHANGED:String;
+      public static const SERVER_MESSAGE_PLAYFIELDITEM_ACTIVE_STATE_CHANGED:String = SERVER_MESSAGE_ + "PLAYFIELDITEM_ACTIVE_STATE_CHANGED";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_HARVEST_PRODUCTION:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_HARVEST_PRODUCTION:String = CLIENT_MESSAGE_ + "PLAYFIELD_HARVEST_PRODUCTION";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_CANCEL_PRODUCTION:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_CANCEL_PRODUCTION:String = CLIENT_MESSAGE_ + "PLAYFIELD_CANCEL_PRODUCTION";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_REQUEST_PRODUCTION:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_REQUEST_PRODUCTION:String = CLIENT_MESSAGE_ + "PLAYFIELD_REQUEST_PRODUCTION";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_PRODUCTION_PHASEUPDATE:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_PRODUCTION_PHASEUPDATE:String = SERVER_MESSAGE_ + "PLAYFIELD_PRODUCTION_PHASEUPDATE";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_PRODUCTION_FAILED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_PRODUCTION_FAILED:String = SERVER_MESSAGE_ + "PLAYFIELD_PRODUCTION_FAILED";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_PRODUCTION_HARVEST_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_PRODUCTION_HARVEST_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_PRODUCTION_HARVEST_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_PRODUCTION_HARVEST_FAILED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_PRODUCTION_HARVEST_FAILED:String = SERVER_MESSAGE_ + "PLAYFIELD_PRODUCTION_HARVEST_FAILED";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_PRODUCTION_CANCEL_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_PRODUCTION_CANCEL_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_PRODUCTION_CANCEL_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_PRODUCTION_CANCEL_FAILED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_PRODUCTION_CANCEL_FAILED:String = SERVER_MESSAGE_ + "PLAYFIELD_PRODUCTION_CANCEL_FAILED";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_MOVE_BUILDING:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_MOVE_BUILDING:String = CLIENT_MESSAGE_ + "PLAYFIELD_MOVE_BUILDING";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_STACK_NEED_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_STACK_NEED_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_STACK_NEED_SUCCESS";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_UNSTACK_NEED:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_UNSTACK_NEED:String = CLIENT_MESSAGE_ + "PLAYFIELD_UNSTACK_NEED";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_STACK_NEED:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_STACK_NEED:String = CLIENT_MESSAGE_ + "PLAYFIELD_STACK_NEED";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_NEED_CONSUMED:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_NEED_CONSUMED:String = SERVER_MESSAGE_ + "PLAYFIELD_NEED_CONSUMED";
       
-      public static const CLIENT_MESSAGE_QUEST_TASK_PROCESS:String;
+      public static const CLIENT_MESSAGE_QUEST_TASK_PROCESS:String = CLIENT_MESSAGE_ + "QUEST_TASK_PROCESS";
       
-      public static const CLIENT_MESSAGE_QUEST_ELEMENT_INSTANT_FINISH:String;
+      public static const CLIENT_MESSAGE_QUEST_ELEMENT_INSTANT_FINISH:String = CLIENT_MESSAGE_ + "QUEST_ELEMENT_INSTANT_FINISH";
       
-      public static const SERVER_MESSAGE_SWITCH_FEATURE_ACTIVATION:String;
+      public static const SERVER_MESSAGE_SWITCH_FEATURE_ACTIVATION:String = SERVER_MESSAGE_ + "SWITCH_FEATURE_ACTIVATION";
       
-      public static const CLIENT_PLAYER_INVITE_REQUESTFRIENDLIST:String;
+      public static const CLIENT_PLAYER_INVITE_REQUESTFRIENDLIST:String = CLIENT_MESSAGE_ + "PLAYER_INVITE_REQUESTFRIENDLIST";
       
-      public static const CLIENT_PLAYER_INVITE_FRIEND:String;
+      public static const CLIENT_PLAYER_INVITE_FRIEND:String = CLIENT_MESSAGE_ + "PLAYER_INVITE_FRIEND";
       
-      public static const CLIENT_PLAYER_ACCEPT_FRIEND:String;
+      public static const CLIENT_PLAYER_ACCEPT_FRIEND:String = CLIENT_MESSAGE_ + "PLAYER_ACCEPT_FRIEND";
       
-      public static const CLIENT_PLAYER_DECLINE_FRIEND:String;
+      public static const CLIENT_PLAYER_DECLINE_FRIEND:String = CLIENT_MESSAGE_ + "PLAYER_DECLINE_FRIEND";
       
-      public static const CLIENT_PLAYER_CANCEL_FRIEND:String;
+      public static const CLIENT_PLAYER_CANCEL_FRIEND:String = CLIENT_MESSAGE_ + "PLAYER_CANCEL_FRIEND";
       
-      public static const SERVER_MESSAGE_FRIENDS_UPDATE:String;
+      public static const SERVER_MESSAGE_FRIENDS_UPDATE:String = SERVER_MESSAGE_ + "FRIENDS_UPDATE";
       
-      public static const SERVER_MESSAGE_SLAYER_INVITE_FRIEND_SUCCESS:String;
+      public static const SERVER_MESSAGE_SLAYER_INVITE_FRIEND_SUCCESS:String = SERVER_MESSAGE_ + "SLAYER_INVITE_FRIEND_SUCCESS";
       
-      public static const SERVER_MESSAGE_SLAYER_INVITE_FRIEND_FAILED:String;
+      public static const SERVER_MESSAGE_SLAYER_INVITE_FRIEND_FAILED:String = SERVER_MESSAGE_ + "SLAYER_INVITE_FRIEND_FAILED";
       
-      public static const SERVER_MESSAGE_SLAYER_REQUEST_FRIENDLIST_FAILED:String;
+      public static const SERVER_MESSAGE_SLAYER_REQUEST_FRIENDLIST_FAILED:String = SERVER_MESSAGE_ + "SLAYER_REQUEST_FRIENDLIST_FAILED";
       
-      public static const SERVER_MESSAGE_EVENT_UPDATE:String;
+      public static const SERVER_MESSAGE_EVENT_UPDATE:String = SERVER_MESSAGE_ + "EVENT_UPDATE";
       
-      public static const SERVER_MESSAGE_PMS_PUSH_NEW_MESSAGE:String;
+      public static const SERVER_MESSAGE_PMS_PUSH_NEW_MESSAGE:String = SERVER_MESSAGE_ + "PMS_PUSH_NEW_MESSAGE";
       
-      public static const SERVER_MESSAGE_PLAYER_BOOKED_PAYMENTPACK:String;
+      public static const SERVER_MESSAGE_PLAYER_BOOKED_PAYMENTPACK:String = SERVER_MESSAGE_ + "PLAYER_BOOKED_PAYMENTPACK";
       
-      public static const CLIENT_MESSAGE_QUEST_ELEMENT_CHANGE_STATE:String;
+      public static const CLIENT_MESSAGE_QUEST_ELEMENT_CHANGE_STATE:String = CLIENT_MESSAGE_ + "QUEST_ELEMENT_CHANGE_STATE";
       
-      public static const SERVER_MESSAGE_PLAYER_PAYMENTPACK_UPDATE:String;
+      public static const SERVER_MESSAGE_PLAYER_PAYMENTPACK_UPDATE:String = SERVER_MESSAGE_ + "PLAYER_PAYMENTPACK_UPDATE";
       
-      public static const SERVER_MESSAGE_QUEST_CHALLENGE_UPDATE:String;
+      public static const SERVER_MESSAGE_QUEST_CHALLENGE_UPDATE:String = SERVER_MESSAGE_ + "QUEST_CHALLENGE_UPDATE";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_RESIDENT_SWAP_SUCCESS:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_RESIDENT_SWAP_SUCCESS:String = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_RESIDENT_SWAP_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_RANDOM_DROP:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_BUILDING_RANDOM_DROP:String = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_RANDOM_DROP";
       
-      public static const SERVER_MESSAGE_MARKET_PUSH_NOTIFICATION_MESSAGE:String;
+      public static const SERVER_MESSAGE_MARKET_PUSH_NOTIFICATION_MESSAGE:String = SERVER_MESSAGE_ + "MARKET_PUSH_NOTIFICATION_MESSAGE";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_EMERGENCY_UPDATE:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_EMERGENCY_UPDATE:String = SERVER_MESSAGE_ + "PLAYFIELD_EMERGENCY_UPDATE";
       
-      public static const SERVER_MESSAGE_PLAYFIELD_EMERGENCY_FINISH:String;
+      public static const SERVER_MESSAGE_PLAYFIELD_EMERGENCY_FINISH:String = SERVER_MESSAGE_ + "PLAYFIELD_EMERGENCY_FINISH";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_PROCESS_EMERGENCY:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_PROCESS_EMERGENCY:String = CLIENT_MESSAGE_ + "PLAYFIELD_PROCESS_EMERGENCY";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_REPAIR_BUILDING:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_REPAIR_BUILDING:String = CLIENT_MESSAGE_ + "PLAYFIELD_REPAIR_BUILDING";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_COLLECT_EMERGENCY:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_COLLECT_EMERGENCY:String = CLIENT_MESSAGE_ + "PLAYFIELD_COLLECT_EMERGENCY";
       
-      public static const CLIENT_MESSAGE_PROFESSIONAL_DISMISS:String;
+      public static const CLIENT_MESSAGE_PROFESSIONAL_DISMISS:String = CLIENT_MESSAGE_ + "PROFESSIONAL_DISMISS";
       
-      public static const SERVER_MESSAGE_PROFESSIONAL_DISMISS_SUCCESS:String;
+      public static const SERVER_MESSAGE_PROFESSIONAL_DISMISS_SUCCESS:String = SERVER_MESSAGE_ + "PROFESSIONAL_DISMISS_SUCCESS";
       
-      public static const SERVER_MESSAGE_PROFESSIONAL_DISMISS_FAILED:String;
+      public static const SERVER_MESSAGE_PROFESSIONAL_DISMISS_FAILED:String = SERVER_MESSAGE_ + "PROFESSIONAL_DISMISS_FAILED";
       
-      public static const CLIENT_MESSAGE_PROFESSIONAL_CREATE:String;
+      public static const CLIENT_MESSAGE_PROFESSIONAL_CREATE:String = CLIENT_MESSAGE_ + "PROFESSIONAL_CREATE";
       
-      public static const SERVER_MESSAGE_PROFESSIONAL_CREATE_SUCCESS:String;
+      public static const SERVER_MESSAGE_PROFESSIONAL_CREATE_SUCCESS:String = SERVER_MESSAGE_ + "PROFESSIONAL_CREATE_SUCCESS";
       
-      public static const SERVER_MESSAGE_PROFESSIONAL_CREATE_FAILED:String;
+      public static const SERVER_MESSAGE_PROFESSIONAL_CREATE_FAILED:String = SERVER_MESSAGE_ + "PROFESSIONAL_CREATE_FAILED";
       
-      public static const SERVER_MESSAGE_PROFESSIONAL_CHANGE_SUCCESS:String;
+      public static const SERVER_MESSAGE_PROFESSIONAL_CHANGE_SUCCESS:String = SERVER_MESSAGE_ + "PROFESSIONAL_CHANGE_SUCCESS";
       
-      public static const SERVER_MESSAGE_PROFESSIONAL_CHANGE_FAIL:String;
+      public static const SERVER_MESSAGE_PROFESSIONAL_CHANGE_FAIL:String = SERVER_MESSAGE_ + "PROFESSIONAL_CHANGE_FAIL";
       
-      public static const CLIENT_MESSAGE_PROFESSIONAL_FIRE:String;
+      public static const CLIENT_MESSAGE_PROFESSIONAL_FIRE:String = CLIENT_MESSAGE_ + "PROFESSIONAL_FIRE";
       
-      public static const CLIENT_MESSAGE_PROFESSIONAL_RENEW:String;
+      public static const CLIENT_MESSAGE_PROFESSIONAL_RENEW:String = CLIENT_MESSAGE_ + "PROFESSIONAL_RENEW";
       
-      public static const CLIENT_MESSAGE_BOOSTERPACK_BUY:String;
+      public static const CLIENT_MESSAGE_BOOSTERPACK_BUY:String = CLIENT_MESSAGE_ + "BOOSTERPACK_BUY";
       
-      public static const SERVER_MESSAGE_BOOSTER_REWARD_SUCCESS:String;
+      public static const SERVER_MESSAGE_BOOSTER_REWARD_SUCCESS:String = SERVER_MESSAGE_ + "BOOSTER_REWARD_SUCCESS";
       
-      public static const SERVER_MESSAGE_EDUCATION_CREATED:String;
+      public static const SERVER_MESSAGE_EDUCATION_CREATED:String = SERVER_MESSAGE_ + "EDUCATION_CREATED";
       
-      public static const CLIENT_MESSAGE_ADD_EDUCATION_STEP:String;
+      public static const CLIENT_MESSAGE_ADD_EDUCATION_STEP:String = CLIENT_MESSAGE_ + "ADD_EDUCATION_STEP";
       
-      public static const CLIENT_MESSAGE_START_EDUCATION:String;
+      public static const CLIENT_MESSAGE_START_EDUCATION:String = CLIENT_MESSAGE_ + "START_EDUCATION";
       
-      public static const CLIENT_MESSAGE_SPEND_SKILLPOINT:String;
+      public static const CLIENT_MESSAGE_SPEND_SKILLPOINT:String = CLIENT_MESSAGE_ + "SPEND_SKILLPOINT";
       
-      public static const CLIENT_MESSAGE_HIRE_PROFESSIONAL:String;
+      public static const CLIENT_MESSAGE_HIRE_PROFESSIONAL:String = CLIENT_MESSAGE_ + "HIRE_PROFESSIONAL";
       
-      public static const SERVER_MESSAGE_EDUCATION_EXTEND_SUCCESS:String;
+      public static const SERVER_MESSAGE_EDUCATION_EXTEND_SUCCESS:String = SERVER_MESSAGE_ + "EDUCATION_EXTEND_SUCCESS";
       
-      public static const SERVER_MESSAGE_EDUCATION_EXTEND_FAIL:String;
+      public static const SERVER_MESSAGE_EDUCATION_EXTEND_FAIL:String = SERVER_MESSAGE_ + "EDUCATION_EXTEND_FAIL";
       
-      public static const SERVER_MESSAGE_START_EDUCATION_SUCCESS:String;
+      public static const SERVER_MESSAGE_START_EDUCATION_SUCCESS:String = SERVER_MESSAGE_ + "START_EDUCATION_SUCCESS";
       
-      public static const SERVER_MESSAGE_START_EDUCATION_FAIL:String;
+      public static const SERVER_MESSAGE_START_EDUCATION_FAIL:String = SERVER_MESSAGE_ + "START_EDUCATION_FAIL";
       
-      public static const SERVER_MESSAGE_PROFESSIONAL_ATTRIBUTE_CHANGE_SUCCESS:String;
+      public static const SERVER_MESSAGE_PROFESSIONAL_ATTRIBUTE_CHANGE_SUCCESS:String = SERVER_MESSAGE_ + "PROFESSIONAL_ATTRIBUTE_CHANGE_SUCCESS";
       
-      public static const SERVER_MESSAGE_PROFESSIONAL_ATTRIBUTE_CHANGE_FAIL:String;
+      public static const SERVER_MESSAGE_PROFESSIONAL_ATTRIBUTE_CHANGE_FAIL:String = SERVER_MESSAGE_ + "PROFESSIONAL_ATTRIBUTE_CHANGE_FAIL";
       
-      public static const SERVER_MESSAGE_EDUCATION_FINISHED:String;
+      public static const SERVER_MESSAGE_EDUCATION_FINISHED:String = SERVER_MESSAGE_ + "EDUCATION_FINISHED";
       
-      public static const SERVER_MESSAGE_PROFESSIONAL_ASSIGNED_SUCCESS:String;
+      public static const SERVER_MESSAGE_PROFESSIONAL_ASSIGNED_SUCCESS:String = SERVER_MESSAGE_ + "PROFESSIONAL_ASSIGNED_SUCCESS";
       
-      public static const SERVER_MESSAGE_PROFESSIONAL_SPECIALIZATION_CHANGE:String;
+      public static const SERVER_MESSAGE_PROFESSIONAL_SPECIALIZATION_CHANGE:String = SERVER_MESSAGE_ + "PROFESSIONAL_SPECIALIZATION_CHANGE";
       
-      public static const CLIENT_MESSAGE_MOVE_INVENTORYITEM_TO_PLAYFIELD:String;
+      public static const CLIENT_MESSAGE_MOVE_INVENTORYITEM_TO_PLAYFIELD:String = CLIENT_MESSAGE_ + "MOVE_INVENTORYITEM_TO_PLAYFIELD ";
       
-      public static const CLIENT_MESSAGE_MOVE_PLAYFIELDITEM_TO_INVENTORY:String;
+      public static const CLIENT_MESSAGE_MOVE_PLAYFIELDITEM_TO_INVENTORY:String = CLIENT_MESSAGE_ + "MOVE_PLAYFIELDITEM_TO_INVENTORY ";
       
-      public static const CLIENT_MESSAGE_REMOVE_ITEM_FROM_INVENTORY:String;
+      public static const CLIENT_MESSAGE_REMOVE_ITEM_FROM_INVENTORY:String = CLIENT_MESSAGE_ + "DELETE_INVENTORYITEM";
       
-      public static const SERVER_MESSAGE_INVENTORY_UPDATE:String;
+      public static const SERVER_MESSAGE_INVENTORY_UPDATE:String = SERVER_MESSAGE_ + "INVENTORY_UPDATE";
       
-      public static const CLIENT_MESSAGE_EXPAND_INVENTORY_BAG:String;
+      public static const CLIENT_MESSAGE_EXPAND_INVENTORY_BAG:String = CLIENT_MESSAGE_ + "EXPAND_INVENTORY_BAG";
       
-      public static const SERVER_MESSAGE_EXPAND_INVENTORY_BAG_SUCCESS:String;
+      public static const SERVER_MESSAGE_EXPAND_INVENTORY_BAG_SUCCESS:String = SERVER_MESSAGE_ + "EXPAND_INVENTORY_BAG_SUCCES";
       
-      public static const CLIENT_MESSAGE_PLAYFIELD_USE_HARVESTHELPER_RESIDENTIAL:String;
+      public static const CLIENT_MESSAGE_PLAYFIELD_USE_HARVESTHELPER_RESIDENTIAL:String = CLIENT_MESSAGE_ + "PLAYFIELD_USE_HARVESTHELPER_RESIDENTIAL";
       
-      public static const SERVER_MESSAGE_PLAYER_CITY_UPDATE:String;
+      public static const SERVER_MESSAGE_PLAYER_CITY_UPDATE:String = SERVER_MESSAGE_ + "PLAYER_CITY_UPDATE";
       
-      public static const CLIENT_MESSAGE_PROFESSIONAL_LEVEL_UP:String;
+      public static const CLIENT_MESSAGE_PROFESSIONAL_LEVEL_UP:String = CLIENT_MESSAGE_ + "PROFESSIONAL_LEVEL_UP";
       
-      public static const SERVER_MESSAGE_PROFESSIONAL_LEVEL_SUCCESS:String;
+      public static const SERVER_MESSAGE_PROFESSIONAL_LEVEL_SUCCESS:String = SERVER_MESSAGE_ + "PROFESSIONAL_LEVEL_SUCCESS";
       
-      public static const SERVER_MESSAGE_PROFESSIONAL_TRAIT_SUCCESS:String;
+      public static const SERVER_MESSAGE_PROFESSIONAL_TRAIT_SUCCESS:String = SERVER_MESSAGE_ + "PROFESSIONAL_TRAIT_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYER_NEWSSCREEN_UPDATE:String;
+      public static const SERVER_MESSAGE_PLAYER_NEWSSCREEN_UPDATE:String = SERVER_MESSAGE_ + "PLAYER_NEWSSCREEN_UPDATE";
       
-      public static const CLIENT_MESSAGE_PLAYER_REQUEST_NEWSSCREEN:String;
+      public static const CLIENT_MESSAGE_PLAYER_REQUEST_NEWSSCREEN:String = CLIENT_MESSAGE_ + "PLAYER_REQUEST_NEWSSCREEN";
       
-      public static const CLIENT_MESSAGE_EQUIP_PLAYFIELDITEM_IMPROVEMENT:String;
+      public static const CLIENT_MESSAGE_EQUIP_PLAYFIELDITEM_IMPROVEMENT:String = CLIENT_MESSAGE_ + "EQUIP_PLAYFIELDITEM_IMPROVEMENT";
       
-      public static const SERVER_MESSAGE_PLAYFIELDITEM_IMPROVEMENT_EQUIPPED:String;
+      public static const SERVER_MESSAGE_PLAYFIELDITEM_IMPROVEMENT_EQUIPPED:String = SERVER_MESSAGE_ + "PLAYFIELDITEM_IMPROVEMENT_EQUIPPED";
       
-      public static const CLIENT_MESSAGE_PROLONG_PLAYFIELDITEM_IMPROVEMENT:String;
+      public static const CLIENT_MESSAGE_PROLONG_PLAYFIELDITEM_IMPROVEMENT:String = CLIENT_MESSAGE_ + "PROLONG_PLAYFIELDITEM_IMPROVEMENT";
       
-      public static const SERVER_MESSAGE_PLAYFIELDITEM_IMPROVEMENT_UPDATED:String;
+      public static const SERVER_MESSAGE_PLAYFIELDITEM_IMPROVEMENT_UPDATED:String = SERVER_MESSAGE_ + "PLAYFIELDITEM_IMPROVEMENT_UPDATED";
       
-      public static const CLIENT_MESSAGE_DELETE_PLAYFIELDITEM_IMPROVEMENT:String;
+      public static const CLIENT_MESSAGE_DELETE_PLAYFIELDITEM_IMPROVEMENT:String = CLIENT_MESSAGE_ + "DELETE_PLAYFIELDITEM_IMPROVEMENT";
       
-      public static const SERVER_MESSAGE_PLAYFIELDITEM_IMPROVEMENT_DELETED:String;
+      public static const SERVER_MESSAGE_PLAYFIELDITEM_IMPROVEMENT_DELETED:String = SERVER_MESSAGE_ + "PLAYFIELDITEM_IMPROVEMENT_DELETED";
       
-      public static const CLIENT_MESSAGE_IMPROVEMENT_BOOSTER_BUY:String;
+      public static const CLIENT_MESSAGE_IMPROVEMENT_BOOSTER_BUY:String = CLIENT_MESSAGE_ + "IMPROVEMENT_BOOSTER_BUY";
       
-      public static const SERVER_MESSAGE_IMPROVEMENT_BOOSTER_REWARD_SUCCESS:String;
+      public static const SERVER_MESSAGE_IMPROVEMENT_BOOSTER_REWARD_SUCCESS:String = SERVER_MESSAGE_ + "IMPROVEMENT_BOOSTER_REWARD_SUCCESS";
       
-      public static const SERVER_MESSAGE_PLAYER_FEATURE_UPDATE:String;
+      public static const SERVER_MESSAGE_PLAYER_FEATURE_UPDATE:String = SERVER_MESSAGE_ + "PLAYER_FEATURE_UPDATE";
       
-      public static const SERVER_MESSAGE_CITY_WHEEL_UPDATE:String;
+      public static const SERVER_MESSAGE_CITY_WHEEL_UPDATE:String = SERVER_MESSAGE_ + "CITY_WHEEL_UPDATE";
       
-      public static const CLIENT_MESSAGE_CITY_WHEEL_SPIN:String;
+      public static const CLIENT_MESSAGE_CITY_WHEEL_SPIN:String = CLIENT_MESSAGE_ + "CITY_WHEEL_SPIN";
       
-      public static const CLIENT_MESSAGE_CITY_WHEEL_COLLECT:String;
+      public static const CLIENT_MESSAGE_CITY_WHEEL_COLLECT:String = CLIENT_MESSAGE_ + "CITY_WHEEL_COLLECT";
       
-      public static const CLIENT_MESSAGE_MASTERY_BUILDING_PROCESS:String;
+      public static const CLIENT_MESSAGE_MASTERY_BUILDING_PROCESS:String = CLIENT_MESSAGE_ + "MASTERY_BUILDING_PROCESS";
       
-      public static const SERVER_MESSAGE_MASTERY_CHALLENGE_UPDATE:String;
+      public static const SERVER_MESSAGE_MASTERY_CHALLENGE_UPDATE:String = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_MASTERY_CHALLENGE_UPDATE";
       
-      public static const SERVER_MESSAGE_MASTERY_BONUS_UPDATE:String;
+      public static const SERVER_MESSAGE_MASTERY_BONUS_UPDATE:String = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_MASTERY_BONUS_UPDATE";
       
-      public static const SERVER_MESSAGE_CINEMA_UPDATE:String;
+      public static const SERVER_MESSAGE_CINEMA_UPDATE:String = SERVER_MESSAGE_ + "CINEMA_UPDATE";
       
-      public static const SERVER_MESSAGE_PLAYER_PAYMENT_UPSELL_UPDATE:String;
+      public static const SERVER_MESSAGE_PLAYER_PAYMENT_UPSELL_UPDATE:String = SERVER_MESSAGE_ + "PLAYER_PAYMENT_UPSELL_UPDATE";
       
-      public static const CLIENT_MESSAGE_UPDATE_CLIENT_UI_DATA:String;
+      public static const CLIENT_MESSAGE_UPDATE_CLIENT_UI_DATA:String = CLIENT_MESSAGE_ + "UPDATE_CLIENT_UI_DATA";
       
-      public static const SERVER_MESSAGE_UPDATE_CLIENT_UI_DATA_SUCCESS:String;
+      public static const SERVER_MESSAGE_UPDATE_CLIENT_UI_DATA_SUCCESS:String = SERVER_MESSAGE_ + "UPDATE_CLIENT_UI_DATA_SUCCESS";
       
       public static const SET_USER_OPTIONS:String = "SET_USER_OPTIONS";
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(!_loc2_)
-      {
-         SERVER_MESSAGE_ = "SERVER_MESSAGE_";
-         if(_loc1_)
-         {
-            CLIENT_MESSAGE_ = "CLIENT_MESSAGE_";
-            if(_loc1_)
-            {
-               CLIENT_MESSAGE_TEST = "CLIENT_MESSAGE_TEST";
-               if(!_loc2_)
-               {
-                  SERVER_NEW = "SERVER_NEW";
-                  if(_loc1_)
-                  {
-                     SERVER_NEW_MESSAGE = "SERVER_NEW_MESSAGE";
-                     if(!_loc2_)
-                     {
-                        addr005b:
-                        SERVER_CONNECTED = "SERVER_CONNECTED";
-                        if(_loc1_)
-                        {
-                           SERVER_CONNECTION_CLOSED = "SERVER_CONNECTION_CLOSED";
-                           if(_loc1_)
-                           {
-                              SERVER_CONNECTION_IDLE_CLOSE = SERVER_MESSAGE_ + "CONNECTION_IDLE_CLOSE";
-                              if(_loc1_ || ServerNotificationConstants)
-                              {
-                                 SERVER_ILLEGAL_PARAM_FAIL = SERVER_MESSAGE_ + "ILLEGAL_PARAM_FAIL";
-                                 if(!_loc2_)
-                                 {
-                                    SERVER_PUSH_MAINTENANCE = "SERVER_PUSH_MAINTENANCE";
-                                    if(!_loc2_)
-                                    {
-                                       SERVER_PUSH_SHUTDOWN = "SERVER_PUSH_SHUTDOWN";
-                                       if(!(_loc2_ && ServerNotificationConstants))
-                                       {
-                                          SERVER_PUSH_RECONNECT = "SERVER_PUSH_RECONNECT";
-                                          if(_loc1_)
-                                          {
-                                             addr00d9:
-                                             SERVER_MESSAGE_PROGRESS = "SERVER_MESSAGE_PROGRESS";
-                                             if(!_loc2_)
-                                             {
-                                                addr00e7:
-                                                SERVER_MESSAGE_SPOOL = SERVER_MESSAGE_ + "SPOOL";
-                                                if(!_loc2_)
-                                                {
-                                                   SERVER_MESSAGE_HARVESTHELPER_RESIDENTIAL_SUCCESS_SPOOL = SERVER_MESSAGE_ + "HARVESTHELPER_RESIDENTIAL_SUCCESS_SPOOL";
-                                                   if(_loc1_)
-                                                   {
-                                                      CLIENT_MESSAGE_LOGIN = CLIENT_MESSAGE_ + "LOGIN";
-                                                      if(_loc1_ || _loc1_)
-                                                      {
-                                                         SERVER_MESSAGE_INITIAL_LOGIN_SUCCESS = SERVER_MESSAGE_ + "LOGIN_SUCCESS";
-                                                         if(!_loc2_)
-                                                         {
-                                                            SERVER_MESSAGE_LOGIN_FAILED = SERVER_MESSAGE_ + "LOGIN_FAILED";
-                                                            if(_loc1_ || _loc2_)
-                                                            {
-                                                               CLIENT_MESSAGE_LOGOUT = CLIENT_MESSAGE_ + "LOGOUT";
-                                                               if(!(_loc2_ && ServerNotificationConstants))
-                                                               {
-                                                                  CLIENT_MESSAGE_TIMESTAMP_REQUEST = CLIENT_MESSAGE_ + "TIMESTAMP_REQUEST";
-                                                                  if(_loc1_ || ServerNotificationConstants)
-                                                                  {
-                                                                     SERVER_MESSAGE_TIMESTAMP_RESPONSE = SERVER_MESSAGE_ + "TIMESTAMP_RESPONSE";
-                                                                     if(_loc1_)
-                                                                     {
-                                                                        SERVER_MESSAGE_MIDSESSION_LOGIN_SUCCESS = SERVER_MESSAGE_ + "LOGIN_SUCCESS";
-                                                                        if(!_loc2_)
-                                                                        {
-                                                                           CLIENT_MESSAGE_SWITCH_PLAYFIELD = CLIENT_MESSAGE_ + "SWITCH_PLAYFIELD";
-                                                                           if(!(_loc2_ && _loc1_))
-                                                                           {
-                                                                              CLIENT_MESSAGE_PLAYFIELD_LOAD = CLIENT_MESSAGE_ + "PLAYFIELD_LOAD";
-                                                                              if(_loc1_)
-                                                                              {
-                                                                                 SERVER_MESSAGE_PLAYFIELD_PLAYFIELDITEM_DELETE_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELDITEM_DELETE_SUCCESS";
-                                                                                 if(!_loc2_)
-                                                                                 {
-                                                                                    SERVER_MESSAGE_PLAYFIELD_PLAYFIELDITEM_DELETE_FAILED = SERVER_MESSAGE_ + "PLAYFIELDITEM_DELETE_FAILED";
-                                                                                    if(_loc1_ || ServerNotificationConstants)
-                                                                                    {
-                                                                                       CLIENT_MESSAGE_PLAYFIELD_BUILDING_DELETE = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_DELETE";
-                                                                                       if(_loc1_ || _loc1_)
-                                                                                       {
-                                                                                          CLIENT_MESSAGE_PLAYFIELD_ITEM_CREATE = CLIENT_MESSAGE_ + "PLAYFIELD_ITEM_CREATE";
-                                                                                          if(!(_loc2_ && _loc2_))
-                                                                                          {
-                                                                                             CLIENT_MESSAGE_PLAYFIELD_DECORATION_CREATE = CLIENT_MESSAGE_ + "PLAYFIELD_DECORATION_CREATE";
-                                                                                             if(_loc1_)
-                                                                                             {
-                                                                                                addr0251:
-                                                                                                CLIENT_MESSAGE_PLAYFIELD_DECORATION_MOVE = CLIENT_MESSAGE_ + "PLAYFIELD_DECORATION_MOVE";
-                                                                                                if(!(_loc2_ && ServerNotificationConstants))
-                                                                                                {
-                                                                                                   CLIENT_MESSAGE_PLAYFIELD_DECORATION_DELETE = CLIENT_MESSAGE_ + "PLAYFIELD_DECORATION_DELETE";
-                                                                                                   if(_loc1_)
-                                                                                                   {
-                                                                                                      SERVER_MESSAGE_PLAYFIELD_CREATE_DECORATION_FAILED = SERVER_MESSAGE_ + "PLAYFIELD_CREATE_DECORATION_FAILED";
-                                                                                                      if(_loc1_)
-                                                                                                      {
-                                                                                                         SERVER_MESSAGE_PLAYFIELD_CREATE_DECORATION_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_CREATE_DECORATION_SUCCESS";
-                                                                                                         if(!(_loc2_ && _loc2_))
-                                                                                                         {
-                                                                                                            addr02ad:
-                                                                                                            SERVER_MESSAGE_PLAYFIELD_MOVE_DECORATION_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_MOVE_DECORATION_SUCCESS";
-                                                                                                            if(!_loc2_)
-                                                                                                            {
-                                                                                                               SERVER_MESSAGE_PLAYFIELD_MOVE_DECORATION_FAILED = SERVER_MESSAGE_ + "PLAYFIELD_MOVE_DECORATION_FAILED";
-                                                                                                               if(!_loc2_)
-                                                                                                               {
-                                                                                                                  addr02d3:
-                                                                                                                  SERVER_MESSAGE_PLAYFIELD_DELETE_DECORATION_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_DELETE_DECORATION_SUCCESS";
-                                                                                                                  if(_loc1_ || _loc2_)
-                                                                                                                  {
-                                                                                                                     SERVER_MESSAGE_PLAYFIELD_DELETE_DECORATION_FAILED = SERVER_MESSAGE_ + "PLAYFIELD_DELETE_DECORATION_FAILED";
-                                                                                                                     if(_loc1_ || _loc2_)
-                                                                                                                     {
-                                                                                                                        CLIENT_MESSAGE_PLAYFIELD_BUILDING_CREATE = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_CREATE";
-                                                                                                                        if(_loc1_)
-                                                                                                                        {
-                                                                                                                           SERVER_MESSAGE_PLAYFIELD_BUILDING_NEW = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_NEW";
-                                                                                                                           if(_loc1_)
-                                                                                                                           {
-                                                                                                                              SERVER_MESSAGE_PLAYFIELD_BUILDING_CREATE_FAILED = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_CREATE_FAILED";
-                                                                                                                              if(!_loc2_)
-                                                                                                                              {
-                                                                                                                                 CLIENT_MESSAGE_PLAYFIELD_BUILDING_CONSTRUCTIONPHASE_PROCESS = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_PROCESSPHASE";
-                                                                                                                                 if(!_loc2_)
-                                                                                                                                 {
-                                                                                                                                    SERVER_MESSAGE_PLAYFIELD_BUILDING_CONSTRUCTIONPHASE_UPDATE = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_CONSTRUCTIONPHASE_UPDATE";
-                                                                                                                                    if(_loc1_ || _loc2_)
-                                                                                                                                    {
-                                                                                                                                       SERVER_MESSAGE_PLAYFIELD_BUILDING_HARVESTPHASE_UPDATE = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_HARVESTPHASE_UPDATE";
-                                                                                                                                       if(!_loc2_)
-                                                                                                                                       {
-                                                                                                                                          CLIENT_MESSAGE_PLAYFIELD_CREATE_GROUND = CLIENT_MESSAGE_ + "PLAYFIELD_CREATE_GROUND";
-                                                                                                                                          if(!(_loc2_ && _loc2_))
-                                                                                                                                          {
-                                                                                                                                             SERVER_MESSAGE_PLAYFIELD_CREATE_GROUND_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_CREATE_GROUND_SUCCESS";
-                                                                                                                                             if(!(_loc2_ && _loc2_))
-                                                                                                                                             {
-                                                                                                                                                SERVER_MESSAGE_PLAYFIELD_CREATE_GROUND_FAILED = SERVER_MESSAGE_ + "PLAYFIELD_CREATE_GROUND_FAILED";
-                                                                                                                                                if(!_loc2_)
-                                                                                                                                                {
-                                                                                                                                                   SERVER_MESSAGE_PLAYFIELD_UPDATE_GROUND_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_UPDATE_GROUND_SUCCESS";
-                                                                                                                                                   if(!(_loc2_ && ServerNotificationConstants))
-                                                                                                                                                   {
-                                                                                                                                                      CLIENT_MESSAGE_PLAYFIELD_DESTROY_GROUND = CLIENT_MESSAGE_ + "PLAYFIELD_DESTROY_GROUND";
-                                                                                                                                                      if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                      {
-                                                                                                                                                         SERVER_MESSAGE_PLAYFIELD_DESTROY_GROUND_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_DESTROY_GROUND_SUCCESS";
-                                                                                                                                                         if(_loc1_ || _loc1_)
-                                                                                                                                                         {
-                                                                                                                                                            addr0417:
-                                                                                                                                                            SERVER_MESSAGE_PLAYFIELD_DESTROY_GROUND_FAILED = SERVER_MESSAGE_ + "PLAYFIELD_DESTROY_GROUND_FAILED";
-                                                                                                                                                            if(!(_loc2_ && _loc1_))
-                                                                                                                                                            {
-                                                                                                                                                               CLIENT_MESSAGE_PLAYFIELD_MOVE_GROUND = CLIENT_MESSAGE_ + "PLAYFIELD_MOVE_GROUND";
-                                                                                                                                                               if(!(_loc2_ && ServerNotificationConstants))
-                                                                                                                                                               {
-                                                                                                                                                                  addr044c:
-                                                                                                                                                                  SERVER_MESSAGE_PLAYFIELD_MOVE_GROUND_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_MOVE_GROUND_SUCCESS";
-                                                                                                                                                                  if(_loc1_)
-                                                                                                                                                                  {
-                                                                                                                                                                     SERVER_MESSAGE_PLAYFIELD_MOVE_GROUND_FAILED = SERVER_MESSAGE_ + "PLAYFIELD_MOVE_GROUND_FAILED";
-                                                                                                                                                                     if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                     {
-                                                                                                                                                                        addr047a:
-                                                                                                                                                                        CLIENT_MESSAGE_PLAYFIELD_BUILDING_INAUGURATE = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_INAUGURATE ";
-                                                                                                                                                                        if(_loc1_ || _loc2_)
-                                                                                                                                                                        {
-                                                                                                                                                                           addr0495:
-                                                                                                                                                                           CLIENT_MESSAGE_PLAYFIELD_BUILDING_SWAP_RESIDENT = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_SWAP_RESIDENT";
-                                                                                                                                                                           if(_loc1_ || _loc1_)
-                                                                                                                                                                           {
-                                                                                                                                                                              SERVER_MESSAGE_PLAYFIELD_SWITCH_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_SWITCH_SUCCESS";
-                                                                                                                                                                              if(_loc1_ || _loc1_)
-                                                                                                                                                                              {
-                                                                                                                                                                                 SERVER_MESSAGE_PLAYFIELD_BOULDER_CREATED = SERVER_MESSAGE_ + "PLAYFIELD_BOULDER_CREATED";
-                                                                                                                                                                                 if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                 {
-                                                                                                                                                                                    addr04e5:
-                                                                                                                                                                                    CLIENT_MESSAGE_PLAYFIELD_BOULDER_PROCESSPHASE = CLIENT_MESSAGE_ + "PLAYFIELD_BOULDER_PROCESSPHASE";
-                                                                                                                                                                                    if(_loc1_)
-                                                                                                                                                                                    {
-                                                                                                                                                                                       SERVER_MESSAGE_PLAYFIELD_BOULDER_PHASE_STARTED = SERVER_MESSAGE_ + "PLAYFIELD_BOULDER_PHASE_STARTED";
-                                                                                                                                                                                       if(!_loc2_)
-                                                                                                                                                                                       {
-                                                                                                                                                                                          addr050a:
-                                                                                                                                                                                          SERVER_MESSAGE_PLAYFIELD_BOULDER_DESTRUCTIONPHASE_UPDATE = SERVER_MESSAGE_ + "PLAYFIELD_BOULDER_DESTRUCTIONPHASE_UPDATE";
-                                                                                                                                                                                          if(!_loc2_)
-                                                                                                                                                                                          {
-                                                                                                                                                                                             SERVER_MESSAGE_PLAYFIELD_BOULDER_DELETED = SERVER_MESSAGE_ + "PLAYFIELD_BOULDER_DELETED";
-                                                                                                                                                                                             if(!_loc2_)
-                                                                                                                                                                                             {
-                                                                                                                                                                                                CLIENT_MESSAGE_PLAYFIELDITEM_BUY_PERMISSION = CLIENT_MESSAGE_ + "PLAYFIELDITEM_BUY_PERMISSION";
-                                                                                                                                                                                                if(!_loc2_)
-                                                                                                                                                                                                {
-                                                                                                                                                                                                   SERVER_MESSAGE_PLAYFIELDITEM_BUY_PERMISSION_FAIL = SERVER_MESSAGE_ + "PLAYFIELDITEM_BUY_PERMISSION_FAIL";
-                                                                                                                                                                                                   if(_loc1_)
-                                                                                                                                                                                                   {
-                                                                                                                                                                                                      CLIENT_MESSAGE_PLAYFIELD_BUILDING_BOOSTPHASE = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_BOOSTPHASE";
-                                                                                                                                                                                                      if(!(_loc2_ && ServerNotificationConstants))
-                                                                                                                                                                                                      {
-                                                                                                                                                                                                         SERVER_MESSAGE_PLAYFIELD_ITEM_BOOSTPHASE_UPDATE = SERVER_MESSAGE_ + "PLAYFIELD_ITEM_BOOSTPHASE_UPDATE";
-                                                                                                                                                                                                         if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                         {
-                                                                                                                                                                                                            CLIENT_MESSAGE_PLAYFIELD_REQUEST_INSTANTFINISH = CLIENT_MESSAGE_ + "PLAYFIELD_REQUEST_INSTANTFINISH";
-                                                                                                                                                                                                            if(_loc1_)
-                                                                                                                                                                                                            {
-                                                                                                                                                                                                               SERVER_MESSAGE_RESOURCES = SERVER_MESSAGE_ + "RESOURCES";
-                                                                                                                                                                                                               if(!_loc2_)
-                                                                                                                                                                                                               {
-                                                                                                                                                                                                                  SERVER_MESSAGE_QUEST_NEW = SERVER_MESSAGE_ + "QUEST_NEW";
-                                                                                                                                                                                                                  if(!_loc2_)
-                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                     SERVER_MESSAGE_QUEST_TASK_UPDATE = SERVER_MESSAGE_ + "QUEST_TASK_UPDATE";
-                                                                                                                                                                                                                     if(!_loc2_)
-                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                        SERVER_MESSAGE_QUEST_UPDATE = SERVER_MESSAGE_ + "QUEST_UPDATE";
-                                                                                                                                                                                                                        if(!_loc2_)
-                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                           SERVER_MESSAGE_PLAYER_LEVEL_UP_SUCCESS = SERVER_MESSAGE_ + "PLAYER_LEVEL_UP_SUCCESS";
-                                                                                                                                                                                                                           if(!_loc2_)
-                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                              SERVER_MESSAGE_PLAYFIELD_UPDATE = SERVER_MESSAGE_ + "PLAYFIELD_UPDATE";
-                                                                                                                                                                                                                              if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                 SERVER_MESSAGE_PLAYFIELD_EXPAND_FAILED = SERVER_MESSAGE_ + "PLAYFIELD_EXPAND_FAILED";
-                                                                                                                                                                                                                                 if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                    addr0633:
-                                                                                                                                                                                                                                    SERVER_MESSAGE_PLAYFIELD_EXPAND_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_EXPAND_SUCCESS";
-                                                                                                                                                                                                                                    if(!_loc2_)
-                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                       CLIENT_MESSAGE_PLAYFIELD_EXPAND = CLIENT_MESSAGE_ + "PLAYFIELD_EXPAND";
-                                                                                                                                                                                                                                       if(!(_loc2_ && _loc1_))
-                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                          CLIENT_PAYMENT_SWAP_CURRENCY = CLIENT_MESSAGE_ + "PAYMENT_SWAP_CURRENCY";
-                                                                                                                                                                                                                                          if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                             addr067a:
-                                                                                                                                                                                                                                             CLIENT_MESSAGE_PLAYFIELD_BUILDING_HARVESTPHASE_PROCESS = CLIENT_MESSAGE_ + "PLAYFIELD_BUILDING_HARVESTPHASE_PROCESS";
-                                                                                                                                                                                                                                             if(_loc1_ || _loc1_)
-                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                SERVER_MESSAGE_PLAYFIELD_BUILDING_CONSTRUCTION_FINISHED = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_CONSTRUCTION_FINISHED";
-                                                                                                                                                                                                                                                if(_loc1_ || _loc1_)
-                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                   addr06b0:
-                                                                                                                                                                                                                                                   SERVER_MESSAGE_PLAYFIELD_BUILDING_UPGRADEPHASE_UPDATE = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_UPGRADEPHASE_UPDATE";
-                                                                                                                                                                                                                                                   if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                      addr06cb:
-                                                                                                                                                                                                                                                      SERVER_MESSAGE_PLAYFIELD_BUILDING_PHASE_NEW = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_PHASE_NEW";
-                                                                                                                                                                                                                                                      if(!(_loc2_ && _loc1_))
-                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                         SERVER_MESSAGE_PLAYFIELD_BUILDING_MOVE_FAILED = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_MOVE_FAILED";
-                                                                                                                                                                                                                                                         if(!_loc2_)
-                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                            SERVER_MESSAGE_PLAYFIELD_BUILDING_MOVE_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_MOVE_SUCCESS";
-                                                                                                                                                                                                                                                            if(_loc1_ || _loc2_)
-                                                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                                               SERVER_MESSAGE_PLAYFIELDITEM_ACTIVE_STATE_CHANGED = SERVER_MESSAGE_ + "PLAYFIELDITEM_ACTIVE_STATE_CHANGED";
-                                                                                                                                                                                                                                                               if(_loc1_ || _loc1_)
-                                                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                                                  addr072f:
-                                                                                                                                                                                                                                                                  CLIENT_MESSAGE_PLAYFIELD_HARVEST_PRODUCTION = CLIENT_MESSAGE_ + "PLAYFIELD_HARVEST_PRODUCTION";
-                                                                                                                                                                                                                                                                  if(_loc1_)
-                                                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                                                     CLIENT_MESSAGE_PLAYFIELD_CANCEL_PRODUCTION = CLIENT_MESSAGE_ + "PLAYFIELD_CANCEL_PRODUCTION";
-                                                                                                                                                                                                                                                                     if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                        CLIENT_MESSAGE_PLAYFIELD_REQUEST_PRODUCTION = CLIENT_MESSAGE_ + "PLAYFIELD_REQUEST_PRODUCTION";
-                                                                                                                                                                                                                                                                        if(_loc1_)
-                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                           addr076e:
-                                                                                                                                                                                                                                                                           SERVER_MESSAGE_PLAYFIELD_PRODUCTION_PHASEUPDATE = SERVER_MESSAGE_ + "PLAYFIELD_PRODUCTION_PHASEUPDATE";
-                                                                                                                                                                                                                                                                           if(!(_loc2_ && ServerNotificationConstants))
-                                                                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                                                                              addr0789:
-                                                                                                                                                                                                                                                                              SERVER_MESSAGE_PLAYFIELD_PRODUCTION_FAILED = SERVER_MESSAGE_ + "PLAYFIELD_PRODUCTION_FAILED";
-                                                                                                                                                                                                                                                                              if(!_loc2_)
-                                                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                                                 addr079c:
-                                                                                                                                                                                                                                                                                 SERVER_MESSAGE_PLAYFIELD_PRODUCTION_HARVEST_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_PRODUCTION_HARVEST_SUCCESS";
-                                                                                                                                                                                                                                                                                 if(_loc1_)
-                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                    SERVER_MESSAGE_PLAYFIELD_PRODUCTION_HARVEST_FAILED = SERVER_MESSAGE_ + "PLAYFIELD_PRODUCTION_HARVEST_FAILED";
-                                                                                                                                                                                                                                                                                    if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                                                                       SERVER_MESSAGE_PLAYFIELD_PRODUCTION_CANCEL_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_PRODUCTION_CANCEL_SUCCESS";
-                                                                                                                                                                                                                                                                                       if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                                                          addr07e5:
-                                                                                                                                                                                                                                                                                          SERVER_MESSAGE_PLAYFIELD_PRODUCTION_CANCEL_FAILED = SERVER_MESSAGE_ + "PLAYFIELD_PRODUCTION_CANCEL_FAILED";
-                                                                                                                                                                                                                                                                                          if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                                                                             CLIENT_MESSAGE_PLAYFIELD_MOVE_BUILDING = CLIENT_MESSAGE_ + "PLAYFIELD_MOVE_BUILDING";
-                                                                                                                                                                                                                                                                                             addr0800:
-                                                                                                                                                                                                                                                                                             if(_loc1_)
-                                                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                                                §§goto(addr081c);
-                                                                                                                                                                                                                                                                                             }
-                                                                                                                                                                                                                                                                                             §§goto(addr0911);
-                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                          §§goto(addr08ad);
-                                                                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                                                                       §§goto(addr0c5f);
-                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                    §§goto(addr0c2b);
-                                                                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                                                                                 §§goto(addr0dd1);
-                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                              §§goto(addr08ad);
-                                                                                                                                                                                                                                                                           }
-                                                                                                                                                                                                                                                                           §§goto(addr0d07);
-                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                        §§goto(addr0dac);
-                                                                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                                                                     §§goto(addr0e61);
-                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                               }
-                                                                                                                                                                                                                                                               §§goto(addr09b5);
-                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                            §§goto(addr0b93);
-                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                         §§goto(addr0e46);
-                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                      §§goto(addr0800);
-                                                                                                                                                                                                                                                   }
-                                                                                                                                                                                                                                                   §§goto(addr0b2b);
-                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                addr081c:
-                                                                                                                                                                                                                                                SERVER_MESSAGE_PLAYFIELD_STACK_NEED_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_STACK_NEED_SUCCESS";
-                                                                                                                                                                                                                                                if(!_loc2_)
-                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                   CLIENT_MESSAGE_PLAYFIELD_UNSTACK_NEED = CLIENT_MESSAGE_ + "PLAYFIELD_UNSTACK_NEED";
-                                                                                                                                                                                                                                                   if(!_loc2_)
-                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                      addr0841:
-                                                                                                                                                                                                                                                      CLIENT_MESSAGE_PLAYFIELD_STACK_NEED = CLIENT_MESSAGE_ + "PLAYFIELD_STACK_NEED";
-                                                                                                                                                                                                                                                      if(!(_loc2_ && ServerNotificationConstants))
-                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                         SERVER_MESSAGE_PLAYFIELD_NEED_CONSUMED = SERVER_MESSAGE_ + "PLAYFIELD_NEED_CONSUMED";
-                                                                                                                                                                                                                                                         if(_loc1_)
-                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                            CLIENT_MESSAGE_QUEST_TASK_PROCESS = CLIENT_MESSAGE_ + "QUEST_TASK_PROCESS";
-                                                                                                                                                                                                                                                            if(!_loc2_)
-                                                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                                               addr0880:
-                                                                                                                                                                                                                                                               CLIENT_MESSAGE_QUEST_ELEMENT_INSTANT_FINISH = CLIENT_MESSAGE_ + "QUEST_ELEMENT_INSTANT_FINISH";
-                                                                                                                                                                                                                                                               if(!(_loc2_ && _loc1_))
-                                                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                                                  SERVER_MESSAGE_SWITCH_FEATURE_ACTIVATION = SERVER_MESSAGE_ + "SWITCH_FEATURE_ACTIVATION";
-                                                                                                                                                                                                                                                                  if(_loc1_)
-                                                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                                                     addr08ad:
-                                                                                                                                                                                                                                                                     CLIENT_PLAYER_INVITE_REQUESTFRIENDLIST = CLIENT_MESSAGE_ + "PLAYER_INVITE_REQUESTFRIENDLIST";
-                                                                                                                                                                                                                                                                     if(!(_loc2_ && ServerNotificationConstants))
-                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                        CLIENT_PLAYER_INVITE_FRIEND = CLIENT_MESSAGE_ + "PLAYER_INVITE_FRIEND";
-                                                                                                                                                                                                                                                                        if(!(_loc2_ && ServerNotificationConstants))
-                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                           CLIENT_PLAYER_ACCEPT_FRIEND = CLIENT_MESSAGE_ + "PLAYER_ACCEPT_FRIEND";
-                                                                                                                                                                                                                                                                           if(_loc1_ || _loc1_)
-                                                                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                                                                              addr08fe:
-                                                                                                                                                                                                                                                                              CLIENT_PLAYER_DECLINE_FRIEND = CLIENT_MESSAGE_ + "PLAYER_DECLINE_FRIEND";
-                                                                                                                                                                                                                                                                              if(!_loc2_)
-                                                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                                                 addr0911:
-                                                                                                                                                                                                                                                                                 CLIENT_PLAYER_CANCEL_FRIEND = CLIENT_MESSAGE_ + "PLAYER_CANCEL_FRIEND";
-                                                                                                                                                                                                                                                                                 if(_loc1_)
-                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                    addr0924:
-                                                                                                                                                                                                                                                                                    SERVER_MESSAGE_FRIENDS_UPDATE = SERVER_MESSAGE_ + "FRIENDS_UPDATE";
-                                                                                                                                                                                                                                                                                    if(!(_loc2_ && _loc1_))
-                                                                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                                                                       SERVER_MESSAGE_SLAYER_INVITE_FRIEND_SUCCESS = SERVER_MESSAGE_ + "SLAYER_INVITE_FRIEND_SUCCESS";
-                                                                                                                                                                                                                                                                                       if(_loc1_ || _loc2_)
-                                                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                                                          addr0959:
-                                                                                                                                                                                                                                                                                          SERVER_MESSAGE_SLAYER_INVITE_FRIEND_FAILED = SERVER_MESSAGE_ + "SLAYER_INVITE_FRIEND_FAILED";
-                                                                                                                                                                                                                                                                                          if(_loc1_)
-                                                                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                                                                             addr096c:
-                                                                                                                                                                                                                                                                                             SERVER_MESSAGE_SLAYER_REQUEST_FRIENDLIST_FAILED = SERVER_MESSAGE_ + "SLAYER_REQUEST_FRIENDLIST_FAILED";
-                                                                                                                                                                                                                                                                                             if(_loc1_)
-                                                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                                                SERVER_MESSAGE_EVENT_UPDATE = SERVER_MESSAGE_ + "EVENT_UPDATE";
-                                                                                                                                                                                                                                                                                                if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                   addr099a:
-                                                                                                                                                                                                                                                                                                   SERVER_MESSAGE_PMS_PUSH_NEW_MESSAGE = SERVER_MESSAGE_ + "PMS_PUSH_NEW_MESSAGE";
-                                                                                                                                                                                                                                                                                                   if(_loc1_ || _loc2_)
-                                                                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                                                                      addr09b5:
-                                                                                                                                                                                                                                                                                                      SERVER_MESSAGE_PLAYER_BOOKED_PAYMENTPACK = SERVER_MESSAGE_ + "PLAYER_BOOKED_PAYMENTPACK";
-                                                                                                                                                                                                                                                                                                      if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                                                                         CLIENT_MESSAGE_QUEST_ELEMENT_CHANGE_STATE = CLIENT_MESSAGE_ + "QUEST_ELEMENT_CHANGE_STATE";
-                                                                                                                                                                                                                                                                                                         if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                                                            addr09ea:
-                                                                                                                                                                                                                                                                                                            SERVER_MESSAGE_PLAYER_PAYMENTPACK_UPDATE = SERVER_MESSAGE_ + "PLAYER_PAYMENTPACK_UPDATE";
-                                                                                                                                                                                                                                                                                                            if(!_loc2_)
-                                                                                                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                                                                                               addr09fd:
-                                                                                                                                                                                                                                                                                                               SERVER_MESSAGE_QUEST_CHALLENGE_UPDATE = SERVER_MESSAGE_ + "QUEST_CHALLENGE_UPDATE";
-                                                                                                                                                                                                                                                                                                               if(_loc1_)
-                                                                                                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                                                                                                  addr0a10:
-                                                                                                                                                                                                                                                                                                                  SERVER_MESSAGE_PLAYFIELD_BUILDING_RESIDENT_SWAP_SUCCESS = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_RESIDENT_SWAP_SUCCESS";
-                                                                                                                                                                                                                                                                                                                  if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                                                                                                     addr0a2b:
-                                                                                                                                                                                                                                                                                                                     SERVER_MESSAGE_PLAYFIELD_BUILDING_RANDOM_DROP = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_RANDOM_DROP";
-                                                                                                                                                                                                                                                                                                                     if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                                                                        addr0a3e:
-                                                                                                                                                                                                                                                                                                                        SERVER_MESSAGE_MARKET_PUSH_NOTIFICATION_MESSAGE = SERVER_MESSAGE_ + "MARKET_PUSH_NOTIFICATION_MESSAGE";
-                                                                                                                                                                                                                                                                                                                        if(_loc1_ || _loc2_)
-                                                                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                                                                           addr0a59:
-                                                                                                                                                                                                                                                                                                                           SERVER_MESSAGE_PLAYFIELD_EMERGENCY_UPDATE = SERVER_MESSAGE_ + "PLAYFIELD_EMERGENCY_UPDATE";
-                                                                                                                                                                                                                                                                                                                           if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                                                                                                                              SERVER_MESSAGE_PLAYFIELD_EMERGENCY_FINISH = SERVER_MESSAGE_ + "PLAYFIELD_EMERGENCY_FINISH";
-                                                                                                                                                                                                                                                                                                                              if(!(_loc2_ && ServerNotificationConstants))
-                                                                                                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                                                                                                 addr0a8f:
-                                                                                                                                                                                                                                                                                                                                 CLIENT_MESSAGE_PLAYFIELD_PROCESS_EMERGENCY = CLIENT_MESSAGE_ + "PLAYFIELD_PROCESS_EMERGENCY";
-                                                                                                                                                                                                                                                                                                                                 if(_loc1_ || _loc2_)
-                                                                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                                                                    addr0aa9:
-                                                                                                                                                                                                                                                                                                                                    CLIENT_MESSAGE_PLAYFIELD_REPAIR_BUILDING = CLIENT_MESSAGE_ + "PLAYFIELD_REPAIR_BUILDING";
-                                                                                                                                                                                                                                                                                                                                    if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                                                                                                                       CLIENT_MESSAGE_PLAYFIELD_COLLECT_EMERGENCY = CLIENT_MESSAGE_ + "PLAYFIELD_COLLECT_EMERGENCY";
-                                                                                                                                                                                                                                                                                                                                       if(_loc1_ || _loc2_)
-                                                                                                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                                                                                                          §§goto(addr0ad5);
-                                                                                                                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                                                                                                                       §§goto(addr0dbf);
-                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                    §§goto(addr0b46);
-                                                                                                                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                                                                                                                                 §§goto(addr0ebb);
-                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                              §§goto(addr0d9a);
-                                                                                                                                                                                                                                                                                                                           }
-                                                                                                                                                                                                                                                                                                                           §§goto(addr0e61);
-                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                        §§goto(addr0e2c);
-                                                                                                                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                                                                                                                     §§goto(addr0b7e);
-                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                  §§goto(addr0fbe);
-                                                                                                                                                                                                                                                                                                               }
-                                                                                                                                                                                                                                                                                                               §§goto(addr0fa3);
-                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                            addr0ad5:
-                                                                                                                                                                                                                                                                                                            CLIENT_MESSAGE_PROFESSIONAL_DISMISS = CLIENT_MESSAGE_ + "PROFESSIONAL_DISMISS";
-                                                                                                                                                                                                                                                                                                            if(_loc1_)
-                                                                                                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                                                                                               addr0ae9:
-                                                                                                                                                                                                                                                                                                               SERVER_MESSAGE_PROFESSIONAL_DISMISS_SUCCESS = SERVER_MESSAGE_ + "PROFESSIONAL_DISMISS_SUCCESS";
-                                                                                                                                                                                                                                                                                                               if(!(_loc2_ && ServerNotificationConstants))
-                                                                                                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                                                                                                  SERVER_MESSAGE_PROFESSIONAL_DISMISS_FAILED = SERVER_MESSAGE_ + "PROFESSIONAL_DISMISS_FAILED";
-                                                                                                                                                                                                                                                                                                                  if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                                                                                                     CLIENT_MESSAGE_PROFESSIONAL_CREATE = CLIENT_MESSAGE_ + "PROFESSIONAL_CREATE";
-                                                                                                                                                                                                                                                                                                                     if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                                                                        addr0b2b:
-                                                                                                                                                                                                                                                                                                                        SERVER_MESSAGE_PROFESSIONAL_CREATE_SUCCESS = SERVER_MESSAGE_ + "PROFESSIONAL_CREATE_SUCCESS";
-                                                                                                                                                                                                                                                                                                                        if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                                                                           addr0b46:
-                                                                                                                                                                                                                                                                                                                           SERVER_MESSAGE_PROFESSIONAL_CREATE_FAILED = SERVER_MESSAGE_ + "PROFESSIONAL_CREATE_FAILED";
-                                                                                                                                                                                                                                                                                                                           if(_loc1_ || _loc1_)
-                                                                                                                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                                                                                                                              addr0b63:
-                                                                                                                                                                                                                                                                                                                              SERVER_MESSAGE_PROFESSIONAL_CHANGE_SUCCESS = SERVER_MESSAGE_ + "PROFESSIONAL_CHANGE_SUCCESS";
-                                                                                                                                                                                                                                                                                                                              if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                                                                                                 addr0b7e:
-                                                                                                                                                                                                                                                                                                                                 SERVER_MESSAGE_PROFESSIONAL_CHANGE_FAIL = SERVER_MESSAGE_ + "PROFESSIONAL_CHANGE_FAIL";
-                                                                                                                                                                                                                                                                                                                                 if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                                                                    addr0b93:
-                                                                                                                                                                                                                                                                                                                                    CLIENT_MESSAGE_PROFESSIONAL_FIRE = CLIENT_MESSAGE_ + "PROFESSIONAL_FIRE";
-                                                                                                                                                                                                                                                                                                                                    if(_loc1_)
-                                                                                                                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                                                                                                                       addr0ba6:
-                                                                                                                                                                                                                                                                                                                                       CLIENT_MESSAGE_PROFESSIONAL_RENEW = CLIENT_MESSAGE_ + "PROFESSIONAL_RENEW";
-                                                                                                                                                                                                                                                                                                                                       if(_loc1_ || _loc2_)
-                                                                                                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                                                                                                          CLIENT_MESSAGE_BOOSTERPACK_BUY = CLIENT_MESSAGE_ + "BOOSTERPACK_BUY";
-                                                                                                                                                                                                                                                                                                                                          if(!(_loc2_ && _loc1_))
-                                                                                                                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                                                                                                                             addr0bdb:
-                                                                                                                                                                                                                                                                                                                                             SERVER_MESSAGE_BOOSTER_REWARD_SUCCESS = SERVER_MESSAGE_ + "BOOSTER_REWARD_SUCCESS";
-                                                                                                                                                                                                                                                                                                                                             if(_loc1_ || _loc1_)
-                                                                                                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                                                                                                addr0bf5:
-                                                                                                                                                                                                                                                                                                                                                SERVER_MESSAGE_EDUCATION_CREATED = SERVER_MESSAGE_ + "EDUCATION_CREATED";
-                                                                                                                                                                                                                                                                                                                                                if(_loc1_)
-                                                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                                                   addr0c07:
-                                                                                                                                                                                                                                                                                                                                                   CLIENT_MESSAGE_ADD_EDUCATION_STEP = CLIENT_MESSAGE_ + "ADD_EDUCATION_STEP";
-                                                                                                                                                                                                                                                                                                                                                   if(_loc1_)
-                                                                                                                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                                                                                                                      addr0c19:
-                                                                                                                                                                                                                                                                                                                                                      CLIENT_MESSAGE_START_EDUCATION = CLIENT_MESSAGE_ + "START_EDUCATION";
-                                                                                                                                                                                                                                                                                                                                                      if(_loc1_)
-                                                                                                                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                                                                                                                         addr0c2b:
-                                                                                                                                                                                                                                                                                                                                                         CLIENT_MESSAGE_SPEND_SKILLPOINT = CLIENT_MESSAGE_ + "SPEND_SKILLPOINT";
-                                                                                                                                                                                                                                                                                                                                                         if(!(_loc2_ && _loc1_))
-                                                                                                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                                                                                                            CLIENT_MESSAGE_HIRE_PROFESSIONAL = CLIENT_MESSAGE_ + "HIRE_PROFESSIONAL";
-                                                                                                                                                                                                                                                                                                                                                            if(!(_loc2_ && _loc1_))
-                                                                                                                                                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                                                                                                                                               addr0c5f:
-                                                                                                                                                                                                                                                                                                                                                               SERVER_MESSAGE_EDUCATION_EXTEND_SUCCESS = SERVER_MESSAGE_ + "EDUCATION_EXTEND_SUCCESS";
-                                                                                                                                                                                                                                                                                                                                                               if(_loc1_ || _loc2_)
-                                                                                                                                                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                                                                                                                                                  addr0c79:
-                                                                                                                                                                                                                                                                                                                                                                  SERVER_MESSAGE_EDUCATION_EXTEND_FAIL = SERVER_MESSAGE_ + "EDUCATION_EXTEND_FAIL";
-                                                                                                                                                                                                                                                                                                                                                                  if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                                                                                                                                                     SERVER_MESSAGE_START_EDUCATION_SUCCESS = SERVER_MESSAGE_ + "START_EDUCATION_SUCCESS";
-                                                                                                                                                                                                                                                                                                                                                                     if(_loc1_)
-                                                                                                                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                                                                                                                        addr0c9d:
-                                                                                                                                                                                                                                                                                                                                                                        SERVER_MESSAGE_START_EDUCATION_FAIL = SERVER_MESSAGE_ + "START_EDUCATION_FAIL";
-                                                                                                                                                                                                                                                                                                                                                                        if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                                                                                                                           addr0caf:
-                                                                                                                                                                                                                                                                                                                                                                           SERVER_MESSAGE_PROFESSIONAL_ATTRIBUTE_CHANGE_SUCCESS = SERVER_MESSAGE_ + "PROFESSIONAL_ATTRIBUTE_CHANGE_SUCCESS";
-                                                                                                                                                                                                                                                                                                                                                                           if(_loc1_)
-                                                                                                                                                                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                                                                                                                                                                              SERVER_MESSAGE_PROFESSIONAL_ATTRIBUTE_CHANGE_FAIL = SERVER_MESSAGE_ + "PROFESSIONAL_ATTRIBUTE_CHANGE_FAIL";
-                                                                                                                                                                                                                                                                                                                                                                              if(_loc1_ || _loc1_)
-                                                                                                                                                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                                                                                                                                                 addr0cdb:
-                                                                                                                                                                                                                                                                                                                                                                                 SERVER_MESSAGE_EDUCATION_FINISHED = SERVER_MESSAGE_ + "EDUCATION_FINISHED";
-                                                                                                                                                                                                                                                                                                                                                                                 if(_loc1_ || _loc1_)
-                                                                                                                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                                                                                                                    addr0cf5:
-                                                                                                                                                                                                                                                                                                                                                                                    SERVER_MESSAGE_PROFESSIONAL_ASSIGNED_SUCCESS = SERVER_MESSAGE_ + "PROFESSIONAL_ASSIGNED_SUCCESS";
-                                                                                                                                                                                                                                                                                                                                                                                    if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                                                                                                                                                                       addr0d07:
-                                                                                                                                                                                                                                                                                                                                                                                       SERVER_MESSAGE_PROFESSIONAL_SPECIALIZATION_CHANGE = SERVER_MESSAGE_ + "PROFESSIONAL_SPECIALIZATION_CHANGE";
-                                                                                                                                                                                                                                                                                                                                                                                       if(_loc1_)
-                                                                                                                                                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                                                                                                                                                          CLIENT_MESSAGE_MOVE_INVENTORYITEM_TO_PLAYFIELD = CLIENT_MESSAGE_ + "MOVE_INVENTORYITEM_TO_PLAYFIELD ";
-                                                                                                                                                                                                                                                                                                                                                                                          if(_loc1_)
-                                                                                                                                                                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                                                                                                                                                                             addr0d2d:
-                                                                                                                                                                                                                                                                                                                                                                                             CLIENT_MESSAGE_MOVE_PLAYFIELDITEM_TO_INVENTORY = CLIENT_MESSAGE_ + "MOVE_PLAYFIELDITEM_TO_INVENTORY ";
-                                                                                                                                                                                                                                                                                                                                                                                             if(_loc1_)
-                                                                                                                                                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                                                                                                                                                addr0d40:
-                                                                                                                                                                                                                                                                                                                                                                                                CLIENT_MESSAGE_REMOVE_ITEM_FROM_INVENTORY = CLIENT_MESSAGE_ + "DELETE_INVENTORYITEM";
-                                                                                                                                                                                                                                                                                                                                                                                                if(_loc1_)
-                                                                                                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                                                                                                   addr0d52:
-                                                                                                                                                                                                                                                                                                                                                                                                   SERVER_MESSAGE_INVENTORY_UPDATE = SERVER_MESSAGE_ + "INVENTORY_UPDATE";
-                                                                                                                                                                                                                                                                                                                                                                                                   if(!(_loc2_ && _loc1_))
-                                                                                                                                                                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                                                                                                                                                                      CLIENT_MESSAGE_EXPAND_INVENTORY_BAG = CLIENT_MESSAGE_ + "EXPAND_INVENTORY_BAG";
-                                                                                                                                                                                                                                                                                                                                                                                                      if(!(_loc2_ && _loc1_))
-                                                                                                                                                                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                                                                                                                                                                         addr0d87:
-                                                                                                                                                                                                                                                                                                                                                                                                         SERVER_MESSAGE_EXPAND_INVENTORY_BAG_SUCCESS = SERVER_MESSAGE_ + "EXPAND_INVENTORY_BAG_SUCCES";
-                                                                                                                                                                                                                                                                                                                                                                                                         if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                                                                                                                                                            addr0d9a:
-                                                                                                                                                                                                                                                                                                                                                                                                            CLIENT_MESSAGE_PLAYFIELD_USE_HARVESTHELPER_RESIDENTIAL = CLIENT_MESSAGE_ + "PLAYFIELD_USE_HARVESTHELPER_RESIDENTIAL";
-                                                                                                                                                                                                                                                                                                                                                                                                            if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                                                                                                                                                                                               addr0dac:
-                                                                                                                                                                                                                                                                                                                                                                                                               SERVER_MESSAGE_PLAYER_CITY_UPDATE = SERVER_MESSAGE_ + "PLAYER_CITY_UPDATE";
-                                                                                                                                                                                                                                                                                                                                                                                                               if(_loc1_)
-                                                                                                                                                                                                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                                                                                                                                                                                                  addr0dbf:
-                                                                                                                                                                                                                                                                                                                                                                                                                  CLIENT_MESSAGE_PROFESSIONAL_LEVEL_UP = CLIENT_MESSAGE_ + "PROFESSIONAL_LEVEL_UP";
-                                                                                                                                                                                                                                                                                                                                                                                                                  if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                                                                                                                                                                                                     addr0dd1:
-                                                                                                                                                                                                                                                                                                                                                                                                                     SERVER_MESSAGE_PROFESSIONAL_LEVEL_SUCCESS = SERVER_MESSAGE_ + "PROFESSIONAL_LEVEL_SUCCESS";
-                                                                                                                                                                                                                                                                                                                                                                                                                     if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                                                                                                                                                                        SERVER_MESSAGE_PROFESSIONAL_TRAIT_SUCCESS = SERVER_MESSAGE_ + "PROFESSIONAL_TRAIT_SUCCESS";
-                                                                                                                                                                                                                                                                                                                                                                                                                        if(!(_loc2_ && ServerNotificationConstants))
-                                                                                                                                                                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                                                                                                                                                                           addr0e07:
-                                                                                                                                                                                                                                                                                                                                                                                                                           SERVER_MESSAGE_PLAYER_NEWSSCREEN_UPDATE = SERVER_MESSAGE_ + "PLAYER_NEWSSCREEN_UPDATE";
-                                                                                                                                                                                                                                                                                                                                                                                                                           if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                                                                                                                                                                                                                              addr0e1a:
-                                                                                                                                                                                                                                                                                                                                                                                                                              CLIENT_MESSAGE_PLAYER_REQUEST_NEWSSCREEN = CLIENT_MESSAGE_ + "PLAYER_REQUEST_NEWSSCREEN";
-                                                                                                                                                                                                                                                                                                                                                                                                                              if(_loc1_)
-                                                                                                                                                                                                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                                                                                                                                                                                                 addr0e2c:
-                                                                                                                                                                                                                                                                                                                                                                                                                                 CLIENT_MESSAGE_EQUIP_PLAYFIELDITEM_IMPROVEMENT = CLIENT_MESSAGE_ + "EQUIP_PLAYFIELDITEM_IMPROVEMENT";
-                                                                                                                                                                                                                                                                                                                                                                                                                                 if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                                                                                                                                                                    addr0e46:
-                                                                                                                                                                                                                                                                                                                                                                                                                                    SERVER_MESSAGE_PLAYFIELDITEM_IMPROVEMENT_EQUIPPED = SERVER_MESSAGE_ + "PLAYFIELDITEM_IMPROVEMENT_EQUIPPED";
-                                                                                                                                                                                                                                                                                                                                                                                                                                    if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                                                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                                                                                                                                                                                                                       addr0e61:
-                                                                                                                                                                                                                                                                                                                                                                                                                                       CLIENT_MESSAGE_PROLONG_PLAYFIELDITEM_IMPROVEMENT = CLIENT_MESSAGE_ + "PROLONG_PLAYFIELDITEM_IMPROVEMENT";
-                                                                                                                                                                                                                                                                                                                                                                                                                                       if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                                                                                                                                                                                                          addr0e7b:
-                                                                                                                                                                                                                                                                                                                                                                                                                                          SERVER_MESSAGE_PLAYFIELDITEM_IMPROVEMENT_UPDATED = SERVER_MESSAGE_ + "PLAYFIELDITEM_IMPROVEMENT_UPDATED";
-                                                                                                                                                                                                                                                                                                                                                                                                                                          if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                                                                                                                                                                                                                             addr0e8e:
-                                                                                                                                                                                                                                                                                                                                                                                                                                             CLIENT_MESSAGE_DELETE_PLAYFIELDITEM_IMPROVEMENT = CLIENT_MESSAGE_ + "DELETE_PLAYFIELDITEM_IMPROVEMENT";
-                                                                                                                                                                                                                                                                                                                                                                                                                                             if(!_loc2_)
-                                                                                                                                                                                                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                addr0ea0:
-                                                                                                                                                                                                                                                                                                                                                                                                                                                SERVER_MESSAGE_PLAYFIELDITEM_IMPROVEMENT_DELETED = SERVER_MESSAGE_ + "PLAYFIELDITEM_IMPROVEMENT_DELETED";
-                                                                                                                                                                                                                                                                                                                                                                                                                                                if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                   addr0ebb:
-                                                                                                                                                                                                                                                                                                                                                                                                                                                   CLIENT_MESSAGE_IMPROVEMENT_BOOSTER_BUY = CLIENT_MESSAGE_ + "IMPROVEMENT_BOOSTER_BUY";
-                                                                                                                                                                                                                                                                                                                                                                                                                                                   if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      addr0ed5:
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      SERVER_MESSAGE_IMPROVEMENT_BOOSTER_REWARD_SUCCESS = SERVER_MESSAGE_ + "IMPROVEMENT_BOOSTER_REWARD_SUCCESS";
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                         SERVER_MESSAGE_PLAYER_FEATURE_UPDATE = SERVER_MESSAGE_ + "PLAYER_FEATURE_UPDATE";
-                                                                                                                                                                                                                                                                                                                                                                                                                                                         if(_loc1_ || _loc2_)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            §§goto(addr0f0b);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                         §§goto(addr0fe3);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                   }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                   §§goto(addr0fbe);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                §§goto(addr0ffd);
-                                                                                                                                                                                                                                                                                                                                                                                                                                             }
-                                                                                                                                                                                                                                                                                                                                                                                                                                             §§goto(addr0ebb);
-                                                                                                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                                                                                                          §§goto(addr0ed5);
-                                                                                                                                                                                                                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                                                                                                                                                                                                                       §§goto(addr0f88);
-                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                                                                                    §§goto(addr0ea0);
-                                                                                                                                                                                                                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                                                                                                                                                                                                                                 §§goto(addr0e61);
-                                                                                                                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                                                                                                                              §§goto(addr0ea0);
-                                                                                                                                                                                                                                                                                                                                                                                                                           }
-                                                                                                                                                                                                                                                                                                                                                                                                                           §§goto(addr0f38);
-                                                                                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                                                                                        §§goto(addr0e61);
-                                                                                                                                                                                                                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                                                                                                                                                                                                                     §§goto(addr1010);
-                                                                                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                                                                                                                  §§goto(addr0fa3);
-                                                                                                                                                                                                                                                                                                                                                                                                               }
-                                                                                                                                                                                                                                                                                                                                                                                                               §§goto(addr0e61);
-                                                                                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                                                                                            §§goto(addr0fe3);
-                                                                                                                                                                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                                                                                                                                                                         §§goto(addr0f6d);
-                                                                                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                                                                                      §§goto(addr0dbf);
-                                                                                                                                                                                                                                                                                                                                                                                                   }
-                                                                                                                                                                                                                                                                                                                                                                                                   §§goto(addr0e2c);
-                                                                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                                                                §§goto(addr0ed5);
-                                                                                                                                                                                                                                                                                                                                                                                             }
-                                                                                                                                                                                                                                                                                                                                                                                             §§goto(addr1010);
-                                                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                                                          §§goto(addr0dbf);
-                                                                                                                                                                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                                                                                                                                                                       §§goto(addr0e8e);
-                                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                                    §§goto(addr0d52);
-                                                                                                                                                                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                                                                                                                                                                                 §§goto(addr0fbe);
-                                                                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                                                                              §§goto(addr0ea0);
-                                                                                                                                                                                                                                                                                                                                                                           }
-                                                                                                                                                                                                                                                                                                                                                                           §§goto(addr0d2d);
-                                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                                        §§goto(addr0dbf);
-                                                                                                                                                                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                                                                                                                                                                     §§goto(addr0d87);
-                                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                                                                  §§goto(addr0ebb);
-                                                                                                                                                                                                                                                                                                                                                               }
-                                                                                                                                                                                                                                                                                                                                                               §§goto(addr0e2c);
-                                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                                            §§goto(addr0dbf);
-                                                                                                                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                                                                                                                         §§goto(addr0f0b);
-                                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                                      §§goto(addr0f1e);
-                                                                                                                                                                                                                                                                                                                                                   }
-                                                                                                                                                                                                                                                                                                                                                   §§goto(addr0e07);
-                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                §§goto(addr0caf);
-                                                                                                                                                                                                                                                                                                                                             }
-                                                                                                                                                                                                                                                                                                                                             §§goto(addr0d87);
-                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                          §§goto(addr0fa3);
-                                                                                                                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                                                                                                                       §§goto(addr0d87);
-                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                    §§goto(addr0f38);
-                                                                                                                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                              §§goto(addr0d40);
-                                                                                                                                                                                                                                                                                                                           }
-                                                                                                                                                                                                                                                                                                                           §§goto(addr0cdb);
-                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                        §§goto(addr0f1e);
-                                                                                                                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                                                                                                                     §§goto(addr0b63);
-                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                  §§goto(addr0e1a);
-                                                                                                                                                                                                                                                                                                               }
-                                                                                                                                                                                                                                                                                                               §§goto(addr0caf);
-                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                            addr0f0b:
-                                                                                                                                                                                                                                                                                                            SERVER_MESSAGE_CITY_WHEEL_UPDATE = SERVER_MESSAGE_ + "CITY_WHEEL_UPDATE";
-                                                                                                                                                                                                                                                                                                            if(!_loc2_)
-                                                                                                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                                                                                               addr0f1e:
-                                                                                                                                                                                                                                                                                                               CLIENT_MESSAGE_CITY_WHEEL_SPIN = CLIENT_MESSAGE_ + "CITY_WHEEL_SPIN";
-                                                                                                                                                                                                                                                                                                               if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                                                                                                  addr0f38:
-                                                                                                                                                                                                                                                                                                                  CLIENT_MESSAGE_CITY_WHEEL_COLLECT = CLIENT_MESSAGE_ + "CITY_WHEEL_COLLECT";
-                                                                                                                                                                                                                                                                                                                  if(_loc1_ || _loc2_)
-                                                                                                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                                                                                                     addr0f52:
-                                                                                                                                                                                                                                                                                                                     CLIENT_MESSAGE_MASTERY_BUILDING_PROCESS = CLIENT_MESSAGE_ + "MASTERY_BUILDING_PROCESS";
-                                                                                                                                                                                                                                                                                                                     if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                                                                        addr0f6d:
-                                                                                                                                                                                                                                                                                                                        SERVER_MESSAGE_MASTERY_CHALLENGE_UPDATE = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_MASTERY_CHALLENGE_UPDATE";
-                                                                                                                                                                                                                                                                                                                        if(_loc1_ || _loc1_)
-                                                                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                                                                           addr0f88:
-                                                                                                                                                                                                                                                                                                                           SERVER_MESSAGE_MASTERY_BONUS_UPDATE = SERVER_MESSAGE_ + "PLAYFIELD_BUILDING_MASTERY_BONUS_UPDATE";
-                                                                                                                                                                                                                                                                                                                           if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                                                                                                                              addr0fa3:
-                                                                                                                                                                                                                                                                                                                              SERVER_MESSAGE_CINEMA_UPDATE = SERVER_MESSAGE_ + "CINEMA_UPDATE";
-                                                                                                                                                                                                                                                                                                                              if(!(_loc2_ && _loc2_))
-                                                                                                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                                                                                                 addr0fbe:
-                                                                                                                                                                                                                                                                                                                                 SERVER_MESSAGE_PLAYER_PAYMENT_UPSELL_UPDATE = SERVER_MESSAGE_ + "PLAYER_PAYMENT_UPSELL_UPDATE";
-                                                                                                                                                                                                                                                                                                                                 if(_loc1_ || ServerNotificationConstants)
-                                                                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                                                                    addr0fe3:
-                                                                                                                                                                                                                                                                                                                                    CLIENT_MESSAGE_UPDATE_CLIENT_UI_DATA = CLIENT_MESSAGE_ + "UPDATE_CLIENT_UI_DATA";
-                                                                                                                                                                                                                                                                                                                                    if(_loc1_ || _loc1_)
-                                                                                                                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                                                                                                                       addr0ffd:
-                                                                                                                                                                                                                                                                                                                                       SERVER_MESSAGE_UPDATE_CLIENT_UI_DATA_SUCCESS = SERVER_MESSAGE_ + "UPDATE_CLIENT_UI_DATA_SUCCESS";
-                                                                                                                                                                                                                                                                                                                                       if(_loc1_)
-                                                                                                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                                                                                                          addr1010:
-                                                                                                                                                                                                                                                                                                                                          SET_USER_OPTIONS = "SET_USER_OPTIONS";
-                                                                                                                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                                                                                                                       §§goto(addr1019);
-                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                    §§goto(addr1010);
-                                                                                                                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                                                                                                                                 §§goto(addr1019);
-                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                           }
-                                                                                                                                                                                                                                                                                                                           §§goto(addr0fe3);
-                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                        §§goto(addr1010);
-                                                                                                                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                  §§goto(addr0fa3);
-                                                                                                                                                                                                                                                                                                               }
-                                                                                                                                                                                                                                                                                                               §§goto(addr1010);
-                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                            §§goto(addr1019);
-                                                                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                                                                         §§goto(addr0fa3);
-                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                      §§goto(addr0d52);
-                                                                                                                                                                                                                                                                                                   }
-                                                                                                                                                                                                                                                                                                   §§goto(addr0a2b);
-                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                §§goto(addr0b93);
-                                                                                                                                                                                                                                                                                             }
-                                                                                                                                                                                                                                                                                             §§goto(addr1010);
-                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                          §§goto(addr1019);
-                                                                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                                                                       §§goto(addr09b5);
-                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                    §§goto(addr0a8f);
-                                                                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                                                                                 §§goto(addr096c);
-                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                              §§goto(addr0caf);
-                                                                                                                                                                                                                                                                           }
-                                                                                                                                                                                                                                                                           §§goto(addr0ea0);
-                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                        §§goto(addr0b2b);
-                                                                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                                                                     §§goto(addr0c07);
-                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                  §§goto(addr0d9a);
-                                                                                                                                                                                                                                                               }
-                                                                                                                                                                                                                                                               §§goto(addr0a10);
-                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                            §§goto(addr0e46);
-                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                         §§goto(addr0e07);
-                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                      §§goto(addr0ae9);
-                                                                                                                                                                                                                                                   }
-                                                                                                                                                                                                                                                   §§goto(addr0f52);
-                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                addr1019:
-                                                                                                                                                                                                                                                return;
-                                                                                                                                                                                                                                             }
-                                                                                                                                                                                                                                             §§goto(addr1010);
-                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                          §§goto(addr0ad5);
-                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                       §§goto(addr079c);
-                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                    §§goto(addr0fe3);
-                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                                 §§goto(addr0dd1);
-                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                              §§goto(addr0789);
-                                                                                                                                                                                                                           }
-                                                                                                                                                                                                                           §§goto(addr0959);
-                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                        §§goto(addr079c);
-                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                     §§goto(addr0aa9);
-                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                  §§goto(addr0a59);
-                                                                                                                                                                                                               }
-                                                                                                                                                                                                               §§goto(addr0633);
-                                                                                                                                                                                                            }
-                                                                                                                                                                                                            §§goto(addr1010);
-                                                                                                                                                                                                         }
-                                                                                                                                                                                                         §§goto(addr0a59);
-                                                                                                                                                                                                      }
-                                                                                                                                                                                                      §§goto(addr0ad5);
-                                                                                                                                                                                                   }
-                                                                                                                                                                                                   §§goto(addr0f0b);
-                                                                                                                                                                                                }
-                                                                                                                                                                                                §§goto(addr072f);
-                                                                                                                                                                                             }
-                                                                                                                                                                                             §§goto(addr0a3e);
-                                                                                                                                                                                          }
-                                                                                                                                                                                          §§goto(addr0924);
-                                                                                                                                                                                       }
-                                                                                                                                                                                       §§goto(addr0ba6);
-                                                                                                                                                                                    }
-                                                                                                                                                                                    §§goto(addr0a59);
-                                                                                                                                                                                 }
-                                                                                                                                                                                 §§goto(addr0c9d);
-                                                                                                                                                                              }
-                                                                                                                                                                              §§goto(addr050a);
-                                                                                                                                                                           }
-                                                                                                                                                                           §§goto(addr0ebb);
-                                                                                                                                                                        }
-                                                                                                                                                                        §§goto(addr0e1a);
-                                                                                                                                                                     }
-                                                                                                                                                                     §§goto(addr08ad);
-                                                                                                                                                                  }
-                                                                                                                                                                  §§goto(addr07e5);
-                                                                                                                                                               }
-                                                                                                                                                               §§goto(addr0ea0);
-                                                                                                                                                            }
-                                                                                                                                                            §§goto(addr06cb);
-                                                                                                                                                         }
-                                                                                                                                                         §§goto(addr0924);
-                                                                                                                                                      }
-                                                                                                                                                      §§goto(addr0841);
-                                                                                                                                                   }
-                                                                                                                                                   §§goto(addr0cdb);
-                                                                                                                                                }
-                                                                                                                                                §§goto(addr08fe);
-                                                                                                                                             }
-                                                                                                                                             §§goto(addr0880);
-                                                                                                                                          }
-                                                                                                                                          §§goto(addr0417);
-                                                                                                                                       }
-                                                                                                                                       §§goto(addr08ad);
-                                                                                                                                    }
-                                                                                                                                 }
-                                                                                                                                 §§goto(addr06b0);
-                                                                                                                              }
-                                                                                                                              §§goto(addr0cf5);
-                                                                                                                           }
-                                                                                                                           §§goto(addr09ea);
-                                                                                                                        }
-                                                                                                                        §§goto(addr0ed5);
-                                                                                                                     }
-                                                                                                                     §§goto(addr09ea);
-                                                                                                                  }
-                                                                                                                  §§goto(addr0959);
-                                                                                                               }
-                                                                                                               §§goto(addr0b7e);
-                                                                                                            }
-                                                                                                            §§goto(addr06b0);
-                                                                                                         }
-                                                                                                         §§goto(addr0ea0);
-                                                                                                      }
-                                                                                                      §§goto(addr0b93);
-                                                                                                   }
-                                                                                                   §§goto(addr0924);
-                                                                                                }
-                                                                                                §§goto(addr0b93);
-                                                                                             }
-                                                                                             §§goto(addr076e);
-                                                                                          }
-                                                                                          §§goto(addr0bf5);
-                                                                                       }
-                                                                                       §§goto(addr0251);
-                                                                                    }
-                                                                                    §§goto(addr099a);
-                                                                                 }
-                                                                                 §§goto(addr044c);
-                                                                              }
-                                                                              §§goto(addr0dd1);
-                                                                           }
-                                                                           §§goto(addr0dbf);
-                                                                        }
-                                                                        §§goto(addr08ad);
-                                                                     }
-                                                                     §§goto(addr0495);
-                                                                  }
-                                                                  §§goto(addr0bdb);
-                                                               }
-                                                               §§goto(addr0aa9);
-                                                            }
-                                                            §§goto(addr09fd);
-                                                         }
-                                                         §§goto(addr02ad);
-                                                      }
-                                                      §§goto(addr047a);
-                                                   }
-                                                   §§goto(addr02d3);
-                                                }
-                                                §§goto(addr0bdb);
-                                             }
-                                             §§goto(addr0c19);
-                                          }
-                                          §§goto(addr0b93);
-                                       }
-                                       §§goto(addr0bf5);
-                                    }
-                                    §§goto(addr0c79);
-                                 }
-                                 §§goto(addr00d9);
-                              }
-                              §§goto(addr050a);
-                           }
-                           §§goto(addr0c19);
-                        }
-                        §§goto(addr00e7);
-                     }
-                     §§goto(addr0d40);
-                  }
-                  §§goto(addr09fd);
-               }
-               §§goto(addr0e7b);
-            }
-            §§goto(addr005b);
-         }
-         §§goto(addr067a);
-      }
-      §§goto(addr04e5);
-      
       public function ServerNotificationConstants()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
    }
 }

@@ -64,150 +64,32 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function ResidentialDetailViewVo(param1:Object, param2:ResidentialFieldObjectVo)
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!_loc3_)
-         {
-            super();
-            if(_loc4_)
-            {
-               this._gfxId = param1.gfxId;
-               if(!(_loc3_ && _loc3_))
-               {
-                  this._libName = param1.libName;
-                  if(!(_loc3_ && Boolean(param2)))
-                  {
-                     addr004e:
-                     this._localeId = param1.localeId;
-                     if(!_loc3_)
-                     {
-                        this._upgradeCountTotal = param1.upgradeCountTotal;
-                        if(!_loc3_)
-                        {
-                           this._harvestCount = param1.harvestCount;
-                           if(!(_loc3_ && Boolean(param2)))
-                           {
-                              this._upgradePrice = param1.upgradePrice;
-                              if(!(_loc3_ && Boolean(param2)))
-                              {
-                                 this._hasEnoughDD = param1.hasEnoughDD;
-                                 if(_loc4_ || Boolean(this))
-                                 {
-                                    this._upgradeCurrentLevel = param1.upgradeCurrentLevel;
-                                    if(_loc4_ || Boolean(param1))
-                                    {
-                                       addr00c8:
-                                       this._upgradeNextLevel = param1.upgradeNextLevel;
-                                       if(!_loc3_)
-                                       {
-                                          §§goto(addr00d7);
-                                       }
-                                       §§goto(addr01ea);
-                                    }
-                                    addr00d7:
-                                    this._upgradeMaxLevel = param1.upgradeMaxLevel;
-                                    if(_loc4_ || Boolean(param2))
-                                    {
-                                       addr00f9:
-                                       this._needs = param1.needs;
-                                       if(_loc4_)
-                                       {
-                                          this._harvestCycleLength = param1.cycleLength;
-                                          if(!(_loc3_ && Boolean(param2)))
-                                          {
-                                             addr011f:
-                                             this._harvestCurrentTime = param1.currentTime;
-                                             if(!(_loc3_ && Boolean(this)))
-                                             {
-                                                addr0136:
-                                                this._harvestEndTime = param1.endTime;
-                                                if(_loc4_ || Boolean(param2))
-                                                {
-                                                   addr014e:
-                                                   this._rentalIncomeVo = param1.rentIncome;
-                                                   if(_loc4_)
-                                                   {
-                                                      addr015e:
-                                                      this._needIncomeVo = param1.needIncome;
-                                                      if(!_loc3_)
-                                                      {
-                                                         addr016d:
-                                                         this._residentInfo = param1.residents;
-                                                         if(!_loc3_)
-                                                         {
-                                                            addr017c:
-                                                            this._residentChangePossible = param1.residentChange;
-                                                            if(!(_loc3_ && Boolean(param1)))
-                                                            {
-                                                               this._residentChangeLevel = param1.residentChangeLevel;
-                                                               if(!_loc3_)
-                                                               {
-                                                                  addr01a1:
-                                                                  this._moodEffect = param1.mood;
-                                                                  if(_loc4_ || Boolean(param1))
-                                                                  {
-                                                                     addr01b8:
-                                                                     this._energyEffect = param1.energy;
-                                                                     if(_loc4_)
-                                                                     {
-                                                                        this._exprossoUseMutipleTimesOn = param1.exprossoUseMutipleTimesOn;
-                                                                        if(!(_loc3_ && Boolean(param1)))
-                                                                        {
-                                                                           addr01ea:
-                                                                           this._residentialFieldObjectVo = param2;
-                                                                           if(_loc4_)
-                                                                           {
-                                                                              addr01f5:
-                                                                              this._hasEnoughPermits = param1.ep;
-                                                                              if(_loc4_)
-                                                                              {
-                                                                                 addr0205:
-                                                                                 this._currentMasteryChallenge = param1.masteryChallenge;
-                                                                              }
-                                                                           }
-                                                                        }
-                                                                        §§goto(addr020f);
-                                                                     }
-                                                                  }
-                                                                  §§goto(addr0205);
-                                                               }
-                                                               §§goto(addr01f5);
-                                                            }
-                                                            §§goto(addr01b8);
-                                                         }
-                                                      }
-                                                      §§goto(addr01a1);
-                                                   }
-                                                }
-                                                §§goto(addr017c);
-                                             }
-                                             §§goto(addr014e);
-                                          }
-                                          §§goto(addr016d);
-                                       }
-                                       §§goto(addr015e);
-                                    }
-                                    §§goto(addr020f);
-                                 }
-                                 addr020f:
-                                 return;
-                              }
-                              §§goto(addr01b8);
-                           }
-                           §§goto(addr0136);
-                        }
-                        §§goto(addr00c8);
-                     }
-                     §§goto(addr0205);
-                  }
-                  §§goto(addr00f9);
-               }
-               §§goto(addr004e);
-            }
-            §§goto(addr014e);
-         }
-         §§goto(addr011f);
+         super();
+         this._gfxId = param1.gfxId;
+         this._libName = param1.libName;
+         this._localeId = param1.localeId;
+         this._upgradeCountTotal = param1.upgradeCountTotal;
+         this._harvestCount = param1.harvestCount;
+         this._upgradePrice = param1.upgradePrice;
+         this._hasEnoughDD = param1.hasEnoughDD;
+         this._upgradeCurrentLevel = param1.upgradeCurrentLevel;
+         this._upgradeNextLevel = param1.upgradeNextLevel;
+         this._upgradeMaxLevel = param1.upgradeMaxLevel;
+         this._needs = param1.needs;
+         this._harvestCycleLength = param1.cycleLength;
+         this._harvestCurrentTime = param1.currentTime;
+         this._harvestEndTime = param1.endTime;
+         this._rentalIncomeVo = param1.rentIncome;
+         this._needIncomeVo = param1.needIncome;
+         this._residentInfo = param1.residents;
+         this._residentChangePossible = param1.residentChange;
+         this._residentChangeLevel = param1.residentChangeLevel;
+         this._moodEffect = param1.mood;
+         this._energyEffect = param1.energy;
+         this._exprossoUseMutipleTimesOn = param1.exprossoUseMutipleTimesOn;
+         this._residentialFieldObjectVo = param2;
+         this._hasEnoughPermits = param1.ep;
+         this._currentMasteryChallenge = param1.masteryChallenge;
       }
       
       public function get gfxId() : Number
@@ -227,13 +109,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function get upgradeReady() : Boolean
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            this._upgradeReady = this._upgradeCountTotal <= this._harvestCount;
-         }
+         this._upgradeReady = this._upgradeCountTotal <= this._harvestCount;
          return this._upgradeReady;
       }
       
@@ -299,13 +175,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set nextResidentialDetail(param1:ResidentialDetailViewVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._nextResidentialDetail = param1;
-         }
+         this._nextResidentialDetail = param1;
       }
       
       public function get rentalIncomeVo() : SimpleItemVo
@@ -360,22 +230,19 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function get restrictionForPolaroid() : String
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
          var _loc1_:String = null;
-         var _loc2_:int = 0;
-         var _loc3_:* = this._residentialFieldObjectVo.configPlayfieldItemVo.tags;
-         while(true)
+         for each(_loc1_ in this._residentialFieldObjectVo.configPlayfieldItemVo.tags)
          {
-            if(!(§§hasnext(_loc3_,_loc2_)))
+            if(_loc1_ == ServerRestrictionConstants.SEA_WHITELIST || _loc1_ == ServerRestrictionConstants.SNOW_WHITELIST || _loc1_ == ServerRestrictionConstants.MOUNTAIN_WHITELIST)
             {
-               return "";
+               return _loc1_;
+            }
+            if(_loc1_ == ServerRestrictionConstants.COAST_WHITELIST || _loc1_ == ServerRestrictionConstants.FISHINGGROUND_WHITELIST)
+            {
+               return ServerRestrictionConstants.COAST_WHITELIST;
             }
          }
-         addr01c8:
-         ServerRestrictionConstants.COAST_WHITELIST;
-         return §§pop();
+         return "";
       }
       
       public function get currentMasteryChallenge() : MasteryComponentVo

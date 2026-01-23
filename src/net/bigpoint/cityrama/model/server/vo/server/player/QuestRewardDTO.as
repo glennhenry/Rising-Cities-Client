@@ -26,24 +26,9 @@ package net.bigpoint.cityrama.model.server.vo.server.player
       
       public function QuestRewardDTO(param1:Object)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            super(param1);
-            if(!_loc3_)
-            {
-               this._willItDrop = param1.d;
-               if(_loc2_ || Boolean(param1))
-               {
-                  addr0042:
-                  this._isMainReward = param1.m;
-               }
-               return;
-            }
-         }
-         §§goto(addr0042);
+         super(param1);
+         this._willItDrop = param1.d;
+         this._isMainReward = param1.m;
       }
       
       public function get willItDrop() : Boolean
@@ -63,24 +48,12 @@ package net.bigpoint.cityrama.model.server.vo.server.player
       
       public function set resourceConfig(param1:ConfigResourceDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._resourceConfig = param1;
-         }
+         this._resourceConfig = param1;
       }
       
       public function set goodConfig(param1:ConfigGoodDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._goodConfig = param1;
-         }
+         this._goodConfig = param1;
       }
       
       public function get configPlayfieldItem() : ConfigPlayfieldItemDTO
@@ -90,13 +63,7 @@ package net.bigpoint.cityrama.model.server.vo.server.player
       
       public function set configPlayfieldItem(param1:ConfigPlayfieldItemDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._configPlayfieldItem = param1;
-         }
+         this._configPlayfieldItem = param1;
       }
       
       public function get isMainReward() : Boolean
@@ -111,13 +78,7 @@ package net.bigpoint.cityrama.model.server.vo.server.player
       
       public function set improvementConfig(param1:ConfigImprovementDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._improvementConfig = param1;
-         }
+         this._improvementConfig = param1;
       }
       
       public function get assistConfig() : ConfigAssistDTO
@@ -127,13 +88,7 @@ package net.bigpoint.cityrama.model.server.vo.server.player
       
       public function set assistConfig(param1:ConfigAssistDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._assistConfig = param1;
-         }
+         this._assistConfig = param1;
       }
    }
 }

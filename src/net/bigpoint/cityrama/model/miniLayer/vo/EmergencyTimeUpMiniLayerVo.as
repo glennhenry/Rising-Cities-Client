@@ -17,13 +17,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function EmergencyTimeUpMiniLayerVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get title() : String
@@ -58,68 +52,32 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set title(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._title = param1;
-         }
+         this._title = param1;
       }
       
       public function set explanationText(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._explanationText = param1;
-         }
+         this._explanationText = param1;
       }
       
       public function set emergencyBmpName(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._emergencyBmpName = param1;
-         }
+         this._emergencyBmpName = param1;
       }
       
       public function set emergencyLibName(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._emergencyLibName = param1;
-         }
+         this._emergencyLibName = param1;
       }
       
       public function set emergencySWFName(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            this._emergencySWFName = param1;
-         }
+         this._emergencySWFName = param1;
       }
       
       public function set buttonLabel(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(param1)))
-         {
-            this._buttonLabel = param1;
-         }
+         this._buttonLabel = param1;
       }
    }
 }

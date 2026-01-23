@@ -15,13 +15,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function AssistVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get config() : ConfigAssistDTO
@@ -31,13 +25,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set config(param1:ConfigAssistDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._config = param1;
-         }
+         this._config = param1;
       }
       
       public function get initTime() : Number
@@ -47,13 +35,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set initTime(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._initTime = param1;
-         }
+         this._initTime = param1;
       }
       
       public function get endTime() : Number
@@ -63,13 +45,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set endTime(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._endTime = param1;
-         }
+         this._endTime = param1;
       }
       
       public function get configId() : Number
@@ -79,13 +55,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set configId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._configId = param1;
-         }
+         this._configId = param1;
       }
    }
 }

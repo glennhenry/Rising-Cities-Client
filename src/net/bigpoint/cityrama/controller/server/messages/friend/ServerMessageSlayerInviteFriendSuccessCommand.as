@@ -10,25 +10,13 @@ package net.bigpoint.cityrama.controller.server.messages.friend
       
       public function ServerMessageSlayerInviteFriendSuccessCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:MessageVo = MessageVo(param1.getBody());
-         if(!_loc3_)
-         {
-            sendNotification(ApplicationNotificationConstants.FRIEND_INVITE_SUCCESS);
-         }
+         sendNotification(ApplicationNotificationConstants.FRIEND_INVITE_SUCCESS);
       }
    }
 }

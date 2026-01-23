@@ -17,13 +17,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function ProgressBarMiniVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get endTime() : Number
@@ -33,13 +27,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set endTime(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            this._endTime = param1;
-         }
+         this._endTime = param1;
       }
       
       public function get startTime() : Number
@@ -49,13 +37,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set startTime(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            this._startTime = param1;
-         }
+         this._startTime = param1;
       }
       
       public function get advisorGroup() : String
@@ -65,13 +47,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set advisorGroup(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(param1)))
-         {
-            this._advisorGroup = param1;
-         }
+         this._advisorGroup = param1;
       }
       
       public function get tooltip() : String
@@ -81,13 +57,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set tooltip(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._tooltip = param1;
-         }
+         this._tooltip = param1;
       }
       
       public function get runtime() : Number
@@ -97,13 +67,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set runtime(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._runtime = param1;
-         }
+         this._runtime = param1;
       }
       
       public function get currentTime() : Number
@@ -113,13 +77,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set currentTime(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(param1)))
-         {
-            this._currentTime = param1;
-         }
+         this._currentTime = param1;
       }
    }
 }

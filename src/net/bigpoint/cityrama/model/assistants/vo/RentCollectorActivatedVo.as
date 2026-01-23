@@ -15,13 +15,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function RentCollectorActivatedVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       public function get stacked() : Boolean
@@ -31,97 +25,35 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function get topText() : String
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
+         if(this.stacked)
          {
-            if(this.stacked)
-            {
-               if(!(_loc1_ && Boolean(this)))
-               {
-                  addr0035:
-                  §§push(LocaUtils.getString("rcl.booklayer.rentCollector","rcl.booklayer.rentCollector.stacked.flavour"));
-                  if(!(_loc1_ && _loc2_))
-                  {
-                     return §§pop();
-                  }
-               }
-               else
-               {
-                  addr004f:
-                  return LocaUtils.getString("rcl.booklayer.rentCollector","rcl.booklayer.rentCollector.activated.flavour");
-               }
-               return §§pop();
-            }
-            §§goto(addr004f);
+            return LocaUtils.getString("rcl.booklayer.rentCollector","rcl.booklayer.rentCollector.stacked.flavour");
          }
-         §§goto(addr0035);
+         return LocaUtils.getString("rcl.booklayer.rentCollector","rcl.booklayer.rentCollector.activated.flavour");
       }
       
       public function get bottomText() : String
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
+         if(this.stacked)
          {
-            if(this.stacked)
-            {
-               if(!(_loc1_ && Boolean(this)))
-               {
-                  §§push(LocaUtils.getString("rcl.booklayer.rentCollector","rcl.booklayer.rentCollector.stacked.bottomText"));
-                  if(!_loc1_)
-                  {
-                     return §§pop();
-                  }
-               }
-               else
-               {
-                  addr0047:
-                  return LocaUtils.getString("rcl.booklayer.rentCollector","rcl.booklayer.rentCollector.activated.bottomText");
-               }
-               return §§pop();
-            }
+            return LocaUtils.getString("rcl.booklayer.rentCollector","rcl.booklayer.rentCollector.stacked.bottomText");
          }
-         §§goto(addr0047);
+         return LocaUtils.getString("rcl.booklayer.rentCollector","rcl.booklayer.rentCollector.activated.bottomText");
       }
       
       public function get collectorIcon() : BriskDynaVo
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         §§push(§§findproperty(BriskDynaVo));
-         §§push("gui_popups_rentCollector");
-         §§push("rentCollector_big_");
-         if(!(_loc2_ && _loc2_))
-         {
-            §§push(§§pop() + this._packGfxId);
-         }
-         return new §§pop().BriskDynaVo(§§pop(),§§pop());
+         return new BriskDynaVo("gui_popups_rentCollector","rentCollector_big_" + this._packGfxId);
       }
       
       public function set stacked(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._stacked = param1;
-         }
+         this._stacked = param1;
       }
       
       public function set packGfxId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._packGfxId = param1;
-         }
+         this._packGfxId = param1;
       }
       
       public function get timerVo() : TimerBarComponentVo
@@ -131,13 +63,7 @@ package net.bigpoint.cityrama.model.assistants.vo
       
       public function set timerVo(param1:TimerBarComponentVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._timerVo = param1;
-         }
+         this._timerVo = param1;
       }
    }
 }

@@ -34,292 +34,114 @@ package net.bigpoint.cityrama.view.architectBook.ui.skins
       
       public function LargeDetailComponentLockedSkin()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-            if(!(_loc2_ && _loc1_))
-            {
-               mx_internal::_document = this;
-               if(_loc1_)
-               {
-                  this.height = 250;
-                  if(_loc1_)
-                  {
-                     addr004a:
-                     this.mxmlContent = [this._LargeDetailComponentLockedSkin_Group1_c()];
-                     if(_loc1_)
-                     {
-                        addr0064:
-                        this.currentState = "up";
-                        if(_loc1_)
-                        {
-                           this.addEventListener("creationComplete",this.___LargeDetailComponentLockedSkin_SparkSkin1_creationComplete);
-                           if(!(_loc2_ && _loc1_))
-                           {
-                              states = [new State({
-                                 "name":"up",
-                                 "overrides":[]
-                              }),new State({
-                                 "name":"normal",
-                                 "overrides":[]
-                              }),new State({
-                                 "name":"over",
-                                 "overrides":[]
-                              }),new State({
-                                 "name":"down",
-                                 "overrides":[]
-                              }),new State({
-                                 "name":"disabled",
-                                 "overrides":[]
-                              })];
-                              addr0089:
-                           }
-                        }
-                        §§goto(addr00ee);
-                     }
-                     §§goto(addr0089);
-                  }
-                  §§goto(addr00ee);
-               }
-               §§goto(addr0064);
-            }
-            addr00ee:
-            return;
-         }
-         §§goto(addr004a);
+         super();
+         mx_internal::_document = this;
+         this.height = 250;
+         this.mxmlContent = [this._LargeDetailComponentLockedSkin_Group1_c()];
+         this.currentState = "up";
+         this.addEventListener("creationComplete",this.___LargeDetailComponentLockedSkin_SparkSkin1_creationComplete);
+         states = [new State({
+            "name":"up",
+            "overrides":[]
+         }),new State({
+            "name":"normal",
+            "overrides":[]
+         }),new State({
+            "name":"over",
+            "overrides":[]
+         }),new State({
+            "name":"down",
+            "overrides":[]
+         }),new State({
+            "name":"disabled",
+            "overrides":[]
+         })];
       }
       
       override public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
+         super.moduleFactory = param1;
+         if(this.__moduleFactoryInitialized)
          {
-            super.moduleFactory = param1;
-            if(!(_loc3_ && Boolean(this)))
-            {
-               if(this.__moduleFactoryInitialized)
-               {
-                  if(!_loc3_)
-                  {
-                     §§goto(addr0049);
-                  }
-               }
-               §§goto(addr004f);
-            }
-            addr0049:
             return;
          }
-         addr004f:
          this.__moduleFactoryInitialized = true;
       }
       
       override public function initialize() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super.initialize();
-         }
+         super.initialize();
       }
       
       protected function handleCreationComplete(param1:FlexEvent) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
-         {
-            TweenMax.to(this.image,0,{
-               "colorMatrixFilter":{"saturation":0},
-               "colorTransform":{
-                  "tint":14473659,
-                  "tintAmount":0.74
-               }
-            });
-         }
+         TweenMax.to(this.image,0,{
+            "colorMatrixFilter":{"saturation":0},
+            "colorTransform":{
+               "tint":14473659,
+               "tintAmount":0.74
+            }
+         });
       }
       
       override protected function commitProperties() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || Boolean(this))
+         super.commitProperties();
+         if(this.bottomStickerComponent)
          {
-            super.commitProperties();
-            if(_loc1_)
+            if(this.hostComponent.showBottomSticker)
             {
-               if(this.bottomStickerComponent)
-               {
-                  if(_loc1_ || Boolean(this))
-                  {
-                     if(this.hostComponent.showBottomSticker)
-                     {
-                        if(!_loc2_)
-                        {
-                           addr0055:
-                           this.bottomStickerComponent.includeInLayout = true;
-                           if(_loc1_ || _loc2_)
-                           {
-                              addr0073:
-                              this.bottomStickerComponent.visible = true;
-                              if(_loc2_)
-                              {
-                              }
-                           }
-                        }
-                     }
-                     else
-                     {
-                        this.bottomStickerComponent.includeInLayout = false;
-                        if(!_loc2_)
-                        {
-                           this.bottomStickerComponent.visible = false;
-                        }
-                     }
-                     §§goto(addr0096);
-                  }
-                  §§goto(addr0073);
-               }
-               addr0096:
-               return;
+               this.bottomStickerComponent.includeInLayout = true;
+               this.bottomStickerComponent.visible = true;
             }
-            §§goto(addr0073);
+            else
+            {
+               this.bottomStickerComponent.includeInLayout = false;
+               this.bottomStickerComponent.visible = false;
+            }
          }
-         §§goto(addr0055);
       }
       
       private function _LargeDetailComponentLockedSkin_Group1_c() : Group
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:Group = new Group();
-         if(_loc3_ || Boolean(this))
+         _loc1_.percentWidth = 100;
+         _loc1_.percentHeight = 100;
+         _loc1_.mxmlContent = [this._LargeDetailComponentLockedSkin_Group2_i(),this._LargeDetailComponentLockedSkin_BriskImageDynaLib1_i(),this._LargeDetailComponentLockedSkin_BriskImageDynaLib2_i(),this._LargeDetailComponentLockedSkin_BriskImageDynaLib3_c(),this._LargeDetailComponentLockedSkin_BriskMCDynaLib1_c()];
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 100;
-            if(!(_loc2_ && _loc3_))
-            {
-               _loc1_.percentHeight = 100;
-               if(!_loc2_)
-               {
-                  _loc1_.mxmlContent = [this._LargeDetailComponentLockedSkin_Group2_i(),this._LargeDetailComponentLockedSkin_BriskImageDynaLib1_i(),this._LargeDetailComponentLockedSkin_BriskImageDynaLib2_i(),this._LargeDetailComponentLockedSkin_BriskImageDynaLib3_c(),this._LargeDetailComponentLockedSkin_BriskMCDynaLib1_c()];
-                  addr0051:
-                  if(!_loc2_)
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(_loc3_ || _loc3_)
-                        {
-                           addr0098:
-                           _loc1_.document = this;
-                        }
-                     }
-                     §§goto(addr009c);
-                  }
-               }
-               §§goto(addr0098);
-            }
-            §§goto(addr0051);
+            _loc1_.document = this;
          }
-         addr009c:
          return _loc1_;
       }
       
       private function _LargeDetailComponentLockedSkin_Group2_i() : Group
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:Group = new Group();
-         if(!(_loc3_ && Boolean(this)))
+         _loc1_.bottom = -15;
+         _loc1_.mxmlContent = [this._LargeDetailComponentLockedSkin_StickyNoteComponent1_c()];
+         _loc1_.id = "bottomStickerComponent";
+         if(!_loc1_.document)
          {
-            _loc1_.bottom = -15;
-            if(_loc2_)
-            {
-               _loc1_.mxmlContent = [this._LargeDetailComponentLockedSkin_StickyNoteComponent1_c()];
-               if(!_loc3_)
-               {
-                  _loc1_.id = "bottomStickerComponent";
-                  if(!_loc3_)
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(!_loc3_)
-                        {
-                           _loc1_.document = this;
-                           if(!(_loc3_ && _loc3_))
-                           {
-                              addr0086:
-                              this.bottomStickerComponent = _loc1_;
-                              if(_loc2_)
-                              {
-                                 BindingManager.executeBindings(this,"bottomStickerComponent",this.bottomStickerComponent);
-                              }
-                           }
-                           §§goto(addr009d);
-                        }
-                     }
-                     §§goto(addr0086);
-                  }
-                  §§goto(addr009d);
-               }
-               §§goto(addr0086);
-            }
-            addr009d:
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr0086);
+         this.bottomStickerComponent = _loc1_;
+         BindingManager.executeBindings(this,"bottomStickerComponent",this.bottomStickerComponent);
+         return _loc1_;
       }
       
       private function _LargeDetailComponentLockedSkin_StickyNoteComponent1_c() : StickyNoteComponent
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:StickyNoteComponent = new StickyNoteComponent();
-         if(!_loc3_)
+         _loc1_.height = 85;
+         _loc1_.percentWidth = 90;
+         _loc1_.horizontalCenter = 0;
+         _loc1_.mxmlContentFactory = new DeferredInstanceFromFunction(this._LargeDetailComponentLockedSkin_Array5_c);
+         if(!_loc1_.document)
          {
-            _loc1_.height = 85;
-            if(_loc2_)
-            {
-               _loc1_.percentWidth = 90;
-               if(_loc2_)
-               {
-                  _loc1_.horizontalCenter = 0;
-                  if(_loc2_ || _loc3_)
-                  {
-                     _loc1_.mxmlContentFactory = new DeferredInstanceFromFunction(this._LargeDetailComponentLockedSkin_Array5_c);
-                     addr0051:
-                     if(!(_loc3_ && Boolean(_loc1_)))
-                     {
-                        §§goto(addr007a);
-                     }
-                     §§goto(addr008e);
-                  }
-               }
-               addr007a:
-               if(!_loc1_.document)
-               {
-                  if(_loc2_ || _loc2_)
-                  {
-                     addr008e:
-                     _loc1_.document = this;
-                  }
-               }
-               §§goto(addr0092);
-            }
-            addr0092:
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr0051);
+         return _loc1_;
       }
       
       private function _LargeDetailComponentLockedSkin_Array5_c() : Array
@@ -329,288 +151,96 @@ package net.bigpoint.cityrama.view.architectBook.ui.skins
       
       private function _LargeDetailComponentLockedSkin_HGroup1_c() : HGroup
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:HGroup = new HGroup();
-         if(_loc2_)
+         _loc1_.percentWidth = 100;
+         _loc1_.verticalCenter = 0;
+         _loc1_.verticalAlign = "middle";
+         _loc1_.horizontalAlign = "center";
+         _loc1_.mxmlContent = [this._LargeDetailComponentLockedSkin_LocaLabel1_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 100;
-            if(!(_loc3_ && _loc2_))
-            {
-               _loc1_.verticalCenter = 0;
-               if(_loc2_)
-               {
-                  _loc1_.verticalAlign = "middle";
-                  if(!(_loc3_ && Boolean(_loc1_)))
-                  {
-                     _loc1_.horizontalAlign = "center";
-                     if(!(_loc3_ && Boolean(this)))
-                     {
-                        _loc1_.mxmlContent = [this._LargeDetailComponentLockedSkin_LocaLabel1_i()];
-                        if(!_loc3_)
-                        {
-                           if(!_loc1_.document)
-                           {
-                              if(_loc2_ || Boolean(_loc1_))
-                              {
-                                 addr009c:
-                                 _loc1_.document = this;
-                              }
-                           }
-                           §§goto(addr00a0);
-                        }
-                        §§goto(addr009c);
-                     }
-                     §§goto(addr00a0);
-                  }
-               }
-               §§goto(addr009c);
-            }
-            addr00a0:
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr009c);
+         return _loc1_;
       }
       
       private function _LargeDetailComponentLockedSkin_LocaLabel1_i() : LocaLabel
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:LocaLabel = new LocaLabel();
-         if(_loc2_ || Boolean(_loc1_))
+         _loc1_.styleName = "largeDetailComponentSubtext";
+         _loc1_.id = "itemLabel";
+         if(!_loc1_.document)
          {
-            _loc1_.styleName = "largeDetailComponentSubtext";
-            if(!(_loc3_ && Boolean(_loc1_)))
-            {
-               _loc1_.id = "itemLabel";
-               if(_loc2_)
-               {
-                  if(!_loc1_.document)
-                  {
-                     if(_loc2_ || Boolean(_loc1_))
-                     {
-                        _loc1_.document = this;
-                        if(_loc2_)
-                        {
-                           addr007b:
-                           this.itemLabel = _loc1_;
-                           if(_loc2_)
-                           {
-                              addr0085:
-                              BindingManager.executeBindings(this,"itemLabel",this.itemLabel);
-                           }
-                        }
-                        §§goto(addr0092);
-                     }
-                     §§goto(addr0085);
-                  }
-                  §§goto(addr007b);
-               }
-               §§goto(addr0092);
-            }
-            §§goto(addr0085);
+            _loc1_.document = this;
          }
-         addr0092:
+         this.itemLabel = _loc1_;
+         BindingManager.executeBindings(this,"itemLabel",this.itemLabel);
          return _loc1_;
       }
       
       private function _LargeDetailComponentLockedSkin_BriskImageDynaLib1_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc3_)
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.horizontalCenter = 0;
+         _loc1_.top = 6;
+         _loc1_.dynaBmpSourceName = "architect_locked_big";
+         _loc1_.id = "backgroundPrint";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_paperPopup";
-            if(!(_loc2_ && Boolean(this)))
-            {
-               _loc1_.horizontalCenter = 0;
-               if(_loc3_ || _loc2_)
-               {
-                  _loc1_.top = 6;
-                  if(!_loc2_)
-                  {
-                     _loc1_.dynaBmpSourceName = "architect_locked_big";
-                     if(!_loc2_)
-                     {
-                        _loc1_.id = "backgroundPrint";
-                        if(_loc3_)
-                        {
-                           addr0070:
-                           if(!_loc1_.document)
-                           {
-                              if(!(_loc2_ && _loc3_))
-                              {
-                                 §§goto(addr0091);
-                              }
-                           }
-                           §§goto(addr009a);
-                        }
-                        §§goto(addr0091);
-                     }
-                     §§goto(addr0070);
-                  }
-                  §§goto(addr0091);
-               }
-               §§goto(addr00ac);
-            }
-            addr0091:
             _loc1_.document = this;
-            if(_loc3_)
-            {
-               addr009a:
-               this.backgroundPrint = _loc1_;
-               if(_loc3_ || _loc2_)
-               {
-                  addr00ac:
-                  BindingManager.executeBindings(this,"backgroundPrint",this.backgroundPrint);
-               }
-            }
-            return _loc1_;
          }
-         §§goto(addr00ac);
+         this.backgroundPrint = _loc1_;
+         BindingManager.executeBindings(this,"backgroundPrint",this.backgroundPrint);
+         return _loc1_;
       }
       
       private function _LargeDetailComponentLockedSkin_BriskImageDynaLib2_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc3_ || Boolean(this))
+         _loc1_.verticalCenter = -12;
+         _loc1_.horizontalCenter = 0;
+         _loc1_.id = "image";
+         if(!_loc1_.document)
          {
-            _loc1_.verticalCenter = -12;
-            if(!_loc2_)
-            {
-               _loc1_.horizontalCenter = 0;
-               if(_loc3_)
-               {
-                  addr0048:
-                  _loc1_.id = "image";
-                  if(_loc3_)
-                  {
-                     §§goto(addr0053);
-                  }
-                  §§goto(addr0074);
-               }
-               addr0053:
-               if(!_loc1_.document)
-               {
-                  if(_loc3_ || Boolean(this))
-                  {
-                     addr0074:
-                     _loc1_.document = this;
-                     if(_loc3_)
-                     {
-                        §§goto(addr007d);
-                     }
-                     §§goto(addr0087);
-                  }
-               }
-               addr007d:
-               this.image = _loc1_;
-               if(!_loc2_)
-               {
-                  addr0087:
-                  BindingManager.executeBindings(this,"image",this.image);
-               }
-               §§goto(addr0094);
-            }
-            §§goto(addr0048);
+            _loc1_.document = this;
          }
-         addr0094:
+         this.image = _loc1_;
+         BindingManager.executeBindings(this,"image",this.image);
          return _loc1_;
       }
       
       private function _LargeDetailComponentLockedSkin_BriskImageDynaLib3_c() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!_loc2_)
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.verticalCenter = -12;
+         _loc1_.horizontalCenter = -2;
+         _loc1_.dynaBmpSourceName = "architect_icon_blocked";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_paperPopup";
-            if(!(_loc2_ && Boolean(_loc1_)))
-            {
-               _loc1_.verticalCenter = -12;
-               if(!(_loc2_ && Boolean(_loc1_)))
-               {
-                  _loc1_.horizontalCenter = -2;
-                  if(_loc3_ || _loc2_)
-                  {
-                     _loc1_.dynaBmpSourceName = "architect_icon_blocked";
-                     if(_loc3_)
-                     {
-                        §§goto(addr0079);
-                     }
-                     §§goto(addr008d);
-                  }
-               }
-            }
-            addr0079:
-            if(!_loc1_.document)
-            {
-               if(!(_loc2_ && Boolean(_loc1_)))
-               {
-                  addr008d:
-                  _loc1_.document = this;
-               }
-            }
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr008d);
+         return _loc1_;
       }
       
       private function _LargeDetailComponentLockedSkin_BriskMCDynaLib1_c() : BriskMCDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskMCDynaLib = new BriskMCDynaLib();
-         if(_loc2_ || _loc3_)
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.top = 0;
+         _loc1_.horizontalCenter = 0;
+         _loc1_.dynaMCSourceName = "stickytape_top";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_paperPopup";
-            if(_loc2_)
-            {
-               _loc1_.top = 0;
-               if(_loc2_ || _loc3_)
-               {
-                  _loc1_.horizontalCenter = 0;
-                  if(!(_loc3_ && _loc2_))
-                  {
-                     _loc1_.dynaMCSourceName = "stickytape_top";
-                     addr0063:
-                     if(!(_loc3_ && Boolean(this)))
-                     {
-                        if(!_loc1_.document)
-                        {
-                           if(!(_loc3_ && _loc3_))
-                           {
-                              _loc1_.document = this;
-                           }
-                        }
-                     }
-                  }
-                  return _loc1_;
-               }
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr0063);
+         return _loc1_;
       }
       
       public function ___LargeDetailComponentLockedSkin_SparkSkin1_creationComplete(param1:FlexEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this.handleCreationComplete(param1);
-         }
+         this.handleCreationComplete(param1);
       }
       
       [Bindable(event="propertyChange")]
@@ -621,38 +251,15 @@ package net.bigpoint.cityrama.view.architectBook.ui.skins
       
       public function set backgroundPrint(param1:BriskImageDynaLib) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1299216927backgroundPrint;
-         if(!(_loc3_ && Boolean(param1)))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1299216927backgroundPrint = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc3_ && Boolean(param1)))
-               {
-                  this._1299216927backgroundPrint = param1;
-                  if(_loc4_)
-                  {
-                     §§goto(addr0060);
-                  }
-                  §§goto(addr0077);
-               }
-               addr0060:
-               if(this.hasEventListener("propertyChange"))
-               {
-                  if(!(_loc3_ && Boolean(_loc2_)))
-                  {
-                     addr0077:
-                     this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"backgroundPrint",_loc2_,param1));
-                  }
-               }
-               §§goto(addr0086);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"backgroundPrint",_loc2_,param1));
             }
-            addr0086:
-            return;
          }
-         §§goto(addr0060);
       }
       
       [Bindable(event="propertyChange")]
@@ -663,37 +270,15 @@ package net.bigpoint.cityrama.view.architectBook.ui.skins
       
       public function set bottomStickerComponent(param1:Group) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._1277980811bottomStickerComponent;
-         if(!_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1277980811bottomStickerComponent = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_ || _loc3_)
-               {
-                  this._1277980811bottomStickerComponent = param1;
-                  if(_loc3_)
-                  {
-                     addr0058:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_)
-                        {
-                           addr0067:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"bottomStickerComponent",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0076);
-               }
-               §§goto(addr0067);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"bottomStickerComponent",_loc2_,param1));
             }
-            addr0076:
-            return;
          }
-         §§goto(addr0058);
       }
       
       [Bindable(event="propertyChange")]
@@ -704,37 +289,15 @@ package net.bigpoint.cityrama.view.architectBook.ui.skins
       
       public function set image(param1:BriskImageDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._100313435image;
-         if(_loc3_ || Boolean(_loc2_))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._100313435image = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_)
-               {
-                  addr003e:
-                  this._100313435image = param1;
-                  if(_loc3_ || Boolean(param1))
-                  {
-                     addr005c:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_ || _loc3_)
-                        {
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"image",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0082);
-               }
-               §§goto(addr005c);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"image",_loc2_,param1));
             }
-            addr0082:
-            return;
          }
-         §§goto(addr003e);
       }
       
       [Bindable(event="propertyChange")]
@@ -745,36 +308,15 @@ package net.bigpoint.cityrama.view.architectBook.ui.skins
       
       public function set itemLabel(param1:LocaLabel) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._2135689121itemLabel;
-         if(!_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._2135689121itemLabel = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc4_ && Boolean(_loc2_)))
-               {
-                  this._2135689121itemLabel = param1;
-                  if(!(_loc4_ && Boolean(_loc2_)))
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_)
-                        {
-                           addr006b:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"itemLabel",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr007a);
-                  }
-                  §§goto(addr006b);
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"itemLabel",_loc2_,param1));
             }
-            addr007a:
-            return;
          }
-         §§goto(addr006b);
       }
       
       [Bindable(event="propertyChange")]
@@ -785,34 +327,15 @@ package net.bigpoint.cityrama.view.architectBook.ui.skins
       
       public function set hostComponent(param1:LargeDetailComponent) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._213507019hostComponent;
-         if(!(_loc4_ && Boolean(param1)))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._213507019hostComponent = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_ || Boolean(this))
-               {
-                  this._213507019hostComponent = param1;
-                  if(_loc3_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_ || Boolean(_loc2_))
-                        {
-                           addr0072:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"hostComponent",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0081);
-               }
-               §§goto(addr0072);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"hostComponent",_loc2_,param1));
             }
          }
-         addr0081:
       }
    }
 }

@@ -19,48 +19,14 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigAssistDTO(param1:Object)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            super();
-            if(!(_loc3_ && Boolean(this)))
-            {
-               this._id = param1.id;
-               if(!(_loc3_ && _loc3_))
-               {
-                  this._type = param1.t;
-                  if(!_loc3_)
-                  {
-                     this._connectedPhaseId = param1.pId;
-                     if(!(_loc3_ && _loc2_))
-                     {
-                        addr0071:
-                        this._lifetime = param1.l;
-                        if(_loc2_ || Boolean(this))
-                        {
-                           this._locaId = param1.lo;
-                           if(_loc2_ || Boolean(param1))
-                           {
-                              this._gfxId = param1.gf;
-                              if(!_loc3_)
-                              {
-                                 addr00b8:
-                                 this._behaviourOutput = param1.o;
-                              }
-                           }
-                           §§goto(addr00c1);
-                        }
-                     }
-                     §§goto(addr00b8);
-                  }
-                  §§goto(addr00c1);
-               }
-               §§goto(addr0071);
-            }
-         }
-         addr00c1:
+         super();
+         this._id = param1.id;
+         this._type = param1.t;
+         this._connectedPhaseId = param1.pId;
+         this._lifetime = param1.l;
+         this._locaId = param1.lo;
+         this._gfxId = param1.gf;
+         this._behaviourOutput = param1.o;
       }
       
       public function get id() : Number

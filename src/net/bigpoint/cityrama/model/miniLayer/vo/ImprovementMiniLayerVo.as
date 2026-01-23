@@ -17,13 +17,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function ImprovementMiniLayerVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get slotId() : Number
@@ -33,13 +27,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set slotId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._slotId = param1;
-         }
+         this._slotId = param1;
       }
       
       public function get buildingId() : Number
@@ -49,13 +37,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set buildingId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._buildingId = param1;
-         }
+         this._buildingId = param1;
       }
       
       public function get improvementVo() : ImprovementVo
@@ -65,13 +47,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set improvementVo(param1:ImprovementVo) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._improvementVo = param1;
-         }
+         this._improvementVo = param1;
       }
       
       public function get realCurrency() : Number
@@ -81,49 +57,19 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set realCurrency(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._realCurrency = param1;
-         }
+         this._realCurrency = param1;
       }
       
       public function get renewalAffordable() : Boolean
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && Boolean(this)))
+         if(this._improvementVo)
          {
-            if(this._improvementVo)
+            if(this._realCurrency >= this._improvementVo.renewalPrice)
             {
-               if(_loc2_ || _loc2_)
-               {
-                  addr0047:
-                  if(this._realCurrency >= this._improvementVo.renewalPrice)
-                  {
-                     if(_loc2_ || _loc1_)
-                     {
-                        §§push(true);
-                        if(!_loc1_)
-                        {
-                           return §§pop();
-                        }
-                     }
-                     else
-                     {
-                        addr006a:
-                        return false;
-                     }
-                     return §§pop();
-                  }
-               }
+               return true;
             }
-            §§goto(addr006a);
          }
-         §§goto(addr0047);
+         return false;
       }
       
       public function get currentTime() : Number
@@ -133,13 +79,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set currentTime(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._currentTime = param1;
-         }
+         this._currentTime = param1;
       }
    }
 }

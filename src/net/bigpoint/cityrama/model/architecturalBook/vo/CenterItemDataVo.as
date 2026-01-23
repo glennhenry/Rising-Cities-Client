@@ -15,13 +15,7 @@ package net.bigpoint.cityrama.model.architecturalBook.vo
       
       public function CenterItemDataVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get blueprintVO() : BlueprintVo
@@ -31,13 +25,7 @@ package net.bigpoint.cityrama.model.architecturalBook.vo
       
       public function set blueprintVO(param1:BlueprintVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            this._blueprintVO = param1;
-         }
+         this._blueprintVO = param1;
       }
       
       public function get showPlus() : Boolean
@@ -47,13 +35,7 @@ package net.bigpoint.cityrama.model.architecturalBook.vo
       
       public function set showPlus(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._showPlus = param1;
-         }
+         this._showPlus = param1;
       }
    }
 }

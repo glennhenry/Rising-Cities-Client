@@ -18,83 +18,33 @@ package net.bigpoint.cityrama.view.residentialBook.ui.skins
       
       public function NeedSkinLocked()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            super();
-            if(!(_loc1_ && _loc1_))
-            {
-               mx_internal::_document = this;
-               if(_loc2_ || Boolean(this))
-               {
-                  addr0052:
-                  this.mxmlContent = [this._NeedSkinLocked_BriskImageDynaLib1_c(),this._NeedSkinLocked_BriskImageDynaLib2_c(),this._NeedSkinLocked_BriskImageDynaLib3_c()];
-                  if(_loc2_ || Boolean(this))
-                  {
-                     addr0076:
-                     this.currentState = "normal";
-                     if(!(_loc1_ && _loc1_))
-                     {
-                        this.addEventListener("creationComplete",this.___NeedSkinLocked_SparkSkin1_creationComplete);
-                        §§goto(addr008a);
-                     }
-                     §§goto(addr00a5);
-                  }
-               }
-               addr008a:
-               if(!_loc1_)
-               {
-                  addr00a5:
-                  states = [new State({
-                     "name":"normal",
-                     "overrides":[]
-                  }),new State({
-                     "name":"disabled",
-                     "overrides":[]
-                  })];
-               }
-               return;
-            }
-            §§goto(addr0076);
-         }
-         §§goto(addr0052);
+         super();
+         mx_internal::_document = this;
+         this.mxmlContent = [this._NeedSkinLocked_BriskImageDynaLib1_c(),this._NeedSkinLocked_BriskImageDynaLib2_c(),this._NeedSkinLocked_BriskImageDynaLib3_c()];
+         this.currentState = "normal";
+         this.addEventListener("creationComplete",this.___NeedSkinLocked_SparkSkin1_creationComplete);
+         states = [new State({
+            "name":"normal",
+            "overrides":[]
+         }),new State({
+            "name":"disabled",
+            "overrides":[]
+         })];
       }
       
       override public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
+         super.moduleFactory = param1;
+         if(this.__moduleFactoryInitialized)
          {
-            super.moduleFactory = param1;
-            if(_loc3_ || Boolean(this))
-            {
-               if(this.__moduleFactoryInitialized)
-               {
-                  if(!_loc2_)
-                  {
-                     §§goto(addr0057);
-                  }
-               }
-            }
-            this.__moduleFactoryInitialized = true;
             return;
          }
-         addr0057:
+         this.__moduleFactoryInitialized = true;
       }
       
       override public function initialize() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super.initialize();
-         }
+         super.initialize();
       }
       
       protected function handleCreationComplete(param1:FlexEvent) : void
@@ -103,132 +53,49 @@ package net.bigpoint.cityrama.view.residentialBook.ui.skins
       
       private function _NeedSkinLocked_BriskImageDynaLib1_c() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc2_ || _loc3_)
+         _loc1_.dynaLibName = "gui_popups_residentialPopup";
+         _loc1_.dynaBmpSourceName = "needframe_closed";
+         _loc1_.verticalCenter = 0;
+         _loc1_.horizontalCenter = 0;
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_residentialPopup";
-            if(_loc2_)
-            {
-               _loc1_.dynaBmpSourceName = "needframe_closed";
-               if(!(_loc3_ && _loc2_))
-               {
-                  _loc1_.verticalCenter = 0;
-                  if(_loc2_ || _loc2_)
-                  {
-                     _loc1_.horizontalCenter = 0;
-                     if(_loc2_ || Boolean(_loc1_))
-                     {
-                        addr007f:
-                        if(!_loc1_.document)
-                        {
-                           if(!_loc3_)
-                           {
-                              _loc1_.document = this;
-                           }
-                        }
-                     }
-                  }
-                  §§goto(addr008f);
-               }
-            }
-            §§goto(addr007f);
+            _loc1_.document = this;
          }
-         addr008f:
          return _loc1_;
       }
       
       private function _NeedSkinLocked_BriskImageDynaLib2_c() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc2_)
+         _loc1_.dynaLibName = "gui_popups_residentialPopup";
+         _loc1_.dynaBmpSourceName = "needframe_bg_grey";
+         _loc1_.verticalCenter = 0;
+         _loc1_.horizontalCenter = 0;
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_residentialPopup";
-            if(!(_loc3_ && Boolean(_loc1_)))
-            {
-               _loc1_.dynaBmpSourceName = "needframe_bg_grey";
-               if(_loc2_)
-               {
-                  _loc1_.verticalCenter = 0;
-                  addr0049:
-                  if(_loc2_)
-                  {
-                     _loc1_.horizontalCenter = 0;
-                     if(_loc2_ || _loc2_)
-                     {
-                        addr0073:
-                        if(!_loc1_.document)
-                        {
-                           if(!_loc3_)
-                           {
-                              _loc1_.document = this;
-                           }
-                        }
-                     }
-                  }
-                  §§goto(addr0083);
-               }
-               §§goto(addr0073);
-            }
-            addr0083:
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr0049);
+         return _loc1_;
       }
       
       private function _NeedSkinLocked_BriskImageDynaLib3_c() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!(_loc2_ && Boolean(_loc1_)))
+         _loc1_.dynaLibName = "gui_popups_residentialPopup";
+         _loc1_.dynaBmpSourceName = "lock_blue";
+         _loc1_.verticalCenter = 0;
+         _loc1_.horizontalCenter = 0;
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_residentialPopup";
-            if(!(_loc2_ && Boolean(this)))
-            {
-               _loc1_.dynaBmpSourceName = "lock_blue";
-               if(_loc3_)
-               {
-                  _loc1_.verticalCenter = 0;
-                  if(!(_loc2_ && Boolean(_loc1_)))
-                  {
-                     _loc1_.horizontalCenter = 0;
-                     if(_loc3_ || Boolean(_loc1_))
-                     {
-                        addr0082:
-                        if(!_loc1_.document)
-                        {
-                           if(_loc3_ || Boolean(_loc1_))
-                           {
-                              addr0096:
-                              _loc1_.document = this;
-                           }
-                        }
-                     }
-                  }
-                  return _loc1_;
-               }
-               §§goto(addr0096);
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr0082);
+         return _loc1_;
       }
       
       public function ___NeedSkinLocked_SparkSkin1_creationComplete(param1:FlexEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this.handleCreationComplete(param1);
-         }
+         this.handleCreationComplete(param1);
       }
       
       [Bindable(event="propertyChange")]
@@ -239,36 +106,15 @@ package net.bigpoint.cityrama.view.residentialBook.ui.skins
       
       public function set hostComponent(param1:NeedItemComponent) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._213507019hostComponent;
-         if(!_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._213507019hostComponent = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc4_ && Boolean(this)))
-               {
-                  this._213507019hostComponent = param1;
-                  if(!_loc4_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_)
-                        {
-                           addr0064:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"hostComponent",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0073);
-               }
-               §§goto(addr0064);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"hostComponent",_loc2_,param1));
             }
-            addr0073:
-            return;
          }
-         §§goto(addr0064);
       }
    }
 }

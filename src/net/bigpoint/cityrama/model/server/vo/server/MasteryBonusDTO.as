@@ -13,49 +13,18 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function MasteryBonusDTO(param1:Object, param2:ConfigMasteryBonusDTO)
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(_loc4_)
+         super();
+         this._configBonusId = param1.bid;
+         this._highestUnlockedBonusGroup = param1.g;
+         if(param1.s)
          {
-            super();
-            if(!_loc3_)
-            {
-               this._configBonusId = param1.bid;
-               if(_loc4_)
-               {
-                  this._highestUnlockedBonusGroup = param1.g;
-                  §§goto(addr003f);
-               }
-               §§goto(addr006a);
-            }
-            §§goto(addr0089);
+            this._selectedBonus = param1.s;
          }
-         addr003f:
-         if(!_loc3_)
+         else
          {
-            if(param1.s)
-            {
-               if(_loc4_)
-               {
-                  addr006a:
-                  this._selectedBonus = param1.s;
-                  if(_loc4_)
-                  {
-                  }
-                  addr0089:
-                  this._config = param2;
-               }
-            }
-            else
-            {
-               this._selectedBonus = 0;
-               if(_loc4_)
-               {
-                  §§goto(addr0089);
-               }
-            }
+            this._selectedBonus = 0;
          }
+         this._config = param2;
       }
       
       public function get configBonusId() : Number

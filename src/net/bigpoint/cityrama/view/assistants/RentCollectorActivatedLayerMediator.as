@@ -16,140 +16,48 @@ package net.bigpoint.cityrama.view.assistants
       
       public static const NAME:String = "RentCollectorActivatedLayerMediator";
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(!(_loc2_ && _loc2_))
-      {
-         NAME = "RentCollectorActivatedLayerMediator";
-      }
-      
       private var _assiViewProxy:AssistViewProxy;
       
       public function RentCollectorActivatedLayerMediator(param1:String, param2:Object)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_ || _loc3_)
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
       
       override public function onRegister() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super.onRegister();
-            if(_loc1_)
-            {
-               addr0029:
-               this._assiViewProxy = facade.retrieveProxy(AssistViewProxy.NAME) as AssistViewProxy;
-               if(!(_loc2_ && Boolean(this)))
-               {
-                  this.addListener();
-               }
-            }
-            return;
-         }
-         §§goto(addr0029);
+         super.onRegister();
+         this._assiViewProxy = facade.retrieveProxy(AssistViewProxy.NAME) as AssistViewProxy;
+         this.addListener();
       }
       
       private function addListener() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            §§push(this.component);
-            if(_loc2_)
-            {
-               §§pop().addEventListener(Event.CLOSE,this.handleClose);
-               if(_loc2_ || _loc1_)
-               {
-                  addr004d:
-                  this.component.addEventListener(RentCollectorActivatedLayer.EVENT_MORE_OFFER,this.handleMoreOffer);
-                  addr004a:
-               }
-               return;
-            }
-            §§goto(addr004d);
-         }
-         §§goto(addr004a);
+         this.component.addEventListener(Event.CLOSE,this.handleClose);
+         this.component.addEventListener(RentCollectorActivatedLayer.EVENT_MORE_OFFER,this.handleMoreOffer);
       }
       
       private function handleMoreOffer(param1:Event) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            param1.stopPropagation();
-            if(!(_loc2_ && _loc2_))
-            {
-               StaticSoundDelegate.playSound(StaticSoundDelegate.BUTTON_CLICK);
-               if(_loc3_)
-               {
-                  sendNotification(ApplicationNotificationConstants.OPEN_RENTCOLLECTOR_LAYER);
-               }
-            }
-         }
+         param1.stopPropagation();
+         StaticSoundDelegate.playSound(StaticSoundDelegate.BUTTON_CLICK);
+         sendNotification(ApplicationNotificationConstants.OPEN_RENTCOLLECTOR_LAYER);
       }
       
       override public function onRemove() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super.onRemove();
-            if(!_loc1_)
-            {
-               this.removeListener();
-            }
-         }
+         super.onRemove();
+         this.removeListener();
       }
       
       private function removeListener() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc1_)
-         {
-            §§push(this.component);
-            if(_loc2_)
-            {
-               §§pop().removeEventListener(Event.CLOSE,this.handleClose);
-               if(_loc2_ || Boolean(this))
-               {
-                  addr004d:
-                  this.component.removeEventListener(RentCollectorActivatedLayer.EVENT_MORE_OFFER,this.handleMoreOffer);
-                  addr004a:
-               }
-               return;
-            }
-            §§goto(addr004d);
-         }
-         §§goto(addr004a);
+         this.component.removeEventListener(Event.CLOSE,this.handleClose);
+         this.component.removeEventListener(RentCollectorActivatedLayer.EVENT_MORE_OFFER,this.handleMoreOffer);
       }
       
       private function handleClose(param1:Event = null) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.mediatorName);
-         }
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.mediatorName);
       }
       
       override public function listNotificationInterests() : Array
@@ -167,22 +75,10 @@ package net.bigpoint.cityrama.view.assistants
       
       public function setData(param1:Object) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
+         if(param1 is RentCollectorActivatedVo)
          {
-            if(param1 is RentCollectorActivatedVo)
-            {
-               if(_loc3_)
-               {
-                  addr0026:
-                  this.component.data = param1 as RentCollectorActivatedVo;
-               }
-            }
-            return;
+            this.component.data = param1 as RentCollectorActivatedVo;
          }
-         §§goto(addr0026);
       }
       
       public function get component() : RentCollectorActivatedLayer

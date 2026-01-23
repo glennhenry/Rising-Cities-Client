@@ -30,12 +30,11 @@ package mx.resources
       
       private static function getClassByName(param1:String, param2:ApplicationDomain) : Class
       {
-         var _loc3_:Class = null;
          if(param2.hasDefinition(param1))
          {
-            _loc3_ = param2.getDefinition(param1) as Class;
+            var _loc3_:Class = param2.getDefinition(param1) as Class;
          }
-         return _loc3_;
+         return null;
       }
       
       public function get bundleName() : String

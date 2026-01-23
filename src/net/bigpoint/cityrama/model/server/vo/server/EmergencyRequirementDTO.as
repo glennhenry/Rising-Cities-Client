@@ -11,24 +11,9 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function EmergencyRequirementDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            super();
-            if(!_loc2_)
-            {
-               addr0021:
-               this._configProfSpecializationId = param1.pr;
-               if(_loc3_)
-               {
-                  this._slotNumber = param1.nr;
-               }
-            }
-            return;
-         }
-         §§goto(addr0021);
+         super();
+         this._configProfSpecializationId = param1.pr;
+         this._slotNumber = param1.nr;
       }
       
       public function get configProfSpecializationId() : Number
@@ -48,13 +33,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set configSpecialization(param1:ConfigProfessionalSpecializationDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._configSpecialization = param1;
-         }
+         this._configSpecialization = param1;
       }
    }
 }

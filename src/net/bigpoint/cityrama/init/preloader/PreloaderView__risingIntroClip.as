@@ -11,13 +11,7 @@ package net.bigpoint.cityrama.init.preloader
       
       public function PreloaderView__risingIntroClip()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
    }
 }

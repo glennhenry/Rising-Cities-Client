@@ -17,20 +17,11 @@ package net.bigpoint.cityrama.controller.server.messages
       
       public function ServerMessagePlayfieldDecorationCreateFailed()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc9_:Boolean = true;
-         var _loc10_:* = §§pop();
          var _loc2_:Object = MessageVo(param1.getBody()).json;
          var _loc3_:PlayfieldObjectsProxy = facade.retrieveProxy(PlayfieldObjectsProxy.NAME) as PlayfieldObjectsProxy;
          var _loc4_:GameConfigProxy = facade.retrieveProxy(GameConfigProxy.NAME) as GameConfigProxy;
@@ -38,17 +29,8 @@ package net.bigpoint.cityrama.controller.server.messages
          var _loc6_:Cuboid = new Cuboid(_loc2_.x,_loc2_.y,0,_loc5_.sizeX,_loc5_.sizeY,_loc5_.zLevels.length);
          var _loc7_:IGameObjectVo = _loc3_.getGameObjectByCuboid(_loc6_);
          var _loc8_:BillboardObject = _loc3_.getBillboardById((_loc7_ as DecorationVo).id);
-         if(_loc9_ || Boolean(_loc3_))
-         {
-            _loc3_.removeGameObjectVofromMatrix(_loc8_.billboardObjectVo);
-            if(_loc9_)
-            {
-               addr00ce:
-               sendNotification(ApplicationNotificationConstants.PLAYFIELD_REMOVE_ITEM,_loc8_);
-            }
-            return;
-         }
-         §§goto(addr00ce);
+         _loc3_.removeGameObjectVofromMatrix(_loc8_.billboardObjectVo);
+         sendNotification(ApplicationNotificationConstants.PLAYFIELD_REMOVE_ITEM,_loc8_);
       }
    }
 }

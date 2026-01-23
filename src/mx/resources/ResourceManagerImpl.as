@@ -116,12 +116,11 @@ package mx.resources
       
       private function installCompiledResourceBundle(param1:ApplicationDomain, param2:String, param3:String, param4:Boolean = false) : IResourceBundle
       {
-         var _loc5_:String = null;
          var _loc6_:String = param3;
          var _loc7_:int = int(param3.indexOf(":"));
          if(_loc7_ != -1)
          {
-            _loc5_ = param3.substring(0,_loc7_);
+            var _loc5_:String = param3.substring(0,_loc7_);
             _loc6_ = param3.substring(_loc7_ + 1);
          }
          var _loc8_:IResourceBundle = this.getResourceBundleInternal(param2,param3,param4);
@@ -130,44 +129,25 @@ package mx.resources
             return _loc8_;
          }
          var _loc9_:* = param2 + "$" + _loc6_ + "_properties";
-         if(_loc5_ != null)
+         if(param1.hasDefinition(_loc9_))
          {
-            _loc9_ = _loc5_ + "." + _loc9_;
+            var _loc10_:Class = Class(param1.getDefinition(_loc9_));
          }
-         var _loc10_:Class = null;
+         _loc9_ = param3;
          if(param1.hasDefinition(_loc9_))
          {
             _loc10_ = Class(param1.getDefinition(_loc9_));
          }
-         if(!_loc10_)
+         _loc9_ = param3 + "_properties";
+         if(param1.hasDefinition(_loc9_))
          {
-            _loc9_ = param3;
-            if(param1.hasDefinition(_loc9_))
-            {
-               _loc10_ = Class(param1.getDefinition(_loc9_));
-            }
+            _loc10_ = Class(param1.getDefinition(_loc9_));
          }
-         if(!_loc10_)
+         if(this.ignoreMissingBundles)
          {
-            _loc9_ = param3 + "_properties";
-            if(param1.hasDefinition(_loc9_))
-            {
-               _loc10_ = Class(param1.getDefinition(_loc9_));
-            }
+            return null;
          }
-         if(!_loc10_)
-         {
-            if(this.ignoreMissingBundles)
-            {
-               return null;
-            }
-            throw new Error("Could not find compiled resource bundle \'" + param3 + "\' for locale \'" + param2 + "\'.");
-         }
-         _loc8_ = ResourceBundle(new _loc10_());
-         ResourceBundle(_loc8_).mx_internal::_locale = param2;
-         ResourceBundle(_loc8_).mx_internal::_bundleName = param3;
-         this.addResourceBundle(_loc8_,param4);
-         return _loc8_;
+         throw new Error("Could not find compiled resource bundle \'" + param3 + "\' for locale \'" + param2 + "\'.");
       }
       
       private function newChildApplicationHandler(param1:FocusEvent) : void
@@ -234,15 +214,14 @@ package mx.resources
          moduleInfo.addEventListener(ModuleEvent.READY,readyHandler,false,0,true);
          errorHandler = function(param1:ModuleEvent):void
          {
-            var _loc3_:ResourceEvent = null;
             var _loc2_:String = "Unable to load resource module from " + url;
             if(resourceEventDispatcher.willTrigger(ResourceEvent.ERROR))
             {
-               _loc3_ = new ResourceEvent(ResourceEvent.ERROR,param1.bubbles,param1.cancelable);
-               _loc3_.bytesLoaded = 0;
-               _loc3_.bytesTotal = 0;
-               _loc3_.errorText = _loc2_;
-               resourceEventDispatcher.dispatchEvent(_loc3_);
+               var _loc3_:ResourceEvent = new ResourceEvent(ResourceEvent.ERROR,param1.bubbles,param1.cancelable);
+               null.bytesLoaded = 0;
+               null.bytesTotal = 0;
+               null.errorText = _loc2_;
+               resourceEventDispatcher.dispatchEvent(null);
                return;
             }
             throw new Error(_loc2_);
@@ -328,8 +307,6 @@ package mx.resources
       
       private function getResourceBundleInternal(param1:String, param2:String, param3:Boolean) : IResourceBundle
       {
-         var _loc7_:String = null;
-         var _loc8_:Object = null;
          var _loc4_:Object = this.localeMap[param1];
          if(!_loc4_)
          {
@@ -343,12 +320,12 @@ package mx.resources
             {
                return null;
             }
-            _loc7_ = param1 + param2;
-            for(_loc8_ in _loc6_)
+            var _loc7_:String = param1 + param2;
+            for(var _loc8_ in _loc6_)
             {
-               if(_loc6_[_loc8_] == _loc7_)
+               if(_loc6_[null] == null)
                {
-                  _loc5_ = _loc8_ as IResourceBundle;
+                  _loc5_ = null as IResourceBundle;
                   break;
                }
             }
@@ -412,8 +389,6 @@ package mx.resources
          var _loc6_:Object = null;
          var _loc7_:Object = null;
          var _loc8_:IResourceBundle = null;
-         var _loc9_:String = null;
-         var _loc10_:Object = null;
          if(!this._localeChain)
          {
             return null;
@@ -432,12 +407,12 @@ package mx.resources
                   _loc8_ = null;
                   if(_loc7_ is Dictionary)
                   {
-                     _loc9_ = _loc5_ + param1;
-                     for(_loc10_ in _loc7_)
+                     var _loc9_:String = _loc5_ + param1;
+                     for(var _loc10_ in _loc7_)
                      {
-                        if(_loc7_[_loc10_] == _loc9_)
+                        if(_loc7_[null] == null)
                         {
-                           _loc8_ = _loc10_ as IResourceBundle;
+                           _loc8_ = null as IResourceBundle;
                            break;
                         }
                      }

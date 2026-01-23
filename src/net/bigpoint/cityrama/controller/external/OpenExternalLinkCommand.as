@@ -10,53 +10,21 @@ package net.bigpoint.cityrama.controller.external
       
       public function OpenExternalLinkCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || Boolean(this))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var note:INotification;
-         var url:String;
-         var request:URLRequest;
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
-         §§push(§§newactivation());
-         if(!_loc5_)
+         var note:INotification = param1;
+         var url:String = note.getBody() as String;
+         var request:URLRequest = new URLRequest(url);
+         try
          {
-            §§pop().§§slot[1] = param1;
-            if(!_loc5_)
-            {
-               §§push(§§newactivation());
-               if(!_loc5_)
-               {
-                  §§pop().§§slot[2] = note.getBody() as String;
-                  if(_loc4_ || _loc3_)
-                  {
-                     request = new URLRequest(url);
-                     addr005c:
-                  }
-                  try
-                  {
-                     addr0077:
-                     navigateToURL(request,"_blank");
-                  }
-                  catch(err:Error)
-                  {
-                  }
-                  return;
-               }
-               §§goto(addr005c);
-            }
-            §§goto(addr0077);
+            navigateToURL(request,"_blank");
          }
-         §§goto(addr005c);
+         catch(err:Error)
+         {
+         }
       }
    }
 }

@@ -15,13 +15,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function ExpansionMiniLayerVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || Boolean(this))
-         {
-            super();
-         }
+         super();
       }
       
       public function get costs() : Number
@@ -31,13 +25,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set costs(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(param1))
-         {
-            this._costs = param1;
-         }
+         this._costs = param1;
       }
       
       public function get affordable() : Boolean
@@ -47,13 +35,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set affordable(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._affordable = param1;
-         }
+         this._affordable = param1;
       }
       
       public function get realCurrencyCosts() : Number
@@ -63,13 +45,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set realCurrencyCosts(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
-         {
-            this._realCurrencyCosts = param1;
-         }
+         this._realCurrencyCosts = param1;
       }
       
       public function get currentRealCurrency() : Number
@@ -79,13 +55,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set currentRealCurrency(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(param1))
-         {
-            this._currentRealCurrency = param1;
-         }
+         this._currentRealCurrency = param1;
       }
       
       public function get onSale() : Boolean
@@ -95,13 +65,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set onSale(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._onSale = param1;
-         }
+         this._onSale = param1;
       }
    }
 }

@@ -21,20 +21,11 @@ package net.bigpoint.cityrama.controller.server.messages
       
       public function ServerMessagePlayfieldBoulderCreatedCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc12_:Boolean = true;
-         var _loc13_:* = §§pop();
          var _loc2_:MessageVo = MessageVo(param1.getBody());
          var _loc3_:GameConfigProxy = facade.retrieveProxy(GameConfigProxy.NAME) as GameConfigProxy;
          var _loc4_:PlayfieldProxy = PlayfieldProxy(facade.retrieveProxy(PlayfieldProxy.NAME));
@@ -46,21 +37,9 @@ package net.bigpoint.cityrama.controller.server.messages
          var _loc10_:Cuboid = new Cuboid(_loc9_.posX,_loc9_.posY,VectorUtilities.getMinValue(_loc8_.zLevels),_loc8_.sizeX,_loc8_.sizeY,_loc8_.zLevels.length);
          var _loc11_:BoulderObjectVo = BoulderObjectVo(ServerTagToClassSelector.getFieldObjectVoClassByTags(_loc8_,_loc10_,_loc5_,_loc3_,_loc4_));
          _loc11_.boulderVo = _loc9_;
-         if(_loc12_)
-         {
-            _loc4_.playfieldDTO.boulders.push(_loc9_);
-            if(_loc12_ || Boolean(_loc2_))
-            {
-               addr0137:
-               PlayfieldObjectsProxy.addIconOffsets(_loc11_ as BillboardObjectVo,_loc6_);
-               if(_loc12_)
-               {
-                  _loc7_.addGameObjectByData(_loc11_);
-               }
-            }
-            return;
-         }
-         §§goto(addr0137);
+         _loc4_.playfieldDTO.boulders.push(_loc9_);
+         PlayfieldObjectsProxy.addIconOffsets(_loc11_ as BillboardObjectVo,_loc6_);
+         _loc7_.addGameObjectByData(_loc11_);
       }
    }
 }

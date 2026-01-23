@@ -9,17 +9,8 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigPlayfieldTypeDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            super();
-            if(!_loc2_)
-            {
-               this._id = param1.id;
-            }
-         }
+         super();
+         this._id = param1.id;
       }
       
       public function get id() : Number
@@ -29,13 +20,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set id(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._id = param1;
-         }
+         this._id = param1;
       }
       
       public function log(param1:int, param2:int) : void

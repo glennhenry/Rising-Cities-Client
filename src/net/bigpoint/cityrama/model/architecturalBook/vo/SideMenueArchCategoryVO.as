@@ -25,13 +25,7 @@ package net.bigpoint.cityrama.model.architecturalBook.vo
       
       public function SideMenueArchCategoryVO()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       public function get visual() : Bitmap
@@ -41,13 +35,7 @@ package net.bigpoint.cityrama.model.architecturalBook.vo
       
       public function set visual(param1:Bitmap) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._visual = param1;
-         }
+         this._visual = param1;
       }
       
       public function get visualActive() : Bitmap
@@ -57,13 +45,7 @@ package net.bigpoint.cityrama.model.architecturalBook.vo
       
       public function set visualActive(param1:Bitmap) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._visualActive = param1;
-         }
+         this._visualActive = param1;
       }
       
       public function get visualIcon() : Bitmap
@@ -73,13 +55,7 @@ package net.bigpoint.cityrama.model.architecturalBook.vo
       
       public function set visualIcon(param1:Bitmap) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
-         {
-            this._visualIcon = param1;
-         }
+         this._visualIcon = param1;
       }
       
       public function get selectionRing() : Bitmap
@@ -89,13 +65,7 @@ package net.bigpoint.cityrama.model.architecturalBook.vo
       
       public function set selectionRing(param1:Bitmap) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._selectionRing = param1;
-         }
+         this._selectionRing = param1;
       }
       
       public function get type() : String
@@ -105,13 +75,7 @@ package net.bigpoint.cityrama.model.architecturalBook.vo
       
       public function set type(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._type = param1;
-         }
+         this._type = param1;
       }
       
       public function get isNew() : Boolean
@@ -121,13 +85,7 @@ package net.bigpoint.cityrama.model.architecturalBook.vo
       
       public function set isNew(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._isNew = param1;
-         }
+         this._isNew = param1;
       }
       
       public function get tooltip() : String
@@ -137,13 +95,7 @@ package net.bigpoint.cityrama.model.architecturalBook.vo
       
       public function set tooltip(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._tooltip = param1;
-         }
+         this._tooltip = param1;
       }
       
       public function get enable() : Boolean
@@ -153,13 +105,7 @@ package net.bigpoint.cityrama.model.architecturalBook.vo
       
       public function set enable(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._enable = param1;
-         }
+         this._enable = param1;
       }
       
       public function get visible() : Boolean
@@ -169,13 +115,7 @@ package net.bigpoint.cityrama.model.architecturalBook.vo
       
       public function set visible(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && param1))
-         {
-            this._visible = param1;
-         }
+         this._visible = param1;
       }
    }
 }

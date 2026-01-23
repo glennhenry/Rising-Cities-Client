@@ -15,25 +15,9 @@ package net.bigpoint.cityrama.model.emergencyTV.vo
       
       public function EmergencyTVVo(param1:Boolean = false)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            super();
-            if(!_loc3_)
-            {
-               this._active = param1;
-               if(!_loc3_)
-               {
-                  addr003c:
-                  this._showData = new TVShowVo();
-               }
-               §§goto(addr0047);
-            }
-            §§goto(addr003c);
-         }
-         addr0047:
+         super();
+         this._active = param1;
+         this._showData = new TVShowVo();
       }
       
       public function get active() : Boolean
@@ -58,35 +42,17 @@ package net.bigpoint.cityrama.model.emergencyTV.vo
       
       public function set newsText(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._newsText = param1;
-         }
+         this._newsText = param1;
       }
       
       public function set showData(param1:TVShowVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._showData = param1;
-         }
+         this._showData = param1;
       }
       
       public function set showTime(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._showTime = param1;
-         }
+         this._showTime = param1;
       }
    }
 }

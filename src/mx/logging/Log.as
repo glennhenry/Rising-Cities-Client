@@ -64,7 +64,6 @@ package mx.logging
       public static function addTarget(param1:ILoggingTarget) : void
       {
          var _loc2_:Array = null;
-         var _loc3_:ILogger = null;
          var _loc4_:String = null;
          var _loc5_:String = null;
          if(param1)
@@ -95,7 +94,6 @@ package mx.logging
       public static function removeTarget(param1:ILoggingTarget) : void
       {
          var _loc2_:Array = null;
-         var _loc3_:ILogger = null;
          var _loc4_:String = null;
          var _loc5_:int = 0;
          var _loc6_:String = null;
@@ -168,7 +166,6 @@ package mx.logging
       private static function categoryMatchInFilterList(param1:String, param2:Array) : Boolean
       {
          var _loc4_:String = null;
-         var _loc3_:Boolean = false;
          var _loc5_:int = -1;
          var _loc6_:uint = 0;
          while(_loc6_ < param2.length)

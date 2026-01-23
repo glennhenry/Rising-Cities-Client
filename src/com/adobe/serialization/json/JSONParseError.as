@@ -9,25 +9,10 @@ package com.adobe.serialization.json
       
       public function JSONParseError(param1:String = "", param2:int = 0, param3:String = "")
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
-         if(_loc5_ || Boolean(this))
-         {
-            super(param1);
-            if(_loc5_)
-            {
-               name = "JSONParseError";
-               if(_loc5_)
-               {
-                  this._location = param2;
-                  if(_loc5_ || Boolean(this))
-                  {
-                     this._text = param3;
-                  }
-               }
-            }
-         }
+         super(param1);
+         name = "JSONParseError";
+         this._location = param2;
+         this._text = param3;
       }
       
       public function get location() : int

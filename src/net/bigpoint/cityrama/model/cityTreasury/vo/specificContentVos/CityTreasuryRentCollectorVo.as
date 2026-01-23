@@ -24,121 +24,34 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function CityTreasuryRentCollectorVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get configAssist() : ConfigAssistDTO
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
+         if(!this._configAssist)
          {
-            §§push(this._configAssist);
-            if(_loc1_)
+            if(this._pack)
             {
-               if(!§§pop())
+               if(Boolean(this._pack.assists) && Boolean(this._pack.assists.length))
                {
-                  if(!(_loc2_ && _loc2_))
+                  if(ConfigOutputDTO(this._pack.assists[0]).assistConfig)
                   {
-                     §§push(this._pack);
-                     if(!(_loc2_ && _loc2_))
-                     {
-                        if(§§pop())
-                        {
-                           if(_loc1_ || _loc1_)
-                           {
-                              §§push(this._pack);
-                              if(!(_loc2_ && _loc1_))
-                              {
-                                 §§push(Boolean(§§pop().assists));
-                                 if(!_loc2_)
-                                 {
-                                    var _temp_5:* = §§pop();
-                                    §§push(_temp_5);
-                                    if(_temp_5)
-                                    {
-                                       if(!(_loc2_ && Boolean(this)))
-                                       {
-                                          addr0087:
-                                          §§pop();
-                                          if(!_loc2_)
-                                          {
-                                             addr0097:
-                                             addr0091:
-                                             addr008d:
-                                             if(Boolean(this._pack.assists.length))
-                                             {
-                                                if(!_loc2_)
-                                                {
-                                                   if(ConfigOutputDTO(this._pack.assists[0]).assistConfig)
-                                                   {
-                                                      if(!(_loc2_ && _loc1_))
-                                                      {
-                                                         addr00d0:
-                                                         this._configAssist = ConfigOutputDTO(this._pack.assists[0]).assistConfig;
-                                                      }
-                                                   }
-                                                }
-                                             }
-                                          }
-                                          addr00ed:
-                                          return this._configAssist;
-                                          addr00e9:
-                                       }
-                                    }
-                                    §§goto(addr0097);
-                                 }
-                                 §§goto(addr0087);
-                              }
-                              §§goto(addr0091);
-                           }
-                           §§goto(addr00d0);
-                        }
-                        §§goto(addr00e9);
-                     }
-                     §§goto(addr0091);
+                     this._configAssist = ConfigOutputDTO(this._pack.assists[0]).assistConfig;
                   }
-                  §§goto(addr008d);
                }
-               §§goto(addr00e9);
             }
-            §§goto(addr00ed);
          }
-         §§goto(addr00e9);
+         return this._configAssist;
       }
       
       public function get packGfx() : BriskDynaVo
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
+         if(this.configAssist)
          {
-            if(this.configAssist)
-            {
-               if(!(_loc2_ && Boolean(this)))
-               {
-                  §§goto(addr003c);
-               }
-            }
-            return null;
+            return new BriskDynaVo("gui_popups_rentCollector","rentCollector_big_" + this.configAssist.gfxId);
          }
-         addr003c:
-         §§push(§§findproperty(BriskDynaVo));
-         §§push("gui_popups_rentCollector");
-         §§push("rentCollector_big_");
-         if(!_loc2_)
-         {
-            §§push(§§pop() + this.configAssist.gfxId);
-         }
-         return new §§pop().BriskDynaVo(§§pop(),§§pop());
+         return null;
       }
       
       public function get headerText() : String
@@ -148,29 +61,11 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function get topText() : String
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
+         if(this.configAssist)
          {
-            if(this.configAssist)
-            {
-               if(!_loc2_)
-               {
-                  §§goto(addr0034);
-               }
-            }
-            return "";
+            return LocaUtils.getString("rcl.booklayer.rentCollector","rcl.booklayer.rentCollector.flavour." + this.configAssist.locaId);
          }
-         addr0034:
-         §§push(LocaUtils);
-         §§push("rcl.booklayer.rentCollector");
-         §§push("rcl.booklayer.rentCollector.flavour.");
-         if(_loc1_)
-         {
-            §§push(§§pop() + this.configAssist.locaId);
-         }
-         return §§pop().getString(§§pop(),§§pop());
+         return "";
       }
       
       public function get bottomText() : String
@@ -180,74 +75,17 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function get runtimeText() : String
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         var _loc1_:* = 0;
-         if(!(_loc2_ && Boolean(this)))
+         var _loc1_:uint = 0;
+         if(this.configAssist)
          {
-            if(this.configAssist)
+            _loc1_ = LocaUtils.getDurationH(this.configAssist.lifetime / 1000);
+            if(_loc1_ < 72)
             {
-               if(_loc3_)
-               {
-                  §§push(LocaUtils);
-                  §§push(this.configAssist.lifetime);
-                  if(_loc3_ || Boolean(_loc1_))
-                  {
-                     §§push(§§pop() / 1000);
-                  }
-                  §§push(§§pop().getDurationH(§§pop()));
-                  if(!_loc2_)
-                  {
-                     §§push(§§pop());
-                     if(_loc3_ || _loc3_)
-                     {
-                        _loc1_ = §§pop();
-                        if(_loc3_)
-                        {
-                           §§push(_loc1_);
-                        }
-                        else
-                        {
-                           §§goto(addr00e3);
-                        }
-                     }
-                  }
-                  if(§§pop() < 72)
-                  {
-                     if(_loc3_ || _loc3_)
-                     {
-                        addr0087:
-                        §§push(LocaUtils.getString("rcl.misc.timeconventions","rcl.misc.timeconventions.specificHours.capital",[_loc1_]));
-                        if(!(_loc2_ && _loc2_))
-                        {
-                           return §§pop();
-                        }
-                     }
-                     else
-                     {
-                        addr00b6:
-                        §§push(LocaUtils);
-                        §§push("rcl.misc.timeconventions");
-                        §§push("rcl.misc.timeconventions.specificDays.capital");
-                        §§push(LocaUtils);
-                        §§push(this.configAssist.lifetime);
-                        if(_loc3_ || Boolean(_loc1_))
-                        {
-                           §§push(§§pop() / 1000);
-                        }
-                        return §§pop().getString(§§pop(),§§pop(),[§§pop().getDaysFromSeconds(§§pop())]);
-                     }
-                     return §§pop();
-                  }
-                  §§goto(addr00b6);
-               }
-               §§goto(addr0087);
+               return LocaUtils.getString("rcl.misc.timeconventions","rcl.misc.timeconventions.specificHours.capital",[_loc1_]);
             }
-            addr00e3:
-            return "";
+            return LocaUtils.getString("rcl.misc.timeconventions","rcl.misc.timeconventions.specificDays.capital",[LocaUtils.getDaysFromSeconds(this.configAssist.lifetime / 1000)]);
          }
-         §§goto(addr00b6);
+         return "";
       }
       
       public function get purchaseLabel() : String
@@ -257,105 +95,20 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function get buttonLabel() : String
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc2_)
+         if(this.hasDiscount)
          {
-            if(this.hasDiscount)
-            {
-               if(_loc2_ || Boolean(this))
-               {
-                  addr0033:
-                  §§push(this._discountedPrice);
-                  if(!(_loc1_ && _loc1_))
-                  {
-                     §§push(2);
-                     if(_loc2_ || _loc1_)
-                     {
-                        §§push(§§pop().toFixed(§§pop()) + " ");
-                        if(_loc2_)
-                        {
-                           §§push(this._currency);
-                           if(!(_loc1_ && Boolean(this)))
-                           {
-                              §§push(§§pop() + §§pop());
-                              if(!_loc1_)
-                              {
-                                 return §§pop();
-                              }
-                           }
-                           else
-                           {
-                              addr00a3:
-                              §§push(§§pop() + §§pop());
-                           }
-                           §§goto(addr00a4);
-                        }
-                        else
-                        {
-                           addr009f:
-                           §§push(this._currency);
-                        }
-                        §§goto(addr00a3);
-                     }
-                     else
-                     {
-                        addr0092:
-                        §§push(§§pop().toFixed(§§pop()) + " ");
-                        if(!_loc1_)
-                        {
-                           §§goto(addr009f);
-                        }
-                     }
-                     addr00a4:
-                     return §§pop();
-                  }
-                  addr0090:
-                  §§push(2);
-                  §§goto(addr0092);
-               }
-               else
-               {
-                  addr008c:
-                  §§push(this._price);
-               }
-               §§goto(addr0090);
-            }
-            §§goto(addr008c);
+            return this._discountedPrice.toFixed(2) + " " + this._currency;
          }
-         §§goto(addr0033);
+         return this._price.toFixed(2) + " " + this._currency;
       }
       
       public function get discountLabel() : String
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
+         if(this.hasDiscount)
          {
-            if(this.hasDiscount)
-            {
-               if(!(_loc2_ && _loc1_))
-               {
-                  §§push(this._price.toFixed(2) + " ");
-                  if(_loc1_)
-                  {
-                     §§push(§§pop() + this._currency);
-                     if(_loc2_)
-                     {
-                        §§goto(addr0054);
-                     }
-                  }
-                  return §§pop();
-               }
-               addr0052:
-               §§push("");
-               addr0054:
-               return §§pop();
-            }
+            return this._price.toFixed(2) + " " + this._currency;
          }
-         §§goto(addr0052);
+         return "";
       }
       
       public function get buttonTooltip() : String
@@ -365,48 +118,23 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function get hasDiscount() : Boolean
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         §§push(this._discountedPrice == -1);
-         if(!_loc1_)
-         {
-            return !§§pop();
-         }
+         return this._discountedPrice != -1;
       }
       
       public function get bigPackIconGfx() : BriskDynaVo
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
+         if(this._icon)
          {
-            if(this._icon)
-            {
-               if(!(_loc2_ && _loc1_))
-               {
-                  return new BriskDynaVo("gui_popups_paperPopup",this._icon + "_medium");
-               }
-            }
+            return new BriskDynaVo("gui_popups_paperPopup",this._icon + "_medium");
          }
          return null;
       }
       
       public function get smallPackIconGfx() : BriskDynaVo
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
+         if(this._icon)
          {
-            if(this._icon)
-            {
-               if(!_loc1_)
-               {
-                  return new BriskDynaVo("gui_popups_paperPopup",this._icon + "_small");
-               }
-            }
+            return new BriskDynaVo("gui_popups_paperPopup",this._icon + "_small");
          }
          return null;
       }
@@ -418,13 +146,7 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function set pack(param1:ConfigPaymentPackDTO) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._pack = param1;
-         }
+         this._pack = param1;
       }
       
       public function get price() : Number
@@ -434,13 +156,7 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function set price(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._price = param1;
-         }
+         this._price = param1;
       }
       
       public function get discountedPrice() : Number
@@ -450,13 +166,7 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function set discountedPrice(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._discountedPrice = param1;
-         }
+         this._discountedPrice = param1;
       }
       
       public function get currency() : String
@@ -466,24 +176,12 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function set currency(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._currency = param1;
-         }
+         this._currency = param1;
       }
       
       public function set icon(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._icon = param1;
-         }
+         this._icon = param1;
       }
    }
 }

@@ -15,51 +15,18 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function InventoryItemBagDTO(param1:Object)
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
          var _loc2_:Object = null;
-         if(_loc5_ || Boolean(param1))
-         {
-            super();
-            if(_loc5_)
-            {
-               this._type = param1.t;
-               if(_loc5_ || Boolean(param1))
-               {
-                  this._configId = param1.c;
-                  if(_loc5_)
-                  {
-                     addr0064:
-                     this._slots = param1.s;
-                     if(!_loc6_)
-                     {
-                        addr0073:
-                        this._items = new Vector.<InventoryItemDTO>();
-                        if(_loc5_ || Boolean(param1))
-                        {
-                           §§goto(addr0090);
-                        }
-                     }
-                     §§goto(addr0099);
-                  }
-                  §§goto(addr0073);
-               }
-               §§goto(addr0099);
-            }
-            §§goto(addr0064);
-         }
-         addr0090:
+         super();
+         this._type = param1.t;
+         this._configId = param1.c;
+         this._slots = param1.s;
+         this._items = new Vector.<InventoryItemDTO>();
          if(param1.i)
          {
             for each(_loc2_ in param1.i)
             {
-               if(_loc5_)
-               {
-                  this._items.push(ConfigFactory.buildInventoryItemDTO(_loc2_));
-               }
+               this._items.push(ConfigFactory.buildInventoryItemDTO(_loc2_));
             }
-            addr0099:
          }
       }
       
@@ -85,13 +52,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set slots(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._slots = param1;
-         }
+         this._slots = param1;
       }
    }
 }

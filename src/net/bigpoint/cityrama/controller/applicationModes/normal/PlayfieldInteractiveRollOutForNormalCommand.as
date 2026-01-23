@@ -13,39 +13,18 @@ package net.bigpoint.cityrama.controller.applicationModes.normal
       
       public function PlayfieldInteractiveRollOutForNormalCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc2_:PlayfieldInteractiveProxy = PlayfieldInteractiveProxy(facade.retrieveProxy(PlayfieldInteractiveProxy.NAME));
          var _loc3_:FieldInfoLayerProxy = FieldInfoLayerProxy(facade.retrieveProxy(FieldInfoLayerProxy.NAME));
-         if(!_loc5_)
-         {
-            _loc2_.rollOutObject.invalidateHighlightManager(ApplicationModeProxy.MODE_NORMAL,false);
-            if(_loc6_)
-            {
-               addr0074:
-               _loc3_.interactiveObject = null;
-            }
-            var _loc4_:SecurityGradeHeatMapMediator = facade.retrieveMediator(SecurityGradeHeatMapMediator.NAME) as SecurityGradeHeatMapMediator;
-            _loc4_.hideRangeRect();
-            if(!_loc5_)
-            {
-               sendNotification(ApplicationNotificationConstants.APPLICATION_CHANGE_CURSOR,ApplicationModeProxy.MODE_NORMAL);
-            }
-            return;
-         }
-         §§goto(addr0074);
+         _loc2_.rollOutObject.invalidateHighlightManager(ApplicationModeProxy.MODE_NORMAL,false);
+         _loc3_.interactiveObject = null;
+         var _loc4_:SecurityGradeHeatMapMediator = facade.retrieveMediator(SecurityGradeHeatMapMediator.NAME) as SecurityGradeHeatMapMediator;
+         _loc4_.hideRangeRect();
+         sendNotification(ApplicationNotificationConstants.APPLICATION_CHANGE_CURSOR,ApplicationModeProxy.MODE_NORMAL);
       }
    }
 }

@@ -10,13 +10,7 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function SpecialFieldObjectVo(param1:ConfigPlayfieldItemDTO)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            super(param1);
-         }
+         super(param1);
       }
       
       public function log(param1:int, param2:int) : void
@@ -25,46 +19,21 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function isReadyForUpgrade() : Boolean
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
          var _loc1_:PhaseDTO = null;
-         if(!(_loc4_ && _loc2_))
+         if(activePhases.length > 0)
          {
-            if(activePhases.length > 0)
+            for each(_loc1_ in activePhases)
             {
-               §§goto(addr0034);
-            }
-            return false;
-         }
-         addr0034:
-         var _loc2_:int = 0;
-         var _loc3_:* = activePhases;
-         while(true)
-         {
-            for each(_loc1_ in _loc3_)
-            {
-               if(_loc4_ && Boolean(this))
-               {
-                  break;
-               }
                if(_loc1_ != null)
                {
-                  if(_loc5_)
+                  if(_loc1_.config.phaseType == ServerPhaseTypes.UPGRADE)
                   {
-                     if(_loc1_.config.phaseType == ServerPhaseTypes.UPGRADE)
-                     {
-                        if(_loc5_ || Boolean(this))
-                        {
-                           break;
-                        }
-                     }
+                     return true;
                   }
                }
-               continue;
             }
          }
-         return true;
+         return false;
       }
       
       override public function get isHarvestReady() : Boolean

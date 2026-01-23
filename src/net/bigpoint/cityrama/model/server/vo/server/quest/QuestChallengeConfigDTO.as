@@ -13,57 +13,23 @@ package net.bigpoint.cityrama.model.server.vo.server.quest
       
       public function QuestChallengeConfigDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc2_:Object = null;
-         if(_loc6_ || Boolean(param1))
+         this._rewardList = new Vector.<QuestRewardDTO>();
+         super(param1);
+         if(param1)
          {
-            this._rewardList = new Vector.<QuestRewardDTO>();
-            if(!(_loc5_ && _loc3_))
+            for each(_loc2_ in param1.rw)
             {
-               super(param1);
-               if(!(_loc5_ && _loc3_))
+               if(_loc2_ != null)
                {
-                  §§goto(addr0056);
-               }
-               §§goto(addr0067);
-            }
-            addr0056:
-            if(param1)
-            {
-               addr0067:
-               for each(_loc2_ in param1.rw)
-               {
-                  if(!(_loc5_ && Boolean(_loc2_)))
+                  if(_loc2_.t != QuestSystemRewardTypeConstants.QUEST)
                   {
-                     if(_loc2_ == null)
-                     {
-                        continue;
-                     }
-                     if(_loc5_ && Boolean(param1))
-                     {
-                        continue;
-                     }
-                     if(_loc2_.t == QuestSystemRewardTypeConstants.QUEST)
-                     {
-                        continue;
-                     }
-                     if(!_loc6_)
-                     {
-                        continue;
-                     }
+                     this._rewardList.push(new QuestRewardDTO(_loc2_));
                   }
-                  this._rewardList.push(new QuestRewardDTO(_loc2_));
-               }
-               if(_loc6_)
-               {
-                  this._requiredForUpsell = param1.u;
                }
             }
-            return;
+            this._requiredForUpsell = param1.u;
          }
-         §§goto(addr0067);
       }
       
       public function get rewardList() : Vector.<QuestRewardDTO>

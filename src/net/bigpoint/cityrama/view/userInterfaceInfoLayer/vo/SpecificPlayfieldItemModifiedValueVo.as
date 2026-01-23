@@ -17,13 +17,7 @@ package net.bigpoint.cityrama.view.userInterfaceInfoLayer.vo
       
       public function SpecificPlayfieldItemModifiedValueVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get modEnergyValue() : Number
@@ -33,13 +27,7 @@ package net.bigpoint.cityrama.view.userInterfaceInfoLayer.vo
       
       public function set modEnergyValue(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._modEnergyValue = param1;
-         }
+         this._modEnergyValue = param1;
       }
       
       public function get modMoodValue() : Number
@@ -49,13 +37,7 @@ package net.bigpoint.cityrama.view.userInterfaceInfoLayer.vo
       
       public function set modMoodValue(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._modMoodValue = param1;
-         }
+         this._modMoodValue = param1;
       }
       
       public function get modBaseHarvestOutput() : ConfigOutputDTO
@@ -65,13 +47,7 @@ package net.bigpoint.cityrama.view.userInterfaceInfoLayer.vo
       
       public function set modBaseHarvestOutput(param1:ConfigOutputDTO) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._modBaseHarvestOutput = param1;
-         }
+         this._modBaseHarvestOutput = param1;
       }
       
       public function get modTimerCycle() : Number
@@ -81,13 +57,7 @@ package net.bigpoint.cityrama.view.userInterfaceInfoLayer.vo
       
       public function set modTimerCycle(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._modTimerCycle = param1;
-         }
+         this._modTimerCycle = param1;
       }
       
       public function get harvestReady() : Boolean
@@ -97,13 +67,7 @@ package net.bigpoint.cityrama.view.userInterfaceInfoLayer.vo
       
       public function set harvestReady(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._harvestReady = param1;
-         }
+         this._harvestReady = param1;
       }
    }
 }

@@ -9,26 +9,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public static const LAYER_TYPE_QUERY:uint = 1;
       
-      private static const VALID_LAYER_TYPES:Vector.<uint>;
-      
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(!(_loc1_ && _loc1_))
-      {
-         LAYER_TYPE_ACCEPT = 0;
-         if(!(_loc1_ && QueryMiniLayerVo))
-         {
-            LAYER_TYPE_QUERY = 1;
-            if(_loc2_)
-            {
-               addr0054:
-               VALID_LAYER_TYPES = new <uint>[LAYER_TYPE_ACCEPT,LAYER_TYPE_QUERY];
-            }
-            return;
-         }
-      }
-      §§goto(addr0054);
+      private static const VALID_LAYER_TYPES:Vector.<uint> = new <uint>[LAYER_TYPE_ACCEPT,LAYER_TYPE_QUERY];
       
       private var _layerType:uint;
       
@@ -50,69 +31,26 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function QueryMiniLayerVo(param1:uint)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            super();
-            if(_loc2_ || _loc2_)
-            {
-               this.checkValid(param1);
-               if(_loc2_)
-               {
-                  addr003d:
-                  this._layerType = param1;
-               }
-               return;
-            }
-         }
-         §§goto(addr003d);
+         super();
+         this.checkValid(param1);
+         this._layerType = param1;
       }
       
       private function checkValid(param1:uint) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
+         if(VALID_LAYER_TYPES.indexOf(param1) == -1)
          {
-            if(VALID_LAYER_TYPES.indexOf(param1) == -1)
-            {
-               if(_loc2_ || _loc2_)
-               {
-                  throw new IllegalOperationError("QueryMiniLayerVo:: invalid layer type!");
-               }
-            }
+            throw new IllegalOperationError("QueryMiniLayerVo:: invalid layer type!");
          }
       }
       
       public function get showQueryButtons() : Boolean
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
+         if(this._layerType == LAYER_TYPE_QUERY)
          {
-            if(this._layerType == LAYER_TYPE_QUERY)
-            {
-               if(!_loc1_)
-               {
-                  §§push(true);
-                  if(_loc2_ || _loc1_)
-                  {
-                     return §§pop();
-                  }
-               }
-               else
-               {
-                  addr003f:
-                  return false;
-               }
-               return §§pop();
-            }
+            return true;
          }
-         §§goto(addr003f);
+         return false;
       }
       
       public function get title() : String
@@ -122,13 +60,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set title(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._title = param1;
-         }
+         this._title = param1;
       }
       
       public function get layerText() : String
@@ -138,13 +70,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set layerText(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._layerText = param1;
-         }
+         this._layerText = param1;
       }
       
       public function get confirmBtnLabel() : String
@@ -154,13 +80,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set confirmBtnLabel(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._confirmBtnLabel = param1;
-         }
+         this._confirmBtnLabel = param1;
       }
       
       public function get confirmBtnTooltip() : String
@@ -170,13 +90,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set confirmBtnTooltip(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this._confirmBtnTooltip = param1;
-         }
+         this._confirmBtnTooltip = param1;
       }
       
       public function get denyBtnLabel() : String
@@ -186,13 +100,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set denyBtnLabel(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._denyBtnLabel = param1;
-         }
+         this._denyBtnLabel = param1;
       }
       
       public function get denyBtnTooltip() : String
@@ -202,13 +110,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set denyBtnTooltip(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._denyBtnTooltip = param1;
-         }
+         this._denyBtnTooltip = param1;
       }
       
       public function get acceptBtnLabel() : String
@@ -218,13 +120,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set acceptBtnLabel(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._acceptBtnLabel = param1;
-         }
+         this._acceptBtnLabel = param1;
       }
       
       public function get acceptBtnTooltip() : String
@@ -234,13 +130,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set acceptBtnTooltip(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._acceptBtnTooltip = param1;
-         }
+         this._acceptBtnTooltip = param1;
       }
    }
 }

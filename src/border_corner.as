@@ -8,13 +8,7 @@ package
       
       public function border_corner(param1:int = 8, param2:int = 8)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(!_loc4_)
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
    }
 }

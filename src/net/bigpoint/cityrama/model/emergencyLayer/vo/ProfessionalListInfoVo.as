@@ -57,13 +57,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function ProfessionalListInfoVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get name() : String
@@ -163,288 +157,117 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set name(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._name = param1;
-         }
+         this._name = param1;
       }
       
       public function set department(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._department = param1;
-         }
+         this._department = param1;
       }
       
       public function set specialisationRank(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
-         {
-            this._specialisationRank = param1;
-         }
+         this._specialisationRank = param1;
       }
       
       public function set specialisationLocaId(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._specialisationLocaId = param1;
-         }
+         this._specialisationLocaId = param1;
       }
       
       public function set specialisationGfxId(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._specialisationGfxId = param1;
-         }
+         this._specialisationGfxId = param1;
       }
       
       public function set operationsLeft(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._operationsLeft = param1;
-         }
+         this._operationsLeft = param1;
       }
       
       public function set profId(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._profId = param1;
-         }
+         this._profId = param1;
       }
       
       public function set securityGrade(param1:uint) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._securityGrade = param1;
-         }
+         this._securityGrade = param1;
       }
       
       public function set picLib(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._picLib = param1;
-         }
+         this._picLib = param1;
       }
       
       public function set picImage(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._picImage = param1;
-         }
+         this._picImage = param1;
       }
       
       public function set efficiency(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._efficiency = param1;
-         }
+         this._efficiency = param1;
       }
       
       public function set luck(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._luck = param1;
-         }
+         this._luck = param1;
       }
       
       public function set goofiness(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._goofiness = param1;
-         }
+         this._goofiness = param1;
       }
       
       public function set successChance(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._successChance = param1;
-         }
+         this._successChance = param1;
       }
       
       public function set rewardGfxId(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._rewardGfxId = param1;
-         }
+         this._rewardGfxId = param1;
       }
       
       public function set rewardLocaId(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._rewardLocaId = param1;
-         }
+         this._rewardLocaId = param1;
       }
       
       public function set rewardAmount(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._rewardAmount = param1;
-         }
+         this._rewardAmount = param1;
       }
       
       public function set step(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(param1)))
-         {
-            this._step = param1;
-         }
+         this._step = param1;
       }
       
       public function set characteristicLocaIds(param1:Vector.<String>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._characteristicLocaIds = param1;
-         }
+         this._characteristicLocaIds = param1;
       }
       
       public function get professionalVo() : ProfessionalSlotVo
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:Object = null;
-         if(!(_loc2_ && _loc3_))
+         if(this._professionalVo == null)
          {
-            §§push(this._professionalVo);
-            if(!(_loc2_ && _loc3_))
-            {
-               if(§§pop() == null)
-               {
-                  addr003b:
-                  _loc1_ = new Object();
-                  if(!(_loc2_ && _loc3_))
-                  {
-                     _loc1_.lib = this._picLib;
-                     if(!(_loc2_ && _loc3_))
-                     {
-                        _loc1_.img = this._picImage;
-                        if(_loc3_ || _loc3_)
-                        {
-                           _loc1_.name = this._name;
-                           if(!(_loc2_ && _loc3_))
-                           {
-                              _loc1_.profSpecGfx = this._specialisationGfxId;
-                              if(!_loc2_)
-                              {
-                                 addr00ae:
-                                 _loc1_.profSpecLoca = this._specialisationLocaId;
-                                 if(_loc3_)
-                                 {
-                                    addr00bc:
-                                    _loc1_.profSpec = this._specialisationRank;
-                                    if(!_loc2_)
-                                    {
-                                       _loc1_.profDep = this._department;
-                                       if(!_loc2_)
-                                       {
-                                          addr00d8:
-                                          _loc1_.id = this._profId;
-                                          if(_loc3_ || Boolean(this))
-                                          {
-                                             addr00fa:
-                                             _loc1_.secGrade = this._securityGrade;
-                                             if(!(_loc2_ && _loc3_))
-                                             {
-                                                addr0110:
-                                                this._professionalVo = new ProfessionalSlotVo(_loc1_,false);
-                                             }
-                                          }
-                                       }
-                                       addr0121:
-                                       return this._professionalVo;
-                                       addr011d:
-                                    }
-                                    §§goto(addr0110);
-                                 }
-                                 §§goto(addr00d8);
-                              }
-                           }
-                           §§goto(addr00fa);
-                        }
-                        §§goto(addr00bc);
-                     }
-                     §§goto(addr0110);
-                  }
-                  §§goto(addr00ae);
-               }
-               §§goto(addr011d);
-            }
-            §§goto(addr0121);
+            _loc1_ = new Object();
+            _loc1_.lib = this._picLib;
+            _loc1_.img = this._picImage;
+            _loc1_.name = this._name;
+            _loc1_.profSpecGfx = this._specialisationGfxId;
+            _loc1_.profSpecLoca = this._specialisationLocaId;
+            _loc1_.profSpec = this._specialisationRank;
+            _loc1_.profDep = this._department;
+            _loc1_.id = this._profId;
+            _loc1_.secGrade = this._securityGrade;
+            this._professionalVo = new ProfessionalSlotVo(_loc1_,false);
          }
-         §§goto(addr003b);
+         return this._professionalVo;
       }
       
       public function get perception() : Number
@@ -454,13 +277,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set perception(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._perception = param1;
-         }
+         this._perception = param1;
       }
       
       public function get dismissIsUnlocked() : Boolean
@@ -470,13 +287,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set dismissIsUnlocked(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this._dismissIsUnlocked = param1;
-         }
+         this._dismissIsUnlocked = param1;
       }
       
       public function get requiredDepartment() : String
@@ -486,13 +297,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set requiredDepartment(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._requiredDepartment = param1;
-         }
+         this._requiredDepartment = param1;
       }
       
       public function get requiredSpecialisationRank() : int
@@ -502,13 +307,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set requiredSpecialisationRank(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            this._requiredSpecialisationRank = param1;
-         }
+         this._requiredSpecialisationRank = param1;
       }
       
       public function get requiredSpecialisationId() : Number
@@ -518,13 +317,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set requiredSpecialisationId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._requiredSpecialisationId = param1;
-         }
+         this._requiredSpecialisationId = param1;
       }
       
       public function get specialisationId() : Number
@@ -534,13 +327,7 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function set specialisationId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._specialisationId = param1;
-         }
+         this._specialisationId = param1;
       }
    }
 }

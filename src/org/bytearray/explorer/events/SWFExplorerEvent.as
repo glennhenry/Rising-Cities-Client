@@ -8,14 +8,6 @@ package org.bytearray.explorer.events
       
       public static const COMPLETE:String = "parseComplete";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(_loc2_ || _loc2_)
-      {
-         COMPLETE = "parseComplete";
-      }
-      
       public var definitions:Array;
       
       public var libName:String;
@@ -24,30 +16,10 @@ package org.bytearray.explorer.events
       
       public function SWFExplorerEvent(param1:String, param2:Array, param3:String = "", param4:SWFExplo = null)
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
-         if(_loc5_)
-         {
-            super(param1,false,false);
-            if(!_loc6_)
-            {
-               addr0034:
-               this.definitions = param2;
-               if(_loc5_)
-               {
-                  this.libName = param3;
-                  if(!(_loc6_ && Boolean(param1)))
-                  {
-                     addr0052:
-                     this.pSWFExploInstance = param4;
-                  }
-                  return;
-               }
-            }
-            §§goto(addr0052);
-         }
-         §§goto(addr0034);
+         super(param1,false,false);
+         this.definitions = param2;
+         this.libName = param3;
+         this.pSWFExploInstance = param4;
       }
       
       override public function clone() : Event
@@ -57,18 +29,7 @@ package org.bytearray.explorer.events
       
       override public function toString() : String
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         §§push("[LoaderExplorerEvent type=parseComplete, definitions=");
-         if(_loc2_)
-         {
-            §§push(§§pop() + this.definitions);
-            if(_loc2_)
-            {
-               return §§pop() + "]";
-            }
-         }
+         return "[LoaderExplorerEvent type=parseComplete, definitions=" + this.definitions + "]";
       }
    }
 }

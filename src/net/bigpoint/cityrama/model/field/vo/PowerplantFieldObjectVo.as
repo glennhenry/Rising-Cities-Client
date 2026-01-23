@@ -7,13 +7,7 @@ package net.bigpoint.cityrama.model.field.vo
       
       public function PowerplantFieldObjectVo(param1:ConfigPlayfieldItemDTO)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            super(param1);
-         }
+         super(param1);
       }
    }
 }

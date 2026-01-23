@@ -16,90 +16,35 @@ package net.bigpoint.cityrama.view.field.ui.components.buildings
       
       public function BoulderFieldObject(param1:BillboardAssetsReferenceHolder, param2:BoulderObjectVo)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(!_loc4_)
-         {
-            super(param1,param2);
-            if(!_loc4_)
-            {
-               this.prepareBoulderDemolitionAssetManager();
-            }
-         }
+         super(param1,param2);
+         this.prepareBoulderDemolitionAssetManager();
       }
       
       public function tick(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this.billboardObjectVo.currentTimeStamp = param1;
-         }
+         this.billboardObjectVo.currentTimeStamp = param1;
       }
       
       public function prepareBoulderDemolitionAssetManager() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
+         if(this._boulderAssetManager == null)
          {
-            §§push(this._boulderAssetManager);
-            if(!_loc2_)
-            {
-               if(§§pop() == null)
-               {
-                  if(_loc1_)
-                  {
-                     §§goto(addr0032);
-                  }
-               }
-               §§goto(addr004a);
-            }
-            §§goto(addr004e);
+            this._boulderAssetManager = new BoulderDemolitionAssetManager();
          }
-         addr0032:
-         this._boulderAssetManager = new BoulderDemolitionAssetManager();
-         if(_loc1_ || Boolean(this))
-         {
-            addr004e:
-            this._boulderAssetManager.prepare(this.boulderObjectVo,_billbordObjectContainer,_assetCollection.mainAsset);
-            addr004a:
-         }
+         this._boulderAssetManager.prepare(this.boulderObjectVo,_billbordObjectContainer,_assetCollection.mainAsset);
       }
       
       public function invalidateBoulderDemolitionAssetManager() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            this._boulderAssetManager.invalidate();
-         }
+         this._boulderAssetManager.invalidate();
       }
       
       override public function dispatchRollOver(param1:Boolean = false) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || param1)
+         if(!billboardObjectVo.userInteractionLocked)
          {
-            if(!billboardObjectVo.userInteractionLocked)
-            {
-               if(!_loc3_)
-               {
-                  addr002c:
-                  super.dispatchRollOver(param1);
-               }
-            }
-            return;
+            super.dispatchRollOver(param1);
          }
-         §§goto(addr002c);
       }
       
       public function get boulderObjectVo() : BoulderObjectVo
@@ -133,40 +78,19 @@ package net.bigpoint.cityrama.view.field.ui.components.buildings
       
       override public function invalidateEstablishedManager() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
+         if(this._boulderAssetManager != null)
          {
-            if(this._boulderAssetManager != null)
-            {
-               if(_loc1_)
-               {
-                  addr0035:
-                  this.invalidateBoulderDemolitionAssetManager();
-                  if(_loc1_ || _loc2_)
-                  {
-                  }
-               }
-            }
-            else
-            {
-               this.tryAgain();
-            }
-            return;
+            this.invalidateBoulderDemolitionAssetManager();
          }
-         §§goto(addr0035);
+         else
+         {
+            this.tryAgain();
+         }
       }
       
       private function tryAgain() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc1_)
-         {
-            TweenMax.delayedCall(1,this.invalidateEstablishedManager);
-         }
+         TweenMax.delayedCall(1,this.invalidateEstablishedManager);
       }
    }
 }

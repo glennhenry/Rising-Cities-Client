@@ -11,20 +11,11 @@ package net.bigpoint.cityrama.controller.improvement
       
       public function OpenResidentialImprovementPopupCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc6_:Boolean = false;
-         var _loc7_:Boolean = _temp_1;
          var _loc5_:Object = null;
          var _loc2_:Number = param1.getBody() as Number;
          var _loc3_:PlayfieldObjectsProxy = facade.retrieveProxy(PlayfieldObjectsProxy.NAME) as PlayfieldObjectsProxy;
@@ -33,19 +24,9 @@ package net.bigpoint.cityrama.controller.improvement
          {
             _loc5_ = new Object();
             _loc5_.residential = _loc4_.residentialFieldObjectVo;
-            if(!_loc6_)
-            {
-               _loc5_.index = 1;
-               if(_loc7_ || Boolean(_loc3_))
-               {
-                  addr0091:
-                  sendNotification(ApplicationNotificationConstants.OPEN_RESIDENTIALBOOK,_loc5_);
-               }
-               §§goto(addr009d);
-            }
-            §§goto(addr0091);
+            _loc5_.index = 1;
+            sendNotification(ApplicationNotificationConstants.OPEN_RESIDENTIALBOOK,_loc5_);
          }
-         addr009d:
       }
    }
 }

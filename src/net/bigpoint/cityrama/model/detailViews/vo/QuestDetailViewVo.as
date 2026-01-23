@@ -37,124 +37,40 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function QuestDetailViewVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function checkChanged(param1:QuestDetailViewVo) : Boolean
       {
-         §§push(false);
-         var _loc8_:Boolean = true;
-         var _loc9_:* = §§pop();
          var _loc2_:QuestTaskVo = null;
          var _loc3_:QuestTaskVo = null;
-         if(_loc8_)
+         if(param1.questID != this.questID)
          {
-            if(param1.questID != this.questID)
-            {
-               if(_loc8_)
-               {
-                  §§push(false);
-                  if(_loc8_)
-                  {
-                     return §§pop();
-                  }
-                  addr0055:
-                  if(§§pop() != this.isQuestComplete)
-                  {
-                     if(!(_loc9_ && Boolean(_loc3_)))
-                     {
-                        addr006b:
-                        §§push(true);
-                        if(!(_loc9_ && Boolean(_loc2_)))
-                        {
-                           §§goto(addr007a);
-                        }
-                        else
-                        {
-                           §§goto(addr00a0);
-                        }
-                     }
-                     else
-                     {
-                        addr0096:
-                        §§push(this.changed);
-                        if(!_loc9_)
-                        {
-                           addr00a0:
-                           if(§§pop())
-                           {
-                              if(_loc8_)
-                              {
-                                 addr00ab:
-                                 return true;
-                                 addr00aa:
-                              }
-                           }
-                           var _loc4_:int = 0;
-                           var _loc5_:* = param1.tasks;
-                           while(true)
-                           {
-                              loop0:
-                              for each(_loc2_ in _loc5_)
-                              {
-                                 for each(_loc3_ in this.tasks)
-                                 {
-                                    if(_loc9_)
-                                    {
-                                       break;
-                                    }
-                                    if(_loc2_.finishedTaskText == _loc3_.finishedTaskText)
-                                    {
-                                       if(_loc8_ || Boolean(param1))
-                                       {
-                                          §§push(_loc3_.checkChanged(_loc2_));
-                                          if(_loc8_ || Boolean(_loc3_))
-                                          {
-                                             if(§§pop())
-                                             {
-                                                if(!_loc9_)
-                                                {
-                                                   §§push(true);
-                                                   break loop0;
-                                                }
-                                             }
-                                             break;
-                                          }
-                                          break loop0;
-                                       }
-                                       break;
-                                    }
-                                 }
-                              }
-                              return false;
-                           }
-                           return §§pop();
-                        }
-                     }
-                     §§goto(addr00ab);
-                  }
-                  §§goto(addr0096);
-               }
-               §§goto(addr006b);
-            }
-            else
-            {
-               §§push(param1.isQuestComplete);
-               if(!(_loc9_ && Boolean(param1)))
-               {
-                  §§goto(addr0055);
-               }
-            }
-            addr007a:
-            return §§pop();
+            return false;
          }
-         §§goto(addr00aa);
+         if(param1.isQuestComplete != this.isQuestComplete)
+         {
+            return true;
+         }
+         if(this.changed)
+         {
+            return true;
+         }
+         for each(_loc2_ in param1.tasks)
+         {
+            for each(_loc3_ in this.tasks)
+            {
+               if(_loc2_.finishedTaskText == _loc3_.finishedTaskText)
+               {
+                  if(_loc3_.checkChanged(_loc2_))
+                  {
+                     return true;
+                  }
+                  break;
+               }
+            }
+         }
+         return false;
       }
       
       public function get tasks() : Array
@@ -164,13 +80,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set tasks(param1:Array) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._tasks = param1;
-         }
+         this._tasks = param1;
       }
       
       public function get questHeader() : String
@@ -180,13 +90,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set questHeader(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._questHeader = param1;
-         }
+         this._questHeader = param1;
       }
       
       public function get questGfxId() : int
@@ -196,13 +100,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set questGfxId(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._questGfxId = param1;
-         }
+         this._questGfxId = param1;
       }
       
       public function get bubbleText() : String
@@ -212,13 +110,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set bubbleText(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._bubbleText = param1;
-         }
+         this._bubbleText = param1;
       }
       
       public function get avatarName() : String
@@ -228,13 +120,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set avatarName(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._avatarName = param1;
-         }
+         this._avatarName = param1;
       }
       
       public function get isQuestComplete() : Boolean
@@ -244,13 +130,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set isQuestComplete(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._isQuestComplete = param1;
-         }
+         this._isQuestComplete = param1;
       }
       
       public function get polaroid() : String
@@ -260,13 +140,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set polaroid(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._polaroid = param1;
-         }
+         this._polaroid = param1;
       }
       
       public function get questID() : Number
@@ -276,13 +150,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set questID(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._questID = param1;
-         }
+         this._questID = param1;
       }
       
       public function get isNewQuest() : Boolean
@@ -292,13 +160,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set isNewQuest(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._isNewQuest = param1;
-         }
+         this._isNewQuest = param1;
       }
       
       public function get changed() : Boolean
@@ -308,13 +170,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set changed(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._changed = param1;
-         }
+         this._changed = param1;
       }
       
       public function get targetGoodGfxId() : int
@@ -334,26 +190,11 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function get questGiverGfxId() : int
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
+         if(this._questGiverGfxId == 0)
          {
-            §§push(this._questGiverGfxId);
-            if(_loc1_ || _loc1_)
-            {
-               if(§§pop() == 0)
-               {
-                  if(!(_loc2_ && _loc2_))
-                  {
-                     this._questGiverGfxId = 52000;
-                  }
-               }
-               addr004a:
-               return this._questGiverGfxId;
-            }
+            this._questGiverGfxId = 52000;
          }
-         §§goto(addr004a);
+         return this._questGiverGfxId;
       }
       
       public function get lastUpdated() : Number
@@ -363,57 +204,27 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set rewards(param1:ArrayCollection) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._rewards = param1;
-         }
+         this._rewards = param1;
       }
       
       public function set targetGoodGfxId(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._targetGoodGfxId = param1;
-         }
+         this._targetGoodGfxId = param1;
       }
       
       public function set questGiverGfxId(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._questGiverGfxId = param1;
-         }
+         this._questGiverGfxId = param1;
       }
       
       public function set drops(param1:Vector.<DropInfoVo>) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._drops = param1;
-         }
+         this._drops = param1;
       }
       
       public function set lastUpdated(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._lastUpdated = param1;
-         }
+         this._lastUpdated = param1;
       }
    }
 }

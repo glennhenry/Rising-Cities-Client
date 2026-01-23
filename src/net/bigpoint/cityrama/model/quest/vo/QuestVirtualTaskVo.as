@@ -30,13 +30,7 @@ package net.bigpoint.cityrama.model.quest.vo
       
       public function QuestVirtualTaskVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get flavourText() : String
@@ -46,24 +40,12 @@ package net.bigpoint.cityrama.model.quest.vo
       
       public function set flavourText(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            this._flavourText = param1;
-         }
+         this._flavourText = param1;
       }
       
       public function set headerText(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._headerText = param1;
-         }
+         this._headerText = param1;
       }
       
       public function get headerText() : String
@@ -73,13 +55,7 @@ package net.bigpoint.cityrama.model.quest.vo
       
       public function set isCompleted(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || param1)
-         {
-            this._isCompleted = param1;
-         }
+         this._isCompleted = param1;
       }
       
       public function get isCompleted() : Boolean
@@ -94,13 +70,7 @@ package net.bigpoint.cityrama.model.quest.vo
       
       public function set gfxId(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._gfxId = param1;
-         }
+         this._gfxId = param1;
       }
       
       public function get followingTaskLocaleId() : String
@@ -110,13 +80,7 @@ package net.bigpoint.cityrama.model.quest.vo
       
       public function set followingTaskLocaleId(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._followingTaskLocaleId = param1;
-         }
+         this._followingTaskLocaleId = param1;
       }
       
       public function set taskDTO(param1:QuestTaskDTO) : void
@@ -130,13 +94,7 @@ package net.bigpoint.cityrama.model.quest.vo
       
       public function set isActive(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._isActive = param1;
-         }
+         this._isActive = param1;
       }
       
       public function get localeId() : String
@@ -146,24 +104,12 @@ package net.bigpoint.cityrama.model.quest.vo
       
       public function set localeId(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._localeId = param1;
-         }
+         this._localeId = param1;
       }
       
       public function set notificationInterest(param1:Vector.<String>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._notificationInterest = param1;
-         }
+         this._notificationInterest = param1;
       }
       
       public function get notificationInterest() : Vector.<String>
@@ -178,24 +124,12 @@ package net.bigpoint.cityrama.model.quest.vo
       
       public function set notificationCancelInterest(param1:Vector.<String>) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._notificationCancelInterest = param1;
-         }
+         this._notificationCancelInterest = param1;
       }
       
       public function set targetItemGfxId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._targetItemGfxId = param1;
-         }
+         this._targetItemGfxId = param1;
       }
       
       public function get targetItemGfxId() : Number
@@ -210,13 +144,7 @@ package net.bigpoint.cityrama.model.quest.vo
       
       public function set previousTaskId(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._previousTaskId = param1;
-         }
+         this._previousTaskId = param1;
       }
    }
 }

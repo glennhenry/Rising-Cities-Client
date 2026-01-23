@@ -13,95 +13,42 @@ package net.bigpoint.cityrama.view.bonusDay
       
       public static const NAME:String = "BonusDayActivatedLayerMediator";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(_loc2_ || BonusDayActivatedLayerMediator)
-      {
-         NAME = "BonusDayActivatedLayerMediator";
-      }
-      
       public function BonusDayActivatedLayerMediator(param1:String, param2:Object)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(!(_loc4_ && Boolean(this)))
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
       
       public function setData(param1:Object) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
+         if(param1 is TimerBarComponentVo)
          {
-            if(param1 is TimerBarComponentVo)
-            {
-               if(_loc2_)
-               {
-                  this.component.data = param1 as TimerBarComponentVo;
-               }
-            }
+            this.component.data = param1 as TimerBarComponentVo;
          }
       }
       
       override public function onRegister() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            this.addListeners();
-         }
+         this.addListeners();
       }
       
       override public function onRemove() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            this.removeListeners();
-         }
+         this.removeListeners();
       }
       
       private function addListeners() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            this.component.addEventListener(Event.CLOSE,this.finalCall);
-         }
+         this.component.addEventListener(Event.CLOSE,this.finalCall);
       }
       
       private function removeListeners() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
-         {
-            this.component.removeEventListener(Event.CLOSE,this.finalCall);
-         }
+         this.component.removeEventListener(Event.CLOSE,this.finalCall);
       }
       
       private function finalCall(param1:Event = null) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(param1))
-         {
-            facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.mediatorName);
-         }
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.mediatorName);
       }
       
       public function get component() : BonusDayActivatedLayer

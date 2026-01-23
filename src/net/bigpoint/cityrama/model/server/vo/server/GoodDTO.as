@@ -16,39 +16,13 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function GoodDTO(param1:Object = null)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(param1)))
-         {
-            super();
-            if(_loc3_)
-            {
-               §§goto(addr0032);
-            }
-            §§goto(addr0051);
-         }
-         addr0032:
+         super();
          if(param1)
          {
-            if(!(_loc2_ && Boolean(param1)))
-            {
-               addr0051:
-               this._id = param1.id;
-               if(!(_loc2_ && Boolean(this)))
-               {
-                  this._configId = param1.c;
-                  if(_loc3_)
-                  {
-                     addr0075:
-                     this._amount = param1.a;
-                  }
-                  §§goto(addr007e);
-               }
-            }
-            §§goto(addr0075);
+            this._id = param1.id;
+            this._configId = param1.c;
+            this._amount = param1.a;
          }
-         addr007e:
       }
       
       public function get id() : Number
@@ -58,13 +32,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set id(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._id = param1;
-         }
+         this._id = param1;
       }
       
       public function get configId() : Number
@@ -74,13 +42,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set configId(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._configId = param1;
-         }
+         this._configId = param1;
       }
       
       public function get amount() : Number
@@ -90,13 +52,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set amount(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._amount = param1;
-         }
+         this._amount = param1;
       }
       
       public function log(param1:int, param2:int) : void
@@ -105,37 +61,16 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function get config() : ConfigGoodDTO
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
+         if(this._config == null)
          {
-            §§push(this._config);
-            if(!(_loc1_ && _loc1_))
-            {
-               if(§§pop() == null)
-               {
-                  if(!_loc1_)
-                  {
-                     §§goto(addr003b);
-                  }
-               }
-               return this._config;
-            }
+            throw new RamaCityError("Use Factory to build goods !!!");
          }
-         addr003b:
-         throw new RamaCityError("Use Factory to build goods !!!");
+         return this._config;
       }
       
       public function set config(param1:ConfigGoodDTO) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            this._config = param1;
-         }
+         this._config = param1;
       }
    }
 }

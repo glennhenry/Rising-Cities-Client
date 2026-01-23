@@ -11,32 +11,14 @@ package net.bigpoint.cityrama.controller.applicationStartup
       
       public function LanguageFilesLoadedCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:ServerConfigProxy = ServerConfigProxy(facade.retrieveProxy(ServerConfigProxy.NAME));
-         if(_loc4_)
-         {
-            _loc2_.loadServer(0);
-            if(!_loc3_)
-            {
-               addr0046:
-               facade.removeCommand(ApplicationNotificationConstants.LOCALE_LOADED);
-            }
-            return;
-         }
-         §§goto(addr0046);
+         _loc2_.loadServer(0);
+         facade.removeCommand(ApplicationNotificationConstants.LOCALE_LOADED);
       }
    }
 }

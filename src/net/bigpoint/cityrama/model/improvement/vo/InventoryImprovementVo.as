@@ -9,13 +9,7 @@ package net.bigpoint.cityrama.model.improvement.vo
       
       public function InventoryImprovementVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || Boolean(this))
-         {
-            super();
-         }
+         super();
       }
       
       public function get improvementVo() : ImprovementVo
@@ -25,13 +19,7 @@ package net.bigpoint.cityrama.model.improvement.vo
       
       public function set improvementVo(param1:ImprovementVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._improvementVo = param1;
-         }
+         this._improvementVo = param1;
       }
       
       public function get stockAmount() : int
@@ -41,13 +29,7 @@ package net.bigpoint.cityrama.model.improvement.vo
       
       public function set stockAmount(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._stockAmount = param1;
-         }
+         this._stockAmount = param1;
       }
    }
 }

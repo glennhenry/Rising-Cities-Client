@@ -20,306 +20,67 @@ package net.bigpoint.cityrama.view.field.ground.ui.components
       
       public function PlaneGridView()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function setGridSize(param1:int, param2:int, param3:Number) : void
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
-         var _loc4_:Boolean = false;
-         if(!_loc6_)
+         if(this._tileWidthNumber != param1 || this._tileWidthNumber != param1 || this._tileSize != param3)
          {
-            §§push(this._tileWidthNumber);
-            if(_loc5_ || Boolean(param2))
-            {
-               §§push(param1);
-               if(_loc5_ || Boolean(param3))
-               {
-                  §§push(§§pop() == §§pop());
-                  if(_loc5_)
-                  {
-                     §§push(!§§pop());
-                     if(!_loc6_)
-                     {
-                        var _temp_3:* = §§pop();
-                        §§push(_temp_3);
-                        §§push(_temp_3);
-                        if(_loc5_)
-                        {
-                           if(!§§pop())
-                           {
-                              if(!_loc6_)
-                              {
-                                 §§pop();
-                                 if(_loc5_)
-                                 {
-                                    addr006a:
-                                    addr0069:
-                                    §§push(this._tileWidthNumber == param1);
-                                    if(!(_loc6_ && Boolean(param2)))
-                                    {
-                                       §§push(!§§pop());
-                                       if(!(_loc6_ && Boolean(param1)))
-                                       {
-                                          addr0095:
-                                          var _temp_6:* = §§pop();
-                                          addr0096:
-                                          §§push(_temp_6);
-                                          if(!_temp_6)
-                                          {
-                                             if(!(_loc6_ && Boolean(param1)))
-                                             {
-                                                §§goto(addr00a8);
-                                             }
-                                             §§goto(addr00bb);
-                                          }
-                                          §§goto(addr00bc);
-                                       }
-                                    }
-                                    §§goto(addr00a8);
-                                 }
-                                 §§goto(addr00af);
-                              }
-                              §§goto(addr00a8);
-                           }
-                           §§goto(addr0095);
-                        }
-                        §§goto(addr0096);
-                     }
-                     addr00a8:
-                     §§pop();
-                     if(_loc5_)
-                     {
-                        addr00bc:
-                        addr00af:
-                        §§push(this._tileSize == param3);
-                        if(!_loc6_)
-                        {
-                           addr00bb:
-                           §§push(!§§pop());
-                        }
-                        if(§§pop())
-                        {
-                           if(!(_loc6_ && Boolean(this)))
-                           {
-                              §§goto(addr00ce);
-                           }
-                           §§goto(addr0114);
-                        }
-                        §§goto(addr0120);
-                     }
-                     addr00ce:
-                     this._tileWidthNumber = param1;
-                     if(_loc5_ || Boolean(param3))
-                     {
-                        this._tileHeightNumber = param2;
-                        if(!(_loc6_ && Boolean(param3)))
-                        {
-                           addr0101:
-                           this._tileSize = param3;
-                           if(_loc5_ || Boolean(this))
-                           {
-                              addr0114:
-                              this.drawBuildingGrid();
-                              if(!_loc6_)
-                              {
-                                 addr0120:
-                                 this._paramsSet = true;
-                              }
-                              §§goto(addr0126);
-                           }
-                           §§goto(addr0120);
-                        }
-                     }
-                     addr0126:
-                     return;
-                  }
-                  §§goto(addr00bc);
-               }
-               §§goto(addr006a);
-            }
-            §§goto(addr0069);
+            this._tileWidthNumber = param1;
+            this._tileHeightNumber = param2;
+            this._tileSize = param3;
+            this.drawBuildingGrid();
          }
-         §§goto(addr0101);
+         this._paramsSet = true;
       }
       
       private function drawBuildingGrid() : void
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
          var _loc1_:IsoRectangle = null;
-         var _loc3_:* = 0;
-         if(!_loc4_)
-         {
-            this.removeAllChildren();
-         }
+         var _loc3_:int = 0;
+         this.removeAllChildren();
          var _loc2_:int = 0;
-         loop0:
-         while(true)
+         while(_loc2_ < this._tileWidthNumber)
          {
-            §§push(_loc2_);
-            loop1:
-            while(true)
+            _loc3_ = 0;
+            while(_loc3_ < this._tileHeightNumber)
             {
-               §§push(this._tileWidthNumber);
-               loop2:
-               while(true)
-               {
-                  if(§§pop() < §§pop())
-                  {
-                     §§push(0);
-                     if(_loc5_ || Boolean(_loc1_))
-                     {
-                        _loc3_ = §§pop();
-                        if(_loc4_)
-                        {
-                           addr0147:
-                           this.render();
-                           break;
-                        }
-                        do
-                        {
-                           §§push(_loc3_);
-                        }
-                        while(_loc5_ || Boolean(_loc2_));
-                        
-                        continue loop1;
-                        addr00ed:
-                     }
-                     while(true)
-                     {
-                        §§push(this._tileHeightNumber);
-                        if(!_loc5_)
-                        {
-                           break;
-                        }
-                        if(§§pop() >= §§pop())
-                        {
-                           if(_loc5_ || Boolean(this))
-                           {
-                              _loc2_++;
-                              if(!_loc5_)
-                              {
-                                 break loop2;
-                              }
-                           }
-                           continue loop0;
-                        }
-                        _loc1_ = new IsoRectangle();
-                        if(_loc5_ || Boolean(_loc2_))
-                        {
-                           _loc1_.width = this._tileSize;
-                           if(_loc5_)
-                           {
-                              _loc1_.length = this._tileSize;
-                              if(!_loc4_)
-                              {
-                                 _loc1_.x = _loc2_ * this._tileSize;
-                                 if(_loc5_ || Boolean(this))
-                                 {
-                                    _loc1_.y = _loc3_ * this._tileSize;
-                                    if(_loc5_ || Boolean(_loc1_))
-                                    {
-                                       addr00b8:
-                                       _loc1_.fill = new SolidColorFill(this._color,0.5);
-                                       if(!(_loc4_ && Boolean(_loc3_)))
-                                       {
-                                          this.addChild(_loc1_);
-                                          if(!(_loc4_ && Boolean(_loc3_)))
-                                          {
-                                             addr00eb:
-                                             _loc3_++;
-                                          }
-                                       }
-                                       §§goto(addr00ed);
-                                    }
-                                    §§goto(addr00eb);
-                                 }
-                                 §§goto(addr00ed);
-                              }
-                              §§goto(addr00b8);
-                           }
-                        }
-                        §§goto(addr00eb);
-                     }
-                     continue;
-                  }
-                  if(_loc4_ && Boolean(_loc2_))
-                  {
-                     break;
-                  }
-                  §§goto(addr0147);
-               }
-               break;
+               _loc1_ = new IsoRectangle();
+               _loc1_.width = this._tileSize;
+               _loc1_.length = this._tileSize;
+               _loc1_.x = _loc2_ * this._tileSize;
+               _loc1_.y = _loc3_ * this._tileSize;
+               _loc1_.fill = new SolidColorFill(this._color,0.5);
+               this.addChild(_loc1_);
+               _loc3_++;
             }
-            break;
+            _loc2_++;
          }
+         this.render();
       }
       
       public function set color(param1:uint) : void
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
          var _loc2_:IIsoContainer = null;
-         if(_loc5_ || Boolean(_loc2_))
+         this._color = param1;
+         if(this._paramsSet)
          {
-            this._color = param1;
-            if(_loc5_)
-            {
-               addr0032:
-               if(this._paramsSet)
-               {
-                  if(!_loc6_)
-                  {
-                     this.drawBuildingGrid();
-                  }
-                  §§goto(addr0056);
-               }
-               §§goto(addr00b3);
-            }
-            addr0056:
+            this.drawBuildingGrid();
             for each(_loc2_ in this.displayListChildrenArray)
             {
-               if(_loc5_)
+               if(_loc2_ is IsoRectangle)
                {
-                  if(_loc2_ is IsoRectangle)
-                  {
-                     if(_loc5_)
-                     {
-                        (_loc2_ as IsoRectangle).fill = new SolidColorFill(this._color,0.5);
-                     }
-                  }
+                  (_loc2_ as IsoRectangle).fill = new SolidColorFill(this._color,0.5);
                }
             }
-            if(_loc5_)
-            {
-               addr00b3:
-               this.render();
-            }
-            return;
          }
-         §§goto(addr0032);
+         this.render();
       }
       
       public function set visible(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this.container.visible = param1;
-         }
+         this.container.visible = param1;
       }
    }
 }

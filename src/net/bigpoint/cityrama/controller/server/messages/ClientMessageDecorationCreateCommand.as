@@ -14,75 +14,30 @@ package net.bigpoint.cityrama.controller.server.messages
       
       public function ClientMessageDecorationCreateCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc8_:Boolean = true;
-         var _loc9_:* = §§pop();
          var _loc2_:ServerCommunicationProxy = ServerCommunicationProxy(facade.retrieveProxy(ServerCommunicationProxy.NAME));
          var _loc3_:PlayfieldItemCreateVo = param1.getBody() as PlayfieldItemCreateVo;
-         if(!_loc9_)
+         if(_loc3_ == null)
          {
-            if(_loc3_ == null)
-            {
-               if(_loc8_)
-               {
-                  return;
-               }
-            }
+            return;
          }
          var _loc4_:BillboardObjectVo = _loc3_.billboardObjectVo;
          var _loc5_:Object = new Object();
          _loc5_.cdi = _loc4_.configPlayfieldItemVo.id;
-         if(_loc8_ || Boolean(_loc2_))
+         _loc5_.x = _loc4_.matrix3dCoordinates.x;
+         _loc5_.y = _loc4_.matrix3dCoordinates.y;
+         var _loc6_:* = ServerMessageConstants.PLAYFIELD_DECORATION_CREATE;
+         if(_loc3_.buyPermission)
          {
-            _loc5_.x = _loc4_.matrix3dCoordinates.x;
-            if(!_loc9_)
-            {
-               addr0093:
-               _loc5_.y = _loc4_.matrix3dCoordinates.y;
-            }
-            §§push(ServerMessageConstants.PLAYFIELD_DECORATION_CREATE);
-            if(!_loc9_)
-            {
-               §§push(§§pop());
-            }
-            var _loc6_:* = §§pop();
-            if(!(_loc9_ && Boolean(_loc2_)))
-            {
-               if(_loc3_.buyPermission)
-               {
-                  if(_loc8_)
-                  {
-                     _loc6_ += "_PERMISSION";
-                     addr00cb:
-                  }
-               }
-               var _loc7_:MessageVo = _loc2_.createMessage(_loc5_,_loc6_);
-               if(_loc8_)
-               {
-                  _loc2_.sendMessage(_loc7_);
-                  if(!_loc9_)
-                  {
-                     addr0100:
-                     _loc4_.informationFloaterPhase = _loc4_.configPlayfieldItemVo.constructionPhases[0];
-                  }
-                  return;
-               }
-               §§goto(addr0100);
-            }
-            §§goto(addr00cb);
+            _loc6_ += "_PERMISSION";
          }
-         §§goto(addr0093);
+         var _loc7_:MessageVo = _loc2_.createMessage(_loc5_,_loc6_);
+         _loc2_.sendMessage(_loc7_);
+         _loc4_.informationFloaterPhase = _loc4_.configPlayfieldItemVo.constructionPhases[0];
       }
    }
 }

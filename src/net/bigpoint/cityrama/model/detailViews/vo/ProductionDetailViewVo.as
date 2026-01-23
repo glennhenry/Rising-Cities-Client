@@ -66,152 +66,32 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function ProductionDetailViewVo(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
-         {
-            super();
-            if(!(_loc2_ && Boolean(param1)))
-            {
-               this._productionFieldObjectVo = param1.pfoVo;
-               if(!_loc2_)
-               {
-                  this._gfxId = param1.gfxId;
-                  if(!(_loc2_ && _loc2_))
-                  {
-                     this._localeId = param1.localeId;
-                     if(_loc3_ || Boolean(this))
-                     {
-                        this._upgradeCountTotal = param1.upgradeCountTotal;
-                        if(!(_loc2_ && _loc3_))
-                        {
-                           this._harvestCount = param1.harvestCount;
-                           if(_loc3_)
-                           {
-                              this._upgradePrice = param1.upgradePrice;
-                              if(!_loc2_)
-                              {
-                                 this._hasEnoughDD = param1.hasEnoughDD;
-                                 if(!(_loc2_ && Boolean(param1)))
-                                 {
-                                    this._upgradeCurrentLevel = param1.upgradeCurrentLevel;
-                                    if(_loc3_ || _loc2_)
-                                    {
-                                       this._upgradeNextLevel = param1.upgradeNextLevel;
-                                       if(_loc3_ || Boolean(param1))
-                                       {
-                                          this._upgradeMaxLevel = param1.upgradeMaxLevel;
-                                          if(_loc3_)
-                                          {
-                                             addr00fc:
-                                             this._needs = param1.needs;
-                                             if(!_loc2_)
-                                             {
-                                                this._harvestCycleLength = param1.cycleLength;
-                                                if(!(_loc2_ && _loc2_))
-                                                {
-                                                   addr0120:
-                                                   this._harvestCurrentTime = param1.currentTime;
-                                                   if(_loc3_ || Boolean(param1))
-                                                   {
-                                                      addr0137:
-                                                      this._harvestEndTime = param1.endTime;
-                                                      if(_loc3_)
-                                                      {
-                                                         addr0146:
-                                                         this._generalOutput = param1.output;
-                                                         if(!(_loc2_ && Boolean(param1)))
-                                                         {
-                                                            addr015c:
-                                                            this._boni = param1.boni;
-                                                            if(!_loc2_)
-                                                            {
-                                                               §§goto(addr016a);
-                                                            }
-                                                            §§goto(addr0204);
-                                                         }
-                                                         §§goto(addr01e0);
-                                                      }
-                                                      §§goto(addr015c);
-                                                   }
-                                                   §§goto(addr0146);
-                                                }
-                                                §§goto(addr0204);
-                                             }
-                                             §§goto(addr015c);
-                                          }
-                                          §§goto(addr0120);
-                                       }
-                                       §§goto(addr0137);
-                                    }
-                                    §§goto(addr01bc);
-                                 }
-                                 §§goto(addr00fc);
-                              }
-                           }
-                           §§goto(addr01ad);
-                        }
-                        §§goto(addr019f);
-                     }
-                     addr016a:
-                     this._modifiers = param1.modifiers;
-                     if(!(_loc2_ && _loc2_))
-                     {
-                        addr0181:
-                        this._productionOptions = param1.productionOptions;
-                        if(_loc3_)
-                        {
-                           this._currentProductionPoints = param1.cpp;
-                           if(_loc3_)
-                           {
-                              §§goto(addr019f);
-                           }
-                           §§goto(addr0204);
-                        }
-                        addr019f:
-                        this._currentProductionIndex = param1.cpi;
-                        if(!_loc2_)
-                        {
-                           addr01ad:
-                           this._globalUserLevel = param1.globalUserLevel;
-                           if(!_loc2_)
-                           {
-                              addr01bc:
-                              this._moodEffect = param1.mood;
-                              if(!(_loc2_ && Boolean(this)))
-                              {
-                                 addr01e0:
-                                 this._energyEffect = param1.energy;
-                                 if(!_loc2_)
-                                 {
-                                    addr01ee:
-                                    this._currentRunningEventGfxId = param1.eventGfxId;
-                                    if(_loc3_ || _loc3_)
-                                    {
-                                       addr0204:
-                                       this._currentRunningEventLocaleId = param1.eventLocaleId;
-                                    }
-                                    §§goto(addr020e);
-                                 }
-                                 §§goto(addr0204);
-                              }
-                              §§goto(addr020e);
-                           }
-                           §§goto(addr01ee);
-                        }
-                        §§goto(addr020e);
-                     }
-                     addr020e:
-                     return;
-                  }
-                  §§goto(addr01e0);
-               }
-               §§goto(addr0120);
-            }
-            §§goto(addr0181);
-         }
-         §§goto(addr0204);
+         super();
+         this._productionFieldObjectVo = param1.pfoVo;
+         this._gfxId = param1.gfxId;
+         this._localeId = param1.localeId;
+         this._upgradeCountTotal = param1.upgradeCountTotal;
+         this._harvestCount = param1.harvestCount;
+         this._upgradePrice = param1.upgradePrice;
+         this._hasEnoughDD = param1.hasEnoughDD;
+         this._upgradeCurrentLevel = param1.upgradeCurrentLevel;
+         this._upgradeNextLevel = param1.upgradeNextLevel;
+         this._upgradeMaxLevel = param1.upgradeMaxLevel;
+         this._needs = param1.needs;
+         this._harvestCycleLength = param1.cycleLength;
+         this._harvestCurrentTime = param1.currentTime;
+         this._harvestEndTime = param1.endTime;
+         this._generalOutput = param1.output;
+         this._boni = param1.boni;
+         this._modifiers = param1.modifiers;
+         this._productionOptions = param1.productionOptions;
+         this._currentProductionPoints = param1.cpp;
+         this._currentProductionIndex = param1.cpi;
+         this._globalUserLevel = param1.globalUserLevel;
+         this._moodEffect = param1.mood;
+         this._energyEffect = param1.energy;
+         this._currentRunningEventGfxId = param1.eventGfxId;
+         this._currentRunningEventLocaleId = param1.eventLocaleId;
       }
       
       public function get totalOutput() : Number
@@ -236,13 +116,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set needs(param1:Vector.<ResidentialNeedPopupVo>) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._needs = param1;
-         }
+         this._needs = param1;
       }
       
       public function get upgradeCurrentLevel() : int
@@ -267,13 +141,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set upgradeReady(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._upgradeReady = param1;
-         }
+         this._upgradeReady = param1;
       }
       
       public function get hasEnoughDD() : Boolean
@@ -318,13 +186,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set gfxId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._gfxId = param1;
-         }
+         this._gfxId = param1;
       }
       
       public function get productionFieldObjectVo() : ProductionFieldObjectVo
@@ -334,13 +196,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set productionFieldObjectVo(param1:ProductionFieldObjectVo) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._productionFieldObjectVo = param1;
-         }
+         this._productionFieldObjectVo = param1;
       }
       
       public function get productionOptions() : Vector.<ProductionGoodObjectVo>
@@ -375,13 +231,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function set nextProductionDetail(param1:ProductionDetailViewVo) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._nextProductionDetail = param1;
-         }
+         this._nextProductionDetail = param1;
       }
       
       public function get currentProductionPoints() : Number

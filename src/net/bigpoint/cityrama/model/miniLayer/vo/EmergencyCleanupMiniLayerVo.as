@@ -33,13 +33,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function EmergencyCleanupMiniLayerVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       public function get instantFinishToolTipBad() : String
@@ -49,13 +43,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set instantFinishToolTipBad(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._instantFinishToolTipBad = param1;
-         }
+         this._instantFinishToolTipBad = param1;
       }
       
       public function get hasEnoughRC() : Boolean
@@ -65,13 +53,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set hasEnoughRC(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || param1)
-         {
-            this._hasEnoughRC = param1;
-         }
+         this._hasEnoughRC = param1;
       }
       
       public function get instantRCCosts() : Number
@@ -81,13 +63,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set instantRCCosts(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(param1))
-         {
-            this._instantRCCosts = param1;
-         }
+         this._instantRCCosts = param1;
       }
       
       public function get productionNeedVo() : ProductionNeedVo
@@ -97,13 +73,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set productionNeedVo(param1:ProductionNeedVo) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._productionNeedVo = param1;
-         }
+         this._productionNeedVo = param1;
       }
       
       public function get damagedBuildingId() : Number
@@ -113,13 +83,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set damagedBuildingId(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._damagedBuildingId = param1;
-         }
+         this._damagedBuildingId = param1;
       }
       
       public function get libName() : String
@@ -129,13 +93,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set libName(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._libName = param1;
-         }
+         this._libName = param1;
       }
       
       public function get bmpName() : String
@@ -145,13 +103,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set bmpName(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this._bmpName = param1;
-         }
+         this._bmpName = param1;
       }
       
       public function get title() : String
@@ -161,13 +113,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set title(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._title = param1;
-         }
+         this._title = param1;
       }
       
       public function get flavourText() : String
@@ -177,13 +123,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set flavourText(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._flavourText = param1;
-         }
+         this._flavourText = param1;
       }
       
       public function get header() : String
@@ -193,13 +133,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set header(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this._header = param1;
-         }
+         this._header = param1;
       }
       
       public function get buttonText() : String
@@ -209,13 +143,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set buttonText(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._buttonText = param1;
-         }
+         this._buttonText = param1;
       }
       
       public function get instantFinishText() : String
@@ -225,13 +153,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set instantFinishText(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._instantFinishText = param1;
-         }
+         this._instantFinishText = param1;
       }
       
       public function get swfName() : String
@@ -241,13 +163,7 @@ package net.bigpoint.cityrama.model.miniLayer.vo
       
       public function set swfName(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            this._swfName = param1;
-         }
+         this._swfName = param1;
       }
    }
 }

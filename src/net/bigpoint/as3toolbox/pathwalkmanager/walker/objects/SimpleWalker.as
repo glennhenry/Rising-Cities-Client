@@ -39,102 +39,39 @@ package net.bigpoint.as3toolbox.pathwalkmanager.walker.objects
       
       public function SimpleWalker(param1:String, param2:String)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_ || _loc3_)
-         {
-            super();
-            if(!_loc4_)
-            {
-               this._id = param1;
-               if(!(_loc4_ && Boolean(this)))
-               {
-                  this._currentCell = new IntPoint(0,0);
-                  if(_loc3_ || Boolean(this))
-                  {
-                     this._nextCell = new IntPoint(0,0);
-                     if(_loc3_)
-                     {
-                        addr0081:
-                        this._waypoints = new Vector.<IntPoint>();
-                        if(!_loc4_)
-                        {
-                           this._terrainType = param2;
-                        }
-                     }
-                     return;
-                  }
-               }
-            }
-         }
-         §§goto(addr0081);
+         super();
+         this._id = param1;
+         this._currentCell = new IntPoint(0,0);
+         this._nextCell = new IntPoint(0,0);
+         this._waypoints = new Vector.<IntPoint>();
+         this._terrainType = param2;
       }
       
       public function pathComplete() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            dispatchEvent(new PathEvent(PathEvent.PATH_COMPLETE));
-         }
+         dispatchEvent(new PathEvent(PathEvent.PATH_COMPLETE));
       }
       
       public function pathNotPossible() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            dispatchEvent(new PathEvent(PathEvent.PATH_NOT_POSSIBLE));
-         }
+         dispatchEvent(new PathEvent(PathEvent.PATH_NOT_POSSIBLE));
       }
       
       public function pathFound() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || Boolean(this))
-         {
-            dispatchEvent(new PathEvent(PathEvent.PATH_FOUND));
-         }
+         dispatchEvent(new PathEvent(PathEvent.PATH_FOUND));
       }
       
       public function pausePath() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            this._paused = true;
-            if(_loc1_)
-            {
-               dispatchEvent(new PathEvent(PathEvent.PATH_PAUSED));
-            }
-         }
+         this._paused = true;
+         dispatchEvent(new PathEvent(PathEvent.PATH_PAUSED));
       }
       
       public function resumePath() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            this._paused = false;
-            if(_loc1_)
-            {
-               addr001f:
-               dispatchEvent(new PathEvent(PathEvent.PATH_RESUMED));
-            }
-            return;
-         }
-         §§goto(addr001f);
+         this._paused = false;
+         dispatchEvent(new PathEvent(PathEvent.PATH_RESUMED));
       }
       
       public function cellChanged() : void
@@ -147,13 +84,7 @@ package net.bigpoint.as3toolbox.pathwalkmanager.walker.objects
       
       public function set nextCell(param1:IntPoint) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._nextCell = param1;
-         }
+         this._nextCell = param1;
       }
       
       public function get nextCell() : IntPoint
@@ -163,24 +94,12 @@ package net.bigpoint.as3toolbox.pathwalkmanager.walker.objects
       
       public function set x(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._x = param1;
-         }
+         this._x = param1;
       }
       
       public function set y(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this._y = param1;
-         }
+         this._y = param1;
       }
       
       public function get x() : Number
@@ -195,61 +114,20 @@ package net.bigpoint.as3toolbox.pathwalkmanager.walker.objects
       
       public function set path(param1:Vector.<IntPoint>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._path = param1;
-            if(!(_loc3_ && _loc3_))
-            {
-               §§goto(addr0029);
-            }
-            §§goto(addr00bc);
-         }
-         addr0029:
+         this._path = param1;
          if(param1)
          {
-            if(_loc2_ || _loc3_)
+            if(param1.length < 2)
             {
-               if(param1.length < 2)
-               {
-                  if(_loc2_)
-                  {
-                     this.pathNotPossible();
-                     if(!(_loc3_ && _loc3_))
-                     {
-                        addr006a:
-                        this.pathComplete();
-                        if(_loc3_)
-                        {
-                           §§goto(addr00bc);
-                        }
-                     }
-                     return;
-                  }
-                  §§goto(addr00b6);
-               }
-               addr00bc:
-               this.pathFound();
-               §§goto(addr00c1);
-            }
-            §§goto(addr006a);
-         }
-         else
-         {
-            this.pathNotPossible();
-            if(!(_loc3_ && Boolean(param1)))
-            {
+               this.pathNotPossible();
                this.pathComplete();
-               if(_loc3_ && _loc3_)
-               {
-                  addr00c1:
-                  return;
-               }
+               return;
             }
+            this.pathFound();
+            return;
          }
-         addr00b6:
+         this.pathNotPossible();
+         this.pathComplete();
       }
       
       public function get path() : Vector.<IntPoint>
@@ -259,28 +137,13 @@ package net.bigpoint.as3toolbox.pathwalkmanager.walker.objects
       
       public function set cellProgress(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._cellProgress = param1;
-         }
+         this._cellProgress = param1;
       }
       
       public function set currentDirection(param1:Point) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc3_))
-         {
-            this._currentDirection = param1;
-            if(_loc2_)
-            {
-               dispatchEvent(new PathEvent(PathEvent.DIRECTION_CHANGED));
-            }
-         }
+         this._currentDirection = param1;
+         dispatchEvent(new PathEvent(PathEvent.DIRECTION_CHANGED));
       }
       
       public function get currentCell() : IntPoint
@@ -295,24 +158,12 @@ package net.bigpoint.as3toolbox.pathwalkmanager.walker.objects
       
       public function set currentCell(param1:IntPoint) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
-         {
-            this._currentCell = param1;
-         }
+         this._currentCell = param1;
       }
       
       public function set speed(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._speed = param1;
-         }
+         this._speed = param1;
       }
       
       public function get cellProgress() : Number
@@ -342,13 +193,7 @@ package net.bigpoint.as3toolbox.pathwalkmanager.walker.objects
       
       public function set terrainType(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this._terrainType = param1;
-         }
+         this._terrainType = param1;
       }
       
       public function get paused() : Boolean
@@ -363,13 +208,7 @@ package net.bigpoint.as3toolbox.pathwalkmanager.walker.objects
       
       public function set home(param1:IntPoint) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._home = param1;
-         }
+         this._home = param1;
       }
    }
 }

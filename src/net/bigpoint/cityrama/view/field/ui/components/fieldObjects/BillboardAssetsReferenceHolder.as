@@ -13,13 +13,7 @@ package net.bigpoint.cityrama.view.field.ui.components.fieldObjects
       
       public function BillboardAssetsReferenceHolder()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || Boolean(this))
-         {
-            super();
-         }
+         super();
       }
       
       public function get mainAsset() : DisplayObjectContainer
@@ -29,13 +23,7 @@ package net.bigpoint.cityrama.view.field.ui.components.fieldObjects
       
       public function set mainAsset(param1:DisplayObjectContainer) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._mainAsset = param1;
-         }
+         this._mainAsset = param1;
       }
       
       public function get buildUpAssets() : DisplayObjectContainer
@@ -45,13 +33,7 @@ package net.bigpoint.cityrama.view.field.ui.components.fieldObjects
       
       public function set buildUpAssets(param1:DisplayObjectContainer) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._buildUpAssets = param1;
-         }
+         this._buildUpAssets = param1;
       }
       
       public function get basementAsset() : DisplayObjectContainer
@@ -61,13 +43,7 @@ package net.bigpoint.cityrama.view.field.ui.components.fieldObjects
       
       public function set basementAsset(param1:DisplayObjectContainer) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._basementAsset = param1;
-         }
+         this._basementAsset = param1;
       }
    }
 }

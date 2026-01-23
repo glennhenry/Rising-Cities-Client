@@ -8,13 +8,7 @@ package
       
       public function ImagePreloaderSmall()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
    }
 }

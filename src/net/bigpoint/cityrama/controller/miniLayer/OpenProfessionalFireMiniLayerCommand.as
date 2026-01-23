@@ -14,66 +14,25 @@ package net.bigpoint.cityrama.controller.miniLayer
       
       public function OpenProfessionalFireMiniLayerCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc4_:PopupSettingsVo = null;
          var _loc2_:MiniLayerProxy = facade.retrieveProxy(MiniLayerProxy.NAME) as MiniLayerProxy;
          var _loc3_:Number = param1.getBody() as Number;
-         if(_loc6_)
+         if(!isNaN(_loc3_))
          {
-            if(!isNaN(_loc3_))
-            {
-               _loc4_ = new PopupSettingsVo(PopupSettingsVo.MINI_POPUP);
-               _loc4_.modal = true;
-               addr0049:
-               if(_loc6_)
-               {
-                  _loc4_.viewClass = QueryMiniLayer;
-                  if(_loc6_)
-                  {
-                     _loc4_.mediatorClass = ProfessionalFireMiniLayerMediator;
-                     if(_loc6_ || Boolean(param1))
-                     {
-                        §§goto(addr0092);
-                     }
-                     §§goto(addr00b6);
-                  }
-                  addr0092:
-                  _loc4_.mediatorName = ProfessionalFireMiniLayerMediator.NAME;
-                  if(_loc6_ || Boolean(this))
-                  {
-                     addr00b6:
-                     _loc4_.data = _loc3_;
-                     if(!_loc5_)
-                     {
-                        addr00c1:
-                        _loc4_.modal = true;
-                        if(!(_loc5_ && Boolean(_loc3_)))
-                        {
-                           facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc4_);
-                        }
-                     }
-                  }
-                  §§goto(addr00e1);
-               }
-               §§goto(addr00c1);
-            }
-            addr00e1:
-            return;
+            _loc4_ = new PopupSettingsVo(PopupSettingsVo.MINI_POPUP);
+            _loc4_.modal = true;
+            _loc4_.viewClass = QueryMiniLayer;
+            _loc4_.mediatorClass = ProfessionalFireMiniLayerMediator;
+            _loc4_.mediatorName = ProfessionalFireMiniLayerMediator.NAME;
+            _loc4_.data = _loc3_;
+            _loc4_.modal = true;
+            facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc4_);
          }
-         §§goto(addr0049);
       }
    }
 }

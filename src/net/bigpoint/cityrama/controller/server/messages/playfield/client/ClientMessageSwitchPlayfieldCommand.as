@@ -15,20 +15,11 @@ package net.bigpoint.cityrama.controller.server.messages.playfield.client
       
       public function ClientMessageSwitchPlayfieldCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc12_:Boolean = false;
-         var _loc13_:Boolean = _temp_1;
          var _loc3_:ApplicationModeProxy = null;
          var _loc4_:CityProxy = null;
          var _loc5_:ServerCommunicationProxy = null;
@@ -37,58 +28,29 @@ package net.bigpoint.cityrama.controller.server.messages.playfield.client
          var _loc8_:PlayfieldLightVo = null;
          var _loc9_:MessageVo = null;
          var _loc2_:Number = param1.getBody() as Number;
-         if(_loc13_)
+         if(_loc2_)
          {
-            if(_loc2_)
+            _loc3_ = facade.retrieveProxy(ApplicationModeProxy.NAME) as ApplicationModeProxy;
+            _loc3_.mode = ApplicationModeProxy.MODE_NORMAL;
+            _loc4_ = facade.retrieveProxy(CityProxy.NAME) as CityProxy;
+            _loc5_ = ServerCommunicationProxy(facade.retrieveProxy(ServerCommunicationProxy.NAME));
+            _loc6_ = new Object();
+            _loc7_ = false;
+            for each(_loc8_ in _loc4_.city.playfields)
             {
-               addr004e:
-               _loc3_ = facade.retrieveProxy(ApplicationModeProxy.NAME) as ApplicationModeProxy;
-               if(_loc13_ || Boolean(param1))
+               if(_loc8_.configId == _loc2_)
                {
-                  _loc3_.mode = ApplicationModeProxy.MODE_NORMAL;
+                  _loc6_.pfid = _loc8_.id;
+                  _loc7_ = true;
+                  break;
                }
-               _loc4_ = facade.retrieveProxy(CityProxy.NAME) as CityProxy;
-               _loc5_ = ServerCommunicationProxy(facade.retrieveProxy(ServerCommunicationProxy.NAME));
-               _loc6_ = new Object();
-               if(!(_loc12_ && Boolean(param1)))
-               {
-                  _loc7_ = false;
-               }
-               for each(_loc8_ in _loc4_.city.playfields)
-               {
-                  if(_loc8_.configId == _loc2_)
-                  {
-                     if(!(_loc12_ && Boolean(_loc3_)))
-                     {
-                        _loc6_.pfid = _loc8_.id;
-                        if(!(_loc13_ || Boolean(_loc3_)))
-                        {
-                           break;
-                        }
-                     }
-                     _loc7_ = true;
-                     break;
-                  }
-               }
-               if(!(_loc12_ && Boolean(param1)))
-               {
-                  if(_loc7_)
-                  {
-                     addr0147:
-                     _loc9_ = _loc5_.createMessage(_loc6_,ServerMessageConstants.PLAYFIELD_SWITCH);
-                     if(!_loc12_)
-                     {
-                        _loc5_.sendMessage(_loc9_);
-                     }
-                  }
-                  §§goto(addr0167);
-               }
-               §§goto(addr0147);
             }
-            addr0167:
-            return;
+            if(_loc7_)
+            {
+               _loc9_ = _loc5_.createMessage(_loc6_,ServerMessageConstants.PLAYFIELD_SWITCH);
+               _loc5_.sendMessage(_loc9_);
+            }
          }
-         §§goto(addr004e);
       }
    }
 }

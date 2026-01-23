@@ -26,369 +26,94 @@ package net.bigpoint.cityrama.view.miniLayer
       
       public static const NAME:String = "CitysquareDepositMinilayerMediator";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(!(_loc1_ && _loc2_))
-      {
-         NAME = "CitysquareDepositMinilayerMediator";
-      }
-      
       private var _goodStockProxy:PlayerGoodsStockProxy;
       
       public function CitysquareDepositMinilayerMediator(param1:String, param2:Object)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(!(_loc4_ && Boolean(param1)))
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
       
       override public function onRegister() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
-         {
-            this._goodStockProxy = facade.retrieveProxy(PlayerGoodsStockProxy.NAME) as PlayerGoodsStockProxy;
-            if(!(_loc1_ && _loc2_))
-            {
-               addr003d:
-               facade.registerMediator(new UserInterfaceInfoLayerMediator(new <UiInfolayerAlignmentLine>[this.component.uiInfolayerAlignmentLine],this));
-               if(_loc2_ || _loc1_)
-               {
-                  §§goto(addr0074);
-               }
-               §§goto(addr0107);
-            }
-            addr0074:
-            §§push(this.component);
-            if(!(_loc1_ && Boolean(this)))
-            {
-               §§push(UIInfolayerDispatcherEvent.SHOW_UI_INFOLAYER);
-               if(_loc2_)
-               {
-                  §§pop().addEventListener(§§pop(),this.component_SHOW_UI_INFOLAYERHandler);
-                  if(!_loc1_)
-                  {
-                     §§push(this.component);
-                     if(!(_loc1_ && _loc2_))
-                     {
-                        §§goto(addr00b6);
-                     }
-                     §§goto(addr0119);
-                  }
-                  §§goto(addr0139);
-               }
-               §§goto(addr0142);
-            }
-            addr00b6:
-            §§push(UIInfolayerDispatcherEvent.HIDE_UI_INFOLAYER);
-            if(!(_loc1_ && Boolean(this)))
-            {
-               §§pop().addEventListener(§§pop(),this.component_ITEM_OVERHandler);
-               if(!(_loc1_ && Boolean(this)))
-               {
-                  §§push(this.component);
-                  if(_loc2_ || Boolean(this))
-                  {
-                     §§pop().addEventListener(Event.CLOSE,this.handleClose);
-                     if(!(_loc1_ && _loc1_))
-                     {
-                        addr0107:
-                        §§push(this.component);
-                        if(!_loc1_)
-                        {
-                           addr0119:
-                           §§push(CitySquareDepositItemRenderer.PLUS_CLICKED_FOR_MARKET);
-                           if(_loc2_ || Boolean(this))
-                           {
-                              §§goto(addr012c);
-                           }
-                           §§goto(addr0142);
-                        }
-                        §§goto(addr013c);
-                     }
-                     §§goto(addr0139);
-                  }
-                  §§goto(addr013c);
-               }
-               §§goto(addr0139);
-            }
-            addr012c:
-            §§pop().addEventListener(§§pop(),this.handlePlusClicked);
-            if(!_loc1_)
-            {
-               addr0142:
-               this.component.addEventListener(CitysquareDepositMinilayer.DEPOSIT_CLICKED,this.onDepositClicked);
-               addr013c:
-               addr0139:
-            }
-            return;
-         }
-         §§goto(addr003d);
+         this._goodStockProxy = facade.retrieveProxy(PlayerGoodsStockProxy.NAME) as PlayerGoodsStockProxy;
+         facade.registerMediator(new UserInterfaceInfoLayerMediator(new <UiInfolayerAlignmentLine>[this.component.uiInfolayerAlignmentLine],this));
+         this.component.addEventListener(UIInfolayerDispatcherEvent.SHOW_UI_INFOLAYER,this.component_SHOW_UI_INFOLAYERHandler);
+         this.component.addEventListener(UIInfolayerDispatcherEvent.HIDE_UI_INFOLAYER,this.component_ITEM_OVERHandler);
+         this.component.addEventListener(Event.CLOSE,this.handleClose);
+         this.component.addEventListener(CitySquareDepositItemRenderer.PLUS_CLICKED_FOR_MARKET,this.handlePlusClicked);
+         this.component.addEventListener(CitysquareDepositMinilayer.DEPOSIT_CLICKED,this.onDepositClicked);
       }
       
       private function handlePlusClicked(param1:Event) : void
       {
-         var event:Event;
-         var listdata:Object;
-         var goodID:int;
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
-         §§push(§§newactivation());
-         if(_loc4_ || Boolean(this))
+         var event:Event = param1;
+         var listdata:Object = (this.component.itemList.dataGroup.getElementAt(this.component.itemList.dataGroup.getItemIndicesInView()[0]) as CitySquareDepositItemRenderer).listData;
+         var goodID:int = int(listdata.goodCid);
+         try
          {
-            §§pop().§§slot[1] = param1;
-            if(_loc4_)
-            {
-               §§push(§§newactivation());
-               if(_loc4_)
-               {
-                  §§pop().§§slot[2] = (this.component.itemList.dataGroup.getElementAt(this.component.itemList.dataGroup.getItemIndicesInView()[0]) as CitySquareDepositItemRenderer).listData;
-                  if(_loc4_ || _loc3_)
-                  {
-                     addr0083:
-                     goodID = int(listdata.goodCid);
-                  }
-                  try
-                  {
-                     addr008d:
-                     ExternalInterface.call("showMarketOffers",goodID);
-                     if(_loc4_ || _loc2_)
-                     {
-                        addr00cc:
-                        this.handleClose();
-                     }
-                  }
-                  catch(e:Error)
-                  {
-                     §§goto(addr00cc);
-                  }
-                  return;
-               }
-               §§goto(addr0083);
-            }
-            §§goto(addr008d);
+            ExternalInterface.call("showMarketOffers",goodID);
          }
-         §§goto(addr0083);
+         catch(e:Error)
+         {
+         }
+         this.handleClose();
       }
       
       private function handleClose(param1:Event = null) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.mediatorName);
-         }
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.mediatorName);
       }
       
       private function onDepositClicked(param1:Event) : void
       {
-         §§push(false);
-         var _loc9_:Boolean = true;
-         var _loc10_:* = §§pop();
          var _loc5_:QuestTaskDTO = null;
-         var _loc6_:* = NaN;
-         if(!_loc10_)
+         var _loc6_:Number = NaN;
+         param1.stopPropagation();
+         StaticSoundDelegate.playSound(StaticSoundDelegate.BUTTON_CLICK);
+         this.component.removeEventListener(CitysquareDepositMinilayer.DEPOSIT_CLICKED,this.onDepositClicked);
+         var _loc2_:EventProxy = facade.retrieveProxy(EventProxy.NAME) as EventProxy;
+         var _loc3_:EventQuestVo = _loc2_.runningEventQuest;
+         var _loc4_:Object = (this.component.itemList.dataGroup.getElementAt(this.component.itemList.dataGroup.getItemIndicesInView()[0]) as CitySquareDepositItemRenderer).listData;
+         for each(_loc5_ in _loc3_.currentChallenge.tasks)
          {
-            param1.stopPropagation();
-            if(_loc9_ || Boolean(param1))
+            if(_loc5_.taskConfig.questTaskTarget.questTaskItem[0].questTaskItemID == _loc4_.goodCid)
             {
-               StaticSoundDelegate.playSound(StaticSoundDelegate.BUTTON_CLICK);
-               if(!(_loc10_ && _loc2_))
+               _loc6_ = Number(_loc4_.amount);
+               if(_loc6_ > this._goodStockProxy.getGoodByConfigId(_loc4_.goodCid).playerStock)
                {
-                  addr0051:
-                  this.component.removeEventListener(CitysquareDepositMinilayer.DEPOSIT_CLICKED,this.onDepositClicked);
+                  _loc6_ = this._goodStockProxy.getGoodByConfigId(_loc4_.goodCid).playerStock;
                }
-               var _loc2_:EventProxy = facade.retrieveProxy(EventProxy.NAME) as EventProxy;
-               var _loc3_:EventQuestVo = _loc2_.runningEventQuest;
-               var _loc4_:Object = (this.component.itemList.dataGroup.getElementAt(this.component.itemList.dataGroup.getItemIndicesInView()[0]) as CitySquareDepositItemRenderer).listData;
-               var _loc7_:int = 0;
-               var _loc8_:* = _loc3_.currentChallenge.tasks;
-               while(true)
+               if(_loc6_ > 0)
                {
-                  for each(_loc5_ in _loc8_)
-                  {
-                     if(_loc5_.taskConfig.questTaskTarget.questTaskItem[0].questTaskItemID != _loc4_.goodCid)
-                     {
-                        continue;
-                     }
-                     if(_loc10_ && Boolean(_loc2_))
-                     {
-                        continue;
-                     }
-                     §§push(Number(_loc4_.amount));
-                     if(_loc9_ || Boolean(param1))
-                     {
-                        _loc6_ = §§pop();
-                        §§push(_loc6_);
-                        if(!(_loc10_ && Boolean(param1)))
-                        {
-                           §§push(this._goodStockProxy.getGoodByConfigId(_loc4_.goodCid).playerStock);
-                           if(_loc9_)
-                           {
-                              if(§§pop() > §§pop())
-                              {
-                                 if(_loc9_)
-                                 {
-                                    §§push(this._goodStockProxy.getGoodByConfigId(_loc4_.goodCid).playerStock);
-                                    if(!(_loc10_ && Boolean(param1)))
-                                    {
-                                       addr015f:
-                                       _loc6_ = §§pop();
-                                       if(!_loc10_)
-                                       {
-                                          addr0169:
-                                          addr0167:
-                                          addr016b:
-                                          if(_loc6_ > 0)
-                                          {
-                                             if(!(_loc10_ && Boolean(_loc3_)))
-                                             {
-                                                sendNotification(ApplicationNotificationConstants.QUEST_DEPOSIT_TASK,{
-                                                   "taskId":_loc5_.configQuestTaskID,
-                                                   "questConfigId":_loc3_.quests[0].config.id,
-                                                   "questType":QuestSystemTypeConstants.EVENT,
-                                                   "category":QuestSystemTaskTargetTypeConstants.GOOD,
-                                                   "amount":_loc6_,
-                                                   "itemCid":_loc4_.goodCid
-                                                });
-                                                if(_loc10_)
-                                                {
-                                                   continue;
-                                                }
-                                                this.component.removeEventListener(Event.CLOSE,this.handleClose);
-                                                addr01c7:
-                                                if(_loc10_)
-                                                {
-                                                   break;
-                                                }
-                                             }
-                                             facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.mediatorName);
-                                             if(_loc9_ || Boolean(_loc2_))
-                                             {
-                                                break;
-                                             }
-                                             continue;
-                                          }
-                                       }
-                                       §§goto(addr01c7);
-                                    }
-                                    §§goto(addr0169);
-                                 }
-                                 §§goto(addr01c7);
-                              }
-                              §§goto(addr0167);
-                           }
-                           §§goto(addr016b);
-                        }
-                        §§goto(addr015f);
-                     }
-                     §§goto(addr0169);
-                  }
-                  return;
+                  sendNotification(ApplicationNotificationConstants.QUEST_DEPOSIT_TASK,{
+                     "taskId":_loc5_.configQuestTaskID,
+                     "questConfigId":_loc3_.quests[0].config.id,
+                     "questType":QuestSystemTypeConstants.EVENT,
+                     "category":QuestSystemTaskTargetTypeConstants.GOOD,
+                     "amount":_loc6_,
+                     "itemCid":_loc4_.goodCid
+                  });
                }
+               this.component.removeEventListener(Event.CLOSE,this.handleClose);
+               facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.mediatorName);
                return;
             }
          }
-         §§goto(addr0051);
       }
       
       public function setData(param1:Object) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(param1)))
-         {
-            this.component.data = param1 as CitySquareDetailViewVo;
-         }
+         this.component.data = param1 as CitySquareDetailViewVo;
       }
       
       override public function onRemove() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            §§push(this.component);
-            if(!(_loc2_ && _loc1_))
-            {
-               §§pop().removeEventListener(Event.CLOSE,this.handleClose);
-               if(!(_loc2_ && _loc2_))
-               {
-                  §§goto(addr003e);
-               }
-               §§goto(addr00c9);
-            }
-            §§goto(addr00cc);
-         }
-         addr003e:
-         §§push(this.component);
-         if(!(_loc2_ && Boolean(this)))
-         {
-            §§push(CitySquareDepositItemRenderer.PLUS_CLICKED_FOR_MARKET);
-            if(!_loc2_)
-            {
-               §§pop().removeEventListener(§§pop(),this.handlePlusClicked);
-               if(_loc1_)
-               {
-                  §§push(this.component);
-                  if(_loc1_)
-                  {
-                     §§goto(addr0078);
-                  }
-                  §§goto(addr00cc);
-               }
-               §§goto(addr00df);
-            }
-            §§goto(addr0083);
-         }
-         addr0078:
-         §§push(CitysquareDepositMinilayer.DEPOSIT_CLICKED);
-         if(_loc1_)
-         {
-            addr0083:
-            §§pop().removeEventListener(§§pop(),this.onDepositClicked);
-            if(_loc1_)
-            {
-               §§push(this.component);
-               if(_loc1_ || _loc2_)
-               {
-                  §§push(UIInfolayerDispatcherEvent.SHOW_UI_INFOLAYER);
-                  if(_loc1_ || Boolean(this))
-                  {
-                     §§goto(addr00bc);
-                  }
-                  §§goto(addr00d2);
-               }
-               §§goto(addr00cc);
-            }
-            §§goto(addr00df);
-         }
-         addr00bc:
-         §§pop().addEventListener(§§pop(),this.component_SHOW_UI_INFOLAYERHandler);
-         if(_loc1_)
-         {
-            addr00d2:
-            this.component.addEventListener(UIInfolayerDispatcherEvent.HIDE_UI_INFOLAYER,this.component_ITEM_OVERHandler);
-            addr00cc:
-            addr00c9:
-            if(_loc1_)
-            {
-               addr00df:
-               super.onRemove();
-            }
-         }
+         this.component.removeEventListener(Event.CLOSE,this.handleClose);
+         this.component.removeEventListener(CitySquareDepositItemRenderer.PLUS_CLICKED_FOR_MARKET,this.handlePlusClicked);
+         this.component.removeEventListener(CitysquareDepositMinilayer.DEPOSIT_CLICKED,this.onDepositClicked);
+         this.component.addEventListener(UIInfolayerDispatcherEvent.SHOW_UI_INFOLAYER,this.component_SHOW_UI_INFOLAYERHandler);
+         this.component.addEventListener(UIInfolayerDispatcherEvent.HIDE_UI_INFOLAYER,this.component_ITEM_OVERHandler);
+         super.onRemove();
       }
       
       public function get component() : CitysquareDepositMinilayer
@@ -398,68 +123,27 @@ package net.bigpoint.cityrama.view.miniLayer
       
       private function component_SHOW_UI_INFOLAYERHandler(param1:UIInfolayerDispatcherEvent) : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc3_:Point = null;
-         §§push(param1.cid);
-         if(_loc4_)
+         var _loc2_:Number = param1.cid;
+         if(param1.target is CitySquareDepositItemRenderer)
          {
-            §§push(§§pop());
-         }
-         var _loc2_:* = §§pop();
-         if(_loc4_)
-         {
-            if(param1.target is CitySquareDepositItemRenderer)
+            if((param1.target as CitySquareDepositItemRenderer).goodCardBoard)
             {
-               if(_loc4_ || _loc2_)
-               {
-                  §§push((param1.target as CitySquareDepositItemRenderer).goodCardBoard);
-                  if(!(_loc5_ && Boolean(param1)))
-                  {
-                     if(§§pop())
-                     {
-                        addr0076:
-                        _loc3_ = (param1.target as CitySquareDepositItemRenderer).goodCardBoard.localToGlobal(new Point());
-                        addr006b:
-                        if(_loc4_ || Boolean(param1))
-                        {
-                           _loc3_.x += (param1.target as CitySquareDepositItemRenderer).goodCardBoard.width / 2;
-                           if(_loc4_)
-                           {
-                              addr00b9:
-                              sendNotification(ApplicationNotificationConstants.SHOW_ITEM_IN_UI_INFOLAYER,{
-                                 "cid":_loc2_,
-                                 "lineId":0,
-                                 "pt":_loc3_,
-                                 "type":param1.callerType
-                              },NAME);
-                           }
-                           §§goto(addr00db);
-                        }
-                        §§goto(addr00b9);
-                     }
-                     §§goto(addr00db);
-                  }
-                  §§goto(addr0076);
-               }
-               §§goto(addr006b);
+               _loc3_ = (param1.target as CitySquareDepositItemRenderer).goodCardBoard.localToGlobal(new Point());
+               _loc3_.x += (param1.target as CitySquareDepositItemRenderer).goodCardBoard.width / 2;
+               sendNotification(ApplicationNotificationConstants.SHOW_ITEM_IN_UI_INFOLAYER,{
+                  "cid":_loc2_,
+                  "lineId":0,
+                  "pt":_loc3_,
+                  "type":param1.callerType
+               },NAME);
             }
-            addr00db:
-            return;
          }
-         §§goto(addr006b);
       }
       
       private function component_ITEM_OVERHandler(param1:UIInfolayerDispatcherEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            sendNotification(ApplicationNotificationConstants.HIDE_UI_INFOLAYER);
-         }
+         sendNotification(ApplicationNotificationConstants.HIDE_UI_INFOLAYER);
       }
    }
 }

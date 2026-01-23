@@ -19,66 +19,23 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function ProductionNeedVo(param1:String, param2:String, param3:String, param4:int, param5:int, param6:String)
       {
-         var _temp_1:* = true;
-         var _loc7_:Boolean = false;
-         var _loc8_:Boolean = _temp_1;
-         if(!(_loc7_ && Boolean(param1)))
-         {
-            super();
-            if(!(_loc7_ && Boolean(param2)))
-            {
-               §§goto(addr0034);
-            }
-            §§goto(addr009f);
-         }
-         addr0034:
+         super();
          this._assetSWFName = param1;
-         if(!(_loc7_ && Boolean(param1)))
-         {
-            this._assetLibName = param2;
-            if(_loc8_ || Boolean(param3))
-            {
-               this._assetImageName = param3;
-               if(_loc8_ || Boolean(param2))
-               {
-                  this._goodName = param6;
-                  if(!(_loc7_ && Boolean(param3)))
-                  {
-                     addr009f:
-                     this._stockAmount = param4;
-                     if(!_loc7_)
-                     {
-                        this._requiredAmount = param5;
-                     }
-                  }
-                  §§goto(addr00b1);
-               }
-            }
-            §§goto(addr009f);
-         }
-         addr00b1:
+         this._assetLibName = param2;
+         this._assetImageName = param3;
+         this._goodName = param6;
+         this._stockAmount = param4;
+         this._requiredAmount = param5;
       }
       
       public function set requiredAmount(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._requiredAmount = param1;
-         }
+         this._requiredAmount = param1;
       }
       
       public function set stockAmount(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._stockAmount = param1;
-         }
+         this._stockAmount = param1;
       }
       
       public function get assetLibName() : String

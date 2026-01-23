@@ -13,33 +13,15 @@ package net.bigpoint.cityrama.controller.preloaderStartup
       
       public function PreloaderViewPrepCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!_loc3_)
-         {
-            LoaderMax.defaultAuditSize = false;
-         }
+         LoaderMax.defaultAuditSize = false;
          var _loc2_:MainApplication = param1.getBody() as MainApplication;
-         if(_loc4_ || Boolean(this))
-         {
-            facade.registerMediator(new ApplicationMediator(ApplicationMediator.NAME,_loc2_));
-            if(_loc4_)
-            {
-               facade.registerMediator(new PreloaderMediator(PreloaderMediator.NAME,_loc2_.preloaderView));
-            }
-         }
+         facade.registerMediator(new ApplicationMediator(ApplicationMediator.NAME,_loc2_));
+         facade.registerMediator(new PreloaderMediator(PreloaderMediator.NAME,_loc2_.preloaderView));
       }
    }
 }

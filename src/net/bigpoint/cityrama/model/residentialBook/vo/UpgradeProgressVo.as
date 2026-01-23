@@ -23,13 +23,7 @@ package net.bigpoint.cityrama.model.residentialBook.vo
       
       public function UpgradeProgressVo()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get upgradeNextLevel() : int
@@ -39,13 +33,7 @@ package net.bigpoint.cityrama.model.residentialBook.vo
       
       public function set upgradeNextLevel(param1:int) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._upgradeNextLevel = param1;
-         }
+         this._upgradeNextLevel = param1;
       }
       
       public function get hasEnoughMoney() : Boolean
@@ -55,13 +43,7 @@ package net.bigpoint.cityrama.model.residentialBook.vo
       
       public function set hasEnoughMoney(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && param1))
-         {
-            this._hasEnoughMoney = param1;
-         }
+         this._hasEnoughMoney = param1;
       }
       
       public function get price() : Number
@@ -71,13 +53,7 @@ package net.bigpoint.cityrama.model.residentialBook.vo
       
       public function set price(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._price = param1;
-         }
+         this._price = param1;
       }
       
       public function get neededProgress() : int
@@ -87,13 +63,7 @@ package net.bigpoint.cityrama.model.residentialBook.vo
       
       public function set neededProgress(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._neededProgress = param1;
-         }
+         this._neededProgress = param1;
       }
       
       public function get currentProgress() : int
@@ -103,13 +73,7 @@ package net.bigpoint.cityrama.model.residentialBook.vo
       
       public function set currentProgress(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._currentProgress = param1;
-         }
+         this._currentProgress = param1;
       }
       
       public function get upgradeMaxLevel() : int
@@ -119,13 +83,7 @@ package net.bigpoint.cityrama.model.residentialBook.vo
       
       public function set upgradeMaxLevel(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._upgradeMaxLevel = param1;
-         }
+         this._upgradeMaxLevel = param1;
       }
       
       public function get upgradeCurrentLevel() : int
@@ -135,13 +93,7 @@ package net.bigpoint.cityrama.model.residentialBook.vo
       
       public function set upgradeCurrentLevel(param1:int) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(param1))
-         {
-            this._upgradeCurrentLevel = param1;
-         }
+         this._upgradeCurrentLevel = param1;
       }
       
       public function get affordableByRc() : Boolean
@@ -156,13 +108,7 @@ package net.bigpoint.cityrama.model.residentialBook.vo
       
       public function set instaFinishRCCost(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._instaFinishRCCost = param1;
-         }
+         this._instaFinishRCCost = param1;
       }
       
       public function get userRCStock() : Number
@@ -172,13 +118,7 @@ package net.bigpoint.cityrama.model.residentialBook.vo
       
       public function set userRCStock(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._userRCStock = param1;
-         }
+         this._userRCStock = param1;
       }
    }
 }

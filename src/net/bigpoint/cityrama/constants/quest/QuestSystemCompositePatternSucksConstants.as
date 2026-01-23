@@ -7,27 +7,9 @@ package net.bigpoint.cityrama.constants.quest
       
       public static const COST:String = "COST";
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(_loc1_)
-      {
-         QUEST_REQUIREMENT = "QUEST_REQUIREMENT";
-         if(_loc1_)
-         {
-            COST = "COST";
-         }
-      }
-      
       public function QuestSystemCompositePatternSucksConstants()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
    }
 }

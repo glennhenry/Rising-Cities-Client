@@ -8,13 +8,7 @@ package
       
       public function PlacementGridTexture(param1:int = 36, param2:int = 36)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(!(_loc4_ && _loc3_))
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
    }
 }

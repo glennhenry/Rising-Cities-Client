@@ -15,134 +15,44 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function BoosterpackBonusLabel()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
-         {
-            super();
-            if(_loc1_)
-            {
-               mx_internal::_document = this;
-               if(!(_loc2_ && _loc2_))
-               {
-                  addr0049:
-                  this.width = 112;
-                  if(_loc1_ || _loc2_)
-                  {
-                     this.height = 30;
-                     if(_loc1_)
-                     {
-                        this.horizontalCenter = 0;
-                        if(!(_loc2_ && _loc1_))
-                        {
-                           this.verticalCenter = 0;
-                           if(_loc1_)
-                           {
-                              addr008b:
-                              this.mxmlContent = [this._BoosterpackBonusLabel_LocaLabel1_i()];
-                           }
-                           §§goto(addr0096);
-                        }
-                        §§goto(addr008b);
-                     }
-                  }
-               }
-               addr0096:
-               return;
-            }
-            §§goto(addr008b);
-         }
-         §§goto(addr0049);
+         super();
+         mx_internal::_document = this;
+         this.width = 112;
+         this.height = 30;
+         this.horizontalCenter = 0;
+         this.verticalCenter = 0;
+         this.mxmlContent = [this._BoosterpackBonusLabel_LocaLabel1_i()];
       }
       
       override public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
+         super.moduleFactory = param1;
+         if(this.__moduleFactoryInitialized)
          {
-            super.moduleFactory = param1;
-            if(!_loc2_)
-            {
-               if(this.__moduleFactoryInitialized)
-               {
-                  if(!_loc2_)
-                  {
-                     return;
-                  }
-               }
-            }
-            this.__moduleFactoryInitialized = true;
+            return;
          }
+         this.__moduleFactoryInitialized = true;
       }
       
       override public function initialize() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super.initialize();
-         }
+         super.initialize();
       }
       
       public function set bonusFactor(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            §§push(this.label);
-            §§push("x ");
-            if(!(_loc2_ && _loc2_))
-            {
-               §§push(§§pop() + param1);
-            }
-            §§pop().text = §§pop();
-         }
+         this.label.text = "x " + param1;
       }
       
       public function set index(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this.x = this.getPosXByIndex(param1);
-            if(!_loc2_)
-            {
-               this.y = this.getPosYByIndex(param1);
-            }
-         }
+         this.x = this.getPosXByIndex(param1);
+         this.y = this.getPosYByIndex(param1);
       }
       
       public function getPosXByIndex(param1:Number) : Number
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         §§push(param1);
-         if(!_loc3_)
-         {
-            §§push(4);
-            if(!(_loc3_ && Boolean(param1)))
-            {
-               §§push(§§pop() % §§pop());
-               if(!_loc3_)
-               {
-                  addr0030:
-                  addr002e:
-                  return §§pop() * 120;
-               }
-            }
-            §§goto(addr0030);
-         }
-         §§goto(addr002e);
+         return param1 % 4 * 120;
       }
       
       public function getPosYByIndex(param1:Number) : Number
@@ -152,93 +62,34 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set labelStyle(param1:Object) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this.label.styleName = param1;
-         }
+         this.label.styleName = param1;
       }
       
       public function set labelOutlineColour(param1:uint) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && _loc2_))
-         {
-            this.label.outlineColor = param1;
-         }
+         this.label.outlineColor = param1;
       }
       
       public function set labelOutlineAlpha(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this.label.outlineAlpha = param1;
-         }
+         this.label.outlineAlpha = param1;
       }
       
       private function _BoosterpackBonusLabel_LocaLabel1_i() : LocaLabel
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:LocaLabel = new LocaLabel();
-         if(!(_loc3_ && Boolean(this)))
+         _loc1_.styleName = "poosterpackBonusLabel";
+         _loc1_.useOutline = true;
+         _loc1_.percentWidth = 100;
+         _loc1_.percentHeight = 100;
+         _loc1_.id = "label";
+         if(!_loc1_.document)
          {
-            _loc1_.styleName = "poosterpackBonusLabel";
-            if(!(_loc3_ && Boolean(this)))
-            {
-               _loc1_.useOutline = true;
-               if(!(_loc3_ && Boolean(_loc1_)))
-               {
-                  _loc1_.percentWidth = 100;
-                  if(_loc2_ || _loc3_)
-                  {
-                     _loc1_.percentHeight = 100;
-                     if(_loc2_ || Boolean(_loc1_))
-                     {
-                        §§goto(addr007d);
-                     }
-                     §§goto(addr0088);
-                  }
-                  addr007d:
-                  _loc1_.id = "label";
-                  if(_loc2_)
-                  {
-                     addr0088:
-                     if(!_loc1_.document)
-                     {
-                        if(_loc2_)
-                        {
-                           addr00a0:
-                           _loc1_.document = this;
-                           if(!_loc3_)
-                           {
-                              addr00a9:
-                              this.label = _loc1_;
-                              if(_loc2_ || Boolean(this))
-                              {
-                                 BindingManager.executeBindings(this,"label",this.label);
-                              }
-                           }
-                           §§goto(addr00c8);
-                        }
-                     }
-                     §§goto(addr00a9);
-                  }
-                  addr00c8:
-                  return _loc1_;
-               }
-               §§goto(addr00a0);
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr0088);
+         this.label = _loc1_;
+         BindingManager.executeBindings(this,"label",this.label);
+         return _loc1_;
       }
       
       [Bindable(event="propertyChange")]
@@ -249,34 +100,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set label(param1:LocaLabel) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._102727412label;
-         if(_loc3_ || Boolean(this))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._102727412label = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc4_ && Boolean(param1)))
-               {
-                  this._102727412label = param1;
-                  if(!_loc4_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!_loc4_)
-                        {
-                           addr006e:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"label",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr007d);
-               }
-               §§goto(addr006e);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"label",_loc2_,param1));
             }
          }
-         addr007d:
       }
    }
 }

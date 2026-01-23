@@ -17,20 +17,11 @@ package net.bigpoint.cityrama.controller.server.messages.education
       
       public function ServerMessageProfessionalTraitSuccessCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc7_:Boolean = false;
-         var _loc8_:Boolean = _temp_1;
          var _loc6_:PopupSettingsVo = null;
          var _loc2_:EmergencyMiniLayerProxy = facade.retrieveProxy(EmergencyMiniLayerProxy.NAME) as EmergencyMiniLayerProxy;
          var _loc3_:MessageVo = param1.getBody() as MessageVo;
@@ -40,36 +31,12 @@ package net.bigpoint.cityrama.controller.server.messages.education
          {
             _loc6_ = new PopupSettingsVo(PopupSettingsVo.STACK_POPUP);
             _loc6_.modal = true;
-            if(_loc8_)
-            {
-               _loc6_.viewClass = ProfessionalTraitUnlockMiniLayer;
-               if(_loc8_)
-               {
-                  _loc6_.mediatorClass = ProfessionalTraitUnlockMiniLayerMediator;
-                  if(!_loc7_)
-                  {
-                     addr00b0:
-                     _loc6_.mediatorName = ProfessionalTraitUnlockMiniLayerMediator.NAME + getTimer();
-                     if(!_loc7_)
-                     {
-                        addr00c8:
-                        _loc6_.data = _loc5_;
-                        if(_loc8_)
-                        {
-                           addr00d4:
-                           facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc6_);
-                        }
-                        §§goto(addr00e0);
-                     }
-                     §§goto(addr00d4);
-                  }
-                  §§goto(addr00e0);
-               }
-               §§goto(addr00b0);
-            }
-            §§goto(addr00c8);
+            _loc6_.viewClass = ProfessionalTraitUnlockMiniLayer;
+            _loc6_.mediatorClass = ProfessionalTraitUnlockMiniLayerMediator;
+            _loc6_.mediatorName = ProfessionalTraitUnlockMiniLayerMediator.NAME + getTimer();
+            _loc6_.data = _loc5_;
+            facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc6_);
          }
-         addr00e0:
       }
    }
 }

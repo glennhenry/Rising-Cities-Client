@@ -14,54 +14,19 @@ package net.bigpoint.cityrama.controller.residentSelection
       
       public function OpenResidentSelectionCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc2_:ResidentialFieldObject = param1.getBody() as ResidentialFieldObject;
          var _loc3_:PopupSettingsVo = new PopupSettingsVo(PopupSettingsVo.PAPER_POPUP);
-         if(!_loc5_)
-         {
-            _loc3_.modal = true;
-            if(!_loc5_)
-            {
-               _loc3_.viewClass = ResidentSelectionPopup;
-               if(!(_loc5_ && Boolean(param1)))
-               {
-                  addr0061:
-                  _loc3_.mediatorClass = ResidentSelectionMediator;
-                  if(_loc4_)
-                  {
-                     _loc3_.mediatorName = ResidentSelectionMediator.NAME;
-                     if(_loc4_)
-                     {
-                        _loc3_.data = MainLayerProxy(facade.retrieveProxy(MainLayerProxy.NAME)).getResidentSelectionVo(_loc2_,false);
-                        if(!_loc5_)
-                        {
-                           addr00aa:
-                           facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
-                        }
-                     }
-                     §§goto(addr00b5);
-                  }
-                  §§goto(addr00aa);
-               }
-               addr00b5:
-               return;
-            }
-            §§goto(addr00aa);
-         }
-         §§goto(addr0061);
+         _loc3_.modal = true;
+         _loc3_.viewClass = ResidentSelectionPopup;
+         _loc3_.mediatorClass = ResidentSelectionMediator;
+         _loc3_.mediatorName = ResidentSelectionMediator.NAME;
+         _loc3_.data = MainLayerProxy(facade.retrieveProxy(MainLayerProxy.NAME)).getResidentSelectionVo(_loc2_,false);
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
       }
    }
 }

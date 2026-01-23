@@ -7,28 +7,13 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigEventSaleDTO(param1:Object)
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
          var _loc2_:Object = null;
-         if(!(_loc6_ && Boolean(param1)))
+         super(param1);
+         this._listOfAffectedResources = new Vector.<ConfigOutputDTO>();
+         for each(_loc2_ in param1.s)
          {
-            super(param1);
-            if(!_loc6_)
-            {
-               this._listOfAffectedResources = new Vector.<ConfigOutputDTO>();
-               addr0030:
-            }
-            for each(_loc2_ in param1.s)
-            {
-               if(_loc5_ || Boolean(this))
-               {
-                  this._listOfAffectedResources.push(new ConfigOutputDTO(_loc2_));
-               }
-            }
-            return;
+            this._listOfAffectedResources.push(new ConfigOutputDTO(_loc2_));
          }
-         §§goto(addr0030);
       }
       
       public function get listOfAffectedResources() : Vector.<ConfigOutputDTO>

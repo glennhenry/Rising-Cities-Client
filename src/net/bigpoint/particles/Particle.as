@@ -20,13 +20,7 @@ package net.bigpoint.particles
       
       public function Particle(param1:BitmapData = null, param2:String = "auto", param3:Boolean = false)
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
-         if(_loc4_ || Boolean(param2))
-         {
-            super(param1,param2,param3);
-         }
+         super(param1,param2,param3);
       }
    }
 }

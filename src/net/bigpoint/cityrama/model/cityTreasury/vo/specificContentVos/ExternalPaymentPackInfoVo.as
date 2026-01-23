@@ -17,13 +17,7 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function ExternalPaymentPackInfoVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc1_))
-         {
-            super();
-         }
+         super();
       }
       
       public function get packConfigId() : Number
@@ -33,13 +27,7 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function set packConfigId(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this._packConfigId = param1;
-         }
+         this._packConfigId = param1;
       }
       
       public function get price() : Number
@@ -49,13 +37,7 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function set price(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._price = param1;
-         }
+         this._price = param1;
       }
       
       public function get discountedPrice() : Number
@@ -65,13 +47,7 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function set discountedPrice(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
-         {
-            this._discountedPrice = param1;
-         }
+         this._discountedPrice = param1;
       }
       
       public function get currency() : String
@@ -81,13 +57,7 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function set currency(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._currency = param1;
-         }
+         this._currency = param1;
       }
       
       public function get currencyAsSymbol() : String
@@ -102,13 +72,7 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function set amount(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this._amount = param1;
-         }
+         this._amount = param1;
       }
    }
 }

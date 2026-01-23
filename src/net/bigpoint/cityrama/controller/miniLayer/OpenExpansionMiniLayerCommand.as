@@ -13,56 +13,19 @@ package net.bigpoint.cityrama.controller.miniLayer
       
       public function OpenExpansionMiniLayerCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc2_:ExpansionFieldObject = ExpansionFieldObject(param1.getBody());
          var _loc3_:PopupSettingsVo = new PopupSettingsVo(PopupSettingsVo.MINI_POPUP);
-         if(_loc4_ || Boolean(param1))
-         {
-            _loc3_.modal = true;
-            if(!_loc5_)
-            {
-               _loc3_.viewClass = ExpansionMiniLayer;
-               if(_loc4_)
-               {
-                  §§goto(addr0067);
-               }
-               §§goto(addr0081);
-            }
-            addr0067:
-            _loc3_.mediatorClass = ExpansionMiniLayerMediator;
-            if(_loc4_)
-            {
-               addr0081:
-               _loc3_.mediatorName = ExpansionMiniLayerMediator.NAME;
-               if(_loc4_)
-               {
-                  §§goto(addr0090);
-               }
-               §§goto(addr00a2);
-            }
-            addr0090:
-            _loc3_.data = _loc2_;
-            if(!(_loc5_ && Boolean(_loc3_)))
-            {
-               addr00a2:
-               facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
-            }
-            return;
-         }
-         §§goto(addr0081);
+         _loc3_.modal = true;
+         _loc3_.viewClass = ExpansionMiniLayer;
+         _loc3_.mediatorClass = ExpansionMiniLayerMediator;
+         _loc3_.mediatorName = ExpansionMiniLayerMediator.NAME;
+         _loc3_.data = _loc2_;
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
       }
    }
 }

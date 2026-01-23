@@ -19,46 +19,13 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigProfessionalSpecializationDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            super();
-            if(_loc3_)
-            {
-               this._id = param1.cpsi;
-               if(_loc3_ || _loc2_)
-               {
-                  this._departmentTagId = param1.dt;
-                  if(_loc3_)
-                  {
-                     addr0052:
-                     this._rank = param1.r;
-                     if(!_loc2_)
-                     {
-                        this._slotMaxValue = param1.v;
-                        if(!_loc2_)
-                        {
-                           addr007a:
-                           this._gfxId = param1.gfx;
-                           if(_loc3_ || _loc2_)
-                           {
-                              addr0090:
-                              this._locaId = param1.lo;
-                           }
-                        }
-                     }
-                     §§goto(addr009a);
-                  }
-                  §§goto(addr0090);
-               }
-               §§goto(addr007a);
-            }
-            addr009a:
-            return;
-         }
-         §§goto(addr0052);
+         super();
+         this._id = param1.cpsi;
+         this._departmentTagId = param1.dt;
+         this._rank = param1.r;
+         this._slotMaxValue = param1.v;
+         this._gfxId = param1.gfx;
+         this._locaId = param1.lo;
       }
       
       public function get id() : Number
@@ -83,13 +50,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set department(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            this._department = param1;
-         }
+         this._department = param1;
       }
       
       public function get slotMaxValue() : int

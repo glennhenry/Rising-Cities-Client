@@ -9,32 +9,14 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigEffectDTO(param1:Object)
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
          var _loc2_:Object = null;
-         if(!_loc6_)
+         super(param1);
+         this._target = param1.ta;
+         this._targetOutputList = new Vector.<ConfigOutputDTO>();
+         for each(_loc2_ in param1.out)
          {
-            super(param1);
-            if(!_loc6_)
-            {
-               addr0028:
-               this._target = param1.ta;
-               if(_loc5_ || Boolean(_loc2_))
-               {
-                  this._targetOutputList = new Vector.<ConfigOutputDTO>();
-               }
-            }
-            for each(_loc2_ in param1.out)
-            {
-               if(!(_loc6_ && Boolean(param1)))
-               {
-                  this._targetOutputList.push(new ConfigOutputDTO(_loc2_));
-               }
-            }
-            return;
+            this._targetOutputList.push(new ConfigOutputDTO(_loc2_));
          }
-         §§goto(addr0028);
       }
       
       public function get target() : String

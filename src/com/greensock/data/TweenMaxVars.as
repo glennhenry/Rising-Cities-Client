@@ -11,60 +11,23 @@ package com.greensock.data
       
       public static const version:Number = 5.14;
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(!_loc2_)
-      {
-         version = 5.14;
-      }
-      
       protected var _vars:Object;
       
       public function TweenMaxVars(param1:Object = null)
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc2_:String = null;
-         if(!_loc5_)
-         {
-            super();
-            if(_loc6_)
-            {
-               _vars = {};
-               if(!(_loc5_ && Boolean(param1)))
-               {
-                  §§goto(addr004b);
-               }
-            }
-            §§goto(addr0051);
-         }
-         addr004b:
+         super();
+         _vars = {};
          if(param1 != null)
          {
-            addr0051:
             for(_loc2_ in param1)
             {
-               if(_loc6_)
-               {
-                  _vars[_loc2_] = param1[_loc2_];
-               }
+               _vars[_loc2_] = param1[_loc2_];
             }
-            if(_loc6_)
-            {
-               §§goto(addr0093);
-            }
-            §§goto(addr00a4);
          }
-         addr0093:
          if(TweenMax.version < 11.4)
          {
-            if(!_loc5_)
-            {
-               addr00a4:
-               trace("WARNING: it is suggested that you update to at least version 11.4 of TweenMax in order for TweenMaxVars to work properly. http://www.greensock.com/tweenmax/");
-            }
+            trace("WARNING: it is suggested that you update to at least version 11.4 of TweenMax in order for TweenMaxVars to work properly. http://www.greensock.com/tweenmax/");
          }
       }
       
@@ -85,48 +48,21 @@ package com.greensock.data
       
       public function onUpdate(param1:Function, param2:Array = null) : TweenMaxVars
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_ || _loc3_)
-         {
-            _set("onUpdateParams",param2);
-         }
+         _set("onUpdateParams",param2);
          return _set("onUpdate",param1);
       }
       
       public function setSize(param1:Number = NaN, param2:Number = NaN) : TweenMaxVars
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc3_:Object = {};
-         if(!(_loc5_ && Boolean(param1)))
+         if(!isNaN(param1))
          {
-            if(!isNaN(param1))
-            {
-               if(!_loc5_)
-               {
-                  _loc3_.width = param1;
-                  if(!_loc5_)
-                  {
-                     §§goto(addr005f);
-                  }
-               }
-               §§goto(addr0071);
-            }
-            addr005f:
-            if(!isNaN(param2))
-            {
-               if(!_loc5_)
-               {
-                  addr0071:
-                  _loc3_.height = param2;
-               }
-            }
-            §§goto(addr0077);
+            _loc3_.width = param1;
          }
-         addr0077:
+         if(!isNaN(param2))
+         {
+            _loc3_.height = param2;
+         }
          return _set("setSize",_loc3_,true);
       }
       
@@ -147,13 +83,7 @@ package com.greensock.data
       
       public function onInit(param1:Function, param2:Array = null) : TweenMaxVars
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_ || _loc3_)
-         {
-            _set("onInitParams",param2);
-         }
+         _set("onInitParams",param2);
          return _set("onInit",param1);
       }
       
@@ -179,9 +109,6 @@ package com.greensock.data
       
       public function bevelFilter(param1:Number = 4, param2:Number = 45, param3:uint = 16777215, param4:Number = 0.5, param5:uint = 0, param6:Number = 0.5, param7:Number = 4, param8:Number = 4, param9:Number = 1, param10:int = 2, param11:Boolean = false, param12:Boolean = false, param13:int = -1) : TweenMaxVars
       {
-         var _temp_1:* = true;
-         var _loc15_:Boolean = false;
-         var _loc16_:Boolean = _temp_1;
          var _loc14_:Object = {
             "distance":param1,
             "angle":param2,
@@ -196,42 +123,20 @@ package com.greensock.data
             "addFilter":param12,
             "remove":param11
          };
-         if(!_loc15_)
+         if(param13 > -1)
          {
-            if(param13 > -1)
-            {
-               if(_loc16_ || Boolean(param3))
-               {
-                  addr0089:
-                  _loc14_.index = param13;
-               }
-            }
-            return _set("bevelFilter",_loc14_,true);
+            _loc14_.index = param13;
          }
-         §§goto(addr0089);
+         return _set("bevelFilter",_loc14_,true);
       }
       
       public function shortRotation(param1:Object) : TweenMaxVars
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
+         if(typeof param1 == "number")
          {
-            §§push(typeof param1);
-            if(!_loc2_)
-            {
-               if(§§pop() == "number")
-               {
-                  addr003b:
-                  param1 = {"rotation":param1};
-                  addr0038:
-               }
-               return _set("shortRotation",param1,true);
-            }
-            §§goto(addr003b);
+            param1 = {"rotation":param1};
          }
-         §§goto(addr0038);
+         return _set("shortRotation",param1,true);
       }
       
       public function repeat(param1:int) : TweenMaxVars
@@ -241,9 +146,6 @@ package com.greensock.data
       
       public function colorMatrixFilter(param1:uint = 16777215, param2:Number = 1, param3:Number = 1, param4:Number = 1, param5:Number = 1, param6:Number = 0, param7:Number = -1, param8:Boolean = false, param9:Boolean = false, param10:int = -1) : TweenMaxVars
       {
-         §§push(false);
-         var _loc12_:Boolean = true;
-         var _loc13_:* = §§pop();
          var _loc11_:Object = {
             "saturation":param3,
             "contrast":param4,
@@ -252,52 +154,20 @@ package com.greensock.data
             "addFilter":param9,
             "remove":param8
          };
-         if(_loc12_)
+         if(param1 != 16777215)
          {
-            if(param1 != 16777215)
-            {
-               if(!_loc13_)
-               {
-                  _loc11_.colorize = param1;
-                  if(_loc12_ || Boolean(this))
-                  {
-                     _loc11_.amount = param2;
-                     if(!_loc13_)
-                     {
-                        addr007b:
-                        if(param7 > -1)
-                        {
-                           if(!(_loc13_ && Boolean(param3)))
-                           {
-                              _loc11_.threshold = param7;
-                              if(_loc12_)
-                              {
-                                 addr00ac:
-                                 if(param10 > -1)
-                                 {
-                                    if(_loc12_)
-                                    {
-                                       addr00ba:
-                                       _loc11_.index = param10;
-                                    }
-                                 }
-                                 §§goto(addr00c1);
-                              }
-                              §§goto(addr00ba);
-                           }
-                           §§goto(addr00c1);
-                        }
-                        §§goto(addr00ac);
-                     }
-                     addr00c1:
-                     return _set("colorMatrixFilter",_loc11_,true);
-                  }
-                  §§goto(addr00ba);
-               }
-            }
-            §§goto(addr007b);
+            _loc11_.colorize = param1;
+            _loc11_.amount = param2;
          }
-         §§goto(addr00ba);
+         if(param7 > -1)
+         {
+            _loc11_.threshold = param7;
+         }
+         if(param10 > -1)
+         {
+            _loc11_.index = param10;
+         }
+         return _set("colorMatrixFilter",_loc11_,true);
       }
       
       public function soundTransform(param1:Number = 1, param2:Number = 0, param3:Number = 1, param4:Number = 0, param5:Number = 0, param6:Number = 1) : TweenMaxVars
@@ -314,123 +184,35 @@ package com.greensock.data
       
       public function orientToBezier(param1:Object = null) : TweenMaxVars
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         §§push(§§findproperty(_set));
-         §§push("orientToBezier");
-         if(_loc2_ || _loc3_)
-         {
-            return §§pop()._set(§§pop(),param1 == null ? true : param1,false);
-         }
-         §§goto(addr0037);
+         return _set("orientToBezier",param1 == null ? true : param1,false);
       }
       
       public function stageQuality(param1:Stage, param2:String = "medium", param3:String = null) : TweenMaxVars
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
-         if(_loc4_)
+         if(param3 == null)
          {
-            §§push(param3);
-            if(_loc4_)
-            {
-               if(§§pop() == null)
-               {
-                  if(_loc4_)
-                  {
-                     addr003b:
-                     param3 = param1.quality;
-                     addr0036:
-                  }
-               }
-               return _set("stageQuality",{
-                  "stage":param1,
-                  "during":param2,
-                  "after":param3
-               },true);
-            }
-            §§goto(addr003b);
+            param3 = param1.quality;
          }
-         §§goto(addr0036);
+         return _set("stageQuality",{
+            "stage":param1,
+            "during":param2,
+            "after":param3
+         },true);
       }
       
       protected function _set(param1:String, param2:*, param3:Boolean = false) : TweenMaxVars
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
-         if(!(_loc4_ && Boolean(this)))
+         if(param2 == null)
          {
-            if(param2 == null)
-            {
-               if(_loc5_)
-               {
-                  §§goto(addr0030);
-               }
-               §§goto(addr0071);
-            }
-            else
-            {
-               _vars[param1] = param2;
-               if(!(_loc4_ && Boolean(param1)))
-               {
-                  §§goto(addr0071);
-               }
-            }
-            §§goto(addr00cf);
+            delete _vars[param1];
          }
-         addr0030:
-         §§push(delete _vars[param1]);
-         if(_loc5_)
+         else
          {
-            §§pop();
-            if(_loc5_ || param3)
-            {
-               addr0071:
-               §§push(param3);
-               if(!(_loc4_ && Boolean(this)))
-               {
-                  §§goto(addr0080);
-               }
-               §§goto(addr0087);
-            }
-            §§goto(addr00cf);
+            _vars[param1] = param2;
          }
-         addr0080:
-         §§push(§§pop());
-         if(_loc5_)
+         if(param3 && !(param1 in TweenLite.plugins))
          {
-            addr0087:
-            var _temp_5:* = §§pop();
-            §§push(_temp_5);
-            if(_temp_5)
-            {
-               if(!_loc4_)
-               {
-                  §§pop();
-                  if(_loc5_)
-                  {
-                     §§goto(addr00bd);
-                  }
-                  §§goto(addr00cf);
-               }
-            }
-         }
-         addr00bd:
-         §§push(param1 in TweenLite.plugins);
-         if(!(_loc4_ && Boolean(this)))
-         {
-            §§push(!§§pop());
-         }
-         if(§§pop())
-         {
-            if(!(_loc4_ && param3))
-            {
-               addr00cf:
-               trace("WARNING: you must activate() the " + param1 + " plugin in order for the feature to work in TweenMax. See http://www.greensock.com/tweenlite/#plugins for details.");
-            }
+            trace("WARNING: you must activate() the " + param1 + " plugin in order for the feature to work in TweenMax. See http://www.greensock.com/tweenlite/#plugins for details.");
          }
          return this;
       }
@@ -506,25 +288,13 @@ package com.greensock.data
       
       public function transformAroundPoint(param1:Point, param2:Object) : TweenMaxVars
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!(_loc3_ && Boolean(param2)))
-         {
-            param2.point = param1;
-         }
+         param2.point = param1;
          return _set("transformAroundPoint",param2,true);
       }
       
       public function onComplete(param1:Function, param2:Array = null) : TweenMaxVars
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!_loc3_)
-         {
-            _set("onCompleteParams",param2);
-         }
+         _set("onCompleteParams",param2);
          return _set("onComplete",param1);
       }
       
@@ -550,9 +320,6 @@ package com.greensock.data
       
       public function blurFilter(param1:Number, param2:Number, param3:int = 2, param4:Boolean = false, param5:Boolean = false, param6:int = -1) : TweenMaxVars
       {
-         §§push(false);
-         var _loc8_:Boolean = true;
-         var _loc9_:* = §§pop();
          var _loc7_:Object = {
             "blurX":param1,
             "blurY":param2,
@@ -560,19 +327,11 @@ package com.greensock.data
             "addFilter":param5,
             "remove":param4
          };
-         if(!_loc9_)
+         if(param6 > -1)
          {
-            if(param6 > -1)
-            {
-               if(_loc8_)
-               {
-                  addr004f:
-                  _loc7_.index = param6;
-               }
-            }
-            return _set("blurFilter",_loc7_,true);
+            _loc7_.index = param6;
          }
-         §§goto(addr004f);
+         return _set("blurFilter",_loc7_,true);
       }
       
       public function reversed(param1:Boolean) : TweenMaxVars
@@ -582,21 +341,12 @@ package com.greensock.data
       
       public function onStart(param1:Function, param2:Array = null) : TweenMaxVars
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_)
-         {
-            _set("onStartParams",param2);
-         }
+         _set("onStartParams",param2);
          return _set("onStart",param1);
       }
       
       public function dropShadowFilter(param1:Number = 4, param2:Number = 4, param3:Number = 4, param4:Number = 1, param5:Number = 45, param6:uint = 0, param7:Number = 2, param8:Boolean = false, param9:Boolean = false, param10:Boolean = false, param11:uint = 2, param12:Boolean = false, param13:Boolean = false, param14:int = -1) : TweenMaxVars
       {
-         var _temp_1:* = true;
-         var _loc16_:Boolean = false;
-         var _loc17_:Boolean = _temp_1;
          var _loc15_:Object = {
             "distance":param1,
             "blurX":param2,
@@ -612,47 +362,38 @@ package com.greensock.data
             "addFilter":param13,
             "remove":param12
          };
-         if(!_loc16_)
+         if(param14 > -1)
          {
-            if(param14 > -1)
-            {
-               if(_loc17_)
-               {
-                  _loc15_.index = param14;
-               }
-            }
+            _loc15_.index = param14;
          }
          return _set("dropShadowFilter",_loc15_,true);
       }
       
       public function colorTransform(param1:Number = NaN, param2:Number = NaN, param3:Number = NaN, param4:Number = NaN, param5:Number = NaN, param6:Number = NaN, param7:Number = NaN, param8:Number = NaN, param9:Number = NaN, param10:Number = NaN, param11:Number = NaN, param12:Number = NaN) : TweenMaxVars
       {
-         §§push(false);
-         var _loc17_:Boolean = true;
-         var _loc18_:* = §§pop();
          var _loc14_:String = null;
-         §§push("tint");
-         §§push(param1);
-         §§push("tintAmount");
-         if(_loc17_)
+         var _loc13_:Object = {
+            "tint":param1,
+            "tintAmount":(isNaN(param1) ? NaN : param2),
+            "exposure":param3,
+            "brightness":param4,
+            "redMultiplier":param5,
+            "greenMultiplier":param6,
+            "blueMultiplier":param7,
+            "alphaMultiplier":param8,
+            "redOffset":param9,
+            "greenOffset":param10,
+            "blueOffset":param11,
+            "alphaOffset":param12
+         };
+         for(_loc14_ in _loc13_)
          {
-            var _loc13_:Object = null;
-            for(_loc14_ in _loc13_)
+            if(isNaN(_loc13_[_loc14_]))
             {
-               if(_loc17_)
-               {
-                  if(isNaN(_loc13_[_loc14_]))
-                  {
-                     if(!_loc18_)
-                     {
-                        delete _loc13_[_loc14_];
-                     }
-                  }
-               }
+               delete _loc13_[_loc14_];
             }
-            return _set("colorTransform",_loc13_,true);
          }
-         §§goto(addr0031);
+         return _set("colorTransform",_loc13_,true);
       }
       
       public function transformMatrix(param1:Object) : TweenMaxVars
@@ -678,25 +419,13 @@ package com.greensock.data
       
       public function onRepeat(param1:Function, param2:Array = null) : TweenMaxVars
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(_loc4_)
-         {
-            _set("onRepeatParams",param2);
-         }
+         _set("onRepeatParams",param2);
          return _set("onRepeat",param1);
       }
       
       public function onReverseComplete(param1:Function, param2:Array = null) : TweenMaxVars
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(_loc4_)
-         {
-            _set("onReverseCompleteParams",param2);
-         }
+         _set("onReverseCompleteParams",param2);
          return _set("onReverseComplete",param1);
       }
       
@@ -712,23 +441,11 @@ package com.greensock.data
       
       public function prop(param1:String, param2:Number, param3:Boolean = false) : TweenMaxVars
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
-         §§push(§§findproperty(_set));
-         §§push(param1);
-         if(!_loc4_)
-         {
-            return §§pop()._set(§§pop(),param3 ? String(param2) : param2);
-         }
-         §§goto(addr0025);
+         return _set(param1,param3 ? String(param2) : param2);
       }
       
       public function glowFilter(param1:Number = 10, param2:Number = 10, param3:uint = 16777215, param4:Number = 1, param5:Number = 2, param6:Boolean = false, param7:Boolean = false, param8:uint = 2, param9:Boolean = false, param10:Boolean = false, param11:int = -1) : TweenMaxVars
       {
-         §§push(false);
-         var _loc13_:Boolean = true;
-         var _loc14_:* = §§pop();
          var _loc12_:Object = {
             "blurX":param1,
             "blurY":param2,
@@ -741,19 +458,11 @@ package com.greensock.data
             "addFilter":param10,
             "remove":param9
          };
-         if(!_loc14_)
+         if(param11 > -1)
          {
-            if(param11 > -1)
-            {
-               if(!_loc14_)
-               {
-                  addr007a:
-                  _loc12_.index = param11;
-               }
-            }
-            return _set("glowFilter",_loc12_,true);
+            _loc12_.index = param11;
          }
-         §§goto(addr007a);
+         return _set("glowFilter",_loc12_,true);
       }
       
       public function bezierThrough(param1:Array) : TweenMaxVars
@@ -773,27 +482,12 @@ package com.greensock.data
       
       public function frame(param1:int, param2:Boolean = false) : TweenMaxVars
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         §§push(§§findproperty(_set));
-         §§push("frame");
-         if(!(_loc4_ && Boolean(this)))
-         {
-            return §§pop()._set(§§pop(),param2 ? String(param1) : param1,true);
-         }
-         §§goto(addr0036);
+         return _set("frame",param2 ? String(param1) : param1,true);
       }
       
       public function ease(param1:Function, param2:Array = null) : TweenMaxVars
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(_loc4_ || Boolean(this))
-         {
-            _set("easeParams",param2);
-         }
+         _set("easeParams",param2);
          return _set("ease",param1);
       }
       
@@ -809,22 +503,11 @@ package com.greensock.data
       
       public function dynamicProps(param1:Object, param2:Object = null) : TweenMaxVars
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(_loc4_)
+         if(param2 != null)
          {
-            if(param2 != null)
-            {
-               if(!(_loc3_ && Boolean(param1)))
-               {
-                  addr0039:
-                  param1.params = param2;
-               }
-            }
-            return _set("dynamicProps",param1,true);
+            param1.params = param2;
          }
-         §§goto(addr0039);
+         return _set("dynamicProps",param1,true);
       }
       
       public function hexColors(param1:Object) : TweenMaxVars

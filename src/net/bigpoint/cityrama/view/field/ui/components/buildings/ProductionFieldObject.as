@@ -19,125 +19,42 @@ package net.bigpoint.cityrama.view.field.ui.components.buildings
       
       public function ProductionFieldObject(param1:BillboardAssetsReferenceHolder, param2:ProductionFieldObjectVo)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_)
-         {
-            super(param1,param2);
-            if(_loc3_)
-            {
-               this.prepareProductionSlotManager();
-               if(_loc3_)
-               {
-                  addr0037:
-                  this.prepareBuildUpManager();
-                  if(!(_loc4_ && Boolean(param2)))
-                  {
-                     addr004a:
-                     prepareAnimationSlotManager();
-                  }
-               }
-               return;
-            }
-            §§goto(addr0037);
-         }
-         §§goto(addr004a);
+         super(param1,param2);
+         this.prepareProductionSlotManager();
+         this.prepareBuildUpManager();
+         prepareAnimationSlotManager();
       }
       
       public function prepareBuildUpManager() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && Boolean(this)))
+         if(_buildUpManager == null)
          {
-            if(_buildUpManager == null)
-            {
-               if(_loc2_ || _loc1_)
-               {
-                  addr0047:
-                  _buildUpManager = new BuildUpManagerDefault();
-                  if(_loc2_ || Boolean(this))
-                  {
-                     addr0061:
-                     _buildUpManager.prepare(billboardObjectVo,super._billbordObjectContainer,super._assetCollection.buildUpAssets);
-                  }
-                  §§goto(addr0075);
-               }
-               §§goto(addr0061);
-            }
-            addr0075:
-            return;
+            _buildUpManager = new BuildUpManagerDefault();
+            _buildUpManager.prepare(billboardObjectVo,super._billbordObjectContainer,super._assetCollection.buildUpAssets);
          }
-         §§goto(addr0047);
       }
       
       public function prepareProductionSlotManager() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
+         if(this._productionSlotManager == null)
          {
-            §§push(this._productionSlotManager);
-            if(_loc2_)
-            {
-               if(§§pop() == null)
-               {
-                  if(_loc2_ || Boolean(this))
-                  {
-                     this._productionSlotManager = new ProductionSlotManager();
-                     if(!_loc1_)
-                     {
-                        addr004f:
-                        this._productionSlotManager.prepareProductionSlotManager(this.productionFieldObjectVo,super._billbordObjectContainer,super._assetCollection.mainAsset);
-                        addr004b:
-                     }
-                  }
-                  §§goto(addr0063);
-               }
-               §§goto(addr004b);
-            }
-            §§goto(addr004f);
+            this._productionSlotManager = new ProductionSlotManager();
          }
-         addr0063:
+         this._productionSlotManager.prepareProductionSlotManager(this.productionFieldObjectVo,super._billbordObjectContainer,super._assetCollection.mainAsset);
       }
       
       public function invalidateBuildUpManager() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || Boolean(this))
-         {
-            _buildUpManager.invalidate();
-            if(_loc1_)
-            {
-               §§goto(addr0033);
-            }
-            §§goto(addr0040);
-         }
-         addr0033:
+         _buildUpManager.invalidate();
          if(_basementViewManager != null)
          {
-            if(!_loc2_)
-            {
-               addr0040:
-               invalidateBasementViewManager(true);
-            }
+            invalidateBasementViewManager(true);
          }
       }
       
       public function invalidateProductionSlotManager() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            this._productionSlotManager.invalidateProductionSlotManager();
-         }
+         this._productionSlotManager.invalidateProductionSlotManager();
       }
       
       public function get productionFieldObjectVo() : ProductionFieldObjectVo
@@ -147,34 +64,14 @@ package net.bigpoint.cityrama.view.field.ui.components.buildings
       
       public function tick(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
+         this.billboardObjectVo.currentTimeStamp = param1;
+         if(billboardObjectVo.currentMode != "")
          {
-            this.billboardObjectVo.currentTimeStamp = param1;
-            if(!_loc2_)
+            if(this.productionFieldObjectVo.percentageOfRemainingTimer)
             {
-               if(billboardObjectVo.currentMode != "")
-               {
-                  if(!_loc2_)
-                  {
-                     addr0041:
-                     if(this.productionFieldObjectVo.percentageOfRemainingTimer)
-                     {
-                        if(_loc3_ || Boolean(this))
-                        {
-                           addr0059:
-                           invalidateIconStateManager();
-                        }
-                     }
-                  }
-               }
-               return;
+               invalidateIconStateManager();
             }
-            §§goto(addr0059);
          }
-         §§goto(addr0041);
       }
    }
 }

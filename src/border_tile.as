@@ -8,13 +8,7 @@ package
       
       public function border_tile(param1:int = 1, param2:int = 6)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_)
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
    }
 }

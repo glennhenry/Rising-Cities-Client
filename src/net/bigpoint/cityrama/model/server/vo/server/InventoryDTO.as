@@ -11,44 +11,17 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function InventoryDTO(param1:Object)
       {
-         §§push(false);
-         var _loc5_:Boolean = true;
-         var _loc6_:* = §§pop();
          var _loc2_:Object = null;
-         if(!(_loc6_ && Boolean(this)))
-         {
-            super();
-            if(!(_loc6_ && Boolean(this)))
-            {
-               this._id = param1.id;
-               if(!(_loc6_ && Boolean(param1)))
-               {
-                  this._configId = param1.c;
-                  if(_loc5_ || Boolean(_loc2_))
-                  {
-                     addr0072:
-                     this._bags = new Vector.<InventoryItemBagDTO>();
-                     if(_loc5_ || Boolean(this))
-                     {
-                        §§goto(addr008f);
-                     }
-                  }
-                  §§goto(addr0098);
-               }
-               §§goto(addr0072);
-            }
-         }
-         addr008f:
+         super();
+         this._id = param1.id;
+         this._configId = param1.c;
+         this._bags = new Vector.<InventoryItemBagDTO>();
          if(param1.b)
          {
             for each(_loc2_ in param1.b)
             {
-               if(!_loc6_)
-               {
-                  this._bags.push(new InventoryItemBagDTO(_loc2_));
-               }
+               this._bags.push(new InventoryItemBagDTO(_loc2_));
             }
-            addr0098:
          }
       }
       

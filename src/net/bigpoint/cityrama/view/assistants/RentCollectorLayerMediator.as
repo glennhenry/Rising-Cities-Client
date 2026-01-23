@@ -19,314 +19,84 @@ package net.bigpoint.cityrama.view.assistants
       
       public static const NAME:String = "RentCollectorLayerMediator";
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(!_loc2_)
-      {
-         NAME = "RentCollectorLayerMediator";
-      }
-      
       private var _viewProxy:AssistViewProxy;
       
       public function RentCollectorLayerMediator(param1:String, param2:Object)
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(_loc4_)
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
       
       override public function onRegister() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super.onRegister();
-            if(_loc2_)
-            {
-               this._viewProxy = facade.retrieveProxy(AssistViewProxy.NAME) as AssistViewProxy;
-               if(!(_loc1_ && Boolean(this)))
-               {
-                  this.addListener();
-               }
-            }
-         }
+         super.onRegister();
+         this._viewProxy = facade.retrieveProxy(AssistViewProxy.NAME) as AssistViewProxy;
+         this.addListener();
       }
       
       private function addListener() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc2_))
-         {
-            §§push(this.component);
-            if(!(_loc2_ && _loc2_))
-            {
-               §§pop().addEventListener(Event.CLOSE,this.handleClose);
-               if(!(_loc2_ && Boolean(this)))
-               {
-                  §§push(this.component);
-                  if(_loc1_ || _loc2_)
-                  {
-                     §§push(RentCollectorOffersItemRenderer.EVENT_PAYMENT);
-                     if(_loc1_)
-                     {
-                        §§pop().addEventListener(§§pop(),this.handleOpenPayment);
-                        if(!_loc2_)
-                        {
-                           §§push(this.component);
-                           if(!_loc2_)
-                           {
-                              addr008a:
-                              §§push(RentCollectorOffersItemRenderer.EVENT_TREASURY);
-                              if(!_loc2_)
-                              {
-                                 §§pop().addEventListener(§§pop(),this.handleOpenTreasury);
-                                 if(_loc1_ || Boolean(this))
-                                 {
-                                    addr00b2:
-                                    this.component.addEventListener(RentCollectorOffersItemRenderer.EVENT_PURCHASE,this.handlePurchase);
-                                    addr00ac:
-                                    addr00a9:
-                                 }
-                                 §§goto(addr00ba);
-                              }
-                              §§goto(addr00b2);
-                           }
-                           §§goto(addr00ac);
-                        }
-                        §§goto(addr00a9);
-                     }
-                     §§goto(addr00b2);
-                  }
-                  §§goto(addr008a);
-               }
-               §§goto(addr00ba);
-            }
-            §§goto(addr00ac);
-         }
-         addr00ba:
+         this.component.addEventListener(Event.CLOSE,this.handleClose);
+         this.component.addEventListener(RentCollectorOffersItemRenderer.EVENT_PAYMENT,this.handleOpenPayment);
+         this.component.addEventListener(RentCollectorOffersItemRenderer.EVENT_TREASURY,this.handleOpenTreasury);
+         this.component.addEventListener(RentCollectorOffersItemRenderer.EVENT_PURCHASE,this.handlePurchase);
       }
       
       override public function onRemove() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            this.removeListener();
-            if(!(_loc1_ && _loc1_))
-            {
-               addr0029:
-               super.onRemove();
-            }
-            return;
-         }
-         §§goto(addr0029);
+         this.removeListener();
+         super.onRemove();
       }
       
       private function removeListener() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc1_)
-         {
-            §§push(this.component);
-            if(_loc2_ || Boolean(this))
-            {
-               §§pop().removeEventListener(Event.CLOSE,this.handleClose);
-               if(!(_loc1_ && _loc1_))
-               {
-                  §§push(this.component);
-                  if(!_loc1_)
-                  {
-                     addr0059:
-                     §§push(RentCollectorOffersItemRenderer.EVENT_PAYMENT);
-                     if(!(_loc1_ && Boolean(this)))
-                     {
-                        §§pop().removeEventListener(§§pop(),this.handleOpenPayment);
-                        if(!(_loc1_ && _loc2_))
-                        {
-                           addr0081:
-                           §§push(this.component);
-                           if(!_loc1_)
-                           {
-                              addr0089:
-                              §§push(RentCollectorOffersItemRenderer.EVENT_TREASURY);
-                              if(_loc2_ || _loc2_)
-                              {
-                                 §§pop().removeEventListener(§§pop(),this.handleOpenTreasury);
-                                 if(_loc2_ || _loc2_)
-                                 {
-                                    addr00c3:
-                                    this.component.removeEventListener(RentCollectorOffersItemRenderer.EVENT_PURCHASE,this.handlePurchase);
-                                    addr00bd:
-                                    addr00ba:
-                                 }
-                                 return;
-                              }
-                              §§goto(addr00c3);
-                           }
-                           §§goto(addr00bd);
-                        }
-                        §§goto(addr00ba);
-                     }
-                     §§goto(addr00c3);
-                  }
-                  §§goto(addr0089);
-               }
-               §§goto(addr0081);
-            }
-            §§goto(addr0059);
-         }
-         §§goto(addr0081);
+         this.component.removeEventListener(Event.CLOSE,this.handleClose);
+         this.component.removeEventListener(RentCollectorOffersItemRenderer.EVENT_PAYMENT,this.handleOpenPayment);
+         this.component.removeEventListener(RentCollectorOffersItemRenderer.EVENT_TREASURY,this.handleOpenTreasury);
+         this.component.removeEventListener(RentCollectorOffersItemRenderer.EVENT_PURCHASE,this.handlePurchase);
       }
       
       private function handleOpenPayment(param1:Event) : void
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
-         if(_loc5_)
+         param1.stopPropagation();
+         StaticSoundDelegate.playSound(StaticSoundDelegate.BUTTON_CLICK);
+         if(param1.target is RentCollectorOffersItemRenderer)
          {
-            param1.stopPropagation();
-            if(_loc5_ || Boolean(param1))
+            if(RentCollectorOffersItemRenderer(param1.target).externalPackKey != "")
             {
-               addr002f:
-               StaticSoundDelegate.playSound(StaticSoundDelegate.BUTTON_CLICK);
+               var _loc3_:String = RentCollectorOffersItemRenderer(param1.target).externalPackKey;
+               sendNotification(ApplicationNotificationConstants.OPEN_PAYMENT_WITH_ITEM_BYJSCOMMAND,{
+                  "category":CityTreasuryProxy.PAYMENT_CATEGORY_EXTERNAL,
+                  "itemKey":"",
+                  "deeplink":false
+               });
             }
-            var _loc2_:Boolean = false;
-            var _loc3_:* = "";
-            if(_loc5_)
-            {
-               if(param1.target is RentCollectorOffersItemRenderer)
-               {
-                  if(_loc5_ || _loc2_)
-                  {
-                     §§push(RentCollectorOffersItemRenderer(param1.target).externalPackKey);
-                     if(_loc5_ || _loc2_)
-                     {
-                        if(§§pop() != "")
-                        {
-                           if(_loc5_)
-                           {
-                              §§push(RentCollectorOffersItemRenderer(param1.target).externalPackKey);
-                              if(_loc5_ || Boolean(this))
-                              {
-                                 addr00bd:
-                                 §§push(§§pop());
-                              }
-                              _loc3_ = §§pop();
-                              if(_loc5_)
-                              {
-                                 addr00c5:
-                                 sendNotification(ApplicationNotificationConstants.OPEN_PAYMENT_WITH_ITEM_BYJSCOMMAND,{
-                                    "category":CityTreasuryProxy.PAYMENT_CATEGORY_EXTERNAL,
-                                    "itemKey":_loc3_,
-                                    "deeplink":_loc2_
-                                 });
-                              }
-                           }
-                        }
-                        §§goto(addr00e2);
-                     }
-                     §§goto(addr00bd);
-                  }
-               }
-               addr00e2:
-               return;
-            }
-            §§goto(addr00c5);
          }
-         §§goto(addr002f);
       }
       
       private function handleOpenTreasury(param1:Event) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            param1.stopPropagation();
-            if(_loc3_)
-            {
-               addr002c:
-               StaticSoundDelegate.playSound(StaticSoundDelegate.BUTTON_CLICK);
-               if(!_loc2_)
-               {
-                  sendNotification(ApplicationNotificationConstants.OPEN_CURRENCY_PURCHASE,ServerResConst.RESOURCE_REALCURRENCY);
-               }
-            }
-            return;
-         }
-         §§goto(addr002c);
+         param1.stopPropagation();
+         StaticSoundDelegate.playSound(StaticSoundDelegate.BUTTON_CLICK);
+         sendNotification(ApplicationNotificationConstants.OPEN_CURRENCY_PURCHASE,ServerResConst.RESOURCE_REALCURRENCY);
       }
       
       private function handlePurchase(param1:Event) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
+         param1.stopPropagation();
+         if(param1.target is RentCollectorOffersItemRenderer)
          {
-            param1.stopPropagation();
-            if(_loc2_)
+            if(RentCollectorOffersItemRenderer(param1.target).assistConfigId != -1)
             {
-               if(param1.target is RentCollectorOffersItemRenderer)
-               {
-                  if(!_loc3_)
-                  {
-                     addr003e:
-                     if(RentCollectorOffersItemRenderer(param1.target).assistConfigId != -1)
-                     {
-                        if(_loc2_)
-                        {
-                           StaticSoundDelegate.playSound(StaticSoundDelegate.RC_SPEND);
-                           §§goto(addr0057);
-                        }
-                        §§goto(addr007c);
-                     }
-                     §§goto(addr009a);
-                  }
-                  addr0057:
-                  if(!(_loc3_ && Boolean(this)))
-                  {
-                     addr007c:
-                     facade.sendNotification(ApplicationNotificationConstants.BUY_ASSIST,RentCollectorOffersItemRenderer(param1.target).assistConfigId);
-                     if(_loc2_)
-                     {
-                        addr009a:
-                        this.handleClose();
-                     }
-                  }
-                  return;
-               }
-               §§goto(addr009a);
+               StaticSoundDelegate.playSound(StaticSoundDelegate.RC_SPEND);
+               facade.sendNotification(ApplicationNotificationConstants.BUY_ASSIST,RentCollectorOffersItemRenderer(param1.target).assistConfigId);
             }
-            §§goto(addr007c);
          }
-         §§goto(addr003e);
+         this.handleClose();
       }
       
       private function handleClose(param1:Event = null) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.mediatorName);
-         }
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.mediatorName);
       }
       
       override public function listNotificationInterests() : Array
@@ -336,51 +106,18 @@ package net.bigpoint.cityrama.view.assistants
       
       override public function handleNotification(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         var _loc2_:* = param1.getName();
-         if(!(_loc3_ && Boolean(_loc2_)))
+         switch(param1.getName())
          {
-            if(ApplicationNotificationConstants.REALCURRENCY_CHANGED === _loc2_)
-            {
-               addr006f:
-               §§push(0);
-               if(_loc4_ || Boolean(this))
-               {
-               }
-            }
-            else
-            {
-               §§push(1);
-            }
-            switch(§§pop())
-            {
-               case 0:
-                  this.setData(this._viewProxy.rentCollectorOffers);
-                  if(_loc4_ || Boolean(param1))
-                  {
-                  }
-            }
-            return;
+            case ApplicationNotificationConstants.REALCURRENCY_CHANGED:
+               this.setData(this._viewProxy.rentCollectorOffers);
          }
-         §§goto(addr006f);
       }
       
       public function setData(param1:Object) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
+         if(param1 is ArrayCollection)
          {
-            if(param1 is ArrayCollection)
-            {
-               if(!(_loc3_ && _loc3_))
-               {
-                  this.component.data = param1 as ArrayCollection;
-               }
-            }
+            this.component.data = param1 as ArrayCollection;
          }
       }
       

@@ -11,29 +11,10 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigProfessionalLevelDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(param1)))
-         {
-            super();
-            if(!(_loc2_ && Boolean(this)))
-            {
-               this._id = param1.pli;
-               if(_loc3_)
-               {
-                  this._xpThreshold = param1.xp;
-                  if(!_loc2_)
-                  {
-                     addr005a:
-                     this._skillpointGain = param1.sp;
-                  }
-                  §§goto(addr0063);
-               }
-               §§goto(addr005a);
-            }
-         }
-         addr0063:
+         super();
+         this._id = param1.pli;
+         this._xpThreshold = param1.xp;
+         this._skillpointGain = param1.sp;
       }
       
       public function get id() : Number

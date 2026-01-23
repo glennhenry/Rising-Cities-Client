@@ -11,29 +11,10 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function CitySquareDetailViewVo(param1:Vector.<EventDetailViewVo>, param2:Number, param3:EventDetailViewVo = null)
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
-         if(_loc4_ || Boolean(param1))
-         {
-            super();
-            if(_loc4_)
-            {
-               this._eventList = param1;
-               if(_loc4_)
-               {
-                  this._activeEvent = param3;
-                  if(_loc4_)
-                  {
-                     addr0053:
-                     this._time = param2;
-                  }
-               }
-               §§goto(addr0059);
-            }
-            §§goto(addr0053);
-         }
-         addr0059:
+         super();
+         this._eventList = param1;
+         this._activeEvent = param3;
+         this._time = param2;
       }
       
       public function get activeEvent() : EventDetailViewVo
@@ -48,14 +29,7 @@ package net.bigpoint.cityrama.model.detailViews.vo
       
       public function get isEventActive() : Boolean
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         §§push(this._activeEvent == null);
-         if(!_loc1_)
-         {
-            return !§§pop();
-         }
+         return this._activeEvent != null;
       }
       
       public function get time() : Number

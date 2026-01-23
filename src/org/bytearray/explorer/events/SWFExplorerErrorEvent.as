@@ -7,23 +7,9 @@ package org.bytearray.explorer.events
       
       public static const NO_DEFINITIONS:String = "noDefinitions";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(!(_loc1_ && _loc2_))
-      {
-         NO_DEFINITIONS = "noDefinitions";
-      }
-      
       public function SWFExplorerErrorEvent(param1:String)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            super(param1,false,false);
-         }
+         super(param1,false,false);
       }
       
       override public function clone() : Event

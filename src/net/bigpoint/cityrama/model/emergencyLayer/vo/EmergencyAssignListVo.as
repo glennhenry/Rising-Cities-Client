@@ -11,63 +11,20 @@ package net.bigpoint.cityrama.model.emergencyLayer.vo
       
       public function EmergencyAssignListVo(param1:EmergencyAssignVo, param2:Vector.<ProfessionalListInfoVo>, param3:int)
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
-         if(_loc5_)
-         {
-            super();
-            if(!(_loc4_ && Boolean(param3)))
-            {
-               this._assignVo = param1;
-               if(!(_loc4_ && Boolean(param1)))
-               {
-                  this._professionalList = param2;
-                  if(_loc5_ || Boolean(this))
-                  {
-                     §§goto(addr006c);
-                  }
-                  §§goto(addr007f);
-               }
-               addr006c:
-               this._professionalList.sort(this.sortOnDept);
-               if(_loc5_)
-               {
-                  addr007f:
-                  this._slotIndex = param3;
-               }
-               return;
-            }
-         }
-         §§goto(addr007f);
+         super();
+         this._assignVo = param1;
+         this._professionalList = param2;
+         this._professionalList.sort(this.sortOnDept);
+         this._slotIndex = param3;
       }
       
       private function sortOnDept(param1:ProfessionalListInfoVo, param2:ProfessionalListInfoVo) : int
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_ || Boolean(param1))
+         if(param1.department == this.requiredSlotDepartment)
          {
-            if(param1.department == this.requiredSlotDepartment)
-            {
-               if(_loc3_ || _loc3_)
-               {
-                  §§push(-1);
-                  if(_loc3_ || _loc3_)
-                  {
-                     return §§pop();
-                  }
-               }
-               else
-               {
-                  addr0059:
-                  return 1;
-               }
-               return §§pop();
-            }
+            return -1;
          }
-         §§goto(addr0059);
+         return 1;
       }
       
       public function get professionalList() : Vector.<ProfessionalListInfoVo>

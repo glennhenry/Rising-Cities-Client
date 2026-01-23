@@ -16,35 +16,17 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function CityTreasuryRealCurrencyPackItemVo(param1:ConfigPaymentPackDTO)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            super(param1);
-         }
+         super(param1);
       }
       
       public function set priceExternal(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this._priceExternal = param1;
-         }
+         this._priceExternal = param1;
       }
       
       public function set discountedPriceExternal(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._discountedPriceExternal = param1;
-         }
+         this._discountedPriceExternal = param1;
       }
       
       override public function get price() : Number
@@ -54,14 +36,7 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       override public function get hasDiscount() : Boolean
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         §§push(this._discountedPriceExternal == -1);
-         if(!(_loc1_ && Boolean(this)))
-         {
-            return !§§pop();
-         }
+         return this._discountedPriceExternal != -1;
       }
       
       public function get discountedPrice() : Number
@@ -76,24 +51,12 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function set currency(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
-         {
-            this._currency = param1;
-         }
+         this._currency = param1;
       }
       
       public function set packContentAmount(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._packContentAmount = param1;
-         }
+         this._packContentAmount = param1;
       }
       
       override public function get packContentAmount() : Number
@@ -108,26 +71,12 @@ package net.bigpoint.cityrama.model.cityTreasury.vo.specificContentVos
       
       public function get discountPriceLabel() : String
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         §§push(this.discountedPrice.toFixed(2) + " ");
-         if(!(_loc2_ && _loc2_))
-         {
-            return §§pop() + this._currency;
-         }
+         return this.discountedPrice.toFixed(2) + " " + this._currency;
       }
       
       public function get priceLabel() : String
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         §§push(this.price.toFixed(2) + " ");
-         if(_loc1_)
-         {
-            return §§pop() + this._currency;
-         }
+         return this.price.toFixed(2) + " " + this._currency;
       }
    }
 }

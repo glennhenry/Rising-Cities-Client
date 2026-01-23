@@ -25,324 +25,111 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function BoosterpackItemRenderer()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc2_)
-         {
-            super();
-            if(_loc2_)
-            {
-               mx_internal::_document = this;
-               if(_loc2_)
-               {
-                  this.autoDrawBackground = false;
-                  if(!(_loc1_ && _loc2_))
-                  {
-                     this.width = 120;
-                     if(!_loc1_)
-                     {
-                        this.height = 150;
-                        if(!_loc1_)
-                        {
-                           this.mxmlContent = [this._BoosterpackItemRenderer_GridItemComponent1_i()];
-                           if(!(_loc1_ && Boolean(this)))
-                           {
-                              addr0081:
-                              this.currentState = "normal";
-                              if(!_loc1_)
-                              {
-                                 addr008d:
-                                 this.addEventListener("rollOut",this.___BoosterpackItemRenderer_ItemRenderer1_rollOut);
-                                 if(!_loc1_)
-                                 {
-                                    §§goto(addr009e);
-                                 }
-                              }
-                              §§goto(addr00da);
-                           }
-                        }
-                        §§goto(addr008d);
-                     }
-                     §§goto(addr0081);
-                  }
-                  §§goto(addr00da);
-               }
-               addr009e:
-               this.addEventListener("rollOver",this.___BoosterpackItemRenderer_ItemRenderer1_rollOver);
-               if(!(_loc1_ && _loc2_))
-               {
-                  addr00b7:
-                  this.addEventListener("click",this.___BoosterpackItemRenderer_ItemRenderer1_click);
-                  if(_loc2_ || _loc1_)
-                  {
-                     addr00da:
-                     states = [new State({
-                        "name":"normal",
-                        "overrides":[]
-                     }),new State({
-                        "name":"disabled",
-                        "overrides":[]
-                     })];
-                  }
-               }
-               return;
-            }
-            §§goto(addr0081);
-         }
-         §§goto(addr00b7);
+         super();
+         mx_internal::_document = this;
+         this.autoDrawBackground = false;
+         this.width = 120;
+         this.height = 150;
+         this.mxmlContent = [this._BoosterpackItemRenderer_GridItemComponent1_i()];
+         this.currentState = "normal";
+         this.addEventListener("rollOut",this.___BoosterpackItemRenderer_ItemRenderer1_rollOut);
+         this.addEventListener("rollOver",this.___BoosterpackItemRenderer_ItemRenderer1_rollOver);
+         this.addEventListener("click",this.___BoosterpackItemRenderer_ItemRenderer1_click);
+         states = [new State({
+            "name":"normal",
+            "overrides":[]
+         }),new State({
+            "name":"disabled",
+            "overrides":[]
+         })];
       }
       
       override public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
+         super.moduleFactory = param1;
+         if(this.__moduleFactoryInitialized)
          {
-            super.moduleFactory = param1;
-            if(_loc2_ || Boolean(this))
-            {
-               if(this.__moduleFactoryInitialized)
-               {
-                  if(!_loc3_)
-                  {
-                     §§goto(addr004a);
-                  }
-               }
-               this.__moduleFactoryInitialized = true;
-               return;
-            }
+            return;
          }
-         addr004a:
+         this.__moduleFactoryInitialized = true;
       }
       
       override public function initialize() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc1_)
-         {
-            super.initialize();
-         }
+         super.initialize();
       }
       
       override public function set data(param1:Object) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
+         if(param1 is BoosterpackVo)
          {
-            §§push(param1 is BoosterpackVo);
-            if(_loc3_ || _loc2_)
+            if(!RandomUtilities.isEqual(param1,this._data))
             {
-               if(§§pop())
-               {
-                  if(_loc3_)
-                  {
-                     addr005e:
-                     if(!RandomUtilities.isEqual(param1,this._data))
-                     {
-                        if(!_loc2_)
-                        {
-                           super.data = param1;
-                           if(!_loc2_)
-                           {
-                              addr0070:
-                              this._data = param1 as BoosterpackVo;
-                              if(!_loc2_)
-                              {
-                                 this._dataIsDirty = true;
-                                 if(_loc3_)
-                                 {
-                                    addr0088:
-                                    invalidateProperties();
-                                 }
-                                 §§goto(addr008d);
-                              }
-                              §§goto(addr0088);
-                           }
-                           §§goto(addr008d);
-                        }
-                        §§goto(addr0070);
-                     }
-                  }
-               }
-               addr008d:
-               return;
+               super.data = param1;
+               this._data = param1 as BoosterpackVo;
+               this._dataIsDirty = true;
+               invalidateProperties();
             }
-            §§goto(addr005e);
          }
-         §§goto(addr0070);
       }
       
       protected function clickHandler(param1:MouseEvent) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:ItemClickEvent = new ItemClickEvent(ItemClickEvent.ITEM_CLICK,true);
-         if(_loc3_ || Boolean(_loc2_))
-         {
-            _loc2_.item = this._data;
-            if(_loc3_ || _loc3_)
-            {
-               _loc2_.index = itemIndex;
-               if(!(_loc4_ && Boolean(_loc2_)))
-               {
-                  dispatchEvent(_loc2_);
-               }
-            }
-         }
+         _loc2_.item = this._data;
+         _loc2_.index = itemIndex;
+         dispatchEvent(_loc2_);
       }
       
       override protected function commitProperties() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
+         super.commitProperties();
+         if(this._dataIsDirty)
          {
-            super.commitProperties();
-            if(!_loc1_)
-            {
-               if(this._dataIsDirty)
-               {
-                  if(!(_loc1_ && _loc2_))
-                  {
-                     this._dataIsDirty = false;
-                     if(_loc2_)
-                     {
-                        addr005b:
-                        §§push(this.content);
-                        if(!(_loc1_ && _loc1_))
-                        {
-                           §§pop().data = this._data;
-                           if(!_loc1_)
-                           {
-                              addr007b:
-                              this.content.itemIndex = itemIndex;
-                              addr0077:
-                           }
-                           §§goto(addr0081);
-                        }
-                        §§goto(addr007b);
-                     }
-                     §§goto(addr0081);
-                  }
-                  §§goto(addr005b);
-               }
-               addr0081:
-               return;
-            }
-            §§goto(addr005b);
+            this._dataIsDirty = false;
+            this.content.data = this._data;
+            this.content.itemIndex = itemIndex;
          }
-         §§goto(addr0077);
       }
       
       private function rollOutHandler(param1:MouseEvent) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            dispatchEvent(new UIInfolayerDispatcherEvent(UIInfolayerDispatcherEvent.HIDE_UI_INFOLAYER));
-         }
+         dispatchEvent(new UIInfolayerDispatcherEvent(UIInfolayerDispatcherEvent.HIDE_UI_INFOLAYER));
       }
       
       private function rollOverHandler(param1:MouseEvent) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            dispatchEvent(new UIInfolayerDispatcherEvent(UIInfolayerDispatcherEvent.SHOW_UI_INFOLAYER,UIInfolayerDispatcherEvent.CALLER_TYPE_BOOSTER,this._data.config.id));
-         }
+         dispatchEvent(new UIInfolayerDispatcherEvent(UIInfolayerDispatcherEvent.SHOW_UI_INFOLAYER,UIInfolayerDispatcherEvent.CALLER_TYPE_BOOSTER,this._data.config.id));
       }
       
       private function _BoosterpackItemRenderer_GridItemComponent1_i() : GridItemComponent
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:GridItemComponent = new GridItemComponent();
-         if(_loc3_)
+         _loc1_.percentWidth = 100;
+         _loc1_.percentHeight = 100;
+         _loc1_.id = "content";
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 100;
-            if(!(_loc2_ && _loc2_))
-            {
-               _loc1_.percentHeight = 100;
-               if(!(_loc2_ && Boolean(_loc1_)))
-               {
-                  addr0052:
-                  _loc1_.id = "content";
-                  if(_loc3_ || _loc2_)
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(!(_loc2_ && Boolean(_loc1_)))
-                        {
-                           _loc1_.document = this;
-                           if(_loc3_ || Boolean(_loc1_))
-                           {
-                              §§goto(addr0098);
-                           }
-                           §§goto(addr00aa);
-                        }
-                     }
-                  }
-                  addr0098:
-                  this.content = _loc1_;
-                  if(_loc3_ || Boolean(this))
-                  {
-                     addr00aa:
-                     BindingManager.executeBindings(this,"content",this.content);
-                  }
-                  §§goto(addr00b7);
-               }
-               addr00b7:
-               return _loc1_;
-            }
-            §§goto(addr0098);
+            _loc1_.document = this;
          }
-         §§goto(addr0052);
+         this.content = _loc1_;
+         BindingManager.executeBindings(this,"content",this.content);
+         return _loc1_;
       }
       
       public function ___BoosterpackItemRenderer_ItemRenderer1_rollOut(param1:MouseEvent) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc3_)
-         {
-            this.rollOutHandler(param1);
-         }
+         this.rollOutHandler(param1);
       }
       
       public function ___BoosterpackItemRenderer_ItemRenderer1_rollOver(param1:MouseEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc3_)
-         {
-            this.rollOverHandler(param1);
-         }
+         this.rollOverHandler(param1);
       }
       
       public function ___BoosterpackItemRenderer_ItemRenderer1_click(param1:MouseEvent) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this.clickHandler(param1);
-         }
+         this.clickHandler(param1);
       }
       
       [Bindable(event="propertyChange")]
@@ -353,36 +140,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set content(param1:GridItemComponent) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._951530617content;
-         if(!_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._951530617content = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_ || _loc3_)
-               {
-                  this._951530617content = param1;
-                  if(_loc3_ || _loc3_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_)
-                        {
-                           addr006d:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"content",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr007c);
-                  }
-                  §§goto(addr006d);
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"content",_loc2_,param1));
             }
-            addr007c:
-            return;
          }
-         §§goto(addr006d);
       }
    }
 }

@@ -18,14 +18,6 @@ package net.bigpoint.cityrama.view.miniLayer
       
       public static const NAME:String = "UpgradeQueryMiniLayerMediator";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(!_loc1_)
-      {
-         NAME = "UpgradeQueryMiniLayerMediator";
-      }
-      
       private var _soundProxy:SoundProxy;
       
       private var _billboardObjVo:BillboardObjectVo;
@@ -34,218 +26,69 @@ package net.bigpoint.cityrama.view.miniLayer
       
       public function UpgradeQueryMiniLayerMediator(param1:String, param2:Object)
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(_loc4_)
-         {
-            super(param1,param2);
-            if(!_loc3_)
-            {
-               this._soundProxy = facade.retrieveProxy(SoundProxy.NAME) as SoundProxy;
-            }
-         }
+         super(param1,param2);
+         this._soundProxy = facade.retrieveProxy(SoundProxy.NAME) as SoundProxy;
       }
       
       private function setLayerData() : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:MiniLayerProxy = facade.retrieveProxy(MiniLayerProxy.NAME) as MiniLayerProxy;
-         if(_loc3_ || Boolean(_loc1_))
-         {
-            this.component.setData(_loc1_.getUpgradeVo(this._billboardObjVo));
-         }
+         this.component.setData(_loc1_.getUpgradeVo(this._billboardObjVo));
       }
       
       private function addListener() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc2_))
-         {
-            §§push(this.component);
-            if(!(_loc2_ && _loc1_))
-            {
-               §§pop().confirmUpgrade.addEventListener(MouseEvent.CLICK,this.handleConfirm);
-               if(!_loc2_)
-               {
-                  addr004b:
-                  §§push(this.component);
-                  if(_loc1_)
-                  {
-                     §§pop().denyUpgrade.addEventListener(MouseEvent.CLICK,this.handleAbort);
-                     if(!(_loc2_ && Boolean(this)))
-                     {
-                        addr007c:
-                        this.component.addEventListener(Event.CLOSE,this.handleClose);
-                     }
-                     §§goto(addr0089);
-                  }
-                  §§goto(addr007c);
-               }
-               addr0089:
-               return;
-            }
-            §§goto(addr007c);
-         }
-         §§goto(addr004b);
+         this.component.confirmUpgrade.addEventListener(MouseEvent.CLICK,this.handleConfirm);
+         this.component.denyUpgrade.addEventListener(MouseEvent.CLICK,this.handleAbort);
+         this.component.addEventListener(Event.CLOSE,this.handleClose);
       }
       
       private function handleClose(param1:Event) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
-         {
-            this.finalCall();
-         }
+         this.finalCall();
       }
       
       private function handleAbort(param1:MouseEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this._soundProxy.playButtonClick();
-            if(_loc2_ || Boolean(param1))
-            {
-               addr002e:
-               this.finalCall();
-            }
-            return;
-         }
-         §§goto(addr002e);
+         this._soundProxy.playButtonClick();
+         this.finalCall();
       }
       
       private function handleConfirm(param1:MouseEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
+         this._soundProxy.playButtonClick();
+         if(this._billboardObjVo.isHarvestReady)
          {
-            this._soundProxy.playButtonClick();
-            if(_loc2_)
-            {
-               if(this._billboardObjVo.isHarvestReady)
-               {
-                  if(_loc2_ || Boolean(this))
-                  {
-                     addr0046:
-                     sendNotification(ServerNotificationConstants.CLIENT_MESSAGE_PLAYFIELD_BUILDING_HARVESTPHASE_PROCESS,{
-                        "vo":this._billboardObjVo,
-                        "silent":true
-                     });
-                     if(_loc2_)
-                     {
-                        facade.sendNotification(ApplicationNotificationConstants.UPGRADE_BILLBOARD_BUILDING,this._billboardObjVo);
-                        addr0063:
-                        if(_loc2_ || Boolean(param1))
-                        {
-                           this.finalCall(true);
-                           if(!_loc3_)
-                           {
-                              addr0096:
-                              sendNotification(ApplicationNotificationConstants.CELEBRATING_CITIZEN,this._billboardObjVo);
-                           }
-                           return;
-                        }
-                     }
-                  }
-                  §§goto(addr0096);
-               }
-            }
-            §§goto(addr0063);
+            sendNotification(ServerNotificationConstants.CLIENT_MESSAGE_PLAYFIELD_BUILDING_HARVESTPHASE_PROCESS,{
+               "vo":this._billboardObjVo,
+               "silent":true
+            });
          }
-         §§goto(addr0046);
+         facade.sendNotification(ApplicationNotificationConstants.UPGRADE_BILLBOARD_BUILDING,this._billboardObjVo);
+         this.finalCall(true);
+         sendNotification(ApplicationNotificationConstants.CELEBRATING_CITIZEN,this._billboardObjVo);
       }
       
       override public function onRemove() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            §§push(this.component);
-            if(_loc1_ || _loc1_)
-            {
-               §§pop().confirmUpgrade.removeEventListener(MouseEvent.CLICK,this.handleConfirm);
-               if(!(_loc2_ && Boolean(this)))
-               {
-                  §§push(this.component);
-                  if(!_loc2_)
-                  {
-                     §§pop().denyUpgrade.removeEventListener(MouseEvent.CLICK,this.handleAbort);
-                     addr0053:
-                     if(!_loc2_)
-                     {
-                        addr0074:
-                        this.component.removeEventListener(Event.CLOSE,this.handleClose);
-                        if(!(_loc2_ && Boolean(this)))
-                        {
-                           addr008e:
-                           super.onRemove();
-                        }
-                     }
-                     §§goto(addr0093);
-                  }
-                  §§goto(addr0074);
-               }
-               addr0093:
-               return;
-            }
-            §§goto(addr0053);
-         }
-         §§goto(addr008e);
+         this.component.confirmUpgrade.removeEventListener(MouseEvent.CLICK,this.handleConfirm);
+         this.component.denyUpgrade.removeEventListener(MouseEvent.CLICK,this.handleAbort);
+         this.component.removeEventListener(Event.CLOSE,this.handleClose);
+         super.onRemove();
       }
       
       private function finalCall(param1:Boolean = false) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
+         this.component.confirmUpgrade.removeEventListener(MouseEvent.CLICK,this.handleConfirm);
+         this.component.denyUpgrade.removeEventListener(MouseEvent.CLICK,this.handleAbort);
+         if(param1)
          {
-            §§push(this.component);
-            if(!(_loc3_ && Boolean(this)))
-            {
-               §§pop().confirmUpgrade.removeEventListener(MouseEvent.CLICK,this.handleConfirm);
-               if(!_loc3_)
-               {
-                  §§goto(addr0051);
-               }
-               §§goto(addr0072);
-            }
-            addr0051:
-            this.component.denyUpgrade.removeEventListener(MouseEvent.CLICK,this.handleAbort);
-            if(!_loc3_)
-            {
-               addr0072:
-               if(param1)
-               {
-                  if(_loc2_ || _loc2_)
-                  {
-                     facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE_ALL);
-                     if(_loc2_)
-                     {
-                     }
-                  }
-               }
-               else
-               {
-                  facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.mediatorName);
-               }
-            }
-            §§goto(addr00a5);
+            facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE_ALL);
          }
-         addr00a5:
+         else
+         {
+            facade.sendNotification(ApplicationNotificationConstants.POPUP_REMOVE,this.mediatorName);
+         }
       }
       
       public function get component() : UpgradeQueryMiniLayer
@@ -255,50 +98,16 @@ package net.bigpoint.cityrama.view.miniLayer
       
       public function setData(param1:Object) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(param1))
+         if(param1.billboardVo is BillboardObjectVo)
          {
-            if(param1.billboardVo is BillboardObjectVo)
+            this._billboardObjVo = BillboardObjectVo(param1.billboardVo);
+            if(param1.viewComponent)
             {
-               if(!(_loc3_ && Boolean(this)))
-               {
-                  this._billboardObjVo = BillboardObjectVo(param1.billboardVo);
-                  if(_loc2_ || Boolean(param1))
-                  {
-                     addr0063:
-                     if(param1.viewComponent)
-                     {
-                        if(_loc2_ || Boolean(param1))
-                        {
-                           addr0085:
-                           this._parentViewComponent = param1.viewComponent;
-                           if(!_loc3_)
-                           {
-                              addr0094:
-                              this.setLayerData();
-                              if(_loc2_ || _loc3_)
-                              {
-                                 addr00a7:
-                                 this.addListener();
-                              }
-                              §§goto(addr00ad);
-                           }
-                           §§goto(addr00a7);
-                        }
-                        §§goto(addr00ad);
-                     }
-                     §§goto(addr0094);
-                  }
-                  §§goto(addr00a7);
-               }
-               §§goto(addr0063);
+               this._parentViewComponent = param1.viewComponent;
             }
-            addr00ad:
-            return;
+            this.setLayerData();
+            this.addListener();
          }
-         §§goto(addr0085);
       }
    }
 }

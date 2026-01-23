@@ -9,24 +9,9 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigTagDTO(param1:Object)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            super();
-            if(_loc2_ || _loc3_)
-            {
-               addr0041:
-               this._tagId = param1.id;
-               if(!_loc3_)
-               {
-                  this._tagName = param1.tn;
-               }
-            }
-            return;
-         }
-         §§goto(addr0041);
+         super();
+         this._tagId = param1.id;
+         this._tagName = param1.tn;
       }
       
       public function get tagName() : String

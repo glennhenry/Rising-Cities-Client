@@ -9,26 +9,14 @@ package net.bigpoint.cityrama.controller.options
       
       public function OptionsMusicButtonChangedStateCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
          var _loc2_:Boolean = param1.getBody() as Boolean;
          var _loc3_:SoundProxy = facade.retrieveProxy(SoundProxy.NAME) as SoundProxy;
-         if(!_loc4_)
-         {
-            _loc3_.isBackgroundSoundOff = _loc2_;
-         }
+         _loc3_.isBackgroundSoundOff = _loc2_;
       }
    }
 }

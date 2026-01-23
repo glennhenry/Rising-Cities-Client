@@ -9,25 +9,9 @@ package net.bigpoint.cityrama.model.floater
       
       public function FloaterVo(param1:String, param2:uint = 1854546)
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         if(!_loc3_)
-         {
-            super();
-            if(_loc4_)
-            {
-               this._text = param1;
-               if(_loc4_)
-               {
-                  addr002e:
-                  this._glowColor = param2;
-               }
-               §§goto(addr0033);
-            }
-            §§goto(addr002e);
-         }
-         addr0033:
+         super();
+         this._text = param1;
+         this._glowColor = param2;
       }
       
       public function get text() : String

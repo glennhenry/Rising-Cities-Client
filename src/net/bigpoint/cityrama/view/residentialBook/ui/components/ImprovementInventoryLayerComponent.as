@@ -22,18 +22,6 @@ package net.bigpoint.cityrama.view.residentialBook.ui.components
       
       public static const ITEM_SELECTED:String = "ITEM_SELECTED";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(!(_loc1_ && _loc1_))
-      {
-         DESELECT_ALL = "DESELECT_ALL";
-         if(_loc2_)
-         {
-            ITEM_SELECTED = "ITEM_SELECTED";
-         }
-      }
-      
       private var _1808398663improvementItemList:StandardInventoryList;
       
       private var __moduleFactoryInitialized:Boolean = false;
@@ -44,299 +32,95 @@ package net.bigpoint.cityrama.view.residentialBook.ui.components
       
       public function ImprovementInventoryLayerComponent()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc1_)
-         {
-            super();
-            if(!_loc2_)
-            {
-               mx_internal::_document = this;
-               if(_loc1_)
-               {
-                  this.percentWidth = 100;
-                  if(!_loc2_)
-                  {
-                     this.percentHeight = 100;
-                     if(!_loc2_)
-                     {
-                        §§goto(addr005f);
-                     }
-                     §§goto(addr0077);
-                  }
-                  addr005f:
-                  this.mxmlContent = [this._ImprovementInventoryLayerComponent_StandardInventoryList1_i()];
-                  if(_loc1_ || Boolean(this))
-                  {
-                     addr0077:
-                     this.addEventListener("creationComplete",this.___ImprovementInventoryLayerComponent_Group1_creationComplete);
-                  }
-                  §§goto(addr0083);
-               }
-               §§goto(addr0077);
-            }
-            addr0083:
-            return;
-         }
-         §§goto(addr005f);
+         super();
+         mx_internal::_document = this;
+         this.percentWidth = 100;
+         this.percentHeight = 100;
+         this.mxmlContent = [this._ImprovementInventoryLayerComponent_StandardInventoryList1_i()];
+         this.addEventListener("creationComplete",this.___ImprovementInventoryLayerComponent_Group1_creationComplete);
       }
       
       override public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
+         super.moduleFactory = param1;
+         if(this.__moduleFactoryInitialized)
          {
-            super.moduleFactory = param1;
-            if(_loc2_ || _loc3_)
-            {
-               if(this.__moduleFactoryInitialized)
-               {
-                  if(_loc2_ || Boolean(this))
-                  {
-                     return;
-                  }
-               }
-               else
-               {
-                  this.__moduleFactoryInitialized = true;
-               }
-            }
+            return;
          }
+         this.__moduleFactoryInitialized = true;
       }
       
       override public function initialize() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super.initialize();
-         }
+         super.initialize();
       }
       
       private function handleCreationComplete() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || _loc1_)
-         {
-            §§push(this.improvementItemList);
-            if(_loc1_ || _loc1_)
-            {
-               §§pop().addEventListener(IndexChangeEvent.CHANGE,this.handleInventoryIndexChanged);
-               if(_loc1_)
-               {
-                  addr004f:
-                  this.improvementItemList.addEventListener(ImprovementInventoryItemRendererEvent.SELECTION_CHANGED,this.handleItemSelected);
-                  addr004b:
-               }
-               return;
-            }
-            §§goto(addr004f);
-         }
-         §§goto(addr004b);
+         this.improvementItemList.addEventListener(IndexChangeEvent.CHANGE,this.handleInventoryIndexChanged);
+         this.improvementItemList.addEventListener(ImprovementInventoryItemRendererEvent.SELECTION_CHANGED,this.handleItemSelected);
       }
       
       private function handleItemSelected(param1:ImprovementInventoryItemRendererEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            dispatchEvent(new Event(ITEM_SELECTED,true));
-         }
+         dispatchEvent(new Event(ITEM_SELECTED,true));
       }
       
       private function handleInventoryIndexChanged(param1:IndexChangeEvent) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || _loc2_)
+         if(param1.newIndex == -1)
          {
-            if(param1.newIndex == -1)
-            {
-               if(_loc3_ || Boolean(this))
-               {
-                  dispatchEvent(new Event(DESELECT_ALL,true));
-               }
-            }
+            dispatchEvent(new Event(DESELECT_ALL,true));
          }
       }
       
       override protected function commitProperties() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
+         super.commitProperties();
+         if(Boolean(this._data) && this._isDirty)
          {
-            super.commitProperties();
-            if(_loc1_ || Boolean(this))
-            {
-               §§push(Boolean(this._data));
-               if(!_loc2_)
-               {
-                  var _temp_3:* = §§pop();
-                  §§push(_temp_3);
-                  if(_temp_3)
-                  {
-                     if(!_loc2_)
-                     {
-                        addr004d:
-                        §§pop();
-                        if(!_loc2_)
-                        {
-                           §§goto(addr0067);
-                        }
-                        §§goto(addr0078);
-                     }
-                  }
-                  addr0067:
-                  §§push(this._isDirty);
-                  if(!_loc2_)
-                  {
-                     §§push(§§pop());
-                  }
-                  if(§§pop())
-                  {
-                     if(!(_loc2_ && _loc2_))
-                     {
-                        addr0078:
-                        this._isDirty = false;
-                        if(_loc1_)
-                        {
-                           addr0082:
-                           this.improvementItemList.dataProvider = this._data;
-                        }
-                     }
-                  }
-                  return;
-               }
-               §§goto(addr004d);
-            }
-            §§goto(addr0082);
+            this._isDirty = false;
+            this.improvementItemList.dataProvider = this._data;
          }
-         §§goto(addr0078);
       }
       
       public function set data(param1:IList) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
+         if(!RandomUtilities.isEqual(param1,this._data))
          {
-            if(!RandomUtilities.isEqual(param1,this._data))
-            {
-               if(!_loc3_)
-               {
-                  this._data = param1;
-                  if(!(_loc3_ && Boolean(param1)))
-                  {
-                     addr0049:
-                     this._isDirty = true;
-                     if(!(_loc3_ && Boolean(param1)))
-                     {
-                        addr005b:
-                        invalidateProperties();
-                     }
-                     §§goto(addr0060);
-                  }
-                  §§goto(addr005b);
-               }
-            }
-            addr0060:
-            return;
+            this._data = param1;
+            this._isDirty = true;
+            invalidateProperties();
          }
-         §§goto(addr0049);
       }
       
       private function _ImprovementInventoryLayerComponent_StandardInventoryList1_i() : StandardInventoryList
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:StandardInventoryList = new StandardInventoryList();
-         if(!_loc2_)
+         _loc1_.itemRenderer = this._ImprovementInventoryLayerComponent_ClassFactory1_c();
+         _loc1_.percentWidth = 100;
+         _loc1_.percentHeight = 100;
+         _loc1_.setStyle("skinClass",ImprovementInventoryLayerSkin);
+         _loc1_.id = "improvementItemList";
+         if(!_loc1_.document)
          {
-            _loc1_.itemRenderer = this._ImprovementInventoryLayerComponent_ClassFactory1_c();
-            if(!_loc2_)
-            {
-               _loc1_.percentWidth = 100;
-               if(_loc3_)
-               {
-                  _loc1_.percentHeight = 100;
-                  if(_loc3_)
-                  {
-                     _loc1_.setStyle("skinClass",ImprovementInventoryLayerSkin);
-                     if(_loc3_)
-                     {
-                        _loc1_.id = "improvementItemList";
-                        if(_loc3_)
-                        {
-                           if(!_loc1_.document)
-                           {
-                              if(!(_loc2_ && _loc2_))
-                              {
-                                 addr007e:
-                                 _loc1_.document = this;
-                                 if(_loc3_ || _loc2_)
-                                 {
-                                    §§goto(addr009c);
-                                 }
-                                 §§goto(addr00ae);
-                              }
-                           }
-                        }
-                        §§goto(addr009c);
-                     }
-                     §§goto(addr007e);
-                  }
-                  addr009c:
-                  this.improvementItemList = _loc1_;
-                  if(_loc3_ || _loc3_)
-                  {
-                     addr00ae:
-                     BindingManager.executeBindings(this,"improvementItemList",this.improvementItemList);
-                  }
-                  §§goto(addr00bb);
-               }
-            }
-            addr00bb:
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr007e);
+         this.improvementItemList = _loc1_;
+         BindingManager.executeBindings(this,"improvementItemList",this.improvementItemList);
+         return _loc1_;
       }
       
       private function _ImprovementInventoryLayerComponent_ClassFactory1_c() : ClassFactory
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:ClassFactory = new ClassFactory();
-         if(_loc3_ || _loc2_)
-         {
-            _loc1_.generator = ImprovementInventoryItemRenderer;
-         }
+         _loc1_.generator = ImprovementInventoryItemRenderer;
          return _loc1_;
       }
       
       public function ___ImprovementInventoryLayerComponent_Group1_creationComplete(param1:FlexEvent) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this.handleCreationComplete();
-         }
+         this.handleCreationComplete();
       }
       
       [Bindable(event="propertyChange")]
@@ -347,34 +131,15 @@ package net.bigpoint.cityrama.view.residentialBook.ui.components
       
       public function set improvementItemList(param1:StandardInventoryList) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._1808398663improvementItemList;
-         if(!(_loc4_ && Boolean(this)))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1808398663improvementItemList = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc4_)
-               {
-                  this._1808398663improvementItemList = param1;
-                  if(_loc3_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!(_loc4_ && Boolean(_loc2_)))
-                        {
-                           addr006d:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"improvementItemList",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr007c);
-                  }
-                  §§goto(addr006d);
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"improvementItemList",_loc2_,param1));
             }
          }
-         addr007c:
       }
    }
 }

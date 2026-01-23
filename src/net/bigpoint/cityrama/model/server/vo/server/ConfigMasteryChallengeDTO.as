@@ -17,55 +17,16 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigMasteryChallengeDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
+         super();
+         this._id = param1.id;
+         this._targetProgress = param1.t;
+         this._locaID = param1.l;
+         if(param1.n)
          {
-            super();
-            if(!(_loc2_ && Boolean(param1)))
-            {
-               this._id = param1.id;
-               if(_loc3_)
-               {
-                  this._targetProgress = param1.t;
-                  if(!_loc2_)
-                  {
-                     addr0050:
-                     this._locaID = param1.l;
-                     if(!_loc2_)
-                     {
-                        if(param1.n)
-                        {
-                           if(!_loc2_)
-                           {
-                              addr0077:
-                              this._nextChallenge = new ConfigMasteryChallengeDTO(param1.n);
-                              if(_loc3_)
-                              {
-                                 §§goto(addr008d);
-                              }
-                           }
-                           §§goto(addr009b);
-                        }
-                        addr008d:
-                        this._bonusID = param1.b;
-                        if(!_loc2_)
-                        {
-                           addr009b:
-                           this._instantFinishCosts = param1.ic;
-                        }
-                        §§goto(addr00a5);
-                     }
-                     §§goto(addr0077);
-                  }
-                  addr00a5:
-                  return;
-               }
-            }
-            §§goto(addr0077);
+            this._nextChallenge = new ConfigMasteryChallengeDTO(param1.n);
          }
-         §§goto(addr0050);
+         this._bonusID = param1.b;
+         this._instantFinishCosts = param1.ic;
       }
       
       public function get id() : Number
@@ -75,13 +36,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set id(param1:Number) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc2_))
-         {
-            this._id = param1;
-         }
+         this._id = param1;
       }
       
       public function get targetProgress() : int
@@ -106,13 +61,7 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function set bonusID(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._bonusID = param1;
-         }
+         this._bonusID = param1;
       }
       
       public function get challengeValue() : int

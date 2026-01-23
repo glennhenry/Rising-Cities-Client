@@ -14,56 +14,19 @@ package net.bigpoint.cityrama.controller.miniLayer
       
       public function OpenCitysquareDepositMinilayerCommand()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc2_:CitySquareDetailViewVo = CitySquareDetailViewVo(param1.getBody());
          var _loc3_:PopupSettingsVo = new PopupSettingsVo(PopupSettingsVo.MINI_POPUP);
-         if(_loc4_)
-         {
-            _loc3_.modal = true;
-            if(_loc4_)
-            {
-               _loc3_.viewClass = CitysquareDepositMinilayer;
-               if(_loc4_ || Boolean(_loc3_))
-               {
-                  §§goto(addr0060);
-               }
-               §§goto(addr0084);
-            }
-            §§goto(addr009b);
-         }
-         addr0060:
+         _loc3_.modal = true;
+         _loc3_.viewClass = CitysquareDepositMinilayer;
          _loc3_.mediatorClass = CitysquareDepositMinilayerMediator;
-         if(_loc4_ || Boolean(param1))
-         {
-            addr0084:
-            _loc3_.mediatorName = CitysquareDepositMinilayerMediator.NAME;
-            if(_loc4_ || Boolean(_loc3_))
-            {
-               addr009b:
-               _loc3_.data = _loc2_;
-               if(_loc4_)
-               {
-                  addr00a5:
-                  facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
-               }
-               §§goto(addr00b0);
-            }
-            §§goto(addr00a5);
-         }
-         addr00b0:
+         _loc3_.mediatorName = CitysquareDepositMinilayerMediator.NAME;
+         _loc3_.data = _loc2_;
+         facade.sendNotification(ApplicationNotificationConstants.POPUP_CREATE,_loc3_);
       }
    }
 }

@@ -7,18 +7,12 @@ package net.bigpoint.cityrama.view.common.components
    public class CustomHScrollBar extends HScrollBar
    {
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(_loc1_ || _loc1_)
-      {
-         _skinParts = {
-            "decrementButton":false,
-            "incrementButton":false,
-            "track":false,
-            "thumb":false
-         };
-      }
+      private static var _skinParts:Object = {
+         "decrementButton":false,
+         "incrementButton":false,
+         "track":false,
+         "thumb":false
+      };
       
       public var showScroller:Boolean;
       
@@ -34,422 +28,137 @@ package net.bigpoint.cityrama.view.common.components
       
       public function CustomHScrollBar()
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override protected function button_buttonDownHandler(param1:Event) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
-         var _loc2_:* = NaN;
-         if(_loc4_ || Boolean(this))
+         var _loc2_:Number = NaN;
+         if(!this._shouldCheckScroll)
          {
-            §§push(this._shouldCheckScroll);
-            if(_loc4_)
-            {
-               if(!§§pop())
-               {
-                  if(_loc4_)
-                  {
-                     return;
-                  }
-                  addr00cc:
-                  §§push(Math.min(value + pageSize,maximum));
-                  if(!_loc3_)
-                  {
-                     _loc2_ = §§pop();
-                     if(!(_loc3_ && Boolean(param1)))
-                     {
-                        §§push(this.showScroller);
-                        if(!_loc3_)
-                        {
-                           addr00f9:
-                           if(§§pop())
-                           {
-                              if(_loc4_)
-                              {
-                                 incrementButton.enabled = _loc2_ != maximum;
-                                 if(_loc3_)
-                                 {
-                                 }
-                              }
-                              addr01b6:
-                              this._incrementEnabled = incrementButton.enabled;
-                              if(_loc4_ || _loc3_)
-                              {
-                                 addr01ce:
-                                 this._decrementEnabled = decrementButton.enabled;
-                                 if(_loc4_)
-                                 {
-                                    incrementButton.enabled = false;
-                                    if(!_loc3_)
-                                    {
-                                       addr01ea:
-                                       decrementButton.enabled = false;
-                                       if(!(_loc3_ && _loc3_))
-                                       {
-                                          addr01fe:
-                                          if(!isNaN(_loc2_))
-                                          {
-                                             if(_loc4_)
-                                             {
-                                                addr021a:
-                                                this._shouldCheckScroll = false;
-                                                if(_loc4_ || Boolean(_loc2_))
-                                                {
-                                                   addr022d:
-                                                   TweenMax.to(this.viewport,this.scrollspeed,{
-                                                      "horizontalScrollPosition":_loc2_,
-                                                      "onComplete":this.resetCheckScroll
-                                                   });
-                                                }
-                                                §§goto(addr0249);
-                                             }
-                                             §§goto(addr022d);
-                                          }
-                                       }
-                                    }
-                                    addr0249:
-                                    return;
-                                 }
-                              }
-                              §§goto(addr01fe);
-                           }
-                           else
-                           {
-                              incrementButton.visible = _loc2_ != maximum;
-                              if(_loc4_)
-                              {
-                                 §§goto(addr01b6);
-                              }
-                           }
-                           §§goto(addr022d);
-                        }
-                        else
-                        {
-                           addr0177:
-                           if(§§pop())
-                           {
-                              if(!(_loc3_ && Boolean(this)))
-                              {
-                                 addr0188:
-                                 decrementButton.enabled = _loc2_ != minimum;
-                                 if(_loc4_ || _loc3_)
-                                 {
-                                    §§goto(addr01b6);
-                                 }
-                                 §§goto(addr021a);
-                              }
-                              §§goto(addr01fe);
-                           }
-                           else
-                           {
-                              decrementButton.visible = _loc2_ != minimum;
-                              if(!_loc3_)
-                              {
-                                 §§goto(addr01b6);
-                              }
-                           }
-                        }
-                        §§goto(addr01ea);
-                     }
-                     else
-                     {
-                        addr0173:
-                        §§push(this.showScroller);
-                     }
-                     §§goto(addr0177);
-                  }
-                  else
-                  {
-                     addr0164:
-                     _loc2_ = §§pop();
-                     if(_loc4_ || Boolean(this))
-                     {
-                        §§goto(addr0173);
-                     }
-                  }
-                  §§goto(addr0188);
-               }
-               else
-               {
-                  §§push(this.showScroller);
-                  if(_loc4_ || Boolean(this))
-                  {
-                     if(§§pop())
-                     {
-                        if(!(_loc3_ && _loc3_))
-                        {
-                           incrementButton.enabled = true;
-                           if(_loc4_ || _loc3_)
-                           {
-                              decrementButton.enabled = true;
-                              if(!(_loc3_ && Boolean(param1)))
-                              {
-                                 addr00bc:
-                                 if(param1.target == incrementButton)
-                                 {
-                                    if(!_loc3_)
-                                    {
-                                       §§goto(addr00cc);
-                                    }
-                                 }
-                                 else if(param1.target == decrementButton)
-                                 {
-                                    if(_loc4_ || Boolean(param1))
-                                    {
-                                       §§goto(addr0164);
-                                       §§push(Math.max(value - pageSize,minimum));
-                                    }
-                                    §§goto(addr0173);
-                                 }
-                                 §§goto(addr01b6);
-                              }
-                              §§goto(addr0173);
-                           }
-                           else
-                           {
-                              addr00a9:
-                              decrementButton.visible = true;
-                              if(!(_loc3_ && Boolean(_loc2_)))
-                              {
-                                 §§goto(addr00bc);
-                              }
-                           }
-                           §§goto(addr01b6);
-                        }
-                        §§goto(addr022d);
-                     }
-                     else
-                     {
-                        incrementButton.visible = true;
-                        if(_loc4_ || _loc3_)
-                        {
-                           §§goto(addr00a9);
-                        }
-                     }
-                     §§goto(addr0188);
-                  }
-               }
-               §§goto(addr00f9);
-            }
-            §§goto(addr0177);
+            return;
          }
-         §§goto(addr01ce);
+         if(this.showScroller)
+         {
+            incrementButton.enabled = true;
+            decrementButton.enabled = true;
+         }
+         else
+         {
+            incrementButton.visible = true;
+            decrementButton.visible = true;
+         }
+         if(param1.target == incrementButton)
+         {
+            _loc2_ = Math.min(value + pageSize,maximum);
+            if(this.showScroller)
+            {
+               incrementButton.enabled = _loc2_ != maximum;
+            }
+            else
+            {
+               incrementButton.visible = _loc2_ != maximum;
+            }
+         }
+         else if(param1.target == decrementButton)
+         {
+            _loc2_ = Math.max(value - pageSize,minimum);
+            if(this.showScroller)
+            {
+               decrementButton.enabled = _loc2_ != minimum;
+            }
+            else
+            {
+               decrementButton.visible = _loc2_ != minimum;
+            }
+         }
+         this._incrementEnabled = incrementButton.enabled;
+         this._decrementEnabled = decrementButton.enabled;
+         incrementButton.enabled = false;
+         decrementButton.enabled = false;
+         if(!isNaN(_loc2_))
+         {
+            this._shouldCheckScroll = false;
+            TweenMax.to(this.viewport,this.scrollspeed,{
+               "horizontalScrollPosition":_loc2_,
+               "onComplete":this.resetCheckScroll
+            });
+         }
       }
       
       public function scrollTo(param1:Number) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
+         if(!isNaN(param1))
          {
-            if(!isNaN(param1))
-            {
-               if(_loc2_)
-               {
-                  this._incrementEnabled = incrementButton.enabled;
-                  if(_loc2_ || Boolean(param1))
-                  {
-                     this._decrementEnabled = decrementButton.enabled;
-                     if(!(_loc3_ && Boolean(param1)))
-                     {
-                        incrementButton.enabled = false;
-                        if(_loc2_)
-                        {
-                           addr0071:
-                           decrementButton.enabled = false;
-                           if(_loc2_)
-                           {
-                              addr007d:
-                              param1 = Math.max(Math.min(param1,maximum),minimum);
-                              if(_loc2_)
-                              {
-                                 addr00a3:
-                                 this._shouldCheckScroll = false;
-                                 if(_loc2_ || Boolean(this))
-                                 {
-                                    addr00b5:
-                                    TweenMax.to(this.viewport,this.scrollspeed,{
-                                       "horizontalScrollPosition":param1,
-                                       "onComplete":this.resetCheckScroll
-                                    });
-                                 }
-                              }
-                              §§goto(addr00d1);
-                           }
-                           §§goto(addr00a3);
-                        }
-                        §§goto(addr00d1);
-                     }
-                     §§goto(addr00b5);
-                  }
-                  §§goto(addr0071);
-               }
-            }
-            addr00d1:
-            return;
+            this._incrementEnabled = incrementButton.enabled;
+            this._decrementEnabled = decrementButton.enabled;
+            incrementButton.enabled = false;
+            decrementButton.enabled = false;
+            param1 = Math.max(Math.min(param1,maximum),minimum);
+            this._shouldCheckScroll = false;
+            TweenMax.to(this.viewport,this.scrollspeed,{
+               "horizontalScrollPosition":param1,
+               "onComplete":this.resetCheckScroll
+            });
          }
-         §§goto(addr007d);
       }
       
       private function get scrollspeed() : Number
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && _loc2_))
+         if(this.getStyle("scrollSpeed") != null)
          {
-            if(this.getStyle("scrollSpeed") != null)
-            {
-               if(!(_loc1_ && _loc1_))
-               {
-                  return this.getStyle("scrollSpeed");
-               }
-            }
+            return this.getStyle("scrollSpeed");
          }
          return this.DEFAULT_SCROLLSPEED;
       }
       
       override protected function commitProperties() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!_loc1_)
-         {
-            super.commitProperties();
-            if(_loc2_)
-            {
-               this.checkScroll();
-            }
-         }
+         super.commitProperties();
+         this.checkScroll();
       }
       
       private function checkScroll() : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
+         if(this.includeScroller)
          {
-            §§push(this.includeScroller);
-            if(_loc2_)
+            if(this._shouldCheckScroll)
             {
-               if(§§pop())
+               if(this.showScroller)
                {
-                  if(_loc2_)
-                  {
-                     addr0033:
-                     §§push(this._shouldCheckScroll);
-                     if(!_loc3_)
-                     {
-                        addr003c:
-                        if(§§pop())
-                        {
-                           if(!_loc3_)
-                           {
-                              addr0049:
-                              if(this.showScroller)
-                              {
-                                 if(_loc2_ || _loc3_)
-                                 {
-                                    decrementButton.enabled = this.viewport.horizontalScrollPosition != minimum;
-                                    if(!(_loc3_ && _loc3_))
-                                    {
-                                       incrementButton.enabled = this.viewport.horizontalScrollPosition != maximum;
-                                       if(_loc2_)
-                                       {
-                                       }
-                                    }
-                                 }
-                                 else
-                                 {
-                                    addr00b7:
-                                    incrementButton.visible = this.viewport.horizontalScrollPosition != maximum;
-                                    if(_loc3_ && _loc2_)
-                                    {
-                                       addr00fa:
-                                       decrementButton.includeInLayout = decrementButton.visible = false;
-                                    }
-                                 }
-                              }
-                              else
-                              {
-                                 decrementButton.visible = this.viewport.horizontalScrollPosition != minimum;
-                                 if(!_loc3_)
-                                 {
-                                    §§goto(addr00b7);
-                                 }
-                              }
-                              §§goto(addr010a);
-                           }
-                           §§goto(addr00b7);
-                        }
-                        §§goto(addr010a);
-                     }
-                     §§goto(addr0049);
-                  }
+                  decrementButton.enabled = this.viewport.horizontalScrollPosition != minimum;
+                  incrementButton.enabled = this.viewport.horizontalScrollPosition != maximum;
                }
                else
                {
-                  incrementButton.includeInLayout = incrementButton.visible = false;
-                  if(_loc2_)
-                  {
-                     §§goto(addr00fa);
-                  }
+                  decrementButton.visible = this.viewport.horizontalScrollPosition != minimum;
+                  incrementButton.visible = this.viewport.horizontalScrollPosition != maximum;
                }
-               addr010a:
-               return;
             }
-            §§goto(addr003c);
          }
-         §§goto(addr0033);
+         else
+         {
+            var _temp_1:* = incrementButton;
+            incrementButton.visible = false;
+            _temp_1.includeInLayout = false;
+            var _temp_2:* = decrementButton;
+            var _loc1_:Boolean;
+            decrementButton.visible = _loc1_ = false;
+            _temp_2.includeInLayout = false;
+         }
       }
       
       private function resetCheckScroll() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
-         {
-            this._shouldCheckScroll = true;
-            if(_loc1_ || _loc2_)
-            {
-               addr0039:
-               incrementButton.enabled = this._incrementEnabled;
-               if(_loc1_ || _loc1_)
-               {
-                  decrementButton.enabled = this._decrementEnabled;
-               }
-            }
-            return;
-         }
-         §§goto(addr0039);
+         this._shouldCheckScroll = true;
+         incrementButton.enabled = this._incrementEnabled;
+         decrementButton.enabled = this._decrementEnabled;
       }
       
       public function scrollpositionChanged() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_)
-         {
-            this._shouldCheckScroll = true;
-            if(_loc1_)
-            {
-               invalidateProperties();
-            }
-         }
+         this._shouldCheckScroll = true;
+         invalidateProperties();
       }
       
       override protected function button_buttonUpHandler(param1:Event) : void

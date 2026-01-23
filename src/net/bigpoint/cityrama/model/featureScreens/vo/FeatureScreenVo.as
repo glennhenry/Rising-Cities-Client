@@ -15,41 +15,12 @@ package net.bigpoint.cityrama.model.featureScreens.vo
       
       public function FeatureScreenVo(param1:Object)
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            super();
-            if(_loc2_ || Boolean(param1))
-            {
-               this._title = param1.title;
-               if(_loc2_)
-               {
-                  this._numberOfSteps = param1.stepAmount;
-                  if(!_loc3_)
-                  {
-                     addr005b:
-                     this._stepData = param1.steps;
-                     if(!_loc3_)
-                     {
-                        §§goto(addr006a);
-                     }
-                     §§goto(addr0080);
-                  }
-                  §§goto(addr006a);
-               }
-               §§goto(addr005b);
-            }
-            §§goto(addr0080);
-         }
-         addr006a:
+         super();
+         this._title = param1.title;
+         this._numberOfSteps = param1.stepAmount;
+         this._stepData = param1.steps;
          this._flavourText = param1.flavour;
-         if(_loc2_ || _loc3_)
-         {
-            addr0080:
-            this._feature = param1.feature;
-         }
+         this._feature = param1.feature;
       }
       
       public function get numberOfSteps() : int

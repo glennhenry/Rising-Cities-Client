@@ -18,39 +18,12 @@ package net.bigpoint.cityrama.view.userInterfaceInfoLayer.vo
       
       public function MasteryChallengeUiInfolayerComponentVo(param1:uint, param2:Point, param3:String, param4:Number, param5:Number, param6:Vector.<MasteryBonusVo>, param7:Boolean, param8:String = "")
       {
-         var _temp_1:* = true;
-         var _loc9_:Boolean = false;
-         var _loc10_:Boolean = _temp_1;
-         if(!(_loc9_ && Boolean(param1)))
-         {
-            super(param1,param2,param8);
-            if(_loc10_ || Boolean(this))
-            {
-               this._challengeDescription = param3;
-               if(_loc10_ || Boolean(this))
-               {
-                  §§goto(addr0057);
-               }
-               §§goto(addr0099);
-            }
-            §§goto(addr0070);
-         }
-         addr0057:
+         super(param1,param2,param8);
+         this._challengeDescription = param3;
          this._targetValue = param4;
-         if(!_loc9_)
-         {
-            addr0070:
-            this._currentValue = param5;
-            if(!(_loc9_ && Boolean(param2)))
-            {
-               this._rewards = param6;
-               if(!(_loc9_ && Boolean(this)))
-               {
-                  addr0099:
-                  this._showProgressBarOverride = param7;
-               }
-            }
-         }
+         this._currentValue = param5;
+         this._rewards = param6;
+         this._showProgressBarOverride = param7;
       }
       
       public function get challengeDescription() : String
@@ -60,13 +33,7 @@ package net.bigpoint.cityrama.view.userInterfaceInfoLayer.vo
       
       public function set challengeDescription(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this._challengeDescription = param1;
-         }
+         this._challengeDescription = param1;
       }
       
       public function get targetValue() : Number

@@ -37,74 +37,20 @@ package net.bigpoint.cityrama.model.schoolBook.vo
       
       public function SchoolBookVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       private static function sortAttributes(param1:EducationAttributeVo, param2:EducationAttributeVo) : int
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(!(_loc4_ && Boolean(param1)))
+         if(param1.configId > param2.configId)
          {
-            §§push(param1.configId);
-            if(!_loc4_)
-            {
-               §§push(param2.configId);
-               if(!_loc4_)
-               {
-                  if(§§pop() > §§pop())
-                  {
-                     if(!_loc4_)
-                     {
-                        addr004a:
-                        §§push(1);
-                        if(_loc3_)
-                        {
-                           return §§pop();
-                        }
-                     }
-                     else
-                     {
-                        addr0084:
-                        §§push(-1);
-                        if(!(_loc3_ || Boolean(param2)))
-                        {
-                           §§goto(addr0096);
-                        }
-                     }
-                     return §§pop();
-                  }
-                  addr0073:
-                  addr006f:
-                  if(param1.configId < param2.configId)
-                  {
-                     if(_loc3_ || Boolean(param2))
-                     {
-                        §§goto(addr0084);
-                     }
-                     else
-                     {
-                        addr0094:
-                        §§push(0);
-                     }
-                     §§goto(addr0096);
-                  }
-                  §§goto(addr0094);
-                  addr0096:
-                  return §§pop();
-               }
-               §§goto(addr0073);
-            }
-            §§goto(addr006f);
+            return 1;
          }
-         §§goto(addr004a);
+         if(param1.configId < param2.configId)
+         {
+            return -1;
+         }
+         return 0;
       }
       
       public function get attributes() : Vector.<EducationAttributeVo>
@@ -114,20 +60,8 @@ package net.bigpoint.cityrama.model.schoolBook.vo
       
       public function set attributes(param1:Vector.<EducationAttributeVo>) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!(_loc3_ && Boolean(this)))
-         {
-            this._attributes = param1;
-            if(_loc2_)
-            {
-               addr0028:
-               this._attributes.sort(sortAttributes);
-            }
-            return;
-         }
-         §§goto(addr0028);
+         this._attributes = param1;
+         this._attributes.sort(sortAttributes);
       }
    }
 }

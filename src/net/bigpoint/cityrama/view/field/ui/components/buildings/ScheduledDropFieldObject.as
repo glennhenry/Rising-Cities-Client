@@ -10,13 +10,7 @@ package net.bigpoint.cityrama.view.field.ui.components.buildings
       
       public function ScheduledDropFieldObject(param1:BillboardAssetsReferenceHolder, param2:SpecialFieldObjectVo)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_)
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
       
       public function get scheduledDropFieldObjectVo() : ScheduledDropFieldObjectVo
@@ -26,27 +20,11 @@ package net.bigpoint.cityrama.view.field.ui.components.buildings
       
       override public function prepareIconStateManager() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || Boolean(this))
+         if(_iconStateManager == null)
          {
-            if(_iconStateManager == null)
-            {
-               if(!_loc2_)
-               {
-                  _iconStateManager = new IconStateScheduledDropManager();
-                  if(!_loc2_)
-                  {
-                     addr0046:
-                     _iconStateManager.prepareIconStateManager(billboardObjectVo,_iconContainer,_billbordObjectContainer);
-                  }
-                  §§goto(addr0055);
-               }
-            }
-            §§goto(addr0046);
+            _iconStateManager = new IconStateScheduledDropManager();
          }
-         addr0055:
+         _iconStateManager.prepareIconStateManager(billboardObjectVo,_iconContainer,_billbordObjectContainer);
       }
    }
 }

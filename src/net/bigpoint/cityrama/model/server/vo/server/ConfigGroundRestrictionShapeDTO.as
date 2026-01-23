@@ -9,32 +9,14 @@ package net.bigpoint.cityrama.model.server.vo.server
       
       public function ConfigGroundRestrictionShapeDTO(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc5_:Boolean = false;
-         var _loc6_:Boolean = _temp_1;
          var _loc2_:Object = null;
-         if(!_loc5_)
+         super();
+         this._id = param1.id;
+         this._shapePoints = new Vector.<ConfigGroundRestrictionShapePointDTO>();
+         for each(_loc2_ in param1.p)
          {
-            super();
-            if(!_loc5_)
-            {
-               addr0029:
-               this._id = param1.id;
-               if(!_loc5_)
-               {
-                  this._shapePoints = new Vector.<ConfigGroundRestrictionShapePointDTO>();
-               }
-            }
-            for each(_loc2_ in param1.p)
-            {
-               if(_loc6_)
-               {
-                  this._shapePoints.push(new ConfigGroundRestrictionShapePointDTO(_loc2_));
-               }
-            }
-            return;
+            this._shapePoints.push(new ConfigGroundRestrictionShapePointDTO(_loc2_));
          }
-         §§goto(addr0029);
       }
       
       public function get id() : Number

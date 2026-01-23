@@ -17,66 +17,23 @@ package net.bigpoint.as3toolbox.pathwalkmanager
       
       public function PathWalkManager(param1:SingletonBlocker)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
+         super();
+         if(param1 == null)
          {
-            super();
-            if(!_loc2_)
-            {
-               if(param1 == null)
-               {
-                  if(!_loc2_)
-                  {
-                     throw new Error("Error: Instantiation failed: Use PathWalkManager.instance instead of new.");
-                  }
-               }
-               else
-               {
-                  addr0068:
-                  this._walkman = new WalkManager();
-                  if(_loc3_)
-                  {
-                     §§goto(addr0078);
-                  }
-               }
-               §§goto(addr0088);
-            }
-            addr0078:
-            this._terrain = new Terrain();
-            if(_loc3_)
-            {
-               addr0088:
-               this._walkerContainer = new WalkerContainer();
-            }
-            return;
+            throw new Error("Error: Instantiation failed: Use PathWalkManager.instance instead of new.");
          }
-         §§goto(addr0068);
+         this._walkman = new WalkManager();
+         this._terrain = new Terrain();
+         this._walkerContainer = new WalkerContainer();
       }
       
       public static function get instance() : PathWalkManager
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || PathWalkManager)
+         if(_instance == null)
          {
-            §§push(_instance);
-            if(!(_loc1_ && _loc2_))
-            {
-               if(§§pop() == null)
-               {
-                  if(!_loc1_)
-                  {
-                     addr0042:
-                     _instance = new PathWalkManager(new SingletonBlocker());
-                  }
-               }
-               return _instance;
-            }
+            _instance = new PathWalkManager(new SingletonBlocker());
          }
-         §§goto(addr0042);
+         return _instance;
       }
       
       public function get walkerContainer() : WalkerContainer
@@ -96,25 +53,9 @@ package net.bigpoint.as3toolbox.pathwalkmanager
       
       public function reset() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(!(_loc1_ && Boolean(this)))
-         {
-            this._walkman = new WalkManager();
-            if(!_loc1_)
-            {
-               this._terrain = new Terrain();
-               if(!(_loc1_ && Boolean(this)))
-               {
-                  addr0050:
-                  this._walkerContainer = new WalkerContainer();
-               }
-               §§goto(addr005b);
-            }
-            §§goto(addr0050);
-         }
-         addr005b:
+         this._walkman = new WalkManager();
+         this._terrain = new Terrain();
+         this._walkerContainer = new WalkerContainer();
       }
    }
 }

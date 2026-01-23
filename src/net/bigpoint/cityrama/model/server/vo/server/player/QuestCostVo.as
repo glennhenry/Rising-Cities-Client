@@ -11,28 +11,10 @@ package net.bigpoint.cityrama.model.server.vo.server.player
       
       public function QuestCostVo(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            super();
-            if(_loc3_ || _loc2_)
-            {
-               addr0034:
-               this._rewardType = param1.t;
-               if(!(_loc2_ && _loc3_))
-               {
-                  this._amount = param1.a;
-                  if(_loc3_)
-                  {
-                     this._rewardConfigID = param1.id;
-                  }
-               }
-            }
-            return;
-         }
-         §§goto(addr0034);
+         super();
+         this._rewardType = param1.t;
+         this._amount = param1.a;
+         this._rewardConfigID = param1.id;
       }
       
       public function get rewardType() : String

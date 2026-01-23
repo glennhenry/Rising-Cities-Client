@@ -11,13 +11,7 @@ package net.bigpoint.cityrama.view.field.ui.components.buildings
       
       public function ExpansionFieldObject(param1:BillboardAssetsReferenceHolder, param2:ExpansionFieldObjectVo)
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
-         if(_loc3_)
-         {
-            super(param1,param2);
-         }
+         super(param1,param2);
       }
       
       override public function prepareBasementViewManager() : void
@@ -39,17 +33,8 @@ package net.bigpoint.cityrama.view.field.ui.components.buildings
       
       public function set enableMouseOver(param1:Boolean) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._enableMouseOver = param1;
-            if(_loc2_)
-            {
-               this.expansionFieldObjectVo.rollOverRect.enable = param1;
-            }
-         }
+         this._enableMouseOver = param1;
+         this.expansionFieldObjectVo.rollOverRect.enable = param1;
       }
       
       public function get expansionFieldObjectVo() : ExpansionFieldObjectVo

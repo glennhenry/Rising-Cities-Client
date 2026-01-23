@@ -46,38 +46,6 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public static const OPEN_TREASURY:String = "OPEN_TREASURY";
       
-      §§push(false);
-      var _loc1_:Boolean = true;
-      var _loc2_:* = §§pop();
-      if(_loc1_ || BoosterpackDetail)
-      {
-         SCROLL_LEFT = "SCROLL_LEFT";
-         if(_loc1_ || _loc2_)
-         {
-            SCROLL_RIGHT = "SCROLL_RIGHT";
-            if(_loc1_)
-            {
-               addr0055:
-               BUY_BOOSTER_GOOD = "BUY_BOOSTER_GOOD";
-               if(!(_loc2_ && BoosterpackDetail))
-               {
-                  §§goto(addr006b);
-               }
-               §§goto(addr0079);
-            }
-            addr006b:
-            BUY_BOOSTER_RC = "BUY_BOOSTER_RC";
-            if(_loc1_)
-            {
-               addr0079:
-               OPEN_TREASURY = "OPEN_TREASURY";
-            }
-            return;
-         }
-         §§goto(addr0055);
-      }
-      §§goto(addr0079);
-      
       private var _1893627029backgroundGfx:BriskImageDynaLib;
       
       private var _523126938boosterPackGeneralContent:BriskImageDynaLib;
@@ -112,1874 +80,540 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function BoosterpackDetail()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-            if(_loc2_)
-            {
-               addr0028:
-               mx_internal::_document = this;
-               if(_loc2_)
-               {
-                  this.mxmlContent = [this._BoosterpackDetail_HGroup1_c()];
-               }
-            }
-            return;
-         }
-         §§goto(addr0028);
+         super();
+         mx_internal::_document = this;
+         this.mxmlContent = [this._BoosterpackDetail_HGroup1_c()];
       }
       
       override public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
+         super.moduleFactory = param1;
+         if(this.__moduleFactoryInitialized)
          {
-            super.moduleFactory = param1;
-            if(_loc3_)
-            {
-               if(this.__moduleFactoryInitialized)
-               {
-                  if(!(_loc2_ && Boolean(this)))
-                  {
-                     §§goto(addr004c);
-                  }
-               }
-               else
-               {
-                  this.__moduleFactoryInitialized = true;
-               }
-            }
             return;
          }
-         addr004c:
+         this.__moduleFactoryInitialized = true;
       }
       
       override public function initialize() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super.initialize();
-         }
+         super.initialize();
       }
       
       public function set data(param1:BoosterpackVo) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
+         if(!RandomUtilities.isEqual(param1,this._data))
          {
-            if(!RandomUtilities.isEqual(param1,this._data))
-            {
-               if(!(_loc2_ && _loc2_))
-               {
-                  this._data = param1;
-                  if(_loc3_ || Boolean(param1))
-                  {
-                     this._isDirty = true;
-                     if(_loc3_ || Boolean(this))
-                     {
-                        addr007b:
-                        invalidateProperties();
-                     }
-                     §§goto(addr0080);
-                  }
-                  §§goto(addr007b);
-               }
-            }
-            addr0080:
-            return;
+            this._data = param1;
+            this._isDirty = true;
+            invalidateProperties();
          }
-         §§goto(addr007b);
       }
       
       override protected function commitProperties() : void
       {
-         var _temp_1:* = true;
-         var _loc4_:Boolean = false;
-         var _loc5_:Boolean = _temp_1;
-         var _loc1_:* = null;
-         var _loc2_:* = null;
-         if(!(_loc4_ && _loc3_))
+         super.commitProperties();
+         if(this._isDirty)
          {
-            super.commitProperties();
-            if(_loc5_ || Boolean(_loc1_))
+            this._isDirty = false;
+            this.boosterpackImage.dynaBmpSourceName = "large_" + this._data.gfxId;
+            this.backgroundGfx.dynaBmpSourceName = "special_cardboard_big";
+            this.boosterpackSpecialContent.dynaBmpSourceName = "polaroid_right_btm_" + this._data.gfxId;
+            this.boosterpackLabel.text = LocaUtils.getString("rcl.goods.goodname","rcl.goods.goodname." + this._data.locaId);
+            this.normalContentLabel.text = LocaUtils.getString("rcl.booklayer.boosterpackStore","rcl.booklayer.boosterpackStore.contentLabel." + this._data.locaId);
+            this.specialContentLabel.text = LocaUtils.getString("rcl.booklayer.boosterpackStore","rcl.booklayer.boosterpackStore.specialContentLabel." + this._data.locaId);
+            this.goodBuyButton.label = LocaUtils.getThousendSeperatedNumber(this._data.defaultCostAmount);
+            if(this._data.defaultCostConfig.goodConfig)
             {
-               §§push(this._isDirty);
-               if(!(_loc4_ && Boolean(_loc1_)))
-               {
-                  if(§§pop())
-                  {
-                     if(!(_loc4_ && _loc3_))
-                     {
-                        this._isDirty = false;
-                        if(_loc5_ || Boolean(this))
-                        {
-                           §§push(this.boosterpackImage);
-                           §§push("large_");
-                           if(_loc5_ || Boolean(_loc2_))
-                           {
-                              §§push(§§pop() + this._data.gfxId);
-                           }
-                           §§pop().dynaBmpSourceName = §§pop();
-                           if(!(_loc4_ && _loc3_))
-                           {
-                              addr00a0:
-                              §§push(this.backgroundGfx);
-                              if(!_loc4_)
-                              {
-                                 §§pop().dynaBmpSourceName = "special_cardboard_big";
-                                 if(!_loc4_)
-                                 {
-                                    §§push(this.boosterpackSpecialContent);
-                                    §§push("polaroid_right_btm_");
-                                    if(!_loc4_)
-                                    {
-                                       §§push(§§pop() + this._data.gfxId);
-                                    }
-                                    §§pop().dynaBmpSourceName = §§pop();
-                                    if(_loc5_ || Boolean(this))
-                                    {
-                                       addr00db:
-                                       §§push(this.boosterpackLabel);
-                                       §§push(LocaUtils);
-                                       §§push("rcl.goods.goodname");
-                                       §§push("rcl.goods.goodname.");
-                                       if(_loc5_ || _loc3_)
-                                       {
-                                          §§push(§§pop() + this._data.locaId);
-                                       }
-                                       §§pop().text = §§pop().getString(§§pop(),§§pop());
-                                       if(!_loc4_)
-                                       {
-                                          §§push(this.normalContentLabel);
-                                          §§push(LocaUtils);
-                                          §§push("rcl.booklayer.boosterpackStore");
-                                          §§push("rcl.booklayer.boosterpackStore.contentLabel.");
-                                          if(!_loc4_)
-                                          {
-                                             §§push(§§pop() + this._data.locaId);
-                                          }
-                                          §§pop().text = §§pop().getString(§§pop(),§§pop());
-                                          if(!(_loc4_ && Boolean(_loc2_)))
-                                          {
-                                             §§push(this.specialContentLabel);
-                                             §§push(LocaUtils);
-                                             §§push("rcl.booklayer.boosterpackStore");
-                                             §§push("rcl.booklayer.boosterpackStore.specialContentLabel.");
-                                             if(_loc5_ || _loc3_)
-                                             {
-                                                §§push(§§pop() + this._data.locaId);
-                                             }
-                                             §§pop().text = §§pop().getString(§§pop(),§§pop());
-                                             if(!(_loc4_ && Boolean(this)))
-                                             {
-                                                §§push(this.goodBuyButton);
-                                                if(!_loc4_)
-                                                {
-                                                   §§push(LocaUtils.getThousendSeperatedNumber(this._data.defaultCostAmount));
-                                                   if(_loc5_)
-                                                   {
-                                                      §§pop().label = §§pop();
-                                                      if(_loc5_ || _loc3_)
-                                                      {
-                                                         §§push(this._data);
-                                                         if(_loc5_ || Boolean(_loc1_))
-                                                         {
-                                                            §§push(§§pop().defaultCostConfig);
-                                                            if(!(_loc4_ && Boolean(_loc1_)))
-                                                            {
-                                                               §§push(§§pop().goodConfig);
-                                                               if(!_loc4_)
-                                                               {
-                                                                  if(§§pop())
-                                                                  {
-                                                                     if(!(_loc4_ && _loc3_))
-                                                                     {
-                                                                        §§push(this.goodBuyButton);
-                                                                        if(_loc5_)
-                                                                        {
-                                                                           §§push("gui_popups_boosterpackBook");
-                                                                           if(!(_loc4_ && Boolean(_loc1_)))
-                                                                           {
-                                                                              §§pop().libNameRight = §§pop();
-                                                                              if(!(_loc4_ && Boolean(_loc1_)))
-                                                                              {
-                                                                                 §§push(this.goodBuyButton);
-                                                                                 if(!_loc4_)
-                                                                                 {
-                                                                                    addr024b:
-                                                                                    addr020e:
-                                                                                    §§push("icon_");
-                                                                                    if(!(_loc4_ && _loc3_))
-                                                                                    {
-                                                                                       §§push(§§pop() + this._data.defaultCostConfig.goodConfig.gfxId);
-                                                                                       if(!(_loc4_ && Boolean(_loc1_)))
-                                                                                       {
-                                                                                          §§push(§§pop() + "_small");
-                                                                                       }
-                                                                                    }
-                                                                                    §§pop().imageNameRight = §§pop();
-                                                                                    if(_loc5_)
-                                                                                    {
-                                                                                       addr0254:
-                                                                                       addr0258:
-                                                                                       §§push(this.backgroundGfx);
-                                                                                       §§push(this.boosterpackImage);
-                                                                                       §§push(LocaUtils);
-                                                                                       §§push("rcl.goods.goodname");
-                                                                                       §§push("rcl.goods.goodname.");
-                                                                                       if(_loc5_ || _loc3_)
-                                                                                       {
-                                                                                          §§push(§§pop() + this._data.locaId);
-                                                                                       }
-                                                                                       var _loc3_:*;
-                                                                                       §§pop().toolTip = _loc3_ = §§pop().getString(§§pop(),§§pop());
-                                                                                       §§pop().toolTip = _loc3_;
-                                                                                       if(_loc5_)
-                                                                                       {
-                                                                                          addr028c:
-                                                                                          this.scrollLeft.toolTip = LocaUtils.getString("rcl.tooltips.architecturalBook","rcl.tooltips.architecturalBook.detail.arrowLeft");
-                                                                                          if(_loc5_ || Boolean(_loc2_))
-                                                                                          {
-                                                                                             addr02ab:
-                                                                                             this.scrollRight.toolTip = LocaUtils.getString("rcl.tooltips.architecturalBook","rcl.tooltips.architecturalBook.detail.arrowRight");
-                                                                                             if(_loc5_)
-                                                                                             {
-                                                                                                addr02c2:
-                                                                                                §§push(this.goodBuyButton);
-                                                                                                if(!_loc4_)
-                                                                                                {
-                                                                                                   §§pop().enabled = this._data.userCanAffordGoodPrice;
-                                                                                                   if(_loc5_ || Boolean(_loc3_))
-                                                                                                   {
-                                                                                                      §§push(this._data);
-                                                                                                      if(_loc5_ || Boolean(_loc3_))
-                                                                                                      {
-                                                                                                         addr02fc:
-                                                                                                         addr02f9:
-                                                                                                         if(§§pop().defaultCostConfig.goodConfig)
-                                                                                                         {
-                                                                                                            if(!_loc4_)
-                                                                                                            {
-                                                                                                               addr0306:
-                                                                                                               §§push(LocaUtils);
-                                                                                                               §§push("rcl.goods.goodname");
-                                                                                                               §§push("rcl.goods.goodname.");
-                                                                                                               if(_loc5_)
-                                                                                                               {
-                                                                                                                  §§push(§§pop() + this._data.defaultCostConfig.goodConfig.gfxId);
-                                                                                                               }
-                                                                                                               §§push(§§pop().getString(§§pop(),§§pop()));
-                                                                                                               if(!_loc4_)
-                                                                                                               {
-                                                                                                                  §§push(§§pop());
-                                                                                                                  if(!_loc4_)
-                                                                                                                  {
-                                                                                                                     _loc1_ = §§pop();
-                                                                                                                     if(_loc5_)
-                                                                                                                     {
-                                                                                                                        addr0352:
-                                                                                                                        this.goodBuyButton.toolTip = LocaUtils.getString("rcl.tooltips.boosterpackstore","rcl.tooltips.boosterpackstore.buyButton.amountType",[this.goodBuyButton.label,_loc1_]);
-                                                                                                                        addr0339:
-                                                                                                                        addr033d:
-                                                                                                                        if(!_loc4_)
-                                                                                                                        {
-                                                                                                                           addr035a:
-                                                                                                                           §§push(this.rCBuyButton);
-                                                                                                                           if(_loc5_)
-                                                                                                                           {
-                                                                                                                              this.rCBuyButton.visible = _loc3_ = this._data.hasRealCurrencyPrice();
-                                                                                                                              §§push(_loc3_);
-                                                                                                                              if(!(_loc4_ && Boolean(this)))
-                                                                                                                              {
-                                                                                                                                 §§pop().includeInLayout = §§pop();
-                                                                                                                                 if(!(_loc4_ && Boolean(_loc1_)))
-                                                                                                                                 {
-                                                                                                                                    §§goto(addr0395);
-                                                                                                                                 }
-                                                                                                                                 §§goto(addr03a7);
-                                                                                                                              }
-                                                                                                                              §§goto(addr0442);
-                                                                                                                           }
-                                                                                                                           §§goto(addr03e1);
-                                                                                                                        }
-                                                                                                                        §§goto(addr03a7);
-                                                                                                                     }
-                                                                                                                     addr0395:
-                                                                                                                     §§goto(addr0399);
-                                                                                                                  }
-                                                                                                                  §§goto(addr048c);
-                                                                                                               }
-                                                                                                               §§goto(addr048d);
-                                                                                                            }
-                                                                                                            §§goto(addr03d7);
-                                                                                                         }
-                                                                                                         §§goto(addr035a);
-                                                                                                      }
-                                                                                                      addr0399:
-                                                                                                      addr039d:
-                                                                                                      if(this._data.hasRealCurrencyPrice())
-                                                                                                      {
-                                                                                                         if(_loc5_)
-                                                                                                         {
-                                                                                                            addr03a7:
-                                                                                                            §§push(this.rCBuyButton);
-                                                                                                            if(_loc5_)
-                                                                                                            {
-                                                                                                               §§push(this._data);
-                                                                                                               if(_loc5_ || Boolean(_loc2_))
-                                                                                                               {
-                                                                                                                  §§pop().priceToConfirm = §§pop().realCurrencyCostAmount;
-                                                                                                                  if(_loc5_ || Boolean(_loc2_))
-                                                                                                                  {
-                                                                                                                     addr03d7:
-                                                                                                                     §§push(this.rCBuyButton);
-                                                                                                                     if(!_loc4_)
-                                                                                                                     {
-                                                                                                                        addr03e1:
-                                                                                                                        §§push(LocaUtils.getThousendSeperatedNumber(this._data.realCurrencyCostAmount));
-                                                                                                                        if(_loc5_)
-                                                                                                                        {
-                                                                                                                           §§pop().label = §§pop();
-                                                                                                                           if(_loc5_ || _loc3_)
-                                                                                                                           {
-                                                                                                                              §§push(this.rCBuyButton);
-                                                                                                                              if(_loc5_ || Boolean(_loc1_))
-                                                                                                                              {
-                                                                                                                                 §§goto(addr0417);
-                                                                                                                              }
-                                                                                                                              §§goto(addr04a0);
-                                                                                                                           }
-                                                                                                                           §§goto(addr046e);
-                                                                                                                        }
-                                                                                                                        §§goto(addr04b5);
-                                                                                                                     }
-                                                                                                                     §§goto(addr0417);
-                                                                                                                  }
-                                                                                                                  §§goto(addr044b);
-                                                                                                               }
-                                                                                                               §§goto(addr0429);
-                                                                                                            }
-                                                                                                            addr0417:
-                                                                                                            §§push(this._data);
-                                                                                                            if(!(_loc4_ && _loc3_))
-                                                                                                            {
-                                                                                                               addr0429:
-                                                                                                               §§push(§§pop().userCanAffordRCPrice);
-                                                                                                               if(!(_loc4_ && Boolean(this)))
-                                                                                                               {
-                                                                                                                  §§push(!§§pop());
-                                                                                                                  if(!_loc4_)
-                                                                                                                  {
-                                                                                                                     addr0442:
-                                                                                                                     §§pop().showPlus = §§pop();
-                                                                                                                     if(_loc5_)
-                                                                                                                     {
-                                                                                                                        addr044b:
-                                                                                                                        §§push(this.rCBuyButton);
-                                                                                                                        if(_loc5_ || Boolean(_loc1_))
-                                                                                                                        {
-                                                                                                                           §§goto(addr0465);
-                                                                                                                        }
-                                                                                                                        §§goto(addr04a0);
-                                                                                                                     }
-                                                                                                                     §§goto(addr049c);
-                                                                                                                  }
-                                                                                                               }
-                                                                                                               addr0465:
-                                                                                                               §§pop().showSparkle = this._data.userCanAffordRCPrice;
-                                                                                                               §§goto(addr0461);
-                                                                                                            }
-                                                                                                            addr0461:
-                                                                                                            if(!_loc4_)
-                                                                                                            {
-                                                                                                               addr046e:
-                                                                                                               addr048d:
-                                                                                                               §§push(LocaUtils.getString("rcl.misc.resources","rcl.misc.resources.realcurrency"));
-                                                                                                               if(!_loc4_)
-                                                                                                               {
-                                                                                                                  addr048c:
-                                                                                                                  §§push(§§pop());
-                                                                                                               }
-                                                                                                               _loc2_ = §§pop();
-                                                                                                               if(!(_loc4_ && Boolean(_loc2_)))
-                                                                                                               {
-                                                                                                                  addr04b5:
-                                                                                                                  this.rCBuyButton.toolTip = LocaUtils.getString("rcl.tooltips.boosterpackstore","rcl.tooltips.boosterpackstore.buyButton.amountType",[this.rCBuyButton.label,_loc2_]);
-                                                                                                                  addr04a0:
-                                                                                                                  addr049c:
-                                                                                                               }
-                                                                                                            }
-                                                                                                            §§goto(addr04b7);
-                                                                                                         }
-                                                                                                      }
-                                                                                                      §§goto(addr04b7);
-                                                                                                   }
-                                                                                                   §§goto(addr0339);
-                                                                                                }
-                                                                                                §§goto(addr033d);
-                                                                                             }
-                                                                                             §§goto(addr0306);
-                                                                                          }
-                                                                                          §§goto(addr04b7);
-                                                                                       }
-                                                                                       §§goto(addr0306);
-                                                                                    }
-                                                                                    §§goto(addr044b);
-                                                                                 }
-                                                                                 §§goto(addr033d);
-                                                                              }
-                                                                              §§goto(addr044b);
-                                                                           }
-                                                                           §§goto(addr024b);
-                                                                        }
-                                                                        §§goto(addr033d);
-                                                                     }
-                                                                     §§goto(addr03d7);
-                                                                  }
-                                                                  §§goto(addr0254);
-                                                               }
-                                                               §§goto(addr02fc);
-                                                            }
-                                                            §§goto(addr02f9);
-                                                         }
-                                                         §§goto(addr0399);
-                                                      }
-                                                      §§goto(addr0254);
-                                                   }
-                                                   §§goto(addr0352);
-                                                }
-                                                §§goto(addr020e);
-                                             }
-                                             §§goto(addr044b);
-                                          }
-                                          §§goto(addr03d7);
-                                       }
-                                       §§goto(addr02c2);
-                                    }
-                                    §§goto(addr04b7);
-                                 }
-                                 §§goto(addr028c);
-                              }
-                              §§goto(addr0258);
-                           }
-                           §§goto(addr02ab);
-                        }
-                        §§goto(addr03a7);
-                     }
-                     §§goto(addr00db);
-                  }
-                  addr04b7:
-                  return;
-               }
-               §§goto(addr039d);
+               this.goodBuyButton.libNameRight = "gui_popups_boosterpackBook";
+               this.goodBuyButton.imageNameRight = "icon_" + this._data.defaultCostConfig.goodConfig.gfxId + "_small";
             }
-            §§goto(addr035a);
+            this.backgroundGfx.toolTip = this.boosterpackImage.toolTip = LocaUtils.getString("rcl.goods.goodname","rcl.goods.goodname." + this._data.locaId);
+            this.scrollLeft.toolTip = LocaUtils.getString("rcl.tooltips.architecturalBook","rcl.tooltips.architecturalBook.detail.arrowLeft");
+            this.scrollRight.toolTip = LocaUtils.getString("rcl.tooltips.architecturalBook","rcl.tooltips.architecturalBook.detail.arrowRight");
+            this.goodBuyButton.enabled = this._data.userCanAffordGoodPrice;
+            if(this._data.defaultCostConfig.goodConfig)
+            {
+               var _loc1_:String = LocaUtils.getString("rcl.goods.goodname","rcl.goods.goodname." + this._data.defaultCostConfig.goodConfig.gfxId);
+               this.goodBuyButton.toolTip = LocaUtils.getString("rcl.tooltips.boosterpackstore","rcl.tooltips.boosterpackstore.buyButton.amountType",[this.goodBuyButton.label,null]);
+            }
+            this.rCBuyButton.includeInLayout = this.rCBuyButton.visible = this._data.hasRealCurrencyPrice();
+            if(this._data.hasRealCurrencyPrice())
+            {
+               this.rCBuyButton.priceToConfirm = this._data.realCurrencyCostAmount;
+               this.rCBuyButton.label = LocaUtils.getThousendSeperatedNumber(this._data.realCurrencyCostAmount);
+               this.rCBuyButton.showPlus = !this._data.userCanAffordRCPrice;
+               this.rCBuyButton.showSparkle = this._data.userCanAffordRCPrice;
+               var _loc2_:String = LocaUtils.getString("rcl.misc.resources","rcl.misc.resources.realcurrency");
+               this.rCBuyButton.toolTip = LocaUtils.getString("rcl.tooltips.boosterpackstore","rcl.tooltips.boosterpackstore.buyButton.amountType",[this.rCBuyButton.label,null]);
+            }
          }
-         §§goto(addr00a0);
       }
       
       private function handleBuy(param1:Event) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(param1))
+         if(param1.currentTarget.id == "goodBuyButton")
          {
-            if(param1.currentTarget.id == "goodBuyButton")
+            dispatchEvent(new Event(BUY_BOOSTER_GOOD,true,true));
+         }
+         else if(param1.currentTarget.id == "rCBuyButton")
+         {
+            if(this.rCBuyButton.showPlus)
             {
-               if(!(_loc2_ && Boolean(this)))
-               {
-                  dispatchEvent(new Event(BUY_BOOSTER_GOOD,true,true));
-                  if(_loc2_ && _loc2_)
-                  {
-                  }
-               }
+               dispatchEvent(new Event(OPEN_TREASURY,true,true));
             }
-            else if(param1.currentTarget.id == "rCBuyButton")
+            else
             {
-               if(!(_loc2_ && _loc2_))
-               {
-                  if(this.rCBuyButton.showPlus)
-                  {
-                     if(_loc3_)
-                     {
-                        dispatchEvent(new Event(OPEN_TREASURY,true,true));
-                        if(_loc3_)
-                        {
-                        }
-                     }
-                  }
-                  else
-                  {
-                     dispatchEvent(new Event(BUY_BOOSTER_RC,true,true));
-                  }
-               }
+               dispatchEvent(new Event(BUY_BOOSTER_RC,true,true));
             }
          }
       }
       
       private function handleRight() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc2_)
-         {
-            dispatchEvent(new Event(SCROLL_RIGHT,true));
-         }
+         dispatchEvent(new Event(SCROLL_RIGHT,true));
       }
       
       private function handleLeft() : void
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            dispatchEvent(new Event(SCROLL_LEFT,true));
-         }
+         dispatchEvent(new Event(SCROLL_LEFT,true));
       }
       
       public function updateData() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!(_loc2_ && _loc1_))
-         {
-            this.goodBuyButton.enabled = this._data.userCanAffordGoodPrice;
-         }
+         this.goodBuyButton.enabled = this._data.userCanAffordGoodPrice;
       }
       
       private function _BoosterpackDetail_HGroup1_c() : HGroup
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:HGroup = new HGroup();
-         if(_loc2_)
+         _loc1_.percentWidth = 100;
+         _loc1_.percentHeight = 100;
+         _loc1_.top = -20;
+         _loc1_.mxmlContent = [this._BoosterpackDetail_Group2_c(),this._BoosterpackDetail_Group4_c(),this._BoosterpackDetail_Group5_c()];
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 100;
-            if(!(_loc3_ && Boolean(_loc1_)))
-            {
-               addr002f:
-               _loc1_.percentHeight = 100;
-               if(_loc2_)
-               {
-                  _loc1_.top = -20;
-                  if(_loc2_ || Boolean(_loc1_))
-                  {
-                     _loc1_.mxmlContent = [this._BoosterpackDetail_Group2_c(),this._BoosterpackDetail_Group4_c(),this._BoosterpackDetail_Group5_c()];
-                     §§goto(addr0057);
-                  }
-               }
-               §§goto(addr009b);
-            }
-            addr0057:
-            if(_loc2_ || Boolean(this))
-            {
-               if(!_loc1_.document)
-               {
-                  if(!(_loc3_ && _loc2_))
-                  {
-                     addr009b:
-                     _loc1_.document = this;
-                  }
-               }
-            }
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr002f);
+         return _loc1_;
       }
       
       private function _BoosterpackDetail_Group2_c() : Group
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:Group = new Group();
-         if(_loc3_ || Boolean(this))
-         {
-            _loc1_.width = 290;
-            if(!_loc2_)
-            {
-               §§goto(addr003f);
-            }
-            §§goto(addr0049);
-         }
-         addr003f:
+         _loc1_.width = 290;
          _loc1_.percentHeight = 100;
-         if(_loc3_)
-         {
-            _loc1_.mxmlContent = [this._BoosterpackDetail_BriskImageDynaLib1_i(),this._BoosterpackDetail_BriskImageDynaLib2_i(),this._BoosterpackDetail_BriskImageDynaLib3_i(),this._BoosterpackDetail_BriskMCDynaLib1_c(),this._BoosterpackDetail_BriskImageDynaLib4_c(),this._BoosterpackDetail_VGroup1_c(),this._BoosterpackDetail_VGroup2_c(),this._BoosterpackDetail_VGroup3_c()];
-            addr0049:
-            if(!_loc2_)
-            {
-               §§goto(addr0090);
-            }
-            §§goto(addr009c);
-         }
-         addr0090:
+         _loc1_.mxmlContent = [this._BoosterpackDetail_BriskImageDynaLib1_i(),this._BoosterpackDetail_BriskImageDynaLib2_i(),this._BoosterpackDetail_BriskImageDynaLib3_i(),this._BoosterpackDetail_BriskMCDynaLib1_c(),this._BoosterpackDetail_BriskImageDynaLib4_c(),this._BoosterpackDetail_VGroup1_c(),this._BoosterpackDetail_VGroup2_c(),this._BoosterpackDetail_VGroup3_c()];
          if(!_loc1_.document)
          {
-            if(!_loc2_)
-            {
-               addr009c:
-               _loc1_.document = this;
-            }
+            _loc1_.document = this;
          }
          return _loc1_;
       }
       
       private function _BoosterpackDetail_BriskImageDynaLib1_i() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc2_ || Boolean(_loc1_))
+         _loc1_.horizontalCenter = 0;
+         _loc1_.top = 200;
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.dynaBmpSourceName = "rewardcomponentPriceBg_big";
+         _loc1_.id = "pricingBg";
+         if(!_loc1_.document)
          {
-            _loc1_.horizontalCenter = 0;
-            if(_loc2_ || _loc2_)
-            {
-               _loc1_.top = 200;
-               if(_loc2_ || _loc3_)
-               {
-                  _loc1_.dynaLibName = "gui_popups_paperPopup";
-                  if(!(_loc3_ && Boolean(_loc1_)))
-                  {
-                     _loc1_.dynaBmpSourceName = "rewardcomponentPriceBg_big";
-                     if(!(_loc3_ && Boolean(this)))
-                     {
-                        addr007d:
-                        _loc1_.id = "pricingBg";
-                        if(!(_loc3_ && _loc2_))
-                        {
-                           addr0090:
-                           if(!_loc1_.document)
-                           {
-                              if(_loc2_ || _loc3_)
-                              {
-                                 _loc1_.document = this;
-                                 if(_loc2_ || Boolean(this))
-                                 {
-                                    addr00c1:
-                                    this.pricingBg = _loc1_;
-                                    if(_loc2_ || Boolean(_loc1_))
-                                    {
-                                       BindingManager.executeBindings(this,"pricingBg",this.pricingBg);
-                                    }
-                                 }
-                              }
-                              §§goto(addr00e0);
-                           }
-                           §§goto(addr00c1);
-                        }
-                     }
-                     §§goto(addr00e0);
-                  }
-                  §§goto(addr0090);
-               }
-               §§goto(addr007d);
-            }
-            §§goto(addr0090);
+            _loc1_.document = this;
          }
-         addr00e0:
+         this.pricingBg = _loc1_;
+         BindingManager.executeBindings(this,"pricingBg",this.pricingBg);
          return _loc1_;
       }
       
       private function _BoosterpackDetail_BriskImageDynaLib2_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!(_loc2_ && Boolean(this)))
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.horizontalCenter = 0;
+         _loc1_.top = 20;
+         _loc1_.id = "backgroundGfx";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_paperPopup";
-            if(!_loc2_)
-            {
-               _loc1_.horizontalCenter = 0;
-               if(_loc3_ || Boolean(_loc1_))
-               {
-                  _loc1_.top = 20;
-                  if(!(_loc2_ && _loc2_))
-                  {
-                     addr0066:
-                     _loc1_.id = "backgroundGfx";
-                     if(_loc3_ || _loc2_)
-                     {
-                        if(!_loc1_.document)
-                        {
-                           if(_loc3_ || Boolean(this))
-                           {
-                              addr009a:
-                              _loc1_.document = this;
-                              if(!_loc2_)
-                              {
-                                 addr00a3:
-                                 this.backgroundGfx = _loc1_;
-                                 if(_loc3_ || Boolean(_loc1_))
-                                 {
-                                    addr00b5:
-                                    BindingManager.executeBindings(this,"backgroundGfx",this.backgroundGfx);
-                                 }
-                                 §§goto(addr00c2);
-                              }
-                              §§goto(addr00b5);
-                           }
-                           addr00c2:
-                           return _loc1_;
-                        }
-                        §§goto(addr00a3);
-                     }
-                     §§goto(addr00b5);
-                  }
-                  §§goto(addr009a);
-               }
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr0066);
+         this.backgroundGfx = _loc1_;
+         BindingManager.executeBindings(this,"backgroundGfx",this.backgroundGfx);
+         return _loc1_;
       }
       
       private function _BoosterpackDetail_BriskImageDynaLib3_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc3_)
+         _loc1_.top = 54;
+         _loc1_.horizontalCenter = 0;
+         _loc1_.dynaLibName = "gui_popups_largeGoodIcons";
+         _loc1_.id = "boosterpackImage";
+         if(!_loc1_.document)
          {
-            _loc1_.top = 54;
-            if(_loc3_)
-            {
-               addr002a:
-               _loc1_.horizontalCenter = 0;
-               if(!(_loc2_ && Boolean(_loc1_)))
-               {
-                  _loc1_.dynaLibName = "gui_popups_largeGoodIcons";
-                  if(_loc3_ || _loc3_)
-                  {
-                     addr005c:
-                     _loc1_.id = "boosterpackImage";
-                     if(_loc3_ || _loc3_)
-                     {
-                        addr006f:
-                        if(!_loc1_.document)
-                        {
-                           if(!(_loc2_ && Boolean(this)))
-                           {
-                              _loc1_.document = this;
-                              if(_loc3_)
-                              {
-                                 addr0098:
-                                 this.boosterpackImage = _loc1_;
-                                 if(!(_loc2_ && _loc3_))
-                                 {
-                                    addr00aa:
-                                    BindingManager.executeBindings(this,"boosterpackImage",this.boosterpackImage);
-                                 }
-                              }
-                              return _loc1_;
-                           }
-                        }
-                        §§goto(addr0098);
-                     }
-                     §§goto(addr00aa);
-                  }
-                  §§goto(addr0098);
-               }
-               §§goto(addr005c);
-            }
-            §§goto(addr006f);
+            _loc1_.document = this;
          }
-         §§goto(addr002a);
+         this.boosterpackImage = _loc1_;
+         BindingManager.executeBindings(this,"boosterpackImage",this.boosterpackImage);
+         return _loc1_;
       }
       
       private function _BoosterpackDetail_BriskMCDynaLib1_c() : BriskMCDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskMCDynaLib = new BriskMCDynaLib();
-         if(!_loc3_)
+         _loc1_.dynaLibName = "gui_popups_paperPopup";
+         _loc1_.dynaMCSourceName = "stickytape_top";
+         _loc1_.width = 110;
+         _loc1_.horizontalCenter = 0;
+         _loc1_.top = 13;
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_paperPopup";
-            if(_loc2_ || Boolean(this))
-            {
-               _loc1_.dynaMCSourceName = "stickytape_top";
-               if(_loc2_ || _loc2_)
-               {
-                  addr0051:
-                  _loc1_.width = 110;
-                  if(_loc2_)
-                  {
-                     _loc1_.horizontalCenter = 0;
-                     if(!_loc3_)
-                     {
-                        _loc1_.top = 13;
-                        if(_loc2_ || Boolean(this))
-                        {
-                           addr0083:
-                           if(!_loc1_.document)
-                           {
-                              if(!_loc3_)
-                              {
-                                 _loc1_.document = this;
-                              }
-                           }
-                        }
-                        §§goto(addr0093);
-                     }
-                     §§goto(addr0083);
-                  }
-               }
-               §§goto(addr0093);
-            }
-            §§goto(addr0051);
+            _loc1_.document = this;
          }
-         addr0093:
          return _loc1_;
       }
       
       private function _BoosterpackDetail_BriskImageDynaLib4_c() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!_loc3_)
+         _loc1_.dynaLibName = "gui_popups_boosterpackBook";
+         _loc1_.horizontalCenter = 0;
+         _loc1_.top = 40;
+         _loc1_.mouseEnabled = false;
+         _loc1_.mouseChildren = false;
+         _loc1_.dynaBmpSourceName = "sparkles_shadow";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_boosterpackBook";
-            if(!(_loc3_ && _loc3_))
-            {
-               _loc1_.horizontalCenter = 0;
-               if(_loc2_ || _loc2_)
-               {
-                  _loc1_.top = 40;
-                  if(!_loc3_)
-                  {
-                     _loc1_.mouseEnabled = false;
-                     if(!_loc3_)
-                     {
-                        _loc1_.mouseChildren = false;
-                        if(!(_loc3_ && Boolean(this)))
-                        {
-                           _loc1_.dynaBmpSourceName = "sparkles_shadow";
-                           if(_loc2_ || _loc2_)
-                           {
-                              addr0095:
-                              if(!_loc1_.document)
-                              {
-                                 if(_loc2_ || _loc2_)
-                                 {
-                                    addr00a9:
-                                    _loc1_.document = this;
-                                 }
-                              }
-                           }
-                           return _loc1_;
-                        }
-                        §§goto(addr0095);
-                     }
-                     §§goto(addr00a9);
-                  }
-                  §§goto(addr0095);
-               }
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr00a9);
+         return _loc1_;
       }
       
       private function _BoosterpackDetail_VGroup1_c() : VGroup
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:VGroup = new VGroup();
-         if(_loc3_)
+         _loc1_.horizontalAlign = "center";
+         _loc1_.percentHeight = 100;
+         _loc1_.width = 41;
+         _loc1_.left = 0;
+         _loc1_.paddingTop = 76;
+         _loc1_.mxmlContent = [this._BoosterpackDetail_DynamicImageButton1_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.horizontalAlign = "center";
-            if(!(_loc2_ && Boolean(this)))
-            {
-               _loc1_.percentHeight = 100;
-               if(!(_loc2_ && Boolean(_loc1_)))
-               {
-                  _loc1_.width = 41;
-                  if(_loc3_ || Boolean(_loc1_))
-                  {
-                     addr0063:
-                     _loc1_.left = 0;
-                     if(!(_loc2_ && _loc2_))
-                     {
-                        addr0075:
-                        _loc1_.paddingTop = 76;
-                        if(!_loc2_)
-                        {
-                           addr008c:
-                           _loc1_.mxmlContent = [this._BoosterpackDetail_DynamicImageButton1_i()];
-                           if(_loc3_)
-                           {
-                              if(!_loc1_.document)
-                              {
-                                 if(!(_loc2_ && Boolean(_loc1_)))
-                                 {
-                                    addr00b0:
-                                    _loc1_.document = this;
-                                 }
-                              }
-                              return _loc1_;
-                           }
-                        }
-                        §§goto(addr00b0);
-                     }
-                  }
-                  §§goto(addr008c);
-               }
-               §§goto(addr0063);
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr0075);
+         return _loc1_;
       }
       
       private function _BoosterpackDetail_DynamicImageButton1_i() : DynamicImageButton
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:DynamicImageButton = new DynamicImageButton();
-         if(!_loc2_)
+         _loc1_.styleName = "listLeft";
+         _loc1_.addEventListener("click",this.__scrollLeft_click);
+         _loc1_.id = "scrollLeft";
+         if(!_loc1_.document)
          {
-            _loc1_.styleName = "listLeft";
-            if(_loc3_)
-            {
-               _loc1_.addEventListener("click",this.__scrollLeft_click);
-               if(_loc3_ || Boolean(this))
-               {
-                  _loc1_.id = "scrollLeft";
-                  if(_loc3_)
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(_loc3_ || _loc3_)
-                        {
-                           addr007a:
-                           _loc1_.document = this;
-                           if(!_loc2_)
-                           {
-                              §§goto(addr0083);
-                           }
-                           §§goto(addr008d);
-                        }
-                     }
-                     §§goto(addr0083);
-                  }
-                  §§goto(addr008d);
-               }
-               §§goto(addr007a);
-            }
+            _loc1_.document = this;
          }
-         addr0083:
          this.scrollLeft = _loc1_;
-         if(_loc3_)
-         {
-            addr008d:
-            BindingManager.executeBindings(this,"scrollLeft",this.scrollLeft);
-         }
+         BindingManager.executeBindings(this,"scrollLeft",this.scrollLeft);
          return _loc1_;
       }
       
       public function __scrollLeft_click(param1:MouseEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || Boolean(this))
-         {
-            this.handleLeft();
-         }
+         this.handleLeft();
       }
       
       private function _BoosterpackDetail_VGroup2_c() : VGroup
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:VGroup = new VGroup();
-         if(!_loc3_)
+         _loc1_.horizontalAlign = "center";
+         _loc1_.right = 0;
+         _loc1_.width = 41;
+         _loc1_.percentHeight = 100;
+         _loc1_.paddingTop = 76;
+         _loc1_.mxmlContent = [this._BoosterpackDetail_DynamicImageButton2_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.horizontalAlign = "center";
-            if(!_loc3_)
-            {
-               _loc1_.right = 0;
-               if(_loc2_ || Boolean(this))
-               {
-                  _loc1_.width = 41;
-                  if(!(_loc3_ && _loc3_))
-                  {
-                     _loc1_.percentHeight = 100;
-                     if(_loc2_ || Boolean(this))
-                     {
-                        addr006b:
-                        _loc1_.paddingTop = 76;
-                        if(!(_loc3_ && _loc2_))
-                        {
-                           §§goto(addr008b);
-                        }
-                        §§goto(addr009b);
-                     }
-                  }
-                  addr008b:
-                  _loc1_.mxmlContent = [this._BoosterpackDetail_DynamicImageButton2_i()];
-                  if(!_loc3_)
-                  {
-                     addr009b:
-                     if(!_loc1_.document)
-                     {
-                        if(!(_loc3_ && Boolean(this)))
-                        {
-                           _loc1_.document = this;
-                        }
-                     }
-                  }
-                  return _loc1_;
-               }
-               §§goto(addr009b);
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr006b);
+         return _loc1_;
       }
       
       private function _BoosterpackDetail_DynamicImageButton2_i() : DynamicImageButton
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:DynamicImageButton = new DynamicImageButton();
-         if(_loc3_ || Boolean(this))
+         _loc1_.styleName = "listRight";
+         _loc1_.addEventListener("click",this.__scrollRight_click);
+         _loc1_.id = "scrollRight";
+         if(!_loc1_.document)
          {
-            _loc1_.styleName = "listRight";
-            if(_loc3_)
-            {
-               _loc1_.addEventListener("click",this.__scrollRight_click);
-               addr0033:
-               if(!(_loc2_ && Boolean(this)))
-               {
-                  _loc1_.id = "scrollRight";
-                  if(_loc3_)
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(_loc3_)
-                        {
-                           addr0078:
-                           _loc1_.document = this;
-                           if(!(_loc2_ && Boolean(this)))
-                           {
-                              addr0089:
-                              this.scrollRight = _loc1_;
-                              if(_loc3_)
-                              {
-                                 addr0093:
-                                 BindingManager.executeBindings(this,"scrollRight",this.scrollRight);
-                              }
-                           }
-                        }
-                        return _loc1_;
-                     }
-                     §§goto(addr0089);
-                  }
-                  §§goto(addr0093);
-               }
-               §§goto(addr0089);
-            }
-            §§goto(addr0078);
+            _loc1_.document = this;
          }
-         §§goto(addr0033);
+         this.scrollRight = _loc1_;
+         BindingManager.executeBindings(this,"scrollRight",this.scrollRight);
+         return _loc1_;
       }
       
       public function __scrollRight_click(param1:MouseEvent) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this.handleRight();
-         }
+         this.handleRight();
       }
       
       private function _BoosterpackDetail_VGroup3_c() : VGroup
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:VGroup = new VGroup();
-         if(!(_loc2_ && _loc3_))
+         _loc1_.percentWidth = 100;
+         _loc1_.percentHeight = 100;
+         _loc1_.gap = 0;
+         _loc1_.horizontalAlign = "center";
+         _loc1_.paddingTop = 212;
+         _loc1_.mxmlContent = [this._BoosterpackDetail_HGroup2_c(),this._BoosterpackDetail_Group3_c(),this._BoosterpackDetail_MultistateButton1_i(),this._BoosterpackDetail_MultistateButton2_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 100;
-            if(!_loc2_)
-            {
-               _loc1_.percentHeight = 100;
-               if(_loc3_ || Boolean(_loc1_))
-               {
-                  _loc1_.gap = 0;
-                  if(_loc3_ || Boolean(_loc1_))
-                  {
-                     _loc1_.horizontalAlign = "center";
-                     if(_loc3_)
-                     {
-                        addr006c:
-                        _loc1_.paddingTop = 212;
-                        if(_loc3_)
-                        {
-                           _loc1_.mxmlContent = [this._BoosterpackDetail_HGroup2_c(),this._BoosterpackDetail_Group3_c(),this._BoosterpackDetail_MultistateButton1_i(),this._BoosterpackDetail_MultistateButton2_i()];
-                           addr0078:
-                           if(_loc3_)
-                           {
-                              addr00a6:
-                              if(!_loc1_.document)
-                              {
-                                 if(_loc3_ || Boolean(_loc1_))
-                                 {
-                                    addr00ba:
-                                    _loc1_.document = this;
-                                 }
-                              }
-                           }
-                           §§goto(addr00be);
-                        }
-                        §§goto(addr00a6);
-                     }
-                     addr00be:
-                     return _loc1_;
-                  }
-                  §§goto(addr006c);
-               }
-               §§goto(addr00ba);
-            }
-            §§goto(addr00a6);
+            _loc1_.document = this;
          }
-         §§goto(addr0078);
+         return _loc1_;
       }
       
       private function _BoosterpackDetail_HGroup2_c() : HGroup
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:HGroup = new HGroup();
-         if(!_loc2_)
+         _loc1_.verticalAlign = "middle";
+         _loc1_.horizontalAlign = "center";
+         _loc1_.width = 170;
+         _loc1_.height = 38;
+         _loc1_.mxmlContent = [this._BoosterpackDetail_LocaLabel1_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.verticalAlign = "middle";
-            if(_loc3_)
-            {
-               _loc1_.horizontalAlign = "center";
-               if(_loc3_)
-               {
-                  _loc1_.width = 170;
-                  if(_loc3_ || Boolean(this))
-                  {
-                     addr0055:
-                     _loc1_.height = 38;
-                     if(_loc3_)
-                     {
-                        _loc1_.mxmlContent = [this._BoosterpackDetail_LocaLabel1_i()];
-                        addr005f:
-                        if(!(_loc2_ && Boolean(_loc1_)))
-                        {
-                           §§goto(addr0083);
-                        }
-                        §§goto(addr0097);
-                     }
-                  }
-                  addr0083:
-                  if(!_loc1_.document)
-                  {
-                     if(_loc3_ || Boolean(_loc1_))
-                     {
-                        addr0097:
-                        _loc1_.document = this;
-                     }
-                  }
-                  return _loc1_;
-               }
-               §§goto(addr0097);
-            }
-            §§goto(addr005f);
+            _loc1_.document = this;
          }
-         §§goto(addr0055);
+         return _loc1_;
       }
       
       private function _BoosterpackDetail_LocaLabel1_i() : LocaLabel
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:LocaLabel = new LocaLabel();
-         if(!(_loc3_ && Boolean(_loc1_)))
+         _loc1_.maxDisplayedLines = 2;
+         _loc1_.percentWidth = 90;
+         _loc1_.styleName = "boosterpackLabel";
+         _loc1_.id = "boosterpackLabel";
+         if(!_loc1_.document)
          {
-            _loc1_.maxDisplayedLines = 2;
-            if(_loc2_ || _loc3_)
-            {
-               _loc1_.percentWidth = 90;
-               if(_loc2_)
-               {
-                  _loc1_.styleName = "boosterpackLabel";
-                  if(_loc2_ || Boolean(_loc1_))
-                  {
-                     _loc1_.id = "boosterpackLabel";
-                     if(_loc2_)
-                     {
-                        addr0070:
-                        if(!_loc1_.document)
-                        {
-                           if(!_loc3_)
-                           {
-                              addr0089:
-                              _loc1_.document = this;
-                              if(!_loc3_)
-                              {
-                                 §§goto(addr0092);
-                              }
-                              §§goto(addr00a4);
-                           }
-                        }
-                        addr0092:
-                        this.boosterpackLabel = _loc1_;
-                        if(!(_loc3_ && Boolean(this)))
-                        {
-                           addr00a4:
-                           BindingManager.executeBindings(this,"boosterpackLabel",this.boosterpackLabel);
-                        }
-                        §§goto(addr00b1);
-                     }
-                     addr00b1:
-                     return _loc1_;
-                  }
-                  §§goto(addr0089);
-               }
-               §§goto(addr0070);
-            }
-            §§goto(addr0092);
+            _loc1_.document = this;
          }
-         §§goto(addr0070);
+         this.boosterpackLabel = _loc1_;
+         BindingManager.executeBindings(this,"boosterpackLabel",this.boosterpackLabel);
+         return _loc1_;
       }
       
       private function _BoosterpackDetail_Group3_c() : Group
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:Group = new Group();
-         if(_loc3_ || Boolean(this))
+         _loc1_.height = 10;
+         if(!_loc1_.document)
          {
-            _loc1_.height = 10;
-            if(_loc3_)
-            {
-               if(!_loc1_.document)
-               {
-                  if(_loc3_ || Boolean(_loc1_))
-                  {
-                     addr0053:
-                     _loc1_.document = this;
-                  }
-               }
-               return _loc1_;
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr0053);
+         return _loc1_;
       }
       
       private function _BoosterpackDetail_MultistateButton1_i() : MultistateButton
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:MultistateButton = new MultistateButton();
-         if(_loc3_ || Boolean(_loc1_))
+         _loc1_.bottom = 0;
+         _loc1_.width = 205;
+         _loc1_.verticalCenter = 0;
+         _loc1_.addEventListener("click",this.__goodBuyButton_click);
+         _loc1_.id = "goodBuyButton";
+         if(!_loc1_.document)
          {
-            _loc1_.bottom = 0;
-            if(_loc3_)
-            {
-               addr0033:
-               _loc1_.width = 205;
-               if(_loc3_ || _loc3_)
-               {
-                  _loc1_.verticalCenter = 0;
-                  if(_loc3_ || Boolean(this))
-                  {
-                     addr0064:
-                     _loc1_.addEventListener("click",this.__goodBuyButton_click);
-                     if(_loc3_ || Boolean(this))
-                     {
-                        _loc1_.id = "goodBuyButton";
-                        if(!(_loc2_ && _loc3_))
-                        {
-                           if(!_loc1_.document)
-                           {
-                              if(!_loc2_)
-                              {
-                                 _loc1_.document = this;
-                                 if(_loc3_ || Boolean(_loc1_))
-                                 {
-                                    addr00b9:
-                                    this.goodBuyButton = _loc1_;
-                                    if(!(_loc2_ && Boolean(_loc1_)))
-                                    {
-                                       addr00cb:
-                                       BindingManager.executeBindings(this,"goodBuyButton",this.goodBuyButton);
-                                    }
-                                 }
-                                 §§goto(addr00d8);
-                              }
-                              §§goto(addr00cb);
-                           }
-                           §§goto(addr00b9);
-                        }
-                        §§goto(addr00d8);
-                     }
-                     §§goto(addr00cb);
-                  }
-                  addr00d8:
-                  return _loc1_;
-               }
-               §§goto(addr00cb);
-            }
-            §§goto(addr0064);
+            _loc1_.document = this;
          }
-         §§goto(addr0033);
+         this.goodBuyButton = _loc1_;
+         BindingManager.executeBindings(this,"goodBuyButton",this.goodBuyButton);
+         return _loc1_;
       }
       
       public function __goodBuyButton_click(param1:MouseEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(!_loc3_)
-         {
-            this.handleBuy(param1);
-         }
+         this.handleBuy(param1);
       }
       
       private function _BoosterpackDetail_MultistateButton2_i() : MultistateButton
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:MultistateButton = new MultistateButton();
-         if(_loc3_ || Boolean(_loc1_))
-         {
-            _loc1_.useConfirmation = true;
-            if(_loc3_ || Boolean(_loc1_))
-            {
-               _loc1_.bottom = 0;
-               if(_loc3_)
-               {
-                  §§goto(addr0044);
-               }
-               §§goto(addr00db);
-            }
-            §§goto(addr009e);
-         }
-         addr0044:
+         _loc1_.useConfirmation = true;
+         _loc1_.bottom = 0;
          _loc1_.width = 205;
-         if(!_loc2_)
+         _loc1_.verticalCenter = 0;
+         _loc1_.imageNameRight = "layer_rc_icon";
+         _loc1_.libNameRight = "gui_resources_icons";
+         _loc1_.addEventListener("click",this.__rCBuyButton_click);
+         _loc1_.id = "rCBuyButton";
+         if(!_loc1_.document)
          {
-            _loc1_.verticalCenter = 0;
-            if(!(_loc2_ && _loc3_))
-            {
-               _loc1_.imageNameRight = "layer_rc_icon";
-               if(_loc3_)
-               {
-                  _loc1_.libNameRight = "gui_resources_icons";
-                  if(_loc3_ || _loc2_)
-                  {
-                     _loc1_.addEventListener("click",this.__rCBuyButton_click);
-                     if(!_loc2_)
-                     {
-                        addr009e:
-                        _loc1_.id = "rCBuyButton";
-                        if(!(_loc2_ && Boolean(_loc1_)))
-                        {
-                           addr00bc:
-                           if(!_loc1_.document)
-                           {
-                              if(!_loc2_)
-                              {
-                                 _loc1_.document = this;
-                                 if(!_loc2_)
-                                 {
-                                    §§goto(addr00d1);
-                                 }
-                                 §§goto(addr00db);
-                              }
-                           }
-                           §§goto(addr00d1);
-                        }
-                        §§goto(addr00db);
-                     }
-                     addr00d1:
-                     this.rCBuyButton = _loc1_;
-                     if(!_loc2_)
-                     {
-                        addr00db:
-                        BindingManager.executeBindings(this,"rCBuyButton",this.rCBuyButton);
-                     }
-                     §§goto(addr00e8);
-                  }
-               }
-               §§goto(addr009e);
-            }
-            §§goto(addr00bc);
+            _loc1_.document = this;
          }
-         addr00e8:
+         this.rCBuyButton = _loc1_;
+         BindingManager.executeBindings(this,"rCBuyButton",this.rCBuyButton);
          return _loc1_;
       }
       
       public function __rCBuyButton_click(param1:MouseEvent) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_ || _loc2_)
-         {
-            this.handleBuy(param1);
-         }
+         this.handleBuy(param1);
       }
       
       private function _BoosterpackDetail_Group4_c() : Group
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:Group = new Group();
-         if(!_loc3_)
+         _loc1_.top = 10;
+         _loc1_.mxmlContent = [this._BoosterpackDetail_BriskImageDynaLib5_c()];
+         if(!_loc1_.document)
          {
-            _loc1_.top = 10;
-            if(_loc2_)
-            {
-               _loc1_.mxmlContent = [this._BoosterpackDetail_BriskImageDynaLib5_c()];
-               if(_loc2_ || Boolean(_loc1_))
-               {
-                  if(!_loc1_.document)
-                  {
-                     if(_loc2_)
-                     {
-                        _loc1_.document = this;
-                     }
-                  }
-               }
-            }
+            _loc1_.document = this;
          }
          return _loc1_;
       }
       
       private function _BoosterpackDetail_BriskImageDynaLib5_c() : BriskImageDynaLib
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc2_ || Boolean(this))
+         _loc1_.dynaLibName = "gui_popups_boosterpackBook";
+         _loc1_.horizontalCenter = 0;
+         _loc1_.dynaBmpSourceName = "blue_line_long";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_boosterpackBook";
-            if(_loc2_)
-            {
-               _loc1_.horizontalCenter = 0;
-               if(!_loc3_)
-               {
-                  _loc1_.dynaBmpSourceName = "blue_line_long";
-                  if(_loc2_)
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(!_loc3_)
-                        {
-                           addr006c:
-                           _loc1_.document = this;
-                        }
-                     }
-                     §§goto(addr0070);
-                  }
-                  §§goto(addr006c);
-               }
-               §§goto(addr0070);
-            }
-            §§goto(addr006c);
+            _loc1_.document = this;
          }
-         addr0070:
          return _loc1_;
       }
       
       private function _BoosterpackDetail_Group5_c() : Group
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:Group = new Group();
-         if(_loc2_)
+         _loc1_.percentWidth = 100;
+         _loc1_.percentHeight = 100;
+         _loc1_.mxmlContent = [this._BoosterpackDetail_VGroup4_c(),this._BoosterpackDetail_VGroup5_c()];
+         if(!_loc1_.document)
          {
-            _loc1_.percentWidth = 100;
-            if(!_loc3_)
-            {
-               _loc1_.percentHeight = 100;
-               if(_loc2_)
-               {
-                  addr004b:
-                  _loc1_.mxmlContent = [this._BoosterpackDetail_VGroup4_c(),this._BoosterpackDetail_VGroup5_c()];
-                  if(_loc2_)
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(_loc2_)
-                        {
-                           addr006d:
-                           _loc1_.document = this;
-                        }
-                     }
-                     §§goto(addr0071);
-                  }
-                  §§goto(addr006d);
-               }
-               §§goto(addr0071);
-            }
-            §§goto(addr004b);
+            _loc1_.document = this;
          }
-         addr0071:
          return _loc1_;
       }
       
       private function _BoosterpackDetail_VGroup4_c() : VGroup
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:VGroup = new VGroup();
-         if(_loc3_)
+         _loc1_.percentHeight = 100;
+         _loc1_.gap = 0;
+         _loc1_.horizontalAlign = "right";
+         _loc1_.mxmlContent = [this._BoosterpackDetail_BriskImageDynaLib6_i(),this._BoosterpackDetail_BriskImageDynaLib7_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.percentHeight = 100;
-            if(_loc3_ || _loc2_)
-            {
-               _loc1_.gap = 0;
-               if(!(_loc2_ && Boolean(_loc1_)))
-               {
-                  _loc1_.horizontalAlign = "right";
-                  if(!_loc2_)
-                  {
-                     addr006a:
-                     _loc1_.mxmlContent = [this._BoosterpackDetail_BriskImageDynaLib6_i(),this._BoosterpackDetail_BriskImageDynaLib7_i()];
-                     if(!_loc2_)
-                     {
-                        §§goto(addr0080);
-                     }
-                     §§goto(addr0094);
-                  }
-                  addr0080:
-                  if(!_loc1_.document)
-                  {
-                     if(!(_loc2_ && _loc3_))
-                     {
-                        addr0094:
-                        _loc1_.document = this;
-                     }
-                  }
-                  return _loc1_;
-               }
-            }
-            §§goto(addr0094);
+            _loc1_.document = this;
          }
-         §§goto(addr006a);
+         return _loc1_;
       }
       
       private function _BoosterpackDetail_BriskImageDynaLib6_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(_loc3_)
+         _loc1_.dynaLibName = "gui_popups_boosterpackBook";
+         _loc1_.dynaBmpSourceName = "polaroid_right_top";
+         _loc1_.id = "boosterPackGeneralContent";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_boosterpackBook";
-            if(_loc3_ || Boolean(_loc1_))
-            {
-               _loc1_.dynaBmpSourceName = "polaroid_right_top";
-               if(!(_loc2_ && Boolean(_loc1_)))
-               {
-                  _loc1_.id = "boosterPackGeneralContent";
-                  if(_loc3_)
-                  {
-                     if(!_loc1_.document)
-                     {
-                        if(!_loc2_)
-                        {
-                           §§goto(addr0079);
-                        }
-                     }
-                     §§goto(addr008a);
-                  }
-                  addr0079:
-                  _loc1_.document = this;
-                  if(_loc3_ || Boolean(this))
-                  {
-                     addr008a:
-                     this.boosterPackGeneralContent = _loc1_;
-                     if(!_loc2_)
-                     {
-                        addr0094:
-                        BindingManager.executeBindings(this,"boosterPackGeneralContent",this.boosterPackGeneralContent);
-                     }
-                  }
-                  return _loc1_;
-               }
-               §§goto(addr0094);
-            }
+            _loc1_.document = this;
          }
-         §§goto(addr008a);
+         this.boosterPackGeneralContent = _loc1_;
+         BindingManager.executeBindings(this,"boosterPackGeneralContent",this.boosterPackGeneralContent);
+         return _loc1_;
       }
       
       private function _BoosterpackDetail_BriskImageDynaLib7_i() : BriskImageDynaLib
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:BriskImageDynaLib = new BriskImageDynaLib();
-         if(!(_loc2_ && Boolean(this)))
+         _loc1_.dynaLibName = "gui_popups_boosterpackBook";
+         _loc1_.id = "boosterpackSpecialContent";
+         if(!_loc1_.document)
          {
-            _loc1_.dynaLibName = "gui_popups_boosterpackBook";
-            if(!_loc2_)
-            {
-               _loc1_.id = "boosterpackSpecialContent";
-               if(!_loc2_)
-               {
-                  if(!_loc1_.document)
-                  {
-                     if(!_loc2_)
-                     {
-                        _loc1_.document = this;
-                        if(!(_loc2_ && _loc3_))
-                        {
-                           §§goto(addr0071);
-                        }
-                     }
-                     §§goto(addr0083);
-                  }
-               }
-               addr0071:
-               this.boosterpackSpecialContent = _loc1_;
-               if(!(_loc2_ && Boolean(_loc1_)))
-               {
-                  addr0083:
-                  BindingManager.executeBindings(this,"boosterpackSpecialContent",this.boosterpackSpecialContent);
-               }
-               §§goto(addr0090);
-            }
-            addr0090:
-            return _loc1_;
+            _loc1_.document = this;
          }
-         §§goto(addr0071);
+         this.boosterpackSpecialContent = _loc1_;
+         BindingManager.executeBindings(this,"boosterpackSpecialContent",this.boosterpackSpecialContent);
+         return _loc1_;
       }
       
       private function _BoosterpackDetail_VGroup5_c() : VGroup
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:VGroup = new VGroup();
-         if(_loc2_)
+         _loc1_.width = 180;
+         _loc1_.left = 16;
+         _loc1_.percentHeight = 100;
+         _loc1_.mxmlContent = [this._BoosterpackDetail_Group6_c(),this._BoosterpackDetail_LocaLabel2_i(),this._BoosterpackDetail_Group7_c(),this._BoosterpackDetail_LocaLabel3_i()];
+         if(!_loc1_.document)
          {
-            _loc1_.width = 180;
-            if(!(_loc3_ && Boolean(_loc1_)))
-            {
-               _loc1_.left = 16;
-               if(!_loc3_)
-               {
-                  _loc1_.percentHeight = 100;
-                  if(_loc2_)
-                  {
-                     _loc1_.mxmlContent = [this._BoosterpackDetail_Group6_c(),this._BoosterpackDetail_LocaLabel2_i(),this._BoosterpackDetail_Group7_c(),this._BoosterpackDetail_LocaLabel3_i()];
-                     if(_loc2_)
-                     {
-                        if(!_loc1_.document)
-                        {
-                           if(!_loc3_)
-                           {
-                              _loc1_.document = this;
-                           }
-                        }
-                     }
-                  }
-               }
-            }
+            _loc1_.document = this;
          }
          return _loc1_;
       }
       
       private function _BoosterpackDetail_Group6_c() : Group
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:Group = new Group();
-         if(_loc3_)
+         _loc1_.height = 6;
+         if(!_loc1_.document)
          {
-            _loc1_.height = 6;
-            if(_loc3_)
-            {
-               if(!_loc1_.document)
-               {
-                  if(_loc3_ || _loc3_)
-                  {
-                     _loc1_.document = this;
-                  }
-               }
-            }
+            _loc1_.document = this;
          }
          return _loc1_;
       }
       
       private function _BoosterpackDetail_LocaLabel2_i() : LocaLabel
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
          var _loc1_:LocaLabel = new LocaLabel();
-         if(!_loc3_)
-         {
-            _loc1_.maxDisplayedLines = 4;
-            if(_loc2_)
-            {
-               §§goto(addr0029);
-            }
-            §§goto(addr003b);
-         }
-         addr0029:
+         _loc1_.maxDisplayedLines = 4;
          _loc1_.percentWidth = 100;
-         if(_loc2_ || Boolean(this))
+         _loc1_.styleName = "boosterpackInfo";
+         _loc1_.id = "normalContentLabel";
+         if(!_loc1_.document)
          {
-            addr003b:
-            _loc1_.styleName = "boosterpackInfo";
-            if(!_loc3_)
-            {
-               _loc1_.id = "normalContentLabel";
-               if(_loc2_ || Boolean(this))
-               {
-                  if(!_loc1_.document)
-                  {
-                     if(_loc2_)
-                     {
-                        addr0071:
-                        _loc1_.document = this;
-                        if(!(_loc3_ && _loc3_))
-                        {
-                           §§goto(addr008e);
-                        }
-                        §§goto(addr00a0);
-                     }
-                  }
-                  addr008e:
-                  this.normalContentLabel = _loc1_;
-                  if(!(_loc3_ && Boolean(_loc1_)))
-                  {
-                     addr00a0:
-                     BindingManager.executeBindings(this,"normalContentLabel",this.normalContentLabel);
-                  }
-                  §§goto(addr00ad);
-               }
-               §§goto(addr0071);
-            }
-            §§goto(addr00a0);
+            _loc1_.document = this;
          }
-         addr00ad:
+         this.normalContentLabel = _loc1_;
+         BindingManager.executeBindings(this,"normalContentLabel",this.normalContentLabel);
          return _loc1_;
       }
       
       private function _BoosterpackDetail_Group7_c() : Group
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:Group = new Group();
-         if(!(_loc2_ && _loc3_))
-         {
-            _loc1_.height = 140;
-            if(!_loc2_)
-            {
-               §§goto(addr0040);
-            }
-            §§goto(addr004c);
-         }
-         addr0040:
+         _loc1_.height = 140;
          if(!_loc1_.document)
          {
-            if(!_loc2_)
-            {
-               addr004c:
-               _loc1_.document = this;
-            }
+            _loc1_.document = this;
          }
          return _loc1_;
       }
       
       private function _BoosterpackDetail_LocaLabel3_i() : LocaLabel
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
          var _loc1_:LocaLabel = new LocaLabel();
-         if(!(_loc2_ && Boolean(this)))
+         _loc1_.maxDisplayedLines = 4;
+         _loc1_.percentWidth = 100;
+         _loc1_.styleName = "boosterpackInfo";
+         _loc1_.id = "specialContentLabel";
+         if(!_loc1_.document)
          {
-            _loc1_.maxDisplayedLines = 4;
-            if(_loc3_ || Boolean(this))
-            {
-               _loc1_.percentWidth = 100;
-               if(!(_loc2_ && _loc2_))
-               {
-                  _loc1_.styleName = "boosterpackInfo";
-                  if(!_loc2_)
-                  {
-                     _loc1_.id = "specialContentLabel";
-                     if(!_loc2_)
-                     {
-                        addr0070:
-                        if(!_loc1_.document)
-                        {
-                           if(_loc3_ || _loc2_)
-                           {
-                              _loc1_.document = this;
-                              if(_loc3_)
-                              {
-                                 addr0098:
-                                 this.specialContentLabel = _loc1_;
-                                 if(_loc3_ || Boolean(_loc1_))
-                                 {
-                                    addr00aa:
-                                    BindingManager.executeBindings(this,"specialContentLabel",this.specialContentLabel);
-                                 }
-                              }
-                           }
-                           §§goto(addr00b7);
-                        }
-                        §§goto(addr0098);
-                     }
-                     §§goto(addr00b7);
-                  }
-                  §§goto(addr0070);
-               }
-               §§goto(addr00aa);
-            }
+            _loc1_.document = this;
          }
-         addr00b7:
+         this.specialContentLabel = _loc1_;
+         BindingManager.executeBindings(this,"specialContentLabel",this.specialContentLabel);
          return _loc1_;
       }
       
@@ -1991,33 +625,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set backgroundGfx(param1:BriskImageDynaLib) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1893627029backgroundGfx;
-         if(_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1893627029backgroundGfx = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc3_ && Boolean(this)))
-               {
-                  this._1893627029backgroundGfx = param1;
-                  if(!_loc3_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc4_)
-                        {
-                           addr0064:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"backgroundGfx",_loc2_,param1));
-                        }
-                     }
-                  }
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"backgroundGfx",_loc2_,param1));
             }
-            return;
          }
-         §§goto(addr0064);
       }
       
       [Bindable(event="propertyChange")]
@@ -2028,34 +644,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set boosterPackGeneralContent(param1:BriskImageDynaLib) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._523126938boosterPackGeneralContent;
-         if(_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._523126938boosterPackGeneralContent = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc4_ || Boolean(_loc2_))
-               {
-                  this._523126938boosterPackGeneralContent = param1;
-                  if(!(_loc3_ && _loc3_))
-                  {
-                     addr0061:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!_loc3_)
-                        {
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"boosterPackGeneralContent",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr007f);
-               }
-               §§goto(addr0061);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"boosterPackGeneralContent",_loc2_,param1));
             }
          }
-         addr007f:
       }
       
       [Bindable(event="propertyChange")]
@@ -2066,34 +663,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set boosterpackImage(param1:BriskImageDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._779621070boosterpackImage;
-         if(!_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._779621070boosterpackImage = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc4_)
-               {
-                  this._779621070boosterpackImage = param1;
-                  if(_loc3_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_)
-                        {
-                           addr0051:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"boosterpackImage",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0060);
-                  }
-               }
-               §§goto(addr0051);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"boosterpackImage",_loc2_,param1));
             }
          }
-         addr0060:
       }
       
       [Bindable(event="propertyChange")]
@@ -2104,34 +682,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set boosterpackLabel(param1:LocaLabel) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._777207093boosterpackLabel;
-         if(!_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._777207093boosterpackLabel = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_)
-               {
-                  this._777207093boosterpackLabel = param1;
-                  if(_loc3_ || Boolean(this))
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!_loc4_)
-                        {
-                           addr0065:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"boosterpackLabel",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0074);
-               }
-               §§goto(addr0065);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"boosterpackLabel",_loc2_,param1));
             }
          }
-         addr0074:
       }
       
       [Bindable(event="propertyChange")]
@@ -2142,34 +701,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set boosterpackSpecialContent(param1:BriskImageDynaLib) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._2116806775boosterpackSpecialContent;
-         if(!(_loc4_ && Boolean(this)))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._2116806775boosterpackSpecialContent = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc4_)
-               {
-                  this._2116806775boosterpackSpecialContent = param1;
-                  if(!(_loc4_ && _loc3_))
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!_loc4_)
-                        {
-                           addr0072:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"boosterpackSpecialContent",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0081);
-                  }
-                  §§goto(addr0072);
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"boosterpackSpecialContent",_loc2_,param1));
             }
          }
-         addr0081:
       }
       
       [Bindable(event="propertyChange")]
@@ -2180,33 +720,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set goodBuyButton(param1:MultistateButton) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._1950300443goodBuyButton;
-         if(_loc3_ || _loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1950300443goodBuyButton = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_)
-               {
-                  this._1950300443goodBuyButton = param1;
-                  if(_loc3_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_ || Boolean(_loc2_))
-                        {
-                           addr006a:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"goodBuyButton",_loc2_,param1));
-                        }
-                     }
-                  }
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"goodBuyButton",_loc2_,param1));
             }
-            return;
          }
-         §§goto(addr006a);
       }
       
       [Bindable(event="propertyChange")]
@@ -2217,36 +739,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set normalContentLabel(param1:LocaLabel) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._1806488446normalContentLabel;
-         if(_loc3_ || Boolean(_loc2_))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1806488446normalContentLabel = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc4_)
-               {
-                  this._1806488446normalContentLabel = param1;
-                  if(!_loc4_)
-                  {
-                     addr0058:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_ || Boolean(param1))
-                        {
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"normalContentLabel",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr007e);
-               }
-               §§goto(addr0058);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"normalContentLabel",_loc2_,param1));
             }
-            addr007e:
-            return;
          }
-         §§goto(addr0058);
       }
       
       [Bindable(event="propertyChange")]
@@ -2257,37 +758,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set pricingBg(param1:BriskImageDynaLib) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._2121281877pricingBg;
-         if(_loc4_ || Boolean(param1))
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._2121281877pricingBg = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc3_)
-               {
-                  this._2121281877pricingBg = param1;
-                  addr0042:
-                  if(_loc4_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!(_loc3_ && Boolean(_loc2_)))
-                        {
-                           addr0071:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"pricingBg",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0080);
-                  }
-                  §§goto(addr0071);
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"pricingBg",_loc2_,param1));
             }
-            addr0080:
-            return;
          }
-         §§goto(addr0042);
       }
       
       [Bindable(event="propertyChange")]
@@ -2298,37 +777,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set rCBuyButton(param1:MultistateButton) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1756850759rCBuyButton;
-         if(!_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1756850759rCBuyButton = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!_loc3_)
-               {
-                  addr0038:
-                  this._1756850759rCBuyButton = param1;
-                  if(_loc4_ || Boolean(this))
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc4_ || _loc3_)
-                        {
-                           addr006f:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"rCBuyButton",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr007e);
-                  }
-                  §§goto(addr006f);
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"rCBuyButton",_loc2_,param1));
             }
-            addr007e:
-            return;
          }
-         §§goto(addr0038);
       }
       
       [Bindable(event="propertyChange")]
@@ -2339,37 +796,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set scrollLeft(param1:DynamicImageButton) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._66047092scrollLeft;
-         if(!_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._66047092scrollLeft = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc4_ || Boolean(_loc2_))
-               {
-                  this._66047092scrollLeft = param1;
-                  if(_loc4_ || Boolean(param1))
-                  {
-                     addr0061:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc4_ || Boolean(this))
-                        {
-                           addr0079:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"scrollLeft",_loc2_,param1));
-                        }
-                     }
-                     §§goto(addr0088);
-                  }
-               }
-               §§goto(addr0079);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"scrollLeft",_loc2_,param1));
             }
-            addr0088:
-            return;
          }
-         §§goto(addr0061);
       }
       
       [Bindable(event="propertyChange")]
@@ -2380,37 +815,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set scrollRight(param1:DynamicImageButton) : void
       {
-         §§push(false);
-         var _loc3_:Boolean = true;
-         var _loc4_:* = §§pop();
          var _loc2_:Object = this._2053120847scrollRight;
-         if(_loc3_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._2053120847scrollRight = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(_loc3_)
-               {
-                  this._2053120847scrollRight = param1;
-                  if(!_loc4_)
-                  {
-                     addr004e:
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(_loc3_ || Boolean(this))
-                        {
-                           addr0065:
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"scrollRight",_loc2_,param1));
-                        }
-                     }
-                  }
-                  §§goto(addr0074);
-               }
-               §§goto(addr0065);
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"scrollRight",_loc2_,param1));
             }
-            addr0074:
-            return;
          }
-         §§goto(addr004e);
       }
       
       [Bindable(event="propertyChange")]
@@ -2421,33 +834,15 @@ package net.bigpoint.cityrama.view.boosterpackstore.ui.components
       
       public function set specialContentLabel(param1:LocaLabel) : void
       {
-         var _temp_1:* = true;
-         var _loc3_:Boolean = false;
-         var _loc4_:Boolean = _temp_1;
          var _loc2_:Object = this._1151040172specialContentLabel;
-         if(_loc4_)
+         if(_loc2_ !== param1)
          {
-            if(_loc2_ !== param1)
+            this._1151040172specialContentLabel = param1;
+            if(this.hasEventListener("propertyChange"))
             {
-               if(!(_loc3_ && Boolean(this)))
-               {
-                  this._1151040172specialContentLabel = param1;
-                  addr003f:
-                  if(!_loc3_)
-                  {
-                     if(this.hasEventListener("propertyChange"))
-                     {
-                        if(!(_loc3_ && Boolean(this)))
-                        {
-                           this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"specialContentLabel",_loc2_,param1));
-                        }
-                     }
-                  }
-               }
+               this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"specialContentLabel",_loc2_,param1));
             }
-            return;
          }
-         §§goto(addr003f);
       }
    }
 }

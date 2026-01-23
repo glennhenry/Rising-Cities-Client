@@ -14,110 +14,37 @@ package net.bigpoint.cityrama.view.emergencyBook
       
       public static const NAME:String = "EmergencyCoverageMediator";
       
-      var _temp_1:* = true;
-      var _loc1_:Boolean = false;
-      var _loc2_:Boolean = _temp_1;
-      if(!(_loc1_ && _loc1_))
-      {
-         NAME = "EmergencyCoverageMediator";
-      }
-      
       public function EmergencyCoverageMediator(param1:Object)
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_ || Boolean(this))
-         {
-            super(NAME,param1);
-         }
+         super(NAME,param1);
       }
       
       override public function onRegister() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(!_loc2_)
-         {
-            super.onRegister();
-            if(!(_loc2_ && Boolean(this)))
-            {
-               this.setupListeners();
-               if(!_loc2_)
-               {
-                  this.setupInitialValues();
-               }
-            }
-         }
+         super.onRegister();
+         this.setupListeners();
+         this.setupInitialValues();
       }
       
       private function setupListeners() : void
       {
-         §§push(false);
-         var _loc1_:Boolean = true;
-         var _loc2_:* = §§pop();
-         if(_loc1_ || Boolean(this))
-         {
-            §§push(this.component);
-            if(_loc1_ || Boolean(this))
-            {
-               §§pop().checkBox.addEventListener(MouseEvent.CLICK,this.handleToggleCheckBox);
-               if(_loc1_)
-               {
-                  addr004f:
-                  this.component.addEventListener(Event.REMOVED_FROM_STAGE,this.handleRemoved);
-                  addr004c:
-               }
-               return;
-            }
-            §§goto(addr004f);
-         }
-         §§goto(addr004c);
+         this.component.checkBox.addEventListener(MouseEvent.CLICK,this.handleToggleCheckBox);
+         this.component.addEventListener(Event.REMOVED_FROM_STAGE,this.handleRemoved);
       }
       
       private function handleRemoved(param1:Event) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && _loc3_))
-         {
-            this.component.removeEventListener(Event.REMOVED_FROM_STAGE,this.handleRemoved);
-            if(!(_loc2_ && _loc2_))
-            {
-               addr0048:
-               facade.removeMediator(NAME);
-            }
-            return;
-         }
-         §§goto(addr0048);
+         this.component.removeEventListener(Event.REMOVED_FROM_STAGE,this.handleRemoved);
+         facade.removeMediator(NAME);
       }
       
       private function setupInitialValues() : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc1_:EmergencyLayerProxy = facade.retrieveProxy(EmergencyLayerProxy.NAME) as EmergencyLayerProxy;
          var _loc2_:LocalStorageProxy = facade.retrieveProxy(LocalStorageProxy.NAME) as LocalStorageProxy;
          var _loc3_:EmergencyBookMediator = facade.retrieveMediator(EmergencyBookMediator.NAME) as EmergencyBookMediator;
-         if(!(_loc5_ && Boolean(_loc3_)))
-         {
-            §§push(this.component);
-            if(!_loc5_)
-            {
-               §§pop().data = _loc1_.getEmergencyZoneLayerVo(_loc3_.billboardObjectVo);
-               if(!_loc5_)
-               {
-                  addr0090:
-                  this.component.checkBox.selected = !_loc2_.userdata.showEmergencyZoneLayer;
-               }
-               §§goto(addr009e);
-            }
-            §§goto(addr0090);
-         }
-         addr009e:
+         this.component.data = _loc1_.getEmergencyZoneLayerVo(_loc3_.billboardObjectVo);
+         this.component.checkBox.selected = !_loc2_.userdata.showEmergencyZoneLayer;
       }
       
       override public function getMediatorName() : String
@@ -145,25 +72,10 @@ package net.bigpoint.cityrama.view.emergencyBook
       
       private function handleToggleCheckBox(param1:Event) : void
       {
-         §§push(false);
-         var _loc4_:Boolean = true;
-         var _loc5_:* = §§pop();
          var _loc2_:Boolean = Boolean(this.component.checkBox.selected);
          var _loc3_:LocalStorageProxy = facade.retrieveProxy(LocalStorageProxy.NAME) as LocalStorageProxy;
-         if(_loc4_ || _loc2_)
-         {
-            §§push(_loc3_.userdata);
-            §§push(_loc2_);
-            if(_loc4_)
-            {
-               §§push(!§§pop());
-            }
-            §§pop().showEmergencyZoneLayer = §§pop();
-            if(!(_loc5_ && Boolean(this)))
-            {
-               _loc3_.flush();
-            }
-         }
+         _loc3_.userdata.showEmergencyZoneLayer = !_loc2_;
+         _loc3_.flush();
       }
    }
 }

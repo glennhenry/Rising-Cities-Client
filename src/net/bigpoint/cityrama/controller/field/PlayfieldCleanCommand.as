@@ -23,28 +23,16 @@ package net.bigpoint.cityrama.controller.field
       
       public function PlayfieldCleanCommand()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_)
-         {
-            super();
-         }
+         super();
       }
       
       override public function execute(param1:INotification) : void
       {
-         var _temp_1:* = true;
-         var _loc14_:Boolean = false;
-         var _loc15_:Boolean = _temp_1;
          var _loc2_:PlayfieldProxy = facade.retrieveProxy(PlayfieldProxy.NAME) as PlayfieldProxy;
-         if(!_loc14_)
-         {
-            sendNotification(ApplicationNotificationConstants.START_PLAYFIELD_LOADING_ANIMATION,{
-               "gfxId":_loc2_.playfieldDTO.config.gfxId,
-               "initial":false
-            });
-         }
+         sendNotification(ApplicationNotificationConstants.START_PLAYFIELD_LOADING_ANIMATION,{
+            "gfxId":_loc2_.playfieldDTO.config.gfxId,
+            "initial":false
+         });
          var _loc3_:TimerProxy = TimerProxy(facade.retrieveProxy(TimerProxy.NAME));
          var _loc4_:PlayfieldObjectsProxy = PlayfieldObjectsProxy(facade.retrieveProxy(PlayfieldObjectsProxy.NAME));
          var _loc5_:NeedMatrixProxy = NeedMatrixProxy(facade.retrieveProxy(NeedMatrixProxy.NAME));
@@ -56,88 +44,23 @@ package net.bigpoint.cityrama.controller.field
          var _loc11_:FieldMediator = FieldMediator(facade.retrieveMediator(FieldMediator.NAME));
          var _loc12_:PlaneMediator = PlaneMediator(facade.retrieveMediator(PlaneMediator.NAME));
          var _loc13_:OptionsMenuMediator = OptionsMenuMediator(facade.retrieveMediator(OptionsMenuMediator.NAME));
-         if(!_loc14_)
+         _loc3_.stopRenderTimer = true;
+         sendNotification(ApplicationNotificationConstants.PAUSE_ALL_WALKERS);
+         sendNotification(ApplicationNotificationConstants.REMOVE_ALL_URBIES);
+         facade.removeProxy(PathWalkProxy.NAME);
+         _loc4_.resetModel();
+         _loc7_.resetModel();
+         _loc5_.reset();
+         _loc6_.resetMatrix();
+         _loc8_.invalidateExpansions();
+         _loc11_.resetGroups();
+         _loc12_.resetGroups();
+         _loc10_.isBaseViewEnabled = false;
+         if(_loc13_)
          {
-            _loc3_.stopRenderTimer = true;
-            if(_loc15_)
-            {
-               sendNotification(ApplicationNotificationConstants.PAUSE_ALL_WALKERS);
-               if(!_loc14_)
-               {
-                  sendNotification(ApplicationNotificationConstants.REMOVE_ALL_URBIES);
-                  if(_loc15_)
-                  {
-                     facade.removeProxy(PathWalkProxy.NAME);
-                     if(!(_loc14_ && Boolean(_loc2_)))
-                     {
-                        _loc4_.resetModel();
-                        if(_loc15_)
-                        {
-                           _loc7_.resetModel();
-                           if(!(_loc14_ && Boolean(_loc2_)))
-                           {
-                              addr01b5:
-                              _loc5_.reset();
-                              if(_loc15_)
-                              {
-                                 addr01c1:
-                                 _loc6_.resetMatrix();
-                                 if(!(_loc14_ && Boolean(_loc2_)))
-                                 {
-                                    _loc8_.invalidateExpansions();
-                                    if(!(_loc14_ && Boolean(this)))
-                                    {
-                                       _loc11_.resetGroups();
-                                       if(!(_loc14_ && Boolean(this)))
-                                       {
-                                          addr01ff:
-                                          _loc12_.resetGroups();
-                                          if(!(_loc14_ && Boolean(_loc2_)))
-                                          {
-                                             _loc10_.isBaseViewEnabled = false;
-                                             if(!(_loc14_ && Boolean(_loc2_)))
-                                             {
-                                                addr0232:
-                                                if(_loc13_)
-                                                {
-                                                   if(_loc15_)
-                                                   {
-                                                      addr023e:
-                                                      _loc13_.component.subMenueBasement.selected = false;
-                                                      if(_loc15_ || Boolean(param1))
-                                                      {
-                                                         addr0257:
-                                                         sendNotification(ApplicationNotificationConstants.FIELD_REDRAW);
-                                                      }
-                                                      §§goto(addr0262);
-                                                   }
-                                                }
-                                             }
-                                          }
-                                          §§goto(addr0257);
-                                       }
-                                       §§goto(addr0262);
-                                    }
-                                    §§goto(addr023e);
-                                 }
-                                 §§goto(addr0257);
-                              }
-                              §§goto(addr023e);
-                           }
-                           §§goto(addr0257);
-                        }
-                        §§goto(addr01b5);
-                     }
-                     §§goto(addr0232);
-                  }
-                  §§goto(addr023e);
-               }
-               addr0262:
-               return;
-            }
-            §§goto(addr01c1);
+            _loc13_.component.subMenueBasement.selected = false;
          }
-         §§goto(addr01ff);
+         sendNotification(ApplicationNotificationConstants.FIELD_REDRAW);
       }
    }
 }

@@ -15,13 +15,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function FieldInfoLayerScheduledDropVo()
       {
-         var _temp_1:* = true;
-         var _loc1_:Boolean = false;
-         var _loc2_:Boolean = _temp_1;
-         if(_loc2_ || _loc1_)
-         {
-            super();
-         }
+         super();
       }
       
       public function get flavourText() : String
@@ -31,13 +25,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function set flavourText(param1:String) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!(_loc2_ && Boolean(this)))
-         {
-            this._flavourText = param1;
-         }
+         this._flavourText = param1;
       }
       
       public function get levelText() : String
@@ -47,13 +35,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function set levelText(param1:String) : void
       {
-         §§push(false);
-         var _loc2_:Boolean = true;
-         var _loc3_:* = §§pop();
-         if(_loc2_)
-         {
-            this._levelText = param1;
-         }
+         this._levelText = param1;
       }
       
       public function get harvestProgress() : TimerBarComponentVo
@@ -63,13 +45,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function set harvestProgress(param1:TimerBarComponentVo) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(_loc3_)
-         {
-            this._harvestProgress = param1;
-         }
+         this._harvestProgress = param1;
       }
       
       public function get showHarvestProgress() : Boolean
@@ -79,13 +55,7 @@ package net.bigpoint.cityrama.model.field.fieldInfoLayer.vo
       
       public function set showHarvestProgress(param1:Boolean) : void
       {
-         var _temp_1:* = true;
-         var _loc2_:Boolean = false;
-         var _loc3_:Boolean = _temp_1;
-         if(!_loc2_)
-         {
-            this._showHarvestProgress = param1;
-         }
+         this._showHarvestProgress = param1;
       }
    }
 }
