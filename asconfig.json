@@ -1,0 +1,21 @@
+{
+	"config": "air",
+	"compilerOptions": {
+		"source-path": [
+			"src"
+		],
+		"library-path": [
+			"libs"
+		],
+		"output": "bin/risingcities.swf",
+		"default-background-color": "#ffffff",
+		"default-frame-rate": 36,
+		"default-size": {
+			"width": 976,
+			"height": 976
+		},
+		"swf-version": 14
+	},
+	"application": "src/risingcities-app.xml",
+	"mainClass": "_Main_net_bigpoint_cityrama_init_SystemManager"
+}

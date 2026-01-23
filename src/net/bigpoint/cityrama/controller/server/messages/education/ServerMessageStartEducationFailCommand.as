@@ -1,0 +1,25 @@
+package net.bigpoint.cityrama.controller.server.messages.education
+{
+   import org.puremvc.as3.interfaces.INotification;
+   import org.puremvc.as3.patterns.command.SimpleCommand;
+   
+   public class ServerMessageStartEducationFailCommand extends SimpleCommand
+   {
+      
+      public function ServerMessageStartEducationFailCommand()
+      {
+         §§push(false);
+         var _loc1_:Boolean = true;
+         var _loc2_:* = §§pop();
+         if(_loc1_ || Boolean(this))
+         {
+            super();
+         }
+      }
+      
+      override public function execute(param1:INotification) : void
+      {
+      }
+   }
+}
+
