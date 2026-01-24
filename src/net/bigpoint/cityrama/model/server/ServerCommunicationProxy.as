@@ -80,7 +80,9 @@ package net.bigpoint.cityrama.model.server
             }
          }
          this._developerSettingsProxy = null;
+         trace("[ServerCommunicationProxy - connect] Policy file to: ","xmlsocket://" + param1.host + ":7777");
          Security.loadPolicyFile("xmlsocket://" + param1.host + ":7777");
+         trace("[ServerCommunicationProxy - connect]","host =",param1.host,"port =",param1.port,"policyPort = 7777");
          this._socket.connect(param1.host,param1.port);
       }
       
