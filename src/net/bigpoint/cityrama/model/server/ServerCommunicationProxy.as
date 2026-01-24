@@ -80,7 +80,7 @@ package net.bigpoint.cityrama.model.server
             }
          }
          this._developerSettingsProxy = null;
-         Security.loadPolicyFile("xmlsocket://" + param1.host + ":8080");
+         Security.loadPolicyFile("xmlsocket://" + param1.host + ":7777");
          this._socket.connect(param1.host,param1.port);
       }
       
@@ -101,7 +101,7 @@ package net.bigpoint.cityrama.model.server
          this.disconnect();
          this._reconnectCallback = param3;
          this._socket.removeEventListener(Event.CONNECT,this.connectHandler);
-         Security.loadPolicyFile("xmlsocket://" + param1.host + ":8080");
+         Security.loadPolicyFile("xmlsocket://" + param1.host + ":7777");
          this._socket.addEventListener(Event.CLOSE,this.closeHandler);
          this._socket.addEventListener(Event.CONNECT,this.onReconnect);
          this._socket.connect(param1.host,param1.port);

@@ -21,7 +21,7 @@ package net.bigpoint.cityrama.model
       
       public function get policyPort() : int
       {
-         return 8080;
+         return 7777;
       }
       
       public function get marketMaintenance() : Boolean
