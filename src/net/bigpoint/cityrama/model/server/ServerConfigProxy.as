@@ -2,11 +2,14 @@ package net.bigpoint.cityrama.model.server
 {
    import flash.events.Event;
    import flash.events.EventDispatcher;
+   import flash.events.HTTPStatusEvent;
    import flash.events.IOErrorEvent;
+   import flash.events.ProgressEvent;
    import flash.events.SecurityErrorEvent;
    import flash.net.URLLoader;
    import flash.net.URLRequest;
    import flash.net.URLRequestMethod;
+   import flash.system.Capabilities;
    import net.bigpoint.cityrama.constants.ApplicationNotificationConstants;
    import net.bigpoint.cityrama.constants.ServerNotificationConstants;
    import net.bigpoint.cityrama.init.preloader.PreloaderProgressSingleton;
@@ -64,10 +67,56 @@ package net.bigpoint.cityrama.model.server
       
       public function loadServer(param1:int) : void
       {
-         this._request.url = this.requestURL;
+         trace("[ServerConfigProxy] loadServer() called, counter delta =",param1);
+         trace("[ServerConfigProxy] requestURL =",this.requestURL);
+         this._request.url = resolveRequestURL();
+         trace("[ServerConfigProxy] Resolved URL =",this._request.url);
          this.connectionCounter += param1;
+         trace("[ServerConfigProxy] URLRequest =",JSON.stringify({
+            "url":this._request.url,
+            "method":this._request.method
+         }));
+         this._urlLoader.addEventListener(Event.COMPLETE,onComplete);
+         this._urlLoader.addEventListener(IOErrorEvent.IO_ERROR,onIOError);
+         this._urlLoader.addEventListener(SecurityErrorEvent.SECURITY_ERROR,onSecurityError);
+         this._urlLoader.addEventListener(ProgressEvent.PROGRESS,onProgress);
+         this._urlLoader.addEventListener(HTTPStatusEvent.HTTP_STATUS,onHttpStatus);
          this._urlLoader.load(this._request);
-         trace("ServerConfigProxy: loadServer ",JSON.stringify(this._request));
+         trace("[ServerConfigProxy] load() invoked");
+      }
+      
+      private function resolveRequestURL() : String
+      {
+         if(Capabilities.playerType == "Desktop")
+         {
+            return "http://127.0.0.1:8080/RCApi?session=test";
+         }
+         return "RCApi?session=test";
+      }
+      
+      private function onProgress(e:ProgressEvent) : void
+      {
+         trace("[ServerConfigProxy] PROGRESS",e.bytesLoaded,"/",e.bytesTotal);
+      }
+      
+      internal function isAIR() : Boolean
+      {
+         return Capabilities.playerType == "Desktop";
+      }
+      
+      private function onHttpStatus(e:HTTPStatusEvent) : void
+      {
+         trace("[ServerConfigProxy] HTTP STATUS =",e.status);
+      }
+      
+      private function onIOError(e:IOErrorEvent) : void
+      {
+         trace("[ServerConfigProxy] IO ERROR =",e.text);
+      }
+      
+      private function onSecurityError(e:SecurityErrorEvent) : void
+      {
+         trace("[ServerConfigProxy] SECURITY ERROR =",e.text);
       }
       
       private function onError(param1:Event) : void
@@ -77,16 +126,27 @@ package net.bigpoint.cityrama.model.server
       
       private function onComplete(param1:Event) : void
       {
-         var event:Event = param1;
+         var raw:String;
+         var response:Object;
+         trace("[ServerConfigProxy] onComplete fired");
+         raw = String(this._urlLoader.data);
+         trace("[ServerConfigProxy] raw response length =",raw.length);
+         trace("[ServerConfigProxy] raw response preview =",raw.substr(0,300));
          try
          {
-            this._gameServer = new ServerVo(JSON.parse(String(this._urlLoader.data)));
+            response = JSON.parse(raw);
+            trace("[ServerConfigProxy] parsed JSON OK");
+            this._gameServer = new ServerVo(response);
+            trace("[ServerConfigProxy] ServerVo created =",JSON.stringify(this._gameServer));
             PreloaderProgressSingleton.instance.setProgress(PreloaderProgressSingleton.STATE_POINTER_CONNECT_PHP);
          }
          catch(e:Error)
          {
+            trace("[ServerConfigProxy] PARSE ERROR =",e.message);
             facade.sendNotification(ApplicationNotificationConstants.CONNECTION_LOST);
+            return;
          }
+         trace("[ServerConfigProxy] sending SERVER_NEW notification");
          sendNotification(ServerNotificationConstants.SERVER_NEW);
       }
       
