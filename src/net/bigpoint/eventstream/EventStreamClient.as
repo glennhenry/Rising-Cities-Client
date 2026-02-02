@@ -205,7 +205,7 @@ package net.bigpoint.eventstream
                return;
             }
             request = new ESCRequestVo(new Date().getTime(),this._context,this._queue);
-            url = "http://127.0.0.1:8080/debug";
+            url = "http://127.0.0.1:8080/eventstream";
             this._byteArray.clear();
             this._byteArray.writeUTFBytes(com.adobe.serialization.json.JSON.encode(request));
             this._byteArray.compress();
