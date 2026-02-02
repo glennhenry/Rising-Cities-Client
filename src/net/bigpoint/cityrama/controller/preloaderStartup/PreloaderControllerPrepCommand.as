@@ -1,5 +1,7 @@
 package net.bigpoint.cityrama.controller.preloaderStartup
 {
+   import flash.desktop.NativeApplication;
+   import flash.events.UncaughtErrorEvent;
    import net.bigpoint.cityrama.constants.ApplicationNotificationConstants;
    import net.bigpoint.cityrama.constants.ServerNotificationConstants;
    import net.bigpoint.cityrama.controller.ErrorCommand;
@@ -38,8 +40,20 @@ package net.bigpoint.cityrama.controller.preloaderStartup
          super();
       }
       
+      internal function onUncaughtError(e:UncaughtErrorEvent) : void
+      {
+         trace("=== UNCAUGHT ERROR ===",e.error);
+         if(e.error is Error)
+         {
+            trace(Error(e.error).message);
+            trace(Error(e.error).getStackTrace());
+         }
+         e.preventDefault();
+      }
+      
       override public function execute(param1:INotification) : void
       {
+         NativeApplication.nativeApplication.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR,onUncaughtError);
          facade.registerCommand(ServerNotificationConstants.CLIENT_MESSAGE_UPDATE_CLIENT_UI_DATA,ClientUpdateClientUIDataCommand);
          facade.registerCommand(ServerNotificationConstants.SERVER_MESSAGE_UPDATE_CLIENT_UI_DATA_SUCCESS,ServerClientUIDataCommand);
          facade.registerCommand(ApplicationNotificationConstants.SET_USER_OPTIONS,UIOptionsSettingsCommand);

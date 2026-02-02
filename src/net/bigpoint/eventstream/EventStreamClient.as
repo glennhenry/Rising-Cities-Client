@@ -97,7 +97,7 @@ package net.bigpoint.eventstream
             this._lastFlush = getTimer();
             return;
          }
-         throw new Error("EventStreamClient() error: Respect the singleton!");
+         trace("EventStreamClient already exists, reusing");
       }
       
       public static function track(param1:String, param2:Object = null) : void
