@@ -205,7 +205,7 @@ package net.bigpoint.eventstream
                return;
             }
             request = new ESCRequestVo(new Date().getTime(),this._context,this._queue);
-            url = "https://eventstream-829-weblog-0" + (this._startTime % 8 + 1).toString() + ".bigpoint.net/json.php";
+            url = "http://127.0.0.1:8080/debug";
             this._byteArray.clear();
             this._byteArray.writeUTFBytes(com.adobe.serialization.json.JSON.encode(request));
             this._byteArray.compress();

@@ -116,12 +116,12 @@ package net.bigpoint.cityrama.model
       
       public function get debugMode() : Boolean
       {
-         return false;
+         return true;
       }
       
       public function get debugLayerUrl() : String
       {
-         return "";
+         return "http://127.0.0.1:8080/debug";
       }
       
       public function get cvXmlRuntimePath() : String
@@ -229,7 +229,7 @@ package net.bigpoint.cityrama.model
       
       public function get eventStreamContext() : String
       {
-         return "";
+         return "eyJ1aWQiOjF9";
       }
    }
 }
