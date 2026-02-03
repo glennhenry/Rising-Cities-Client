@@ -36,7 +36,7 @@ package net.bigpoint.util
             this._userID = SystemManager.rawStage.loaderInfo.parameters.uid;
             this._debugLayerUrl = SystemManager.rawStage.loaderInfo.parameters.debugLayerUrl;
          }
-         if(SystemManager.rawStage.loaderInfo.parameters.debugMode != null)
+         if(SystemManager.rawStage.loaderInfo.parameters.debugMode != null && SystemManager.rawStage.loaderInfo.parameters.debugMode == "true")
          {
             this._debugMode = true;
          }

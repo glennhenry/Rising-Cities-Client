@@ -191,7 +191,7 @@ package net.bigpoint.cityrama.model
       {
          if(SystemManager.rawStage.loaderInfo.parameters.debugMode == null || SystemManager.rawStage.loaderInfo.parameters.debugMode == "")
          {
-            return true;
+            return false;
          }
          return SystemManager.rawStage.loaderInfo.parameters.debugMode == "true";
       }
