@@ -121,6 +121,7 @@ package net.bigpoint.cityrama.model.server
       
       public function sendMessage(param1:MessageVo) : void
       {
+         trace("[ServerMessageLoginSuccessCommand] - sendMessage(): ",JSON.stringify(param1));
          var _loc2_:MessageVo = param1.clone();
          if(this.clientSpool)
          {
@@ -194,45 +195,57 @@ package net.bigpoint.cityrama.model.server
       
       private function readMessage() : Boolean
       {
-         var message:String = null;
+         var message:String;
+         trace("[ServerCommunicationProxy] readMessage()","currentMessage=" + (this._currentMessage != null),"bytesAvailable=" + this._socket.bytesAvailable);
+         message = null;
          if(this._currentMessage == null)
          {
             if(this._socket.bytesAvailable < 6)
             {
+               trace("[ServerCommunicationProxy] Waiting for message header lengths","need=6","have=" + this._socket.bytesAvailable);
                return false;
             }
             this._currentMessage = new MessageVo();
             this._currentMessage.messageLength = this._socket.readUnsignedInt();
             this._currentMessage.headerLength = this._socket.readUnsignedShort();
+            trace("[ServerCommunicationProxy] New message detected","messageLength=" + this._currentMessage.messageLength,"headerLength=" + this._currentMessage.headerLength);
          }
          if(this._currentMessage.header == null)
          {
             if(this._socket.bytesAvailable < this._currentMessage.headerLength)
             {
+               trace("[ServerCommunicationProxy] Waiting for header bytes","need=" + this._currentMessage.headerLength,"have=" + this._socket.bytesAvailable);
                return false;
             }
             this._currentMessage.header = this._socket.readUTFBytes(this._currentMessage.headerLength);
+            trace("[ServerCommunicationProxy] Header received","header=" + this._currentMessage.header);
          }
          if(this._socket.bytesAvailable >= this._currentMessage.messageLength)
          {
+            trace("[ServerCommunicationProxy] Reading message body","length=" + this._currentMessage.messageLength);
             message = this._socket.readUTFBytes(this._currentMessage.messageLength);
+            trace("[ServerCommunicationProxy] Raw JSON received",message);
             try
             {
                this._currentMessage.json = JSON.parse(message);
             }
             catch(e:*)
             {
+               trace("[ServerCommunicationProxy] JSON parse failed",message);
                super.facade.sendNotification(ApplicationNotificationConstants.CONNECTION_LOST);
                throw RamaCityError("Unable to parse incoming message!");
             }
             if(this._serverSpool)
             {
+               trace("[ServerCommunicationProxy] Message spooled","header=" + this._currentMessage.header);
                this._serverSpooledMessages.push(this._currentMessage.clone());
             }
             else
             {
+               trace("[ServerCommunicationProxy] Dispatching SERVER_NEW_MESSAGE","header=" + this._currentMessage.header);
                super.facade.sendNotification(ServerNotificationConstants.SERVER_NEW_MESSAGE,this._currentMessage.clone());
             }
+            trace("[ServerCommunicationProxy] Message processed","header=" + this._currentMessage.header,"contains_FAILED=" + (String(this._currentMessage).indexOf("_FAILED") != -1));
             if(String(this._currentMessage).indexOf("_FAILED") != -1)
             {
                DebugLayer.instance.track(JSON.stringify({
@@ -248,8 +261,10 @@ package net.bigpoint.cityrama.model.server
                }),1);
             }
             this._currentMessage = null;
+            trace("[ServerCommunicationProxy] Message cycle complete");
             return true;
          }
+         trace("[ServerCommunicationProxy] Waiting for body bytes","need=" + this._currentMessage.messageLength,"have=" + this._socket.bytesAvailable);
          return false;
       }
       
